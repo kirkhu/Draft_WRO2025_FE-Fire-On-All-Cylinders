@@ -19,9 +19,9 @@
     <th width=30%><div align=center>2025 After shortening</th>
     <th width=30%><div align=center>2025 最終出賽機型</th>
     </tr><tr>
-    <td><img src="../../models/Vehicle_2D_3D/img/right.png"  width="500" alt="Vehicle_cad"></td> 
-    <td><img src="../../v-photos/img/right.png" width="500" alt="vehicle Underfloor"></td> 
-    <td><img src="../../schemes/Vehicle_Chassis_Design/img/International_competition_machine.png" width=250 alt="最終出賽機型"></td>
+    <td><img src="./img/2024 Before Shortening.png"  width="500" alt="Vehicle_cad"></td> 
+    <td><img src="./img/2025 After Shortening.png" width="500" alt="vehicle Underfloor"></td> 
+    <td><img src="./img/2025 Final Model.png" width=250 alt="Final Model"></td>
     </tr>
     </table>
  </div> 
