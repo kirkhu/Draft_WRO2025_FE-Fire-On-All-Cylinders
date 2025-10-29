@@ -7,9 +7,8 @@
 </div>
 
 ### 中文:
-在實際的硬體設計過程中，我們經常遇到因電源接錯或資料線接錯導致 Jetson Orin Nano 控制器或 IC 損壞的問題。為了防止這類情況發生，我們採用了公母插頭來連接電源，並將電路焊接在PCB電路板上，確保接線正確。這項改進有效降低了 Jetson Orin Nano 控制器或 IC 燒毀的風險，提升系統穩定性，並增加產品的可靠度與使用壽命。
-### 英文:
-In the actual hardware design process, we frequently encountered issues where the Jetson Nano controller or IC would get damaged due to incorrect power connections or data line misplacements. To prevent these occurrences, we implemented male and female connectors for power supply and data transmission and used soldering to secure the circuit on a bakelite board, ensuring correct wiring. This improvement effectively reduced the risk of burnout for the Jetson Nano controller or IC, enhancing system stability and increasing product reliability and lifespan.
+在實際硬體設計過程中，我們經常遇到電源與訊號線接錯，導致 Jetson Orin Nano、IC 或感測器等元件損壞。為避免此類問題，我們改用公母插頭連接電源與訊號線，並將接頭元件焊接在設計完成的 PCB 電路板上。此改進有效降低了元件燒毀的風險，提升系統穩定性，並增強產品的可靠性與使用壽命。
+
 <div align=center>
 <table>
 <tr>
