@@ -60,25 +60,25 @@
     </div>
 
 
-[![01Bottom clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](https://res.cloudinary.com/marcomontalbano/image/upload/v1761735816/video_to_markdown/images/youtube--XRuhmoaAwWk-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=XRuhmoaAwWk "01Bottom clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
+[![01Bottom clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](./img/01Bottom_clockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=XRuhmoaAwWk "01Bottom clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
 
 
-[![02Bottom counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube](https://res.cloudinary.com/marcomontalbano/image/upload/v1761736667/video_to_markdown/images/youtube--o1Zwdhd-V9o-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=o1Zwdhd-V9o "02Bottom counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
+[![02Bottom counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube](./img/02Bottom_counterclockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=o1Zwdhd-V9o "02Bottom counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
 
-[![03Left clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](https://res.cloudinary.com/marcomontalbano/image/upload/v1761736852/video_to_markdown/images/youtube--aFe098mwWvI-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=aFe098mwWvI "03Left clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
+[![03Left clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](./img/03Left_clockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=aFe098mwWvI "03Left clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
 
-[![04Left counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube](https://res.cloudinary.com/marcomontalbano/image/upload/v1761736954/video_to_markdown/images/youtube--6Rew_saSqYM-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=6Rew_saSqYM "04Left counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
+[![04Left counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube](./img/04Left_counterclockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=6Rew_saSqYM "04Left counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
 
-[![05Top clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](https://res.cloudinary.com/marcomontalbano/image/upload/v1761737036/video_to_markdown/images/youtube--csCRfZYZlrQ-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=csCRfZYZlrQ "05Top clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
-
-
-
+[![05Top clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](./img/05Top_clockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=csCRfZYZlrQ "05Top clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
 
 
 
 
 
-[![07Right clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](https://res.cloudinary.com/marcomontalbano/image/upload/v1761737115/video_to_markdown/images/youtube--UbKV_qW2KB4-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=UbKV_qW2KB4 "07Right clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
+
+
+
+[![07Right clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](.img/07Right_clockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=UbKV_qW2KB4 "07Right clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
 
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
