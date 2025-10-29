@@ -21,20 +21,20 @@
       - [2-1-2 Circuit Design](models/Circuit_Design/README.md)
       - [2-1-3 Hardware Fool-Proof Design](schemes/Fool-Proof-Design/README.md)
       - [2-1-4 Assembly Instructions & Wiring Diagra ](schemes/Assembly_Instructions/README.md)
-    - __2-2 Power Management-電源管理__
+    - __2-2 Power Management__
       - [2-2-1 Battery choice for self-driving cars ](schemes/Battery/README.md)
       - [2-2-2 Power Supply System ](schemes/Power_Supply_System/README.md)
-    - __2-3 Controller Selection-控制器選擇__
+    - __2-3 Controller Selection__
       - [2-3-1 Main Controller Comparison](schemes/Main_Controller_Choosing/README.md)
       - [2-3-2 Motor & Sensor Intermediate I/O Controller Comparison](schemes/Motor_Sensor_Controller_Choosing/README.md)
-    - __2-4 Sense Management-感知管理__
+    - __2-4 Sense Management__
       - [2-4-1 Ultrasonic rangefinder](schemes/HC-SR04/README.md)
       - [2-4-2 Infrared Sensor](schemes/Infrared-Sensor/README.md)
       - [2-4-3 Gyroscope orientation sensor](schemes/BNO055/README.md)
       - [2-4-4 Camera Selection](schemes/Camera/README.md)
 
 - ### ${{\color{red} Software Overview }} $ 
-  #### 3. Obstacle Management-障礙管理
+  #### 3. Obstacle Management
     - [3-1 Software Platform Construction](src/System_Platform_Software/README.md)
     - [3-2 OpenCV Introduction](src/OpenCV/README.md)
     - [3-3 Web Sockets Interdouction ](src/WebSockets/README.md)
