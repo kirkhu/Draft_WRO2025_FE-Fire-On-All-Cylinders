@@ -1,8 +1,8 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-## <div align="center">Introduction to Infrared Sensors</div>
+## <div align="center">Introduction to TCRT5000 Infrared Line Tracking Sensor</div>
 
-- ### __Introduction to Infrared Sensors__
+- ### __Introduction to TCRT5000 Infrared Line Tracking Sensor__
 
 <div align=center width=100%>
     <table>
@@ -29,8 +29,8 @@
             <th>Rear</th>
         </tr>
         <tr>
-            <td align=center><img src="./img/Car Front TCRT5000.png" /></td>
-            <td align=center><img src="./img/Car Back TCRT5000.png" /></td>
+            <td align=center><img src="./img/Car Front TCRT5000.png" width=500 /></td>
+            <td align=center><img src="./img/Car Back TCRT5000.png" width=500 /></td>
         </tr>
     </table>
 </div>
