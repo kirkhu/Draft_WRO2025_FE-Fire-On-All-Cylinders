@@ -15,7 +15,7 @@
         <th>counterclockwise</th>    
       </tr>
       <tr >
-        <td width="40%"><a href=""><img src="./img/Open-Challenge-power-50-Full-width.png" alt="Open Challenge Shun Full width @ Fire-On-All-Cylinders" ></a> </td>
+        <td width="40%"><a href="[![(267) 01 Full Narrow clockwise@Open Challange Fire On All Cylinders - YouTube](https://res.cloudinary.com/marcomontalbano/image/upload/v1761733255/video_to_markdown/images/youtube--C6ylflxoQq0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=C6ylflxoQq0 "(267) 01 Full Narrow clockwise@Open Challange Fire On All Cylinders - YouTube")"><img src="./img/Open-Challenge-power-50-Full-width.png" alt="Open Challenge Shun Full width @ Fire-On-All-Cylinders" ></a> </td>
         <td width="40%"><a href=""><img src="./img/Open-Challenge-power-70-Full-width.png" alt="Open Challenge counterclockwise Full width @ Fire-On-All-Cylinders" ></a></td>
       </tr>
     </table>
