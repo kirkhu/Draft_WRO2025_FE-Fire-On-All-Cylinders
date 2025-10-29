@@ -29,10 +29,6 @@
   - To precisely control the vehicle's optimal turning radius and flexibly adjust the Ackermann ratio, we used Stereolithography (SLA) 3D printers and 3D modeling technology to design the support frame for the Ackermann steering geometry on the vehicle chassis based on specific requirements.
 
 - #### Vehicle Chassis Improvement Record-車輛底盤改進紀錄
-  - 以下為去年模型（Shinan-Fire-On-All-Cylinders）與今年改良模型的比較，記錄於下表：
-
-  - The following is a comparison between last year’s model (Shinan-Fire-On-All-Cylinders) and this year’s improved model, recorded in the table below:
-
   ### __全國賽比較國際賽機型__
   <div align="center">
   <table>
@@ -68,7 +64,7 @@
 
 
   <td>
-    我們在底盤的設計上經歷了三次改版
+    我們在底盤的設計上經歷了四次改版
     <ol>
       <li>第一次改版我們在車頭加入弧形導角，避免前輪接觸邊牆時發生卡住的情況。</li>
       <li>第二版我們加大轉向節放置孔，改用軸承降低摩擦，使轉彎更順暢。</li>

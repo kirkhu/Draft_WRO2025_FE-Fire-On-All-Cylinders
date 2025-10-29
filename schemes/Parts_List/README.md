@@ -46,6 +46,7 @@
 <li><a href="https://pse.is/87ldmw" target="_blank">Wood board, thickness 3mm (top layer)</li>
 <li><a href="https://pse.is/87ldn8" target="_blank">HC-SR04</li>
 <li><a href="https://pse.is/87ldnk" target="_blank">BNO055</li>
+<li><a href="https://pse.is/8af85m" target="_blank">TCRT5000</li>
 <li><a href="https://sho.pe/87ldnp" target="_blank">USB 3.0 Male to Female 90-Degree Angle Adapter</li>
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
