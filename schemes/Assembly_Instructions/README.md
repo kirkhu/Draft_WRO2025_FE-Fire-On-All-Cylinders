@@ -2,7 +2,7 @@
 
 ## <div align="center">Hardware Assembly Instructions & Wiring diagram-硬體組裝說明和接線圖</div>
 - ### Hardware Configuration of Electronic Equipment 
--電子設備的硬體配置
+- 電子設備的硬體配置
   - 下圖顯示了電子設備在自走車中的安裝位置。
   - The diagram below shows the placement of electronic equipment in the autonomous vehicle.
   
@@ -12,18 +12,14 @@
     <div align="center"><img src="./img/System_operation_process.png"   alt="System Operation Process" > </div>
 #### 中文:
 - Nvidia Jetson orin Nano 主控制器透過攝影模組擷取影像，並使用 OpenCV 進行處理，以偵測障礙物與邊界牆。同時，透過 I2C 通訊協定 從 BNO055 陀螺儀方位感測器 收集方向資料，計算行進方向以避開障礙物與邊界牆。
-- 計算後的路徑資料會透過 UART 通訊 傳送至 Raspberry Pi Pico I/O 控制器進行控制。
 
-- 在停車過程中，作為 I/O 控制器的 Raspberry Pi Pico 不僅接收來自 Jetson Nano 主控制器的資料，還同時從三個方向的 HC-SR04 超音波距離感測器 收集距離資料，並根據這些資料進行計算，以控制自動停車的移動路徑。
+- 計算後的控制訊號會透過 WebSockets 傳送至 Raspberry Pi Pico W I/O 控制器進行控制。
 
-- 作為 I/O 控制器的 Raspberry Pi Pico 接收來自 Jetson Nano 主控制器的車輛移動控制值，並在 Pico 內部進行進一步計算，再將結果傳送至 前輪伺服馬達（MG90S），以控制行駛方向，完成避障任務。
+- 在停車過程中，作為 I/O 控制器的 Raspberry Pi Pico W 不僅接收來自 Jetson Orin Nano 主控制器的資料，還同時從兩側 HC-SR04 超聲波距離感測器和前後 TCRT5000 紅外循線感測器等數據資料進行計算，以控制自動停車的移動路徑。
 
-- 同時，作為 I/O 控制器的 Raspberry Pi Pico 處理來自主控制器 Jetson Nano 的車輛移動控制值，並將結果傳送至 馬達控制器（L293D），以控制直流馬達的正反轉與轉速。
-#### 英文:
-- The Nvidia Jetson orin Nano main controller captures images using a camera module and processes them with OpenCV to detect obstacles and boundary walls. It simultaneously collects directional data from the BNO055 gyroscope orientation sensor via the I2C communication protocol to calculate the travel direction to avoid obstacles and boundary walls. The calculated path data is then transmitted via UART communication to the Raspberry Pi Pico I/O controller for control.
-- During parking, the Raspberry Pi Pico, acting as an I/O controller, not only receives data from the Nvidia Jetson Nano main controller but also simultaneously collects distance data from HC-SR04 ultrasonic distance sensors in three directions. Based on this data, it performs calculations to control the movement path for automated parking.
-- As an I/O controller, the Raspberry Pi Pico receives vehicle movement control values from the Nvidia Jetson Nano main controller and performs further calculations within the Pico. It then sends the results to the front-wheel servo motor (MG90S) to control the driving direction, thereby completing the obstacle avoidance task.
-- At the same time, acting as an I/O controller, the Raspberry Pi Pico processes vehicle movement control values received from the Nvidia Jetson Nano main controller and sends the results to the motor controller (L293D) to control the DC motor’s forward and reverse rotation and speed.
+- 作為 I/O 控制器的 Raspberry Pi Pico W 接收來自 Jetson Orin Nano 主控制器的車輛移動控制值，並在 Pico 內部進行進一步計算，再將結果傳送至 前輪伺服馬達（MG90S），以控制行駛方向，完成避障任務。
+
+- 同時，作為 I/O 控制器的 Raspberry Pi Pico W 處理來自主控制器 Jetson Orin Nano 的車輛移動控制值，並將結果傳送至 馬達控制器（L293D），以控制直流馬達的正反轉與轉速。
 
 - ### Vehicle Body Structure Display Diagram-車體結構展示圖
 <div align="center">
