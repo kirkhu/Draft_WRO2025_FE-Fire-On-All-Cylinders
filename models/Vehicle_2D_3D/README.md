@@ -1,7 +1,7 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
 ## <div align="center">3D Vehicle Model Design -3D車輛模型設計</div>
-- 根據去年的經驗，我們將自駕車的長度由原本的21公分縮短至17公分，不僅大幅提升了停車的靈活性，也讓車輛能更自如地穿梭於狹小空間中。為更有效應對當前的競賽任務，我們對自駕車的設計與結構進行了全面調整與優化，顯著提升了整體性能與運行穩定性。
+- 根據去年的經驗，我們將自駕車的長度由原本的21公分延長至23公分，不僅大幅提升了停車的靈活性，也讓車輛能更自如地穿梭於狹小空間中。為更有效應對當前的競賽任務，我們對自駕車的設計與結構進行了全面調整與優化，顯著提升了整體性能與運行穩定性。
 
 - 本次比賽所使用的車輛底盤是我們自行研發的內部設計。接下來將介紹車輛底盤的設計與製作過程。
 
@@ -301,7 +301,7 @@
           </tr>
           <tr>
             <td align=center height=200><img src="./Vehicle_Chassis_CAD_File/img/Assembly.png" width=300 /></td>
-            <td align=center><img src="./Vehicle_Chassis_CAD_File/img/Steering-Knuckle1.png" width=300 /></td>
+            <td align=center><img src="./Vehicle_Chassis_CAD_File/img/Steering-Knuckle.png" width=300 /></td>
             <td align=center><img src="./Vehicle_Chassis_CAD_File/img/Bearing-Holder.png" width=300 /></td>
           </tr>
         </table>
@@ -315,7 +315,7 @@
             <th>Steering rod</th>
           </tr>
           <tr>
-            <td align=center height=200><img src="./Vehicle_Chassis_CAD_File/img/Steering-shaft-holder1.png" width=300 /></td>
+            <td align=center height=200><img src="./Vehicle_Chassis_CAD_File/img/Steering-shaft-holder.png" width=300 /></td>
             <td align=center><img src="./Vehicle_Chassis_CAD_File/img/Motor steering rod.png" width=300 /></td>
             <td align=center><img src="./Vehicle_Chassis_CAD_File/img/Steering Linkage.png" width=300 /></td>
           </tr>
