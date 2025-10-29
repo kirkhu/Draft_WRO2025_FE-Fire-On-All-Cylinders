@@ -2,18 +2,19 @@
 
 ## <div align="center">Testing Video of Self-Driving Car in Obstacle Challenge-自駕車在障礙挑戰中的測試影片</div>
 
-- ### Video of parking tests at different positions.-不同位置停車測試的影片。
+- ### Test videos of theSelf-Driving Car parking in the four zones of the site.-自駕車駛入場地四個區域的停車測試影片。
   #### Clockwise 順時計
   <div align="center">
   <table >
     <tr >
-       <th align="center">Position is on the Left-位置在左邊</th>
-       <th align="center">Position is at the top-位置在頂部</th>
-       <th align="center">Position is on the right-位置在右邊</th>
-       <th align="center">Position is at the bottom-位置在底部</th>
+       <th align="center">The parking lot is located below.</th>
+       <th align="center">The parking lot is on the left side.</th>
+       <th align="center">The parking lot is located above.</th>
+       <th align="center">The parking lot is on the right side.</th>
+
     </tr>
     <tr >
-       <td  width="500" ><a href=""><img src="./img/parking_Left@Fire-On-All-Cylinders.png" alt="parking Left@Fire-On-All-Cylinders"  ></a> </td>
+       <td  width="500" ><a href=""><img src="./img/01below_clockwise@Obstacle_Challenge.jpg" alt="parking Left@Fire-On-All-Cylinders"  ></a> </td>
        <td  width="500" ><a href=""><img src="./img/parking_top@Fire-On-All-Cylinders.png" alt="parking Top@Fire-On-All-Cylinders"  ></a> </td>
        <td  width="500" ><a href=""><img src="./img/parking_right@Fire-On-All-Cylinders.png" alt="parking Right@Fire On All Cylinders"  ></a> </td>
        <td  width="500" ><a href=""><img src="./img/parking_down@Fire-On-All-Cylinders.png" alt="parking Down@Fire-On-All-Cylinders"  ></a> </td>
@@ -25,10 +26,11 @@
   <div align="center">
   <table >
     <tr >
-       <th align="center">Position is on the Left-位置在左邊</th>
-       <th align="center">Position is at the top-位置在頂部</th>
-       <th align="center">Position is on the right-位置在右邊</th>
-       <th align="center">Position is at the bottom-位置在底部</th>
+       <th align="center">The parking lot is located below.</th>
+       <th align="center">The parking lot is on the left side.</th>
+       <th align="center">The parking lot is located above.</th>
+       <th align="center">The parking lot is on the right side.</th>
+
     </tr>
     <tr >
        <td  width="500" ><a href=""><img src="./img/parking_Left@Fire-On-All-Cylinders.png" alt="parking Left@Fire-On-All-Cylinders"  ></a> </td>
