@@ -15,8 +15,8 @@
 <div align=center>
     <table>
     <tr>
-    <th width=30%><div align=center>2024 Before shortening (縮短前) </th>
-    <th width=30%><div align=center>2025 After shortening (縮短後) </th>
+    <th width=30%><div align=center>2024 Before shortening </th>
+    <th width=30%><div align=center>2025 After shortening</th>
     <th width=30%><div align=center>2025 最終出賽機型</th>
     </tr><tr>
     <td><img src="../../models/Vehicle_2D_3D/img/right.png"  width="500" alt="Vehicle_cad"></td> 
