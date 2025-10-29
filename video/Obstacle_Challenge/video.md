@@ -14,10 +14,10 @@
 
     </tr>
     <tr >
-       <td  width="500" ><a href=""><img src="./img/01Below_clockwise@Obstacle_Challenge.jpg" alt="01Below_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
-       <td  width="500" ><a href=""><img src="./img/03Left_clockwise@Obstacle_Challenge.jpg" alt="03Left_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
-       <td  width="500" ><a href=""><img src="./img/parking_right@Fire-On-All-Cylinders.png" alt="parking Right@Fire On All Cylinders"  ></a> </td>
-       <td  width="500" ><a href=""><img src="./img/parking_down@Fire-On-All-Cylinders.png" alt="parking Down@Fire-On-All-Cylinders"  ></a> </td>
+       <td  width="500" ><a href="https://youtu.be/XRuhmoaAwWk"><img src="./img/01Below_clockwise@Obstacle_Challenge.jpg" alt="01Below_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
+       <td  width="500" ><a href="https://youtu.be/aFe098mwWvI"><img src="./img/03Left_clockwise@Obstacle_Challenge.jpg" alt="03Left_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
+       <td  width="500" ><a href="https://youtu.be/csCRfZYZlrQ"><img src="./img/05Above_clockwise@Obstacle_Challenge.jpg" alt="05Above_clockwise@Obstacle_Challenge_Fire On All Cylinders"  ></a> </td>
+       <td  width="500" ><a href="https://youtu.be/UbKV_qW2KB4"><img src="./img/07Right_clockwise@Obstacle_Challenge.jpg" alt="07Right_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
     </tr>
     </table>  
     </div>
@@ -33,36 +33,13 @@
 
     </tr>
     <tr >
-       <td  width="500" ><a href=""><img src="./img/parking_Left@Fire-On-All-Cylinders.png" alt="parking Left@Fire-On-All-Cylinders"  ></a> </td>
-       <td  width="500" ><a href=""><img src="./img/parking_top@Fire-On-All-Cylinders.png" alt="parking Top@Fire-On-All-Cylinders"  ></a> </td>
+       <td  width="500" ><a href="https://youtu.be/o1Zwdhd-V9o"><img src="./img/02Below_counterclockwise@Obstacle_Challenge.jpg" alt="02Below_counterclockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
+       <td  width="500" ><a href="https://youtu.be/6Rew_saSqYM"><img src="./img/04Left_counterclockwise@Obstacle_Challenge.jpg" alt="04Left_counterclockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
        <td  width="500" ><a href=""><img src="./img/parking_right@Fire-On-All-Cylinders.png" alt="parking Right@Fire On All Cylinders"  ></a> </td>
        <td  width="500" ><a href=""><img src="./img/parking_down@Fire-On-All-Cylinders.png" alt="parking Down@Fire-On-All-Cylinders"  ></a> </td>
     </tr>
     </table>  
     </div>
-
-
-
-
-[![01Bottom clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](./img/01Bottom_clockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=XRuhmoaAwWk "01Bottom clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
-
-
-[![02Bottom counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube](./img/02Bottom_counterclockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=o1Zwdhd-V9o "02Bottom counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
-
-[![03Left clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](./img/03Left_clockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=aFe098mwWvI "03Left clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
-
-[![04Left counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube](./img/04Left_counterclockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=6Rew_saSqYM "04Left counterclockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
-
-[![05Top clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](./img/05Top_clockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=csCRfZYZlrQ "05Top clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
-
-
-
-
-
-
-
-
-[![07Right clockwise@Obstacle Challenge Fire On All Cylinders - YouTube](.img/07Right_clockwise@Obstacle_Challenge.jpg)](https://www.youtube.com/watch?v=UbKV_qW2KB4 "07Right clockwise@Obstacle Challenge Fire On All Cylinders - YouTube")
 
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
