@@ -7,7 +7,7 @@
 </div>
 
 ### 中文:
-在實際的硬體設計過程中，我們經常遇到因電源接錯或資料線接錯導致 Jetson Nano 控制器或 IC 損壞的問題。為了防止這類情況發生，我們採用了公母插頭來連接電源及資料傳輸，並將電路焊接在電木板上，確保接線正確。這項改進有效降低了 Jetson Nano 控制器或 IC 燒毀的風險，提升系統穩定性，並增加產品的可靠度與使用壽命。
+在實際的硬體設計過程中，我們經常遇到因電源接錯或資料線接錯導致 Jetson Orin Nano 控制器或 IC 損壞的問題。為了防止這類情況發生，我們採用了公母插頭來連接電源，並將電路焊接在PCB電路板上，確保接線正確。這項改進有效降低了 Jetson Orin Nano 控制器或 IC 燒毀的風險，提升系統穩定性，並增加產品的可靠度與使用壽命。
 ### 英文:
 In the actual hardware design process, we frequently encountered issues where the Jetson Nano controller or IC would get damaged due to incorrect power connections or data line misplacements. To prevent these occurrences, we implemented male and female connectors for power supply and data transmission and used soldering to secure the circuit on a bakelite board, ensuring correct wiring. This improvement effectively reduced the risk of burnout for the Jetson Nano controller or IC, enhancing system stability and increasing product reliability and lifespan.
 <div align=center>
@@ -20,6 +20,6 @@ In the actual hardware design process, we frequently encountered issues where th
 <td width=500 align=center><img src="./img/ciruit.png" width="400" height="400" alt="ciruit"></td> 
 </tr>
 </table>
-</div> 
+</div>
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
