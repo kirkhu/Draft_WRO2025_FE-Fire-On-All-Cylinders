@@ -35,7 +35,7 @@
     <tr >
        <td  width="500" ><a href="https://youtu.be/o1Zwdhd-V9o"><img src="./img/02Below_counterclockwise@Obstacle_Challenge.jpg" alt="02Below_counterclockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
        <td  width="500" ><a href="https://youtu.be/6Rew_saSqYM"><img src="./img/04Left_counterclockwise@Obstacle_Challenge.jpg" alt="04Left_counterclockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
-       <td  width="500" ><a href=""><img src="./img/parking_right@Fire-On-All-Cylinders.png" alt="parking Right@Fire On All Cylinders"  ></a> </td>
+       <td  width="500" ><a href=""><img src="./img/06Above_counterclockwise@Open_Challange.jpg" alt="parking Right@Fire On All Cylinders"  ></a> </td>
        <td  width="500" ><a href=""><img src="./img/parking_down@Fire-On-All-Cylinders.png" alt="parking Down@Fire-On-All-Cylinders"  ></a> </td>
     </tr>
     </table>  
