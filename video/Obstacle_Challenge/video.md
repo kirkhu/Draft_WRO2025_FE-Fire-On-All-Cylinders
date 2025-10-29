@@ -14,8 +14,8 @@
 
     </tr>
     <tr >
-       <td  width="500" ><a href=""><img src="./img/01below_clockwise@Obstacle_Challenge.jpg" alt="parking Left@Fire-On-All-Cylinders"  ></a> </td>
-       <td  width="500" ><a href=""><img src="./img/parking_top@Fire-On-All-Cylinders.png" alt="parking Top@Fire-On-All-Cylinders"  ></a> </td>
+       <td  width="500" ><a href=""><img src="./img/01Below_clockwise@Obstacle_Challenge.jpg" alt="01Below_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
+       <td  width="500" ><a href=""><img src="./img/03Left_clockwise@Obstacle_Challenge.jpg" alt="03Left_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
        <td  width="500" ><a href=""><img src="./img/parking_right@Fire-On-All-Cylinders.png" alt="parking Right@Fire On All Cylinders"  ></a> </td>
        <td  width="500" ><a href=""><img src="./img/parking_down@Fire-On-All-Cylinders.png" alt="parking Down@Fire-On-All-Cylinders"  ></a> </td>
     </tr>
