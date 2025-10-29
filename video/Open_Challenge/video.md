@@ -15,15 +15,15 @@
         <th>counterclockwise</th>    
       </tr>
       <tr >
-        <td width="40%"><a href="[![(267) 01 Full Narrow clockwise@Open Challange Fire On All Cylinders - YouTube](https://res.cloudinary.com/marcomontalbano/image/upload/v1761733255/video_to_markdown/images/youtube--C6ylflxoQq0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=C6ylflxoQq0 "(267) 01 Full Narrow clockwise@Open Challange Fire On All Cylinders - YouTube")"><img src="./img/Open-Challenge-power-50-Full-width.png" alt="Open Challenge Shun Full width @ Fire-On-All-Cylinders" ></a> </td>
-        <td width="40%"><a href=""><img src="./img/Open-Challenge-power-70-Full-width.png" alt="Open Challenge counterclockwise Full width @ Fire-On-All-Cylinders" ></a></td>
+        <td width="40%"><a href="https://youtu.be/G9K3tHob7iE"><img src="./img/15_Full_Wide_clockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Full_Wide_clockwise@Open_Challange_Fire_On_All_Cylinders" ></a> </td>
+        <td width="40%"><a href="https://youtu.be/5vnI3IxLeD8"><img src="./img/16_Full_Wide_counterclockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Full_Wide_counterclockwise@Open_Challange_Fire_On_All_Cylinders" ></a></td>
       </tr>
     </table>
   </div>
 
-- ### Wide-Narrow-Wide-Narrow
+- ### Narrow Wide Narrow Wide
 
-  This is a test video of a vehicle in a field set to "wide-narrow-wide-narrow", recorded clockwise and counterclockwise.
+  This is a test video of a vehicle in a field set to "narrow wide narrow wide", recorded clockwise and counterclockwise.
   <div align=center>
     <table>
       <tr align="center">
@@ -31,8 +31,8 @@
         <th>counterclockwise</th>
       </tr>
       <tr >
-        <td width="40%"><a href=""><img src="./img/Open-Challenge-power-50-half-width-half-height-width.png" alt="Open Challenge Shun half width half height width @ Fire On All Cylinders" ></a> </td>
-        <td width="40%"><a href=""><img src="./img/Open-Challenge-power-70-half-width-half-height-width.png" alt="Open Challenge counterclockwise half width half height width @ Fire On All Cylinders" ></a></td>
+        <td width="40%"><a href="https://youtu.be/GNtNA6J2SKY"><img src="./img/07_Narrow_Wide_Narrow_Wide_clockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Narrow_Wide_Narrow_Wide_clockwise@Open_Challange_Fire_On_All_Cylinders" ></a> </td>
+        <td width="40%"><a href="https://youtu.be/w7hL-hwOTlY"><img src="./img/08_Narrow_Wide_Narrow_Wide_counterclockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Narrow_Wide_Narrow_Wide_counterclockwise@Open_Challange_Fire_On_All_Cylinders" ></a></td>
       </tr>
     </table>
   </div>
@@ -48,13 +48,13 @@
         <th>counterclockwise</th>    
       </tr>
       <tr >
-        <td width="40%"><a href=""><img src="./img/Open-Challenge-power-50-full-narrow.png" alt="Open Challenge power 50 full narrow @ Fire On All Cylinders" ></a> </td>
-        <td width="40%"><a href=""><img src="./img/Open-Challenge-power-70-full-narrow.png" alt="Open Challenge counterclockwise full narrow @ Fire On All Cylinders" ></a></td>
+        <td width="40%"><a href="https://youtu.be/C6ylflxoQq0"><img src="./img/01_Full_Narrow_clockwise@Open Challange.jpg" alt="Full_Narrow_clockwise@Open Challange" ></a> </td>
+        <td width="40%"><a href="https://youtu.be/30k0c0JbF3A"><img src="./img/02_Full_Narrow_counterclockwise@OpenChallange Fire_On_All_Cylinders.jpg" alt="Full_Narrow_counterclockwise@OpenChallange Fire_On_All_Cylinders.jpg" ></a></td>
       </tr>
     </table>
   </div>
 
-- ### wide narrow wide narrow
+- ### Wide Narrow Wide Narrow
 
   These are test videos of a vehicle in a "wide-narrow-wide-narrow", recorded clockwise and counterclockwise.
   <div align=center>
@@ -64,8 +64,8 @@
         <th>counterclockwise</th>    
       </tr>
       <tr >
-        <td width="40%"><a href=""><img src="./img/Open-Challange-clockwise.png" alt="Open Challange clockwise @ Fire On All Cylinders" ></a> </td>
-        <td width="40%"><a href=""><img src="./img/Open-Challange-Counterclockwise.png" alt="Open Challange counterclockwise @ Fire On All Cylinders" ></a></td>
+        <td width="40%"><a href="https://youtu.be/-3bPgdEguyA"><img src="./img/11_Wide_Narrow_Wide_Narrow_clockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Wide_Narrow_Wide_Narrow_clockwise@Open_Challange_Fire_On_All_Cylinders" ></a> </td>
+        <td width="40%"><a href="https://youtu.be/j9UDgFQ8udI"><img src="./img/12_Wide_Narrow_Wide_Narrow_counterclockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Wide_Narrow_Wide_Narrow_counterclockwise@Open_Challange_Fire_On_All_Cylinders" ></a></td>
       </tr>
     </table>
   </div>
@@ -80,8 +80,8 @@
         <th>counterclockwise</th>
       </tr>
       <tr>
-        <td align=center width=40%><a href=""><img src="" width=400 /></a></td>
-        <td align=center width=40%><a href=""><img src="" width=400 /></a></td>
+        <td width="40%"><a href="https://youtu.be/lICgnjzpW08"><img src="./img/13_Wide_Wide_Narrow_Narrow_clockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Wide_Wide_Narrow_Narrow_clockwise@Open_Challange_Fire_On_All_Cylinders" ></a> </td>
+        <td width="40%"><a href="https://youtu.be/rf_sjSUVRaA"><img src="./img/14_Wide_Wide_Narrow_Narrow_counterclockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Wide_Wide_Narrow_Narrow_counterclockwise@Open_Challange_Fire_On_All_Cylinders" ></a></td>
       </tr>
     </table>
   </div>
@@ -96,8 +96,8 @@
         <th>counterclockwise</th>
       </tr>
       <tr>
-        <td align=center width=40%><a href=""><img src="" width=400 /></a></td>
-        <td align=center width=40%><a href=""><img src="" width=400 /></a></td>
+        <td width="40%"><a href="https://youtu.be/ywlkTwc3BKk"><img src="./img/05_Narrow_Narrow_Wide_Wide_clockwise@Open_Challange_Fire _On_All_Cylinders.jpg" alt="Narrow_Narrow_Wide_Wide_clockwise@Open_Challange_Fire _On_All_Cylinders" ></a> </td>
+        <td width="40%"><a href="https://youtu.be/J0V3LCfGXgI"><img src="./img/06_Narrow_Narrow_Wide_Wide_counterclockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Narrow_Narrow_Wide_Wide_counterclockwise@Open_Challange_Fire_On_All_Cylinders.jpg" ></a></td>
       </tr>
     </table>
   </div>
@@ -112,8 +112,8 @@
         <th>counterclockwise</th>
       </tr>
       <tr>
-        <td align=center width=40%><a href=""><img src="" width=400 /></a></td>
-        <td align=center width=40%><a href=""><img src="" width=400 /></a></td>
+        <td align=center width=40%><a href="https://youtu.be/y2OTN4GNG0c"><img src="./img/09_Wide_Narrow_Narrow_Narrow_clockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Wide_Narrow_Narrow_Narrow_clockwise@Open_Challange_Fire_On_All_Cylinders"width=400 /></a></td>
+        <td align=center width=40%><a href="https://youtu.be/cj5GPhtg8dU"><img src="./img/10_Wide_Narrow_Narrow_Narrow_counterclockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Wide_Narrow_Narrow_Narrow_counterclockwise@Open_Challange_Fire_On_All_Cylinders"width=400 /></a></td>
       </tr>
     </table>
   </div>
@@ -128,8 +128,8 @@
         <th>counterclockwise</th>
       </tr>
       <tr>
-        <td align=center width=40%><a href=""><img src="" width=400 /></a></td>
-        <td align=center width=40%><a href=""><img src="" width=400 /></a></td>
+        <td align=center width=40%><a href="https://youtu.be/rn5UsgO7_QA"><img src="./img/03_Narrow_Wide_Wide_Wide_clockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Narrow_Wide_Wide_Wide_clockwise@Open_Challange_Fire_On_All_Cylinders"width=400 /></a></td>
+        <td align=center width=40%><a href="https://youtu.be/zKaRvkeFm-4"><img src="./img/04_Narrow_Wide_Wide_Wide_counterclockwise@Open_Challange_Fire_On_All_Cylinders.jpg" alt="Narrow_Wide_Wide_Wide_counterclockwise@Open_Challange_Fire_On_All_Cylinders"width=400 /></a></td>
       </tr>
     </table>
   </div>
