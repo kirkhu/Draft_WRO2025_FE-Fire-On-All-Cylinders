@@ -87,45 +87,50 @@
         <th colspan=2>第一代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/20250925_180051.jpg" width=500 /></td>
+        <td><img src="./img/steering 1.jpg" width=500 /></td>
         <td width=400>
-          描述：<br>&emsp;&emsp;這個版本的轉向結構過於寬大，因此我們在第二版轉向結構中將版型縮小，提升自駕車的靈活度。
+          描述：<br>&emsp;&emsp;
+          這個版本的轉向結構過於寬大，因此我們在第二版轉向結構中將版型縮小，提升自駕車的靈活度。
         </td>
       </tr>
       <tr>
         <th colspan=2>第二代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/20250925_183354.png" width=500 /></td>
+        <td><img src="./img/steering 2.png" width=500 /></td>
         <td width=400>
-          描述：<br>&emsp;&emsp;這個版本因為使用樂高元件進行連接使轉向的角度被限制住，因此我們在第三版中修改不同元件間的連接方式。
+          描述：<br>&emsp;&emsp;
+          這個版本因為使用樂高元件進行連接使轉向的角度被限制住，因此我們在第三版中修改不同元件間的連接方式。
         </td>
       </tr>
       <tr>
         <th colspan=2>第三代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/20250925_184415.jpg" width=500 /></td>
+        <td><img src="./img/steering 3.jpg" width=500 /></td>
         <td width=400>
-          描述：<br>&emsp;&emsp;這個版本的轉向結構中，力矩的設計有誤，因此我們修改了拉桿和連桿之間的位置，我們在連桿上新增了極限以防轉向結構轉過頭的問題。
+          描述：<br>&emsp;&emsp;
+          這個版本的轉向結構中，力矩的設計有誤，因此我們修改了拉桿和連桿之間的位置，我們在連桿上新增了極限以防轉向結構轉過頭的問題。
         </td>
       </tr>
       <tr>
         <th colspan=2>第四代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/20250925_193727.jpg" width=500 /></td>
+        <td><img src="./img/steering 4.jpg" width=500 /></td>
         <td width=400>
-          描述：<br>&emsp;&emsp;這個版本的轉向極限設置太大，所以我們修改極限擋塊的大小以提升轉向的最大角度。
+          描述：<br>&emsp;&emsp;
+          這個版本的轉向極限設置太大，所以我們修改極限擋塊的大小以提升轉向的最大角度。
         </td>
       </tr>
       <tr>
         <th colspan=2>第五代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/20251025_140133.jpg" width=500 /></td>
+        <td><img src="./img/steering 5.jpg" width=500 /></td>
         <td width=400>
-          描述：<br>&emsp;&emsp;經過測試此版本已經符合我們自駕車的需求。
+          描述：<br>&emsp;&emsp;
+          經過前幾代轉向結構的問題修正，現在的轉向結構已經符合我們機型的需求。
         </td>
       </tr>
     </table>
