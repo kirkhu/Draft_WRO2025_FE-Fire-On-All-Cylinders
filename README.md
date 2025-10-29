@@ -76,6 +76,6 @@
       - [July (七月)](other/work_diary/README.md#20250702--20250721)
       - [August (八月)](other/work_diary/README.md#20250818--20250824)
       - [September (九月)](other/work_diary/README.md#20250901--20250906)
-      - [October (十月)](other/work_diary/README.md#20250604--20250608)
+      - [October (十月)](other/work_diary/README.md#20251007--20251013)
 
   <div align="center"><img src="./other/img/Gantt-Chart_4.jpg" width="1300" alt="Gantt Chart" /></div> 
