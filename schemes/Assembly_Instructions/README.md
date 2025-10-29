@@ -27,13 +27,13 @@
   <tr>
       <th>Top View of the Overall Apparatus(整體裝置頂視圖)</th>
       <th>Middle Layer Structure Top View</th>
-      <th>Top View of Vehicle Chassis(中層結構頂視圖)</th>
+      <th>Top View of Vehicle Chassis</th>
       <th>Bottom View of Vehicle Chassis(車體底盤底視圖)</th>
   </tr>
   <tr align="center">
      <td><img src="./img/car_all.png"  width = "400" alt="Top View of the Overall Apparatus" > </td>
      <td><img src="./img/Middle_Layer_Top_View.png" width = "400" alt="Middle Layer Structure Top View" ></td>
-     <td><img src="../Vehicle_Chassis_Design/img/2025Vehicle_Chassis_Design_down.png" width="400" alt="Top View of Vehicle Chassis" ></td>
+     <td><img src="./img/Driver Top.png" width="400" alt="Top View of Vehicle Chassis" ></td>
      <td><img src="./img/down.png" width="400" alt="Bottom View of Vehicle Chassis" ></td>
   </tr>
 </table>
@@ -48,6 +48,10 @@
   <tr align="center">
      <td> <img src="img/circuit board fount.png" width="300" alt="circuit_up.jpg"> </td><td><img src="img/circuit board back.png" width="300" alt="circuit_lower.jpg"></td>
   </tr>
+  <tr align=center>
+    <td><img src="./img/circuit board fount.png 2.png" width=300 /></td>
+    <td><img src="./img/circuit board back 2.png" width=300 /></td>
+  </div>
 </table>
 </div>
 
