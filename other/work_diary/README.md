@@ -145,38 +145,31 @@
     ```python
     import serial as AC
     import struct
-
     combined_control_signal = 30
     turn_side = 0
     PWM = 80
-
     try:
         ser = AC.Serial('/dev/ttyTHS1', 115200, timeout=1)
     except AC.SerialException as e:
         print(f"Error: Could not open serial port: {e}")
         exit()
-
     data_to_send = (int(combined_control_signal), int(turn_side),int(PWM))
     header = b"A"
     send_data_value = struct.pack('3i', *data_to_send)
     send_data_value = header + send_data_value
     ser.write(send_data_value)
     ```
-
     **Raspberry Pi Pico端**
     ```python
     from machine import UART, Pin
     import struct
-
     uart = UART(0, baudrate=115200, tx=Pin(16), rx=Pin(17))
-
     def jetson_nano_return(number):
         global data_value
         HEADER = b"A"
         HEADER_SIZE = len(HEADER)
         DATA_SIZE = 12
         TOTAL_SIZE = HEADER_SIZE + DATA_SIZE
-
         if uart.any():
             data = uart.read(TOTAL_SIZE)
             if len(data) == TOTAL_SIZE:
@@ -192,7 +185,6 @@
                 print("Error: Incomplete data received.")
         return data_value[number]
     ```
-
 ## 2025/04/03 ~ 2025/04/14
 
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
