@@ -1,9 +1,9 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-## <div align="center">Challenge rounds-testing Video of Self-Driving Car in Open Challenge-自駕車在開放挑戰中的測試影片</div> 
-  以下是不同動力和場地組合的車輛測試影片。
+## <div align="center">Testing Video of Self-Driving Car in Open Challenge-自駕車在開放挑戰中的測試影片</div> 
+  以下是場地組合的車輛測試影片。
 
-  Here are test videos of vehicles in different power and field combinations.
+  Here are test videos of vehicles in field combinations.
 
 - ### Full wide
 
@@ -27,7 +27,7 @@
   <div align=center>
     <table>
       <tr align="center">
-        <th>Shun</th>
+        <th>clockwise</th>
         <th>counterclockwise</th>
       </tr>
       <tr >
@@ -44,7 +44,7 @@
   <div align=center>
     <table>
       <tr align="center">
-        <th>Power 50</th>
+        <th>clockwise</th>
         <th>counterclockwise</th>    
       </tr>
       <tr >
@@ -56,7 +56,7 @@
 
 - ### Wide Narrow Wide Narrow
 
-  These are test videos of a vehicle in a "wide-narrow-wide-narrow", recorded clockwise and counterclockwise.
+  These are test videos of a vehicle in a field set to "wide-narrow-wide-narrow", recorded clockwise and counterclockwise.
   <div align=center>
     <table>
       <tr align="center">
