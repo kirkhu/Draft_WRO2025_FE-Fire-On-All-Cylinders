@@ -2,15 +2,16 @@
 
 ## <div align="center"> Team Members Introduction-團隊成員介紹</div>
 - ### Team Photo-團隊照片  
-  - 今天是我們團隊成立的第一天，因此我拍了一張照片作為紀念。地點選在了三樓教室外面走廊。
-  - 我們為了記錄開始準備國際賽，我們拍了第二張團隊照片作為紀念。地點選在了社團教室中。
-  - Today is the first day of our team's establishment, so I took a photo as a souvenir. The location was chosen in the corridor outside the classroom on the third floor.
+  - 團隊成立的第一天，我們選擇在學校三樓教室外的走廊，拍下這張珍貴的照片，作為我們共同參與競賽的起始紀念。
+  - 為記錄國際賽備戰的歷程，我們於社團教室中拍攝了第二張團隊合影，作為新的紀念里程碑。
+  - To commemorate the team's inaugural day, we captured this significant photo outside the third-floor classroom, symbolizing the start of our collective journey into competitions.
+  - Capturing the journey toward the international competition, we held our second team photoshoot inside the club classroom, serving as a fresh commemorative milestone.
 <div align="center">
 
 <table>
   <tr>
-    <th align=center>團隊成立第一天</th>
-    <th align=center>全國賽後第一周</th>
+    <th align=center>Team Founding Commemorative Group Photo 團隊成立紀念團體合影</th>
+    <th align=center>The First Commemorative Group Photo After Qualifying for the World Championship晉級世界賽首張紀念團體合影</th>
   </tr>
   <tr>
     <td><img src="./img/team_photo1.jpg" width=300  alt="Team Photo " /></td>
@@ -21,8 +22,8 @@
 </div>
 
 - ### Funny Photo-搞笑照片
-  - 由於我們沒有想法我們三個就排成一排拍照
-  - TSince we had no idea, the three of us lined up and took photos
+  - 因為一時想不出更好的點子，我們三個只好並肩站成一排拍照留念。
+  - Since we couldn't come up with any better ideas, the three of us simply stood in a line shoulder to shoulder for a commemorative photo.
 
 <div align="center"><img src="./img/funny_photo.jpg" width = "50%"  alt="Funny Photo" /> </div>  
 
