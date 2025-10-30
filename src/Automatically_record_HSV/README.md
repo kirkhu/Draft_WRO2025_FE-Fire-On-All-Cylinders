@@ -18,45 +18,45 @@
 
 **Red traffic sign block-紅色交通標誌方塊**
 
-|Adjusting the LAB Range Values for Red Color(調整紅色的 LAB 範圍值)|Save the LAB range values for Red(儲存紅色的 LAB 範圍值)|Live image of the Red traffic sign block(紅色交通標誌方塊的即時影像)|
+|Adjusting the LAB Range Values for Red Color(調整紅色的 LAB 範圍值)|Save the LAB range values for Red(儲存紅色的 LAB )|Live image of the Red traffic sign block(紅色交通標誌方塊的即時影像)|
 |:----:|:----:|:----:|
-|<img src="./img/Red/Adjusting_the_HSV_Range_Values_for_Red_Color.png" alt="Adjusting_the_HSV_Range_Values_for_Red_Color" align=center />|<img src="./img/Red/Save_the_HSV_range_values_for_red.png"  alt="Save_the_HSV_range_values_for_red" align=center />|<img src="./img/Red/Live_image_ of_the_red_traffic_sign_block.png" alt="Live_image_ of_the_red_traffic_sign_block" align=center />|
+|<img src="./img/Red/Adjusting_the_LAB_Range_Values_for_Red_Color.png" alt="Adjusting_the_LAB_Range_Values_for_Red_Color" align=center />|<img src="./img/Red/Save_the_LAB_range_values_for_red.png"  alt="Save_the_LAB_range_values_for_red" align=center />|<img src="./img/Red/Live_image_ of_the_red_traffic_sign_block.png" alt="Live_image_ of_the_red_traffic_sign_block" align=center />|
 
 
 
 **Green traffic sign block-綠色交通標誌方塊**
 
 
-|Adjusting the LAB Range Values for GreenColor(調整綠色的 LAB 範圍值)|Save the LAB range values for Green(儲存綠色的 LAB 範圍值)|Live image of the Green traffic sign block(綠色交通標誌方塊的即時影像)|
+|Adjusting the LAB Range Values for GreenColor(調整綠色的 LAB 範圍值)|Save the LAB range values for Green(儲存綠色的 LAB )|Live image of the Green traffic sign block(綠色交通標誌方塊的即時影像)|
 |:----:|:----:|:----:|
-|<img src="./img/Green/Adjusting_the_HSV_Range_Values_for_green_Color.png" alt="Adjusting_the_HSV_Range_Values_for_green_Color" align=center />|<img src="./img/Green/Save_the_HSV_range_values_for_green.png"  alt="Save_the_HSV_range_values_for_green" align=center />|<img src="./img/Green/Live_image_ of_the_green_traffic_sign_block.png" alt="Live_image_ of_the_green_traffic_sign_block" align=center />|
+|<img src="./img/Green/Adjusting_the_LAB_Range_Values_for_green_Color.png" alt="Adjusting_the_LAB_Range_Values_for_green_Color" align=center />|<img src="./img/Green/Save_the_LAB_range_values_for_green.png"  alt="Save_the_LAB_range_values_for_green" align=center />|<img src="./img/Green/Live_image_ of_the_green_traffic_sign_block.png" alt="Live_image_ of_the_green_traffic_sign_block" align=center />|
 
 
 
 **Blue line-藍色線條**
 
 
-|Adjusting the LAB Range Values for Blue Color(調整藍色的 LAB 範圍值)|Save the LAB range values for Blue(儲存藍色的 LAB 範圍值)|Live image of the Blue line（藍色線條的即時影像）|
+|Adjusting the LAB Range Values for Blue Color(調整藍色的 LAB 範圍值)|Save the LAB range values for Blue(儲存藍色的 LAB )|Live image of the Blue line（藍色線條的即時影像）|
 |:----:|:----:|:----:|
-|<img src="./img/Blueline/Adjusting_the_HSV_Range_Values_for_blueline_Color.png" alt="Adjusting_the_HSV_Range_Values_for_blueline_Color" align=center />|<img src="./img/Blueline/Save_the_HSV_range_values_for_blueline.png"  alt="Save_the_HSV_range_values_for_blueline" align=center />|<img src="./img/Blueline/Live_image_ of_the_blueline.png" alt="Live_image_ of_the_blueline" align=center />|
+|<img src="./img/Blueline/Adjusting_the_LAB_Range_Values_for_blueline_Color.png" alt="Adjusting_the_LAB_Range_Values_for_blueline_Color" align=center />|<img src="./img/Blueline/Save_the_LAB_range_values_for_blueline.png"  alt="Save_the_LAB_range_values_for_blueline" align=center />|<img src="./img/Blueline/Live_image_ of_the_blueline.png" alt="Live_image_ of_the_blueline" align=center />|
 
 
 
 **Orange line-橘色線條**
 
 
-|Adjusting the LAB Range Values for Orange Color調整橘色的 LAB 範圍值)|Save the LAB range values for Orange(儲存橘色的 LAB 範圍值)|Live image of the Orange line(橘色線條的即時影像) |
+|Adjusting the LAB Range Values for Orange Color(調整橘色的 LAB 範圍值)|Save the LAB range values for Orange(儲存橘色的 LAB)|Live image of the Orange line(橘色線條的即時影像) |
 |:----:|:----:|:----:|
-|<img src="./img/Orangeline/Adjusting_the_HSV_Range_Values_for_Orangeline_Color.png" alt="Adjusting_the_HSV_Range_Values_for_Orange line_Color" align=center />|<img src="./img/Orangeline/Save_the_HSV_range_values_for_Orangeline.png"  alt="Save_the_HSV_range_values_for_Orange linee" align=center />|<img src="./img/Orangeline/Live_image_ of_the_Orangeline_block.png" alt="Live_image_ of_the_Orange_line" align=center />|
+|<img src="./img/Orangeline/Adjusting_the_LAB_Range_Values_for_Orangeline_Color.png" alt="Adjusting_the_LAB_Range_Values_for_Orange line_Color" align=center />|<img src="./img/Orangeline/Save_the_LAB_range_values_for_Orangeline.png"  alt="Save_the_LAB_range_values_for_Orange linee" align=center />|<img src="./img/Orangeline/Live_image_ of_the_Orangeline_block.png" alt="Live_image_ of_the_Orange_line" align=center />|
 
 
 
 **Pink sidewall-粉紅色側牆**
 
 
-|Adjusting the LAB Range Values for Pink Color(調整粉紅色的 LAB 範圍值)|Save the LAB range values for Pink(儲存粉紅色的 LAB 範圍值)|Live image of the Pink sidewall(粉紅色邊牆的即時影像)|
+|Adjusting the LAB Range Values for Pink Color(調整粉紅色的 LAB 範圍值)|Save the LAB range values for Pink(儲存粉紅色的 LAB )|Live image of the Pink sidewall(粉紅色邊牆的即時影像)|
 |:----:|:----:|:----:|
-|<img src="./img//pink/Adjusting_the_HSV_Range_Values_for_pink_Color.png" alt="Adjusting_the_HSV_Range_Values_for_pink_Color" align=center />|<img src="./img/pink/Save_the_HSV_range_values_for_pink.png"  alt="Save_the_HSV_range_values_for_pink" align=center />|<img src="./img/pink/Live_image_ of_the_pink_traffic_sign_block.png" alt="Live_image_ of_the_pink_traffic_sign_block" align=center />|
+|<img src="./img//pink/Adjusting_the_LAB_Range_Values_for_pink_Color.png" alt="Adjusting_the_LAB_Range_Values_for_pink_Color" align=center />|<img src="./img/pink/Save_the_LAB_range_values_for_pink.png"  alt="Save_the_LAB_range_values_for_pink" align=center />|<img src="./img/pink/Live_image_ of_the_pink_traffic_sign_block.png" alt="Live_image_ of_the_pink_traffic_sign_block" align=center />|
 
 </div>
 
