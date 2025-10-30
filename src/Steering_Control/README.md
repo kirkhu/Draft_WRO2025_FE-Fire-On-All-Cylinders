@@ -43,8 +43,7 @@
 - ### Vehicle block avoidance control-車輛避障控制
    ### 中文:
   - 根據任務需求，當車輛偵測到紅色交通號誌遮擋時，系統觸發向右繞行機動；當遇到綠色障礙物時，它會觸發向左繞行機動。 
-  - 當車輛移動時，攝影機將視訊傳送到控制器（Jetson Nano），然後控制器進行影像處理以取得 X 和 Y 座標以及畫面中物體的面積大小。這些數據可協助控制器確定物體的位置和距離，從而實現精確導航和避障。 
-  - 在捕獲的影像上繪製紅色和綠色的二次貝塞爾曲線，以引導車輛駛向交通號誌燈，並沿著曲線準確定位路障。
+  - 當車輛移動時，攝影機將視訊傳送到控制器（Jetson orin Nano），然後控制器進行影像處理以目標柱子在畫面中的理想 X 座標位置。這些數據可協助控制器確定物體的位置和距離，從而實現精確導航和避障。 
  ### 英文:
   - According to task requirements, when the vehicle detects a red traffic signal block, the system triggers a rightward bypass maneuver; when it encounters a green block, it triggers a leftward bypass maneuver.
   - As the vehicle moves, the camera transmits video to the controller (Jetson Nano), which then performs image processing to obtain the X and Y coordinates and the area size of objects in the frame. This data helps the controller determine the position and distance of objects for accurate navigation and obstacle avoidance.
@@ -61,23 +60,6 @@
   |Recognize the color of traffic signal blocks.|The color and X, Y coordinates of traffic signal blocks.|
   |:---:|:---:|
   |<div align="center"> <img src="./img/Detecting_nearby_obstacles.png"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/Obstacle_XY_coordinates.png"  alt="Obstacle_XY_coordinates"></div>|
-
-</div>  
-
-
- - ### Vehicle U-turn control
-    - According to task requirements, when the vehicle starts, if the traffic signal block behind it is red, the vehicle needs to make a U-turn and travel one loop in the opposite direction after completing the second lap around the course.
-    - The system uses the camera to detect the presence of blue or orange lines and the gyroscope to check if the current angle is within ±35 degrees of the target angle. If these conditions are met, the turn count variable is incremented, and the system further checks if the vehicle has reached the final area of the second lap. Once a lap is completed, the lap count variable is incremented.
-    - After completing a lap, the turn count variable is reset and starts counting anew. When the turn count variable reaches 3, it indicates that the vehicle has entered the final area of the second lap.
-    - Upon reaching the final area of the second lap, the system will determine if the last traffic signal block is red. If it is red, the vehicle will perform a U-turn; if it is not red, the vehicle will continue forward.
- <div align="center">
-
-|Display the current traffic signal block color and variables.|Record the last green block|
-|:---:|:---:
-|<div align="center"> <img src="./img/detect_last_obstacle.png"  alt="detect_last_obstacle"></div>|<div align="center"> <img src="./img/camera_detects_color.png"  alt="camera_detects_color"></div>|
-
-</div>
-
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
 
