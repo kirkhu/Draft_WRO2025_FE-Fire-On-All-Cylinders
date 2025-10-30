@@ -56,7 +56,7 @@
     </div>
 
   ### 中文:
-    由於一開始我們是用二值化黑跟白來算出牆壁面積，但我們參考其他國家的偵測方式，所以我選擇參考加拿大偵測使用
+    一開始我們採用二值化黑白檢測來辨識賽道邊界，但我們研究國際隊伍的作法後，發現加拿大隊利用邊緣檢測描繪牆面輪廓，能提供更穩定的偵測。因此，我們決定改成邊緣檢測這種方式，來描繪牆壁輪廓。
   ### 英文:
     1. **Color Conversion**:  
      We start by using `cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)` to convert the RGB image to grayscale, then apply `cv2.threshold(src, thresh, maxval, type)` to transform the grayscale image into a binary image.
@@ -79,9 +79,9 @@
 <div align="center">
 <table>
 <tr>
-<th> Obstacle Detection on in Images　(影像中的障礙物檢測）</th>
+<th> Obstacle Detection on in Images　(影像中的障礙物檢測)</th>
 <th> Orange and Blue lines Detection on in Images（影像中的橙色和藍色線條檢測）</th>
-<th> floor-to-boundary (black-and-white) Detection on in Images（影像中的地板到邊界（黑白）檢測）</th>
+<th> floor-to-boundary (black-and-white) Detection on in Images（影像中的地板到邊界邊緣檢測）</th>
 </tr>
 <tr>
 <td><img src="./img/Obstacle_detection.png" alt="Obstacle_detection" align=center /></td>
