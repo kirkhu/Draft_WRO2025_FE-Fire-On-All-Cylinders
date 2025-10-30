@@ -88,11 +88,17 @@
 
 **Member:** HU XIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
-**Content:**  
+**Content:**  ( 補電路設計圖)
 
- - 為了讓電路板配置更整齊，我們採用 EasyEDA 繪製電路板，並將設計完成的圖稿透過洗印方式製作出第一代電路板。由於這是我們首次接觸電路板設計，當時未能注意到設計軟體中其實已提供標準的元件排版範例。我們改以自行測量排針與排針之間的間距，但因經驗不足，最終在電路板製作完成後才發現設計的間距過小，導致元件無法順利插入。這次失誤讓我們獲得了寶貴的學習經驗，也立即推動我們對設計進行修正與優化。經過快速調整後，我們完成了第二代電路板，成功解決了間距問題，使元件安裝更為順利，整體佈線也更加合理。
+- 為了避免使用電木板焊接時可能導致的控制器短路損毀，並實現更整潔、更易於配置的電路板佈局，我們決定採用 EasyEDA 繪製 PCB，並透過**化學蝕刻（洗印）**製作了第一代電路板。
+- 由於這是團隊首次進行 PCB 設計，我們初期忽略了設計軟體內建的標準元件排版範例，轉而依賴手動測量排針間距作為設計依據。然而，由於經驗尚淺，首代電路板在製作完成後才發現間距設定過小，導致元件無法順利插裝。
+- 這次失誤提供了寶貴的實戰經驗，促使我們立即啟動設計修正與優化流程，並隨即送廠製作了第二代版本。
 
- - To achieve a more organized circuit board layout, we used EasyEDA to design the PCB and then fabricated the first-generation board using a printed-etching process. Since this was our first experience with PCB design, we failed to notice that the software already provided standard component layout templates. Instead, we manually measured the spacing between pin headers. Due to our lack of experience, we only discovered after fabrication that the spacing was too narrow, which prevented the components from being properly inserted. This mistake provided us with valuable hands-on experience and immediately motivated us to revise and optimize our design. After a quick round of adjustments, we successfully developed the second-generation PCB, which resolved the spacing issue, improved component installation, and made the overall wiring layout more efficient.
+- To prevent controller short-circuit damage that could result from soldering on perfboard (bakelite board), and to achieve a neater and more easily configurable circuit board layout, we opted to use EasyEDA for PCB layout, producing the first-generation board via chemical etching (PCB fabrication).
+
+- As this was the team's initial foray into PCB design, we initially overlooked the standard component placement examples built into the design software, relying instead on manually measuring the spacing between pin headers as our basis. However, due to inexperience, we discovered after the first board was fabricated that the spacing was set too narrowly, resulting in the inability to successfully insert the components.
+
+- This error provided invaluable practical experience, immediately driving us to initiate a design revision and optimization process, followed by sending the updated design for the fabrication of the second-generation board.
 <div align="center" >
 <table >
 <tr align="center">
