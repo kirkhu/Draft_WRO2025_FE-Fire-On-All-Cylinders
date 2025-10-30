@@ -1,8 +1,8 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-## <div align="center">Testing Video of Self-Driving Car in Obstacle Challenge-自駕車在障礙挑戰中的測試影片</div>
+## <div align="center">Challenge rounds-testing Video of Self-Driving Car in Obstacle Challenge-自駕車在障礙挑戰中的測試影片</div>
 
-- ### Test videos of the Self-Driving Car parking in the four zones of the game field.-自駕車駛入場地四個區域的停車測試影片。
+- ###  Test videos of the Self-Driving Car parking in the four zones of the game field.-自駕車駛入場地四個區域的停車測試影片。
   #### Clockwise 順時計
   <div align="center">
   <table >
