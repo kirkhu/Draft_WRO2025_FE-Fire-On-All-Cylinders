@@ -65,13 +65,17 @@
 
 **Content:**
 
- - 本周我們進行了系統安裝及驅動下載，由於使用小螢幕連接Jetson Nano進行系統操作過於麻煩還有接口損傷的風險，因此我們在Jetson Nano上安裝了NoMachine遠端桌面軟體以便後續編寫自駕車程序，以下是安裝及測試系統和軟體功能的照片。
+ - 本週的工作重點是系統安裝與驅動程式下載。考量到直接透過小型螢幕操作 Jetson Nano 存在介面操作不便與連接埠損壞的風險，我們決定採用更高效的方式：在 Jetson Nano 上部署了 NoMachine 遠端桌面軟體，以便後續進行自動駕駛程式的編寫與除錯。
+ - 以下附有系統安裝、驅動程式下載及遠端桌面功能測試的照片作為佐證。
+
+ - This week's focus was on system installation and driver download. Considering the inconvenience and the risk of physical port damage associated with operating the Jetson Nano directly via a small monitor, we opted for a more efficient approach: deploying the NoMachine remote desktop software onto the Jetson Nano. This enables smooth coding and debugging of the autonomous driving programs going forward. 
+ - Attached are supporting photos documenting the system installation, driver download, and remote desktop functionality testing.
 
 <div align="center">
     <table>
         <tr align=center>
-            <th width=50% style="text-align: center;">Jetson Orin Nano Software Environment Installation</th>
-            <th width=50% style="text-align: center;">Jetson Orin Nano Software Environment Testing</th>
+            <th width=50% style="text-align: center;">Jetson  Nano Software Environment Installation</th>
+            <th width=50% style="text-align: center;">Jetson  Nano Software Environment Testing</th>
         </tr>
         <tr>
             <td><img src="./img/3/1.jpg"/></td>
