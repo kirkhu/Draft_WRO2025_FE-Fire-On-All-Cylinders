@@ -106,9 +106,9 @@
 <th>First-Generation PCB Back View</th>
 <tr align="center">
 <td>
-<img src="./img/4/1.png" width = "300"  alt="data" align=center /></td>
+<img src="./img/4/1.png" width = "300"  alt="First-Generation PCB Front View" align=center /></td>
 <td>
-<img src="./img/4/2.png" width = "300"  alt="data" align=center /></td>
+<img src="./img/4/2.png" width = "300"  alt="First-Generation PCB Back View" align=center /></td>
 </tr>
 </table>
 </div>
@@ -118,17 +118,18 @@
 
 **Content:** 
 
- - 本周我們開始撰寫我們的自駕車程序，我們為了能夠順利撰寫自駕車程序在網路上查詢了相關資料，例如：Raspberry Pi Pico和Jetson Nano之間要如何進行通訊、要如何使用Raspberry Pi Pico控制直流馬達上的Encoder、讀取超音波數值等。
+ - 本週，我們正式啟動了自駕車程序的編寫工作。為了確保主控單元（Jetson Nano）與輔助單元（Raspberry Pi Pico）之間能順利協同運作，我們投入時間研究了關鍵的通訊協議。具體研究方向包括：Jetson Nano 與 Raspberry Pi Pico 之間的通訊機制、如何利用 Raspberry Pi Pico 精準控制直流馬達的編碼器（Encoder），以及實施超音波感測器的數值讀取等技術環節。
+ - This week, we officially commenced the development of the Self-Driving-Cars software. To ensure seamless coordination between the main control unit (Jetson Nano) and the auxiliary unit (Raspberry Pi Pico), we dedicated time to researching critical communication protocols. Our specific areas of investigation included: the communication mechanism between the Jetson Nano and the Raspberry Pi Pico, how to precisely control the DC motor encoder using the Raspberry Pi Pico, and the implementation strategy for reading ultrasonic sensor data.
 
  <div align=center>
     <table>
         <tr>
-            <th align=center>查找相關資料</th>
-            <th align=center>撰寫自駕車程序</th>
+            <th align=center>Searched for relevant information online.查找相關資料</th>
+            <th align=center>Coding the self-driving-cars program.撰寫自駕車程序</th>
         </tr>
         <tr>
-            <td><img src="./img/3/4.jpg" width=400 /></td>
-            <td><img src="./img/3/5.jpg" width=400 /></td>
+            <td><img src="./img/3/4.jpg" alt="Searched for relevant information online." width=400 /></td>
+            <td><img src="./img/3/5.jpg" alt="Coding the self-driving-cars program." width=400 /></td>
         </tr>
     </table>
  </div>
