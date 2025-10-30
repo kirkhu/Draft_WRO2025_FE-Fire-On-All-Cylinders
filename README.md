@@ -60,7 +60,7 @@
   #### 4. Pictures – Team and Vehicle-圖片 – 車隊和車輛
     - [4-1 Team Members Introduction (團隊成員介紹)](t-photos/README.md)
     - [4-2 Vehicle Photos ](v-photos/README.md)  
-  #### 5. Performance Videos-表演影片
+  #### 5. Challenge rounds - Performance Videos-表演影片
     - [5-1 Open Challenge(公開挑戰) ](video/Open_Challenge/video.md)
     - [5-2 Obstacle Challenge (障礙挑戰)](video/Obstacle_Challenge/video.md)
   #### 6. GitHub Utilization-GitHub 使用率
