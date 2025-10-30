@@ -61,8 +61,8 @@
     - [4-1 Team Members Introduction (團隊成員介紹)](t-photos/README.md)
     - [4-2 Vehicle Photos ](v-photos/README.md)  
   #### 5. Performance Videos - Challenge rounds 表演影片
-    - [5-1 Open Challenge(公開挑戰) ](video/Open_Challenge/video.md)
-    - [5-2 Obstacle Challenge (障礙挑戰)](video/Obstacle_Challenge/video.md)
+    - [5-1 Open Challenge rounds(公開挑戰) ](video/Open_Challenge/video.md)
+    - [5-2 Obstacle Challenge rounds (障礙挑戰)](video/Obstacle_Challenge/video.md)
   #### 6. GitHub Utilization-GitHub 使用率
     - [6-1 GitHub Edit(VScode Edit/GIT) (GitHub 編輯VScode 編輯/GIT)](src/GitHub_Edit/README.md)
     - [6-2 GitHub Web Editing Languages(GitHub Web 編輯語言) ](src/GitHub_Languages/README.md)  
