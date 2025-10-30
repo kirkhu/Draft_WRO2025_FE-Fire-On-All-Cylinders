@@ -44,8 +44,8 @@
 <th>This year's competition vehicle model</th>
 </tr>
 <tr align="center">
-<td><img src="../../models/Vehicle_2D_3D/img/right.png"  width="300" alt="Vehicle_cad"></td> 
-    <td><img src="../../v-photos/img/right.png" width="300" alt="vehicle Underfloor"></td> 
+<td><img src="./img/2/Last year's.png"  width="300" alt="Vehicle_cad"></td> 
+    <td><img src="./img/2/This year's.png" width="300" alt="vehicle Underfloor"></td> 
 </tr>
 </table>
 </div>
