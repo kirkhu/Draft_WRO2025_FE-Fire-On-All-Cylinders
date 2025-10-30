@@ -4,9 +4,18 @@
 
  - ### Vehicle steering control-車輛轉向控制
     ### 中文:
-    - 當車輛偵測到地面上的藍線或橘線時，系統會觸發轉向動作。側壁的突出顯示值偵測可確保車輛保持安全距離以避免碰撞，而藍線和橙線則可偵測可識別車輛的轉彎方向，使其能夠安全、精確地導航曲線或轉角處。 
-    - 當車輛移動時，系統使用攝影機偵測突出顯示的值以及地面上的藍線和橙線。當接近轉彎時，系統會評估藍線和橙線的 y 軸位置，並使用這些值來確定轉彎的接近程度。距離越近，y軸值越大。系統選擇y軸值最大的顏色作為轉向的依據，確保轉向準確。 
-    - 確定轉彎方向後，系統進一步評估攝影機視圖左側和右側突出顯示的值。只有當高亮值達到或超過4500時，才會啟動轉彎動作，這樣的設定可以有效防止過早轉彎，降低車輛因過早轉向而撞到側壁的風險，確保轉彎的準確性和安全性。
+   1. 轉向訊號來源與作用
+   - 當攝影機偵測到地面藍線或橘線時，系統啟動轉向判斷流程。
+   - 以「側壁高亮值」監控左右距離，維持安全間隙，避免擦撞。
+   - 藍線與橘線負責提供「轉彎方向」線索，確保車輛能在彎道或轉角處安全、精準導航。
+   2.  接近度評估與方向選擇
+   - 車輛行進中，系統持續量測「側壁高亮值」與地面藍/橘線。
+   - 接近彎道時，比較藍線與橘線在影像中的 y 軸位置。距離越近，y 值越大。
+   - 取 y 軸值最大的顏色 作為本次轉向依據，以此決定左轉或右轉。
+   3. 安全門檻與轉向執行
+   - 確認方向後，進一步檢查影像左右側的「側壁高亮值」。
+   - 只有當對應側的高亮值 ≥ 4500 時，才允許下達轉向指令。
+   - 此門檻可避免過早入彎，降低擦牆風險，並提升轉向穩定度與精度。
    ### 英文:
     - When the vehicle detects a blue or orange line on the ground, the system triggers a steering action. Highlighted value detection of the sidewall ensures the vehicle maintains a safe distance to avoid collisions, while the blue and orange line detection identifies the vehicle’s turning direction, allowing it to navigate curves or corners safely and precisely.
     - As the vehicle moves, the system uses the camera to detect highlighted values and the blue and orange lines on the ground. When approaching a turn, the system assesses the y-axis position of the blue and orange lines and uses these values to determine the proximity of the turn. The closer the distance, the larger the y-axis value. The system selects the color with the largest y-axis value as the basis for steering direction, ensuring accurate turning.
