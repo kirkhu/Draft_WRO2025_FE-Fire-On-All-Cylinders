@@ -37,9 +37,9 @@
   </tr>
   <tr >
       <td align="center">HU,SIAN-YI</td>
-      <td align="left">工作分配:<br>
-         <ol><li>主要負責程式開發 </li>
-             <li>協助車輛電路設計 </li>
+      <td align="left">Work Assignments工作分配:<br>
+         <ol><li>Primary responsibility for program development. 主要負責程式開發</li>
+             <li>Assisting with vehicle electrical circuit design.協助車輛電路設計 </li>
          </ol>
       </td>
   </tr>
@@ -54,9 +54,9 @@
   </tr>
   <tr align="center">
      <td>LIN,JHAN-RONG</td>
-     <td align="left">工作分配：<br>
-         <ol><li>主要負責車輛硬體整合</li>
-             <li> 撰寫報告 </li>
+     <td align="left">Work Assignments工作分配：<br>
+         <ol><li>Primary responsibility for vehicle hardware integration.主要負責車輛硬體整合</li>
+             <li>Assistance with report documentation and program debugging.協助撰寫報告及程式除錯 </li>
          </ol>
      </td>    
   </tr>
@@ -71,11 +71,12 @@
   </tr>
    <tr>
      <td align="center">JHANG,YI-WEI</td>
-     <td align="left"> 工作分配:<br>
+     <td align="left"> Work Assignments工作分配:<br>
          <ol>
-            <li>協助編寫程式</li>
-            <li>協助撰寫Github報告</li>
-          </ol>
+            <li>Primary responsibility for engineering documentation authoring.主要負責工程文件撰寫。</li>
+            <li>Assistance with vehicle hardware design.協助車輛硬體設計。</li>
+          </ol>      
+
   </tr>
 
   <tr align="center">
