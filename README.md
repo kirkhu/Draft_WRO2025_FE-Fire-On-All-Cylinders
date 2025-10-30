@@ -63,7 +63,7 @@
     - [5-1 Open Challenge rounds(公開挑戰) ](video/Open_Challenge/video.md)
     - [5-2 Obstacle Challenge rounds (障礙挑戰)](video/Obstacle_Challenge/video.md)
   #### 6. GitHub Utilization-GitHub 使用率
-    - [6-1 GitHub Edit(VScode Edit/GIT) (GitHub 編輯VScode 編輯/GIT)](src/GitHub_Edit/README.md)
+    - [6-1 GitHub Editing Tools Introduction(VScode Edit/GIT) (GitHub 編輯VScode 編輯/GIT)](src/GitHub_Edit/README.md)
     - [6-2 GitHub Web Editing Languages(GitHub Web 編輯語言) ](src/GitHub_Languages/README.md)  
   #### 7. Engineering Factor -工程因素 
     - [7-1 Work Diary(工作日記) **已改動](other/work_diary/README.md)
