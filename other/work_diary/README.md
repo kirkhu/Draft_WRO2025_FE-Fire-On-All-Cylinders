@@ -106,8 +106,8 @@
             <th>PCB</th>
         </tr>
         <tr align=center>
-            <td><img src="" height=300 alt="Schematic" /></td>
-            <td><img src="" height=300 alt="PCB" /></td>
+            <td><img src="" height=400 alt="Schematic" /></td>
+            <td><img src="" height=400 alt="PCB" /></td>
         </tr>
         <tr align="center">
             <th>First-Generation PCB Front View</th>
@@ -208,8 +208,8 @@
             <th>PCB</th>
         </tr>
         <tr align=center>
-            <td><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 3.png" height=300 alt="Schematic" /></td>
-            <td><img src="" height=300 alt="PCB" /></td>
+            <td><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 3.png" height=400 alt="Schematic" /></td>
+            <td><img src="" height=400 alt="PCB" /></td>
         </tr>
         <tr>
             <th>Second-Generation Front View</th>
@@ -524,8 +524,8 @@ if combined_control_signal < -180:
             <th>PCB</th>
         </tr>
         <tr align=center>
-            <td><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 4.png" height=300 alt="Schematic" /></td>
-            <td><img src="" height=300 alt="PCB" /></td>
+            <td><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 4.png" height=400 alt="Schematic" /></td>
+            <td><img src="" height=400 alt="PCB" /></td>
         </tr>
         <tr align="center">
             <th>Third-Generation Front View</th>
