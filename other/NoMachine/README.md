@@ -4,11 +4,13 @@
 ### 中文
 - NoMachine 是一款高效能的跨平台遠端桌面存取軟體，可讓使用者隨時隨地遠端連線到另一台電腦。其主要特點包括快速流暢的遠端操作體驗，並相容於 Windows、macOS、Linux、iOS 和 Android 等各種作業系統。
 - NoMachine 採用先進的影像壓縮技術，即使在低頻寬網路環境下也能確保高品質的圖形和音訊傳輸。此外，NoMachine 還支援遠端列印、檔案共享、USB 傳輸等功能，使其成為遠端辦公、技術支援和多裝置管理的理想選擇。
-- 特別針對 NVIDIA® Jetson Orin Nano 等開發平台，NoMachine 提供了便利的無線遠端控制解決方案，大幅提升了裝置操作的靈活性和應用可能性。
+- NoMachine 為 NVIDIA® Jetson Orin Nano 等開發平台提供了一套便捷的無線遠端控制解決方案，從而極大地提升了設備操作的靈活性。
+- 近期 NoMachine 軟體於 Linux ARM 環境的安裝方式已更新。以下內容將依循新的安裝流程進行說明。
 ### 英文 
-- NoMachine is a high-performance remote desktop access software that offers cross-platform support, allowing users to remotely connect to another computer anytime, anywhere. Its main features include a fast and smooth remote operation experience, compatible with various operating systems such as Windows, macOS, Linux, iOS, and Android.
-- NoMachine uses advanced image compression technology to ensure high-quality graphics and audio transmission, even in low-bandwidth network environments. Additionally, NoMachine supports remote printing, file sharing, USB transfer, and other functions, making it ideal for remote work, technical support, and multi-device management. 
-- Especially for development platforms like the NVIDIA® Jetson Orin Nano, NoMachine provides a convenient solution for wireless remote control, greatly enhancing device operational flexibility and application possibilities.
+- NoMachine is a high-performance, cross-platform remote desktop access software that allows users to remotely connect to another computer anytime, anywhere. Its main features include a fast and smooth remote operation experience, and compatibility with various operating systems such as Windows, macOS, Linux, iOS, and Android.
+- NoMachine utilizes advanced image compression technology to ensure high-quality graphics and audio transmission even in low-bandwidth network environments. Furthermore, NoMachine also supports features such as remote printing, file sharing, and USB transfer, making it an ideal choice for remote work, technical support, and multi-device management.
+- NoMachine provides a convenient wireless remote control solution for development platforms such as the NVIDIA® Jetson Orin Nano, thereby greatly enhancing the flexibility of device operation.
+- The installation method for the NoMachine software in the Linux ARM environment has recently been updated. The following content will be explained following the new installation procedure.
 
 - ### Installing NoMachine-安裝NoMachine
     - #### On the NVIDIA® Jetson Orin Nano-在 NVIDIA® Jetson Orin Nano 上
