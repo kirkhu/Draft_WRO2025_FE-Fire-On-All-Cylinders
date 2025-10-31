@@ -55,14 +55,12 @@
         ```
         hostname 
         ```
-        <td><img src="./img/nomachine_ip.png" width="500" alt="nomachine ip"></td>
 
-        連線後，輸入使用者名稱和密碼。
+        Enter the Jetson Orin Nano ip.
+        <td><img src="./img/nomachine_ip.png" width="500" alt="nomachine ip"></td>
 
         After connecting, enter the username and password. 
         <td><img src="./img/nomachine_connet.png" width="500" alt="nomachine connet"></td>
-
-        完成後，您就可以連線了。
 
         Once done, you’ll be able to connect.
         <td><img src="./img/nomachine_orin_ok.png" width="500" alt="nomachine jetson ok"></td>
