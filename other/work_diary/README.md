@@ -52,7 +52,7 @@
 <div align="center">
 <table>
 <tr align="center">
-<th >>For the design reference of this project, we consulted the engineering documents from our school's past teams and conducted a deep dive analysis of the technical files from last year's world champion team.</th>
+<th >For the design reference of this project, we consulted the engineering documents from our school's past teams and conducted a deep dive analysis of the technical files from last year's world champion team.</th>
 </tr>
 <tr align="center">
 <td> <img src="./img/find_data.jpg" width = "500"  alt="data" align=center /></td>
@@ -100,17 +100,24 @@
 
 - This error provided invaluable practical experience, immediately driving us to initiate a design revision and optimization process, followed by sending the updated design for the fabrication of the second-generation board.
 <div align="center" >
-<table >
-<tr align="center">
-<th>First-Generation PCB Front View</th>
-<th>First-Generation PCB Back View</th>
-<tr align="center">
-<td>
-<img src="./img/4/1.png" width = "300"  alt="First-Generation PCB Front View" align=center /></td>
-<td>
-<img src="./img/4/2.png" width = "300"  alt="First-Generation PCB Back View" align=center /></td>
-</tr>
-</table>
+    <table >
+        <tr>
+            <th>Schematic</th>
+            <th>PCB</th>
+        </tr>
+        <tr align=center>
+            <td><img src="" height=300 alt="Schematic" /></td>
+            <td><img src="" height=300 alt="PCB" /></td>
+        </tr>
+        <tr align="center">
+            <th>First-Generation PCB Front View</th>
+            <th>First-Generation PCB Back View</th>
+        </tr>
+        <tr align="center">
+            <td><img src="./img/4/1.png" width = "300"  alt="First-Generation PCB Front View" align=center /></td>
+            <td><img src="./img/4/2.png" width = "300"  alt="First-Generation PCB Back View" align=center /></td>
+        </tr>
+    </table>
 </div>
 
 ## 2025/03/18 ~ 2025/03/24
