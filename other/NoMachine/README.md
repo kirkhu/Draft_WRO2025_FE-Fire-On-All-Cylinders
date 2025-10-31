@@ -22,15 +22,16 @@
         - 下載完成後，打開終端機並輸入 cd Downloads 導航至下載資料夾。
         ### 英文
         - In the control interface of the Jetson Orin Nano, open a browser and navigate to the <a href="https://download.nomachine.com/download/?id=30&platform=linux&distro=arm" target="_blank">NoMachine download page</a>. Look for and select the NoMachine for Linux ARM (64-bit) software package compatible with the Jetson Orin Nano.  
-        
-           
+
+
         - After downloading, open the terminal and enter cd Downloads to navigate to the folder.-下載後，打開終端機並輸入 cd Documents 導航到該資料夾。
         ```
         cd Documents
         ```
-        - Then, enter unzip Nomachine_9.2.18_1_arm64.zip to unzip the file.
+        - 接著，使用者需執行相應的命令列指令，以完成軟體套件的安裝作業。本系統的軟體套件均採用 Debian 封裝格式（.deb）。
+        - Next, the user needs to execute the corresponding command-line instruction to complete the software package installation. The software packages for this system all use the Debian package format (.deb).
         ```
-        sudo dpkg -i Nomachine_9.2.18_1_arm64.zip
+        sudo dpkg -i nomachine_9.2.18_3_armhf.deb
         ```
        
         If you see this icon, the installation is complete.
