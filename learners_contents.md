@@ -25,9 +25,10 @@
     - [Software Platform Construction](./src/System_Platform_Software/README.md)
 - ### Obstacle Management
     - __Image Recognition Processing and Steering__
-      - [Image Recognition Processing](./src/Image_Recognition_Processing/README.md)  
+      - [Image Recognition Processing](./src/Image_Recognition_Processing/README.md) 
+    - [3-4-2Overview_of_Parking_Lot_Departure_Steering_Control](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
       - [Steering Control](./src/Steering_Control/README.md)  
-      - [Automatically record the HSV values of the field](src/Automatically_record_HSV/README.md)
+      - [Automatically record the LAB values of the field](src/Automatically_record_LAB/README.md)
     - __Programming__
       - [Open Challenge Code Overview](./src/Programming/Open_Challenge/README.md)
       - [Obstacle Challenge Code Overview](./src/Programming/Obstacle_Challenge/README.md)
