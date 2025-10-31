@@ -79,6 +79,7 @@
            <div align="center" ><img src="./img/nomachine_connet.png" width="500" alt="nomachine connet"></div>
 
         6. Once done, you’ll be able to connect.完成後，您就可以連線了。
+        
            <div align="center" ><img src="./img/nomachine_orin_ok.png" width="500" alt="nomachine jetson ok"></div>
 
     - #### Reference link:-參考連結：
