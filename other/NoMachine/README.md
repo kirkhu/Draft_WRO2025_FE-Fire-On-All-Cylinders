@@ -11,62 +11,45 @@
 - Especially for development platforms like the NVIDIA® Jetson Orin Nano, NoMachine provides a convenient solution for wireless remote control, greatly enhancing device operational flexibility and application possibilities.
 
 - ### Installing NoMachine-安裝NoMachine
-    - #### On the NVIDIA® Jetson  Orin Nano-在 NVIDIA® Jetson Nano 上
+    - #### On the NVIDIA® Jetson  Orin Nano
       若要在 NVIDIA® Jetson Orin Nano 上安裝 NoMachine，請依照下列步驟操作：
       
       To install NoMachine on an NVIDIA® Jetson Orin Nano, follow these steps:
 
-      __Download NoMachine for Linux ARM:-下載適用於 Linux ARM 的 NoMachine：__
-      ### 中文
-        - 在 Jetson Orin Nano 的控制器介面中，開啟瀏覽器並導航至 <a href="https://download.nomachine.com/download/?id=30&platform=linux&distro=arm" target="_blank">NoMachine 下載頁面</a>。尋找並選擇與 Jetson Orin Nano 相容的 NoMachine for Linux ARM（64 位元）軟體套件。
+      __Download NoMachine for Linux ARM:__
+        - 在 Jetson Orin Nano 的控制器介面中，開啟瀏覽器並導航至 <a href="https://pse.is/8amy9z" target="_blank">NoMachine 下載頁面</a>。尋找並選擇與 Jetson Orin Nano 相容的 NoMachine for ARM DEB (arm64) 軟體套件。
         - 下載完成後，打開終端機並輸入 cd Downloads 導航至下載資料夾。
-        ### 英文
-        - In the Jetson Orin Nano’s controller interface, open a browser and navigate to the <a href="https://download.nomachine.com/download/?id=30&platform=linux&distro=arm" target="_blank">NoMachine download page</a>. Locate and select the NoMachine for Linux ARM (64-bit) software package, which is compatible with the Jetson Nano.      
-        - After downloading, open the terminal and enter cd Downloads to navigate to the folder.-下載後，打開終端機並輸入 cd Downloads 導航到該資料夾。
-        ```
-        cd Downloads
-        ```
-        - Then, enter unzip Nomachine_7.10.1_1_arm64.zip to unzip the file.
-        ```
-        sudo dpkg -i Nomachine_7.10.1_1_arm64.zip
-        ```
-       
-        If you see this icon, the installation is complete.
-        
-        <td><img src="./img/nomachine_ok.png" width="500" alt="nomachine download"></td>
+          ```
+          cd Downloads
+          ```
+        - 輸入指令安裝 __nomachine_9.2.18_3_arm64.deb__ 套件
+          ```
+          sudo apt install nomachine_9.2.18_3_arm64.deb -y
+          ```
 
-    - #### On the Windows System  of Computer-在電腦Windows系統上       
-      若要在 Windows 上安裝 NoMachine，請依照下列步驟操作：
+        - If you see this icon, the installation is complete.
+          <div align=center><img src="./img/nomachine_ok.png" width=500 alt="nomachine download success"></div>
 
+    - #### On the Windows System  of Computer  
       To install NoMachine on Windows, follow these steps:
       
       __Download NoMachine for Windows (64-bit)-下載適用於 Windows（64 位元）的 NoMachine__
        ### 中文
-        - 在 Windows 電腦上，開啟瀏覽器並造訪 <a href="https://pse.is/7zvlmg" target="_blank">NoMachine 下載頁面</a>。尋找並選擇適用於 Windows（64 位元）的 NoMachine 軟體包，下載與 Windows 相容的版本。
-        - 下載完成後，執行安裝檔。安裝完成後，您需要__重新啟動__電腦。
-        ### 英文
-        - In a Windows computer, open a browser and go to the <a href="https://pse.is/7zvlmg" target="_blank">NoMachine download page</a>. Find and select the NoMachine for Windows (64-bit) software package to download the version compatible with Windows.
-        - After downloading, run the installation file. You will need to __restart__ the computer afterward.
-        <td><img src="./img/nomachine_download.jpg" width="500" alt="nomachine download"></td>
+        - 在 Windows 電腦上，開啟瀏覽器並造訪 <a href="https://pse.is/7zvlmg" target="_blank">NoMachine 下載頁面</a>。尋找並選擇 __NoMachine for Windows - 64bit__ 的 NoMachine 軟體包，下載與 Windows 相容的版本。
+        - 下載完成後，執行安裝檔。
+        - 安裝完成後，您需要 __重新啟動__ 電腦。
+          <div align=center><img src="./img/nomachine_download.png" width=500 alt="nomachine for windows download"></div>
 
+    - #### Connecting to Jetson Orin Nano
+      - Open NoMachine on Windows.
+        <img src="./img/nomachine_open.jpg" width="500" alt="nomachine open">
 
-    - #### Connecting to Jetson Nano-連接到 Jetson Nano
-         在 Windows 上開啟 NoMachine。
-         Open NoMachine on Windows.
-
-         <img src="./img/nomachine_open.jpg" width="500" alt="nomachine open">
-
-        輸入 Jetson Orin Nano 的 IP 位址。
-
-        尋找 IP 位址。
-
-        Enter the Jetson Orin Nano IP address.
+      - Enter the Jetson Orin Nano IP address.
 
         Find the IP address.
         ```
         ifconfig  
         ```
-        尋找用戶名。
 
         Find the username.
         ```
