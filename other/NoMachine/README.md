@@ -33,7 +33,7 @@
     - #### On the Windows System  of Computer  
       To install NoMachine on Windows, follow these steps:
       
-      __Download NoMachine for Windows (64-bit)-下載適用於 Windows（64 位元）的 NoMachine__
+      __Download NoMachine for Windows (64-bit)__
        ### 中文
         - 在 Windows 電腦上，開啟瀏覽器並造訪 <a href="https://pse.is/7zvlmg" target="_blank">NoMachine 下載頁面</a>。尋找並選擇 __NoMachine for Windows - 64bit__ 的 NoMachine 軟體包，下載與 Windows 相容的版本。
         - 下載完成後，執行安裝檔。
@@ -42,7 +42,7 @@
 
     - #### Connecting to Jetson Orin Nano
       - Open NoMachine on Windows.
-        <img src="./img/nomachine_open.jpg" width="500" alt="nomachine open">
+        <div align=center><img src="" width=500 alt="nomachine open"></div>
 
       - Enter the Jetson Orin Nano IP address.
 
