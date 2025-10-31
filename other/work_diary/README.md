@@ -958,10 +958,31 @@ sudo apt-get -y install sdkmanager
 
  - 本周我們使用安裝在機器前後的紅外線感測器進行停車流程。下方為紅外線感測器的類比訊號讀取程序。
 
- ```python
+    ```python
+    class TCRT5000:
+        def __init__(self, adc_pin):
+            try:
+                self.adc = ADC(Pin(adc_pin))
+            except:
+                self.adc = None
 
+        def read_raw(self):
+            try:
+                return self.adc.read_u16()
+            except:
+                return -1
 
- ```
+        def read_percentage(self):
+            try:
+                raw = self.read_raw()
+                if raw == -1:
+                    return -1
+                percentage = (raw / 65535) * 100
+                return round(percentage, 1)
+            except:
+                return -1
+
+    ```
 
  ## 2025/10/21 ~ 2025/10/26
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
