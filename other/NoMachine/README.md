@@ -63,11 +63,11 @@
 
         尋找 IP 位址。
 
-        Enter the Jetson Orin Nano IP address.
+        2. Enter the Jetson Orin Nano IP address.
 
-        Find the IP address.
+        3. Find the IP address.
         ```
-        ifconfig  
+            ifconfig  
         ```
 
         4. Find the username.尋找用戶名。
