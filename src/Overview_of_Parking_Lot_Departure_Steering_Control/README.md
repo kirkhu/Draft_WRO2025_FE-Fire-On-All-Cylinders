@@ -4,7 +4,9 @@
 
  - ### Vehicle steering control-車輛轉向控制
     ### 中文:
-    - 一開始我們我先判斷順時針還是逆時針的行駛方向，然後再朝向柱子判斷是紅色還是綠色
+    - 我們首先判斷車輛的行駛方向是順時針或逆時針，接著朝向前方的柱子進行顏色辨識。
+    - 若為逆時針方向：偵測到綠色柱子則行駛於內側，偵測到紅色柱子則行駛於外側；若未偵測到柱子，則預設行駛外側。
+    - 相反地，若為順時針方向：偵測到綠色柱子則行駛於外側，偵測到紅色柱子則行駛於內側；若未偵測到顏色，則同樣行駛外側。
    ### 英文:
     - When the vehicle detects a blue or orange line on the ground, the system triggers a steering action. Highlighted value detection of the sidewall ensures the vehicle maintains a safe distance to avoid collisions, while the blue and orange line detection identifies the vehicle’s turning direction, allowing it to navigate curves or corners safely and precisely.
     - As the vehicle moves, the system uses the camera to detect highlighted values and the blue and orange lines on the ground. When approaching a turn, the system assesses the y-axis position of the blue and orange lines and uses these values to determine the proximity of the turn. The closer the distance, the larger the y-axis value. The system selects the color with the largest y-axis value as the basis for steering direction, ensuring accurate turning.
