@@ -50,7 +50,7 @@
     <th>Adjusting the LAB Range Values for Pink Color(調整洋紅色的 LAB 範圍值)</th>
     </tr>
     <tr>
-    <td><img src="./img/pink_LAB.png" alt="pink_block_LAB" align=center /></td>
+    <td><img src="./img/magenta_LAB.png" alt="magenta_block_LAB" align=center /></td>
     </tr>
     </table>
     </div>
