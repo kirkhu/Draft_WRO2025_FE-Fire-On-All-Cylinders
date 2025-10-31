@@ -195,8 +195,16 @@
  - During the development of the second-generation version, we incorporated feedback from the first generation and recalibrated the pin header spacing using the built-in reference templates in the design software, successfully improving the original layout. However, due to an operational oversight, we mistakenly treated the back view as the front view during the PCB layout process, which resulted in polarity reversal after fabrication. Fortunately, this issue was identified immediately during the assembly and testing stage. In the third-generation version, we corrected the layout orientation and also conducted a thorough review of alignment rules across all layers to ensure full consistency between the design files and the physical product.
 
 <div align="center" >
-    <table >
-        <tr align="center">
+    <table>
+        <tr>
+            <th>Schematic</th>
+            <th>PCB</th>
+        </tr>
+        <tr align=center>
+            <td><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 3.png" height=300 alt="Schematic" /></td>
+            <td><img src="" height=300 alt="PCB" /></td>
+        </tr>
+        <tr>
             <th>Second-Generation Front View</th>
             <th>Second-Generation Back View</th>
         </tr>
@@ -503,17 +511,24 @@ if combined_control_signal < -180:
 
 - 經修正前兩代的設計問題後，第四代版本已成功通過功能測試。實際運行測試顯示，排針接點與電路佈局無異常，系統可穩定運作。
 <div align="center" >
-<table >
-<tr align="center">
-<th>Third-Generation Front View</th>
-<th>Third-Generation Back View</th>
-<tr align="center">
-<td>
-<img src="./img/6/5.png" width = "300"  alt="data" align=center /></td>
-<td>
-<img src="./img/6/6.png" width = "300"  alt="data" align=center /></td>
-</tr>
-</table>
+    <table >
+        <tr>
+            <th>Schematic</th>
+            <th>PCB</th>
+        </tr>
+        <tr align=center>
+            <td><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 4.png" height=300 alt="Schematic" /></td>
+            <td><img src="" height=300 alt="PCB" /></td>
+        </tr>
+        <tr align="center">
+            <th>Third-Generation Front View</th>
+            <th>Third-Generation Back View</th>
+        </tr>
+        <tr align="center">
+            <td><img src="./img/6/5.png" width = "300"  alt="data" align=center /></td>
+            <td><img src="./img/6/6.png" width = "300"  alt="data" align=center /></td>
+        </tr>
+    </table>
 </div>
 
 ## 2025/07/02 ~ 2025/07/21
@@ -694,7 +709,7 @@ sudo apt-get -y install sdkmanager
  ```
 
   - ### 介面操作
-    <div align=center>
+ <div align=center>
     <table>
         <tr>
             <th>將Jetson Orin Nano連接上電腦</th>
