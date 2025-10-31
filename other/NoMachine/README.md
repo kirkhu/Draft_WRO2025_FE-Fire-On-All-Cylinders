@@ -14,14 +14,16 @@
     - #### On the NVIDIA® Jetson Orin Nano-在 NVIDIA® Jetson Orin Nano 上
       若要在 NVIDIA® Jetson Orin Nano 上安裝 NoMachine，請依照下列步驟操作：
       
-      To install NoMachine on an NVIDIA® Jetson Orin Nano, follow these steps:
+       To install NoMachine on an NVIDIA® Jetson Orin Nano, follow these steps:
 
       __Download NoMachine for Linux ARM:-下載適用於 Linux ARM 的 NoMachine：__
       ### 中文
         - 在 Jetson Orin Nano 的控制器介面中，開啟瀏覽器並導航至 <a href="https://download.nomachine.com/download/?id=30&platform=linux&distro=arm" target="_blank">NoMachine 下載頁面</a>。尋找並選擇與 Jetson Orin Nano 相容的 NoMachine for Linux ARM（64 位元）軟體套件。
         - 下載完成後，打開終端機並輸入 cd Downloads 導航至下載資料夾。
         ### 英文
-        - In the Jetson Orin Nano’s controller interface, open a browser and navigate to the <a href="https://download.nomachine.com/download/?id=30&platform=linux&distro=arm" target="_blank">NoMachine download page</a>. Locate and select the NoMachine for Linux ARM (64-bit) software package, which is compatible with the Jetson Orin Nano.      
+        - In the control interface of the Jetson Orin Nano, open a browser and navigate to the <a href="https://download.nomachine.com/download/?id=30&platform=linux&distro=arm" target="_blank">NoMachine download page</a>. Look for and select the NoMachine for Linux ARM (64-bit) software package compatible with the Jetson Orin Nano.  
+        
+           
         - After downloading, open the terminal and enter cd Downloads to navigate to the folder.-下載後，打開終端機並輸入 cd Documents 導航到該資料夾。
         ```
         cd Documents
@@ -42,10 +44,10 @@
       
       __Download NoMachine for Windows (64-bit)-下載適用於 Windows（64 位元）的 NoMachine__
        ### 中文
-        - 在 Windows 電腦上，開啟瀏覽器並造訪 <a href="https://pse.is/7zvlmg" target="_blank">NoMachine 下載頁面</a>。尋找並選擇適用於 Windows（64 位元）的 NoMachine 軟體包，下載與 Windows 相容的版本。
+        - 在 Windows 電腦上，開啟瀏覽器並造訪 <a href="https://download.nomachine.com/download/?id=3&platform=windows" target="_blank">NoMachine 下載頁面</a>。尋找並選擇適用於 Windows（64 位元）的 NoMachine 軟體包，下載與 Windows 相容的版本。
         - 下載完成後，執行安裝檔。安裝完成後，您需要__重新啟動__電腦。
         ### 英文
-        - In a Windows computer, open a browser and go to the <a href="https://pse.is/7zvlmg" target="_blank">NoMachine download page</a>. Find and select the NoMachine for Windows (64-bit) software package to download the version compatible with Windows.
+        - In a Windows computer, open a browser and go to the <a href="https://download.nomachine.com/download/?id=3&platform=windows" target="_blank">NoMachine download page</a>. Find and select the NoMachine for Windows (64-bit) software package to download the version compatible with Windows.
         - After downloading, run the installation file. You will need to __restart__ the computer afterward.
         <td><img src="./img/nomachine_download.png" width="500" alt="nomachine download"></td>
 
