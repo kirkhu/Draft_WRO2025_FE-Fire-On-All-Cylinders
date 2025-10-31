@@ -37,7 +37,7 @@
        
         If you see this icon, the installation is complete.
         
-        <img src="./img/nomachine_ok.png" width="500" alt="nomachine download">
+         <div align="center" ><img src="./img/nomachine_ok.png" width="500" alt="nomachine download"></div>
 
     - #### Computer Configuration for Windows Systems -在電腦Windows系統上       
       若要在 Windows 上安裝 NoMachine，請依照下列步驟操作：
@@ -52,13 +52,13 @@
         - In a Windows computer, open a browser and go to the <a href="https://download.nomachine.com/download/?id=3&platform=windows" target="_blank">NoMachine download page</a>. Find and select the NoMachine for Windows (64-bit) software package to download the version compatible with Windows.
         - After downloading, run the installation file. You will need to __restart__ the computer afterward.
 
-          <img src="./img/nomachine_download.png" width="500" alt="nomachine download">
+           <div align="center" ><img src="./img/nomachine_download.png" width="500" alt="nomachine download"></div>
 
 
     - #### Connecting to Jetson Orin Nano-連接到 Jetson Orin Nano
          在 Windows 上開啟 NoMachine。
         1. Open NoMachine on Windows.
-         <img src="./img/nomachine_open.jpg" width="500" alt="nomachine open">
+          <div align="center" ><img src="./img/nomachine_open.jpg" width="500" alt="nomachine open"></div>
 
         2. Enter the Jetson Orin Nano IP address.輸入 Jetson Orin Nano 的 IP 位址。
 
@@ -68,19 +68,19 @@
         ```
 
         4. Find the username.尋找用戶名。
-        <img src="./img/nomachine_ip.png" width="500" alt="nomachine ip">
+         <div align="center" ><img src="./img/nomachine_ip.png" width="500" alt="nomachine ip"></div>
         ```
             hostname 
         ```    
         5. After connecting, enter the username and password.  連線後，輸入使用者名稱和密碼。
-          <img src="./img/nomachine_connet.png" width="500" alt="nomachine connet">
+           <div align="center" ><img src="./img/nomachine_connet.png" width="500" alt="nomachine connet"></div>
 
         6. Once done, you’ll be able to connect.完成後，您就可以連線了。
-          <img src="./img/nomachine_orin_ok.png" width="500" alt="nomachine jetson ok">
+           <div align="center" ><img src="./img/nomachine_orin_ok.png" width="500" alt="nomachine jetson ok"></div>
 
     - #### Reference link:-參考連結：
-    - <a href="https://www.waveshare.net/wiki/JetRacer_ROS_AI_Kit_%E6%95%99%E7%A8%8B%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85Jetson_nano_%E9%95%9C%E5%83%8F?fbclid=IwZXh0bgNhZW0CMTEAAR0V-M05bMx0xIQx-QcMI9sqtP8dBWXZpjhOegNngVdwizYW9Frqc738AiA_aem_wfqPbQnY9yv5tcLjEwcHYw#Jetson_Nano.E4.B8.8A.E5.AE.89.E8.A3.85" target="_blank">Waveshare Wiki</a>
-    - <a href="https://www.nomachine.com/" target="_blank">NoMachine Website</a>
-    - <a href="https://en.wikipedia.org/wiki/NX_technology" target="_blank">Wikipedia</a>
+      - <a href="https://www.waveshare.net/wiki/JetRacer_ROS_AI_Kit_%E6%95%99%E7%A8%8B%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85Jetson_nano_%E9%95%9C%E5%83%8F?fbclid=IwZXh0bgNhZW0CMTEAAR0V-M05bMx0xIQx-QcMI9sqtP8dBWXZpjhOegNngVdwizYW9Frqc738AiA_aem_wfqPbQnY9yv5tcLjEwcHYw#Jetson_Nano.E4.B8.8A.E5.AE.89.E8.A3.85" target="_blank">Waveshare Wiki</a>
+      - <a href="https://www.nomachine.com/" target="_blank">NoMachine Website</a>
+      - <a href="https://en.wikipedia.org/wiki/NX_technology" target="_blank">Wikipedia</a>
 
 # <div align="center">![HOME](../img/home.png)[Return Home](../../)</div> 
