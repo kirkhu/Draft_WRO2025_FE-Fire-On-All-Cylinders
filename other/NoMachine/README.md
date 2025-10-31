@@ -57,13 +57,13 @@
         ```
 
         Enter the Jetson Orin Nano ip.
-        <td><img src="./img/nomachine_ip.png" width="500" alt="nomachine ip"></td>
+          <td><img src="./img/nomachine_ip.png" width="500" alt="nomachine ip"></td>
 
         After connecting, enter the username and password. 
-        <td><img src="./img/nomachine_connet.png" width="500" alt="nomachine connet"></td>
+          <td><img src="./img/nomachine_connet.png" width="500" alt="nomachine connet"></td>
 
         Once done, you’ll be able to connect.
-        <td><img src="./img/nomachine_orin_ok.png" width="500" alt="nomachine jetson ok"></td>
+          <td><img src="./img/nomachine_orin_ok.png" width="500" alt="nomachine jetson ok"></td>
 
     - #### Reference link:-參考連結：
     - <a href="https://www.waveshare.net/wiki/JetRacer_ROS_AI_Kit_%E6%95%99%E7%A8%8B%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85Jetson_nano_%E9%95%9C%E5%83%8F?fbclid=IwZXh0bgNhZW0CMTEAAR0V-M05bMx0xIQx-QcMI9sqtP8dBWXZpjhOegNngVdwizYW9Frqc738AiA_aem_wfqPbQnY9yv5tcLjEwcHYw#Jetson_Nano.E4.B8.8A.E5.AE.89.E8.A3.85" target="_blank">Waveshare Wiki</a>
