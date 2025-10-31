@@ -1,50 +1,35 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
 ## <div align="center">Distinctive Pseudo Code-獨特的偽代碼獨特的偽代碼</div>
-   ### Application of Bézier curves in vehicle steering control-貝塞爾曲線在車輛轉向控制的應用
-   - We use a quadratic Bézier curve to guide the vehicle toward the traffic signal block, accurately positioning the block along the curve. The quadratic Bézier curve provides a smooth turning path; by setting a starting point, control point, and endpoint, it can adjust the vehicle’s driving trajectory, ensuring that the vehicle moves steadily toward the block. At the same time, the block’s position can be projected onto the Bézier curve, facilitating precise positioning and avoidance maneuvers by the vehicle.
-   - Here are the steps to draw a quadratic Bézier curve and display it on an image:
-    <ol>
-    <li> Define control points: Each quadratic Bézier curve requires three control points, which determine the curve's starting point, endpoint, and the shape of its bend.</li>
-    <li>Calculate the points of the quadratic Bézier curve: Use the Bézier curve formula to generate points on the curve. For a quadratic Bézier curve, the formula is as follows:</li>
+### 邊緣偵測在車輛轉向控制的應用
+我們使用邊緣檢測技術引導車輛駛向交通號誌路口，並沿著檢測出的邊緣線進行精確定位。透過對影像進行邊緣偵測，可以明確辨識出道路邊界與行駛區域，進而生成車輛行進的導引路徑。此方法能即時反映環境變化，確保車輛平穩且準確地駛向路口，同時也能輔助進行路口定位與避障操作。
 
-      ![Bézier curve](./img/Bézier_curve.png) <br>
-      P0,𝑃1,and𝑃2 are the three control points, and 𝑡 ranges from [0, 1].
-    <li>Draw the curve: Use OpenCV to render the red and green quadratic Bézier curves.</li>
-    </ol>
 
 ```
-  def draw_multiple_curves(undistorted_frame, start_points, end_points, slope_values, curvature_factors, colors, thickness=2):
-    """
-    Draw multiple curves with different starting points, endpoints, slopes, and curvatures on the image, and return the coordinate list of the red curve.
-    """
-    red_curve_points = []  # Used to store the point coordinates of the red curve.
-    green_curve_points = []  # Used to store the point coordinates of the green curve.
+ def draw_roi_boxes(img, rois, color=(255, 204, 0), thickness=2):
+    for i, R in enumerate(rois, 1):
+        if R is None or len(R) != 4:
+            continue
+        x1, y1, x2, y2 = R
+        if x1 == x2 == y1 == y2 == 0:
+            continue
+        cv2.rectangle(img, (int(x1), int(y1)), (int(x2), int(y2)), color, thickness)
+        cv2.putText(img, f"ROI{i}", (int(x1) + 4, int(y1) + 18),
+            cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
 
-    for start_point, end_point, slope, curvature, color in zip(start_points, end_points, slope_values, curvature_factors, colors):
-        x1, y1 = start_point
-        x2, y2 = end_point
-        # Calculate the position of the intermediate control point to control the degree of curvature
-        mid_x = (x1 + x2) // 2
-        mid_y = (y1 + y2) // 2
-        control_x = mid_x
-        control_y = int(mid_y - curvature * slope * (x2 - x1))  # Use curvature and slope to adjust the intermediate control point.
-        #  Draw using Bézier curves.
-        curve_points = []
-        for t in np.linspace(0, 1, 100):
-            xt = (1 - t)**2 * x1 + 2 * (1 - t) * t * control_x + t**2 * x2
-            yt = (1 - t)**2 * y1 + 2 * (1 - t) * t * control_y + t**2 * y2
-            curve_points.append((int(xt), int(yt)))
-        # If it is a red curve, save the point coordinates.
-        if color == (0, 0, 255):  # Red curve
-            red_curve_points = curve_points
-        if color == (0, 255, 0):  # green curve
-            green_curve_points = curve_points
-        # Draw curves with OpenCV.
-        for i in range(len(curve_points) - 1):
-            cv2.line(undistorted_frame, curve_points[i], curve_points[i + 1], color, thickness)
+def draw_contours_list(img, contours, roi, color, label=None, thickness=2, show_bbox=True):
+    if contours is None or len(contours) == 0 or roi is None or len(roi) != 4:
+        return
+    ox, oy = int(roi[0]), int(roi[1])
+    for c in contours:
+        c2 = c + np.array([[[ox, oy]]])
+        cv2.drawContours(img, [c2], -1, color, thickness)
+        if show_bbox:
+            x, y, w, h = cv2.boundingRect(c2)
+            cv2.rectangle(img, (x, y), (x + w, y + h), color, 1)
+    if label:
+        cv2.putText(img, label, (ox + 4, oy + 16), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
-    return red_curve_points,green_curve_points  # Return the point coordinates of the red and green curves.
 ```
 <div align="center" ><img src="../../src/Steering_Control/img/Detecting_nearby_obstacles.png" width="400" alt="Recognize the color of traffic signal blocks"></div>
 
