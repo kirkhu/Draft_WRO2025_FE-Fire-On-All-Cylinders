@@ -42,7 +42,7 @@
 
     - #### Connecting to Jetson Orin Nano
       - Open NoMachine on Windows.
-        <div align=center><img src="" width=500 alt="nomachine open"></div>
+        <div align=center><img src="./img/nomachine_open.jpg" width=500 alt="nomachine open"></div>
 
       - Enter the Jetson Orin Nano IP address.
 
