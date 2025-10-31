@@ -243,7 +243,7 @@
             <th>停車流程示意圖</th>
         </tr>
         <tr>
-            <td><img src="./img/4/5.png" width=400 /></td>
+            <td><img src="./img/4/5.png" width=600 /></td>
         </tr>
     </table>
  </div>
