@@ -25,7 +25,7 @@
 
 
         - After the download is complete, open the terminal and enter cd Downloads to navigate to the download folder.
-        -下載後，打開終端機並輸入 cd Documents 導航到該資料夾。
+        - 下載後，打開終端機並輸入 cd Documents 導航到該資料夾。
         ```
         cd Documents
         ```
