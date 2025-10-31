@@ -13,55 +13,77 @@
     - After determining the turning direction, the system further evaluates the highlighted values on the left and right sides of the camera view. The turn action only initiates when the highlighted value reaches or exceeds 4500. This setup effectively prevents premature turning, reducing the risk of the vehicle hitting the sidewall due to early steering, and ensures accuracy and safety in turning.
         - program code:
   ```
-   if count == 0:
-       if cPillar.area == 0:
-           aDiff = leftArea-rightArea
-           angle = int(aDiff*kp + (aDiff - prevDiff)*kd)
-        angle = clamp(angle, sharpLeft, sharpRight)
-        prevDiff = aDiff
-    else:
-        error = cPillar.x - cPillar.target
-        angle = int(0 + error*cKp + (error - prevError)*cKd)
-        angle = clamp(angle, sharpLeft, sharpRight)
-        if cPillar.target == greenTarget and cPillar.x > 320 and cPillar.area > 1000:
-            lastTarget = greenTarget
-        elif cPillar.target == redTarget and cPillar.x < 320 and cPillar.area > 1000:
-            lastTarget = redTarget
-        prevError = error
-    frame_id += 1
-    if frame_id % log_every == 0:
-        print(t, lTurn, rTurn, leftArea, rightArea, cPillar.target, angle, f"{relative_heading:.2f}",
-              "mag6:", mag6_area, mag6_center)
+        a = 0
+        start_turn = 0
+        while a == 0:
+            rightArea = leftArea = areaFront = tArea = 0
+            ok, img = cap.read()
+            if not ok:
+                continue
+            img_lab = cv2.cvtColor(img, cv2.COLOR_BGR2Lab)
+            img_lab = cv2.GaussianBlur(img_lab, (3,3), 0)
+
+            contours_left  = pOverlap(img_lab, ROI1)
+            contours_right = pOverlap(img_lab, ROI2)
+            leftArea  = max_contour(contours_left,  ROI1)[0]
+            rightArea = max_contour(contours_right, ROI2)[0]
+
+            if leftArea - rightArea > 0:
+                print("右轉"); start_turn = 1; a = 1
+            else:
+                print("左轉"); start_turn = 2; a = 1
+
+        write(start_turn)
+
+        turn==1→橘線；turn==2→藍線
+        use_color_for_lap = "orange" if start_turn == 1 else "blue"
+        print("[LapCounter] using:", use_color_for_lap)
+
+        # ==== 等待柱子顏色判斷 ====
+        color = 0
+        detect_start = time.time()
+        TIMEOUT = 2.0
+        while a == 1:
+            ok, img = cap.read()
+            if not ok:
+                continue
+            img_lab = cv2.cvtColor(img, cv2.COLOR_BGR2Lab)
+            img_lab = cv2.GaussianBlur(img_lab, (3,3), 0)
+
+            contours_left  = pOverlap(img_lab, ROI1, True)
+            contours_right = pOverlap(img_lab, ROI2, True)
+            leftArea  = max_contour(contours_left,  ROI1)[0]
+            rightArea = max_contour(contours_right, ROI2)[0]
+
+            contours_red   = find_contours(img_lab, rRed,   ROI3)
+            contours_green = find_contours(img_lab, rGreen, ROI3)
+            best_red,   _ = find_best_pillar(contours_red,   redTarget,   "red",   img_lab)
+            best_green, _ = find_best_pillar(contours_green, greenTarget, "green", img_lab)
+            candidates = [p for p in (best_red, best_green) if p is not None]
+            cPillar = min(candidates, key=lambda P: P.dist) if candidates else Pillar(0, 1000000, 0, 0, 0)
+            seen_green = (cPillar.target == greenTarget and cPillar.area > 0)
+            seen_red   = (cPillar.target == redTarget   and cPillar.area > 0)
+
+            if start_turn == 2:
+                if seen_green: color = 1; print("green"); a = 2
+                elif seen_red: color = 2; print("red"); a = 2
+                elif time.time() - detect_start > TIMEOUT: color = 3; a = 2
+            else:
+                if seen_green: color = 4; print("green"); a = 2
+                elif seen_red: color = 5; print("red"); a = 2
+                elif time.time() - detect_start > TIMEOUT: color = 6; a = 2
+
+        print(color)
+        write(color)
+        time2 = time.time()
+        while a == 2:
+            while time.time() - time2 < 4.5:
+                print(time.time() - time2)
+            a=3
  ```
 <div align=center>
 
-  |Sidewall highlighted value detection(側壁突出值檢測)
-  |Field blue and orange line recognition(場地藍橙線識別)|
-  |:---:|:---:|
-  |<div align="center"> <img src="./img/inverse_highlight_and_binarization.png"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/Detecting_nearby_obstacles.png"  alt="Detecting_nearby_obstacles"></div>|
-
-</div> 
-
-- ### Vehicle block avoidance control-車輛避障控制
-   ### 中文:
-  - 根據任務需求，當車輛偵測到紅色交通號誌遮擋時，系統觸發向右繞行機動；當遇到綠色障礙物時，它會觸發向左繞行機動。 
-  - 當車輛移動時，攝影機將視訊傳送到控制器（Jetson orin Nano），然後控制器進行影像處理以目標柱子在畫面中的理想 X 座標位置。這些數據可協助控制器確定物體的位置和距離，從而實現精確導航和避障。 
- ### 英文:
-  - According to task requirements, when the vehicle detects a red traffic signal block, the system triggers a rightward bypass maneuver; when it encounters a green block, it triggers a leftward bypass maneuver.
-  - As the vehicle moves, the camera transmits video to the controller (Jetson Nano), which then performs image processing to obtain the X and Y coordinates and the area size of objects in the frame. This data helps the controller determine the position and distance of objects for accurate navigation and obstacle avoidance.
-  - Quadratic Bézier curves in red and green are drawn on the captured image to guide the vehicle toward the traffic signal and accurately position the block along the curve.
-  
-  - The vehicle completes the traffic signal block avoidance through the following steps:
-    
-    1. The system detects traffic signal blocks through the camera and uses image recognition to analyze the y-coordinate, area, and color of the blocks, thereby determining the position of the block closest to the vehicle.
-    2. Next, the system obtains the X-coordinate of the nearest block and compares it with the corresponding X-coordinate on the Bézier curve to calculate the X-axis deviation. The deviation is then multiplied by a preset avoidance coefficient to determine the final error value.
-    3. Finally, based on the calculated error value, the servo motor's turning direction is adjusted to steer the vehicle appropriately, effectively avoiding the block and ensuring the safety and stability of its driving path.
-    
-<div align=center>
-
-  |Recognize the color of traffic signal blocks.|The color and X, Y coordinates of traffic signal blocks.|
-  |:---:|:---:|
-  |<div align="center"> <img src="./img/Detecting_nearby_obstacles.png"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/Obstacle_XY_coordinates.png"  alt="Obstacle_XY_coordinates"></div>|
+ 
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
 
