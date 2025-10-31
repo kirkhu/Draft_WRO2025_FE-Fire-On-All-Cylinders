@@ -48,7 +48,7 @@
       - [3-4-3 Steering Control(轉向控制) ](src/Steering_Control/README.md) 
       - [3-4-4 Automatically record the LAB values of the field (自動記錄田地的LAB值)](src/Automatically_record_LAB/README.md)
     - __3-5 Programming - Vehicle’s control program程式設計__
-      - [3-5-1 Open Challenge Code Overview(開放挑戰程式碼概述) ](src/Programming/Open_hallenge/README.md)
+      - [3-5-1 Open Challenge Code Overview(開放挑戰程式碼概述) ](src/Programming/Open_Challenge/README.md)
       - [3-5-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) ](src/Programming/Obstacle_Challenge/README.md)
       - [3-5-3 Distinctive Pseudo Code(獨特的偽代碼) ](src/Distinctive_Pseudo_Code/README.md)
       - [3-5-4 Parking Instruction(停車指南) ](src/parking/README.md)
