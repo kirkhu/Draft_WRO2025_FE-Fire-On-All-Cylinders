@@ -24,7 +24,8 @@
         - In the control interface of the Jetson Orin Nano, open a browser and navigate to the <a href="https://download.nomachine.com/download/?id=30&platform=linux&distro=arm" target="_blank">NoMachine download page</a>. Look for and select the NoMachine for Linux ARM (64-bit) software package compatible with the Jetson Orin Nano.  
 
 
-        - After downloading, open the terminal and enter cd Downloads to navigate to the folder.-下載後，打開終端機並輸入 cd Documents 導航到該資料夾。
+        - After the download is complete, open the terminal and enter cd Downloads to navigate to the download folder.
+        -下載後，打開終端機並輸入 cd Documents 導航到該資料夾。
         ```
         cd Documents
         ```
