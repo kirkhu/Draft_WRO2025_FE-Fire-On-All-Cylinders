@@ -204,8 +204,8 @@
 <div align="center" >
     <table>
         <tr>
-            <th>Schematic</th>
-            <th>PCB</th>
+            <th width=500>Schematic</th>
+            <th width=500>PCB</th>
         </tr>
         <tr align=center>
             <td><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 3.png" height=400 alt="Schematic" /></td>
