@@ -42,7 +42,7 @@
     - #### Computer Configuration for Windows Systems -在電腦Windows系統上       
       若要在 Windows 上安裝 NoMachine，請依照下列步驟操作：
 
-      To install NoMachine on Windows, follow these steps:
+      To install NoMachine on Windows System,, follow these steps:
       
       __Download NoMachine for Windows (64-bit)-下載適用於 Windows（64 位元）的 NoMachine__
        ### 中文
