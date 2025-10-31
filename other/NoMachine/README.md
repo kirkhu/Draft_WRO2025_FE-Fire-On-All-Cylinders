@@ -10,7 +10,7 @@
 - NoMachine uses advanced image compression technology to ensure high-quality graphics and audio transmission, even in low-bandwidth network environments. Additionally, NoMachine supports remote printing, file sharing, USB transfer, and other functions, making it ideal for remote work, technical support, and multi-device management. 
 - Especially for development platforms like the NVIDIA® Jetson Orin Nano, NoMachine provides a convenient solution for wireless remote control, greatly enhancing device operational flexibility and application possibilities.
 
-- ### Installing NoMachine-安裝NoMachine
+- ### Installing NoMachine software-安裝NoMachine
     - #### On the NVIDIA® Jetson Orin Nano-在 NVIDIA® Jetson Orin Nano 上
       若要在 NVIDIA® Jetson Orin Nano 上安裝 NoMachine，請依照下列步驟操作：
       
