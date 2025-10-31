@@ -1,6 +1,6 @@
 <div align="center"><img src="../../other/img/logo.png" width=300></div>
 
-## <div align="center">GitHub Web Editing Languages-GitHub Web 編輯語言</div> 
+## <div align="center">GitHub Web Editor Supported Markup Languages(GitHub 網頁編輯支援的標記語言)</div> 
 ### 中文:
  - 要在 GitHub 上撰寫工程文檔，我們需要學習以下兩類 Web 標記語言：
  - **HTML（超文本標記語言）**：HTML 是一種用於建立和建立網頁內容的標記語言。它定義了文字、圖像、連結和表格等元素的結構，使瀏覽器能夠正確顯示內容。在編寫工程文件時，HTML 幫助我們組織頁面結構，使資訊更具可讀性。

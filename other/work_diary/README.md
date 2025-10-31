@@ -52,7 +52,7 @@
 <div align="center">
 <table>
 <tr align="center">
-<th >>For the design reference of this project, we consulted the engineering documents from our school's past teams and conducted a deep dive analysis of the technical files from last year's world champion team.</th>
+<th >For the design reference of this project, we consulted the engineering documents from our school's past teams and conducted a deep dive analysis of the technical files from last year's world champion team.</th>
 </tr>
 <tr align="center">
 <td> <img src="./img/find_data.jpg" width = "500"  alt="data" align=center /></td>
@@ -100,17 +100,24 @@
 
 - This error provided invaluable practical experience, immediately driving us to initiate a design revision and optimization process, followed by sending the updated design for the fabrication of the second-generation board.
 <div align="center" >
-<table >
-<tr align="center">
-<th>First-Generation PCB Front View</th>
-<th>First-Generation PCB Back View</th>
-<tr align="center">
-<td>
-<img src="./img/4/1.png" width = "300"  alt="First-Generation PCB Front View" align=center /></td>
-<td>
-<img src="./img/4/2.png" width = "300"  alt="First-Generation PCB Back View" align=center /></td>
-</tr>
-</table>
+    <table >
+        <tr>
+            <th width=500>Schematic</th>
+            <th width=500>PCB</th>
+        </tr>
+        <tr align=center>
+            <td><img src="" height=400 alt="Schematic" /></td>
+            <td><img src="" height=400 alt="PCB" /></td>
+        </tr>
+        <tr align="center">
+            <th>First-Generation PCB Front View</th>
+            <th>First-Generation PCB Back View</th>
+        </tr>
+        <tr align="center">
+            <td><img src="./img/4/1.png" width = "300"  alt="First-Generation PCB Front View" align=center /></td>
+            <td><img src="./img/4/2.png" width = "300"  alt="First-Generation PCB Back View" align=center /></td>
+        </tr>
+    </table>
 </div>
 
 ## 2025/03/18 ~ 2025/03/24
@@ -195,8 +202,16 @@
  - During the development of the second-generation version, we incorporated feedback from the first generation and recalibrated the pin header spacing using the built-in reference templates in the design software, successfully improving the original layout. However, due to an operational oversight, we mistakenly treated the back view as the front view during the PCB layout process, which resulted in polarity reversal after fabrication. Fortunately, this issue was identified immediately during the assembly and testing stage. In the third-generation version, we corrected the layout orientation and also conducted a thorough review of alignment rules across all layers to ensure full consistency between the design files and the physical product.
 
 <div align="center" >
-    <table >
-        <tr align="center">
+    <table>
+        <tr>
+            <th width=500>Schematic</th>
+            <th width=500>PCB</th>
+        </tr>
+        <tr align=center>
+            <td><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 3.png" height=400 alt="Schematic" /></td>
+            <td><img src="" height=400 alt="PCB" /></td>
+        </tr>
+        <tr>
             <th>Second-Generation Front View</th>
             <th>Second-Generation Back View</th>
         </tr>
@@ -228,7 +243,7 @@
             <th>停車流程示意圖</th>
         </tr>
         <tr>
-            <td><img src="./img/4/5.png" width=400 /></td>
+            <td><img src="./img/4/5.png" width=600 /></td>
         </tr>
     </table>
  </div>
@@ -503,17 +518,24 @@ if combined_control_signal < -180:
 
 - 經修正前兩代的設計問題後，第四代版本已成功通過功能測試。實際運行測試顯示，排針接點與電路佈局無異常，系統可穩定運作。
 <div align="center" >
-<table >
-<tr align="center">
-<th>Third-Generation Front View</th>
-<th>Third-Generation Back View</th>
-<tr align="center">
-<td>
-<img src="./img/6/5.png" width = "300"  alt="data" align=center /></td>
-<td>
-<img src="./img/6/6.png" width = "300"  alt="data" align=center /></td>
-</tr>
-</table>
+    <table >
+        <tr>
+            <th>Schematic</th>
+            <th>PCB</th>
+        </tr>
+        <tr align=center>
+            <td><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 4.png" height=400 alt="Schematic" /></td>
+            <td><img src="" height=400 alt="PCB" /></td>
+        </tr>
+        <tr align="center">
+            <th>Third-Generation Front View</th>
+            <th>Third-Generation Back View</th>
+        </tr>
+        <tr align="center">
+            <td><img src="./img/6/5.png" width = "300"  alt="data" align=center /></td>
+            <td><img src="./img/6/6.png" width = "300"  alt="data" align=center /></td>
+        </tr>
+    </table>
 </div>
 
 ## 2025/07/02 ~ 2025/07/21
@@ -694,7 +716,7 @@ sudo apt-get -y install sdkmanager
  ```
 
   - ### 介面操作
-    <div align=center>
+ <div align=center>
     <table>
         <tr>
             <th>將Jetson Orin Nano連接上電腦</th>
@@ -773,7 +795,7 @@ sudo apt-get -y install sdkmanager
 
  - 本週我們決定將紅外線感測器安裝在自駕車的前後用於偵測邊牆及停車場方塊，於是我們設計了新的木板和紅外線L型支架用於安裝紅外線感測器。
 
- - 我們在本週測試第五代電路板時發現了一個會導致陀螺儀不被Jetson Orin Nano偵測到的問題，由於我們在主控制器從Jetson Nano改為Jetson Orin Nano時將排線的VCC、GND...等Pin腳取消只剩下陀螺儀的SDA和SCL腳位，結果因為GND沒有接地的關係導致連接時沒有產生迴路而沒有辦法被Jetson Orin Nano偵測到，因此我們改出了第五代電路板將排線的GND腳位重新接上以解決GND沒有接地的問題。
+ - 我們在本週測試第五代電路板時發現了一個會導致陀螺儀不被Jetson Orin Nano偵測到的問題，由於我們在主控制器從Jetson Nano改為Jetson Orin Nano時將排線的VCC、GND...等Pin腳取消只剩下陀螺儀的SDA和SCL腳位，結果因為GND沒有接地的關係導致連接時沒有產生迴路而沒有辦法被Jetson Orin Nano偵測到，因此我們改出了第六代電路板將排線的GND腳位重新接上以解決GND沒有接地的問題。
 
  <div align=center>
     <table>
@@ -810,8 +832,8 @@ sudo apt-get -y install sdkmanager
             <th>第六代電路板(PBC分布圖)</th>
         </tr>
         <tr>
-            <td align=center ><img src="./img/9/Circuit principle 6.png" width=400 /></td>
-            <td align=center ><img src="./img/9/Circuit PCB 6.png" width=400 /></td>
+            <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 6.png" height=300 /></td>
+            <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/PCB_Version 6.png" height=300 /></td>
         </tr>
     </table>
  </div>
@@ -936,10 +958,31 @@ sudo apt-get -y install sdkmanager
 
  - 本周我們使用安裝在機器前後的紅外線感測器進行停車流程。下方為紅外線感測器的類比訊號讀取程序。
 
- ```python
+    ```python
+    class TCRT5000:
+        def __init__(self, adc_pin):
+            try:
+                self.adc = ADC(Pin(adc_pin))
+            except:
+                self.adc = None
 
+        def read_raw(self):
+            try:
+                return self.adc.read_u16()
+            except:
+                return -1
 
- ```
+        def read_percentage(self):
+            try:
+                raw = self.read_raw()
+                if raw == -1:
+                    return -1
+                percentage = (raw / 65535) * 100
+                return round(percentage, 1)
+            except:
+                return -1
+
+    ```
 
  ## 2025/10/21 ~ 2025/10/26
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI

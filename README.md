@@ -1,8 +1,7 @@
 <div align="center"><img src="./other/img/logo.png" width="300" alt=" logo"></div> 
 
 ### 中文
-- 這是 WRO 台灣隊伍「__Fire On All Cylinders.__」的官方 
-- 
+- 這是 WRO 台灣隊伍「__Fire On All Cylinders.__」的官方  
 - 您可以在此處找到技術報告內容和設定說明的鏈接，這些鏈接分別面向學習者和評委，方便您在學習或評估期間訪問。
 - 本技術文件將根據評分標準建立目錄，目錄標題將以超連結形式顯示，方便評審或學習者輕鬆導航至技術文件的關鍵內容，從而快速進行評估。
 - **特別提醒：**受網路速度影響，圖片可能無法正常顯示。如遇此情況，請嘗試重新整理網頁以解決問題。
@@ -64,7 +63,7 @@
     - [5-2 Obstacle Challenge rounds (障礙挑戰)](video/Obstacle_Challenge/video.md)
   #### 6. GitHub Utilization-GitHub 使用率
     - [6-1 GitHub Editing Tools Introduction(VScode Edit/GIT) (GitHub 編輯VScode 編輯/GIT)](src/GitHub_Edit/README.md)
-    - [6-2 GitHub Web Editing Languages(GitHub Web 編輯語言) ](src/GitHub_Languages/README.md)  
+    - [6-2 GitHub Web Editor Supported Markup Languages(GitHub 網頁編輯支援的標記語言) ](src/GitHub_Languages/README.md)  
   #### 7. Engineering Factor -工程因素 
     - [7-1 Work Diary(工作日記) **已改動](other/work_diary/README.md)
       - [February (二月)](other/work_diary/README.md#20250228--20250330)

@@ -12,6 +12,66 @@
 
  ## 電路原理圖及PCB圖
 
+ <div align=center>
+   <table>
+      <tr>
+         <th colspan=2>第二代</th>
+      </tr>
+      <tr>
+         <th>Schematic</th>
+         <th>PCB</th>
+      </tr>
+      <tr align=center>
+         <td><img src="" height=300 /></td>
+         <td><img src="" height=300 /></td>
+      </tr>
+      <tr>
+         <th colspan=2>第三代</th>
+      </tr>
+      <tr>
+         <th>Schematic</th>
+         <th>PCB</th>
+      </tr>
+      <tr align=center>
+         <td><img src="./img/Schematic&PCB/Schematic_Version 3.png" height=300 /></td>
+         <td><img src="" height=300 /></td>
+      </tr>
+      <tr>
+         <th colspan=2>第四代</th>
+      </tr>
+      <tr>
+         <th>Schematic</th>
+         <th>PCB</th>
+      </tr>
+      <tr align=center>
+         <td><img src="./img/Schematic&PCB/Schematic_Version 4.png" height=300 /></td>
+         <td><img src="" height=300 /></td>
+      </tr>
+      <tr>
+         <th colspan=2>第五代</th>
+      </tr>
+      <tr>
+         <th>Schematic</th>
+         <th>PCB</th>
+      </tr>
+      <tr align=center>
+         <td><img src="./img/Schematic&PCB/Schematic_Version 5.png" height=300 /></td>
+         <td><img src="./img/Schematic&PCB/PCB_Version 5.png" height=300 /></td>
+      </tr>
+      <tr>
+         <th colspan=2>第六代</th>
+      </tr>
+      <tr>
+         <th>Schematic</th>
+         <th>PCB</th>
+      </tr>
+      <tr align=center>
+         <td><img src="./img/Schematic&PCB/Schematic_Version 6.png" height=300 /></td>
+         <td><img src="./img/Schematic&PCB/PCB_Version 6.png" height=300 /></td>
+      </tr>
+   </table>
+ </div>
+
  ## 實體電路板問題發現與修正歷程
 
  <div align=center>
