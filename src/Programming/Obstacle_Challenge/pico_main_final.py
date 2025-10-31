@@ -1,119 +1,52 @@
-from machine import Pin, PWM, I2C, UART, time_pulse_us
-import struct
+from machine import Pin, PWM
 import time
+import network
+import usocket as socket
+import uos, ubinascii
+import ujson as json
 
-# Set the pin position of ultrasound module 9
-TRIG_PIN1 = 8  # Corresponds to the Trig pin of the first ultrasound module
-ECHO_PIN1 = 9  # Corresponds to the Echo pin of the first ultrasound module
-TRIG_PIN2 = 12  # Corresponds to the Trig pin of the second ultrasound module
-ECHO_PIN2 = 13  # Corresponds to the Echo pin of the second ultrasound module
+# ===================== Wi-Fi / WebSocket 參數 =====================
+SSID = "iPhone_ron"
+PASSWORD = "ron0975750386"
+JETSON_IP = "172.20.10.8"
+PORT = 8765
 
-# Ultrasonic initialization pin
-trig1 = Pin(TRIG_PIN1, Pin.OUT)
-echo1 = Pin(ECHO_PIN1, Pin.IN)
-trig2 = Pin(TRIG_PIN2, Pin.OUT)
-echo2 = Pin(ECHO_PIN2, Pin.IN)
-
-servo_pin = PWM(Pin(28), freq=50)
+# ===================== 硬體初始化 =====================
+servo_pin = PWM(Pin(4), freq=50)
 motor_in1 = Pin(21, Pin.OUT)
 motor_in2 = Pin(20, Pin.OUT)
 button_out = Pin(15, Pin.OUT)
+
 motor_pwm = PWM(Pin(22), freq=1000)
 encoder_pin_A = Pin(0, Pin.IN)
 encoder_pin_B = Pin(1, Pin.IN)
 button = Pin(18, Pin.IN, Pin.PULL_UP)
-data_value = [0] * 3  # Initialize data list
-value = [0] * 3
-encoder_count = 0  # Initialize encoder count
-last_state_A = encoder_pin_A.value()  # Initialize encoder status
-jetson_nano_return_last = 0
-# Configure UART
-uart = UART(0, baudrate=115200, tx=Pin(16), rx=Pin(17))
 
-def jetson_nano_return(number):
-    global data_value
-    HEADER = b"A"  # Baotou definition
-    HEADER_SIZE = len(HEADER)
-    DATA_SIZE = 12 # 5 integers, 4 bytes each, 20 bytes in total
-    TOTAL_SIZE = HEADER_SIZE + DATA_SIZE  # Header + total length of data
+encoder_count = 0
+last_state_A = encoder_pin_A.value()
+_prev_speed_abs = 0  # 上一次實際輸出的絕對速度(%)
+led = Pin("LED", Pin.OUT)
+# ===================== 基本控制 =====================
+def set_servo_angle(angle):
+    min_duty = 1000  # 1ms
+    max_duty = 2000  # 2ms
+    duty = int(min_duty + (angle - 15 + 180) * (max_duty - min_duty) / 360)
+    duty_u16 = int(duty * 65535 / 20000)
+    servo_pin.duty_u16(duty_u16)
 
-    if uart.any():
-        data = uart.read(TOTAL_SIZE)
-        
-        # Check if complete packet is received
-        if len(data) == TOTAL_SIZE:
-            # Find Baotou
-            header_index = data.find(HEADER)
-            if header_index != -1:
-                # If a header is found, remove the header and extract the data
-                start_index = header_index + HEADER_SIZE
-                data = data[start_index:] + data[:start_index]
-                data_value = struct.unpack('3i', data[:DATA_SIZE])
-                return data_value[number]
-            else:
-                print("Error: Incorrect header received.")
-        else:
-            print("Error: Incomplete data received.")
-    return data_value[number]
-def jetson_all():
-    global value
-    value[0] = jetson_nano_return(0)
-    value[1] = jetson_nano_return(1)
-    value[2] = jetson_nano_return(2)
-    print(value[0],value[1],value[2])
-
-
-def encoder_interrupt(pin):
-    global encoder_count, last_state_A
-    state_A = encoder_pin_A.value()
-    state_B = encoder_pin_B.value()
-    if state_A != last_state_A:
-        encoder_count += 1 if state_B != state_A else -1
-    last_state_A = state_A
-
-def run_encoder(motor_angle, speed):
-    global encoder_count
-    encoder_count = 0  # Reset the encoder count to zero before running
-    while abs(encoder_count) < motor_angle:
-        # Select PD control signal according to data_mode
-        combined_control_signal = value[0]
-        
-        # Use control signals to adjust the servo
-        set_servo_angle(combined_control_signal)
-        control_motor(speed)
-        
-        print(f"编码器计数: {encoder_count}, combined_control_signal: {combined_control_signal}")
-        jetson_all()
-        time.sleep(0.01)
-    control_motor(0)
-    
-    
-def approach_until(trig, echo, threshold, operator):
-    dist = measure_distance(trig, echo)
-    while (dist > threshold if operator == '>' else dist < threshold):
-        jetson_all()
-        dist = measure_distance(trig, echo)
-        control_motor(value[2])
-        set_servo_angle(value[0])
-        time.sleep(0.05)
-
-def run_encoder_Auto(motor_angle, speed, string):
-    global encoder_count
-    encoder_count = 0  #Reset the encoder count to zero before running
-    while abs(encoder_count) < motor_angle:
-        # Select PD control signal according to data_mode
-        combined_control_signal = string
-        
-        # Use control signals to adjust the servo
-        set_servo_angle(combined_control_signal)
-        control_motor(speed)
-        
-        time.sleep(0.01)
-    control_motor(0)
-# GPIO interrupt settings
-encoder_pin_A.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=encoder_interrupt)
-# Define the motor control function
 def control_motor(speed):
+    """speed: -100 ~ 100"""
+    global _prev_speed_abs
+    abs_speed = abs(speed)
+
+    # 增加啟動脈衝與最小占空比，避免低速轉不動
+    if abs_speed > 0 and abs_speed < 20:
+        abs_speed = 20
+    if _prev_speed_abs == 0 and abs_speed > 0:
+        motor_pwm.duty_u16(int(65535 * 0.6))  # 啟動瞬間脈衝
+        time.sleep(0.05)
+    _prev_speed_abs = abs_speed
+
     if speed > 0:
         motor_in1.high()
         motor_in2.low()
@@ -121,105 +54,197 @@ def control_motor(speed):
         motor_in1.low()
         motor_in2.high()
     else:
-        motor_in1.high()
-        motor_in2.high()
-    motor_pwm.duty_u16(int(abs(speed) * 65535 / 100))  # Setting the PWM duty cycle
-# Set the servo angle
-def set_servo_angle(angle):
-    min_duty = 1000  #Corresponding to a duty cycle of 1ms
-    max_duty = 2000  # Corresponding to a duty cycle of 2ms
-    duty = int(min_duty + (angle-15 + 180) * (max_duty - min_duty) / 360)
-    duty_u16 = int(duty * 65535 / 20000)
-    servo_pin.duty_u16(duty_u16)
+        motor_in1.low()
+        motor_in2.low()
 
-def measure_distance(trig, echo):
-    # Send trigger pulse
-    trig.value(0)
-    time.sleep_us(2)
-    trig.value(1)
-    time.sleep_us(10)
-    trig.value(0)
+    motor_pwm.duty_u16(int(abs_speed * 65535 / 100))
 
-    # Read Echo pulse width
-    duration = time_pulse_us(echo, 1)
+# ===================== 編碼器中斷 =====================
+def encoder_interrupt(pin):
+    global encoder_count, last_state_A
+    state_a = encoder_pin_A.value()
+    if state_a != last_state_A:
+        state_b = encoder_pin_B.value()
+        encoder_count += 1 if state_a == state_b else -1
+        last_state_A = state_a
 
-    # Calculate distance (speed of sound is approximately 343 m/s)
-    distance = (duration / 2) * 0.0343
+encoder_pin_A.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=encoder_interrupt)
 
-    return distance
-    
+# ===================== Wi-Fi =====================
+def connect_wifi():
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    if not wlan.isconnected():
+        print("Connecting WiFi...")
+        wlan.connect(SSID, PASSWORD)
+        t0 = time.time()
+        while not wlan.isconnected():
+            if time.time() - t0 > 20:
+                raise OSError("WiFi connect timeout")
+            time.sleep(0.2)
+    print(" WiFi 已連線:", wlan.ifconfig())
+    return wlan
 
+# ===================== WebSocket =====================
+def _recvn(sock, n):
+    data = b""
+    while len(data) < n:
+        chunk = sock.recv(n - len(data))
+        if not chunk:
+            raise OSError("socket closed")
+        data += chunk
+    return data
+
+def ws_client_handshake(sock, host, port):
+    key_b64 = ubinascii.b2a_base64(uos.urandom(16)).strip().decode()
+    req = (
+        "GET / HTTP/1.1\r\n"
+        "Host: {}:{}\r\n"
+        "Upgrade: websocket\r\n"
+        "Connection: Upgrade\r\n"
+        "Sec-WebSocket-Key: {}\r\n"
+        "Sec-WebSocket-Version: 13\r\n"
+        "\r\n"
+    ).format(host, port, key_b64)
+    sock.send(req.encode())
+    resp = b""
+    sock.settimeout(5)
+    while b"\r\n\r\n" not in resp:
+        part = sock.recv(256)
+        if not part:
+            break
+        resp += part
+    if b"101 Switching Protocols" not in resp:
+        raise OSError("WS handshake failed")
+
+def ws_send_text(sock, text):
+    payload = text.encode("utf-8")
+    plen = len(payload)
+    header = bytearray([0x81])
+    mask_bit = 0x80
+    if plen <= 125:
+        header.append(mask_bit | plen)
+    elif plen <= 65535:
+        header.append(mask_bit | 126)
+        header.extend(bytes([(plen >> 8) & 0xFF, plen & 0xFF]))
+    else:
+        raise ValueError("payload too long")
+    mask_key = uos.urandom(4)
+    header.extend(mask_key)
+    masked = bytearray(plen)
+    for i in range(plen):
+        masked[i] = payload[i] ^ mask_key[i % 4]
+    sock.send(header + masked)
+
+def ws_recv_text(sock, timeout=0.2):
+    sock.settimeout(timeout)
+    try:
+        b1b2 = _recvn(sock, 2)
+    except OSError:
+        return None
+    b1, b2 = b1b2[0], b1b2[1]
+    plen = (b2 & 0x7F)
+    if plen == 126:
+        plen = int.from_bytes(_recvn(sock, 2), "big")
+    elif plen == 127:
+        _ = _recvn(sock, 8)
+        raise ValueError("Too long frame")
+    masked = (b2 & 0x80) != 0
+    if masked:
+        _ = _recvn(sock, 4)
+    payload = _recvn(sock, plen) if plen else b""
+    return payload.decode("utf-8") if payload else ""
+
+
+# ===================== 主程式 =====================
 try:
-    motor_in1.off()
-    motor_in2.off()
+    motor_in1.off(); motor_in2.off()
+    control_motor(0)
     set_servo_angle(0)
-    button_out.high()
-    while button.value() == 1:
-        time.sleep(0.1)
-#         print(jetson_nano_return(0),jetson_nano_return(1),jetson_nano_return(2))
-        distance2 = measure_distance(trig2, echo2)
-        print(distance2)
-    
-    control_motor(60)
+    wlan = connect_wifi()
+    led.off()
 
-    while value[1] != 5 :
-        jetson_all()
-        control_motor(value[2])
-        set_servo_angle(value[0])
-        time.sleep(0.05)
-        if value[1] == 6:
-            run_encoder(3500, 60)
+    while True:
+        s = None
+        try:
+            print("Connecting TCP to {}:{}".format(JETSON_IP, PORT))
+            s = socket.socket()
+            s.connect((JETSON_IP, PORT))
+            ws_client_handshake(s, JETSON_IP, PORT)
+            print(" WebSocket Connected!")
+            s.settimeout(0.1)
+
+            ws_send_text(s, json.dumps({"from": "pico", "status": "ready"}))
+            led.on()
+
+            while True:
+                msg = ws_recv_text(s, timeout=0.01)
+                if not msg:
+                    continue
+                for line in msg.split("\n"):
+                    line = line.strip()
+                    if not line:
+                        continue
+
+                    if line == "STOP":
+                        print(" 收到 STOP → 停止車輛")
+                        control_motor(0)
+                        set_servo_angle(0)
+                        raise KeyboardInterrupt
+
+                    if line.startswith("M,"):
+                        try:
+                            _, angle_str, speed_str = line.split(",")
+                            angle = int(angle_str)
+                            speed = int(speed_str)
+                            set_servo_angle(angle)
+                            control_motor(speed)
+
+                            # 顯示即時控制數值
+                            print(" 角度 = {:>4d}, 速度 = {:>4d}, 編碼器 = {:>6d}".format(
+                                angle, speed, encoder_count
+                            ))
+                        except ValueError:
+                            print("指令解析失敗:", line)
+                        continue
+
+                    if line.startswith("{"):
+                        try:
+                            j = json.loads(line)
+                            if j.get("cmd") == "motor":
+                                spd = int(j.get("speed", 0))
+                                control_motor(spd)
+                                print(" JSON 馬達速度:", spd)
+                            elif j.get("cmd") == "steer":
+                                ang = int(j.get("angle", 90))
+                                set_servo_angle(ang)
+                                print("JSON 舵機角度:", ang)
+                            elif j.get("cmd") == "stop":
+                                control_motor(0)
+                                set_servo_angle(0)
+                                raise KeyboardInterrupt
+                        except Exception:
+                            pass
+                time.sleep(0.01)
+
+        except KeyboardInterrupt:
             control_motor(0)
+            set_servo_angle(0)
+            print("程式中斷")
+            break
+
+        except Exception as e:
+            print("WS error:", e)
+            if s:
+                try: s.close()
+                except: pass
+            print(" Reconnecting in 3s...")
             time.sleep(3)
 
-    
-    control_motor(35)
-    time.sleep(0.4)
-    control_motor(0)
-    distance2 = measure_distance(trig2, echo2)
-    distance1 = measure_distance(trig1, echo1)
-    if distance1 > distance2:  # Right-side parking
-        approach_until(trig2, echo2, 15, '>')
-        approach_until(trig2, echo2, 20, '<')
-        approach_until(trig2, echo2, 15, '>')
-     # Reverse parking.
-        run_encoder_Auto(300, 10, 0)
-        run_encoder_Auto(1500, -45, 175)
-        run_encoder_Auto(30, -10, -190)
-        run_encoder_Auto(1400, -25, -190)
-        run_encoder_Auto(480, 30, 180)
-        run_encoder_Auto(10, 10, 0)
-    # (Continue with the rest of the reverse parking sequence)
-    else:  # Left-side parking
-        approach_until(trig1, echo1, 15, '>')
-        approach_until(trig1, echo1, 20, '<')
-        approach_until(trig1, echo1, 15, '>')
-    # Reverse parking.
-        run_encoder_Auto(400, 10, 0)
-        run_encoder_Auto(1620, -45, -190)
-        run_encoder_Auto(30, -10, 180)
-        run_encoder_Auto(1330, -25, 180)
-        run_encoder_Auto(470, 30, -180)
-        run_encoder_Auto(10, 10, 0)
-    # (Continue with the rest of the reverse parking sequence)
-            
-    control_motor(-25)
-    time.sleep(0.35)
-    control_motor(0)
-    button_out.low()
-            
-        
 except KeyboardInterrupt:
-    motor_in1.off()
-    motor_in2.off()
+    control_motor(0)
     set_servo_angle(0)
-    print("Program interruption")
-
-
-
-
-
-
+    print(" 程式中斷(外層)")
 
 
 
