@@ -37,7 +37,7 @@
        
         If you see this icon, the installation is complete.
         
-        <td><img src="./img/nomachine_ok.png" width="500" alt="nomachine download"></td>
+        <img src="./img/nomachine_ok.png" width="500" alt="nomachine download">
 
     - #### Computer Configuration for Windows Systems -在電腦Windows系統上       
       若要在 Windows 上安裝 NoMachine，請依照下列步驟操作：
