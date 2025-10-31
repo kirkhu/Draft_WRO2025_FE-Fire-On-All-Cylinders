@@ -11,7 +11,7 @@
 - Especially for development platforms like the NVIDIA® Jetson Orin Nano, NoMachine provides a convenient solution for wireless remote control, greatly enhancing device operational flexibility and application possibilities.
 
 - ### Installing NoMachine-安裝NoMachine
-    - #### On the NVIDIA® Jetson Nano-在 NVIDIA® Jetson Nano 上
+    - #### On the NVIDIA® Jetson Orin Nano-在 NVIDIA® Jetson Orin Nano 上
       若要在 NVIDIA® Jetson Orin Nano 上安裝 NoMachine，請依照下列步驟操作：
       
       To install NoMachine on an NVIDIA® Jetson Orin Nano, follow these steps:
@@ -21,14 +21,14 @@
         - 在 Jetson Orin Nano 的控制器介面中，開啟瀏覽器並導航至 <a href="https://download.nomachine.com/download/?id=30&platform=linux&distro=arm" target="_blank">NoMachine 下載頁面</a>。尋找並選擇與 Jetson Orin Nano 相容的 NoMachine for Linux ARM（64 位元）軟體套件。
         - 下載完成後，打開終端機並輸入 cd Downloads 導航至下載資料夾。
         ### 英文
-        - In the Jetson Orin Nano’s controller interface, open a browser and navigate to the <a href="https://download.nomachine.com/download/?id=30&platform=linux&distro=arm" target="_blank">NoMachine download page</a>. Locate and select the NoMachine for Linux ARM (64-bit) software package, which is compatible with the Jetson Nano.      
-        - After downloading, open the terminal and enter cd Downloads to navigate to the folder.-下載後，打開終端機並輸入 cd Downloads 導航到該資料夾。
+        - In the Jetson Orin Nano’s controller interface, open a browser and navigate to the <a href="https://download.nomachine.com/download/?id=30&platform=linux&distro=arm" target="_blank">NoMachine download page</a>. Locate and select the NoMachine for Linux ARM (64-bit) software package, which is compatible with the Jetson Orin Nano.      
+        - After downloading, open the terminal and enter cd Downloads to navigate to the folder.-下載後，打開終端機並輸入 cd Documents 導航到該資料夾。
         ```
-        cd Downloads
+        cd Documents
         ```
-        - Then, enter unzip Nomachine_7.10.1_1_arm64.zip to unzip the file.
+        - Then, enter unzip Nomachine_9.2.18_1_arm64.zip to unzip the file.
         ```
-        sudo dpkg -i Nomachine_7.10.1_1_arm64.zip
+        sudo dpkg -i Nomachine_9.2.18_1_arm64.zip
         ```
        
         If you see this icon, the installation is complete.
@@ -47,10 +47,10 @@
         ### 英文
         - In a Windows computer, open a browser and go to the <a href="https://pse.is/7zvlmg" target="_blank">NoMachine download page</a>. Find and select the NoMachine for Windows (64-bit) software package to download the version compatible with Windows.
         - After downloading, run the installation file. You will need to __restart__ the computer afterward.
-        <td><img src="./img/nomachine_download.jpg" width="500" alt="nomachine download"></td>
+        <td><img src="./img/nomachine_download.png" width="500" alt="nomachine download"></td>
 
 
-    - #### Connecting to Jetson Nano-連接到 Jetson Nano
+    - #### Connecting to Jetson Orin Nano-連接到 Jetson Orin Nano
          在 Windows 上開啟 NoMachine。
          Open NoMachine on Windows.
 

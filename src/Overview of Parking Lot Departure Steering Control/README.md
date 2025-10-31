@@ -1,21 +1,10 @@
 <div align=center> <img src="../../other/img/logo.png" width=300 alt=" logo"> </div>
 
-## <div align="center">Steering Control Overview-轉向控制概述</div> 
+## <div align="center">Overview of Parking Lot Departure Steering Control-停車場出發轉向控制概述</div> 
 
  - ### Vehicle steering control-車輛轉向控制
     ### 中文:
-   1. 轉向訊號來源與作用
-   - 當攝影機偵測到地面藍線或橘線時，系統啟動轉向判斷流程。
-   - 以「側壁高亮值」監控左右距離，維持安全間隙，避免擦撞。
-   - 藍線與橘線負責提供「轉彎方向」線索，確保車輛能在彎道或轉角處安全、精準導航。
-   2.  接近度評估與方向選擇
-   - 車輛行進中，系統持續量測「側壁高亮值」與地面藍/橘線。
-   - 接近彎道時，比較藍線與橘線在影像中的 y 軸位置。距離越近，y 值越大。
-   - 取 y 軸值最大的顏色 作為本次轉向依據，以此決定左轉或右轉。
-   3. 安全門檻與轉向執行
-   - 確認方向後，進一步檢查影像左右側的「側壁高亮值」。
-   - 只有當對應側的高亮值 ≥ 4500 時，才允許下達轉向指令。
-   - 此門檻可避免過早入彎，降低擦牆風險，並提升轉向穩定度與精度。
+    - 一開始我們我先判斷順時針還是逆時針的行駛方向，然後再朝向柱子判斷是紅色還是綠色
    ### 英文:
     - When the vehicle detects a blue or orange line on the ground, the system triggers a steering action. Highlighted value detection of the sidewall ensures the vehicle maintains a safe distance to avoid collisions, while the blue and orange line detection identifies the vehicle’s turning direction, allowing it to navigate curves or corners safely and precisely.
     - As the vehicle moves, the system uses the camera to detect highlighted values and the blue and orange lines on the ground. When approaching a turn, the system assesses the y-axis position of the blue and orange lines and uses these values to determine the proximity of the turn. The closer the distance, the larger the y-axis value. The system selects the color with the largest y-axis value as the basis for steering direction, ensuring accurate turning.
@@ -68,7 +57,7 @@
     
 <div align=center>
 
-  |Recognize the color of traffic signal blocks.|The color and X, target coordinates of traffic signal blocks.|
+  |Recognize the color of traffic signal blocks.|The color and X, Y coordinates of traffic signal blocks.|
   |:---:|:---:|
   |<div align="center"> <img src="./img/Detecting_nearby_obstacles.png"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/Obstacle_XY_coordinates.png"  alt="Obstacle_XY_coordinates"></div>|
 

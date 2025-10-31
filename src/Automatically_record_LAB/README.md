@@ -1,6 +1,6 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-## <div align="center"> Automatically record the LAB values of the field-自動記錄場地的 LAB 值</div>
+## <div align="center"> Automatically record the LAB values of the field-保存記錄場地的 LAB 值</div>
 為了記錄交通標誌積木、停車區邊牆及場地線的顏色，我們撰寫了一個程式，能自動將最終的 LAB 值保存在 Jetson Orin Nano 控制器中。此功能省去手動記錄的麻煩，不僅節省時間，也確保了數據的準確性。
 
 - #### Image processing-影像處理
@@ -51,12 +51,12 @@
 
 
 
-**Pink sidewall-粉紅色側牆**
+**Pink sidewall-洋紅色測牆**
 
 
-|Adjusting the LAB Range Values for Pink Color(調整粉紅色的 LAB 範圍值)|Save the LAB range values for Pink(儲存粉紅色的 LAB )|Live image of the Pink sidewall(粉紅色邊牆的即時影像)|
+|Adjusting the LAB Range Values for Pink Color(調整洋紅色的 LAB 範圍值)|Save the LAB range values for Pink(儲存洋紅色的 LAB )|Live image of the Pink sidewall(洋紅色邊牆的即時影像)|
 |:----:|:----:|:----:|
-|<img src="./img//pink/Adjusting_the_LAB_Range_Values_for_pink_Color.png" alt="Adjusting_the_LAB_Range_Values_for_pink_Color" align=center />|<img src="./img/pink/Save_the_LAB_range_values_for_pink.png"  alt="Save_the_LAB_range_values_for_pink" align=center />|<img src="./img/pink/Live_image_ of_the_pink_traffic_sign_block.png" alt="Live_image_ of_the_pink_traffic_sign_block" align=center />|
+|<img src="./img//magenta/Adjusting_the_LAB_Range_Values_for_magenta_Color.png" alt="Adjusting_the_LAB_Range_Values_for_magenta_Color" align=center />|<img src="./img/magenta/Save_the_LAB_range_values_for_magenta.png"  alt="Save_the_LAB_range_values_for_pink" align=center />|<img src="./img/magenta/Live_image_ of_the_magenta_traffic_sign_block.png" alt="Live_image_ of_the_magenta_traffic_sign_block" align=center />|
 
 </div>
 

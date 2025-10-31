@@ -2,13 +2,13 @@
 
 ## <div align="center">Image Recognition Processing-影像辨識處理</div> 
 ### 中文:
-  - 比賽場地上有紅、綠、藍、橙、粉、黑六種顏色，需要透過影像辨識來確定它們的位置，使車輛能夠順利避開障礙物或完成指定任務。 
+  - 比賽場地上有紅、綠、藍、橙、洋紅色、黑六種顏色，需要透過影像辨識來確定它們的位置，使車輛能夠順利避開障礙物或完成指定任務。 
   - 我們將使用流行的影像辨識軟體OpenCV來辨識比賽場上的物體。
   ### 英文:
   - On the competition field, there are six colors—red, green, blue, orange, pink, and black—that need to be identified through image recognition to determine their locations, enabling the vehicle to successfully avoid obstacles or complete designated tasks.
   - We will use the popular image recognition software OpenCV to identify objects on the competition field.
   
-- #### Color Detection Using LAB in OpenCV-在 OpenCV 中使用 LAB 進行顏色檢測([jetson_nano_LAB.py](../Programming/common/jetson_nano_LAB.py))
+- #### Color Detection Using LAB in OpenCV-在 OpenCV 中使用 LAB 進行顏色檢測([ColourTesterLAB.py](../Programming/common/ColourTesterLAB.py.py))
   - 為了進行色彩偵測，我們將 RGB 色彩空間轉換為 LAB，並將 LAB 值分為上下限以建立範圍，確保準確的目標偵測。具體步驟如下：
 
   - To perform color detection, we convert the RGB color space to LAB and split the LAB values into upper and lower bounds to establish a range, ensuring accurate target detection. The detailed steps are as follows:
@@ -47,7 +47,7 @@
     </table>
     <table>
     <tr>
-    <th>Adjusting the LAB Range Values for Pink Color(調整粉紅色的 LAB 範圍值)</th>
+    <th>Adjusting the LAB Range Values for Pink Color(調整洋紅色的 LAB 範圍值)</th>
     </tr>
     <tr>
     <td><img src="./img/pink_LAB.png" alt="pink_block_LAB" align=center /></td>
