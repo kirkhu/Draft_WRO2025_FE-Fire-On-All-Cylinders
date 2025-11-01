@@ -8,7 +8,7 @@
    - 當攝影機偵測到地面藍線或橘線時，系統啟動轉向判斷流程。
    - 以「側壁高亮值」監控左右距離，維持安全間隙，避免擦撞。
    - 藍線與橘線負責提供「轉彎方向」線索，確保車輛能在彎道或轉角處安全、精準導航。
-   2.  接近度評估與方向選擇
+   2. 接近度評估與方向選擇
    - 車輛行進中，系統持續量測「側壁高亮值」與地面藍/橘線。
    - 接近彎道時，比較藍線與橘線在影像中的 y 軸位置。距離越近，y 值越大。
    - 取 y 軸值最大的顏色 作為本次轉向依據，以此決定左轉或右轉。
@@ -55,7 +55,8 @@
 
    ### 中文:
   - 根據任務需求，當車輛偵測到紅色交通號誌遮擋時，系統觸發向右繞行機動；當遇到綠色障礙物時，它會觸發向左繞行機動。 
-  - 當車輛移動時，攝影機將視訊傳送到控制器（Jetson orin Nano），然後控制器進行影像處理以目標柱子在畫面中的理想 X 座標位置。這些數據可協助控制器確定物體的位置和距離，從而實現精確導航和避障。 
+  - 當車輛移動時，攝影機將視訊傳送到控制器（Jetson orin Nano），然後控制器進行影像處理以目標柱子在畫面中的理想 X 座標位置。這些數據可協助控制器確定物體的位置和距離，從而實現精確導航和避障。
+  - 在拍攝的影像上繪製一個矩形，boundingRect()並傳回該矩形左上角的 x 和 y 座標。將其應用於訊號柱的輪廓時，即可用於確定其位置。
    ### 英文:
   - According to task requirements, when the vehicle detects a red traffic signal block, the system triggers a rightward bypass maneuver; when it encounters a green block, it triggers a leftward bypass maneuver.
   - As the vehicle moves, the camera transmits video to the controller (Jetson Nano), which then performs image processing to obtain the X and Y coordinates and the area size of objects in the frame. This data helps the controller determine the position and distance of objects for accurate navigation and obstacle avoidance.
