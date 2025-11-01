@@ -85,7 +85,7 @@
     <tr>
       <td align="center">
         <img src="./img/camera.png" alt="floor-to-boundary (black-and-white)"
-             style="width:270px !important; height:200px !important; max-width:none !important; max-height:none !important; display:block; margin:0 auto;">
+             style="width:270px !important; height:175px !important; max-width:none !important; max-height:none !important; display:block; margin:0 auto;">
       </td>
       <td align="center">
         <img src="./img/ROI_Edge_detection.png" alt="floor-to-boundary (black-and-white)"
