@@ -128,7 +128,7 @@
       <td style="text-align:center;">
         <img src="./img/pink.png"
              alt="binarization_run.png"
-             style="width:350px; height:auto; display:block; margin:0 auto;" />
+             style="width:500px; height:auto; display:block; margin:0 auto;" />
       </td>
     </tr>
   </table>
