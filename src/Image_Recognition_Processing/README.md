@@ -73,66 +73,47 @@
   2. **Adjusting Color Range**: 
   To ensure a clear black-and-white boundary between the floor and the sidewalls, we use `cv2.getTrackbarPos()` to dynamically adjust the threshold until the desired boundary effect is achieved.
 
+
 <div style="text-align:center;">
-  <table style="margin:0 auto; border-collapse:separate; border-spacing:16px; table-layout:fixed;">
-    <colgroup>
-      <col style="width:360px;">
-      <col style="width:360px;">
-      <col style="width:360px;">
-    </colgroup>
-    <tbody>
-      <!-- Row 1: 標題 1~3 -->
-      <tr>
-        <th style="padding:8px; word-break:break-word;">二值化牆壁檢測</th>
-        <th style="padding:8px; word-break:break-word;">ROI 邊緣檢測</th>
-        <th style="padding:8px; word-break:break-word;">Obstacle Detection on in Images（影像中的障礙物檢測）</th>
-      </tr>
-
-      <!-- Row 2: 圖片 1~3 -->
-      <tr>
-        <td style="text-align:center;">
-          <img src="./img/camera.png"
-               alt="floor-to-boundary (black-and-white)"
-               style="height:285px; width:350px; display:block; margin:0 auto;" />
-        </td>
-        <td style="text-align:center;">
-          <img src="./img/ROI_Edge_detection.png"
-               alt="ROI edge detection"
-               style="width:350px; height:auto; display:block; margin:0 auto;" />
-        </td>
-        <td style="text-align:center;">
-          <img src="./img/Obstacle_detection.png"
-               alt="Obstacle_detection"
-               style="width:350px; height:auto; display:block; margin:0 auto;" />
-        </td>
-      </tr>
-
-      <!-- Row 3: 標題 4~6（第 6 欄留空） -->
-      <tr>
-        <th style="padding:8px; word-break:break-word;">Orange and Blue lines Detection on in Images（影像中的橙色和藍色線條檢測）</th>
-        <th style="padding:8px; word-break:break-word;">floor-to-boundary (black-and-white) Detection on in Images（影像中的地板到邊界邊緣檢測）</th>
-        <th style="padding:8px; word-break:break-word;"></th>
-      </tr>
-
-      <!-- Row 4: 圖片 4~6（第 6 欄留空） -->
-      <tr>
-        <td style="text-align:center;">
-          <img src="./img/linecolor.png"
-               alt="line color detection"
-               style="width:350px; height:auto; display:block; margin:0 auto;" />
-        </td>
-        <td style="text-align:center;">
-          <img src="./img/binarization_run.png"
-               alt="binarization_run.png"
-               style="width:350px; height:auto; display:block; margin:0 auto;" />
-        </td>
-        <td></td>
-      </tr>
-    </tbody>
+  <table style="margin:0 auto;">
+    <tr>
+      <th>二值化牆壁檢測</th>
+      <th>ROI 邊緣檢測</th>
+    </tr>
+    <tr>
+      <td style="text-align:center;">
+        <img
+          src="./img/camera.png"
+          alt="floor-to-boundary (black-and-white)"
+          style="height:285px !important; width:350px; display:block; margin:0 auto;"
+        />
+      </td>
+      <td style="text-align:center;">
+        <img
+          src="./img/ROI_Edge_detection.png"
+          alt="floor-to-boundary (black-and-white)"
+          style="width:350px; height:auto; display:block; margin:0 auto;"
+        />
+      </td>
+    </tr>
   </table>
 </div>
 
 
 
+<div align="center">
+<table>
+<tr>
+<th> Obstacle Detection on in Images　(影像中的障礙物檢測)</th>
+<th> Orange and Blue lines Detection on in Images（影像中的橙色和藍色線條檢測）</th>
+<th> floor-to-boundary (black-and-white) Detection on in Images（影像中的地板到邊界邊緣檢測）</th>
+</tr>
+<tr>
+<td><img src="./img/Obstacle_detection.png" alt="Obstacle_detection" align=center /></td>
+<td><img src="./img/linecolor.png"  alt="line color detection" align=center /></td>
+<td><img src="./img/binarization_run.png"  alt="binarization_run.png" align=center /></td>
+</tr>
+</table>
+</div>
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
