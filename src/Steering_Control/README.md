@@ -44,10 +44,9 @@
  ```
 <div align=center>
 
-  |Sidewall highlighted value detection(側壁突出值檢測)
-  |Field blue and orange line recognition(場地藍橙線識別)|
+  |Sidewall highlighted value detection(側壁突出值檢測)|Field blue and orange line recognition(場地藍橙線識別)|
   |:---:|:---:|
-  |<div align="center"> <img src="./img/inverse_highlight_and_binarization.png"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/Detecting_nearby_obstacles.png"  alt="Detecting_nearby_obstacles"></div>|
+  |<div align="center"> <img src="./img/inverse_highlight_and_binarization.png"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/Field blue and orange line recognition.png"  alt="Detecting_nearby_obstacles"></div>|
 
 </div> 
 
