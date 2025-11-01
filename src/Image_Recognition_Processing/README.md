@@ -78,9 +78,9 @@
   <!-- 上排（三欄） -->
   <table>
     <tr>
-      <th>二值化檢測牆面</th>
-      <th>ROI1和ROI2檢測牆面</th>
-      <th>ROI3檢測紅與綠柱</th>
+      <th>Binarized wall detection(二值化檢測牆面)</th>
+      <th>ROI1 and ROI2: detect walls(ROI1和ROI2檢測牆面)</th>
+      <th>ROI3: detect the red pillar and green pillar(ROI3檢測紅與綠柱)</th>
     </tr>
     <tr>
       <td align="center">
@@ -101,9 +101,9 @@
   <!-- 下排（三欄） -->
   <table>
     <tr>
-      <th>ROI4檢測橘與藍線</th>
-      <th>ROI5輔助檢測前方牆面</th>
-      <th>ROI6檢測洋紅牆面</th>
+      <th>ROI4: detect orange lines and blue lines(ROI4檢測橘與藍線)</th>
+      <th>ROI5: assist in detecting the front wall(ROI5輔助檢測前方牆面)</th>
+      <th>ROI6: detect magenta walls(ROI6檢測洋紅牆面)</th>
     </tr>
     <tr>
       <td align="center">
