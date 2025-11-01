@@ -1,11 +1,11 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-## <div align="center"> Automatically record the LAB values of the field-保存記錄場地的 LAB 值</div>
+## <div align="center"> Automatically record the LAB values of the field-自動保存記錄場地的 LAB 值</div>
 為了記錄交通標誌積木、停車區邊牆及場地線的顏色，我們撰寫了一個程式，能自動將最終的 LAB 值保存在 Jetson Orin Nano 控制器中。此功能省去手動記錄的麻煩，不僅節省時間，也確保了數據的準確性。
 
 - #### Image processing-影像處理
     ### 中文:
-    - 在影像處理時，使用 ColourTesterLAB.py 檔案將交通標誌方塊與場地底圖上的線條轉換到不同的色彩空間是必須的步驟，以有效處理特定任務。
+    - 在影像處理時，使用 Color_LAB.py 檔案將交通標誌方塊與場地底圖上的線條轉換到不同的色彩空間是必須的步驟，以有效處理特定任務。
     - 我們使用 cv2.cvtColor 函數將原始的 RGB 影像轉換成 LAB（明度、紅綠軸、黃藍軸）色彩空間。
     - 轉換完成後，透過 cv2.inRange 函數並設定六個 LAB 閾值：L_low、L_high、A_low、A_high、B_low、B_high 來定義顏色範圍。cv2.inRange 函數會將 LAB 影像中每個像素與設定的範圍做比較，若像素值落在範圍內則保留，否則過濾掉。此過程可得到濾波後的影像。
     - 取得濾波後影像後，我們將對應數值儲存進 masks.py 檔案中進行儲存。
