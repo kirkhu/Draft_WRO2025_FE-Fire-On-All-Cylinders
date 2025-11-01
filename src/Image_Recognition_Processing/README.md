@@ -32,7 +32,8 @@
 <div align="center">
 <table>
 <tr>
-<th>Adjusting the LAB Range Values for Red Color</th>(調整紅色的LAB範圍值)</th>
+<th>Adjusting the LAB Range Values for Red Color
+<th>(調整紅色的LAB範圍值)</th>
 <th>Adjusting the LAB Range Values for Green Color(調整綠色的LAB範圍值)</th>
 </tr>
 <tr>
