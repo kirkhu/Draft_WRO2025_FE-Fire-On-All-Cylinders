@@ -87,17 +87,17 @@
       <td style="text-align:center;">
         <img src="./img/camera.png"
              alt="floor-to-boundary (black-and-white)"
-             style="height:285px !important; width:350px; display:block; margin:0 auto;" />
+             style="height:auto !important; width:auto; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
         <img src="./img/ROI_Edge_detection.png"
              alt="floor-to-boundary (black-and-white)"
-             style="width:350px; height:auto; display:block; margin:0 auto;" />
+             style="width:auto; height:auto; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
         <img src="./img/camera.png"
              alt="floor-to-boundary (black-and-white)"
-             style="height:285px !important; width:350px; display:block; margin:0 auto;" />
+             style="height:auto !important; width:auto; display:block; margin:0 auto;" />
       </td>
     </tr>
   </table>
