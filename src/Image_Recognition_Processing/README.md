@@ -74,18 +74,30 @@
   To ensure a clear black-and-white boundary between the floor and the sidewalls, we use `cv2.getTrackbarPos()` to dynamically adjust the threshold until the desired boundary effect is achieved.
 
 
-<div align="center">
-<table>
-<tr>
-<th> 二值化牆壁檢測</th>
-<th> ROI邊緣檢測</th>
-</tr>
-<tr>
-     <td><img src="./img/camera.png" alt="floor-to-boundary (black-and-white)" height="640" width="350" align=center /></td>
-     <td><img src="./img/ROI_Edge_detection.png" alt="floor-to-boundary (black-and-white)" width="350" align=center /></td>
-     </tr>
-     </table>
-     </div>
+<div style="text-align:center;">
+  <table style="margin:0 auto;">
+    <tr>
+      <th>二值化牆壁檢測</th>
+      <th>ROI 邊緣檢測</th>
+    </tr>
+    <tr>
+      <td style="text-align:center;">
+        <img
+          src="./img/camera.png"
+          alt="floor-to-boundary (black-and-white)"
+          style="height:640px !important; width:auto; display:block; margin:0 auto;"
+        />
+      </td>
+      <td style="text-align:center;">
+        <img
+          src="./img/ROI_Edge_detection.png"
+          alt="floor-to-boundary (black-and-white)"
+          style="width:350px; height:auto; display:block; margin:0 auto;"
+        />
+      </td>
+    </tr>
+  </table>
+</div>
 
 
 
