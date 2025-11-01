@@ -1,236 +1,271 @@
+# functions_jetson.py  — WebSocket 版本（取代 UART）
+import time
+import json
+import asyncio
+import threading
+import queue
 import cv2
 import numpy as np
-import serial as AC
-import struct
+import websockets
+from masks import rBlack, rMagenta, rRed, rGreen, rBlue, rOrange
+
+WS_SERVER_URL = "ws://127.0.0.1:8765"
+
+straight_const = 87
+
+_last_speed_pct = 0     
+_last_angle_deg = 0     
+
+class _WsBus:
+    def __init__(self, url: str):
+        self.url = url
+        self.tx_q: "queue.Queue[str]" = queue.Queue()
+        self.rx_q: "queue.Queue[str]" = queue.Queue()
+        self._loop = None
+        self._ws = None
+        self._thread = None
+        self._stop = threading.Event()
+        self.ready = False
+
+    def start(self):
+        if self._thread and self._thread.is_alive():
+            return
+        self._thread = threading.Thread(target=self._run_loop, daemon=True)
+        self._thread.start()
+
+    def stop(self):
+        self._stop.set()
+        if self._loop:
+            try:
+                asyncio.run_coroutine_threadsafe(self._async_close(), self._loop)
+            except Exception:
+                pass
+        if self._thread:
+            self._thread.join(timeout=2)
+
+    def send_obj(self, obj: dict):
+        try:
+            self.tx_q.put_nowait(json.dumps(obj))
+        except queue.Full:
+            pass
+
+    def recv_str(self, timeout: float | None = None) -> str | None:
+        try:
+            return self.rx_q.get(timeout=timeout)
+        except queue.Empty:
+            return None
+
+    def wait_until_any_message(self, timeout_sec=5.0) -> bool:
+
+        t0 = time.time()
+        while time.time() - t0 < timeout_sec:
+            if self.ready:
+                return True
+            msg = self.recv_str(timeout=0.2)
+            if msg:
+                self.ready = True
+                return True
+        return False
+
+    # ----- asyncio internals -----
+    def _run_loop(self):
+        self._loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(self._loop)
+        self._loop.run_until_complete(self._main())
+
+    async def _main(self):
+        while not self._stop.is_set():
+            try:
+                async with websockets.connect(self.url, ping_interval=None) as ws:
+                    self._ws = ws
+
+                    await self._safe_send(json.dumps({"cmd": "ping"}))
+                    rx = asyncio.create_task(self._rx_loop(ws))
+                    tx = asyncio.create_task(self._tx_loop(ws))
+                    done, pending = await asyncio.wait(
+                        {rx, tx}, return_when=asyncio.FIRST_EXCEPTION
+                    )
+                    for t in pending:
+                        t.cancel()
+            except Exception as e:
+                # print("[WS] reconnect in 1s", e)
+                await asyncio.sleep(1.0)
+
+    async def _rx_loop(self, ws):
+        while not self._stop.is_set():
+            msg = await ws.recv()
+            if isinstance(msg, (bytes, bytearray)):
+                msg = msg.decode("utf-8", errors="ignore")
+            self.ready = True
+            try:
+                self.rx_q.put_nowait(msg)
+            except queue.Full:
+                pass
+
+    async def _tx_loop(self, ws):
+        while not self._stop.is_set():
+            try:
+                s = self.tx_q.get(timeout=0.2)
+            except queue.Empty:
+                await asyncio.sleep(0.01)
+                continue
+            await self._safe_send(s)
+
+    async def _safe_send(self, s: str):
+        try:
+            await self._ws.send(s)
+        except Exception:
+            pass
+
+    async def _async_close(self):
+        try:
+            if self._ws:
+                await self._ws.close()
+        except Exception:
+            pass
+
+_ws = _WsBus(WS_SERVER_URL)
+_ws.start()
 
 
-color_ranges = {
-    'Orange': ([10, 210, 140], [15, 245, 220], (0, 165, 255)),
-    'Blue': ([100, 113, 90], [113, 255, 202], (255, 0, 0))
-}
-color_ranges_final = {
-    'Orange': ([10, 185, 115], [25, 255, 170], (0, 165, 255)),
-    'Blue': ([105, 175, 80], [115, 240, 140], (255, 0, 0)),
-    'Red': ([0, 110, 85], [5, 255, 165], (0, 0, 255)),
-    'Green': ([45, 95, 90], [65, 180, 165], (0, 255, 0)),
-    'Pink': ([160, 80, 64], [175, 175, 190], (255, 192, 203))
-}
+def _pwm_to_speed_percent(pwm: int) -> int:
 
-current_last = 0
-def process_roi(undistorted_frame, x1, y1, x2, y2, threshold_value=90):
-    roi = undistorted_frame[y1:y2, x1:x2]
-    gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-    _, binary = cv2.threshold(gray, threshold_value, 255, cv2.THRESH_BINARY_INV)
+    pct = int(round((pwm - 1500) / 180.0 * 100.0))
+    return max(-100, min(100, pct))
 
-    # Find all contours
-    contours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    
-    # If there are contours, find the largest contour
-    if contours:
-        largest_contour = max(contours, key=cv2.contourArea)
-        black_pixels = int(cv2.contourArea(largest_contour))  # Convert black pixels to integer
-        # Draw the largest contour
-        cv2.drawContours(binary, [largest_contour], -1, (255, 255, 255), -1)
+def _algo_to_pico_angle(raw_angle: int) -> int:
+
+    delta = raw_angle - straight_const
+    pico_deg = -delta                       
+    if pico_deg > 80: pico_deg = 80       
+    if pico_deg < -80: pico_deg = -80
+    return int(pico_deg)
+
+
+def _send_motion(angle_deg: int, speed_pct: int):
+
+    _ws.send_obj({"cmd": "steer", "angle": int(angle_deg)})
+    _ws.send_obj({"cmd": "motor", "speed": int(speed_pct)})
+
+def write(value):
+
+    global _last_speed_pct, _last_angle_deg
+
+
+    if isinstance(value, (int, float)) and value < 5:
+        time.sleep(float(value))
+        return
+
+    if value >= 1000:
+        _last_speed_pct = _pwm_to_speed_percent(int(value))
     else:
-        black_pixels = 0
+        _last_angle_deg = _algo_to_pico_angle(int(value))
 
-    return cv2.cvtColor(binary, cv2.COLOR_GRAY2BGR), black_pixels
+    _send_motion(_last_angle_deg, _last_speed_pct)
 
-def detect_color(undistorted_frame):
-    hsv_frame = cv2.cvtColor(undistorted_frame, cv2.COLOR_BGR2HSV)
-    color_y_positions = []
+def multi_write(sequence):
 
-    for color, (lower, upper, bgr) in color_ranges.items():
-        lower = np.array(lower, dtype=np.uint8)
-        upper = np.array(upper, dtype=np.uint8)
-        color_mask = cv2.inRange(hsv_frame, lower, upper)
-        contours, _ = cv2.findContours(color_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-        if contours:
-            largest_contour = max(contours, key=cv2.contourArea)
-            if cv2.contourArea(largest_contour) > 500:  # Filter out small noise areas
-                x, y, w, h = cv2.boundingRect(largest_contour)
-                center_y = y + h // 2
-                cv2.rectangle(undistorted_frame, (x, y), (x + w, y + h), bgr, 2)
-                cv2.circle(undistorted_frame, (x + w // 2, center_y), 5, bgr, -1)  # Mark the center point
-                color_y_positions.append(center_y)
-            else:
-                color_y_positions.append(0)  # If no valid contours, return 0
+    for action in sequence:
+        if isinstance(action, (int, float)) and action < 5:
+            time.sleep(float(action))
         else:
-            color_y_positions.append(0)  # If no contours found, return 0
+            write(action)
 
-    return color_y_positions
+def stop_car():
 
-def pd_control(target, current, kp, kd):
-    global current_last  # Use global variable
-    error = current - target
-    derivative = current - current_last
-    control_signal = -(kp * error + kd * derivative)
-    current_last =  current  # Update current_last before returning
-    return control_signal
-def draw_multiple_curves(undistorted_frame, start_points, end_points, slope_values, curvature_factors, colors, thickness=2):
-    """
-    Draw multiple curves with different start points, end points, slopes, and curvatures on the image, and return the coordinates of the red curve.
-    """
-    red_curve_points = []  # Used to save the coordinates of the red curve
-    green_curve_points = []  # Used to save the coordinates of the green curve
+    _ws.send_obj({"cmd": "motor", "speed": 0})
+    _ws.send_obj({"cmd": "steer", "angle": 0})
+
+def wait_for_start(timeout=None):
+
+    start_t = time.time()
+
+    if timeout is None:
+        timeout = 9999999
 
 
-    for start_point, end_point, slope, curvature, color in zip(start_points, end_points, slope_values, curvature_factors, colors):
-        x1, y1 = start_point
-        x2, y2 = end_point
+    _ws.wait_until_any_message(timeout_sec=min(timeout, 3.0))
 
-        # Calculate the position of the control point in the middle to control the curvature
-        mid_x = (x1 + x2) // 2
-        mid_y = (y1 + y2) // 2
-        control_x = mid_x
-        control_y = int(mid_y - curvature * slope * (x2 - x1))  # Adjust the middle control point using curvature and slope
+    while True:
+        msg = _ws.recv_str(timeout=0.2)
+        if msg:
+            s = msg.strip()
+            try:
+                j = json.loads(s)
+            except Exception:
+                j = None
 
-        # Use Bezier curve to draw
-        curve_points = []
-        for t in np.linspace(0, 1, 100):
-            xt = (1 - t)**2 * x1 + 2 * (1 - t) * t * control_x + t**2 * x2
-            yt = (1 - t)**2 * y1 + 2 * (1 - t) * t * control_y + t**2 * y2
-            curve_points.append((int(xt), int(yt)))
+            if s == "START":
+                return True
 
-        # If it is a red curve, save the coordinates
-        if color == (0, 0, 255):  # Red curve
-            red_curve_points = curve_points
-        if color == (0, 255, 0):  # Green curve
-            green_curve_points = curve_points
+            if j and (j.get("from") == "pico" or j.get("status") == "ready"):
+                return True
 
-        # Draw the curve
-        for i in range(len(curve_points) - 1):
-            cv2.line(undistorted_frame, curve_points[i], curve_points[i + 1], color, thickness)
-
-    return red_curve_points, green_curve_points  # Return the coordinates of the red curve
+        if timeout is not None and (time.time() - start_t) > timeout:
+            return False
 
 
-def detect_color_final(undistorted_frame, last_red_x_diff, last_green_x_diff, last_pink_red_x_diff, last_pink_green_x_diff, start_points, end_points, slope_values, curvature_factors, colors):
-    """Detect specific color regions and return the Y coordinates of the color center points, and calculate the X coordinate difference between the red curve point and the red center point, and the green as the center point X minus the function X"""
-    hsv_frame = cv2.cvtColor(undistorted_frame, cv2.COLOR_BGR2HSV)
-    color_y_positions = []
-    pink_positions = [0] * 4
-    center_x = 0
-    center_y = 0
-    red_x_diff = 0  # Default set to 0
-    green_x_diff = 0  # Default set to 0
-    pink_red_x_diff = 0  # Default set to 0
-    pink_green_x_diff = 0  # Default set to 0
-    
+def display_roi(img, ROIs, color):
+    for ROI in ROIs:
+        img = cv2.line(img, (ROI[0], ROI[1]), (ROI[2], ROI[1]), color, 4)
+        img = cv2.line(img, (ROI[0], ROI[1]), (ROI[0], ROI[3]), color, 4)
+        img = cv2.line(img, (ROI[2], ROI[3]), (ROI[2], ROI[1]), color, 4)
+        img = cv2.line(img, (ROI[2], ROI[3]), (ROI[0], ROI[3]), color, 4)
+    return img
 
-    # Color detection
-    for color, (lower, upper, bgr) in color_ranges_final.items():
-        lower = np.array(lower, dtype=np.uint8)
-        upper = np.array(upper, dtype=np.uint8)
-        color_mask = cv2.inRange(hsv_frame, lower, upper)
-        contours, _ = cv2.findContours(color_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+def find_contours(img_lab, lab_range, ROI):
+    x1, y1, x2, y2 = ROI
+    seg = img_lab[y1:y2, x1:x2]
+    lo = np.array(lab_range[0]); hi = np.array(lab_range[1])
+    mask = cv2.inRange(seg, lo, hi)
+    k = np.ones((5,5), np.uint8)
+    mask = cv2.erode(mask, k, iterations=1)
+    mask = cv2.dilate(mask, k, iterations=1)
+    contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
+    return contours
 
-        if contours:
-            if color == 'Pink':
-                # For Pink, find the two largest color blocks
-                sorted_contours = sorted(contours, key=cv2.contourArea, reverse=True)
-                top_two_contours = [cnt for cnt in sorted_contours[:2] if cv2.contourArea(cnt) > 500]
+def max_contour(contours, ROI):
+    maxArea = 0; maxY = 0; maxX = 0; mCnt = 0
+    for cnt in contours:
+        area = cv2.contourArea(cnt)
+        if area > 150:
+            approx = cv2.approxPolyDP(cnt, 0.01*cv2.arcLength(cnt, True), True)
+            x,y,w,h = cv2.boundingRect(approx)
+            x += ROI[0] + w//2
+            y += ROI[1] + h
+            if area > maxArea:
+                maxArea = area; maxY = y; maxX = x; mCnt = cnt
+    return [maxArea, maxX, maxY, mCnt]
 
-                if len(top_two_contours) > 0:
-                    # Update the position of the first largest color block
-                    x1, y1, w1, h1 = cv2.boundingRect(top_two_contours[0])
-                    center_x1 = x1 + w1 // 2
-                    center_y1 = y1 + h1 // 2
-                    pink_positions[0] = center_x1
-                    pink_positions[1] = center_y1
+def pOverlap(img_lab, ROI, add=False):
+    x1, y1, x2, y2 = ROI
+    seg = img_lab[y1:y2, x1:x2]
+    from masks import rBlack, rMagenta
+    loB, hiB = np.array(rBlack[0]),   np.array(rBlack[1])
+    loM, hiM = np.array(rMagenta[0]), np.array(rMagenta[1])
+    mB = cv2.inRange(seg, loB, hiB)
+    mM = cv2.inRange(seg, loM, hiM)
+    if add:
+        mask = cv2.add(mB, mM)
+    else:
+        mask = cv2.bitwise_and(mB, cv2.bitwise_not(mM))
+    k_open  = np.ones((3,3), np.uint8)
+    k_close = np.ones((7,7), np.uint8)
+    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN,  k_open,  iterations=1)
+    mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, k_close, iterations=1)
+    contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
+    return contours
 
-                    # Draw the rectangle of the largest color block and its center point
-                    cv2.rectangle(undistorted_frame, (x1, y1), (x1 + w1, y1 + h1), bgr, 2)
-                    cv2.circle(undistorted_frame, (center_x1, center_y1), 5, bgr, -1)
-
-                    if len(top_two_contours) > 1:
-                        # Update the position of the second largest color block
-                        x2, y2, w2, h2 = cv2.boundingRect(top_two_contours[1])
-                        center_x2 = x2 + w2 // 2
-                        center_y2 = y2 + h2 // 2
-                        pink_positions[2] = center_x2
-                        pink_positions[3] = center_y2
-
-                        # Draw the rectangle of the second largest color block and its center point
-                        cv2.rectangle(undistorted_frame, (x2, y2), (x2 + w2, y2 + h2), bgr, 2)
-                        cv2.circle(undistorted_frame, (center_x2, center_y2), 5, bgr, -1)
-                else:
-                    # If no valid color block, set pink coordinates to 0
-                    pink_positions[:] = [0, 0, 0, 0]
-            else:
-                # For other colors, just find the largest contour
-                largest_contour = max(contours, key=cv2.contourArea)
-                if cv2.contourArea(largest_contour) > 600:  # Filter small noise areas
-                    x, y, w, h = cv2.boundingRect(largest_contour)
-                    center_x = x + w // 2
-                    center_y = y + h // 2
-                    color_y_positions.append(center_y)
-
-                    # Draw the rectangle and the color's center point
-                    cv2.rectangle(undistorted_frame, (x, y), (x + w, y + h), bgr, 2)
-                    cv2.circle(undistorted_frame, (center_x, center_y), 5, bgr, -1)
-                else:
-                    color_y_positions.append(0)  # No contour found, return 0
-
-            # Use multiple different curves with dynamic start and end points
-            red_curve_points, green_curve_points = draw_multiple_curves(undistorted_frame, start_points, end_points, slope_values, curvature_factors, colors)
+def display_variables(variables):
+    names = list(variables.keys())
+    for name in names:
+        print(f"{name}: {variables[name]}", end="\r\n")
+    print("\033[F" * len(names), end="")
 
 
-            # Check for intersection points between the red curve and the detected horizontal line and calculate the X coordinate difference
-            if color == 'Red':
-                max_curve_y = max([pt[1] for pt in red_curve_points])  # Get the highest point of the red curve
-                if center_y < max_curve_y:
-                    for curve_x, curve_y in red_curve_points:
-                        if abs(curve_y - center_y) < 2:  # Find the intersection point between the red curve and center point
-                            red_x_diff = curve_x - center_x  # Calculate the difference in X coordinates
-                            cv2.circle(undistorted_frame, (curve_x, curve_y), 6, (0, 0, 255), -1)  # Mark the intersection with red
-                            break
-                    else:
-                        red_x_diff = last_red_x_diff  # If no intersection, use the previous value
-                else:
-                    red_x_diff = 0  # If the center point is higher than the curve, set to 0
+def get_last_speed_pct() -> int:
 
-            # Check for intersection points between the green curve and the detected horizontal line and calculate the center X coordinate minus curve X
-            if color == 'Green':
-                max_curve_y = max([pt[1] for pt in green_curve_points])  # Get the highest point of the green curve
-                if center_y < max_curve_y:
-                    for curve_x, curve_y in green_curve_points:
-                        if abs(curve_y - center_y) < 2:  # Find the intersection point between the green curve and center point
-                            green_x_diff = center_x - curve_x  # Calculate the difference in X coordinates
-                            cv2.circle(undistorted_frame, (curve_x, curve_y), 6, (0, 255, 0), -1)  # Mark the intersection with green
-                            break
-                    else:
-                        green_x_diff = last_green_x_diff  # If no intersection, use the previous value
-                else:
-                    green_x_diff = 0  # If the center point is higher than the curve, set to 0
-            # Check for intersection points between the pink curve and the detected horizontal line and calculate the pink curve point and center X difference
-            if color == 'Pink':
-                pink_red_max_curve_y = max([pt[1] for pt in red_curve_points])  # Get the highest point of the red curve
-                pink_green_max_curve_y = max([pt[1] for pt in green_curve_points])  # Get the highest point of the green curve
-                if pink_positions[1] < pink_red_max_curve_y:
-                    for curve_x, curve_y in red_curve_points:
-                        if abs(curve_y - pink_positions[1]) < 2:  # Find the intersection point between the red curve and the center point
-                            pink_red_x_diff = curve_x - pink_positions[0]  # Calculate the difference in X coordinates
-                            cv2.circle(undistorted_frame, (curve_x, curve_y), 6, (255, 192, 203), -1)  # Mark the intersection with pink
-                            break
-                    else:
-                        pink_red_x_diff = last_pink_red_x_diff  # If no intersection, use the previous value
-                else:
-                    pink_red_x_diff = 0  # If the center point is higher than the curve, set to 0
-                if pink_positions[1] < pink_green_max_curve_y:
-                    for curve_x, curve_y in green_curve_points:
-                        if abs(curve_y - pink_positions[1]) < 2:  # Find the intersection point between the green curve and the center point
-                            pink_green_x_diff = pink_positions[0] - curve_x  # Calculate the difference in X coordinates
-                            cv2.circle(undistorted_frame, (curve_x, curve_y), 6, (255, 192, 203), -1)  # Mark the intersection with pink
-                            break
-                    else:
-                        pink_green_x_diff = last_pink_green_x_diff  # If no intersection, use the previous value
-                else:
-                    pink_green_x_diff = 0  # If the center point is higher than the curve, set to 0
+    return _last_speed_pct
 
-        else:
-            color_y_positions.append(0)  # No contour found, return 0
-            pink_positions[:] = [0, 0, 0, 0]
-
-    return color_y_positions, pink_positions, red_x_diff, green_x_diff, pink_red_x_diff, pink_green_x_diff  # Return the Y coordinates of the color center and the X differences for red and green
+def is_moving(threshold: int = 3) -> bool:
+    return abs(_last_speed_pct) > threshold
