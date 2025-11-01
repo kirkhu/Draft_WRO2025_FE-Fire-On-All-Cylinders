@@ -89,11 +89,11 @@
       </td>
       <td align="center">
         <img src="./img/ROI_Edge_detection.png" alt="floor-to-boundary (black-and-white)"
-             style="width:270px !important; height:auto !important; display:block; margin:0 auto;">
+             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
       </td>
       <td align="center">
         <img src="./img/Obstacle_detection.png" alt="floor-to-boundary (black-and-white)"
-             style="width:270px !important; height:auto !important; display:block; margin:0 auto;">
+             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
       </td>
     </tr>
   </table>
@@ -108,15 +108,15 @@
     <tr>
       <td align="center">
         <img src="./img/linecolor.png" alt="line color detection"
-             style="width:270px !important; height:auto !important; display:block; margin:0 auto;">
+             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
       </td>
       <td align="center">
         <img src="./img/binarization_run.png" alt="binarization_run.png"
-             style="width:270px !important; height:auto !important; display:block; margin:0 auto;">
+             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
       </td>
       <td align="center">
         <img src="./img/pink.png" alt="pink"
-             style="width:270px !important; height:auto !important; display:block; margin:0 auto;">
+             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
       </td>
     </tr>
   </table>
