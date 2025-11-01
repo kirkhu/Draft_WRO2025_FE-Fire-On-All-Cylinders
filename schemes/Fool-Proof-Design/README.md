@@ -29,14 +29,15 @@ During critical phases of hardware development and integration, we frequently en
 
 This structural design optimization has significantly reduced the probability of failure in the core components of the NVIDIA Jetson Orin Nano and Raspberry Pi Pico W due to wiring mistakes, fundamentally enhancing the overall system's operational stability, long-term reliability, and effectively extending the product's Mean Time Between Failures (MTBF).
 
+To establish the power input solution for the __Jetson Orin Nano__, we have incorporated a __pluggable terminal block__ onto the main circuit PCB as its dedicated power supply interface.
 
-The rationale behind this design decision is as follows:
+The rationale for this design choice is as follows:
 
-- **Power Supply Path Requirement:** The Jetson Orin Nano relies on a direct 11.1V lithium battery supply via a dedicated power socket and does not support reverse power feeding through its 5V pins.
+- **Power Path Requirement:** The Jetson Orin Nano relies on 11.1V lithium battery power supplied directly via the power socket and does not support reverse power delivery from its 5V pins.
 
-- **Connection Stability:** Directly connecting power lines to a buck converter module presents a risk of contact loosening, which could lead to unstable circuit power supply and subsequent board damage.
+- **Connection Stability:** Directly connecting the power cable to a buck converter module carries the inherent risk of contact loosening, which could lead to unstable circuit power delivery and potentially damage the PCB.
 
-In summary, adopting a plug-in terminal block as the connection interface for the power supply line not only ensures connection robustness and enhances overall system safety but also facilitates subsequent maintenance and troubleshooting operations.
+In summary, utilizing a pluggable terminal block as the interface for the power supply cable ensures connection stability and enhances overall system safety, while also facilitating subsequent maintenance and troubleshooting operations.
 
 <div align=center>
     <table>
