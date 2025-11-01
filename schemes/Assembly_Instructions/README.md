@@ -395,10 +395,15 @@
       <tr>
         <td>
 __產品規格__
-  - 測量範圍： 
+  - 測量範圍：0 ~ 1.5cm
+  - 測量精度：±0.05cm ~ ±0.3cm
+  - 工作電壓：3.3V ~ 5V
+  - 紅外波長：940 ~ 950(奈米)
+  - 紅外光波頻率：3.16x10 
+__Purchase URL:<a href="https://www.icshop.com.tw/products/368030501146" target="_blank">TCRT5000</a>__
         </td>
         <td>
-        
+          <img src="./img/TCRT5000.png" width=250 />
         </td>
       </tr>
     </table>
