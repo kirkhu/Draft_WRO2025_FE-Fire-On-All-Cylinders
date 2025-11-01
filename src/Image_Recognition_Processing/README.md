@@ -74,34 +74,32 @@
   To ensure a clear black-and-white boundary between the floor and the sidewalls, we use `cv2.getTrackbarPos()` to dynamically adjust the threshold until the desired boundary effect is achieved.
 
 
-<div style="text-align:center;">
+<div align="center">
+  <!-- 上排（三欄） -->
+  <table>
+    <tr>
+      <th>二值化檢測牆面</th>
+      <th>ROI1和ROI2檢測牆面</th>
+      <th>ROI3檢測紅與綠柱</th>
+    </tr>
+    <tr>
+      <td align="center"><img src="./img/camera.png"             width="440" alt="floor-to-boundary (black-and-white)"></td>
+      <td align="center"><img src="./img/ROI_Edge_detection.png" width="440" alt="floor-to-boundary (black-and-white)"></td>
+      <td align="center"><img src="./img/Obstacle_detection.png" width="270" alt="floor-to-boundary (black-and-white)"></td>
+    </tr>
+  </table>
 
+  <!-- 下排（三欄） -->
+  <table>
     <tr>
-      <th style="padding:6px 8px; word-break:break-word;">二值化檢測牆面</th>
-      <th style="padding:6px 8px; word-break:break-word;">ROI1和ROI2檢測牆面</th>
-      <th style="padding:6px 8px; word-break:break-word;">ROI3檢測紅與綠柱</th>
+      <th>ROI4檢測橘與藍線</th>
+      <th>ROI5輔助檢測前方牆面</th>
+      <th>ROI6檢測洋紅牆面</th>
     </tr>
     <tr>
-      <td><img src="./img/camera.png"             alt="bw"
-               style="display:block; margin:0 auto; width:440px; height:200px; object-fit:contain;"></td>
-      <td><img src="./img/ROI_Edge_detection.png" alt="roi12"
-               style="display:block; margin:0 auto; width:440px; height:200px; object-fit:contain;"></td>
-      <td><img src="./img/Obstacle_detection.png" alt="roi3"
-               style="display:block; margin:0 auto; width:270px; height:200px; object-fit:contain;"></td>
-    </tr>
-
-    <tr>
-      <th style="padding:6px 8px; word-break:break-word;">ROI4檢測橘與藍線</th>
-      <th style="padding:6px 8px; word-break:break-word;">ROI5輔助檢測前方牆面</th>
-      <th style="padding:6px 8px; word-break:break-word;">ROI6檢測洋紅牆面</th>
-    </tr>
-    <tr>
-      <td><img src="./img/linecolor.png"          alt="roi4"
-               style="display:block; margin:0 auto; width:500px; height:200px; object-fit:contain;"></td>
-      <td><img src="./img/binarization_run.png"   alt="roi5"
-               style="display:block; margin:0 auto; width:210px; height:200px; object-fit:contain;"></td>
-      <td><img src="./img/pink.png"               alt="roi6"
-               style="display:block; margin:0 auto; width:800px; height:200px; object-fit:contain;"></td>
+      <td align="center"><img src="./img/linecolor.png"        width="500" alt="line color detection"></td>
+      <td align="center"><img src="./img/binarization_run.png" width="210" alt="binarization_run.png"></td>
+      <td align="center"><img src="./img/pink.png"             width="800" alt="pink"></td>
     </tr>
   </table>
 </div>
