@@ -123,7 +123,7 @@
       <td style="text-align:center;">
         <img src="./img/binarization_run.png"
              alt="line color detection"
-             style="height:200px; width:220px; display:block; margin:0 auto;" />
+             style="height:200px; width:200px; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
         <img src="./img/pink.png"
