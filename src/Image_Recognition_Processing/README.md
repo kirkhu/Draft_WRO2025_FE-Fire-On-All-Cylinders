@@ -79,9 +79,9 @@
   <!-- 上表 -->
   <table style="margin:0 auto !important; border-collapse:collapse; border-spacing:0; padding:0;">
     <tr>
-      <th>二值化牆壁檢測</th>
-      <th>ROI 邊緣檢測</th>
-      <th>Obstacle Detection on in Images（影像中的障礙物檢測）</th>
+      <th>二值化檢測牆面</th>
+      <th>ROI1和ROI2檢測牆面</th>
+      <th>ROI3檢測紅與綠柱</th>
     </tr>
     <tr>
       <td style="text-align:center;">
@@ -110,9 +110,9 @@
       border-spacing:0;
       padding:0;">
     <tr>
-      <th>Orange and Blue lines Detection on in Images（影像中的橙色和藍色線條檢測</th>
-      <th>floor-to-boundary (black-and-white) Detection on in Images（影像中的地板到邊界邊緣檢測）</th>
-      <th>(影像中的停車場檢測)</th>
+      <th>ROI4檢測橘與藍線</th>
+      <th>ROI5輔助檢測前方牆面</th>
+      <th>ROI6檢測洋紅牆面</th>
     </tr>
     <tr>
       <td style="text-align:center;">
