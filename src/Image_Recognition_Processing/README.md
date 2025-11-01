@@ -96,12 +96,6 @@
         />
       </td>
     </tr>
-  </table>
-</div>
-
-
-
-<div align="center">
 <table>
 <tr>
 <th> Obstacle Detection on in Images　(影像中的障礙物檢測)</th>
