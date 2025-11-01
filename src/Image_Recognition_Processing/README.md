@@ -83,7 +83,7 @@
       <th>ROI3檢測紅與綠柱</th>
     </tr>
     <tr>
-      <td align="center"><img src="./img/camera.png"             width="270" alt="floor-to-boundary (black-and-white)"></td>
+      <td align="center"><img src="./img/camera.png"             width="270" height="300" alt="floor-to-boundary (black-and-white)"></td>
       <td align="center"><img src="./img/ROI_Edge_detection.png" width="270" alt="floor-to-boundary (black-and-white)"></td>
       <td align="center"><img src="./img/Obstacle_detection.png" width="270" alt="floor-to-boundary (black-and-white)"></td>
     </tr>
