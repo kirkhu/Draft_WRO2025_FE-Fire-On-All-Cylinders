@@ -59,11 +59,8 @@
 </div>
 
 ### Using Edge Detection in OpenCV to Identify Track Walls and Trace Their Contours - 在OpenCV中使用邊緣檢測來辨識賽道牆面並描繪出輪廓
-
-### 中文:
-  在國內選拔賽之前，我們採用RGB影像轉換為灰階影像，灰階影像再轉換為二值化影像來辨識賽道牆面。國內選拔賽之後，我們研究其他國際賽隊伍辨識賽道牆面的作法，發現加拿大隊伍利用邊緣檢測描繪賽道牆面輪廓，能提供更穩定的偵測。因此，我們決定改成邊緣檢測這種方式，建立ROI1和ROI2影像感興趣區域，再使用ROI1和ROI2來偵測左右賽道牆面並描繪出輪廓。具體步驟如下：
-### 英文:
-  Before the national selection rounds, we converted RGB images to grayscale and then to binary images to detect the track walls. After the national selection rounds, we studied how other international teams detected the track walls and found that the Canadian team used edge detection to trace the wall contours, yielding more stable results. Therefore, we switched to an edge-detection approach: we define two regions of interest (ROI1 and ROI2) and then use ROI1 and ROI2 to detect the left and right track walls and draw their contours. The specific steps are as follows:
+  - 在國內選拔賽之前，我們採用RGB影像轉換為灰階影像，灰階影像再轉換為二值化影像來辨識賽道牆面。國內選拔賽之後，我們研究其他國際賽隊伍辨識賽道牆面的作法，發現加拿大隊伍利用邊緣檢測描繪賽道牆面輪廓，能提供更穩定的偵測。因此，我們決定改成邊緣檢測這種方式，建立ROI1和ROI2影像感興趣區域，再使用ROI1和ROI2來偵測左右賽道牆面並描繪出輪廓。具體步驟如下：
+  - Before the national selection rounds, we converted RGB images to grayscale and then to binary images to detect the track walls. After the national selection rounds, we studied how other international teams detected the track walls and found that the Canadian team used edge detection to trace the wall contours, yielding more stable results. Therefore, we switched to an edge-detection approach: we define two regions of interest (ROI1 and ROI2) and then use ROI1 and ROI2 to detect the left and right track walls and draw their contours. The specific steps are as follows:
 
 ### 中文:
   1. **顏色轉換**：
