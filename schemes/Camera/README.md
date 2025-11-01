@@ -50,11 +50,11 @@
 
       When performing wide-angle lens distortion correction on the NVIDIA Jetson Orin Nano, the calibration functions in the OpenCV library are typically used. The basic steps are as follows:
     <ol>
-    <li>
-    拍攝校正影像： 將棋盤格或點陣圖置於廣角鏡頭的視野範圍內，並從不同角度拍攝多張影像。這些影像用於計算校正參數。
 
-    <strong>Capture Calibration Images:</strong> Place a checkerboard or dot array within the field of view of the wide-angle lens and capture multiple images from different angles. These images are used to calculate calibration parameters.</li>
-        <div align="center">
+    <li>  
+
+    __Capture Calibration Images:__ Place a checkerboard or dot array within the field of view of the wide-angle lens and capture multiple images from different angles. These images are used to calculate calibration parameters.拍攝校正影像： 將棋盤格或點陣圖置於廣角鏡頭的視野範圍內，並從不同角度拍攝多張影像。這些影像用於計算校正參數。</li>
+    
     <table>
     <tr align="center" >
     <th >Checkerboard Image-棋盤格影像</th> 
@@ -63,7 +63,7 @@
     <td><img src="./img/chessboard.png" width="300" alt="Chessboard" /></td>
     </tr>  
     </table>
-    </div>
+
 
     ### 中文:
     1. 偵測棋盤格角點： 使用 OpenCV 的 findChessboardCorners() 函式自動偵測棋盤格的角點位置。對每張校正影像，此步驟會找出計算校正參數所需的角點座標。
@@ -74,18 +74,23 @@
 
     4. 即時處理（如有需要）： 若在 NVIDIA Jetson Orin Nano 上需進行即時校正，需確保影像處理效率。考量 Jetson Nano 性能有限，可調整影像解析度或優化處理步驟以提升校正速度。
     ### 英文:
+    <li>
 
-    1. <strong>Detect Checkerboard Corners:</strong> Use OpenCV's findChessboardCorners() function to automatically detect the corner positions of the checkerboard. For each calibration image, this step finds the corner coordinates needed for calculating the correction parameters.
+    __Detect Checkerboard Corners:__ Use OpenCV's findChessboardCorners() function to automatically detect the corner positions of the checkerboard. For each calibration image, this step finds the corner coordinates needed for calculating the correction parameters.</li>
     
-    2. <strong>Calculate Calibration Parameters:<strong> Use the calibrateCamera() function to calculate the camera's intrinsic parameters and distortion coefficients. These parameters include focal length, optical center, and radial and tangential distortion coefficients of the lens.
-   
-    3. <strong>Apply Correction Parameters:</strong> In actual images, use the undistort() function to apply the correction parameters to each frame. This corrected image will reduce the distortion caused by the wide-angle lens, making the image closer to true proportions.
-    
-    4. <strong>Real-Time Processing (If Needed):</strong> If real-time correction is required on the Jetson Nano, ensure efficiency in image processing. Given the limited performance of the NVIDIA Jetson Orin Nano, consider adjusting image resolution or optimizing processing steps to enhance correction speed.
-   
+    <li>
 
-    __以下是一個簡單的程式範例：__
-    __A simple code example is as follows:__
+    __Calculate Calibration Parameters:__ Use the calibrateCamera() function to calculate the camera's intrinsic parameters and distortion coefficients. These parameters include focal length, optical center, and radial and tangential distortion coefficients of the lens.</li>
+   
+    <li>
+
+    __Apply Correction Parameters:__ In actual images, use the undistort() function to apply the correction parameters to each frame. This corrected image will reduce the distortion caused by the wide-angle lens, making the image closer to true proportions.</li>
+    
+    <li>
+
+    __Real-Time Processing (If Needed):__ If real-time correction is required on the Jetson Nano, ensure efficiency in image processing. Given the limited performance of the NVIDIA Jetson Orin Nano, consider adjusting image resolution or optimizing processing steps to enhance correction speed.</li>
+
+  __A simple code example is as follows: 以下是一個簡單的程式範例：__
     - ### python Code-Python 程式碼
 
           import cv2
@@ -137,7 +142,7 @@
           cv2.destroyAllWindows()
 
       Experimental results indicate that setting the resolution to __640x480__ optimizes system performance. This configuration effectively reduces the computational load on the Jetson Nano while significantly enhancing the efficiency of image capture and recognition.  
-     ### Comparison image of before and after correction-校正前後影像比較圖
+     - ### Comparison image of before and after correction-校正前後影像比較圖
     
     <div align="center">
     <table>
