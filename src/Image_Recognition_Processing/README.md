@@ -58,9 +58,9 @@
 </table>
 </div>
 
-### Using Edge Detection in OpenCV to Identify Track Walls and Trace Their Contours - 在OpenCV中使用邊緣檢測來辨識賽道牆面並描繪出輪廓
-  - 在國內選拔賽之前，我們採用RGB影像轉換為灰階影像，灰階影像再轉換為二值化影像來辨識賽道牆面。國內選拔賽之後，我們研究其他國際賽隊伍辨識賽道牆面的作法，發現加拿大隊伍利用邊緣檢測描繪賽道牆面輪廓，能提供更穩定的偵測。因此，我們決定改成邊緣檢測這種方式，建立ROI1和ROI2影像感興趣區域，再使用ROI1和ROI2來偵測左右賽道牆面並描繪出輪廓。具體步驟如下：
-  - Before the national selection rounds, we converted RGB images to grayscale and then to binary images to detect the track walls. After the national selection rounds, we studied how other international teams detected the track walls and found that the Canadian team used edge detection to trace the wall contours, yielding more stable results. Therefore, we switched to an edge-detection approach: we define two regions of interest (ROI1 and ROI2) and then use ROI1 and ROI2 to detect the left and right track walls and draw their contours. The specific steps are as follows:
+### Using Edge Detection in OpenCV to trace the contours of the interior walls, exterior walls, red pillar, green pillar, orange lines, blue lines, and magenta walls, and to detect them with ROI (regions of interest) - 在OpenCV中使用邊緣檢測來描繪內牆、外牆、紅柱、綠柱、橘線、藍線和洋紅牆面輪廓，並用ROI影像感興趣區域來偵測
+  - 在國內選拔賽之前，我們採用RGB影像轉換為灰階影像，灰階影像再轉換為二值化影像來辨識賽道牆面。國內選拔賽之後，我們研究其他國際賽隊伍辨識牆面和物件的作法，發現加拿大隊伍利用邊緣檢測描繪內牆、外牆、紅柱、綠柱、橘線、藍線和洋紅牆面輪廓，能提供更穩定的偵測。因此，我們決定改成邊緣檢測這種方式，建立ROI1~ROI6影像感興趣區域，將要偵測的物件透過對應的ROI影像感興趣區域描繪出輪廓並轉為X和Y座標及面積。具體步驟如下：
+  - Before the national selection rounds, we converted RGB images to grayscale and then to binary images to recognize the track walls. After the national selection rounds, we studied how other international teams recognized walls and objects and found that the Canadian team used edge detection to trace the contours of the interior walls, exterior walls, red pillar, green pillar, orange lines, blue lines, and magenta walls, which provided more stable detection. Therefore, we switched to an edge-detection approach: we define regions of interest (ROI1–ROI6), and for each target object we trace its contours within the corresponding ROI and convert them into X and Y coordinates and area. The specific steps are as follows:
 
 ### 中文:
   1. **顏色轉換**：
@@ -85,7 +85,7 @@
         <img
           src="./img/camera.png"
           alt="floor-to-boundary (black-and-white)"
-          style="height:280px !important; width:350px; display:block; margin:0 auto;"
+          style="height:285px !important; width:350px; display:block; margin:0 auto;"
         />
       </td>
       <td style="text-align:center;">
