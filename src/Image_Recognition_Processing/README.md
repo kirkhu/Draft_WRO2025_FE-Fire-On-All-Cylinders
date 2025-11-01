@@ -87,17 +87,17 @@
       <td style="text-align:center;">
         <img src="./img/camera.png"
              alt="floor-to-boundary (black-and-white)"
-             style="height:285px !important; width:350px; display:block; margin:0 auto;" />
+             style="height:200px; width:440px; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
         <img src="./img/ROI_Edge_detection.png"
              alt="floor-to-boundary (black-and-white)"
-             style="width:350px; height:auto; display:block; margin:0 auto;" />
+             style="height:200px; width:440px; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
         <img src="./img/Obstacle_detection.png"
              alt="floor-to-boundary (black-and-white)"
-             style="height:285px !important; width:350px; display:block; margin:0 auto;" />
+             style="height:200px; width:270px; display:block; margin:0 auto;" />
       </td>
     </tr>
   </table>
@@ -118,17 +118,17 @@
       <td style="text-align:center;">
         <img src="./img/linecolor.png"
              alt="Obstacle_detection"
-             style="width:300px; height:auto; display:block; margin:0 auto;" />
+             style="height:200px; width:270px; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
         <img src="./img/binarization_run.png"
              alt="line color detection"
-             style="width:300px; height:auto; display:block; margin:0 auto;" />
+             style="height:200px; width:270px; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
         <img src="./img/pink.png"
              alt="binarization_run.png"
-             style="width:600px; height:auto; display:block; margin:0 auto;" />
+             style="height:200px; width:270px; display:block; margin:0 auto;" />
       </td>
     </tr>
   </table>
