@@ -75,12 +75,28 @@
 
 
 <div align="center">
+
   <!-- 上排（三欄） -->
-  <table>
+  <table style="
+      width: 900px;                 /* ← 固定整張表的寬度 */
+      table-layout: fixed;          /* ← 固定欄寬，不受字長影響 */
+      border-collapse: collapse;
+      margin: 0 auto;">
+    <colgroup>
+      <col style="width: 300px;">
+      <col style="width: 300px;">
+      <col style="width: 300px;">
+    </colgroup>
     <tr>
-      <th>Binarized wall detection(二值化檢測牆面)</th>
-      <th>ROI1 and ROI2: detect walls(ROI1和ROI2檢測牆面)</th>
-      <th>ROI3: detect the red pillar and green pillar(ROI3檢測紅與綠柱)</th>
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+        Binarized wall detection(二值化檢測牆面)
+      </th>
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+        ROI1 and ROI2: detect walls(ROI1和ROI2檢測牆面)
+      </th>
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+        ROI3: detect the red pillar and green pillar(ROI3檢測紅與綠柱)
+      </th>
     </tr>
     <tr>
       <td align="center">
@@ -99,11 +115,26 @@
   </table>
 
   <!-- 下排（三欄） -->
-  <table>
+  <table style="
+      width: 900px;                 /* ← 固定整張表的寬度（與上表一致） */
+      table-layout: fixed;
+      border-collapse: collapse;
+      margin: 0 auto; margin-top:-1px;"> <!-- 如要無縫貼合上表，可調整為 -1~-8px -->
+    <colgroup>
+      <col style="width: 300px;">
+      <col style="width: 300px;">
+      <col style="width: 300px;">
+    </colgroup>
     <tr>
-      <th>ROI4: detect orange lines and blue lines(ROI4檢測橘與藍線)</th>
-      <th>ROI5: assist in detecting the front wall(ROI5輔助檢測前方牆面)</th>
-      <th>ROI6: detect magenta walls(ROI6檢測洋紅牆面)</th>
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+        ROI4: detect orange lines and blue lines(ROI4檢測橘與藍線)
+      </th>
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+        ROI5: assist in detecting the front wall(ROI5輔助檢測前方牆面)
+      </th>
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+        ROI6: detect magenta walls(ROI6檢測洋紅牆面)
+      </th>
     </tr>
     <tr>
       <td align="center">
@@ -120,7 +151,9 @@
       </td>
     </tr>
   </table>
+
 </div>
+
 
 
 
