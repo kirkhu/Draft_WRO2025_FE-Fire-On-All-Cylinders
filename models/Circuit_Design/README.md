@@ -93,7 +93,7 @@
 
  ## WRO2025 全國賽電路比較 WRO 2025 世界賽電路
 
- - ### 初代設計 
+ - ### First Design 
 
  <div align=center>
    <table>
@@ -110,7 +110,7 @@
    </table>
  </div>
 
- - ### 最新版設計
+ - ### Lastest Design
 
  <div align=center>
    <table>
