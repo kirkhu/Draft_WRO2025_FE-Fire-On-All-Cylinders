@@ -74,15 +74,26 @@
   - 在CSI鏡頭讀取到的畫面上建立ROI3影像感興趣區域，使用ROI3偵測直線區域的紅柱和綠柱，繪製出柱體輪廓並轉為X、Y座標和面積值，輸入給Jetson Orin Nano運算。
   5. **ROI4影像感興趣區域介紹**：
   - 在CSI鏡頭讀取到的畫面上建立ROI4影像感興趣區域，使用ROI4偵測轉彎區域的藍線和橘線，繪製出線條輪廓並轉為面積值，輸入給Jetson Orin Nano運算。
-  5. **ROI5影像感興趣區域介紹**：
+  6. **ROI5影像感興趣區域介紹**：
   - 在CSI鏡頭讀取到的畫面上建立ROI5影像感興趣區域，當自駕車在彎道區域ROI5偵測到牆面時，繪製出牆面輪廓並轉為面積值，輸入給Jetson Orin Nano運算。
-  6. **ROI6影像感興趣區域介紹**：
+  7. **ROI6影像感興趣區域介紹**：
   - 在CSI鏡頭讀取到的畫面上建立ROI6影像感興趣區域，當自駕車進行停車時ROI6偵測直線區域的洋紅牆面，繪製出牆面輪廓並轉為X、Y座標和面積值，輸入給Jetson Orin Nano運算。
 ### 英文:
-  1. **Color Conversion**:  
-  We start by using `cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)` to convert the RGB image to grayscale, then apply `cv2.threshold(src, thresh, maxval, type)` to transform the grayscale image into a binary image.
-  2. **Adjusting Color Range**: 
-  To ensure a clear black-and-white boundary between the floor and the sidewalls, we use `cv2.getTrackbarPos()` to dynamically adjust the threshold until the desired boundary effect is achieved.
+  1. **Establish ROIs (regions of interest)**:  
+  - Use `cv2.boundingRect()` to compute the axis-aligned minimum bounding rectangle for a set of points. It returns integer coordinates and size `(x, y, w, h)` and is commonly used to draw boxes or crop an ROI.
+  - Use `cv2.rectangle(img, (x, y), (x + w, y + h), color, 1)` to draw a rectangle on `img`: `(x, y)` is the top-left corner, `(x + w, y + h)` is the bottom-right corner, `color` is a BGR triplet (e.g., `(255, 204, 0)` is cyan/blue-green), and the final `1` is the line thickness in pixels.
+  2. **Draw contours for walls, objects, and lines**: 
+  - Use `cv2.drawContours(img, contours, -1, color, thickness)` to render contours on `img`. `contours` is the list returned by `findContours`; `-1` means draw all contours in the list; `color` is BGR; `thickness` is the line width.
+  3. **ROI1 and ROI2 overview**: 
+  - On the CSI camera feed, define ROI1 and ROI2. Use ROI1 to detect the left wall and ROI2 to detect the right wall, trace the wall contours, and convert them to area values for computation on the Jetson Orin Nano.
+  4. **ROI3 overview**: 
+  - On the CSI camera feed, define ROI3. Use ROI3 to detect the red pillar and green pillar in straight segments, trace the pillar contours, and convert them to X/Y coordinates and area values as inputs to the Jetson Orin Nano.
+  5. **ROI4 overview**: 
+  - On the CSI camera feed, define ROI4. Use ROI4 to detect blue lines and orange lines in turning segments, trace the line contours, and convert them to area values as inputs to the Jetson Orin Nano.
+  6. **ROI5 overview**: 
+  - On the CSI camera feed, define ROI5. When the Self-Driving-Cars vehicle is in a cornering segment and ROI5 detects a wall, trace the wall contours and convert them to area values as inputs to the Jetson Orin Nano.
+  7. **ROI6 overview**: 
+  - On the CSI camera feed, define ROI6. During parking, use ROI6 to detect magenta walls in straight segments, trace the wall contours, and convert them to X/Y coordinates and area values as inputs to the Jetson Orin Nano.
 
 
 <div align="center">
