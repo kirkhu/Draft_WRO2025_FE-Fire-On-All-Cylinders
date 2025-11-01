@@ -75,64 +75,39 @@
 
 
 <div style="text-align:center;">
+  <table style="margin:0 auto; border-collapse:collapse; table-layout:fixed;">
+    <colgroup><col style="width:420px;"><col style="width:420px;"><col style="width:420px;"></colgroup>
 
-  <!-- 上表 -->
-  <table style="margin:0 auto !important; border-collapse:collapse; border-spacing:0; padding:0;">
     <tr>
-      <th>二值化檢測牆面</th>
-      <th>ROI1和ROI2檢測牆面</th>
-      <th>ROI3檢測紅與綠柱</th>
+      <th style="padding:6px 8px; word-break:break-word;">二值化檢測牆面</th>
+      <th style="padding:6px 8px; word-break:break-word;">ROI1和ROI2檢測牆面</th>
+      <th style="padding:6px 8px; word-break:break-word;">ROI3檢測紅與綠柱</th>
     </tr>
     <tr>
-      <td style="text-align:center;">
-        <img src="./img/camera.png"
-             alt="floor-to-boundary (black-and-white)"
-             style="height:200px; width:440px; display:block; margin:0 auto;" />
-      </td>
-      <td style="text-align:center;">
-        <img src="./img/ROI_Edge_detection.png"
-             alt="floor-to-boundary (black-and-white)"
-             style="height:200px; width:440px; display:block; margin:0 auto;" />
-      </td>
-      <td style="text-align:center;">
-        <img src="./img/Obstacle_detection.png"
-             alt="floor-to-boundary (black-and-white)"
-             style="height:200px; width:270px; display:block; margin:0 auto;" />
-      </td>
+      <td><img src="./img/camera.png"             alt="bw"
+               style="display:block; margin:0 auto; width:440px; height:200px; object-fit:contain;"></td>
+      <td><img src="./img/ROI_Edge_detection.png" alt="roi12"
+               style="display:block; margin:0 auto; width:440px; height:200px; object-fit:contain;"></td>
+      <td><img src="./img/Obstacle_detection.png" alt="roi3"
+               style="display:block; margin:0 auto; width:270px; height:200px; object-fit:contain;"></td>
     </tr>
-  </table>
 
-  <!-- 下表：把 margin-top 壓到 0；若主題仍留縫，用負值覆蓋 -->
-  <table style="
-      margin:0 auto !important;
-      margin-top:-8px !important;   /* ← 如仍有縫可調 -12 ~ -1px */
-      border-collapse:collapse;
-      border-spacing:0;
-      padding:0;">
     <tr>
-      <th>ROI4檢測橘與藍線</th>
-      <th>ROI5輔助檢測前方牆面</th>
-      <th>ROI6檢測洋紅牆面</th>
+      <th style="padding:6px 8px; word-break:break-word;">ROI4檢測橘與藍線</th>
+      <th style="padding:6px 8px; word-break:break-word;">ROI5輔助檢測前方牆面</th>
+      <th style="padding:6px 8px; word-break:break-word;">ROI6檢測洋紅牆面</th>
     </tr>
     <tr>
-      <td style="text-align:center;">
-        <img src="./img/linecolor.png"
-             alt="Obstacle_detection"
-             style="height:200px; width:500px; display:block; margin:0 auto;" />
-      </td>
-      <td style="text-align:center;">
-        <img src="./img/binarization_run.png"
-             alt="line color detection"
-             style="height:200px; width:210px; display:block; margin:0 auto;" />
-      </td>
-      <td style="text-align:center;">
-        <img src="./img/pink.png"
-             alt="binarization_run.png"
-             style="height:200px; width:800px; display:block; margin:0 auto;" />
-      </td>
+      <td><img src="./img/linecolor.png"          alt="roi4"
+               style="display:block; margin:0 auto; width:500px; height:200px; object-fit:contain;"></td>
+      <td><img src="./img/binarization_run.png"   alt="roi5"
+               style="display:block; margin:0 auto; width:210px; height:200px; object-fit:contain;"></td>
+      <td><img src="./img/pink.png"               alt="roi6"
+               style="display:block; margin:0 auto; width:800px; height:200px; object-fit:contain;"></td>
     </tr>
   </table>
 </div>
+
 
 
 
