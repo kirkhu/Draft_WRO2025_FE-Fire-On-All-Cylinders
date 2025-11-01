@@ -402,7 +402,7 @@ __產品規格__
   - 紅外光波頻率：3.16x10 
         </td>
         <td>
-        
+          <img src="./img/TCRT5000.png" width=250 />
         </td>
       </tr>
     </table>
