@@ -73,7 +73,6 @@
   2. **Adjusting Color Range**: 
   To ensure a clear black-and-white boundary between the floor and the sidewalls, we use `cv2.getTrackbarPos()` to dynamically adjust the threshold until the desired boundary effect is achieved.
 
-
 <div style="text-align:center;">
   <table style="margin:0 auto;">
     <tr>
@@ -96,18 +95,26 @@
         />
       </td>
     </tr>
-<table>
-<tr>
-<th> Obstacle Detection on in Images　(影像中的障礙物檢測)</th>
-<th> Orange and Blue lines Detection on in Images（影像中的橙色和藍色線條檢測）</th>
-<th> floor-to-boundary (black-and-white) Detection on in Images（影像中的地板到邊界邊緣檢測）</th>
-</tr>
-<tr>
-<td><img src="./img/Obstacle_detection.png" alt="Obstacle_detection" align=center /></td>
-<td><img src="./img/linecolor.png"  alt="line color detection" align=center /></td>
-<td><img src="./img/binarization_run.png"  alt="binarization_run.png" align=center /></td>
-</tr>
-</table>
+  </table>
+
+  <table>
+    <tr>
+      <th> Obstacle Detection on in Images　(影像中的障礙物檢測)</th>
+      <th> Orange and Blue lines Detection on in Images（影像中的橙色和藍色線條檢測）</th>
+      <th> floor-to-boundary (black-and-white) Detection on in Images（影像中的地板到邊界邊緣檢測）</th>
+    </tr>
+    <tr>
+      <td>
+        <img src="./img/Obstacle_detection.png" alt="Obstacle_detection" align="center" />
+      </td>
+      <td>
+        <img src="./img/linecolor.png" alt="line color detection" align="center" />
+      </td>
+      <td>
+        <img src="./img/binarization_run.png" alt="binarization_run.png" align="center" />
+      </td>
+    </tr>
+  </table>
 </div>
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
