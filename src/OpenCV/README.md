@@ -17,9 +17,9 @@
    sudo apt-get update
    sudo apt-get upgrade
    ```
-   __2.install nano__
+   __2.Download OpenCV Source Code__
    ```
-   sudo apt-get install nano
+   
    ```
    __3.install dphys-swapfile__
    ```

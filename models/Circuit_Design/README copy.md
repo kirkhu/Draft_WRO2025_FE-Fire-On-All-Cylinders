@@ -10,6 +10,68 @@
   - We adopted a PCB cleaning process that not only effectively reduces soldering errors and the risk of short circuits, but also enhances the visual quality of the board. Additionally, this approach offers greater flexibility in the manufacturing process and improved ease of operation.
   -The primary function of the circuit board is to provide power and signal connections for various sensors, motors, and controllers, ensuring smooth communication and coordinated operation among all components.communication and cooperation among them.
 
+ ## 電路原理圖及PCB圖
+
+ <div align=center>
+   <table>
+      <tr>
+         <th colspan=2>第二代</th>
+      </tr>
+      <tr>
+         <th>Schematic</th>
+         <th>PCB</th>
+      </tr>
+      <tr align=center>
+         <td><img src="" height=300 /></td>
+         <td><img src="" height=300 /></td>
+      </tr>
+      <tr>
+         <th colspan=2>第三代</th>
+      </tr>
+      <tr>
+         <th>Schematic</th>
+         <th>PCB</th>
+      </tr>
+      <tr align=center>
+         <td><img src="./img/Schematic&PCB/Schematic_Version 3.png" height=300 /></td>
+         <td><img src="" height=300 /></td>
+      </tr>
+      <tr>
+         <th colspan=2>第四代</th>
+      </tr>
+      <tr>
+         <th>Schematic</th>
+         <th>PCB</th>
+      </tr>
+      <tr align=center>
+         <td><img src="./img/Schematic&PCB/Schematic_Version 4.png" height=300 /></td>
+         <td><img src="" height=300 /></td>
+      </tr>
+      <tr>
+         <th colspan=2>第五代</th>
+      </tr>
+      <tr>
+         <th>Schematic</th>
+         <th>PCB</th>
+      </tr>
+      <tr align=center>
+         <td><img src="./img/Schematic&PCB/Schematic_Version 5.png" height=300 /></td>
+         <td><img src="./img/Schematic&PCB/PCB_Version 5.png" height=300 /></td>
+      </tr>
+      <tr>
+         <th colspan=2>第六代</th>
+      </tr>
+      <tr>
+         <th>Schematic</th>
+         <th>PCB</th>
+      </tr>
+      <tr align=center>
+         <td><img src="./img/Schematic&PCB/Schematic_Version 6.png" height=300 /></td>
+         <td><img src="./img/Schematic&PCB/PCB_Version 6.png" height=300 /></td>
+      </tr>
+   </table>
+ </div>
+
  ## 實體電路板問題發現與修正歷程
 
  <div align=center>
@@ -91,7 +153,7 @@
    </table>
  </div>
 
- ## WRO2025 全國賽電路比較 WRO 2025 世界賽電路
+ ## 電路原理圖比較
 
  - ### 初代設計 
 
