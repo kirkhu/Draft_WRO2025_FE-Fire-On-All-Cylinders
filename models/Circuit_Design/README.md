@@ -131,6 +131,8 @@
       </tr>
    </table>
    <th>	總電路原理圖  </th>
+
+   
    <td align=center ><img src="./img/Schematic&PCB/Schematic_Version_all.png" height=500  /></td>
  </div>
 
