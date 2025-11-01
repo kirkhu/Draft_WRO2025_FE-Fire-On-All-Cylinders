@@ -74,82 +74,87 @@
   To ensure a clear black-and-white boundary between the floor and the sidewalls, we use `cv2.getTrackbarPos()` to dynamically adjust the threshold until the desired boundary effect is achieved.
 
 
+<style>
+  /* 3欄固定：總寬900，每欄300；忽略外部樣式的覆蓋 */
+  table.fix3 {
+    width: 900px !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    margin: 0 auto !important;
+  }
+  table.fix3 col { width: 300px !important; }
+
+  /* th/td 一律等寬、等 padding，避免被主題加料撐大 */
+  table.fix3 th,
+  table.fix3 td {
+    width: 300px !important;
+    padding: 8px !important;
+    box-sizing: border-box !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
+  /* 圖片不再撐破欄位；你仍可各自指定寬高 */
+  table.fix3 img {
+    max-width: 100% !important;
+    height: auto;            /* 若你有固定高，會用你各自的 inline style 覆寫 */
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
 <div align="center">
 
-  <!-- 上排（三欄，等寬） -->
-  <table style="width:900px; table-layout:fixed; border-collapse:collapse; margin:0 auto;">
-    <colgroup>
-      <col style="width:300px;">
-      <col style="width:300px;">
-      <col style="width:300px;">
-    </colgroup>
+  <!-- 上排（三欄） -->
+  <table class="fix3">
+    <colgroup><col><col><col></colgroup>
     <tr>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
-        Binarized wall detection(二值化檢測牆面)
-      </th>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
-        ROI1 and ROI2: detect walls(ROI1和ROI2檢測牆面)
-      </th>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
-        ROI3: detect the red pillar and green pillar(ROI3檢測紅與綠柱)
-      </th>
+      <th>Binarized wall detection(二值化檢測牆面)</th>
+      <th>ROI1 and ROI2: detect walls(ROI1和ROI2檢測牆面)</th>
+      <th>ROI3: detect the red pillar and green pillar(ROI3檢測紅與綠柱)</th>
     </tr>
     <tr>
-      <td align="center" style="padding:8px;">
+      <td>
         <img src="./img/camera.png" alt="floor-to-boundary (black-and-white)"
-             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
+             style="width:270px; height:185px;">
       </td>
-      <td align="center" style="padding:8px;">
+      <td>
         <img src="./img/ROI_Edge_detection.png" alt="floor-to-boundary (black-and-white)"
-             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
+             style="width:270px; height:185px;">
       </td>
-      <td align="center" style="padding:8px;">
+      <td>
         <img src="./img/Obstacle_detection.png" alt="floor-to-boundary (black-and-white)"
-             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
+             style="width:270px; height:185px;">
       </td>
     </tr>
   </table>
 
-  <!-- 下排（三欄，等寬；與上表同總寬） -->
-  <table style="width:900px; table-layout:fixed; border-collapse:collapse; margin:0 auto; margin-top:-1px;">
-    <colgroup>
-      <col style="width:300px;">
-      <col style="width:300px;">
-      <col style="width:300px;">
-    </colgroup>
+  <!-- 下排（三欄；與上表同寬） -->
+  <table class="fix3" style="margin-top:-1px;">
+    <colgroup><col><col><col></colgroup>
     <tr>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
-        ROI4: detect orange lines and blue lines(ROI4檢測橘與藍線)
-      </th>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
-        ROI5: assist in detecting the front wall(ROI5輔助檢測前方牆面)
-      </th>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
-        ROI6: detect magenta walls(ROI6檢測洋紅牆面)
-      </th>
+      <th>ROI4: detect orange lines and blue lines(ROI4檢測橘與藍線)</th>
+      <th>ROI5: assist in detecting the front wall(ROI5輔助檢測前方牆面)</th>
+      <th>ROI6: detect magenta walls(ROI6檢測洋紅牆面)</th>
     </tr>
     <tr>
-      <td align="center" style="padding:8px;">
+      <td>
         <img src="./img/linecolor.png" alt="line color detection"
-             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
+             style="width:270px; height:185px;">
       </td>
-      <td align="center" style="padding:8px;">
+      <td>
         <img src="./img/binarization_run.png" alt="binarization_run.png"
-             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
+             style="width:270px; height:185px;">
       </td>
-      <td align="center" style="padding:8px;">
+      <td>
         <img src="./img/pink.png" alt="pink"
-             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
+             style="width:270px; height:185px;">
       </td>
     </tr>
   </table>
 
 </div>
-
-
-
-
-
 
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
