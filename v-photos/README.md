@@ -60,11 +60,11 @@
     <div align="center">
     <table>
       <tr align="center">
-          <th> Circuit Board Top View(電路板頂視圖)
-          </th><th>Circuit Board Button View(電路板按鈕視圖)</th>
+          <th> Overhead view of the main circuit board(主電路板俯視圖)
+          </th><th>Overhead view of the switch circuit board(啟動開關電路板俯視圖)</th>
       </tr>
       <tr align="center">
-        <td> <img src="../models/Circuit_Design/img/Circuit 6 Top.png" width="300" alt="circuit_up"> </td><td><img src="../models/Circuit_Design/img/Button And Led Top.png" width="300" alt="circuit_lower.jpg"></td>
+        <td> <img src="../models/Circuit_Design/img/Circuit_6_Top.png" width="300" alt="circuit_up"> </td><td><img src="../models/Circuit_Design/img/Button_And_Led_Top.png" width="300" alt="circuit_lower"></td>
       </tr>
     </table>
     </div>
