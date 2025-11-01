@@ -43,7 +43,7 @@ In summary, utilizing a pluggable terminal block as the interface for the power 
     <table>
         <tr>
             <th>Pluggable Terminal Block(Power supply)</th>
-            <th>Circuit Real-life Photo(Power supply)</th>
+            <th>Actual Photo of the Circuit(Power supply)</th>
         </tr>
         <tr align=center>
             <td><img src="./img/Pluggable Terminal Block.png" width=400 alt="Terminal block" /></td>
@@ -69,7 +69,7 @@ In summary, utilizing a pluggable terminal block as the interface for the power 
 <table>
 <tr>
 <th>2.5mm Connector 2/3 Pin Male/female Adapter Right Angle Pin Header White Socket(2.5毫米接頭 2/3 針公母轉接頭 直角針腳 白色插座)</th>
-<th>Circuit real-life photo(電路實際照片)</th>
+<th>Actual Photo of the Circuit(電路實際照片)</th>
 </tr><tr>
 <td width=500 align=center><img src="./img/pin.jpg" width="400" height="400" alt="pin"></td> 
 <td width=500 align=center><img src="./img/ciruit.png" width="400" height="400" alt="ciruit"></td> 
