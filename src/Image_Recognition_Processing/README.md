@@ -44,8 +44,8 @@
 <th>Adjusting the LAB Range Values for Orange Color(調整橙色的 LAB 範圍值)</th>
 </tr>
 <tr>
-<td><img src="./img/blue_LAB.png" width = "350" alt="blue_block_LAB" align=center /></td>
-<td><img src="./img/orange_LAB.png" width = "350"  alt="orange_block_LAB" align=center /></td>
+<td align="center"><img src="./img/blue_LAB.png" width="350" alt="blue_block_LAB"></td>
+<td align="center"><img src="./img/orange_LAB.png" width="350" alt="orange_block_LAB"></td>
 </tr>
 </table>
 <table>
@@ -53,7 +53,7 @@
 <th>Adjusting the LAB Range Values for Pink Color(調整洋紅色的 LAB 範圍值)</th>
 </tr>
 <tr>
-<td><img src="./img/magenta_LAB.png" alt="magenta_block_LAB" align=center /></td>
+<td align="center"><img src="./img/magenta_LAB.png" width="350" alt="magenta_block_LAB"></td>
 </tr>
 </table>
 </div>
