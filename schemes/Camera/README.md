@@ -2,11 +2,12 @@
 
 ## <div align="center">Camera Selection-相機選擇</div>
   ### 中文:
-  1. 為了使車輛能夠準確偵測賽道上的障礙物，相機模組的選擇已成為影響比賽結果的關鍵因素。選擇具備高解析度、低延遲與高感光度的相機模組，可以提升影像清晰度，增強車輛辨識障礙物的能力，進而進行更精準的避障與導航操作。這將直接影響自駕車在比賽中的表現。
-  2. 我們先前使用 Nvidia Jetson Nano 作為主控制器，因此必須選擇與 Jetson Nano 相容的相機模組，才能確保功能正常運作。以下為目前台灣常用相機模組的比較說明。
+  1. 在自駕車競賽中，為了能準確捕捉與辨識賽道上的各類標的物——包含紅色/綠色柱體、黑色邊界牆、洋紅色停車區，乃至於地面上的藍線與橙線——相機模組的選擇至關重要，可謂影響比賽勝負的核心要素。 我們必須選用具備高解析度、極低延遲與優異高感光性能的相機模組，方能確保影像資訊的即時與清晰，大幅強化車輛對周遭障礙物的識別效能。 這直接優化了後續的避障與導航決策，奠定車輛在賽場上的競爭力。
+  2. 我們因為使用 NVIDIA Jetson Orin Nano 作為主控制器，因此必須選擇與 Jetson Nano 相容的相機模組，才能確保功能正常運作。以下為目前台灣常用相機模組的比較說明。
   ### 英文:
-  1. To enable a vehicle to accurately detect obstacles on the track, the selection of a camera module has become a key factor influencing competition outcomes. Choosing a high-resolution, low-latency, high-sensitivity camera module can improve image clarity and enhance the vehicle’s ability to recognize obstacles, allowing for more precise obstacle avoidance and navigation maneuvers. This directly impacts the performance of autonomous vehicles in competitions.
-  2. Previously, we used the Nvidia Jetson Nano as the main controller, so it is necessary to select a camera module compatible with the Nvidia Jetson Nano to ensure proper functionality. Below is a comparison of commonly used camera modules in Taiwan.
+  - In autonomous vehicle competitions, the selection of the camera module is crucial—indeed, it is the core element influencing the outcome of the race—to accurately capture and identify the various targets on the track, including the red/green posts, black boundary walls, magenta parking areas, as well as the blue and orange lines on the ground. We must select a camera module featuring high resolution, extremely low latency, and excellent high light sensitivity performance to ensure that image information is both real-time and clear, significantly enhancing the vehicle's recognition capability for surrounding obstacles. This directly optimizes subsequent avoidance and navigation decisions, establishing the vehicle's competitiveness on the track
+  - Since we are using the NVIDIA Jetson Orin Nano as the main controller, we must choose a camera module that is compatible with the Jetson Nano to ensure normal functionality. The following is a comparison of camera modules commonly used in Taiwan.
+
 
 - ### Comparison of Camera Modules-相機模組比較
     <div align="center">
