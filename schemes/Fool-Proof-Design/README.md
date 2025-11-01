@@ -56,16 +56,16 @@ In summary, adopting a plug-in terminal block as the connection interface for th
             <th width=500>PCB 電路板正反(主)</th>
         </tr>
         <tr align=center>
-            <td><img src="./img/PCB_Body_Fount.jpg" width=400 alt="Circuit Body Fount" /></td>
-            <td><img src="./img/PCB_Body_Bottom.jpg" width=400 alt="Circuit Body Bottom" /></td>
+            <td><img src="./img/PCB_Body_Fount.png" width=400 alt="Circuit Body Fount" /></td>
+            <td><img src="./img/PCB_Body_Bottom.png" width=400 alt="Circuit Body Bottom" /></td>
         </tr>
         <tr>
             <th>PCB LED和Button電路板正面</th>
             <th>PCB LED和Button電路板反面</th>
         </tr>
         <tr align=center>
-            <td><img src="./img/PCB_LED_Fount.jpg" width=400 alt="Circuit Led and button Fount" /></td>
-            <td><img src="./img/PCB_LED_Fount.jpg" width=400 alt="Circuit Led and button Bottom" /></td>
+            <td><img src="./img/PCB_LED_Fount.png" width=400 alt="Circuit Led and button Fount" /></td>
+            <td><img src="./img/PCB_LED_Bottom.png" width=400 alt="Circuit Led and button Bottom" /></td>
         </tr>
     </table>
 </div>
