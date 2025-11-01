@@ -100,9 +100,9 @@
   <!-- 上排（三欄） -->
   <table>
     <tr>
-      <th width=300>Binarized wall detection(二值化檢測牆面)</th>
-      <th width=300>ROI1 and ROI2: detect walls(ROI1和ROI2檢測牆面)</th>
-      <th width=300>ROI3: detect the red pillar and green pillar(ROI3檢測紅與綠柱)</th>
+      <th width=400>Binarized wall detection(二值化檢測牆面)</th>
+      <th width=400>ROI1 and ROI2: detect walls(ROI1和ROI2檢測牆面)</th>
+      <th width=400>ROI3: detect the red pillar and green pillar(ROI3檢測紅與綠柱)</th>
     </tr>
     <tr>
       <td align="center">
