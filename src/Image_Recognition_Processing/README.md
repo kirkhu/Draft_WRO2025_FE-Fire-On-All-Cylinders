@@ -81,7 +81,7 @@
     <tr>
       <th>二值化牆壁檢測</th>
       <th>ROI 邊緣檢測</th>
-      <th>ROI 邊緣檢測</th>
+      <th>Obstacle Detection on in Images（影像中的障礙物檢測）</th>
     </tr>
     <tr>
       <td style="text-align:center;">
@@ -95,7 +95,7 @@
              style="width:350px; height:auto; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
-        <img src="./img/camera.png"
+        <img src="./img/Obstacle_detection.png"
              alt="floor-to-boundary (black-and-white)"
              style="height:285px !important; width:350px; display:block; margin:0 auto;" />
       </td>
@@ -110,25 +110,25 @@
       border-spacing:0;
       padding:0;">
     <tr>
-      <th>Obstacle Detection on in Images（影像中的障礙物檢測）</th>
-      <th>Orange and Blue lines Detection on in Images（影像中的橙色和藍色線條檢測）</th>
+      <th>Orange and Blue lines Detection on in Images（影像中的橙色和藍色線條檢測</th>
       <th>floor-to-boundary (black-and-white) Detection on in Images（影像中的地板到邊界邊緣檢測）</th>
+      <th>(影像中的停車場檢測)</th>
     </tr>
     <tr>
       <td style="text-align:center;">
-        <img src="./img/Obstacle_detection.png"
-             alt="Obstacle_detection"
-             style="width:350px; height:auto; display:block; margin:0 auto;" />
-      </td>
-      <td style="text-align:center;">
         <img src="./img/linecolor.png"
-             alt="line color detection"
-             style="width:350px; height:auto; display:block; margin:0 auto;" />
+             alt="Obstacle_detection"
+             style="width:300px; height:auto; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
         <img src="./img/binarization_run.png"
+             alt="line color detection"
+             style="width:300px; height:auto; display:block; margin:0 auto;" />
+      </td>
+      <td style="text-align:center;">
+        <img src="./img/pink.png"
              alt="binarization_run.png"
-             style="width:350px; height:auto; display:block; margin:0 auto;" />
+             style="width:600px; height:auto; display:block; margin:0 auto;" />
       </td>
     </tr>
   </table>
