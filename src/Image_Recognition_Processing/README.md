@@ -36,8 +36,8 @@
 <th>Adjusting the LAB Range Values for Green Color(調整綠色的LAB範圍值)</th>
 </tr>
 <tr>
-<td><img src="./img/red_block_LAB.png" width = "350" alt="red_block_LAB" align=center /></td>
-<td><img src="./img/green_block_LAB.png" width = "350"  alt="green_block_LAB" align=center /></td>
+<td align="center"><img src="./img/red_block_LAB.png" width="350" alt="red_block_LAB"></td>
+<td align="center"><img src="./img/green_block_LAB.png" width="350" alt="green_block_LAB"></td>
 </tr>
 <tr>
 <th>Adjusting the LAB Range Values for Bule Color(調整藍色的 LAB 範圍值)</th>
