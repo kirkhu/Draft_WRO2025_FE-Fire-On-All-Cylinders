@@ -57,8 +57,8 @@ In summary, utilizing a pluggable terminal block as the interface for the power 
 <div align=center>
     <table>
         <tr>
-            <th width=500>PCB 電路板正面(主)</th>
-            <th width=500>PCB 電路板正反(主)</th>
+            <th width=500>Top side of the PCB</th>
+            <th width=500>Bottom Side of the PCB</th>
         </tr>
         <tr align=center>
             <td><img src="./img/PCB_Body_Fount.png" width=400 alt="Circuit Body Fount" /></td>
