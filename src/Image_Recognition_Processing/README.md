@@ -76,6 +76,8 @@
 
 <div style="text-align:center;">
   <table style="margin:0 auto; border-collapse:collapse; table-layout:fixed;">
+    <colgroup><col style="width:420px;"><col style="width:420px;"><col style="width:420px;"></colgroup>
+
     <tr>
       <th style="padding:6px 8px; word-break:break-word;">二值化檢測牆面</th>
       <th style="padding:6px 8px; word-break:break-word;">ROI1和ROI2檢測牆面</th>
