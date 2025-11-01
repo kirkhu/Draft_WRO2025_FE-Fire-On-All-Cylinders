@@ -18,8 +18,8 @@
          <th colspan=3>第一代</th>
       </tr>
       <tr>
-         <td align=center ><img src="../Circuit_Design/img/circuit board fount 1.png" width=400 /></td>
-         <td align=center ><img src="../Circuit_Design/img/circuit board back 1.png" width=400 /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_1.png" width=400 /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_back_1.png" width=400 /></td>
          <td>
          描述：</br>&emsp;&emsp;
          此版本電路板焊接所需時間過長，且線路砸亂不美觀還不易檢查問題點。
@@ -29,8 +29,8 @@
          <th colspan=3>第二代</th>
       </tr>
       <tr>
-         <td align=center ><img src="../Circuit_Design/img/circuit board fount 2.png" width=400 /></td>
-         <td align=center ><img src="../Circuit_Design/img/circuit board back 2.png" width=400 /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_2.png" width=400 /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_back_2.png" width=400 /></td>
          <td>
          描述：</br>&emsp;&emsp;
          因上版電路板有焊接時間過長和線路雜亂的問題，因此我們使用EasyEDA繪畫並生成PCB電路。</br>&emsp;&emsp;
@@ -41,8 +41,8 @@
          <th colspan=3>第三代</th>
       </tr>
       <tr>
-         <td align=center ><img src="../Circuit_Design/img/circuit board fount 3.png" width=400 /></td>
-         <td align=center ><img src="../Circuit_Design/img/circuit board back 3.png" width=400 /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_3.png" width=400 /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_back_3.png" width=400 /></td>
          <td>
          描述：</br>&emsp;&emsp;
          因上版電路板有針腳間距不正確的問題，因此我們使用EasyEDA的內建範例圖重新校準針腳間距。</br>&emsp;&emsp;
@@ -53,8 +53,8 @@
          <th colspan=3>第四代</th>
       </tr>
       <tr>
-         <td align=center ><img src="../Circuit_Design/img/circuit board fount 4.png" width=400 /></td>
-         <td align=center ><img src="../Circuit_Design/img/circuit board back 4.png" width=400 /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_4.png" width=400 /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_back_4.png" width=400 /></td>
          <td>
          描述：</br>&emsp;&emsp;
          因上版電路板有電路極性顛倒的問題，因此我們重新繪畫電路並且經過多次確認電路繪畫正確後送出。</br>&emsp;&emsp;
@@ -65,8 +65,8 @@
          <th colspan=3>第五代</th>
       </tr>
       <tr>
-         <td align=center ><img src="../Circuit_Design/img/circuit board fount 5.png" width=400 /></td>
-         <td align=center ><img src="../Circuit_Design/img/circuit board back 5.png" width=400 /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_5.png" width=400 /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_back_5.png" width=400 /></td>
          <td>
          描述：</br>&emsp;&emsp;
          因新版機器需要新增兩個2Pin插座母頭和插拔式接線端子，所以我們重新給PCB排版並且加入所需元件。</br>&emsp;&emsp;
@@ -77,16 +77,16 @@
          <th colspan=3>第六代</th>
       </tr>
       <tr>
-         <td align=center><img src="./img/Circuit 6 Top.png" width=400 /></td>
-         <td align=center><img src="./img/Circuit 6 Bottom.png" width=400 /></td>
+         <td align=center><img src="./img/Circuit_6_Top.png" width=400 /></td>
+         <td align=center><img src="./img/Circuit_6_Bottom.png" width=400 /></td>
          <td rowspan=2>
          描述：</br>&emsp;&emsp;
          因為新版機器人需要將按鈕電路獨立連接到Jetson orin nano的GPIO接口，並且新增RGB燈珠用於顯示當下看到最近物件顏色，所以在此版本會有兩塊電路板。
          </td>
       </tr>
       <tr>
-         <td align=center><img src="./img/Button And Led Top.png" width=400 /></td>
-         <td align=center><img src="./img/Button And Led Bottom.png" width=400 /></td>
+         <td align=center><img src="./img/Button_And_Led_Top.png" width=400 /></td>
+         <td align=center><img src="./img/Button_And_Led_Bottom.png" width=400 /></td>
       </tr>
    </table>
  </div>
@@ -103,9 +103,9 @@
          <th>PBC layout drawing</th>
       </tr>
       <tr>
-         <td align=center ><img src="./img/Old 3D View.png" height=250 /></td>
-         <td align=center ><img src="./img/Old Schematic.png" height=250 /></td>
-         <td align=center ><img src="./img/Old PCB Layouts.png" height=250 /></td>
+         <td align=center ><img src="./img/Old_3D_View.png" height=250 /></td>
+         <td align=center ><img src="./img/Old_Schematic.png" height=250 /></td>
+         <td align=center ><img src="./img/Old_PCB_Layouts.png" height=250 /></td>
       </tr>
    </table>
  </div>
@@ -120,14 +120,14 @@
          <th>PBC layout drawing</th>
       </tr>
       <tr>
-         <td align=center ><img src="./img/New 3D View.png" height=250 /></td>
-         <td align=center ><img src="./img/New Schematic.png" height=250 /></td>
-         <td align=center ><img src="./img/New PCB Layouts.png" height=250 /></td>
+         <td align=center ><img src="./img/New_3D_View.png" height=250 /></td>
+         <td align=center ><img src="./img/New_Schematic.png" height=250 /></td>
+         <td align=center ><img src="./img/New_PCB_Layouts.png" height=250 /></td>
       </tr>
       <tr>
-         <td align=center ><img src="./img/New 3D View Button and Led.png" height=250 /></td>
-         <td align=center ><img src="./img/New Schematic_LED-and-button.png" height=250 /></td>
-         <td align=center ><img src="./img/New PCB Layouts Button and Led.png" height=250 /></td>
+         <td align=center ><img src="./img/New_3D_View_Button_and_Led.png" height=250 /></td>
+         <td align=center ><img src="./img/New_Schematic_LED_and_button.png" height=250 /></td>
+         <td align=center ><img src="./img/New_PCB_Layouts_Button_and_Led.png" height=250 /></td>
       </tr>
    </table>
    <table>
