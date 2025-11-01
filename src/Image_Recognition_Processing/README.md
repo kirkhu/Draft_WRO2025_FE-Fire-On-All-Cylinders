@@ -2,7 +2,7 @@
 
 ## <div align="center">Image Recognition Processing-影像辨識處理</div> 
 ### 中文:
-  - 比賽場地上有紅、綠、藍、橙、洋紅色、黑六種顏色，需要透過影像辨識來確定它們的位置，使車輛能夠順利避開障礙物或完成指定任務。 
+  - 比賽場地上有紅、綠、藍、橙、洋紅、黑六種顏色，需要透過影像辨識來確定它們的位置，使車輛能夠順利避開障礙物或完成指定任務。 
   - 我們將使用流行的影像辨識軟體OpenCV來辨識比賽場上的物體。
   ### 英文:
   - On the competition field, there are six colors—red, green, blue, orange, pink, and black—that need to be identified through image recognition to determine their locations, enabling the vehicle to successfully avoid obstacles or complete designated tasks.
