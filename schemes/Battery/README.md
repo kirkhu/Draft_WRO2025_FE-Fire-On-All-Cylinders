@@ -99,7 +99,7 @@
   <table>
   <tr>
   
-  <th>This is a photo of a 3S Li-Polymer (LiPo) battery burnout during charging from last year.(這是去年3S 鋰聚合物電池（LiPo）充電過程中燒毀的照片)</th>
+  <th>This is a photograph taken two years ago showing the aftermath of a $3\text{S}$ Lithium Polymer (LiPo) battery burnout that occurred during the charging process.(這是前年3S 鋰聚合物電池（LiPo）充電過程中燒毀的照片)</th>
   </tr><tr>
   <td><img src="./img/Burnout.jpg" width="450" alt="battery burnout during charging" align="center" /></td>
   </tr>
