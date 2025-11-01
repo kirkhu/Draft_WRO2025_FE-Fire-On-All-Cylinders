@@ -74,65 +74,55 @@
   To ensure a clear black-and-white boundary between the floor and the sidewalls, we use `cv2.getTrackbarPos()` to dynamically adjust the threshold until the desired boundary effect is achieved.
 
 
-<div style="text-align:center;">
-
-  <!-- 上表 -->
-  <table style="margin:0 auto !important; border-collapse:collapse; border-spacing:0; padding:0;">
+<div align="center">
+  <!-- 上排（三欄） -->
+  <table>
     <tr>
-      <th>二值化牆壁檢測</th>
-      <th>ROI 邊緣檢測</th>
-      <th>Obstacle Detection on in Images（影像中的障礙物檢測）</th>
+      <th>Binarized wall detection(二值化檢測牆面)</th>
+      <th>ROI1 and ROI2: detect walls(ROI1和ROI2檢測牆面)</th>
+      <th>ROI3: detect the red pillar and green pillar(ROI3檢測紅與綠柱)</th>
     </tr>
     <tr>
-      <td style="text-align:center;">
-        <img src="./img/camera.png"
-             alt="floor-to-boundary (black-and-white)"
-             style="height:200px; width:440px; display:block; margin:0 auto;" />
+      <td align="center">
+        <img src="./img/camera.png" alt="floor-to-boundary (black-and-white)"
+             style="width:270px !important; height:185px !important; max-width:none !important; max-height:none !important; display:block; margin:0 auto;">
       </td>
-      <td style="text-align:center;">
-        <img src="./img/ROI_Edge_detection.png"
-             alt="floor-to-boundary (black-and-white)"
-             style="height:200px; width:440px; display:block; margin:0 auto;" />
+      <td align="center">
+        <img src="./img/ROI_Edge_detection.png" alt="floor-to-boundary (black-and-white)"
+             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
       </td>
-      <td style="text-align:center;">
-        <img src="./img/Obstacle_detection.png"
-             alt="floor-to-boundary (black-and-white)"
-             style="height:200px; width:270px; display:block; margin:0 auto;" />
+      <td align="center">
+        <img src="./img/Obstacle_detection.png" alt="floor-to-boundary (black-and-white)"
+             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
       </td>
     </tr>
   </table>
 
-  <!-- 下表：把 margin-top 壓到 0；若主題仍留縫，用負值覆蓋 -->
-  <table style="
-      margin:0 auto !important;
-      margin-top:-8px !important;   /* ← 如仍有縫可調 -12 ~ -1px */
-      border-collapse:collapse;
-      border-spacing:0;
-      padding:0;">
+  <!-- 下排（三欄） -->
+  <table>
     <tr>
-      <th>Orange and Blue lines Detection on in Images（影像中的橙色和藍色線條檢測</th>
-      <th>floor-to-boundary (black-and-white) Detection on in Images（影像中的地板到邊界邊緣檢測）</th>
-      <th>(影像中的停車場檢測)</th>
+      <th>ROI4: detect orange lines and blue lines(ROI4檢測橘與藍線)</th>
+      <th>ROI5: assist in detecting the front wall(ROI5輔助檢測前方牆面)</th>
+      <th>ROI6: detect magenta walls(ROI6檢測洋紅牆面)</th>
     </tr>
     <tr>
-      <td style="text-align:center;">
-        <img src="./img/linecolor.png"
-             alt="Obstacle_detection"
-             style="height:200px; width:270px; display:block; margin:0 auto;" />
+      <td align="center">
+        <img src="./img/linecolor.png" alt="line color detection"
+             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
       </td>
-      <td style="text-align:center;">
-        <img src="./img/binarization_run.png"
-             alt="line color detection"
-             style="height:200px; width:270px; display:block; margin:0 auto;" />
+      <td align="center">
+        <img src="./img/binarization_run.png" alt="binarization_run.png"
+             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
       </td>
-      <td style="text-align:center;">
-        <img src="./img/pink.png"
-             alt="binarization_run.png"
-             style="height:200px; width:270px; display:block; margin:0 auto;" />
+      <td align="center">
+        <img src="./img/pink.png" alt="pink"
+             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
       </td>
     </tr>
   </table>
 </div>
+
+
 
 
 
