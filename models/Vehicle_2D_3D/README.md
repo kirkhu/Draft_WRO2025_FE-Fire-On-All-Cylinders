@@ -19,9 +19,9 @@
     <th width=30%><div align=center>2025 After shortening</th>
     <th width=30%><div align=center>2025 最終出賽機型</th>
     </tr><tr>
-    <td><img src="./img/2024 Before Shortening.png"  width="500" alt="Vehicle_cad"></td> 
-    <td><img src="./img/2025 After Shortening.png" width="500" alt="vehicle Underfloor"></td> 
-    <td><img src="./img/2025 Final Model.png" width=250 alt="Final Model"></td>
+    <td><img src="./img/2024_Before_Shortening.png"  width="500" alt="Vehicle_cad"></td> 
+    <td><img src="./img/2025_After_Shortening.png" width="500" alt="vehicle Underfloor"></td> 
+    <td><img src="./img/2025_Final_Model.png" width=250 alt="Final Model"></td>
     </tr>
     </table>
  </div> 
@@ -257,7 +257,7 @@
           <tr>
             <td align=center><img src="./Vehicle_Chassis_Sizse/img/Steering-shaft-holder_size1.png" width=400 /></td>
             <td align=center><img src="./Vehicle_Chassis_Sizse/img/Steering_Rod_Size.png" width=400 /></td>
-            <td align=center><img src="./Vehicle_Chassis_Sizse/img/Steering Linkage.png" width=400 /></td>
+            <td align=center><img src="./Vehicle_Chassis_Sizse/img/Steering_Linkage.png" width=400 /></td>
           </tr>
         </table>
       </div>
@@ -284,8 +284,8 @@
             <th>鏡頭固定板</th>
           </tr>
           <tr>
-            <td align=center width=500><img src="./Vehicle_Chassis_Sizse/img/Lens holder body size.jpg" width=450 /></td>
-            <td align=center width=500><img src="./Vehicle_Chassis_Sizse/img/Lens mounting plate size.jpg" width=450 /></td>
+            <td align=center width=500><img src="./Vehicle_Chassis_Sizse/img/Lens_holder_body_size.jpg" width=450 /></td>
+            <td align=center width=500><img src="./Vehicle_Chassis_Sizse/img/Lens_mounting_plate_size.jpg" width=450 /></td>
           </tr>
         </table>
       </div>
