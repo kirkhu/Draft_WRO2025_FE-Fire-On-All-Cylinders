@@ -58,8 +58,15 @@
 </table>
 </div>
 
+### Using Edge Detection in OpenCV to Identify Track Walls and Trace Their Contours - 在OpenCV中使用邊緣檢測來辨識賽道牆面並描繪出輪廓
+  - 在國內選拔賽之前，我們採用RGB影像轉換為灰階影像，灰階影像再轉換為二值化影像來辨識賽道牆面。國內選拔賽之後，我們研究其他國際賽隊伍辨識賽道牆面的作法，發現加拿大隊伍利用邊緣檢測描繪賽道牆面輪廓，能提供更穩定的偵測。因此，我們決定改成邊緣檢測這種方式，建立ROI1和ROI2影像感興趣區域，再使用ROI1和ROI2來偵測左右賽道牆面並描繪出輪廓。具體步驟如下：
+  - Before the national selection rounds, we converted RGB images to grayscale and then to binary images to detect the track walls. After the national selection rounds, we studied how other international teams detected the track walls and found that the Canadian team used edge detection to trace the wall contours, yielding more stable results. Therefore, we switched to an edge-detection approach: we define two regions of interest (ROI1 and ROI2) and then use ROI1 and ROI2 to detect the left and right track walls and draw their contours. The specific steps are as follows:
+
 ### 中文:
-  一開始我們採用RGB 影像轉換為灰階影像灰階影像在轉換為二值影像來辨識賽道邊界，但我們研究其他國際賽隊伍的作法後，我們發現加拿大隊伍利用邊緣檢測描繪牆面輪廓，能提供更穩定的偵測。因此，我們決定改成邊緣檢測這種方式，ROI1和ROI2左右兩邊來描繪牆壁輪廓。
+  1. **顏色轉換**：
+  使用 cv2.cvtColor(image, cv2.COLOR_BGR2LAB) 將 RGB 影像轉換為 LAB 色彩空間。L表示亮度，範圍從0(黑色)到100(白色)，A表示紅和綠色度，A為正時偏紅、為負時偏綠；B表示黃和藍色度，B為正時偏黃、為負時偏藍。LAB 做顏色辨識的關鍵是把亮度L與色彩A和B分離，實作上只需在A和B調整色彩閾值就能穩定過濾出目標色，則L可以因應現場的陰影、反光及曝光來做調整，不會干擾色彩的判斷。
+  2. **調整顏色偵測閾值**：
+  使用 cv2.getTrackbarPos() 函數取得滑桿的即時數值，通常配合OpenCV的視窗介面使用。滑桿可做動態調整L HIGH、L LOW、A HIGH、A LOW、B HIGH和B LOW的閾值參數，透過即時影像處理調整參數可以更直觀且快速。
 ### 英文:
   1. **Color Conversion**:  
   We start by using `cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)` to convert the RGB image to grayscale, then apply `cv2.threshold(src, thresh, maxval, type)` to transform the grayscale image into a binary image.
@@ -74,8 +81,8 @@
 <th> ROI邊緣檢測</th>
 </tr>
 <tr>
-     <td><img src="./img/camera.png" alt="floor-to-boundary (black-and-white)" align=center /></td>
-     <td><img src="./img/ROI_Edge_detection.png" alt="floor-to-boundary (black-and-white)" align=center /></td>
+     <td><img src="./img/camera.png" alt="floor-to-boundary (black-and-white)" height="640" width="350" align=center /></td>
+     <td><img src="./img/ROI_Edge_detection.png" alt="floor-to-boundary (black-and-white)" width="350" align=center /></td>
      </tr>
      </table>
      </div>
