@@ -16,10 +16,10 @@ To ensure smooth vehicle operation, choosing the right drive motors is essential
 - 透過對這兩種馬達的精心選擇，我們有效提升了車輛的整體性能，也改善了去年在動力傳輸與轉向控制方面所遇到的問題。
 
 ### 英文:
-- Steering Motor Selection
+- **Steering Motor Selection:**
 When choosing the steering motor, we prioritized motor precision and torque. Since the steering system requires precise control of the steering angle, we selected a servo motor capable of providing high-precision control, ensuring stable and flexible operation during steering maneuvers.
 
-- Rear-Drive DC Motor Selection
+- **Rear-Drive DC Motor Selection:**
 The rear-drive DC motor provides the vehicle’s driving power, so we focused on its power and torque performance to ensure sufficient power for various terrains and obstacles. Additionally, to improve driving efficiency, we chose a high-power-density DC motor, ensuring optimal acceleration and driving stability during the competition.
 
 Through careful selection of these two motors, we enhanced vehicle performance and addressed last year's challenges related to power transmission and steering control.
