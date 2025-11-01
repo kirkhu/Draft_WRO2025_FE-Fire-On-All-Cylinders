@@ -19,20 +19,20 @@
 - 連接穩定性： 直接將電源線連接至降壓模組存在接觸鬆脫的潛在風險，這可能導致電路供電不穩，進而造成電路板損壞。
 綜上所述，採用插拔式接線端子作為電源供應線的連接介面，不僅能確保連接的穩固性與提升系統整體安全性，更便利了後續的維修與故障排除作業。
 
-During critical phases of hardware development and integration, we frequently encounter the risk of irreversible damage to high-value modules such as the NVIDIA Jetson Orin Nano, Raspberry Pi Pico W, and related Integrated Circuits (ICs) due to incorrect wiring of power or data signal lines. To effectively mitigate the severe consequences and high costs associated with such human operational errors, we have proactively implemented key protective mechanisms in our design:
+During critical phases of hardware development and integration, we frequently encounter the risk of irreversible damage to high-value modules such as the __NVIDIA Jetson Orin Nano__, __Raspberry Pi Pico W__, and related Integrated Circuits (ICs) due to incorrect wiring of power or data signal lines. To effectively mitigate the severe consequences and __high costs associated__ with such human operational errors, we have proactively implemented key protective mechanisms in our design:
 
-- Interface Standardization and Specification (Connectorization): For power input and data transmission interfaces, we universally adopt standardized male and female connectors to forcibly ensure correct orientation and connection, thus eliminating damage caused by incorrect insertion.
+- **Interface Standardization and Specification (Connectorization):** For power input and data transmission interfaces, we universally adopt standardized male and female connectors to forcibly ensure correct orientation and connection, thus eliminating damage caused by incorrect insertion.
 
-- Core Circuit Solidification Design: Critical circuit components are directly soldered onto the Printed Circuit Board (PCB), achieving extremely stable, normatively laid-out management, which eliminates the potential weak points associated with external cable connections.
+- **Core Circuit Solidification Design:** Critical circuit components are directly soldered onto the Printed Circuit Board (PCB), achieving extremely stable, normatively laid-out management, which eliminates the potential weak points associated with external cable connections.
 
 This structural design optimization has significantly reduced the probability of failure in the core components of the NVIDIA Jetson Orin Nano and Raspberry Pi Pico W due to wiring mistakes, fundamentally enhancing the overall system's operational stability, long-term reliability, and effectively extending the product's Mean Time Between Failures (MTBF).
 
 
 The rationale behind this design decision is as follows:
 
-- Power Supply Path Requirement: The Jetson Orin Nano relies on a direct 11.1V lithium battery supply via a dedicated power socket and does not support reverse power feeding through its 5V pins.
+- **Power Supply Path Requirement:** The Jetson Orin Nano relies on a direct 11.1V lithium battery supply via a dedicated power socket and does not support reverse power feeding through its 5V pins.
 
-- Connection Stability: Directly connecting power lines to a buck converter module presents a risk of contact loosening, which could lead to unstable circuit power supply and subsequent board damage.
+- **Connection Stability:** Directly connecting power lines to a buck converter module presents a risk of contact loosening, which could lead to unstable circuit power supply and subsequent board damage.
 
 In summary, adopting a plug-in terminal block as the connection interface for the power supply line not only ensures connection robustness and enhances overall system safety but also facilitates subsequent maintenance and troubleshooting operations.
 
