@@ -98,9 +98,9 @@
  <div align=center>
    <table>
       <tr>
-         <th>3D 檢視圖</th>
-         <th>電路原理圖</th>
-         <th>PBC 布局圖</th>
+         <th>3D view</th>
+         <th>circuit schematic</th>
+         <th>PBC layout drawing</th>
       </tr>
       <tr>
          <td align=center ><img src="./img/Old 3D View.png" height=250 /></td>
@@ -115,9 +115,9 @@
  <div align=center>
    <table>
       <tr>
-         <th>3D 檢視圖</th>
-         <th>電路原理圖</th>
-         <th>PBC 布局圖</th>
+         <th>3D view</th>
+         <th>circuit schematic</th>
+         <th>PBC layout drawing</th>
       </tr>
       <tr>
          <td align=center ><img src="./img/New 3D View.png" height=250 /></td>
@@ -131,7 +131,7 @@
       </tr>
    </table>
    <table>
-   <th align=center>	總電路原理圖  </th>
+   <th align=center>	Overall circuit schematic  </th>
    <tr>
    <td align=center ><img src="./img/Schematic&PCB/Schematic_Version_all.png" height=500  />
    </td>
