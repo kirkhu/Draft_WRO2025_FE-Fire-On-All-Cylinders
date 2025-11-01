@@ -74,57 +74,47 @@
   To ensure a clear black-and-white boundary between the floor and the sidewalls, we use `cv2.getTrackbarPos()` to dynamically adjust the threshold until the desired boundary effect is achieved.
 
 <div style="text-align:center;">
-  <table style="margin:0 auto; border-collapse:collapse;">
-    <!-- 第一排：兩個標題 -->
+  <table style="margin:0 auto;">
     <tr>
       <th>二值化牆壁檢測</th>
       <th>ROI 邊緣檢測</th>
-      <th></th>
     </tr>
-    <!-- 第一排：兩張圖（第三欄留白，可當間距） -->
     <tr>
       <td style="text-align:center;">
-        <img src="./img/camera.png"
-             alt="floor-to-boundary (black-and-white)"
-             style="height:285px !important; width:350px; display:block; margin:0 auto;" />
+        <img
+          src="./img/camera.png"
+          alt="floor-to-boundary (black-and-white)"
+          style="height:285px !important; width:350px; display:block; margin:0 auto;"
+        />
       </td>
       <td style="text-align:center;">
-        <img src="./img/ROI_Edge_detection.png"
-             alt="ROI edge detection"
-             style="width:350px; height:auto; display:block; margin:0 auto;" />
+        <img
+          src="./img/ROI_Edge_detection.png"
+          alt="floor-to-boundary (black-and-white)"
+          style="width:350px; height:auto; display:block; margin:0 auto;"
+        />
       </td>
-      <td style="width:24px;"></td>
     </tr>
+  </table>
 
-    <!-- 可選：分隔空白 -->
-    <tr><td colspan="3" style="height:16px;"></td></tr>
-
-    <!-- 第二排：三個標題 -->
+  <table>
     <tr>
-      <th>Obstacle Detection on Images（影像中的障礙物檢測）</th>
-      <th>Orange and Blue Lines on Images（橙/藍線條檢測）</th>
-      <th>floor-to-boundary (B/W) on Images（地板到邊界檢測）</th>
+      <th> Obstacle Detection on in Images　(影像中的障礙物檢測)</th>
+      <th> Orange and Blue lines Detection on in Images（影像中的橙色和藍色線條檢測）</th>
+      <th> floor-to-boundary (black-and-white) Detection on in Images（影像中的地板到邊界邊緣檢測）</th>
     </tr>
-    <!-- 第二排：三張圖 -->
     <tr>
-      <td style="text-align:center;">
-        <img src="./img/Obstacle_detection.png"
-             alt="Obstacle detection"
-             style="width:350px; height:auto; display:block; margin:0 auto;" />
+      <td>
+        <img src="./img/Obstacle_detection.png" alt="Obstacle_detection" align="center" />
       </td>
-      <td style="text-align:center;">
-        <img src="./img/linecolor.png"
-             alt="line color detection"
-             style="width:350px; height:auto; display:block; margin:0 auto;" />
+      <td>
+        <img src="./img/linecolor.png" alt="line color detection" align="center" />
       </td>
-      <td style="text-align:center;">
-        <img src="./img/binarization_run.png"
-             alt="binarization run"
-             style="width:350px; height:auto; display:block; margin:0 auto;" />
+      <td>
+        <img src="./img/binarization_run.png" alt="binarization_run.png" align="center" />
       </td>
     </tr>
   </table>
 </div>
-
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
