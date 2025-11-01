@@ -83,9 +83,18 @@
       <th>ROI3檢測紅與綠柱</th>
     </tr>
     <tr>
-      <td align="center"><img src="./img/camera.png"             width="270" height="350" alt="floor-to-boundary (black-and-white)"></td>
-      <td align="center"><img src="./img/ROI_Edge_detection.png" width="270" alt="floor-to-boundary (black-and-white)"></td>
-      <td align="center"><img src="./img/Obstacle_detection.png" width="270" alt="floor-to-boundary (black-and-white)"></td>
+      <td align="center">
+        <img src="./img/camera.png" alt="floor-to-boundary (black-and-white)"
+             style="width:270px !important; height:350px !important; max-width:none !important; max-height:none !important; display:block; margin:0 auto;">
+      </td>
+      <td align="center">
+        <img src="./img/ROI_Edge_detection.png" alt="floor-to-boundary (black-and-white)"
+             style="width:270px !important; height:auto !important; display:block; margin:0 auto;">
+      </td>
+      <td align="center">
+        <img src="./img/Obstacle_detection.png" alt="floor-to-boundary (black-and-white)"
+             style="width:270px !important; height:auto !important; display:block; margin:0 auto;">
+      </td>
     </tr>
   </table>
 
@@ -97,12 +106,22 @@
       <th>ROI6檢測洋紅牆面</th>
     </tr>
     <tr>
-      <td align="center"><img src="./img/linecolor.png"        width="270" alt="line color detection"></td>
-      <td align="center"><img src="./img/binarization_run.png" width="270" alt="binarization_run.png"></td>
-      <td align="center"><img src="./img/pink.png"             width="270" alt="pink"></td>
+      <td align="center">
+        <img src="./img/linecolor.png" alt="line color detection"
+             style="width:270px !important; height:auto !important; display:block; margin:0 auto;">
+      </td>
+      <td align="center">
+        <img src="./img/binarization_run.png" alt="binarization_run.png"
+             style="width:270px !important; height:auto !important; display:block; margin:0 auto;">
+      </td>
+      <td align="center">
+        <img src="./img/pink.png" alt="pink"
+             style="width:270px !important; height:auto !important; display:block; margin:0 auto;">
+      </td>
     </tr>
   </table>
 </div>
+
 
 
 
