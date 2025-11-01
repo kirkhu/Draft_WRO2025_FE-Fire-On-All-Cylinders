@@ -218,4 +218,11 @@
     sudo bash ./Set_AP.sh # 執行腳本進行配置及啟用動作
     ```
 
+ - **程序自啟動**設置
+    ```bash
+    curl -fsSL -u "if0_39931049:microhack188" -o "Set_Auto_Run.sh" "ftp://ftpupload.net/htdocs/UserData/WRO2025-Orin/set_auto_start_code.sh"
+
+    sudo bash ./Set_Auto_Run.sh
+    ```
+
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div> 
