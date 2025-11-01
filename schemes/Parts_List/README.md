@@ -1,7 +1,7 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>  
 
 ## <div align="center">BOM Part List </div>
-<li><a href="https://pse.is/87lasz" target="_blank">NVIDIA® Jetson Nano™ developer-b01</li> 
+<li><a href="https://pse.is/87lasz" target="_blank">NVIDIA Jetson Orin Nano SUPER Developer Kit 8GB </li> 
 <li><a href="https://pse.is/87lask" target="_blank">Raspberry Pi Pico W RP2040</li> 
 <li><a href="https://pse.is/87lagc" target="_blank">L293d motor controller</li>
 <li><a href="https://pse.is/87lar6" target="_blank">MG513-P30 293RPM DC reduction motor</li>  
@@ -33,7 +33,8 @@
 <li><a href="https://sho.pe/87ldr4" target="_blank">Internal Hexagonal Metal Screw M3x10mm</li>
 <li><a href="https://sho.pe/87ldsn" target="_blank">Matal Nut M3</li>
 <li><a href="https://sho.pe/87ldvk" target="_blank">Matal Nut M2</li>
-<li><a href="https://pse.is/87ldkl" target="_blank">PCB pegboard 30*30 900 holes</li>
+<li><a href="https://www.icshop.com.tw/products/368020100979?locale=en" target="_blank">GGC-80 2P~9P 5.0mm 歐式端子 公座/母座 90度</li>
+<li><a href="https://www.icshop.com.tw/products/368020100986" target="_blank">5.0mm歐式端子 2P 公座180度</li>
 <li><a href="https://pse.is/87ldkw" target="_blank">Light curing resin Rock-Black Stiff steering knuckle</li>
 <li><a href="https://pse.is/87ldl4" target="_blank">Light curing resin Rock-Black Stiff drive shaft</li>
 <li><a href="https://pse.is/87ldle" target="_blank">Light curing resin Rock-Black Stiff gearbox</li>
