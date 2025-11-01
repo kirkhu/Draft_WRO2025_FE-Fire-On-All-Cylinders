@@ -34,7 +34,7 @@
 <li><a href="https://sho.pe/87ldsn" target="_blank">Matal Nut M3</li>
 <li><a href="https://sho.pe/87ldvk" target="_blank">Matal Nut M2</li>
 <li><a href="https://www.icshop.com.tw/products/368020100979?locale=en" target="_blank">GSP001S-5.08-02P-11-00A(H)</li>
-<li><a href="https://www.icshop.com.tw/products/368020100986" target="_blank">5.0mm歐式端子 2P 公座180度</li>
+<li><a href="https://www.icshop.com.tw/products/368020100986" target="_blank">5.08mm Euro-style Terminal 2P Male 180°</li>
 <li><a href="https://pse.is/87ldkw" target="_blank">Light curing resin Rock-Black Stiff steering knuckle</li>
 <li><a href="https://pse.is/87ldl4" target="_blank">Light curing resin Rock-Black Stiff drive shaft</li>
 <li><a href="https://pse.is/87ldle" target="_blank">Light curing resin Rock-Black Stiff gearbox</li>
