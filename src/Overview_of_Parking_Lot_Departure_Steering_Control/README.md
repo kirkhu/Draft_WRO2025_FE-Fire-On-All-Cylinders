@@ -34,7 +34,7 @@
 
   |Counterclockwise_direction|The color and X, target coordinates of traffic signal blocks.|
   |:---:|:---:|
-  |<div align="center"> <img src="./img/Counterclockwise_direction.png"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/clockwise_direction.png"  alt="Detecting_nearby_obstacles"></div>|
+  |<div align="center"> <img src="./img/Counterclockwise_direction.png" width="400"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/clockwise_direction.png" width="800" alt="Detecting_nearby_obstacles"></div>|
 
 </div> 
 
@@ -42,7 +42,7 @@
     ### 中文:
     - 若為逆時針方向，偵測到綠色柱子則行駛於內側，偵測到紅色柱子則行駛於外側；若未偵測到柱子，則預設行駛外側。
     - 若為順時針方向，偵測到綠色柱子則行駛於外側，偵測到紅色柱子則行駛於內側；若未偵測到顏色，則同樣行駛外側。
-    - program code:
+- program code:
     ```
         color = 0
         detect_start = time.time()
