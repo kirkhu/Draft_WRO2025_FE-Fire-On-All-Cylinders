@@ -400,6 +400,7 @@ __產品規格__
   - 工作電壓：3.3V ~ 5V
   - 紅外波長：940 ~ 950(奈米)
   - 紅外光波頻率：3.16x10 
+__Purchase URL:<a href="https://www.icshop.com.tw/products/368030501146" target="_blank">TCRT5000</a>__
         </td>
         <td>
           <img src="./img/TCRT5000.png" width=250 />

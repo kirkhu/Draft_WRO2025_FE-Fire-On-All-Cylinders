@@ -52,6 +52,27 @@ In summary, adopting a plug-in terminal block as the connection interface for th
 </div>
 
 <div align=center>
+    <table>
+        <tr>
+            <th width=500>PCB 電路板正面(主)</th>
+            <th width=500>PCB 電路板正反(主)</th>
+        </tr>
+        <tr align=center>
+            <td><img src="./img/PCB_Body_Fount.jpg" width=400 alt="Circuit Body Fount" /></td>
+            <td><img src="./img/PCB_Body_Bottom.jpg" width=400 alt="Circuit Body Bottom" /></td>
+        </tr>
+        <tr>
+            <th>PCB LED和Button電路板正面</th>
+            <th>PCB LED和Button電路板反面</th>
+        </tr>
+        <tr align=center>
+            <td><img src="./img/PCB_LED_Fount.jpg" width=400 alt="Circuit Led and button Fount" /></td>
+            <td><img src="./img/PCB_LED_Fount.jpg" width=400 alt="Circuit Led and button Bottom" /></td>
+        </tr>
+    </table>
+</div>
+
+<div align=center>
 <table>
 <tr>
 <th>2.5mm Connector 2/3 Pin Male/female Adapter Right Angle Pin Header White Socket(2.5毫米接頭 2/3 針公母轉接頭 直角針腳 白色插座)</th>
