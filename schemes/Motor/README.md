@@ -15,10 +15,6 @@ To ensure smooth vehicle operation, choosing the right drive motors is essential
 
 - 透過對這兩種馬達的精心選擇，我們有效提升了車輛的整體性能，也改善了去年在動力傳輸與轉向控制方面所遇到的問題。
 
-- 前輪伺服轉向機構
-MG90S 與 SG90 是在台灣常見且易於購買的伺服馬達，其重量、旋轉角度與扭力等規格符合我們的需求。
-
-- 考量耐用性，我們選擇了採用金屬齒輪的 MG90S 作為比賽使用的轉向控制馬達，以確保在高強度操作下的穩定性與可靠性。
 ### 英文:
 - Steering Motor Selection
 When choosing the steering motor, we prioritized motor precision and torque. Since the steering system requires precise control of the steering angle, we selected a servo motor capable of providing high-precision control, ensuring stable and flexible operation during steering maneuvers.
@@ -34,7 +30,7 @@ Through careful selection of these two motors, we enhanced vehicle performance a
 - 考量到耐用性，我們選擇了採用金屬齒輪的 MG90S 作為比賽中的轉向控制馬達，以確保在高強度操作下的穩定性與可靠性。
 ### 英文:
 - The MG90S and SG90 are commonly available and easy-to-purchase servo motors in Taiwan. Their specifications, including weight, rotation angle, and torque, meet our requirements.
-- Considering durability, we selected the __MG90S__ with metal gears as the steering control motor for the competition to ensure stability and reliability during high-intensity operation.
+- **Considering durability, we selected the __MG90S__ with metal gears as the steering control motor for the competition to ensure stability and reliability during high-intensity operation.**
 
 <div align="center">
 <table>
@@ -124,10 +120,10 @@ Reference Link：
 [JGB37-520](https://img.alicdn.com/imgextra/i2/1991552278/O1CN01dCTXFL1ShMoMXovK4_!!1991552278.png)
 如上表所示，我們原本計劃使用先前選定的直流馬達 JGA25，但因新設計底盤空間有限，無法容納。因此，我們選擇比較體積較短的 MG513 和 JGB37 馬達，並進行相關實驗。
 
-經過考慮馬達的速度、扭力、與車體結構的相容性以及實際實驗結果後，我們選擇了 MG513-P20 作為車輛的後輪驅動直流馬達。
+綜合考量馬達的轉速、扭矩輸出、與車體結構的機械相容性，並參考實際的測試數據，我們最終選定 MG513-P30 直流馬達作為車輛的後輪驅動動力源，以確保其能穩定承載車輛自身的重量。
 
 - As shown in the table above, we initially planned to use the previously selected DC motor, JGA25, but due to space constraints in the newly designed chassis, it could not be accommodated. Therefore, we chose to compare the shorter MG513 and JGB37 motors and conducted relevant experiments.
-- After considering the motor’s speed, torque, compatibility with the vehicle structure, and actual experimental results, we selected the __MG513-P20__ as the rear-wheel drive DC motor for the vehicle.
+- **Based on a comprehensive evaluation of the motor's speed, torque characteristics, and mechanical integration with the chassis, validated by experimental results, the MG513-P30 DC motor was finalized as the rear-wheel drive unit, ensuring sufficient capability to carry the vehicle's self-load.**
 
 ### Motor Drive Controller-馬達驅動控制器
 由於直流馬達需要馬達驅動控制器來實現車輛的前進和後退控制，我們針對台灣市場常見的 L293D IC、L298N 模組及 TB6612FNG 模組進行實驗測試，以找出最合適的驅動方案。
