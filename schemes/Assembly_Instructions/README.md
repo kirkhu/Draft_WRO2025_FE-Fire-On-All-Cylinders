@@ -40,7 +40,7 @@
   <tr align="center">
      <td><img src="./img/car_all.png"  width = "600" alt="Top View of the Overall Apparatus" > </td>
      <td><img src="./img/Middle_Layer_Top_View.png" width = "400" alt="Middle Layer Structure Top View" ></td>
-     <td><img src="./img/Driver Top.png" width="400" alt="Top View of Vehicle Chassis" ></td>
+     <td><img src="./img/Driver_Top.png" width="400" alt="Top View of Vehicle Chassis" ></td>
      <td><img src="./img/down.png" width="400" alt="Bottom View of Vehicle Chassis" ></td>
   </tr>
 </table>
@@ -53,14 +53,14 @@
       <th> Overhead view of the main circuit board(電路板頂視圖) </th><th>Bottom View of the Main Circuit Board(電路板底視圖)</th>
   </tr>
   <tr align="center">
-     <td> <img src="img/circuit board fount.png" width="300" alt="circuit_up.jpg"> </td><td><img src="img/circuit board back.png" width="300" alt="circuit_lower.jpg"></td>
+     <td> <img src="img/circuit_board_fount.png" width="300" alt="circuit_up.jpg"> </td><td><img src="img/circuit_board_back.png" width="300" alt="circuit_lower.jpg"></td>
   </tr>
   <tr align="center">
       <th> Overhead view of the switch circuit board(電路板頂視圖) </th><th>Bottom view of the switch circuit board(電路板底視圖)</th>
   </tr>
   <tr align=center>
-    <td><img src="./img/circuit board fount.png 2.png" width="300" /></td>
-    <td><img src="./img/circuit board back 2.png" width="300" /></td>
+    <td><img src="./img/circuit_board_fount.png_2.png" width="300" /></td>
+    <td><img src="./img/circuit_board_back_2.png" width="300" /></td>
 </table>
 </div>
 
