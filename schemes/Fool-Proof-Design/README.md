@@ -7,12 +7,14 @@
 </div>
 
 ### 中文:
+- ####  Pin Header / Socket 
 在硬體開發與整合的關鍵階段，我們經常面臨因電源或資料訊號線路誤接，對高價值的 NVIDIA Jetson Orin Nano 模組、Raspberry Pi Pico W 及相關積體電路（IC）造成不可逆轉的損壞風險。為有效規避此類人為操作失誤所帶來的嚴重後果與高昂成本損失，我們在設計中前瞻性地導入了關鍵的防護機制：
-- 介面標準化與規範化（Connectorization）： 針對電源輸入及資料傳輸介面，全面採用標準化的公母插座，以強制確保連接的方向性與正確性，杜絕因插拔錯誤導致的損壞。
+- 介面標準化與規範化（Connectorization）： 針對電源輸入及資料傳輸介面，全面採用標準化的公母插座(Pin Header/Socket)，以強制確保連接的方向性與正確性，杜絕因插拔錯誤導致的損壞。
 - 核心電路固化設計： 關鍵電路元件直接焊裝於印刷電路板（PCB）上，實現了極致穩定、佈線規範化的管理，消除了外部線纜連接的潛在弱點。
 
 此結構性設計優化，已顯著降低了 NVIDIA Jetson Orin Nano 及 Raspberry Pi Pi Pico W 核心元件因接線錯誤而發生故障的機率，從根本上提升了整體系統的運行穩定性、長期可靠性，並有效地延長了產品的平均使用壽命。
 
+- #### pluggable terminal block
 為確立 Jetson Orin Nano 的電源輸入方案，我們於主電路 PCB 板上新增了插拔式接線端子，作為其專用的電源供應介面。
 
 此設計的決策依據如下：
@@ -21,28 +23,31 @@
 
 綜上所述，採用插拔式接線端子作為電源供應線的連接介面，不僅能確保連接的穩固性與提升系統整體安全性，更便利了後續的維修與故障排除作業。
 
-During critical phases of hardware development and integration, we frequently encounter the risk of irreversible damage to high-value modules such as the __NVIDIA Jetson Orin Nano__, __Raspberry Pi Pico W__, and related Integrated Circuits (ICs) due to incorrect wiring of power or data signal lines. To effectively mitigate the severe consequences and __high costs associated__ with such human operational errors, we have proactively implemented key protective mechanisms in our design:
+- ####  Pin Header / Socket 
 
-- **Interface Standardization and Specification (Connectorization):** For power input and data transmission interfaces, we universally adopt standardized male and female connectors to forcibly ensure correct orientation and connection, thus eliminating damage caused by incorrect insertion.
+    During critical phases of hardware development and integration, we frequently encounter the risk of irreversible damage to high-value modules such as the __NVIDIA Jetson Orin Nano__, __Raspberry Pi Pico W__, and related Integrated Circuits (ICs) due to incorrect wiring of power or data signal lines. To effectively mitigate the severe consequences and __high costs associated__ with such human operational errors, we have proactively implemented key protective mechanisms in our design:
 
-- **Core Circuit Solidification Design:** Critical circuit components are directly soldered onto the Printed Circuit Board (PCB), achieving extremely stable, normatively laid-out management, which eliminates the potential weak points associated with external cable connections.
+    - **Interface Standardization and Specification (Connectorization):** For power input and data transmission interfaces, we universally adopt standardized male and female connectors(Pin Header/Socket) to forcibly ensure correct orientation and connection, thus eliminating damage caused by incorrect insertion.
 
-This structural design optimization has significantly reduced the probability of failure in the core components of the NVIDIA Jetson Orin Nano and Raspberry Pi Pico W due to wiring mistakes, fundamentally enhancing the overall system's operational stability, long-term reliability, and effectively extending the product's Mean Time Between Failures (MTBF).
+    - **Core Circuit Solidification Design:** Critical circuit components are directly soldered onto the Printed Circuit Board (PCB), achieving extremely stable, normatively laid-out management, which eliminates the potential weak points associated with external cable connections.
 
-To establish the power input solution for the __Jetson Orin Nano__, we have incorporated a __pluggable terminal block__ onto the main circuit PCB as its dedicated power supply interface.
+    This structural design optimization has significantly reduced the probability of failure in the core components of the NVIDIA Jetson Orin Nano and Raspberry Pi Pico W due to wiring mistakes, fundamentally enhancing the overall system's operational stability, long-term reliability, and effectively extending the product's Mean Time Between Failures (MTBF).
 
-The rationale for this design choice is as follows:
+- #### pluggable terminal block
+    To establish the power input solution for the __Jetson Orin Nano__, we have incorporated a __pluggable terminal block__ onto the main circuit PCB as its dedicated power supply interface.
 
-- **Power Path Requirement:** The Jetson Orin Nano relies on 11.1V lithium battery power supplied directly via the power socket and does not support reverse power delivery from its 5V pins.
+    The rationale for this design choice is as follows:
 
-- **Connection Stability:** Directly connecting the power cable to a buck converter module carries the inherent risk of contact loosening, which could lead to unstable circuit power delivery and potentially damage the PCB.
+    - **Power Path Requirement:** The Jetson Orin Nano relies on 11.1V lithium battery power supplied directly via the power socket and does not support reverse power delivery from its 5V pins.
 
-In summary, utilizing a pluggable terminal block as the interface for the power supply cable ensures connection stability and enhances overall system safety, while also facilitating subsequent maintenance and troubleshooting operations.
+    - **Connection Stability:** Directly connecting the power cable to a buck converter module carries the inherent risk of contact loosening, which could lead to unstable circuit power delivery and potentially damage the PCB.
+
+    In summary, utilizing a pluggable terminal block as the interface for the power supply cable ensures connection stability and enhances overall system safety, while also facilitating subsequent maintenance and troubleshooting operations.
 
 <div align=center>
     <table>
         <tr>
-            <th>Pluggable Terminal Block(Power supply)</th>
+            <th>Pluggable Terminal Block(Power supply Terminal Block)</th>
             <th>Actual Photo of the Circuit(Power supply)</th>
         </tr>
         <tr align=center>
@@ -55,8 +60,8 @@ In summary, utilizing a pluggable terminal block as the interface for the power 
 <div align=center>
     <table>
         <tr>
-            <th width=500>PCB 電路板正面(主)</th>
-            <th width=500>PCB 電路板正反(主)</th>
+            <th width=500>Top side of the PCB</th>
+            <th width=500>Bottom Side of the PCB</th>
         </tr>
         <tr align=center>
             <td><img src="./img/PCB_Body_Fount.png" width=400 alt="Circuit Body Fount" /></td>
