@@ -2,13 +2,13 @@
 
 ## <div align="center">Image Recognition Processing-影像辨識處理</div> 
 ### 中文:
-  - 比賽場地上有紅、綠、藍、橙、洋紅色、黑六種顏色，需要透過影像辨識來確定它們的位置，使車輛能夠順利避開障礙物或完成指定任務。 
+  - 比賽場地上有紅、綠、藍、橙、洋紅、黑六種顏色，需要透過影像辨識來確定它們的位置，使車輛能夠順利避開障礙物或完成指定任務。 
   - 我們將使用流行的影像辨識軟體OpenCV來辨識比賽場上的物體。
   ### 英文:
   - On the competition field, there are six colors—red, green, blue, orange, pink, and black—that need to be identified through image recognition to determine their locations, enabling the vehicle to successfully avoid obstacles or complete designated tasks.
   - We will use the popular image recognition software OpenCV to identify objects on the competition field.
   
-- #### Color Detection Using LAB in OpenCV-在 OpenCV 中使用 LAB 進行顏色檢測([ColourTesterLAB.py](../Programming/common/ColourTesterLAB.py.py))
+- #### Color Detection Using LAB in OpenCV-在 OpenCV 中使用 LAB 進行顏色檢測([ColourTesterLAB.py](../Programming/common/ColourLAB.py))
   - 為了進行色彩偵測，我們將 RGB 色彩空間轉換為 LAB，並將 LAB 值分為上下限以建立範圍，確保準確的目標偵測。具體步驟如下：
 
   - To perform color detection, we convert the RGB color space to LAB and split the LAB values into upper and lower bounds to establish a range, ensuring accurate target detection. The detailed steps are as follows:
@@ -56,20 +56,23 @@
     </div>
 
   ### 中文:
-    一開始我們採用二值化黑白檢測來辨識賽道邊界，但我們研究國際隊伍的作法後，發現加拿大隊利用邊緣檢測描繪牆面輪廓，能提供更穩定的偵測。因此，我們決定改成邊緣檢測這種方式，來描繪牆壁輪廓。
+    一開始我們採用RGB 影像轉換為灰階影像灰階影像在轉換為二值影像來辨識賽道邊界，但我們研究其他國際賽隊伍的作法後，我們發現加拿大隊伍利用邊緣檢測描繪牆面輪廓，能提供更穩定的偵測。因此，我們決定改成邊緣檢測這種方式，ROI1和ROI2左右兩邊來描繪牆壁輪廓。
   ### 英文:
     1. **Color Conversion**:  
      We start by using `cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)` to convert the RGB image to grayscale, then apply `cv2.threshold(src, thresh, maxval, type)` to transform the grayscale image into a binary image.
     2. **Adjusting Color Range**: 
      To ensure a clear black-and-white boundary between the floor and the sidewalls, we use `cv2.getTrackbarPos()` to dynamically adjust the threshold until the desired boundary effect is achieved.
 
-     <div align="center">
-     <table>
-     <tr>
-     <th>    </th>
-     </tr>
-     <tr>
-     <td><img src="./img/binarization.png" alt="floor-to-boundary (black-and-white)" align=center /></td>
+
+<div align="center">
+<table>
+<tr>
+<th> 二值化牆壁檢測</th>
+<th> ROI邊緣檢測</th>
+</tr>
+<tr>
+     <td><img src="./img/camera.png" alt="floor-to-boundary (black-and-white)" align=center /></td>
+     <td><img src="./img/ROI_Edge_detection.png" alt="floor-to-boundary (black-and-white)" align=center /></td>
      </tr>
      </table>
      </div>
