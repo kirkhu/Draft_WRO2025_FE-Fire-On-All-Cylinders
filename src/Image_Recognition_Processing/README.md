@@ -81,7 +81,7 @@
 <th> ROI邊緣檢測</th>
 </tr>
 <tr>
-     <td><img src="./img/camera.png" alt="floor-to-boundary (black-and-white)" width="350" height="330" align=center /></td>
+     <td><img src="./img/camera.png" alt="floor-to-boundary (black-and-white)" width="350" height="350" align=center /></td>
      <td><img src="./img/ROI_Edge_detection.png" alt="floor-to-boundary (black-and-white)" width="350" align=center /></td>
      </tr>
      </table>
