@@ -12,20 +12,20 @@
   - 為了進行色彩偵測，我們將 RGB 色彩空間轉換為 LAB，並將 LAB 值分為上下限以建立範圍，確保準確的目標偵測。具體步驟如下：
 
   - To perform color detection, we convert the RGB color space to LAB and define lower and upper LAB thresholds to establish a range, ensuring accurate target detection. The specific steps are as follows:
-  ### 中文:
-    1. **顏色轉換：**:
-    使用 cv2.cvtColor(image, cv2.COLOR_BGR2LAB) 將 RGB 影像轉換為 LAB 色彩空間。LAB 色彩空間提供更直觀的顏色範圍控制，方便過濾特定顏色。
-    2. **調整顏色範圍**：
-    使用 cv2.getTrackbarPos() 函數取得滑桿的即時數值，通常配合 OpenCV 的視窗介面使用。在即時影像處理中，透過滑桿可動態調整參數，如門檻值或顏色範圍，方便測試與微調。
-    3. **過濾目標顏色**：
-    使用 cv2.inRange() 設定顏色範圍的上下界，建立二值遮罩圖像。此函數會將不在範圍內的像素轉為黑色（像素值為 0），過濾雜訊並保留目標顏色區域，以利後續處理與分析。
-    ### 英文:
-    1. **Color Conversion**:  
-    Use `cv2.cvtColor(image, cv2.COLOR_BGR2LAB)` to convert the RGB image to LAB color space. The LAB space allows for more intuitive control over color range, making it easier to filter specific colors.
-    2. **Adjusting Color Range**:  
-    Use the function `cv2.getTrackbarPos()` to get the current value from the trackbar, which is typically used with an OpenCV display window. In real-time image processing, trackbars allow dynamic adjustment of parameters, such as the threshold or color range, making testing and fine-tuning convenient.
-    3. **Filtering Target Color**:  
-    Use `cv2.inRange()` to set the upper and lower bounds for the color range and create a binary mask image. This function converts out-of-range colors to black (pixel value 0), filtering out noise and retaining only the target color areas, facilitating further processing and analysis.
+### 中文:
+  1. **顏色轉換：**:
+  使用 cv2.cvtColor(image, cv2.COLOR_BGR2LAB) 將 RGB 影像轉換為 LAB 色彩空間。LAB 色彩空間提供更直觀的顏色範圍控制，方便過濾特定顏色。
+  2. **調整顏色範圍**：
+  使用 cv2.getTrackbarPos() 函數取得滑桿的即時數值，通常配合 OpenCV 的視窗介面使用。在即時影像處理中，透過滑桿可動態調整參數，如門檻值或顏色範圍，方便測試與微調。
+  3. **過濾目標顏色**：
+  使用 cv2.inRange() 設定顏色範圍的上下界，建立二值遮罩圖像。此函數會將不在範圍內的像素轉為黑色（像素值為 0），過濾雜訊並保留目標顏色區域，以利後續處理與分析。
+### 英文:
+  1. **Color Conversion**:  
+  Use `cv2.cvtColor(image, cv2.COLOR_BGR2LAB)` to convert the RGB image to LAB color space. The LAB space allows for more intuitive control over color range, making it easier to filter specific colors.
+  2. **Adjusting Color Range**:  
+  Use the function `cv2.getTrackbarPos()` to get the current value from the trackbar, which is typically used with an OpenCV display window. In real-time image processing, trackbars allow dynamic adjustment of parameters, such as the threshold or color range, making testing and fine-tuning convenient.
+  3. **Filtering Target Color**:  
+  Use `cv2.inRange()` to set the upper and lower bounds for the color range and create a binary mask image. This function converts out-of-range colors to black (pixel value 0), filtering out noise and retaining only the target color areas, facilitating further processing and analysis.
 <div align="center">
 <table>
 <tr>
