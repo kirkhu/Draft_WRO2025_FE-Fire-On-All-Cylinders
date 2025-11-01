@@ -79,6 +79,7 @@
     <tr>
       <th>二值化牆壁檢測</th>
       <th>ROI 邊緣檢測</th>
+      <th>ROI 邊緣檢測</th>
     </tr>
     <tr>
       <td style="text-align:center;">
@@ -95,11 +96,16 @@
           style="width:350px; height:auto; display:block; margin:0 auto;"
         />
       </td>
+      <td style="text-align:center;">
+        <img
+          src="./img/camera.png"
+          alt="floor-to-boundary (black-and-white)"
+          style="height:285px !important; width:350px; display:block; margin:0 auto;"
+        />
+      </td>
     </tr>
   </table>
 </div>
-
-
 
 <div align="center">
 <table>
