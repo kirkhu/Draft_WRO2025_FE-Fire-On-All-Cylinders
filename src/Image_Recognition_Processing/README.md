@@ -76,83 +76,76 @@
 
 <div align="center">
 
-  <!-- 上排（三欄） -->
-  <table style="
-      width: 900px;                 /* ← 固定整張表的寬度 */
-      table-layout: fixed;          /* ← 固定欄寬，不受字長影響 */
-      border-collapse: collapse;
-      margin: 0 auto;">
+  <!-- 上排（三欄，等寬） -->
+  <table style="width:900px; table-layout:fixed; border-collapse:collapse; margin:0 auto;">
     <colgroup>
-      <col style="width: 300px;">
-      <col style="width: 300px;">
-      <col style="width: 300px;">
+      <col style="width:300px;">
+      <col style="width:300px;">
+      <col style="width:300px;">
     </colgroup>
     <tr>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
         Binarized wall detection(二值化檢測牆面)
       </th>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
         ROI1 and ROI2: detect walls(ROI1和ROI2檢測牆面)
       </th>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
         ROI3: detect the red pillar and green pillar(ROI3檢測紅與綠柱)
       </th>
     </tr>
     <tr>
-      <td align="center">
+      <td align="center" style="padding:8px;">
         <img src="./img/camera.png" alt="floor-to-boundary (black-and-white)"
-             style="width:270px !important; height:185px !important; max-width:none !important; max-height:none !important; display:block; margin:0 auto;">
+             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
       </td>
-      <td align="center">
+      <td align="center" style="padding:8px;">
         <img src="./img/ROI_Edge_detection.png" alt="floor-to-boundary (black-and-white)"
-             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
+             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
       </td>
-      <td align="center">
+      <td align="center" style="padding:8px;">
         <img src="./img/Obstacle_detection.png" alt="floor-to-boundary (black-and-white)"
-             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
+             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
       </td>
     </tr>
   </table>
 
-  <!-- 下排（三欄） -->
-  <table style="
-      width: 900px;                 /* ← 固定整張表的寬度（與上表一致） */
-      table-layout: fixed;
-      border-collapse: collapse;
-      margin: 0 auto; margin-top:-1px;"> <!-- 如要無縫貼合上表，可調整為 -1~-8px -->
+  <!-- 下排（三欄，等寬；與上表同總寬） -->
+  <table style="width:900px; table-layout:fixed; border-collapse:collapse; margin:0 auto; margin-top:-1px;">
     <colgroup>
-      <col style="width: 300px;">
-      <col style="width: 300px;">
-      <col style="width: 300px;">
+      <col style="width:300px;">
+      <col style="width:300px;">
+      <col style="width:300px;">
     </colgroup>
     <tr>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
         ROI4: detect orange lines and blue lines(ROI4檢測橘與藍線)
       </th>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
         ROI5: assist in detecting the front wall(ROI5輔助檢測前方牆面)
       </th>
-      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">
+      <th style="padding:6px 8px; word-break:break-word; overflow-wrap:anywhere;">
         ROI6: detect magenta walls(ROI6檢測洋紅牆面)
       </th>
     </tr>
     <tr>
-      <td align="center">
+      <td align="center" style="padding:8px;">
         <img src="./img/linecolor.png" alt="line color detection"
-             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
+             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
       </td>
-      <td align="center">
+      <td align="center" style="padding:8px;">
         <img src="./img/binarization_run.png" alt="binarization_run.png"
-             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
+             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
       </td>
-      <td align="center">
+      <td align="center" style="padding:8px;">
         <img src="./img/pink.png" alt="pink"
-             style="width:270px !important; height:185px !important; display:block; margin:0 auto;">
+             style="width:270px; height:185px; max-width:100%; display:block; margin:0 auto;">
       </td>
     </tr>
   </table>
 
 </div>
+
 
 
 
