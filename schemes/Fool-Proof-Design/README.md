@@ -39,8 +39,8 @@ In summary, adopting a plug-in terminal block as the connection interface for th
 <div align=center>
     <table>
         <tr>
-            <th>Pluggable Terminal Block</th>
-            <th>Circuit real-life photo</th>
+            <th>Pluggable Terminal Block(Power supply)</th>
+            <th>Circuit Real-life Photo(Power supply)</th>
         </tr>
         <tr align=center>
             <td><img src="./img/Pluggable Terminal Block.png" width=400 alt="Terminal block" /></td>
