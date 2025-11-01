@@ -83,8 +83,8 @@
       <th>ROI3檢測紅與綠柱</th>
     </tr>
     <tr>
-      <td align="center"><img src="./img/camera.png"             width="440" alt="floor-to-boundary (black-and-white)"></td>
-      <td align="center"><img src="./img/ROI_Edge_detection.png" width="440" alt="floor-to-boundary (black-and-white)"></td>
+      <td align="center"><img src="./img/camera.png"             width="270" alt="floor-to-boundary (black-and-white)"></td>
+      <td align="center"><img src="./img/ROI_Edge_detection.png" width="270" alt="floor-to-boundary (black-and-white)"></td>
       <td align="center"><img src="./img/Obstacle_detection.png" width="270" alt="floor-to-boundary (black-and-white)"></td>
     </tr>
   </table>
@@ -97,9 +97,9 @@
       <th>ROI6檢測洋紅牆面</th>
     </tr>
     <tr>
-      <td align="center"><img src="./img/linecolor.png"        width="500" alt="line color detection"></td>
-      <td align="center"><img src="./img/binarization_run.png" width="210" alt="binarization_run.png"></td>
-      <td align="center"><img src="./img/pink.png"             width="800" alt="pink"></td>
+      <td align="center"><img src="./img/linecolor.png"        width="270" alt="line color detection"></td>
+      <td align="center"><img src="./img/binarization_run.png" width="270" alt="binarization_run.png"></td>
+      <td align="center"><img src="./img/pink.png"             width="270" alt="pink"></td>
     </tr>
   </table>
 </div>
