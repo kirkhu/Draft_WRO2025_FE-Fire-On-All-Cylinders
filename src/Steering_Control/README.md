@@ -42,6 +42,7 @@
         print(t, lTurn, rTurn, leftArea, rightArea, cPillar.target, angle, f"{relative_heading:.2f}",
               "mag6:", mag6_area, mag6_center)
  ```
+
 <div align=center>
 
   |Sidewall highlighted value detection(側壁突出值檢測)|Field blue and orange line recognition(場地藍橙線識別)|
@@ -49,7 +50,6 @@
   |<div align="center"> <img src="./img/inverse_highlight_and_binarization.png"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/Field blue and orange line recognition.png"  alt="Detecting_nearby_obstacles"></div>|
 
 </div> 
-
 - ### Vehicle block avoidance control-車輛避障控制
    ### 中文:
   - 根據任務需求，當車輛偵測到紅色交通號誌遮擋時，系統觸發向右繞行機動；當遇到綠色障礙物時，它會觸發向左繞行機動。 
