@@ -62,14 +62,6 @@ In summary, utilizing a pluggable terminal block as the interface for the power 
             <td><img src="./img/PCB_Body_Fount.png" width=400 alt="Circuit Body Fount" /></td>
             <td><img src="./img/PCB_Body_Bottom.png" width=400 alt="Circuit Body Bottom" /></td>
         </tr>
-        <tr>
-            <th>PCB LED和Button電路板正面</th>
-            <th>PCB LED和Button電路板反面</th>
-        </tr>
-        <tr align=center>
-            <td><img src="./img/PCB_LED_Fount.png" width=400 alt="Circuit Led and button Fount" /></td>
-            <td><img src="./img/PCB_LED_Bottom.png" width=400 alt="Circuit Led and button Bottom" /></td>
-        </tr>
     </table>
 </div>
 
