@@ -118,12 +118,12 @@
       <td style="text-align:center;">
         <img src="./img/linecolor.png"
              alt="Obstacle_detection"
-             style="height:200px; width:400px; display:block; margin:0 auto;" />
+             style="height:200px; width:500px; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
         <img src="./img/binarization_run.png"
              alt="line color detection"
-             style="height:200px; width:235px; display:block; margin:0 auto;" />
+             style="height:200px; width:210px; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
         <img src="./img/pink.png"
