@@ -4,34 +4,41 @@
 - ### Hardware Configuration of Electronic Equipment 
 - 電子設備的硬體配置
   - 下圖顯示了電子設備在自走車中的安裝位置。
-  - The diagram below shows the placement of electronic equipment in the autonomous vehicle.
+  - The diagram below shows the placement of electronic equipment in the  Self-Driving-Cars.
   
     <div align="center"><img src="./img/car_introduce.png" alt="Components's Position"></div>
 
 - ### System Operation Process -系統操作流程
     <div align="center"><img src="./img/System_operation_process.png"   alt="System Operation Process" > </div>
 #### 中文:
-- Nvidia Jetson orin Nano 主控制器透過攝影模組擷取影像，並使用 OpenCV 進行處理，以偵測障礙物與邊界牆。同時，透過 I2C 通訊協定 從 BNO055 陀螺儀方位感測器 收集方向資料，計算行進方向以避開障礙物與邊界牆。
+- 本系統以 NVIDIA Jetson Orin Nano 作為核心控制器，整合攝影模組擷取即時影像。影像資料經由 OpenCV 函式庫進行高效能處理，用以精準識別賽道上的關鍵元素，包括紅色與綠色障礙柱、黑色邊界牆、洋紅色停車場邊界，以及地面上的藍色與橘色標線。此外，系統透過 I2C 通訊協定，從 BNO055 慣性量測單元 (IMU) 收集方向數據，進而計算出精確的行進方向，以實現動態避開障礙物與邊界、並準確計算賽道圈數的自動化控制目標。
 
-- 計算後的控制訊號會透過 WebSockets 傳送至 Raspberry Pi Pico W I/O 控制器進行控制。
+- NVIDIA Jetson Orin Nano 作為上位控制器，在完成影像與感測資料處理後，將產生的最終控制訊號透過 WebSocket 通訊協定進行即時（Low-Latency）傳輸。該訊號被Raspberry Pi Pico W I/O 控制器接收，由其負責執行底層的運算調校與實體運動控制。
 
-- 在停車過程中，作為 I/O 控制器的 Raspberry Pi Pico W 不僅接收來自 Jetson Orin Nano 主控制器的資料，還同時從兩側 HC-SR04 超聲波距離感測器和前後 TCRT5000 紅外循線感測器等數據資料進行計算，以控制自動停車的移動路徑。
+- 在自動停車階段，Raspberry Pi Pico W I/O 控制器升級為決策核心。它不僅接收來自 Jetson Orin Nano 主控制器的上位指令，還需同步融合多源感測數據進行即時計算：包括來自兩側 HC-SR04 超聲波測距感測器的距離資訊，以及前後 TCRT5000 紅外線循線感測器的邊界數據，最終依此精確控制車輛的移動路徑。
 
-- 作為 I/O 控制器的 Raspberry Pi Pico W 接收來自 Jetson Orin Nano 主控制器的車輛移動控制值，並在 Pico 內部進行進一步計算，再將結果傳送至 前輪伺服馬達（MG90S），以控制行駛方向，完成避障任務。
+- 作為底層的 I/O 控制器，Raspberry Pi Pico W 接收來自 Jetson Orin Nano 主控制器的車輛運動控制參數。Pico W 隨即在內部進行輔助運算與訊號轉換，最終將校準後的控制訊號傳輸至前輪伺服馬達（MG90S），從而精確調整轉向角度，以確保避障任務的順利執行。
 
-- 同時，作為 I/O 控制器的 Raspberry Pi Pico W 處理來自主控制器 Jetson Orin Nano 的車輛移動控制值，並將結果傳送至 馬達控制器（L293D），以控制直流馬達的正反轉與轉速。
+- 同時，身為 I/O 控制器的 Raspberry Pi Pico W 負責解譯並處理來自 Jetson Orin Nano 主控制器的車輛移動指令。隨後，Pico W 透過生成 脈衝寬度調變 (PWM) 訊號，將資料傳送給 L293D 馬達驅動晶片，以實現對直流馬達的轉速調節及正反轉控制。
+
+
+- This system utilizes the NVIDIA Jetson Orin Nano as its core controller, integrating a camera module to capture real-time imagery. The image data is processed efficiently using the **OpenCV library** to precisely identify critical elements on the race track, including **red and green obstacle pylons, the black boundary wall, the magenta parking boundary, and the blue and orange ground lines**. Furthermore, the system collects orientation data via the I2C communication protocol from a BNO055 Inertial Measurement Unit (IMU). This directional data is then used to calculate the precise heading, enabling the automated control objective of dynamically avoiding obstacles and boundaries, as well as accurately counting the number of laps completed.
+- The NVIDIA Jetson Orin Nano, acting as the primary controller, generates final control signals after processing visual and sensor data. These signals are transmitted in real-time via the **WebSocket communication protocol** to the Raspberry Pi Pico W I/O Controller, which is tasked with executing the subsequent low-level computation and physical actuation control.
+- During the automated parking sequence, the Raspberry Pi Pico W I/O Controller functions as a crucial decision-making node. It not only receives high-level commands from the Jetson Orin Nano Master Controller but also simultaneously fuses data from various sensors for real-time calculation. This input includes distance measurements from dual HC-SR04 ultrasonic rangefinders located on both sides, as well as line-detection data from front and rear TCRT5000 infrared line sensors, all used to precisely govern the vehicle's maneuvering path.
+- Serving as the I/O controller, the Raspberry Pi Pico W receives the vehicle motion control values transmitted from the Jetson Orin Nano master controller. The Pico W then performs further internal computation and signal conditioning before sending the resulting commands to the **front wheel servo motor (MG90S)**, thereby precisely controlling the steering angle to successfully complete the obstacle avoidance task.
+- Concurrently, the Raspberry Pi Pico W, acting as the I/O controller, processes the vehicle movement control values received from the Jetson Orin Nano master controller. It then transmits this data to the **L293D Motor Driver** using **Pulse Width Modulation (PWM)** signals, which is necessary to control both the direction (forward/reverse) and the speed of the DC motor.
 
 - ### Vehicle Body Structure Display Diagram-車體結構展示圖
 <div align="center">
 <table>
   <tr>
       <th>Top View of the Overall Apparatus(整體裝置頂視圖)</th>
-      <th>Middle Layer Structure Top View</th>
+      <th>Top-Down View of the Vehicle's Mid-Level Structure</th>
       <th>Top View of Vehicle Chassis</th>
       <th>Bottom View of Vehicle Chassis(車體底盤底視圖)</th>
   </tr>
   <tr align="center">
-     <td><img src="./img/car_all.png"  width = "400" alt="Top View of the Overall Apparatus" > </td>
+     <td><img src="./img/car_all.png"  width = "600" alt="Top View of the Overall Apparatus" > </td>
      <td><img src="./img/Middle_Layer_Top_View.png" width = "400" alt="Middle Layer Structure Top View" ></td>
      <td><img src="./img/Driver Top.png" width="400" alt="Top View of Vehicle Chassis" ></td>
      <td><img src="./img/down.png" width="400" alt="Bottom View of Vehicle Chassis" ></td>
@@ -43,15 +50,17 @@
 <div align="center">
 <table>
   <tr align="center">
-      <th> Circuit Board of Top View(電路板頂視圖) </th><th>Circuit Board of Button View(電路板底視圖)</th>
+      <th> Overhead view of the main circuit board(電路板頂視圖) </th><th>Bottom View of the Main Circuit Board(電路板底視圖)</th>
   </tr>
   <tr align="center">
      <td> <img src="img/circuit board fount.png" width="300" alt="circuit_up.jpg"> </td><td><img src="img/circuit board back.png" width="300" alt="circuit_lower.jpg"></td>
   </tr>
+  <tr align="center">
+      <th> Overhead view of the switch circuit board(電路板頂視圖) </th><th>Bottom view of the switch circuit board(電路板底視圖)</th>
+  </tr>
   <tr align=center>
-    <td><img src="./img/circuit board fount.png 2.png" width=300 /></td>
-    <td><img src="./img/circuit board back 2.png" width=300 /></td>
-  </div>
+    <td><img src="./img/circuit board fount.png 2.png" width="300" /></td>
+    <td><img src="./img/circuit board back 2.png" width="300" /></td>
 </table>
 </div>
 
