@@ -44,7 +44,7 @@ In summary, utilizing a pluggable terminal block as the interface for the power 
 <div align=center>
     <table>
         <tr>
-            <th>Pluggable Terminal Block(Power supply)</th>
+            <th>Pluggable Terminal Block(Power supply Terminal Block)</th>
             <th>Actual Photo of the Circuit(Power supply)</th>
         </tr>
         <tr align=center>
