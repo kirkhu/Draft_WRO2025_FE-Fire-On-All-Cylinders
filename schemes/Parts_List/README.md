@@ -1,7 +1,7 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>  
 
 ## <div align="center">BOM Part List </div>
-<li><a href="https://pse.is/87lasz" target="_blank">NVIDIA® Jetson Nano™ developer-b01</li> 
+<li><a href="https://pse.is/87lasz" target="_blank">NVIDIA Jetson Orin Nano SUPER Developer Kit 8GB </li> 
 <li><a href="https://pse.is/87lask" target="_blank">Raspberry Pi Pico W RP2040</li> 
 <li><a href="https://pse.is/87lagc" target="_blank">L293d motor controller</li>
 <li><a href="https://pse.is/87lar6" target="_blank">MG513-P30 293RPM DC reduction motor</li>  
