@@ -71,7 +71,7 @@
 
    - #### Introduction to running programs on the Jetson Orin nano controller:
 
-      - ##### [jetson_nano_main.py](./jetson_nano_main.py)
+      - ##### [jetson_orin_nano_main.py](./jetson_orin_nano_main.py)
       ### 中文:
       - 此 jetson_nano_main.py程式主要負責控制整體任務流程，包括避牆、轉向控制和圈數計數即啟動程式。
       - Jetson Orin Nano程式啟動後，樹莓派 Pico w 會進入等待狀態，直到Jetson Orin Nano按下按鈕後進入jetson_nano_main.py程式，並透過 WebSockets發送馬達數據給樹莓派 Pico w 運行。

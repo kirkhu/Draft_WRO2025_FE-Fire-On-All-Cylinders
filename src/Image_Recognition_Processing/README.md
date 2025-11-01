@@ -8,7 +8,7 @@
   - There are six colors on the competition field—red, green, blue, orange, magenta, and black—which must be located via image recognition so the Vehicle can smoothly avoid obstacles or complete the assigned tasks.
   - We will use the popular image recognition software OpenCV to recognize objects on the competition field.
   
-### Using LAB for Color Detection in OpenCV - 在OpenCV中使用LAB進行顏色檢測([ColourTesterLAB.py](../Programming/common/ColourLAB.py))
+### Using LAB for Color Detection in OpenCV - 在OpenCV中使用LAB進行顏色檢測([Color_LAB.py](../Programming/common/Color_LAB.py))
   - 為了進行色彩偵測，我們將 RGB 色彩空間轉換為 LAB，並將 LAB 值分為上下限以建立範圍，確保準確的目標偵測。具體步驟如下：
 
   - To perform color detection, we convert the RGB color space to LAB and define lower and upper LAB thresholds to establish a range, ensuring accurate target detection. The specific steps are as follows:
