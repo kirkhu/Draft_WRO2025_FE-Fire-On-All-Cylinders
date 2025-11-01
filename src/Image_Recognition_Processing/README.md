@@ -4,14 +4,14 @@
 ### 中文:
   - 比賽場地上有紅、綠、藍、橙、洋紅、黑六種顏色，需要透過影像辨識來確定它們的位置，使車輛能夠順利避開障礙物或完成指定任務。 
   - 我們將使用流行的影像辨識軟體OpenCV來辨識比賽場上的物體。
-  ### 英文:
-  - On the competition field, there are six colors—red, green, blue, orange, pink, and black—that need to be identified through image recognition to determine their locations, enabling the vehicle to successfully avoid obstacles or complete designated tasks.
-  - We will use the popular image recognition software OpenCV to identify objects on the competition field.
+### 英文:
+  - There are six colors on the competition field—red, green, blue, orange, magenta, and black—which must be located via image recognition so the Vehicle can smoothly avoid obstacles or complete the assigned tasks.
+  - We will use the popular image recognition software OpenCV to recognize objects on the competition field.
   
-- #### Color Detection Using LAB in OpenCV-在 OpenCV 中使用 LAB 進行顏色檢測([ColourTesterLAB.py](../Programming/common/ColourLAB.py))
+#### Using LAB for Color Detection in OpenCV - 在OpenCV中使用LAB進行顏色檢測([ColourTesterLAB.py](../Programming/common/ColourLAB.py))
   - 為了進行色彩偵測，我們將 RGB 色彩空間轉換為 LAB，並將 LAB 值分為上下限以建立範圍，確保準確的目標偵測。具體步驟如下：
 
-  - To perform color detection, we convert the RGB color space to LAB and split the LAB values into upper and lower bounds to establish a range, ensuring accurate target detection. The detailed steps are as follows:
+  - To perform color detection, we convert the RGB color space to LAB and define lower and upper LAB thresholds to establish a range, ensuring accurate target detection. The specific steps are as follows:
   ### 中文:
     1. **顏色轉換：**:
     使用 cv2.cvtColor(image, cv2.COLOR_BGR2LAB) 將 RGB 影像轉換為 LAB 色彩空間。LAB 色彩空間提供更直觀的顏色範圍控制，方便過濾特定顏色。
