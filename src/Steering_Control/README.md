@@ -16,12 +16,12 @@
    - 確認方向後，進一步檢查影像左右側的「側壁高亮值」。
    - 只有當對應側的高亮值 ≥ 4500 時，才允許下達轉向指令。
    - 此門檻可避免過早入彎，降低擦牆風險，並提升轉向穩定度與精度。
-   ### 英文:
+    ### 英文:
     - When the vehicle detects a blue or orange line on the ground, the system triggers a steering action. Highlighted value detection of the sidewall ensures the vehicle maintains a safe distance to avoid collisions, while the blue and orange line detection identifies the vehicle’s turning direction, allowing it to navigate curves or corners safely and precisely.
     - As the vehicle moves, the system uses the camera to detect highlighted values and the blue and orange lines on the ground. When approaching a turn, the system assesses the y-axis position of the blue and orange lines and uses these values to determine the proximity of the turn. The closer the distance, the larger the y-axis value. The system selects the color with the largest y-axis value as the basis for steering direction, ensuring accurate turning.
     - After determining the turning direction, the system further evaluates the highlighted values on the left and right sides of the camera view. The turn action only initiates when the highlighted value reaches or exceeds 4500. This setup effectively prevents premature turning, reducing the risk of the vehicle hitting the sidewall due to early steering, and ensures accuracy and safety in turning.
         - program code:
-  ```
+    ```
    if count == 0:
        if cPillar.area == 0:
            aDiff = leftArea-rightArea
@@ -41,7 +41,7 @@
     if frame_id % log_every == 0:
         print(t, lTurn, rTurn, leftArea, rightArea, cPillar.target, angle, f"{relative_heading:.2f}",
               "mag6:", mag6_area, mag6_center)
- ```
+    ```
 
 <div align=center>
 
