@@ -118,7 +118,7 @@
       <td style="text-align:center;">
         <img src="./img/linecolor.png"
              alt="Obstacle_detection"
-             style="height:200px; width:235px; display:block; margin:0 auto;" />
+             style="height:200px; width:250px; display:block; margin:0 auto;" />
       </td>
       <td style="text-align:center;">
         <img src="./img/binarization_run.png"
@@ -128,7 +128,7 @@
       <td style="text-align:center;">
         <img src="./img/pink.png"
              alt="binarization_run.png"
-             style="height:200px; width:820px; display:block; margin:0 auto;" />
+             style="height:200px; width:810px; display:block; margin:0 auto;" />
       </td>
     </tr>
   </table>
