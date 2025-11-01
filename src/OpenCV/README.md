@@ -6,45 +6,83 @@
 - OpenCV（開源電腦視覺庫）是一個用於電腦視覺和機器學習的開源軟體庫。它包含 2,500 多種最佳化演算法，涵蓋影像處理、物件偵測、影像辨識、人臉辨識、運動追蹤和 3D 重建等各種視覺任務。 OpenCV 由於其多功能性和高效性，被廣泛應用於自動駕駛、機器人、醫學影像處理和安全監控等不同領域。
 - OpenCV 支援多種程式語言（例如 C++、Python 和 Java），並且可以在各種作業系統上運行，包括 Windows、Linux、macOS 和 Android。它不僅可以在 CPU 上運行，還支援 GPU 和嵌入式設備的硬體加速，使其適用於 Nvidia Jetson Orin Nano 和 Raspberry Pi 等資源有限的設備，並能有效運作。
 - 因此，OpenCV應用程式可以透過識別賽道上的障礙物和路邊牆壁來協助本次比賽，使車輛能夠避開障礙物並順利完成任務。
+
 ### 英文:
-- OpenCV (Open Source Computer Vision Library) is an open-source software library for computer vision and machine learning. It consists of over 2,500 optimized algorithms, covering various vision tasks such as image processing, object detection, image recognition, face recognition, motion tracking, and 3D reconstruction. Due to its versatility and efficiency, OpenCV is widely used across different fields, including autonomous driving, robotics, medical image processing, and security surveillance.
-- OpenCV supports multiple programming languages (such as C++, Python, and Java) and can run on various operating systems, including Windows, Linux, macOS, and Android. It not only operates on CPUs but also supports hardware acceleration for GPUs and embedded devices, making it suitable for resource-limited devices like the Nvidia Jetson Orin Nano and Raspberry Pi, where it performs efficiently.
-- Therefore, the OpenCV application can assist in this competition by recognizing obstacles and roadside walls on the track, enabling the vehicle to avoid obstacles and successfully complete the task.
-- ### 在 Nvidia Jetson Orin Nano 上安裝 OpenCV 應用程式的步驟：
+
+
 - ### Steps to install the OpenCV application on the Nvidia Jetson Orin Nano:
    __1.Update and Upgrade Packages:__
    ```
    sudo apt-get update
    sudo apt-get upgrade
    ```
-   __2.Download OpenCV Source Code__
+   __2.Install Compilation Tools &&__
    ```
-   
+   sudo apt install -y cmake
+   sudo apt update
+   sudo apt install -y libgtk-3-dev pkg-config build-essential cmake git \
+      libatlas-base-dev libjpeg-dev libpng-dev libtiff-dev \
+      libavcodec-dev libavformat-dev libswscale-dev \
+      libv4l-dev v4l-utils libxvidcore-dev libx264-dev \
+      libtbb2 libtbb-dev libdc1394-22-dev
    ```
-   __3.install dphys-swapfile__
+   __3.Download OpenCV Source Code && Create "build" directory__
    ```
-   sudo apt-get install dphys-swapfile
+   cd ~
+   git clone https://github.com/opencv/opencv.git
+   cd opencv
+   git checkout 4.7.0
+
+   cd ~
+   git clone https://github.com/opencv/opencv_contrib.git
+   cd opencv_contrib
+   git checkout 4.7.0
+
+   mkdir -p ~/opencv/build
+   cd ~/opencv/build
+   rm -rf *
    ```
-   __4.Check Memory__
-       Check Memory space to ensure at least 6.5GB is available.
+   __4.Specify The Target Python Path__ depending on the situation
    ```
-   free -m
+   PYTHON_EXEC=$(pyenv which python3)
+   PYTHON_PREFIX=$(pyenv prefix)
+   PYTHON_INCLUDE=$PYTHON_PREFIX/include/python3.11
+   PYTHON_LIB=$PYTHON_PREFIX/lib/libpython3.11.so
+   PYTHON_PACKAGES=$PYTHON_PREFIX/lib/python3.11/site-packages
    ```
-   __5.Download OpenCV__
+   __5.Configure CMake Build Parameters__
    ```
-   wget https://github.com/Qengineering/Install-OpenCV-Jetson-Nano/raw/main/OpenCV-4-5-0.sh
-   sudo chmod 755 ./OpenCV-4-5-0.sh
+   cmake \
+     -D CMAKE_BUILD_TYPE=Release \
+     -D CMAKE_INSTALL_PREFIX=/usr/local \
+     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+     -D WITH_GSTREAMER=ON \
+     -D WITH_CUDA=ON \
+     -D ENABLE_FAST_MATH=ON \
+     -D CUDA_FAST_MATH=ON \
+     -D WITH_CUBLAS=ON \
+     -D WITH_GTK=ON \
+     -D BUILD_opencv_python3=ON \
+     -D PYTHON3_EXECUTABLE=$PYTHON_EXEC \
+     -D PYTHON3_INCLUDE_DIR=$PYTHON_INCLUDE \
+     -D PYTHON3_LIBRARY=$PYTHON_LIB \
+     -D PYTHON3_PACKAGES_PATH=$PYTHON_PACKAGES \
+     -D BUILD_opencv_world=OFF \
+     -D BUILD_EXAMPLES=OFF \
+     -D BUILD_TESTS=OFF \
+     -D BUILD_DOCS=OFF \
+     -D BUILD_PERF_TESTS=OFF \
+     ..
    ```
-   __6.install OpenCV__
+   __6.Run The Build And Install Commands__
    ```
-   ./OpenCV-4-5-0.sh
-   rm OpenCV-4-5-0.sh
+   make -j$(nproc)
+   sudo make install
    ```
-   __7.remove the dphys-swapfile to save an additional 275 MB__
+   __7.Verify Whether The Build And Installation Were Successful__
    ```
-   sudo /etc/init.d/dphys-swapfile stop
-   sudo apt-get remove --purge dphys-swapfile
-   sudo rm -rf ~/opencv
+   python3 -c "import cv2; print('OpenCV version:', cv2.__version__)"
+   python3 -c "import cv2; print(cv2.getBuildInformation())" | grep -E "GStreamer|GTK|CUDA"
    ```    
 - __Reference links:__
 - __參考連結：__
