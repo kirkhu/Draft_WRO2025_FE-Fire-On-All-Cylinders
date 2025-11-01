@@ -130,6 +130,11 @@
          <td align=center ><img src="./img/New PCB Layouts Button and Led.png" height=250 /></td>
       </tr>
    </table>
+   <tr>
+         <th>	總電路原理圖  </th>
+   </tr>
+
+   <td align=center ><img src="./img/Schematic&PCB/Schematic_Version_all.png" height=250  /></td>
  </div>
 
  ***
