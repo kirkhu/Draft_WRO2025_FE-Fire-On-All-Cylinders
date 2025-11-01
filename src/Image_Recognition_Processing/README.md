@@ -32,16 +32,16 @@
 <div align="center">
 <table>
 <tr>
-<th>Adjusting the LAB Range Values for Red Color(調整紅色的LAB範圍值)</th>
-<th>Adjusting the LAB Range Values for Green Color(調整綠色的LAB範圍值)</th>
+<th>Adjust the LAB range for red(調整紅色的LAB範圍值)</th>
+<th>Adjust the LAB range for green(調整綠色的LAB範圍值)</th>
 </tr>
 <tr>
 <td align="center"><img src="./img/red_block_LAB.png" width="350" alt="red_block_LAB"></td>
 <td align="center"><img src="./img/green_block_LAB.png" width="350" alt="green_block_LAB"></td>
 </tr>
 <tr>
-<th>Adjusting the LAB Range Values for Bule Color(調整藍色的 LAB 範圍值)</th>
-<th>Adjusting the LAB Range Values for Orange Color(調整橙色的 LAB 範圍值)</th>
+<th>Adjust the LAB range for blue(調整藍色的 LAB 範圍值)</th>
+<th>Adjust the LAB range for orange(調整橙色的 LAB 範圍值)</th>
 </tr>
 <tr>
 <td align="center"><img src="./img/blue_LAB.png" width="350" alt="blue_block_LAB"></td>
@@ -50,7 +50,7 @@
 </table>
 <table>
 <tr>
-<th>Adjusting the LAB Range Values for Pink Color(調整洋紅色的 LAB 範圍值)</th>
+<th>Adjust the LAB range for magenta(調整洋紅色的 LAB 範圍值)</th>
 </tr>
 <tr>
 <td align="center"><img src="./img/magenta_LAB.png" width="350" alt="magenta_block_LAB"></td>
