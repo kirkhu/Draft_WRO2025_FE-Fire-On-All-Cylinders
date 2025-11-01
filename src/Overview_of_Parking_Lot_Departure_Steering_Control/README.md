@@ -34,7 +34,7 @@
 
   |Counterclockwise_direction|The color and X, target coordinates of traffic signal blocks.|
   |:---:|:---:|
-  |<div align="center"> <img src="./img/Counterclockwise_direction.png" width="400"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/clockwise_direction.png" width="405" alt="Detecting_nearby_obstacles"></div>|
+  |<div align="center"> <img src="./img/Counterclockwise_direction.png" width="400"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/clockwise_direction.png" width="400" alt="Detecting_nearby_obstacles"></div>|
 
 </div> 
 
