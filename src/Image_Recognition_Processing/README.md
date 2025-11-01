@@ -85,7 +85,7 @@
         <img
           src="./img/camera.png"
           alt="floor-to-boundary (black-and-white)"
-          style="height:290px !important; width:350px; display:block; margin:0 auto;"
+          style="height:280px !important; width:350px; display:block; margin:0 auto;"
         />
       </td>
       <td style="text-align:center;">
