@@ -2,6 +2,11 @@
 
 ## <div align="center">Open Challenge Code Overview</div> 
   Based on the characteristics of each control board, we distributed the complex operations required for the race vehicle:
+  ### 中文:
+   1. Jetson Orin Nano 負責影像辨識和方向偵測，利用其強大的運算能力進行即時影像分析。
+   2. 同時，樹莓派 Pico W 負責馬達驅動和車輛轉向，利用其高效的  GPIO 控制功能進行精確的硬體管理。
+   3. 這種分工最大限度地發揮了每個控制板的優勢，使整個系統更加穩定有效率。
+   ### 英文:
    <ol>
    <li>
     The Jetson Nano is responsible for image recognition and direction detection, leveraging its powerful computing 
@@ -20,21 +25,49 @@
     The functions of these modules are as follows:
     - `process_roi()`: Processes image data to recognize objects or features within a scene.
       ```
-      def process_roi(undistorted_frame, x1, y1, x2, y2, threshold_value=90):
-          roi = undistorted_frame[y1:y2, x1:x2]
-          gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-          _, binary = cv2.threshold(gray, threshold_value, 255, cv2.THRESH_BINARY_INV)
-          # Find all contours
-          contours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)      
-          # If there are contours, find the largest contour by area
-          if contours:
-              largest_contour = max(contours, key=cv2.contourArea)
-              black_pixels = int(cv2.contourArea(largest_contour))  # Convert black pixels to integer
-          # Draw the largest contour
-          cv2.drawContours(binary, [largest_contour], -1, (255, 255, 255), -1)
+      def find_contours(img_lab, lab_range, ROI):
+        x1, y1, x2, y2 = ROI
+        seg = img_lab[y1:y2, x1:x2]
+        lo = np.array(lab_range[0]); hi = np.array(lab_range[1])
+        mask = cv2.inRange(seg, lo, hi)
+        k = np.ones((5,5), np.uint8)
+        mask = cv2.erode(mask, k, iterations=1)
+        mask = cv2.dilate(mask, k, iterations=1)
+        contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
+        return contours
+
+      def max_contour(contours, ROI):
+          maxArea = 0; maxY = 0; maxX = 0; mCnt = 0
+          for cnt in contours:
+              area = cv2.contourArea(cnt)
+              if area > 150:
+                  approx = cv2.approxPolyDP(cnt, 0.01*cv2.arcLength(cnt, True), True)
+                  x,y,w,h = cv2.boundingRect(approx)
+                  x += ROI[0] + w//2
+                  y += ROI[1] + h
+                  if area > maxArea:
+                      maxArea = area; maxY = y; maxX = x; mCnt = cnt
+          return [maxArea, maxX, maxY, mCnt]
+
+      def pOverlap(img_lab, ROI, add=False):
+          x1, y1, x2, y2 = ROI
+          seg = img_lab[y1:y2, x1:x2]
+          from masks import rBlack, rMagenta
+          loB, hiB = np.array(rBlack[0]),   np.array(rBlack[1])
+          loM, hiM = np.array(rMagenta[0]), np.array(rMagenta[1])
+          mB = cv2.inRange(seg, loB, hiB)
+          mM = cv2.inRange(seg, loM, hiM)
+          if add:
+              mask = cv2.add(mB, mM)
           else:
-              black_pixels = 0
-          return cv2.cvtColor(binary, cv2.COLOR_GRAY2BGR), black_pixels
+              mask = cv2.bitwise_and(mB, cv2.bitwise_not(mM))
+          k_open  = np.ones((3,3), np.uint8)
+          k_close = np.ones((7,7), np.uint8)
+          mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN,  k_open,  iterations=1)
+          mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, k_close, iterations=1)
+          contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
+          return contours
+
       ```             
 
     - `pd_control()`: Controls the steering of the servo motor based on calculated ratios to ensure precise and stable steering.
