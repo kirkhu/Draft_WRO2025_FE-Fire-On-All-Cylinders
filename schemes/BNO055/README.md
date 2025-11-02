@@ -3,12 +3,6 @@
 ## <div align="center">Gyroscope orientation sensor Introduction-陀螺儀方向感測器簡介：</div> 
 
 - ### __Instruction to BNO055 Gyroscope orientation sensor-BNO055 陀螺儀方向感測器使用說明：__
-    <div align="center">
-    <table>
-    <tr>  
-    <td>
-    <ol>
-
     ### 中文:
     1. BNO055 陀螺儀方向感測器是由 Bosch Sensortec 開發的高精度九軸絕對方向感測器。它整合了加速度計、陀螺儀與磁力計，並內建用於感測器融合的微處理器，可提供即時的姿態與方向資訊。其主要特點是具備自動校準功能，能夠直接輸出三維空間中的絕對方向數據。
   
@@ -21,12 +15,18 @@
     2. The BNO055 gyroscope orientation sensor can provide data on azimuth, tilt angle, acceleration, angular velocity, and magnetic field strength, making it ideal for applications that require precise attitude and orientation sensing, such as autonomous driving, robotic navigation, virtual reality (VR) devices, and various industrial control systems. With its built-in sensor fusion technology, the BNO055 gyroscope orientation sensor simplifies system design, relieving developers from handling complex data fusion.
     
     3. This sensor supports multiple interfaces (e.g., I2C, UART), allowing for easy integration into different embedded systems. The BNO055 gyroscope orientation sensor’s built-in algorithm automatically adjusts to provide stable readings across different environments, making it suitable for applications requiring high stability and accuracy.
-    </ol>
+    <div align="center">
+    <table>
+    <tr>  
+    <th>Top View
+    </th>
+    <th>Bottom View
+    </th>
+    <td align="center">
+      <img src="./img/BNO055up.png" alt="BNO055up" width="50% />
     </td>
-    <td width=300 align="center">
-      <img src="./img/BNO055up.png" alt="BNO055up" width="250" />
-      <img src="./img/BNO055.png" alt="BNO055" width="250" />
-
+    <td align="center">
+      <img src="./img/BNO055.png" alt="BNO055" width="50%  />
     </td>
     </tr>
     </table>
