@@ -4,10 +4,11 @@
 
 - ### __Introduction to TCRT5000 Infrared Line Tracking Sensor__
 
-<div align="center" width=100%>
 TCRT5000是一款常見的反射型紅外線感測器( Infrared Reflective Sensor )，內部由紅外線發射二極體( IR LED )與光電晶體( Phototransistor )組成。它的工作原理是透過紅外線發射端發出不可見光，當光線遇到前方物體表面時，會反射回感測器的接收器。若接收端偵測到反射光，即可判斷前方是否有物體存在。
 
 The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrared Emitting Diode (IR LED) and a Phototransistor. Its operation involves the IR LED transmitting invisible light. When this light reflects off a nearby object's surface and is detected by the receiver, the sensor determines the presence of the object.
+
+<div align="center" width=100%>
 <table  align="center">
   <tr>
   <TH>Top View
@@ -36,8 +37,8 @@ The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrar
             <th>Rear</th>
         </tr>
         <tr>
-            <td align=center><img src="./img/Car Front TCRT5000.png" width=500 /></td>
-            <td align=center><img src="./img/Car Back TCRT5000.png" width=500 /></td>
+            <td align=center><img src="./img/TCRT5000_front.png" width=500 /></td>
+            <td align=center><img src="./img/TCRT5000_back.png" width=500 /></td>
         </tr>
     </table>
 </div>
