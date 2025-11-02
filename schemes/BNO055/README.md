@@ -64,9 +64,9 @@
    
 - The following is __Python__ code that implements orientation detection functionality from the __BNO055 gyroscope sensor__ on an __Nvidia Jetson Nano__ using a class-based approach.
 
-    - ####  Python code-Python 程式碼
-
-
+- ####  Python code-Python 程式碼
+```python
+     
 
             import time
             from Adafruit_BNO055 import BNO055
@@ -100,8 +100,10 @@
                         "magnetometer": mag
                     }
 
+```
 
-    - #### Example usage-範例用法
+- #### Example usage-範例用法
+```python
             sensor = BNO055Sensor()
             while True:
                 # Get orientation data
@@ -113,14 +115,14 @@
                 print("Calibration Status:", calibration_status)
 
                 time.sleep(1)
-
-   - #### Explanation-說明    
-        <p>
-        <ol>
-        <li><strong>__init__ method:</strong> Initializes the BNO055 Gyroscope orientation Sensor class, setting the I2C address and verifying the sensor connection. If the connection fails, it raises an error.</li>
-        <li><strong>get_orientation method:</strong> Retrieves orientation data from the sensor (Heading, Roll, and Pitch) and returns them in a dictionary.
+```
+   - #### Explanation-說明       
+    <p>
+    <ol>
+    <li><strong>__init__ method:</strong> Initializes the BNO055 Gyroscope orientation Sensor class, setting the I2C address and verifying the sensor connection. If the connection fails, it raises an error.</li>
+    <li><strong>get_orientation method:</strong> Retrieves orientation data from the sensor (Heading, Roll, and Pitch) and returns them in a dictionary.
         get_calibration_status method: Returns the calibration status for the system, gyroscope, accelerometer, and magnetometer, which is useful for ensuring accurate measurements.</li>
-        </ol></p>
+    </ol></p>
 
       __This code reads and prints the BNO055 Gyroscope orientation sensor's orientation data and calibration status every second.__
 
