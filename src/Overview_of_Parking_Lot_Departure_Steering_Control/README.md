@@ -74,7 +74,7 @@
     <div align=center>
     <table>
     <tr>
-    <th>Counterclockwise_green(逆時針綠色)</th>
+    <th>Counterclockwise_green(逆時針方向，綠色號誌)</th>
     <th>Counterclockwise_red(逆時針紅色)</th>
     </tr><tr>
     <td align=center><img src="./img/Counterclockwise_green.png" width=400 /></td>
