@@ -34,35 +34,33 @@
     </div>
 
     ### 中文:
-    - 我們將 BNO055 陀螺儀方向感測器安裝於車體上，並透過 I2C 模式將其與 Nvidia Jetson Orin Nano 控制器連接。該配置用於讀取車輛的即時方向資訊，並將獲得的方向數據傳送至主程序進行運算與分析，作為車輛轉向決策的依據。
+    - 為實現精準轉向控制，我們將 BNO055 慣性測量單元（IMU）/ 陀螺儀方向感測器穩固地安裝在自駕車上。
+    - 該感測器透過 I²C 通訊協定與 NVIDIA Jetson Orin Nano 控制器進行訊號傳輸，即時獲取車輛的行進方向數據。
+    - 這些數據會被傳送至主程式進行高效運算與分析，從而為車輛的自主轉向決策提供關鍵依據。
     ### 英文:
-    - We installed the BNO055 gyroscope orientation sensor on the vehicle and connected it to the Nvidia Jetson Nano controller, using I2C mode for data transmission. This setup is used to read the vehicle's current orientation, and the obtained orientation data is transmitted to the main program for calculation and analysis, serving as a basis for the vehicle's steering decisions.
- 
+    - To achieve precise steering control, the BNO055 Inertial Measurement Unit (IMU) / gyroscope orientation sensor was securely mounted onto the autonomous vehicle. - This sensor communicates with the NVIDIA Jetson Orin Nano controller via the I²C protocol, acquiring the vehicle's real-time directional data. 
+    - This data is then transmitted to the main program for efficient computation and analysis, serving as a critical basis for the vehicle's autonomous steering decisions.
 
-   - #### 陀螺儀  連接至 Nvidia Jetson Orin Nano 主控制器的接線步驟：  
-    - BNO055 的 VCC 連接到 Nvidia Jetson Orin Nano的 3.3V（PIN 1）：提供正極電源。
-    - BNO055 的 GND 連接到 Nvidia Jetson Orin Nano的GND(PIN 6)：確保兩者共用接地。
-    - BNO055 的 SDA 連接到 Nvidia Jetson Orin Nano的SDA(PIN 3)。
-    - BNO055 的 SCL 連接到 Nvidia Jetson Orin Nano的SCL(PIN 5)。
-   
+   - ####  BNO055 陀螺儀與 NVIDIA Jetson Orin Nano 主控制器之間詳細的接線步驟：
+    * **VCC (電源)**：將 BNO055 的 VCC 引腳連接至 NVIDIA Jetson Orin Nano 的 **3.3V**（PIN 1）。此連接為陀螺儀提供**穩定的正極電源**。
+    * **GND (接地)**：將 BNO055 的 GND 引腳連接至 NVIDIA Jetson Orin Nano 的 **GND**（PIN 6）。此連接**確保兩者共用接地**，形成完整的電路迴路。
+    * **SDA (資料線)**：將 BNO055 的 SDA 引腳連接至 NVIDIA Jetson Orin Nano 的 **SDA**（PIN 3）。此線路用於 **I²C 協議的資料傳輸**。
+    * **SCL (時脈線)**：將 BNO055 的 SCL 引腳連接至 NVIDIA Jetson Orin Nano 的 **SCL**（PIN 5）。此線路用於 **I²C 協議的時脈訊號同步**。
 
-     
-    **I²C Communication:**
-    ### 中文:
-    - 將 BNO055 的 VDD 腳位 接至 Raspberry Pi Pico W的 3.3V 腳位（第 36 腳）。BNO055 的工作電壓範圍為 2.4V 至 3.6V，而 Raspberry Pi Pico W提供穩定的 3.3V 輸出，因此可作為其電源供應。
-    - 將 BNO055 的 GND 腳位 接至 Raspberry Pi Pico W的其中一個 GND 腳位（第 8 腳），以確保兩個裝置之間的共地連接。
 
-    ### 英文:
-    - Connect SDA (BNO055) to the SDA pin on the Jetson Nano (pin 3 on header J41).
-    - Connect SCL (BNO055) to the SCL pin on the Jetson Nano (pin 5 on header J41).
-    - Connect both PS0 and PS1 pins (BNO055) to ground (GND) to set the device to I²C mode.
-    - Connect the ADD pin (BNO055) to ground (GND) to set the I²C address to 0x28.
+   - ### Connection Guide for Gyroscope (BNO055) and Main Controller (NVIDIA Jetson Orin Nano)
 
-- 以下是 Python 程式碼，使用 類別方式 在 Nvidia Jetson Orin Nano 上從 BNO055 陀螺儀感測器 實作方向偵測功能。
-   
-- The following is __Python__ code that implements orientation detection functionality from the __BNO055 gyroscope sensor__ on an __Nvidia Jetson Nano__ using a class-based approach.
+    * **VCC (Power)**: Connect the VCC pin of the BNO055 to the **3.3V** pin (PIN 1) on the NVIDIA Jetson Orin Nano. This connection **provides the stable positive power supply** for the gyroscope.
+    * **GND (Ground)**: Connect the GND pin of the BNO055 to the **GND** pin (PIN 6) on the NVIDIA Jetson Orin Nano. This connection **ensures a shared ground** between the two devices, completing the circuit loop.
+    * **SDA (Data Line)**: Connect the SDA pin of the BNO055 to the **SDA** pin (PIN 3) on the NVIDIA Jetson Orin Nano. This line is used for **data transmission in the $I^2C$ protocol**.
+    * **SCL (Clock Line)**: Connect the SCL pin of the BNO055 to the **SCL** pin (PIN 5) on the NVIDIA Jetson Orin Nano. This line is used for **clock signal synchronization in the $I^2C$ protocol**.
 
-- ####  Python code-Python 程式碼
+
+  - 以下是使用**物件導向程式設計** (類別方式) 實現，並部署於 **NVIDIA Jetson Orin Nano** 開發板上的 **Python 程式碼**。該程式碼旨在從 **BNO055 慣性測量單元 (IMU) 陀螺儀感測器**讀取數據，進而精確地實作**車輛**的**方向角偵測功能**。
+
+  - Here is the **Python code**, implemented using an **Object-Oriented Programming (OOP) approach (class-based)**, and deployed on an **NVIDIA Jetson Orin Nano** development board. This code is designed to read data from a **BNO055 Inertial Measurement Unit (IMU) gyroscope sensor** to accurately implement the **heading/orientation detection function** for a **vehicle**.
+
+- ####  Python code
 ```python
      
 
@@ -100,7 +98,7 @@
 
 ```
 
-- #### Example usage-範例用法
+- #### Example usage
 ```python
             sensor = BNO055Sensor()
             while True:
@@ -114,7 +112,7 @@
 
                 time.sleep(1)
 ```
-   - #### Explanation-說明       
+   - #### Explanation      
     <p>
     <ol>
     <li><strong>__init__ method:</strong> Initializes the BNO055 Gyroscope orientation Sensor class, setting the I2C address and verifying the sensor connection. If the connection fails, it raises an error.</li>
