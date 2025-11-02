@@ -1,74 +1,77 @@
 <div align=center> <img src="../../other/img/logo.png" width=300 alt=" logo"> </div>
 
 ## <div align="center">Software Platform Construction </div> 
+- ### __Installing System Software Required for Self-Driving Cars__
 
-### 系統安裝流程圖
+   - ### System Platform Software Installation Process Diagram-系統安裝流程圖
 
-<div align=center>
- <img src="./img/Orin_System_Installation.jpg" width=1300 />
-</div>
+   <div align=center>
+   <img src="./img/Orin_System_Installation.jpg" width="100%" />
+   </div>
 
-### 操作前的準備
+   - ### Installing the Operating System on Nvidia Jetson Orin Nano
 
-<ol>
-    <li>需要一台原生Ubuntu系統主機***不能使用虛擬機***</li>
-    <li>確保Jetson Orin Nano上面已經安裝SSD─用於硬體加速</li>
-</ol>
+      - #### Preparation Before Installation - 操作前的準備
+         - 請配置或備妥一台運行 Ubuntu 作業系統的實體主機。 嚴禁使用任何虛擬化環境 (如虛擬機) 來執行相關任務。
+         - 務必確認您的 Jetson Orin Nano 已妥善安裝固態硬碟 (SSD)。
+         - Please prepare or configure a physical host machine running the Ubuntu operating system. The use of any virtualization environment (such as a virtual machine) for executing the relevant tasks is strictly prohibited.
+         - Please ensure that a Solid-State Drive (SSD) is properly installed on your Jetson Orin Nano.
 
-### Nvidia SDK Manager 安裝
+      - #### NVIDIA SDK Manager Installation
 
-- 到官網下載SDK Manager的安裝包=>[超連結](https://developer.nvidia.com/sdk-manager)
+         - Download [NVIDIA SDK Manager 2.3.0](https://developer.nvidia.com/sdk-manager)
 
-  <div align=center><img src="./img/NVIDIA SDK Manager Download Page.png" width=800></div>
+          <div align=center><img src="./img/NVIDIA SDK Manager Download Page.png" width="80%"></div>
 
-- 開啟下載資料夾雙擊安裝包，若是安裝完成並且登入成功後開啟可以看到以下畫面
+         - Double-click the installation package to install, and upon completion and successful login, launching the application will display the following screen雙擊安裝包開始安裝，安裝完成後，登入並開啟（應用程式），即可看到以下畫面 
+          <div align=center><img src="./img/Start SDK Manager Page.png" width="80%"></div>
 
-  <div align=center><img src="./img/Start SDK Manager Page.png" width=800></div>
+   
+      - #### JetPack Software Version Installation, Upgrade, and Downgrade Guide
 
-### 進行JetPack的升降及安裝操作界紹
+         - SDK Manager 是 NVIDIA 的官方工具，可為 Jetson 主機執行 JetPack 版本的安裝、升級與降級。操作前請先將 Nvidia Jetson Orin Nano 切換至 Recovery Mode 並依指示接通電源與連線。以下為 SDK Manager 的操作流程。
+         - SDK Manager is an official tool from NVIDIA that allows you to install, upgrade, or downgrade JetPack versions on Jetson devices. Before proceeding, please switch the Nvidia Jetson Orin Nano to Recovery Mode and follow the instructions to connect the power and establish a connection. Below is the operation procedure for SDK Manager.
+         
+         <div align=center><img src="./img/20250930_212433.jpg" width="80%" /></div>
 
-- SDK Manager是NVIDIA的官方工具，可以進行Jetson主機的JetPack版本升降級，在進行操作前要將Jetson主機進入到Recovery Mode在給Jetson主機通電，以下是SDK Manager的操作過程。
+      <div align=center>
+         <table>
+         <tr>
+         <th>Connect the Nvidia Jetson Orin Nano to the host computer.</th>
+         <th>Verify whether the connection is successful.</th>
+         <th>Select the developer kit.</th>
+         </tr>
+         <tr>
+         <td><img src="./img/11.jpg" width=400 /></td>
+         <td><img src="./img/12.png" width=400 /></td>
+         <td><img src="./img/13.png" width=400 /></td>
+         </tr>
+         <tr>
+         <th>Select the desired JetPack version from the menu.</th>
+         <th>Check the option on the left side and click Next.</th>
+         <th>Enter the administrator password.</th>
+         </tr>
+         <tr>
+         <td><img src="./img/14.png" width=400 /></td>
+         <td><img src="./img/15.png" width=400 /></td>
+         <td><img src="./img/16.png" width=400></td>
+         </tr>
+         <tr>
+         <th>Enter the relevant information of the motherboard.</th>
+         <th>After the installation is complete, click "Finish" to exit.</th>
+         <th>Successful login screen of Jetson Orin Nano</th>
+         </tr>
+         <tr>
+         <td><img src="./img/17.png" width=400 /></td>
+         <td><img src="./img/18.png" width=400 /></td>
+         <td><img src="./img/19.png" width=400 /></td>
+         </tr>
+         </table>
+      </div>
 
-  <div align=center><img src="./img/20250930_212433.jpg" width=800 /></div>
+   - ### System environment initial setup Steps
 
-  <div align=center>
-   <table>
-    <tr>
-     <th>將Jetson接上主機</th>
-     <th>確認是否連接成功</th>
-     <th>選擇開發者套件</th>
-    </tr>
-    <tr>
-     <td><img src="./img/11.jpg" width=400 /></td>
-     <td><img src="./img/12.png" width=400 /></td>
-     <td><img src="./img/13.png" width=400 /></td>
-    </tr>
-    <tr>
-     <th>在選單中選中所需的JetPack版本</th>
-     <th>勾選左側選項，點擊下一步</th>
-     <th>輸入管理者密碼</th>
-    </tr>
-    <tr>
-     <td><img src="./img/14.png" width=400 /></td>
-     <td><img src="./img/15.png" width=400 /></td>
-     <td><img src="./img/16.png" width=400></td>
-    </tr>
-    <tr>
-     <th>填入主機板的相關資訊</th>
-     <th>安裝完畢後點擊"Finish"結束</th>
-     <th>Jetson Orin Nano畫面</th>
-    </tr>
-    <tr>
-     <td><img src="./img/17.png" width=400 /></td>
-     <td><img src="./img/18.png" width=400 /></td>
-     <td><img src="./img/19.png" width=400 /></td>
-    </tr>
-   </table>
-  </div>
-
-### 系統配置
-
- - 進行系統更新
+ - Update the operating environment.
     ```bash
     sudo apt update
     sudo apt upgrade -y
