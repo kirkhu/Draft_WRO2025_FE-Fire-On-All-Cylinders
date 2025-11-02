@@ -29,7 +29,7 @@ The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrar
 
 <div align=center width=100%>
     <table  align="center">
-        <tr align=center>
+        <tr align="center">
             <th colspan=2>TCRT5000 Infrared Sensor Placement Diagram on Vehicle</th>
         </tr>
         <tr align=center>
@@ -37,8 +37,8 @@ The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrar
             <th>Rear</th>
         </tr>
         <tr>
-            <td align=center><img src="./img/Car_Front_TCRT5000.png" width=500 /></td>
-            <td align=center><img src="./img/Car_Back_TCRT5000.png" width=500 /></td>
+            <td align="center"><img src="./img/Car_Front_TCRT5000.png" width="50%" /></td>
+            <td align="center"><img src="./img/Car_Back_TCRT5000.png" width="50%" /></td>
         </tr>
     </table>
 </div>
