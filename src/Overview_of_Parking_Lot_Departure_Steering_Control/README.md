@@ -3,7 +3,7 @@
 ## <div align="center">Overview of Parking Lot Departure Steering Control-停車場出發轉向控制概述</div> 
 
 - ### Determination of the Driving direction - 行車方向的判斷
-    - 在車輛從停車區啟動之前，它會利用 CSI 鏡頭擷取的畫面，並結合感興趣區域 (ROI) 來預判行車方向。此判斷邏輯是透過比較 ROI_1 和 ROI_2 的面積：若 ROI_1 面積大於 ROI_2 面積，則判定本次行車方向為順時針方向；反之，若 ROI_2 面積大於 ROI_1 面積，則判定為逆時針方向。一旦行車方向確定，車輛隨即駛出停車區，之後系統會立即偵測車道上是否存在交通標誌積木 (即紅 、綠 99色交通標誌)，並根據偵測到的顏色執行相應的變道 (Lane Change) 決策。
+    - 在車輛從停車區啟動之前，它會利用 CSI 鏡頭擷取的畫面，並結合感興趣區域 (ROI) 來預判行車方向。此判斷邏輯是透過比較 ROI_1 和 ROI_2 的面積：若 ROI_1 面積大於 ROI_2 面積，則判定本次行車方向為順時針方向；反之，若 ROI_2 面積大於 ROI_1 面積，則判定為逆時針方向。一旦行車方向確定，車輛隨即駛出停車區，之後系統會立即偵測車道上是否存在交通標誌積木 (即紅 、綠色交通標誌)，並根據偵測到的顏色執行相應的變道 (Lane Change) 決策。
 
     - Before the Vehicle departs from the parking lot, it utilizes the image captured by the CSI camera and applies the Region of Interest (ROI) technique to pre-determine the Driving direction. The determination logic is based on comparing the areas of `ROI_1` and `ROI_2`: if the area of `ROI_1` is greater than the area of `ROI_2`, the current Driving direction is determined to be the clockwise direction ; conversely, if the area of `ROI_2` is greater than the area of `ROI_1`, it is determined to be the Counterclockwise direction. Once the Driving direction is confirmed, the Vehicle exits the parking lot , and the system subsequently detects the presence of traffic signs blocks (red or green traffic signs) in the lane and executes the corresponding Lane Change decision based on the detected color.
 
@@ -51,10 +51,13 @@
         write(start_turn)     
 ```
 
-- ### 判斷顏色行駛路線
+- ### Driving Route Decision Based on Color Recognition - 顏色判斷下的行駛路線決策
   ### 中文:
-    - 若為逆時針方向，偵測到綠色柱子則行駛於內側，偵測到紅色柱子則行駛於外側，若未偵測到柱子，則預設行駛外側。
-    - 若為順時針方向，偵測到綠色柱子則行駛於外側，偵測到紅色柱子則行駛於內側，若未偵測到顏色，則同樣行駛外側。
+    - 逆時針方向:若行車方向為逆時針方向，當車輛偵測到綠柱，則行駛於車道內側；偵測到紅柱則行駛於車道外側；若未偵測到任何柱子，則預設行駛於車道外側。
+    - 順時針方向:若行車方向為順時針方向，當車輛偵測到綠柱，則行駛於車道外側；偵測到紅柱則行駛於車道內側；若未偵測到任何柱子，則預設行駛於車道外側。
+
+    - Counterclockwise direction : If the Driving direction is Counterclockwise direction , the Vehicle will drive on the inner wall of the lane when a green pillar is detected; it will drive on the exterior walls of the lane when a red pillar  is detected. If no pillar is detected, the default is to drive on the exterior walls  of the lane.
+    - Clockwise direction : If the Driving direction is clockwise direction , the Vehicle will drive on the exterior walls of the lane when a green pillar is detected; it will drive on the inner wall of the lane when a red pillar  is detected. If no pillar is detected, the default is to drive on the exterior walls  of the lane.
 
   1. **顏色輪廓偵測**:
     - 我們使用find_contours(img_lab, rRed,ROI3)和
@@ -64,7 +67,8 @@
     - 我們使用find_best_pillar(contours_red,redTarget,"red",img_lab)和find_best_pillar(contours_green, greenTarget, "green", img_lab)，這兩行使用
     `find_best_pillar()`函式會根據每個輪廓的大小、位置與距離目標點（redTarget / greenTarget）的遠近等條件進行評估。
     回傳的 best_red 與 best_green 各自顏色中評分最高、最接近可通過路線的立柱。若沒有找到符合條件的立柱，則可能回傳 None。
-
+  
+  ### 英文:
     
     <div align=center>
     <table>
