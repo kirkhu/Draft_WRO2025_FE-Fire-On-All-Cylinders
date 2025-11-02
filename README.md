@@ -44,7 +44,7 @@
     - [3-3 Web Sockets Interdouction **已改動](src/WebSockets/README.md)
     - __3-4 Image Recognition Processing and Steering-影像辨識處理和控制__
       - [3-4-1 Image Recognition Processing(影像辨識處理) **已改動](src/Image_Recognition_Processing/README.md)
-      - [3-4-2 Overview_of_Parking_Lot_Departure_Steering_Control(停車場出發轉向控制)](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
+      - [3-4-2 Overview_of_Parking_Lot_Departure_Steering_Control(停車場出發轉向控制) **已改動](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
       - [3-4-3 Steering Control(轉向控制) ](src/Steering_Control/README.md) 
       - [3-4-4 Automatic storage and recording of game field object LAB values(場地物件LAB值的自動化儲存記錄) **已改動](src/Automatically_record_LAB/README.md)
     - __3-5 Programming - Vehicle’s control program程式設計__
