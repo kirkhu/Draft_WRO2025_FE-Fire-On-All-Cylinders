@@ -4,8 +4,8 @@
   **Below is the code for performing the parking task after completing three laps.-以下是完成三圈後執行停車任務的程式碼。**
 - ### Parking program-停車計劃
     ### 中文:
-    - 當車輛行駛時，系統（Jetson Orin Nano）首先透過攝影機測洋紅色方塊來識別停車場的位置。當車輛到達第三圈的時候，轉彎撞牆在轉彎並調整朝向停車場的方向。 
-    - 進入停車場後，系統（Jetson Orin Nano）利用攝影機測量車輛與洋紅色停車場之間的距離，確保車輛與洋紅色停車場保持適當的距離。為了確認車輛到達指定的停車位置，使用攝影影機偵測如果洋紅色面積小於100馬達再往前100度。 
+    - 當車輛行駛時，系統（Jetson Orin Nano）首先透過攝影機測洋紅色方塊來識別停車場的位置。當車輛到達第三圈的時候，先轉彎往前直超音波側倒在後退轉彎並調整朝向停車場的方向。 
+    - 進入停車場區後，系統（Jetson Orin Nano）利用攝影機測量車輛與洋紅色停車場之間的距離，確保車輛與洋紅色停車場保持適當的距離。為了確認車輛到達指定的停車位置，使用攝影影機偵測如果洋紅色面積小於100馬達再往前100度。 
     - 確認停車方向後，系統採用真實世界的平行停車方法。首先，它設定伺服馬達的轉向角度以及馬達到達目標位置所需的角度。在停車過程中，系統（Raspberry Pi Pico W）使用陀螺儀控制目標角度的同時，同步調整伺服電機，從而完成倒車停車動作。
     ### 英文:
     - When the vehicle is in motion, the system (Jetson Orin Nano) first uses the camera to detect the pink square to identify the location of the parking lot. When the vehicle reaches the last turn of the third lap, it first proceeds to the end zone and pauses momentarily. The vehicle then completes another lap and, upon approaching the turn near the parking lot, reduces its speed to park precisely in the designated spot. At this point, the system uses the highlighted values from the camera to assess the distance between the vehicle and the front boundary wall, adjusting its direction toward the parking lot.
