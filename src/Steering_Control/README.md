@@ -4,15 +4,13 @@
 
  - ### Vehicle steering control-車輛轉向控制
     ### 中文:
-    1. **方向判斷(turnDir)**:
+    1. **方向判斷**:
      - 若偵測到橘線的輪廓面積 (maxO) 超過閾值 (> 110)，則判斷為右轉 ("right")。
      - 若偵測到藍線的輪廓面積 (maxB) 超過閾值 (> 110)，則判斷為左轉 ("left")。
-    2. **彎道進入訊號 (tSignal)**:
+    2. **彎道進入訊號**:
       - 一旦確認了轉向方向，且偵測到對應的標線（例如，方向為右轉時，maxO > 100），則會設置轉向訊號旗標 (tSignal = True)，同時設置 rTurn 或 lTurn 旗標。
-   3. 安全門檻與轉向執行
-   - 確認方向後，進一步檢查影像左右側的「側壁高亮值」。
-   - 只有當對應側的高亮值 ≥ 4500 時，才允許下達轉向指令。
-   - 此門檻可避免過早入彎，降低擦牆風險，並提升轉向穩定度與精度。
+    3. **轉彎輔助偵測**:
+      - 當如果任何一側牆壁輪廓面積 (leftArea 或 rightArea)面積超過1000時，會自動設定一個較小的ROI5區域([270, 110, 370, 150])用於強化黑色和洋紅色輪廓的偵測，當ROI5接觸到外牆會將轉向角度變大進行轉彎防止撞上外牆。
     ### 英文:
     - When the vehicle detects a blue or orange line on the ground, the system triggers a steering action. Highlighted value detection of the sidewall ensures the vehicle maintains a safe distance to avoid collisions, while the blue and orange line detection identifies the vehicle’s turning direction, allowing it to navigate curves or corners safely and precisely.
     - As the vehicle moves, the system uses the camera to detect highlighted values and the blue and orange lines on the ground. When approaching a turn, the system assesses the y-axis position of the blue and orange lines and uses these values to determine the proximity of the turn. The closer the distance, the larger the y-axis value. The system selects the color with the largest y-axis value as the basis for steering direction, ensuring accurate turning.
