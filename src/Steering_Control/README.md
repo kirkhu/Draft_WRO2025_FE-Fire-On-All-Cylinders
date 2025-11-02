@@ -43,11 +43,36 @@
               "mag6:", mag6_area, mag6_center)
     ```
 
-<div align=center>
-
-  |Sidewall highlighted value detection(側壁突出值檢測)|Field blue and orange line recognition(場地藍橙線識別)|
-  |:---:|:---:|
-  |<div align="center"> <img src="./img/inverse_highlight_and_binarization.png"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/Field blue and orange line recognition.png"  alt="Detecting_nearby_obstacles"></div>|
+    <div align=center>
+        <table>
+          <tr>
+            <th>Blue Line Recognition(藍線偵測)</th>
+            <th>Orange Line Recognition(橘線偵測)</th>
+            <th>Traffic Signal Evaluation and Steering Control(有交通號誌轉彎)</th>
+          </tr>
+          <tr>
+            <td align=center><img src="./img/Blue Line Recognition.png" width=400 /></td>
+            <td align=center><img src="./img/Orange Line Recognition.png" width=400 /></td>
+            <td align=center><img src="./img/Traffic Signal Evaluation and Steering Control.png" width=400 /></td>
+          </tr>
+        </table>
+      </div>
+    <div align=center>
+    <div align=center>
+        <table>
+          <tr>
+            <th>Unsignalized Intersection Steering Control(非交通號誌轉彎)</th>
+            <th>Inner Side Obstacle Avoidance and Steering Control(內側避障轉彎控制)</th>
+            <th>ROI 5-Based Inner Obstacle Avoidance and Steering Control(內側避障ROI5觸發轉彎控制)</th>
+          </tr>
+          <tr>
+            <td align=center><img src="./img/Blue Line Recognition.png" width=400 /></td>
+            <td align=center><img src="./img/Inner Side Obstacle Avoidance and Steering Control.png" width=400 /></td>
+            <td align=center><img src="./img/ROI 5-Based Inner Obstacle Avoidance and Steering Control.png" width=400 /></td>
+          </tr>
+        </table>
+      </div>
+    <div align=center>
 
 </div> 
 
