@@ -17,7 +17,7 @@
 
     |3D Vehicle Chassis Design(3D 車輛底盤設計)| Vehicle Chassis Top View(車輛底盤俯視圖) | Vehicle Chassis Bottom View(車輛底盤底部視圖)|
     |:----:|:----:|:----:|
-    |<img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png" width="400" alt="vehicle_chassis_design_3D">|<img src="./img/Driver top.png" width="400" alt="2024Vehicle_Chassis_Design_down">|<img src="./img/Driver down.png" width="400" alt="down_view">|
+    |<img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png" width="400" alt="vehicle_chassis_design_3D">|<img src="./img/Driver_top.png" width="400" alt="2024Vehicle_Chassis_Design_down">|<img src="./img/Driver_down.png" width="400" alt="down_view">|
 
   ### 中文:  
   - 我們可以根據車輛的具體需求自訂零件的尺寸與形狀，並利用立體光刻（SLA）3D列印機與雷射切割機，設計並製造車輛底盤的所有零件，齒輪、樂高62821齒輪差速器及輪胎除外。
@@ -29,6 +29,28 @@
   - To precisely control the vehicle's optimal turning radius and flexibly adjust the Ackermann ratio, we used Stereolithography (SLA) 3D printers and 3D modeling technology to design the support frame for the Ackermann steering geometry on the vehicle chassis based on specific requirements.
 
 - #### Vehicle Chassis Improvement Record-車輛底盤改進紀錄
+  ### __去年比較全國賽機型__
+
+  <div align=center>
+    <table>
+      <tr>
+        <th>2024國際賽機型</th>
+        <th>2025全國賽機型</th>
+        <th>Explanation(說明)</th>
+      </tr>
+      <tr>
+        <td><img src="./img/Last_years_car.png" height=230 alt="2024 car" /></td>
+        <td><img src="./img/National_competition_machine.png" height=230 alt="2025 car" /></td>
+        <td>基於去年學長姐們2024年國際賽的機型我們做出一些更動：
+          <ol>
+            <li>機型過長導致避障容易撞到方塊，我們縮短機型整體長度。</li>
+            <li>重新設計轉向結構，我們將2024年機型採用的鐵絲改為使用3D</li>
+          </ol>
+        </td>
+      </tr>
+    </table>
+  </div>
+
   ### __全國賽比較國際賽機型__
   <div align="center">
   <table>
@@ -36,7 +58,7 @@
   <th width="30%"><div align=center>2025國際賽機型</th>
   <th><div align=center>Explanation(說明)</th>
   <tr>
-  <td><div align=center><img src="./img/National_competition_machine.png" height=200></td>
+  <td><div align=center><img src="./img/National_competition_machine.png" height=230></td>
   <td><div align=center><img src="./img/International_competition_machine.png" height=230></td>
   <td>基於全國賽我們發現機型存在一些問題：<br><br>
    <ol>
@@ -59,7 +81,7 @@
   <th><div align=center>3D modeling of the final Build(最終組裝的3D建模)</th>
   <th><div align=center>Explanation(說明)</th>
   </tr><tr>
-  <td width="30%"><img src="./img/Driver top.png" ></td>
+  <td width="30%"><img src="./img/Driver_top.png" ></td>
   <td width="30%"><img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png" ></td>
 
 
@@ -85,7 +107,7 @@
         <th colspan=2>第一代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/steering 1.jpg" width=500 /></td>
+        <td><img src="./img/steering_1.jpg" width=500 /></td>
         <td width=400>
           描述：<br>&emsp;&emsp;
           這版轉向結構過於寬大，因此第二版中我們縮小版型，以提升自駕車的靈活度。
@@ -95,7 +117,7 @@
         <th colspan=2>第二代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/steering 2.png" width=500 /></td>
+        <td><img src="./img/steering_2.png" width=500 /></td>
         <td width=400>
           描述：<br>&emsp;&emsp;
           此版本因使用螺絲與樂高零件連接，轉向角度受限，因此下一版將改用圓頭十字軸與圓頭舵盤以增加轉向範圍。
@@ -105,7 +127,7 @@
         <th colspan=2>第三代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/steering 3.jpg" width=500 /></td>
+        <td><img src="./img/steering_3.jpg" width=500 /></td>
         <td width=400>
           描述：<br>&emsp;&emsp;
           這一版因轉向力矩出現問題，我們重新檢視設計圖。下一版將把轉向拉桿與連桿連接位置調整至與圓頭舵盤平行，並增加轉向極限擋塊，避免角度過大導致結構內凹。
@@ -115,7 +137,7 @@
         <th colspan=2>第四代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/steering 4.jpg" width=500 /></td>
+        <td><img src="./img/steering_4.jpg" width=500 /></td>
         <td width=400>
           描述：<br>&emsp;&emsp;
           這一版因轉向極限擋塊過大，限制了轉向角度，降低了自駕車靈活性。因此在下一版中，我們會縮短極限擋塊，以兼顧轉向幅度與結構保護。
@@ -125,7 +147,7 @@
         <th colspan=2>第五代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/steering 5.jpg" width=500 /></td>
+        <td><img src="./img/steering_5.jpg" width=500 /></td>
         <td width=400>
           描述：<br>&emsp;&emsp;
           經過前幾代轉向結構的修正與優化，目前的轉向結構已能滿足我們機型的需求。
