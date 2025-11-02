@@ -66,7 +66,7 @@
         <table>
         <tr>
         <th>ROI5 assists in corner detection 
-        before turning(轉彎前ROI5輔助轉彎偵測)</th>
+        before turning</th>
         <th>ROI 5 assisted turning detection(ROI5輔助轉彎偵測)</th>
         </tr><tr>
         <td><img src="./img/Inner Side Obstacle Avoidance and Steering Control.png" width="400" height="400"></td>
