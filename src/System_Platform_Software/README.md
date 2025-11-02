@@ -71,10 +71,10 @@
 
    - ### System environment initial setup Steps
       - Update the operating environment.
-         ```bash
+      ```bash
          sudo apt update
          sudo apt upgrade -y
-         ```
+      ```
      - Python version updata
       ```bash
   
