@@ -46,17 +46,6 @@
     - BNO055 的 SCL 連接到 Nvidia Jetson Orin Nano的SCL(PIN 5)。
    
 
-
-
-
-    **Power Supply:**
-    ### 中文:
-    - 將BNO055的VIN腳位接入到Jetson Orin Nano的3.3V腳位(Pin 1)。BNO055的工作電壓範圍是2.4V ~ 3.6V，而Jetson Orin Nano可以提供穩定的3.3V輸出，因此可作為其電源供應。
-
-    - 將BNO055的GND腳位接至Jetson Orin Nano的GND腳位(Pin 6)。這樣以確保BNO055形成正確的電壓迴路。
-    ### 英文:
-    - Connect VDD (BNO055) to the 3.3V pin on the Raspberry Pi Pico (pin 36). The BNO055 operates within a voltage range of 2.4V to 3.6V, and the Raspberry Pi Pico’s 3.3V pin provides a stable 3.3V voltage, making it suitable for powering the BNO055.
-    - Connect GND (BNO055) to one of the GND pins on the Raspberry Pi Pico(pin 8) to ensure a common ground between the two devices.
      
     **I²C Communication:**
     ### 中文:
