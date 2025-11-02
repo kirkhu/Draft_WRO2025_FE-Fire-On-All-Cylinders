@@ -65,6 +65,52 @@
     `find_best_pillar()`函式會根據每個輪廓的大小、位置與距離目標點（redTarget / greenTarget）的遠近等條件進行評估。
     回傳的 best_red 與 best_green 各自顏色中評分最高、最接近可通過路線的立柱。若沒有找到符合條件的立柱，則可能回傳 None。
 
+    
+    <div align=center>
+    <table>
+    <tr>
+    <th>Counterclockwise_green(逆時針綠色)</th>
+    <th>Counterclockwise_red(逆時針紅色)</th>
+    </tr><tr>
+    <td align=center><img src="./img/Counterclockwise_green.png" width=400 /></td>
+    <td align=center><img src="./img/Counterclockwise_red.png" width=400 /></td>
+    </tr>
+    </table>
+    </div>
+
+    <div align=center>
+    <table>
+    <tr>
+    <th>Counterclockwise middle(逆時針方向中間)</th>
+    <th>Counterclockwise direction_No(逆時針方向_否)</th>
+    </tr><tr>
+    <td align=center><img src="./img/Counterclockwise middle.png" width=400 /></td>
+    <td align=center><img src="./img/Counterclockwise_NO.png" width=400 /></td>
+    </tr>
+    </table>
+    </div>
+    <div align=center>
+    <table>
+    <tr>
+    <th>Green in clockwise direction(順時針方向綠色)</th>
+    <th>CClockwise_red(順時針方向紅色)</th>
+    </tr><tr>
+    <td align=center><img src="./img/Green in clockwise direction.png" width=400 /></td>
+    <td align=center><img src="./img/Clockwise_red.png" width=400 /></td>
+    </tr>
+    </table>
+    </div>
+    <div align=center>
+    <table>
+    <tr>
+    <th>Clockwise middle(順時針方向中間)</th>
+    <th>Clockwise_NO(順時針方向_否)</th>
+    </tr><tr>
+    <td align=center><img src="./img/Clockwise middle.png" width=400 /></td>
+    <td align=center><img src="./img/Clockwise_NO.png" width=400 /></td>
+    </tr>
+    </table>
+    </div>
 
 - program code:
     ```
@@ -113,54 +159,6 @@
         write(color)
         time2 = time.time()
     ```
-    
-    <div align=center>
-    <table>
-    <tr>
-    <th>Counterclockwise_green(逆時針綠色)</th>
-    <th>Counterclockwise_red(逆時針紅色)</th>
-    </tr><tr>
-    <td align=center><img src="./img/Counterclockwise_green.png" width=400 /></td>
-    <td align=center><img src="./img/Counterclockwise_red.png" width=400 /></td>
-    </tr>
-    </table>
-    </div>
-
-    <div align=center>
-    <table>
-    <tr>
-    <th>Counterclockwise middle(逆時針方向中間)</th>
-    <th>Counterclockwise direction_No(逆時針方向_否)</th>
-    </tr><tr>
-    <td align=center><img src="./img/Counterclockwise middle.png" width=400 /></td>
-    <td align=center><img src="./img/Counterclockwise_NO.png" width=400 /></td>
-    </tr>
-    </table>
-    </div>
-    <div align=center>
-    <table>
-    <tr>
-    <th>Green in clockwise direction(順時針方向綠色)</th>
-    <th>CClockwise_red(順時針方向紅色)</th>
-    </tr><tr>
-    <td align=center><img src="./img/Green in clockwise direction.png" width=400 /></td>
-    <td align=center><img src="./img/Clockwise_red.png" width=400 /></td>
-    </tr>
-    </table>
-    </div>
-    <div align=center>
-    <table>
-    <tr>
-    <th>Clockwise middle(順時針方向中間)</th>
-    <th>Clockwise_NO(順時針方向_否)</th>
-    </tr><tr>
-    <td align=center><img src="./img/Clockwise middle.png" width=400 /></td>
-    <td align=center><img src="./img/Clockwise_NO.png" width=400 /></td>
-    </tr>
-    </table>
-    </div>
-
-
 
  
 
