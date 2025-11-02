@@ -10,10 +10,10 @@ To accurately record the LAB values for the traffic sign blocks (red and green),
     3. 數值儲存與應用：取得濾波後影像後，我們透過圖形介面按鈕，選擇對應顏色物件來儲存其 LAB 數值。這些數值將被保存在 masks.py 檔案中。
     4. 主程式呼叫：在車輛控制程式 的主程式中，我們透過以下代碼片段，呼叫 masks.py 中的各物件 LAB 數值，並輸入給相對應的視覺辨識函數，實現精確的顏色辨識。
 
-    1. Color Space Conversion: We use the $cv2.cvtColor()$ function to convert the original $RGB$ image captured by the CSI camera into the $LAB$ color space ($L$: Lightness, $A$: Red-Green axis, $B$: Yellow-Blue axis).
-    2. Color Range Definition and Filtering: Subsequently, we precisely define the target color range by utilizing the $cv2.inRange()$ function and setting six $LAB$ thresholds: $L_{low}$, $L_{high}$, $A_{low}$, $A_{high}$, $B_{low}$, and $B_{high}$. The $cv2.inRange()$ function compares every pixel in the $LAB$ image with the defined range, retaining only the pixels within the range and filtering out the rest, thus yielding the filtered image.
-    3. Value Storage and Application: After obtaining the filtered image, we use a graphical interface button to select the corresponding color object and save its $LAB$ values. These values are stored in the masks.py file.
-    4. Main Program Call: In the main Vehicle's control program10, we call the $LAB$ values for each object from the masks.py file using the code snippet below, and input them to the corresponding function for $LAB$ visual recognition.
+    1. Color Space Conversion: We use the `cv2.cvtColor()` function to convert the original `RGB` image captured by the CSI camera into the `LAB` color space (`L`: Lightness, `A`: Red-Green axis, `B`: Yellow-Blue axis).
+    2. Color Range Definition and Filtering: Subsequently, we precisely define the target color range by utilizing the `cv2.inRange()` function and setting six `LAB` thresholds: `L_{low}`, `L_{high}`, `A_{low}`, `A_{high}`, `B_{low}`, and `B_{high}`. The `cv2.inRange()` function compares every pixel in the `LAB` image with the defined range, retaining only the pixels within the range and filtering out the rest, thus yielding the filtered image.
+    3. Value Storage and Application: After obtaining the filtered image, we use a graphical interface button to select the corresponding color object and save its `LAB` values. These values are stored in the masks.py file.
+    4. Main Program Call: In the main Vehicle's control program10, we call the `LAB` values for each object from the masks.py file using the code snippet below, and input them to the corresponding function for `LAB` visual recognition.
         ```python
         from masks import rMagenta, rRed, rGreen, rBlue, rOrange, rBlack
         ```
