@@ -39,7 +39,16 @@
     - We installed the BNO055 gyroscope orientation sensor on the vehicle and connected it to the Nvidia Jetson Nano controller, using I2C mode for data transmission. This setup is used to read the vehicle's current orientation, and the obtained orientation data is transmitted to the main program for calculation and analysis, serving as a basis for the vehicle's steering decisions.
  
 
-  - #### Hardware Connection:
+   - #### 陀螺儀  連接至 Nvidia Jetson Orin Nano 主控制器的接線步驟：  
+    - BNO055 的 VCC 連接到 Nvidia Jetson Orin Nano的 3.3V（PIN 1）：提供正極電源。
+    - BNO055 的 GND 連接到 Nvidia Jetson Orin Nano的GND(PIN 6)：確保兩者共用接地。
+    - BNO055 的 SDA 連接到 Nvidia Jetson Orin Nano的SDA(PIN 3)。
+    - BNO055 的 SCL 連接到 Nvidia Jetson Orin Nano的SCL(PIN 5)。
+   
+
+
+
+
     **Power Supply:**
     ### 中文:
     - 將BNO055的VIN腳位接入到Jetson Orin Nano的3.3V腳位(Pin 1)。BNO055的工作電壓範圍是2.4V ~ 3.6V，而Jetson Orin Nano可以提供穩定的3.3V輸出，因此可作為其電源供應。
