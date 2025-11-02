@@ -4,23 +4,30 @@
 
 - ### __Introduction to TCRT5000 Infrared Line Tracking Sensor__
 
-<div align=center width=100%>
-    <table>
-        <tr>
-            <td align=left width=500>
-            TCRT5000是一款常見的反射型紅外線感測器( Infrared Reflective Sensor )，內部由紅外線發射二極體( IR LED )與光電晶體( Phototransistor )組成。它的工作原理是透過紅外線發射端發出不可見光，當光線遇到前方物體表面時，會反射回感測器的接收器。若接收端偵測到反射光，即可判斷前方是否有物體存在。
-            </td>
-            <td align=center width=500>
-            <p><strong>Supports 3.3V operating voltage</strong></p>
-            <img src="./img/TCRT5000 front.png" width=300 />
-            <img src="./img/TCRT5000 back.png" width=300 />
-            </td>
-        </tr>
-    </table>
+<div align="center" width=100%>
+TCRT5000是一款常見的反射型紅外線感測器( Infrared Reflective Sensor )，內部由紅外線發射二極體( IR LED )與光電晶體( Phototransistor )組成。它的工作原理是透過紅外線發射端發出不可見光，當光線遇到前方物體表面時，會反射回感測器的接收器。若接收端偵測到反射光，即可判斷前方是否有物體存在。
+
+The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrared Emitting Diode (IR LED) and a Phototransistor. Its operation involves the IR LED transmitting invisible light. When this light reflects off a nearby object's surface and is detected by the receiver, the sensor determines the presence of the object.
+<table  align="center">
+  <tr>
+  <TH>Top View
+  </TH>
+  <TH>Bottom View
+  </TH>
+  </tr>
+  <tr>
+  <td align=left width=500>
+    <img src="./img/TCRT5000 front.png" width="50%" />
+  </td>
+  <td align=center width=500>
+  <img src="./img/TCRT5000 back.png" width="50%" />
+  </td>
+   </tr>
+  </table>
 </div>
 
 <div align=center width=100%>
-    <table>
+    <table  align="center">
         <tr align=center>
             <th colspan=2>TCRT5000 Infrared Sensor Placement Diagram on Vehicle</th>
         </tr>
@@ -35,12 +42,34 @@
     </table>
 </div>
 
-- ### TCRT5000 連接到 Raspberry Pi Pico W 的接線步驟：
+- ### Wiring steps for connecting the TCRT5000 to the Raspberry Pi Pico W:
     - TCRT5000 的 GND 腳位連接到 Raspberry Pi Pico W 的接地腳位。
     - TCRT5000 的 A0 腳位連接到 Raspberry Pi Pico W 的 GPIO 腳位：
         - 腳位26(前方)
         - 腳位27(後方)，用於輸出紅外反射量的電壓訊號。
     - 以下是 MicroPython 撰寫的程式碼，以類別形式呈現，能透過 Raspberry Pi Pico W 讀取 TCRT5000 紅外線循線感測器的紅外反射量電壓訊號。
+
+- ### The following are the wiring and programming details for the TCRT5000:
+
+* The **GND** pin of the TCRT5000 is connected to a **Ground (GND) pin** on the Raspberry Pi Pico W.
+* The **A0** (Analog Output) pin of the TCRT5000 is connected to the following **GPIO pins** on the Raspberry Pi Pico W:
+    * **GPIO 26 (Front)**
+    * **GPIO 27 (Rear)**
+    * *(Note: The A0 pin provides the voltage signal representing the amount of infrared reflection.)*
+* The following code is written in **MicroPython** and presented in a **class structure** to allow the Raspberry Pi Pico W to read the **infrared reflection voltage signal** from the TCRT5000 line-following sensor.
+
+---
+
+### 💡 附註 (Contextual Note)
+
+您的描述提到兩個 TCRT5000 感測器（一個用於前方，一個用於後方）各自的 **A0 (Analog Output)** 腳位分別接到 Pico W 的 **GP26** 和 **GP27**。
+
+* **GP26** (GPIO 26) 實際上是 Pico W 的 **ADC0** (Analog-to-Digital Converter 0) 頻道。
+* **GP27** (GPIO 27) 實際上是 Pico W 的 **ADC1** (Analog-to-Digital Converter 1) 頻道。
+
+這種連接方式是**正確且典型**的，因為 TCRT5000 模組的類比輸出 (A0) 訊號需要連接到 Pico W 的類比輸入 (ADC) 腳位才能讀取**電壓訊號**（反射量）。
+
+請問您是否需要**MicroPython 類別程式碼的翻譯或範例**？
 
 - ### MicroPython 程式碼：
     ```python
