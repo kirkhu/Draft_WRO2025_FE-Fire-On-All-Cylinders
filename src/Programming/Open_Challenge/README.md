@@ -74,7 +74,7 @@
       - ##### [jetson_orin_nano_main.py](./jetson_orin_nano_main.py)
       ### 中文:
       - 此 jetson_nano_main.py程式主要負責控制整體任務流程，包括避牆、轉向控制和圈數計數即啟動程式。
-      - Jetson Orin Nano程式啟動後，樹莓派 Pico w 會進入等待狀態，直到Jetson Orin Nano按下按鈕後進入jetson_nano_main.py程式，並透過 WebSockets發送馬達數據給樹莓派 Pico w 運行。
+      - Jetson Orin Nano程式啟動後，樹莓派 Pico w 會進入等待狀態，直到Jetson Orin Nano按下按鈕後進入 jetson_nano_main.py程式，並透過 WebSockets發送馬達數據給樹莓派 Pico w 運行。
       - 程序啟動時，車輛預設為直線行駛模式。在此模式下，系統會計算出的邊牆範圍轉換為伺服馬達的角度，並透過PD轉向控制確保車輛不會撞到牆壁​​。當車輛接近彎道時，系統會偵測藍色或橘色線條，判斷是否進入轉彎模式。
 
       - 在轉彎模式下，伺服馬達角度保持固定，車輛利用看牆的方式來判斷內牆面積是否4000，從而決定何時返回直線模式。
@@ -115,7 +115,7 @@
       - 在控制前輪伺服馬達時，我們直接利用PWM訊號的佔空比來調整輸出，進而控制伺服馬達的轉向角度，PWM訊號佔空比的變化對應於伺服馬達的不同角度設置，從而實現精確轉向。
         ### 英文:
         - The `pico_main.py` program runs on the Raspberry Pi Pico controller as an intermediary control system for an autonomous vehicle, managing the operation of the DC motor and servo motor. This program receives computation results from the Jetson Orin nano controller via UART and controls the speed of the rear-wheel DC motor, the angle of the front-wheel servo motor, while also monitoring vehicle status parameters.
-        -  When the start switch is pressed, the Raspberry Pi Pico controller receives a start signal and sends a high-level signal to initiate the main program `jetson_nano_main.py` on the Jetson Orin nano.
+        -  When the start switch is pressed, the Raspberry Pi Pico controller receives a start signal and sends a high-level signal to initiate the main program `jetson_orin_nano_main.py` on the Jetson Orin nano.
         - When controlling the rear-wheel DC motor, we adjust the voltage through the duty cycle of PWM, using the L293D driver chip to achieve speed control of the rear-wheel DC motor. Additionally, by setting the high and low levels of the two control pins (20,21) on the L293D, we can control the forward and reverse rotation of the rear-wheel DC motor.
         - When controlling the front-wheel servo motor, we directly use the duty cycle of the PWM signal to adjust the output and control the steering angle of the servo motor, without the need for an L293D driver. Changes in the PWM signal’s duty cycle correspond to different angle settings for the servo motor, allowing for precise steering.
       

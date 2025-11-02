@@ -1,17 +1,24 @@
 <div align=center> <img src="../../../other/img/logo.png" width = 300 alt=" logo"> </div>
 
 ## <div align="center">Obstacle_Challenge Code Overview</div> 
+根據各控制板的特點，我們對賽車所需的複雜操作進行了分配：
+
 Based on the characteristics of each control board, we distributed the complex operations required for the race vehicle:
+
+   ### 中文:
+   1. 這次，Jetson Orin Nano除了具備影像辨識和方向偵測功能外，還新增了障礙物辨識功能。憑藉其強大的運算能力，Jetson Orin Nano能夠進行即時影像分析與處理，精準偵測車輛行駛方向，同時快速辨識並避開路徑上的障礙物，進而提升自動駕駛的穩定性與安全性。
+   2. 此外，這次樹莓派 Pico W 不僅要控制直流馬達轉速和車輛轉向，還需要使用紅外線偵測車輛與牆壁的距離。憑藉其高效的 GPIO 控制能力，樹莓派 Pico W 可以進行精確的距離測量和硬體管理，確保車輛安全停放在停車場內，並保持適當的安全距離。
+   ### 英文:
    <ol>
    <li>
-    This time, in addition to handling sidewall image recognition and direction detection, the Jetson Nano has added an obstacle block recognition feature. Leveraging its powerful computing capabilities, the Jetson Nano can perform real-time image analysis and processing, accurately detecting the vehicle's direction while also quickly recognizing and avoiding obstacles in its path, thereby enhancing the stability and safety of autonomous driving. 
+    This time, in addition to handling sidewall image recognition and direction detection, the Jetson Orin Nano has added an obstacle block recognition feature. Leveraging its powerful computing capabilities, the Jetson Orin Nano can perform real-time image analysis and processing, accurately detecting the vehicle's direction while also quickly recognizing and avoiding obstacles in its path, thereby enhancing the stability and safety of autonomous driving. 
    </li>
    <li>
     Additionally, this time, the Raspberry Pi Pico not only controls the DC motor speed and vehicle steering but also needs to detect the distance to the parking lot sidewall. Utilizing its efficient GPIO control capabilities, the Raspberry Pi Pico can perform precise distance measurements and hardware management, ensuring the vehicle parks safely in the lot while maintaining an appropriate distance.
    </li>
    </ol>
 
- - ### Jetson Nano library
+ - ### Jetson Orin Nano library
     The functions for image recognition, front-wheel servo motor proportional steering control, and ground line color recognition have been integrated into the [function.py](../common/function.py) module and can be directly imported for use.
     The functions of these modules are as follows:
     - The explanations for `process_roi()` and `pd_control()` can be found in the **[Open Challenge Code Overview](../Open_Challenge/README.md) section**, so they will not be repeated here.
@@ -126,8 +133,8 @@ Based on the characteristics of each control board, we distributed the complex o
       ```
 
 
- - ### Obstacle_Challenge Code Overview of Jetson nano
-   - #### Obstacle_Challenge Code Program Jetson nano Libraries
+ - ### Obstacle_Challenge Code Overview of Jetson Orin Nano
+   - #### Obstacle_Challenge Code Program Jetson Orin Nano Libraries
     
       ```
       import cv2
@@ -143,10 +150,10 @@ Based on the characteristics of each control board, we distributed the complex o
         motor steering ratio control, and ground line color recognition.
 
       import Jetson.GPIO as GPIO 
-      # Enable GPIO pin control on the Jetson Nano.
+      # Enable GPIO pin control on the Jetson Orin Nano.
       ```  
 
-   - #### Introduction to running programs on the Jetson nano controller:
+   - #### Introduction to running programs on the Jetson Orin Nano controller:
 
       - ##### [jetson_nano_main_final.py](./jetson_nano_main_final.py)
         - The `jetson_nano_main.py` program is primarily responsible for controlling the entire task flow, including avoiding walls, steering control, dodging block obstacles, and lap counting to ensure the vehicle completes all tasks as planned.
@@ -160,7 +167,7 @@ Based on the characteristics of each control board, we distributed the complex o
       __Program operation flow__
         - `jetson_nano_main_fianl.py` starts execution, initializes all variables, and enters a loop, continuously retrieving data from process_roi and detect_color, then entering different conditional branches based on the current state to perform the appropriate control actions. In each loop, `jetson_nano_main_final.py` packages the calculated DC motor value, servo motor angle, and current status into binary data and sends it to the Raspberry Pi Pico via UART. 
 
-   - ##### Program Operation flowchart of the Jetson Nano controller
+   - ##### Program Operation flowchart of the Jetson Orin Nano controller
      ![Obstacle_Challenge_Jetson_nano](./img/FE-obstacle_challenge_Jetson_nano.jpg)
 
  - ### Obstacle_Challenge Code Overview of Raspberry Pi Pico
@@ -179,8 +186,8 @@ Based on the characteristics of each control board, we distributed the complex o
    - #### Introduction to running programs on the Raspberry Pi Pico controller:
 
       - ##### [pico_main_final.py](./pico_main_final.py)
-        - The `pico_main_final.py` program runs on the Raspberry Pi Pico controller as an intermediary control system for an autonomous vehicle, managing the operation of the DC motor and servo motor. This program receives computation results from the Jetson Nano controller via UART and controls the speed of the rear-wheel DC motor, the angle of the front-wheel servo motor, while also monitoring vehicle status parameters.
-        -  When the start switch is pressed, the Raspberry Pi Pico controller receives a start signal and sends a high-level signal to initiate the main program `jetson_nano_main_final.py` on the Jetson Nano.
+        - The `pico_main_final.py` program runs on the Raspberry Pi Pico controller as an intermediary control system for an autonomous vehicle, managing the operation of the DC motor and servo motor. This program receives computation results from the Jetson Orin Nano controller via UART and controls the speed of the rear-wheel DC motor, the angle of the front-wheel servo motor, while also monitoring vehicle status parameters.
+        -  When the start switch is pressed, the Raspberry Pi Pico controller receives a start signal and sends a high-level signal to initiate the main program `jetson_nano_main_final.py` on the Jetson Orin Nano.
         - When controlling the rear-wheel DC motor, we adjust the voltage through the duty cycle of PWM, using the L293D driver chip to achieve speed control of the rear-wheel DC motor. Additionally, by setting the high and low levels of the two control pins (20,21) on the L293D, we can control the forward and reverse rotation of the rear-wheel DC motor.
         - When controlling the front-wheel servo motor, we directly use the duty cycle of the PWM signal to adjust the output and control the steering angle of the servo motor, without the need for an L293D driver. Changes in the PWM signal’s duty cycle correspond to different angle settings for the servo motor, allowing for precise steering.
         - When the program reaches state five, the system takes over the control of the DC motor and begins tracking the pink sidewall of the parking area. During tracking, the ultrasonic distance sensor detects the parking area; when the sensor detects that the sidewall is pink, the system simultaneously takes control of both the servo motor and the DC motor. It then uses `run_encoder_Auto()` to adjust the forward angle of the DC motor to ensure precise parking.
@@ -188,7 +195,7 @@ Based on the characteristics of each control board, we distributed the complex o
 
       __Program operation flow__
       
-        - When  `pico_main_final.py` starts, it sends a high-frequency signal to the Jetson Nano to trigger the execution of the `jetson_nano_main_final.py` program. Then, `pico_main_final.py` enters a waiting mode until the button is pressed. After pressing the button,`pico_main_final.py` enters the main loop, starts receiving data transmitted via UART from the Jetson Nano, and continues running. When it receives a status value of 5, the Pico takes over vehicle control and performs the parking operation.
+        - When  `pico_main_final.py` starts, it sends a high-frequency signal to the Jetson Orin Nano to trigger the execution of the `jetson_nano_main_final.py` program. Then, `pico_main_final.py` enters a waiting mode until the button is pressed. After pressing the button,`pico_main_final.py` enters the main loop, starts receiving data transmitted via UART from the Jetson Orin Nano, and continues running. When it receives a status value of 5, the Pico takes over vehicle control and performs the parking operation.
 
     - ##### Program Operation flowchart of the Raspberry Pi Pico controller
         ![FE-obstacle_challenge_Pico](./img/FE-obstacle_challenge_Pico.jpg)
@@ -200,7 +207,7 @@ Based on the characteristics of each control board, we distributed the complex o
            Take the absolute value of a number in the range of -100 to 100 and convert it to the PWM duty cycle. Meanwhile, set the high and low states of two pins based on the sign of the value to control forward and reverse rotation or to stop.
 
         __jetson_all():__<br>
-           Receive updated data sent from the Jetson Nano controller via the UART protocol and store it in a queue, ensuring that this process runs continuously to maintain real-time data updates.
+           Receive updated data sent from the Jetson Orin Nano controller via the UART protocol and store it in a queue, ensuring that this process runs continuously to maintain real-time data updates.
 
         __run_encoder():__<br>
            By reading the current value of the DC motor to calculate its rotation angle, conditions are set based on the calculation results to control the motor to move straight to the specified rotation angle. This design allows for precise motor adjustments, ensuring that the vehicle moves steadily during operation and accurately reaches the intended target angle.
