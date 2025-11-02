@@ -22,6 +22,8 @@
     </th>
     <th>Bottom View
     </th>
+    </tr>
+    <tr>
     <td align="center">
       <img src="./img/BNO055up.png" alt="BNO055up" width="50% />
     </td>
