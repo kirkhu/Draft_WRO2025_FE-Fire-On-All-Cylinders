@@ -50,8 +50,6 @@ The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrar
         - 腳位27(後方)，用於輸出紅外反射量的電壓訊號。
     - 以下是 MicroPython 撰寫的程式碼，以類別形式呈現，能透過 Raspberry Pi Pico W 讀取 TCRT5000 紅外線循線感測器的紅外反射量電壓訊號。
 
-- ### The following are the wiring and programming details for the TCRT5000:
-
 * The **GND** pin of the TCRT5000 is connected to a **Ground (GND) pin** on the Raspberry Pi Pico W.
 * The **A0** (Analog Output) pin of the TCRT5000 is connected to the following **GPIO pins** on the Raspberry Pi Pico W:
     * **GPIO 26 (Front)**
