@@ -59,7 +59,7 @@
       <th> Overhead view of the switch circuit board(電路板頂視圖) </th><th>Bottom view of the switch circuit board(電路板底視圖)</th>
   </tr>
   <tr align=center>
-    <td><img src="./img/circuit_board_fount.png_2.png" width="200" /></td>
+    <td><img src="./img/circuit_board_fount_2.png" width="200" /></td>
     <td><img src="./img/circuit_board_back_2.png" width="200" /></td>
 </table>
 </div>
