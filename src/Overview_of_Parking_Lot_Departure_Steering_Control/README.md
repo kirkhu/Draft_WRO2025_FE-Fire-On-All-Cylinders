@@ -74,7 +74,7 @@
     <table>
     <tr>
     <th>Counterclockwise_green(逆時針方向，綠色號誌)</th>
-    <th>Counterclockwise_red(逆時針方向，紅色號誌)</th>
+    <th>Counterclockwise_red(行駛於車道內側)</th>
     </tr><tr>
     <td align=center><img src="./img/Counterclockwise_green.png" width=400 /></td>
     <td align=center><img src="./img/Counter-clockwise green route.png" width=400 /></td>
@@ -85,8 +85,8 @@
     <div align=center>
     <table>
     <tr>
-    <th>Counterclockwise_red(逆時針紅色)</th>
-    <th>Counter-clockwise red route(逆時針紅色路線)</th>
+    <th>Counterclockwise_red(逆時針方向，紅色號誌)</th>
+    <th>Counter-clockwise red route(行駛於車道外側)</th>
     </tr><tr>
     <td align=center><img src="./img/Counterclockwise_red.png" width=400 /></td>
     <td align=center><img src="./img/Counter-clockwise red route.png" width=400 /></td>
@@ -97,8 +97,8 @@
     <div align=center>
     <table>
     <tr>
-    <th>Counterclockwise has no color(逆時針沒有顏色)</th>
-    <th>Counter-clockwise uncolored route(逆時針沒有顏色路線)</th>
+    <th>Counterclockwise has no color(逆時針方向，沒有號誌)</th>
+    <th>Counter-clockwise uncolored route(行駛於車道外側)</th>
     </tr><tr>
     <td align=center><img src="./img/Counterclockwise_NO.png" width=400 /></td>
     <td align=center><img src="./img/Counter-clockwise uncolored route.png" width=400 /></td>
