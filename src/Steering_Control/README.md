@@ -4,14 +4,11 @@
 
  - ### Vehicle steering control-車輛轉向控制
     ### 中文:
-   1. 轉向訊號來源與作用
-   - 當攝影機偵測到地面藍線或橘線時，系統啟動轉向判斷流程。
-   - 以「側壁高亮值」監控左右距離，維持安全間隙，避免擦撞。
-   - 藍線與橘線負責提供「轉彎方向」線索，確保車輛能在彎道或轉角處安全、精準導航。
-   2. 接近度評估與方向選擇
-   - 車輛行進中，系統持續量測「側壁高亮值」與地面藍/橘線。
-   - 接近彎道時，比較藍線與橘線在影像中的 y 軸位置。距離越近，y 值越大。
-   - 取 y 軸值最大的顏色 作為本次轉向依據，以此決定左轉或右轉。
+    1. **方向判斷(turnDir)**:
+     - 若偵測到橘線的輪廓面積 (maxO) 超過閾值 (> 110)，則判斷為右轉 ("right")。
+     - 若偵測到藍線的輪廓面積 (maxB) 超過閾值 (> 110)，則判斷為左轉 ("left")。
+    2. **彎道進入訊號 (tSignal)**:
+      - 一旦確認了轉向方向，且偵測到對應的標線（例如，方向為右轉時，maxO > 100），則會設置轉向訊號旗標 (tSignal = True)，同時設置 rTurn 或 lTurn 旗標。
    3. 安全門檻與轉向執行
    - 確認方向後，進一步檢查影像左右側的「側壁高亮值」。
    - 只有當對應側的高亮值 ≥ 4500 時，才允許下達轉向指令。
@@ -42,38 +39,41 @@
         print(t, lTurn, rTurn, leftArea, rightArea, cPillar.target, angle, f"{relative_heading:.2f}",
               "mag6:", mag6_area, mag6_center)
     ```
-
-    <div align=center>
+     <div align=center>
         <table>
-          <tr>
-            <th>Blue Line Recognition(藍線偵測)</th>
-            <th>Orange Line Recognition(橘線偵測)</th>
-            <th>Traffic Signal Evaluation and Steering Control(有交通號誌轉彎)</th>
-          </tr>
-          <tr>
-            <td align=center><img src="./img/Blue Line Recognition.png" width=400 /></td>
-            <td align=center><img src="./img/Orange Line Recognition.png" width=400 /></td>
-            <td align=center><img src="./img/Traffic Signal Evaluation and Steering Control.png" width=400 /></td>
-          </tr>
+        <tr>
+        <th>Blue Line Recognition(藍線偵測).</th>
+        <th>Orange Line Recognition(橘線偵測)</th>
+        </tr><tr>
+        <td><img src="./img/Blue Line Recognition.png" width=400 ></td>
+        <td><img src="./img/Orange Line Recognition.png" width="350"></td>
+        </tr>
         </table>
-      </div>
-    <div align=center>
-    <div align=center>
+        </div>
+     <div align=center>
         <table>
-          <tr>
-            <th>Unsignalized Intersection Steering Control(非交通號誌轉彎)</th>
-            <th>Inner Side Obstacle Avoidance and Steering Control(內側避障轉彎控制)</th>
-            <th>ROI 5-Based Inner Obstacle Avoidance and Steering Control(內側避障ROI5觸發轉彎控制)</th>
-          </tr>
-          <tr>
-            <td align=center><img src="./img/Blue Line Recognition.png" width=400 /></td>
-            <td align=center><img src="./img/Inner Side Obstacle Avoidance and Steering Control.png" width=400 /></td>
-            <td align=center><img src="./img/ROI 5-Based Inner Obstacle Avoidance and Steering Control.png" width=400 /></td>
-          </tr>
+        <tr>
+        <th>Turning with traffic signals(有交通號誌轉彎)</th>
+        <th>Turning without traffic signals(沒有交通號誌轉彎)</th>
+        </tr><tr>
+        <td><img src="./img/Traffic Signal Evaluation and Steering Control.png" width=400 ></td>
+        <td><img src="./img/Unsignalized Intersection Steering Control.png" width="350"></td>
+        </tr>
         </table>
-      </div>
-    <div align=center>
+        </div>
+     <div align=center>
+        <table>
+        <tr>
+        <th>ROI5 assists in corner detection before turning.(轉彎前ROI5輔助轉彎偵測)</th>
+                <th>ROI 5 assisted turning detection(ROI5輔助轉彎偵測)</th>
+        </tr><tr>
+        <td><img src="./img/Inner Side Obstacle Avoidance and Steering Control.png" width="350"></td>
+        <td><img src="./img/ROI 5 assisted turning detection.png" width=400 ></td>
+        </tr>
+        </table>
+        </div>   
 
+  
 </div> 
 
 - ### Vehicle block avoidance control-車輛避障控制
