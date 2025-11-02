@@ -29,7 +29,7 @@
       - [2-2-1 Battery choice for self-driving cars(自動駕駛汽車的電池選擇) OK](schemes/Battery/README.md)
       - [2-2-2 Power Supply System(供電系統) OK](schemes/Power_Supply_System/README.md)
     - __2-3 Controller Selection-控制器選擇__
-      - [2-3-1 Main Controller Comparison(主控制器對比) **已改動](schemes/Main_Controller_Choosing/README.md)
+      - [2-3-1 Main Controller Comparison(主控制器對比) **已改動 OK](schemes/Main_Controller_Choosing/README.md)
       - [2-3-2 Motor & Sensor Intermediate I/O Controller Comparison(馬達和感測器中間 I/O 控制器比較) **已改動](schemes/Motor_Sensor_Controller_Choosing/README.md)
     - __2-4 Sense Management-感知管理__
       - [2-4-1 Ultrasonic rangefinder(超音波測距儀) **已改動](schemes/HC-SR04/README.md)
