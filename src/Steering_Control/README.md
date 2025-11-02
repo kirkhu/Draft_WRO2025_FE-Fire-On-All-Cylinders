@@ -46,8 +46,8 @@
         <th>Blue Line Recognition(藍線偵測)</th>
         <th>Orange Line Recognition(橘線偵測)</th>
         </tr><tr>
-        <td><img src="./img/Blue Line Recognition.png" width=400 height="200"></td>
-        <td><img src="./img/Orange Line Recognition.png" width="400" height="200" ></td>
+        <td><img src="./img/Blue Line Recognition.png" width=400 height="300"></td>
+        <td><img src="./img/Orange Line Recognition.png" width="400" height="300" ></td>
         </tr>
         </table>
         </div>
