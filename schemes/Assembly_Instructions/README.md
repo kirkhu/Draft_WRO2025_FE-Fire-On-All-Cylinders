@@ -469,7 +469,7 @@
     __Purchase URL:<a href="https://robotkingdom.com.tw/product/hc-sr04p-ultrasonic-ranger/" target="_blank">HC-SR04</a>__
     </td>
        <td >
-    <img src="../../schemes/HC-SR04/img/HC-SR04.png" width = "500"  alt="HC-SR04 ultrasonic distance sensor" align=center />    
+    <img src="../../schemes/HC-SR04/img/HC-SR04.png" width = "800"  alt="HC-SR04 ultrasonic distance sensor" align=center />    
        </td>
       </tr>
     </table>
@@ -502,7 +502,7 @@
     __Purchase URL:<a href="https://www.icshop.com.tw/products/368030501146" target="_blank">TCRT5000</a>__
         </td>
         <td>
-          <img src="./img/TCRT5000.png" width="500" />
+          <img src="./img/TCRT5000.png" width="800" />
         </td>
       </tr>
     </table>
