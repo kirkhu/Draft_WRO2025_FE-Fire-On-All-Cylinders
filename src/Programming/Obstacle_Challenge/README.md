@@ -20,7 +20,7 @@ Based on the characteristics of each control board, we distributed the complex o
 
  - ### Jetson Orin Nano library-Jetson Orin Nano 庫
     ### 中文:
-    影像辨識、等功能已整合到functions.py模組中，可直接導入使用。這些模組的功能如下：
+    影像辨識、影像處理與視覺辨識函式等功能已整合到functions.py模組中，可直接導入使用。這些模組的功能如下：
 
     process_roi()關於和 的解釋可以在開放挑戰代碼概述部分pd_control()找到，因此這裡不再贅述。
 
