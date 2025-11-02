@@ -17,10 +17,10 @@ The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrar
   </tr>
   <tr>
   <td align=left width=500>
-    <img src="./img/TCRT5000 front.png" width="50%" />
+    <img src="./img/TCRT5000_front.png" width="50%" />
   </td>
   <td align=center width=500>
-  <img src="./img/TCRT5000 back.png" width="50%" />
+  <img src="./img/TCRT5000_back.png" width="50%" />
   </td>
    </tr>
   </table>
@@ -58,20 +58,7 @@ The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrar
     * *(Note: The A0 pin provides the voltage signal representing the amount of infrared reflection.)*
 * The following code is written in **MicroPython** and presented in a **class structure** to allow the Raspberry Pi Pico W to read the **infrared reflection voltage signal** from the TCRT5000 line-following sensor.
 
----
-
-### 💡 附註 (Contextual Note)
-
-您的描述提到兩個 TCRT5000 感測器（一個用於前方，一個用於後方）各自的 **A0 (Analog Output)** 腳位分別接到 Pico W 的 **GP26** 和 **GP27**。
-
-* **GP26** (GPIO 26) 實際上是 Pico W 的 **ADC0** (Analog-to-Digital Converter 0) 頻道。
-* **GP27** (GPIO 27) 實際上是 Pico W 的 **ADC1** (Analog-to-Digital Converter 1) 頻道。
-
-這種連接方式是**正確且典型**的，因為 TCRT5000 模組的類比輸出 (A0) 訊號需要連接到 Pico W 的類比輸入 (ADC) 腳位才能讀取**電壓訊號**（反射量）。
-
-請問您是否需要**MicroPython 類別程式碼的翻譯或範例**？
-
-- ### MicroPython 程式碼：
+- ### MicroPython Code
     ```python
     class TCRT5000:
         def __init__(self, adc_pin):
@@ -97,7 +84,7 @@ The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrar
                 return -1
     ```
 
-- ### 範例使用方法：
+- ### Example usage
     ```python
     if __name__ == "__main__":
         sensor = TCRT5000(adc_pin=26)
@@ -108,7 +95,7 @@ The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrar
             time.sleep(0.2)
     ```
 
-- ### 說明：
+- ### Explanation
     此程式碼包含一個名為 TCRT5000 的類別，透過定義模擬輸出（A0）腳位來測量紅外線反射強度。read_raw() 方法會回傳原始 ADC 數值，read_percentage() 方法會回傳反射強度的百分比（0~100%），可用於判斷黑線或白線。若讀取過程發生錯誤，則可回傳 -1。
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div> 
