@@ -39,8 +39,28 @@
    <ol>
 
     ### 中文:
-    1. 我們在車輛的左側、右側安裝了 HC-SR04 超聲波距離感測器，並將其連接到 Raspberry Pi Pico W控制器，以偵測車輛與側牆的距離。測得的距離資料會傳送到主程式進行處理，作為停車操作的依據。
-    2. 需特別注意的是，Raspberry Pi Pico W控制器所能讀取的最高訊號電壓為 3.3V，而市售 HC-SR04 超聲波距離感測器通常輸出最高訊號電壓為 5V。因此，在選用或使用此感測器時，必須特別注意其操作電壓，以避免因電壓不符導致的操作問題或控制器損壞。
+
+    ### 雙側測距與數據處理
+
+    1.  為了精確掌握車輛周遭環境，我們在車輛的**左側及右側**均安裝了 **HC-SR04 超聲波距離感測器**，並將其連接至 **Raspberry Pi Pico W** 下位控制器。這些感測器的核心任務是**即時偵測車輛與側牆之間的距離**。
+
+    ### 關鍵的電壓相容性與保護
+
+    1.  然而，在系統整合時必須**嚴格遵守電壓規範**：**Raspberry Pi Pico W 控制器** 的 GPIO 腳位僅能安全讀取**最高 $3.3 \text{V}$ 的訊號電壓**。
+    2.  鑑於市售的 **HC-SR04 超聲波距離感測器** 通常會輸出高達 **$5 \text{V}$ 的訊號電壓**，因此在選用或使用此感測器時，我們**必須採取電壓匹配措施**。
+    3.  此舉是為了**避免因電壓不符導致的訊號讀取錯誤、操作異常，甚至控制器硬體永久損壞**。
+
+    ### Dual-Sided Ranging and Data Processing
+
+    1.  To ensure precise situational awareness, we installed **HC-SR04 ultrasonic distance sensors** on both the **left side and the right side** of the vehicle, connecting them to the **Raspberry Pi Pico W** sub-controller. The primary role of these sensors is the **real-time detection of the distance between the vehicle and the side walls**.
+
+
+    ### Critical Voltage Compatibility and Protection
+
+    1.  However, **strict adherence to voltage specifications is required** during system integration: the GPIO pins on the **Raspberry Pi Pico W controller** can safely read a **maximum signal voltage of 3.3V**.
+    2.  Given that commercially available **HC-SR04 ultrasonic distance sensors** typically output a signal voltage of up to **5V**, we **must implement voltage matching solutions** when selecting and utilizing this sensor.
+    3.  This measure is **essential to prevent signal reading errors, operational issues, or even permanent damage to the controller hardware** that could result from voltage mismatch.
+
    
     ### 英文:
     1. We installed HC-SR04 ultrasonic distance sensors on the left, right, and rear of the vehicle and connected them to the Raspberry Pi Pico controller to detect the distance between the vehicle and the side walls. The measured distance data is transmitted to the main program for processing, serving as a basis for parking maneuvers.
