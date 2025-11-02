@@ -37,7 +37,7 @@
 ```
 <div align=center>
 
-  |Counterclockwise_direction|The color and X, target coordinates of traffic signal blocks.|
+  |Counterclockwise_direction(逆時針方向)|clockwise(順時針方向)|
   |:---:|:---:|
   |<div align="center"> <img src="./img/Counterclockwise_direction.png" width="400"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/clockwise_direction.png" width="400" alt="Detecting_nearby_obstacles"></div>|
 
@@ -106,37 +106,52 @@
         time2 = time.time()
     ```
     
+    <div align=center>
+    <table>
+    <tr>
+    <th>Counterclockwise_green(逆時針綠色)</th>
+    <th>Counterclockwise_red(逆時針紅色)</th>
+    </tr><tr>
+    <td align=center><img src="./img/Counterclockwise_green.png" width=400 /></td>
+    <td align=center><img src="./img/Counterclockwise_red.png" width=400 /></td>
+    </tr>
+    </table>
+    </div>
 
     <div align=center>
-        <table>
-          <tr>
-            <th>Counterclockwise_green</th>
-            <th>Counterclockwise_red</th>
-            <th>Counterclockwise_NO</th>
-          </tr>
-          <tr>
-            <td align=center><img src="./img/Counterclockwise_green.png" width=400 /></td>
-            <td align=center><img src="./img/Counterclockwise_red.png" width=400 /></td>
-            <td align=center><img src="./img/Counterclockwise_NO.png" width=400 /></td>
-          </tr>
-        </table>
-      </div>
+    <table>
+    <tr>
+    <th>Counterclockwise middle(逆時針方向中間)</th>
+    <th>Counterclockwise direction_No(逆時針方向_否)</th>
+    </tr><tr>
+    <td align=center><img src="./img/Counterclockwise middle.png" width=400 /></td>
+    <td align=center><img src="./img/Counterclockwise_NO.png" width=400 /></td>
+    </tr>
+    </table>
+    </div>
     <div align=center>
+    <table>
+    <tr>
+    <th>Green in clockwise direction(順時針方向綠色)</th>
+    <th>CClockwise_red(順時針方向紅色)</th>
+    </tr><tr>
+    <td align=center><img src="./img/Green in clockwise direction.png" width=400 /></td>
+    <td align=center><img src="./img/Clockwise_red.png" width=400 /></td>
+    </tr>
+    </table>
+    </div>
     <div align=center>
-        <table>
-          <tr>
-            <th>Counterclockwise_green</th>
-            <th>Counterclockwise_red</th>
-            <th>Counterclockwise_NO</th>
-          </tr>
-          <tr>
-            <td align=center><img src="./img/Clockwise_green.png" width=400 /></td>
-            <td align=center><img src="./img/Clockwise_red.png" width=400 /></td>
-            <td align=center><img src="./img/Clockwise_NO.png" width=400 /></td>
-          </tr>
-        </table>
-      </div>
-    <div align=center>
+    <table>
+    <tr>
+    <th>Clockwise middle(順時針方向中間)</th>
+    <th>Clockwise_NO(順時針方向_否)</th>
+    </tr><tr>
+    <td align=center><img src="./img/Clockwise middle.png" width=400 /></td>
+    <td align=center><img src="./img/Clockwise_NO.png" width=400 /></td>
+    </tr>
+    </table>
+    </div>
+
 
 
  

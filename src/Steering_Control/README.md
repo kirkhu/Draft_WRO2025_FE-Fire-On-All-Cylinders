@@ -17,30 +17,33 @@
     - After determining the turning direction, the system further evaluates the highlighted values on the left and right sides of the camera view. The turn action only initiates when the highlighted value reaches or exceeds 4500. This setup effectively prevents premature turning, reducing the risk of the vehicle hitting the sidewall due to early steering, and ensures accuracy and safety in turning.
         - program code:
     ```
-   if count == 0:
-       if cPillar.area == 0:
-           aDiff = leftArea-rightArea
-           angle = int(aDiff*kp + (aDiff - prevDiff)*kd)
-        angle = clamp(angle, sharpLeft, sharpRight)
-        prevDiff = aDiff
+    if turnDir == "none":
+      if maxO > 110:
+        turnDir = "right"
+      elif maxB > 110:
+        turnDir = "left"
+    if (turnDir == "right" and maxO > 100) or (turnDir == "left" and maxB > 100):
+      t2 = t
+      if t2 == 7 and not pillarAtStart:
+        ROI3[1] = 110
+      if cPillar.area != 0 and ((leftArea > 1000 and turnDir == "left") or (rightArea > 1000 and turnDir == "right")):
+        ROI5 = [270, 110, 370, 150]
+      if turnDir == "right":
+        rTurn = True
     else:
-        error = cPillar.x - cPillar.target
-        angle = int(0 + error*cKp + (error - prevError)*cKd)
-        angle = clamp(angle, sharpLeft, sharpRight)
-        if cPillar.target == greenTarget and cPillar.x > 320 and cPillar.area > 1000:
-            lastTarget = greenTarget
-        elif cPillar.target == redTarget and cPillar.x < 320 and cPillar.area > 1000:
-            lastTarget = redTarget
-        prevError = error
-    frame_id += 1
-    if frame_id % log_every == 0:
-        print(t, lTurn, rTurn, leftArea, rightArea, cPillar.target, angle, f"{relative_heading:.2f}",
-              "mag6:", mag6_area, mag6_center)
+      lTurn = True
+      if t == 0 and pillarAtStart == -1:
+        pillarAtStart = True if ((startArea > 2000 and startTarget == greenTarget) or (startArea > 1500 and startTarget == redTarget)) else False
+        tSignal = True
+      elif (turnDir == "left" and maxO > 100) or (turnDir == "right" and maxB > 100):
+        if t2 == 11:
+          s = 2
+          sTime = time.time()
     ```
      <div align=center>
         <table>
         <tr>
-        <th>Blue Line Recognition(藍線偵測).</th>
+        <th>Blue Line Recognition(藍線偵測)</th>
         <th>Orange Line Recognition(橘線偵測)</th>
         </tr><tr>
         <td><img src="./img/Blue Line Recognition.png" width=400 ></td>
