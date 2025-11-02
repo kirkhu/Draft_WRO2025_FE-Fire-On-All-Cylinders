@@ -50,8 +50,6 @@ The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrar
         - 腳位27(後方)，用於輸出紅外反射量的電壓訊號。
     - 以下是 MicroPython 撰寫的程式碼，以類別形式呈現，能透過 Raspberry Pi Pico W 讀取 TCRT5000 紅外線循線感測器的紅外反射量電壓訊號。
 
-- ### The following are the wiring and programming details for the TCRT5000:
-
 * The **GND** pin of the TCRT5000 is connected to a **Ground (GND) pin** on the Raspberry Pi Pico W.
 * The **A0** (Analog Output) pin of the TCRT5000 is connected to the following **GPIO pins** on the Raspberry Pi Pico W:
     * **GPIO 26 (Front)**
@@ -92,11 +90,12 @@ The TCRT5000 is a prevalent Infrared Reflective Sensor that integrates an Infrar
         while True:
             raw_val = sensor.read_raw()
             percent = sensor.read_percentage()
-            print("Raw ADC:", raw_val, " 反射強度百分比:", percent, "%")
+            print("Raw ADC:", raw_val, " Reflection intensity:", percent, "%")
             time.sleep(0.2)
     ```
 
 - ### Explanation
     此程式碼包含一個名為 TCRT5000 的類別，透過定義模擬輸出（A0）腳位來測量紅外線反射強度。read_raw() 方法會回傳原始 ADC 數值，read_percentage() 方法會回傳反射強度的百分比（0~100%），可用於判斷黑線或白線。若讀取過程發生錯誤，則可回傳 -1。
+    "This code includes a class named TCRT5000, which is designed to measure infrared reflection intensity by defining the Analog Output (A0) pin. The read_raw() method returns the raw ADC value, while the read_percentage() method returns the reflection intensity as a percentage (0~100%), which can be used to determine a black line or a white line. If an error occurs during the reading process, the method can return -1."
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div> 
