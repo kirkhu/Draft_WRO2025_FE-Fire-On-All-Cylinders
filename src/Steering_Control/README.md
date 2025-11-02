@@ -47,7 +47,7 @@
         <th>Orange Line Recognition(橘線偵測)</th>
         </tr><tr>
         <td><img src="./img/Blue Line Recognition.png" width=400 ></td>
-        <td><img src="./img/Orange Line Recognition.png" width="350"></td>
+        <td><img src="./img/Orange Line Recognition.png" width="400"></td>
         </tr>
         </table>
         </div>
@@ -58,7 +58,7 @@
         <th>Turning without traffic signals(沒有交通號誌轉彎)</th>
         </tr><tr>
         <td><img src="./img/Traffic Signal Evaluation and Steering Control.png" width=400 ></td>
-        <td><img src="./img/Unsignalized Intersection Steering Control.png" width="350"></td>
+        <td><img src="./img/Unsignalized Intersection Steering Control.png" width="400"></td>
         </tr>
         </table>
         </div>
@@ -68,7 +68,7 @@
         <th>ROI5 assists in corner detection before turning.(轉彎前ROI5輔助轉彎偵測)</th>
                 <th>ROI 5 assisted turning detection(ROI5輔助轉彎偵測)</th>
         </tr><tr>
-        <td><img src="./img/Inner Side Obstacle Avoidance and Steering Control.png" width="350"></td>
+        <td><img src="./img/Inner Side Obstacle Avoidance and Steering Control.png" width="400"></td>
         <td><img src="./img/ROI 5 assisted turning detection.png" width=400 ></td>
         </tr>
         </table>
