@@ -12,7 +12,7 @@ To accurately record the LAB values for the traffic sign blocks (red and green),
 
     1. Color Space Conversion: We use the `cv2.cvtColor()` function to convert the original `RGB` image captured by the CSI camera into the `LAB` color space (`L`: Lightness, `A`: Red-Green axis, `B`: Yellow-Blue axis).
     2. Color Range Definition and Filtering: Subsequently, we precisely define the target color range by utilizing the `cv2.inRange()` function and setting six `LAB` thresholds: `L_{low}`, `L_{high}`, `A_{low}`, `A_{high}`, `B_{low}`, and `B_{high}`. The `cv2.inRange()` function compares every pixel in the `LAB` image with the defined range, retaining only the pixels within the range and filtering out the rest, thus yielding the filtered image.
-    3. Value Storage and Application: After obtaining the filtered image, we use a graphical interface button to select the corresponding color object and save its `LAB` values. These values are stored in the masks.py file.
+    3. Value Storage and Application: After obtaining the filtered image, we use a graphical interface button to select the corresponding color object and save its `LAB` values. These values are stored in the `masks.py` file.
     4. Main Program Call: In the main Vehicle's control program10, we call the `LAB` values for each object from the masks.py file using the code snippet below, and input them to the corresponding function for `LAB` visual recognition.
         ```python
         from masks import rMagenta, rRed, rGreen, rBlue, rOrange, rBlack
