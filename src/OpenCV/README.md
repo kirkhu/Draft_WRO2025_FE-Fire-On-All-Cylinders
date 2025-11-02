@@ -11,79 +11,98 @@
 
 
 - ### Steps to install the OpenCV application on the Nvidia Jetson Orin Nano:
+   
    __1.Update and Upgrade Packages:__
+   ```bash
+      sudo apt-get update
+      sudo apt-get upgrade
    ```
-   sudo apt-get update
-   sudo apt-get upgrade
+   __2.Installing OpenCV with CUDA support 安裝支援CUDA加速的opencv套件__
+   ```bash
+      sudo apt install -y cmake
    ```
-   __2.Install Compilation Tools &&__
-   ```
-   sudo apt install -y cmake
-   sudo apt update
-   sudo apt install -y libgtk-3-dev pkg-config build-essential cmake git \
-      libatlas-base-dev libjpeg-dev libpng-dev libtiff-dev \
-      libavcodec-dev libavformat-dev libswscale-dev \
-      libv4l-dev v4l-utils libxvidcore-dev libx264-dev \
-      libtbb2 libtbb-dev libdc1394-22-dev
-   ```
-   __3.Download OpenCV Source Code && Create "build" directory__
-   ```
-   cd ~
-   git clone https://github.com/opencv/opencv.git
-   cd opencv
-   git checkout 4.7.0
 
-   cd ~
-   git clone https://github.com/opencv/opencv_contrib.git
-   cd opencv_contrib
-   git checkout 4.7.0
+   __3.Download the OpenCV Main Source Code - 取得 OpenCV 主程式碼 (Main Repository)__
+      
+   ```bash
+      cd ~
+      git clone https://github.com/opencv/opencv.git
+      cd opencv
+      git checkout 4.7.0  
+   ``` 
 
-   mkdir -p ~/opencv/build
-   cd ~/opencv/build
-   rm -rf *
-   ```
-   __4.Specify The Target Python Path__ depending on the situation
-   ```
-   PYTHON_EXEC=$(pyenv which python3)
-   PYTHON_PREFIX=$(pyenv prefix)
-   PYTHON_INCLUDE=$PYTHON_PREFIX/include/python3.11
-   PYTHON_LIB=$PYTHON_PREFIX/lib/libpython3.11.so
-   PYTHON_PACKAGES=$PYTHON_PREFIX/lib/python3.11/site-packages
-   ```
-   __5.Configure CMake Build Parameters__
-   ```
-   cmake \
-     -D CMAKE_BUILD_TYPE=Release \
-     -D CMAKE_INSTALL_PREFIX=/usr/local \
-     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
-     -D WITH_GSTREAMER=ON \
-     -D WITH_CUDA=ON \
-     -D ENABLE_FAST_MATH=ON \
-     -D CUDA_FAST_MATH=ON \
-     -D WITH_CUBLAS=ON \
-     -D WITH_GTK=ON \
-     -D BUILD_opencv_python3=ON \
-     -D PYTHON3_EXECUTABLE=$PYTHON_EXEC \
-     -D PYTHON3_INCLUDE_DIR=$PYTHON_INCLUDE \
-     -D PYTHON3_LIBRARY=$PYTHON_LIB \
-     -D PYTHON3_PACKAGES_PATH=$PYTHON_PACKAGES \
-     -D BUILD_opencv_world=OFF \
-     -D BUILD_EXAMPLES=OFF \
-     -D BUILD_TESTS=OFF \
-     -D BUILD_DOCS=OFF \
-     -D BUILD_PERF_TESTS=OFF \
-     ..
-   ```
-   __6.Run The Build And Install Commands__
-   ```
-   make -j$(nproc)
-   sudo make install
-   ```
-   __7.Verify Whether The Build And Installation Were Successful__
-   ```
-   python3 -c "import cv2; print('OpenCV version:', cv2.__version__)"
-   python3 -c "import cv2; print(cv2.getBuildInformation())" | grep -E "GStreamer|GTK|CUDA"
-   ```    
+   __4.Download the Opencv_contrib Module__
+  ```bash
+      cd ~
+      git clone https://github.com/opencv/opencv_contrib.git
+      cd opencv_contrib
+      git checkout 4.7.0 
+  ```
+  __5.Installing Dependencies - 安裝所需依賴庫__
+  
+   ```bash
+      sudo apt update
+      sudo apt install -y libgtk-3-dev pkg-config build-essential cmake git \
+         libatlas-base-dev libjpeg-dev libpng-dev libtiff-dev \
+         libavcodec-dev libavformat-dev libswscale-dev \
+         libv4l-dev v4l-utils libxvidcore-dev libx264-dev \
+         libtbb2 libtbb-dev libdc1394-22-dev
+  ```
+  __6.Create and Clean the Build Folder - 建立並清理Build資料夾__
+  ```bash
+      mkdir -p ~/opencv/build
+      cd ~/opencv/build
+      rm -rf *
+  ```
+  __7.Configure the Python Path - 設定python路徑__
+  ```bash
+      PYTHON_EXEC=$(pyenv which python3)
+      PYTHON_PREFIX=$(pyenv prefix)
+      PYTHON_INCLUDE=$PYTHON_PREFIX/include/python3.11
+      PYTHON_LIB=$PYTHON_PREFIX/lib/libpython3.11.so
+      PYTHON_PACKAGES=$PYTHON_PREFIX/lib/python3.11/site-packages
+  ```
+  __8.Configure the CMake__
+  ```bash
+      cmake \
+         -D CMAKE_BUILD_TYPE=Release \
+         -D CMAKE_INSTALL_PREFIX=/usr/local \
+         -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+         -D WITH_GSTREAMER=ON \
+         -D WITH_CUDA=ON \
+         -D ENABLE_FAST_MATH=ON \
+         -D CUDA_FAST_MATH=ON \
+         -D WITH_CUBLAS=ON \
+         -D WITH_GTK=ON \
+         -D BUILD_opencv_python3=ON \
+         -D PYTHON3_EXECUTABLE=$PYTHON_EXEC \
+         -D PYTHON3_INCLUDE_DIR=$PYTHON_INCLUDE \
+         -D PYTHON3_LIBRARY=$PYTHON_LIB \
+         -D PYTHON3_PACKAGES_PATH=$PYTHON_PACKAGES \
+         -D BUILD_opencv_world=OFF \
+         -D BUILD_EXAMPLES=OFF \
+         -D BUILD_TESTS=OFF \
+         -D BUILD_DOCS=OFF \
+         -D BUILD_PERF_TESTS=OFF \
+         ...
+  ```
+  __9.Build OpenCV - 編譯opencv__
+
+  ``` bash 
+            make -j$(nproc)
+  ```
+  __10.Installing Opencv__
+  ```bash 
+            sudo make install
+  ```
+  __11.Confirm successful installation 驗證是否安裝成功__
+  ```bash
+      python3 -c "import cv2; print('OpenCV version:', cv2.__version__)"
+      python3 -c "import cv2; print(cv2.getBuildInformation())" | grep -E "GStreamer|GTK|CUDA"
+
+  ```   
+
+
 - __Reference links:__
 - __參考連結：__
   <ol>
