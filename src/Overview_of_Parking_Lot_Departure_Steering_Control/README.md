@@ -109,8 +109,8 @@
     <div align=center>
     <table>
     <tr>
-    <th>Clockwise green (順時針綠色)</th>
-    <th>Clockwise green route(順時針綠色路線)</th>
+    <th>Clockwise green (順時針方向，綠色號誌)</th>
+    <th>Clockwise green route(行駛於車道外側)</th>
     </tr><tr>
     <td align=center><img src="./img/Green in clockwise direction.png" width=400 /></td>
     <td align=center><img src="./img/Clockwise green route.png" width=400 /></td>
@@ -121,8 +121,8 @@
     <div align=center>
     <table>
     <tr>
-    <th>Clockwise red(順時針紅色)</th>
-    <th>Clockwise red route(順時針紅色路線)</th>
+    <th>Clockwise red(順時針方向，紅色號誌)</th>
+    <th>Clockwise red route(行駛於車道內側)</th>
     </tr><tr>
     <td align=center><img src="./img/Clockwise_red.png " width=400 /></td>
     <td align=center><img src="./img/Clockwise red route.png" width=400 /></td>
@@ -133,8 +133,8 @@
     <div align=center>
     <table>
     <tr>
-    <th>Clockwise, the middle green(順時針中間綠色)</th>
-    <th>Clockwise green route(順時針中間綠色路線)</th>
+    <th>Clockwise, the middle green(順時針方向，綠色號誌)</th>
+    <th>Clockwise green route(行駛於車道外側)</th>
     </tr><tr>
     <td align=center><img src="./img/Clockwise the middle green.png " width=400 /></td>
     <td align=center><img src="./img/Clockwise green middle route.png" width=400 /></td>
@@ -145,8 +145,8 @@
     <div align=center>
     <table>
     <tr>
-    <th>Clockwise the middle red(順時針中間紅色)</th>
-    <th>Clockwise red route(順時針中間紅色路線)</th>
+    <th>Clockwise the middle red(順時針方向，紅色號誌)</th>
+    <th>Clockwise red route(行駛於車道內側)</th>
     </tr><tr>
     <td align=center><img src="./img/Clockwise the middle red.png " width=400 /></td>
     <td align=center><img src="./img/Clockwise red middle route.png" width=400 /></td>
