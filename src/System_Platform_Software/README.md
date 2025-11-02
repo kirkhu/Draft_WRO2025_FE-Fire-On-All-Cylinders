@@ -3,7 +3,7 @@
 ## <div align="center">Software Platform Construction </div> 
 - ### __Installing System Software Required for Self-Driving Cars__
 
-   - ### System Platform Software Installation Process Diagram-系統安裝流程圖
+   - ### Self-Driving Car Operating System Installation Flowchart-系統安裝流程圖
 
    <div align=center>
    <img src="./img/Orin_System_Installation.jpg" width="100%" />
