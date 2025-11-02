@@ -24,7 +24,7 @@
       - [2-1-1 BOM Pats List (BOM零件清單) **已改動OK](schemes/Parts_List/README.md)
       - [2-1-2 Circuit Design (電路設計) **已改動](models/Circuit_Design/README.md)
       - [2-1-3 Hardware Fool-Proof Design(硬體防呆設計)OK ](schemes/Fool-Proof-Design/README.md)
-      - [2-1-4 Assembly Instructions & Wiring Diagrams(裝配說明和接線圖) ](schemes/Assembly_Instructions/README.md)
+      - [2-1-4 Assembly Instructions & Wiring Diagrams(裝配說明和接線圖) OK](schemes/Assembly_Instructions/README.md)
     - __2-2 Power Management-電源管理__
       - [2-2-1 Battery choice for self-driving cars(自動駕駛汽車的電池選擇) OK](schemes/Battery/README.md)
       - [2-2-2 Power Supply System(供電系統) OK](schemes/Power_Supply_System/README.md)
