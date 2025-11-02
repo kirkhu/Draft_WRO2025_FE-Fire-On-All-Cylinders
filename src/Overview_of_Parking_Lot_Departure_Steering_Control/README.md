@@ -53,8 +53,11 @@
 
 - ### 判斷顏色行駛路線
   ### 中文:
-    - 逆時針方向:若行車方向為逆時針方向，當車輛偵測到綠柱，則行駛於車道內側；偵測到紅柱則行駛於車道外側；若未偵測到任何柱子，則預設行駛於車道外側 。
-    - 順時針方向: 若行車方向為順時針方向，當車輛偵測到綠柱，則行駛於車道外側；偵測到紅柱則行駛於車道內側；若未偵測到任何柱子，則預設行駛於車道外側 。
+    - 逆時針方向:若行車方向為逆時針方向，當車輛偵測到綠柱，則行駛於車道內側；偵測到紅柱則行駛於車道外側；若未偵測到任何柱子，則預設行駛於車道外側。
+    - 順時針方向:若行車方向為順時針方向，當車輛偵測到綠柱，則行駛於車道外側；偵測到紅柱則行駛於車道內側；若未偵測到任何柱子，則預設行駛於車道外側。
+
+    - Counterclockwise direction : If the Driving direction is Counterclockwise direction , the Vehicle will drive on the inner wall of the lane when a green pillar is detected; it will drive on the exterior walls of the lane when a red pillar  is detected. If no pillar is detected, the default is to drive on the exterior walls  of the lane.
+    - Clockwise direction : If the Driving direction is clockwise direction , the Vehicle will drive on the exterior walls of the lane when a green pillar is detected; it will drive on the inner wall of the lane when a red pillar  is detected. If no pillar is detected, the default is to drive on the exterior walls  of the lane.
 
   1. **顏色輪廓偵測**:
     - 我們使用find_contours(img_lab, rRed,ROI3)和
