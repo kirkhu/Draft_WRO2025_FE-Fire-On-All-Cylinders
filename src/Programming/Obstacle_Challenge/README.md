@@ -177,27 +177,34 @@ Based on the characteristics of each control board, we distributed the complex o
 
         - **In turning mode**, the servo motor angle remains fixed. The system determines whether it has reached the next turning point based on changes in the gyroscope angle and elapsed time, allowing it to decide when to return to straight-driving mode and avoid repeated detection.
 
-      __Program operation flow__
+      __Program operation flow__ - 程式運行流程
+        ### 中文:
+        - jetson_Orin_Nano_final.py程式開始執行，初始化所有變量，並進入循環，持續從 find_contours 和 max_contour 函數中獲取數據，然後根據當前狀態進入不同的條件分支以執行相應的控制操作。在每個循環中，程式將jetson_Orin_Nano_final.py計算出的直流馬達值、伺服馬達角度和當前狀態打包成二進位數據，並透過WebSockets將其發送到 Raspberry Pi Pico W。
+        ### 英文:
         - `jetson_nano_main_fianl.py` starts execution, initializes all variables, and enters a loop, continuously retrieving data from process_roi and detect_color, then entering different conditional branches based on the current state to perform the appropriate control actions. In each loop, `jetson_nano_main_final.py` packages the calculated DC motor value, servo motor angle, and current status into binary data and sends it to the Raspberry Pi Pico via UART. 
 
    - ##### Program Operation flowchart of the Jetson Orin Nano controller
      ![Obstacle_Challenge_Jetson_nano](./img/FE-obstacle_challenge_Jetson_nano.jpg)
 
- - ### Obstacle_Challenge Code Overview of Raspberry Pi Pico
-   - ####  Obstacle_Challenge Code Program Raspberry Pi Pico Libraries
+ - ### Obstacle_Challenge Code Overview of Raspberry Pi Pico W-樹莓派 Pico W 障礙挑戰代碼概述
+   - ####  Obstacle_Challenge Code Program Raspberry Pi Pico W Libraries-障礙挑戰程式碼程式 Raspberry Pi Pico W函式庫
     
       ```
-      from machine import Pin, PWM, I2C, UART  
-      # In MicroPython, you can import relevant modules to enable 
-        GPIO pin control, Pulse Width Modulation (PWM), I2C, and 
-        UART communication protocols on the Raspberry Pi Pico.
-
-      import struct
-      import time
+      from machine import Pin, PWM, ADC, time_pulse_us
+      import time, network, usocket as socket, ubinascii, uos, ujson as json
       ```  
      
-   - #### Introduction to running programs on the Raspberry Pi Pico controller:
+   - #### Introduction to running programs on the Raspberry Pi Pico W controller:-樹莓派 Pico W 控制器程式運作簡介：
+      ### 中文:
+      - `pico_main_final.py` 程式運行在 Raspberry Pi Pico 控制器上，作為自動駕駛車輛的中間控制系統，管理直流馬達和伺服馬達的運作。該程式透過 WebSockets 從 Jetson Orin Nano 控制器接收計算結果，並控制後輪直流馬達的轉速、前輪伺服馬達的角度，同時監控車輛狀態參數。
 
+
+      - 在控制後輪直流馬達時，我們使用 L293D 驅動晶片，透過 PWM 的佔空比調節電壓，實現後輪直流馬達的轉速控制。此外，透過設定 L293D 上的兩個控制引腳（20 和 21）的高低電平，可以控制後輪直流馬達的正反轉。
+
+      - 在控制前輪伺服馬達時，我們直接利用PWM訊號的佔空比來調節輸出，從而控制伺服馬達的轉向角度， PWM訊號佔空比的變化對應伺服馬達的不同角度設置，實現精準轉向。
+
+      - 當程式運作至count=1時，系統接管直流馬達的控制權，並開始轉彎撞牆猴退轉彎追蹤停車區域的洋紅色。在追蹤過程中，當如果洋紅色面積<100，然後使用牆壁循跡往前100度，在使用陀螺儀轉彎進入停車區，以確保精準停車。
+      ### 英文:
       - ##### [pico_main_final.py](./pico_main_final.py)
         - The `pico_main_final.py` program runs on the Raspberry Pi Pico controller as an intermediary control system for an autonomous vehicle, managing the operation of the DC motor and servo motor. This program receives computation results from the Jetson Orin Nano controller via UART and controls the speed of the rear-wheel DC motor, the angle of the front-wheel servo motor, while also monitoring vehicle status parameters.
         -  When the start switch is pressed, the Raspberry Pi Pico controller receives a start signal and sends a high-level signal to initiate the main program `jetson_nano_main_final.py` on the Jetson Orin Nano.
@@ -206,26 +213,26 @@ Based on the characteristics of each control board, we distributed the complex o
         - When the program reaches state five, the system takes over the control of the DC motor and begins tracking the pink sidewall of the parking area. During tracking, the ultrasonic distance sensor detects the parking area; when the sensor detects that the sidewall is pink, the system simultaneously takes control of both the servo motor and the DC motor. It then uses `run_encoder_Auto()` to adjust the forward angle of the DC motor to ensure precise parking.
       
 
-      __Program operation flow__
-      
+      __Program operation flow__-程式運行流程
+        ### 中文:
+        - Jetson Orin Nano程式啟動後，樹莓派 Pico w 會進入等待狀態，直到Jetson Orin Nano按下按鈕後進入 jetson_Orin_Nano_final.py程式，並透過 WebSockets發送馬達數據給樹莓派 Pico w 運行。
+        ### 英文:
         - When  `pico_main_final.py` starts, it sends a high-frequency signal to the Jetson Orin Nano to trigger the execution of the `jetson_nano_main_final.py` program. Then, `pico_main_final.py` enters a waiting mode until the button is pressed. After pressing the button,`pico_main_final.py` enters the main loop, starts receiving data transmitted via UART from the Jetson Orin Nano, and continues running. When it receives a status value of 5, the Pico takes over vehicle control and performs the parking operation.
 
-    - ##### Program Operation flowchart of the Raspberry Pi Pico controller
+    - ##### Program Operation flowchart of the Raspberry Pi Pico W controller-樹莓派 Pico W 控制器的程式操作流程圖
         ![FE-obstacle_challenge_Pico](./img/FE-obstacle_challenge_Pico.jpg)
 
        **set_servo_angle():** <br>
-           Calculate and convert the angle value from ±180 degrees to the PWM duty cycle range required by the servo motor (0 to 65535) and output it to the front-wheel servo motor.
+          - 計算並轉換±180度的角度值到伺服馬達所需的PWM佔空比範圍（0到65535），並將其輸出到前輪伺服馬達。
 
         __control_motor():__<br>
-           Take the absolute value of a number in the range of -100 to 100 and convert it to the PWM duty cycle. Meanwhile, set the high and low states of two pins based on the sign of the value to control forward and reverse rotation or to stop.
+          - 取-100到100範圍內一個數的絕對值，轉換為PWM佔空比。同時，根據該值的符號設定兩個引腳的高低狀態，以控制馬達的正反轉或停止。
 
-        __jetson_all():__<br>
-           Receive updated data sent from the Jetson Orin Nano controller via the UART protocol and store it in a queue, ensuring that this process runs continuously to maintain real-time data updates.
+          __ws_send_text(sock, text):__<br>
+          - Jetson Orin Nano 控制器透過 WebSockets 協定將更新後的值傳送到佇列，確保流程持續運行，以保持資料即時更新。
 
-        __run_encoder():__<br>
-           By reading the current value of the DC motor to calculate its rotation angle, conditions are set based on the calculation results to control the motor to move straight to the specified rotation angle. This design allows for precise motor adjustments, ensuring that the vehicle moves steadily during operation and accurately reaches the intended target angle.
 
         __run_encoder_Auto():__<br>
-            In `run_encoder()`, the servo motor angle is set to a fixed value to maintain stable control of the vehicle's position and direction during the parking operation.
+          - 在此函數中run_encoder()，伺服馬達角度被設定為固定值，以車輛操作期間保持車輛位置和方向的穩定控制。
        </ol>
 # <div align="center">![HOME](../../../other/img/home.png)[Return Home](../../../)</div>  
