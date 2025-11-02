@@ -1,6 +1,6 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-## <div align="center"> Automatically record the LAB values of the field-自動保存記錄場地的 LAB 值</div>
+## <div align="center"> Automatic storage and recording of game field object LAB values - 場地物件LAB值的自動化儲存記錄</div>
 為精確記錄交通標誌積木（紅、綠）、停車區的洋紅色邊牆，以及轉彎區的藍、橘線，我們開發了一套車輛控制程式，它透過CSI鏡頭讀取到的畫面，將各物件顏色能最終的LAB值儲存在 Jetson Orin Nano 控制器中。這項自動化功能省去了手動記錄的繁瑣步驟，不僅節省了時間，更確保了數據的準確性與一致性。
 
 To accurately record the LAB values for the traffic sign blocks (red and green), the magenta side walls of the parking lot, and the blue lines and orange lines in the turning areas, we developed a Vehicle's control program. This program reads the image captured by the CSI camera and stores the final LAB values for the color of each object in the Jetson Orin Nano controller. This automation eliminates the tedious step of manual recording, significantly saving time and ensuring the accuracy and consistency of the data.
