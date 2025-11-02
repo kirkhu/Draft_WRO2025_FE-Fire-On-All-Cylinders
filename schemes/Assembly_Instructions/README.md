@@ -65,46 +65,56 @@
 </div>
 
 - ### Overview of Important Parts List-重要零件清單總覽
-  - #### NVIDIA® Jetson Nano™ developer-B01 Controller-NVIDIA®- Jetson Nano™ 開發板 – B01 控制器
+  - #### NVIDIA® Jetson Orin Nano
     <table border=0 width="100%" >
       <tr>
       <td >
-
   __Specification:__ 
-    - Processor: Hexa-core Arm Cortex-A78AE v8.2 64-bit CPU
-    - GPU: 128-core NVIDIA Maxwell GPU
-    - Memory: 8 GB 128-bit LPDDR5, 102 GB/s
-    - Connectivity: Type A: 4 USB 3.2 Gen2. Type C: 1 for debug and device mode
-    - GPIO: 40-pin Header (UART, SPI, I2S, I2C, GPIO)12-pin button header
-    - Dimensions: 100 mm x 79 mm x 21 mm
-    - Weight: 771 grams
+
+    - **AI Performance**  Up to **40 TOPS** (Sparse) or **20 TOPS** (Dense) 
+    - **GPU**  **1024** NVIDIA **Ampere** Architecture **CUDA Cores** + - - **32** **Tensor Cores** 
+    - **CPU**  **6-core** Arm Cortex-A78AE v8.2 64-bit CPU (up to **1.5 GHz**) 
+    - **Memory (RAM)**  **8GB** 128-bit **LPDDR5** (Memory bandwidth up to **68 GB/s**) 
+    - **Video Encoder**  1x 4K @ 30fps, 2x 4K @ 30fps, 5x 1080p @ 60fps, etc. (H.265) 
+    - **Video Decoder**  1x 4K @ 60fps, 2x 4K @ 30fps, 5x 1080p @ 60fps, etc. (H.265) 
+    - **Camera Interface**  **8-lane MIPI CSI-2** D-PHY 2.1 (Supports up to 4 physical cameras) 
+    - **PCIe**  1x x4 + 3x x1 (PCIe Gen3) 
+    - **Ports**  4x USB 3.2 Gen2, 1x USB Type-C (Power/Debug), Gigabit Ethernet 
+    - **Display Output**  1x DP 1.2 (+MST) or eDP 1.4/HDMI 1.4 
+    - **Storage**  Supports external NVMe SSD (on Developer Kit) and MicroSD card 
+    - **Input Voltage**  DC **9V-20V** 
 
   __Uses in Competition:__ 
     - Responsible for receiving image data from the camera module, performing image recognition via OpenCV, and sending the recognition results to the Raspberry Pi Pico for further processing.
     <br></br>
 
    __產品規格：__
-    - 處理器：	6 核 Arm Cortex-A78AE v8.2 64 位元 CPU
-      1.5 MB L2 / 4 MB L3
-    - 圖形處理器： 	具有 1024 個 NVIDIA CUDA 核心和32 個 Tensor 核心的NVIDIA Ampere 架構
-    - 記憶體：8 GB 128 位元 LPDDR5，102 GB/秒
-    - 連接性：A 型：4 個 USB 3.2 Gen2。C 型：1 個，用於 debug 與裝置模式
-    - GPIO： 40-pin Header (UART, SPI, I2S, I2C, GPIO)12-pin button     header
-    - 尺寸： 100 mm x 79 mm x 21 mm
-    - 重量： 771 公克
+    - **AI 效能：**  高達 **40 TOPS** (Sparse) 或 **20 TOPS** (Dense) 
+    - **GPU：**  **1024** 個 NVIDIA **Ampere** 架構 **CUDA 核心** + **32** 個 **Tensor 核心** 
+    - **CPU：**  **6 核心** Arm Cortex-A78AE v8.2 64 位元 CPU (最高 1.5 GHz) 
+    - **記憶體 (RAM)：**  **8GB** 128 位元 **LPDDR5** (記憶體頻寬高達 **68 GB/s**) 
+    - **視訊編碼器：**  1x 4K @ 30fps, 2x 4K @ 30fps, 5x 1080p @ 60fps 等 (H.265) 
+    - **視訊解碼器：**  1x 4K @ 60fps, 2x 4K @ 30fps, 5x 1080p @ 60fps 等 (H.265) 
+    - **相機介面：**  **8 通道 MIPI CSI-2** D-PHY 2.1 (支援最多 4 個實體相機) 
+    - **PCIe：**  1 個 x4 + 3 個 x1 (PCIe Gen3) 
+    - **連接埠：**  4 個 USB 3.2 Gen2, 1 個 USB Type-C (供電/Debug), Gigabit Ethernet 
+    - **顯示輸出：**  1 個 DP 1.2 (+MST) 或 eDP 1.4/HDMI 1.4 
+    - **儲存：**  支援外部 NVMe SSD (在開發套件上) 及 MicroSD 卡 
+    - **輸入電壓：** 9V-20V
+
   __競賽中之應用：__
-  - 負責接收來自攝影機模組的影像資料，透過 OpenCV 進行影像辨識，並將辨識結果傳送給 Raspberry Pi Pico 進行後續處理。
+  - 本系統負責接收來自攝影機模組的原始影像資料，隨後利用 OpenCV 函式庫執行影像辨識與運算。同步地，整合 BNO055 慣性量測單元 (IMU) 所採集的方向數據，進行數據融合與姿態運算。最終，將處理後的控制指令傳輸至 Raspberry Pi Pico，以驅動其進行後續的決策與執行。
  
     <br></br>
-    __Purchase URL:<a href="https://robotkingdom.com.tw/product/nvidia-jetson-orin-nano-super-developer-set-1/" target="_blank">NVIDIA® Jetson Orin Nano™ developer-b01</a>__
+    __Purchase URL:<a href="https://developer.download.nvidia.com/assets/embedded/secure/jetson/orin_nano/docs/Jetson-Orin-Nano-DevKit-Carrier-Board-Specification_SP-11324-001_v1.3.pdf?__token__=exp=1762055025~hmac=44deefcad3991bd2cb50e865d48d7e757ec2b7de324168816ccc7a624fe85ce0&t=eyJscyI6ImdzZW8iLCJsc2QiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyJ9" target="_blank">NVIDIA® Jetson Orin Nano</a>__
     </td>
     <td>
-    <img src="./img/jetson_orin_nano.png" width = "400"  alt="Jjetson_orin_nano" align=center />   
+    <img src="./img/jetson_orin_nano.png" width = "600"  alt="Jjetson_orin_nano" align=center />   
     </td>
     </tr>
     </table>
 
-  - #### MG513 Rear-Drive DC Motor-MG513 後驅直流馬達
+  - #### MG513-P30 Rear-Drive DC Motor-MG513-P30 後驅直流馬達
     <table border=0 width="100%" >
       <tr>
       <td> 
@@ -132,12 +142,12 @@
     __Purchase URL:[MG513-P30 336RPM DC reduction motor](https://www.amazon.com/-/zh_TW/MG513-12V-%E6%B8%9B%E9%80%9F%E9%BD%92%E8%BC%AA%E9%A6%AC%E9%81%94%E7%B7%A8%E7%A2%BC%E5%99%A8%E4%BB%A3%E7%A2%BC%E9%80%9F%E5%BA%A6%E6%B8%AC%E9%87%8F-DIY-%E8%87%AA%E5%B9%B3%E8%A1%A1%E6%B1%BD%E8%BB%8A%E5%80%92%E7%BD%AE%E6%93%BA/dp/B0B3LXV4PL)__
     </td>
        <td >
-    <img src="./img/Motor1.png" width = "400"  alt="MG513-P30" align=center />   
+    <img src="./img/Motor1.png" width = "500"  alt="MG513-P30" align=center />   
       </td>
       </tr>
     </table>
 
-  - ### MG90S Front Steering Mechanism by Servo Motor -MG90S 前輪轉向伺服馬達機構
+  - #### MG90S Front Steering Mechanism by Servo Motor -MG90S 前輪轉向伺服馬達機構
       <table border=0 width="100%" >
       <tr>
       <td> 
@@ -167,7 +177,7 @@
     __Purchase URL:<a href="https://www.amazon.com/-/zh_TW/dp/B0BFQLNDPM" target="_blank">MG90s servo motor</a>__
     </td>
        <td >
-    <img src="./img/MG90S.png" width = "250"  alt="MG90S servo motor" align=center />  
+    <img src="./img/MG90S.png" width = "500"  alt="MG90S servo motor" align=center />  
        </td>
       </tr>
     </table>
@@ -199,7 +209,7 @@
     __Purchase URL:<a href="https://atceiling.blogspot.com/2019/08/arduino54l293d.html" target="_blank">L293D</a>__
     </td>
       <td>
-    <img src="./img/l293d.png" width = "250" alt="L293d motor controler" align=center />  
+    <img src="./img/l293d.png" width = "500" alt="L293d motor controler" align=center />  
       </td>
       </tr>
     </table>
@@ -283,17 +293,17 @@
     <br></br>
 
   __產品規格：__
-      - 輸入電壓範圍： 4 – 38V
-      - 輸出電壓範圍： 1.25 – 36V，可連續調整
-      - 輸出電流範圍： 可調，最大為 5A
+     - 輸入電壓範圍： 4 – 38V
+     - 輸出電壓範圍： 1.25 – 36V，可連續調整
+     - 輸出電流範圍： 可調，最大為 5A
   __競賽中之應用：__
-      - 主要負責將電池電壓從 11.1V 降壓至 5V，以提供車輛運作所需的各種穩定電壓。  
+     - 主要負責將電池電壓從 11.1V 降壓至 5V，以提供車輛運作所需的各種穩定電壓。  
   
     <br></br>
     __Purchase URL:<a href="https://shop.cpu.com.tw/product/57434/info/" target="_blank">ADIO-DC36V5A</a>__
     </td>
       <td>
-    <img src="../Power_Supply_System/img/ADIO-DC36V5A.png" width = "250"  alt="ADIO-DC36V5A" align=center />   
+    <img src="../Power_Supply_System/img/ADIO-DC36V5A.png" width = "600"  alt="ADIO-DC36V5A" align=center />   
       </td>
       </tr>
     </table>
@@ -331,7 +341,7 @@
     __Purchase URL:<a href="https://shopee.tw/%E7%8F%BE%E8%B2%A8-SONY-IMX477-%E6%94%9D%E5%BD%B1%E9%8F%A1%E9%A0%AD%E6%A8%A1%E7%B5%84-1230%E8%90%AC%E5%83%8F%E7%B4%A0-160%C2%B0%E5%BB%A3%E8%A7%92-%E6%94%AF%E6%8F%B4%E6%A8%B9%E8%8E%93%E6%B4%BECM3-4%E3%80%81Jetson-Nano-i.10207300.8215149686?srsltid=AfmBOor9HmpX2guySAnFvW5drNG4qJtdwx98_e6muraV4LUtXM50YR5Q" target="_blank">SONY IMX477</a>__
     </td>
        <td >
-    <img src="../../schemes/Camera/img/SONY_IMX477.png" width = "250"  alt="SONY IMX477 Camera Module" align=center />    
+    <img src="../../schemes/Camera/img/SONY_IMX477.png" width = "500"  alt="SONY IMX477 Camera Module" align=center />    
        </td>
       </tr>
     </table>
@@ -363,7 +373,7 @@
     __Purchase URL:<a href="https://www.remisys.com.tw/product-page/bno055-absolute-orientation-sensor" target="_blank">BNO055</a>__
     </td>
        <td >
-    <img src="../../schemes/BNO055/img/BNO055up.png" width = "250"  alt="SBNO055 Gyroscope orientation sensor" align=center />    
+    <img src="../../schemes/BNO055/img/BNO055up.png" width = "500"  alt="SBNO055 Gyroscope orientation sensor" align=center />    
        </td>
       </tr>
     </table>
