@@ -111,10 +111,10 @@
     <table>
     <tr>
     <th>Counterclockwise_green(逆時針綠色)</th>
-    <th>Counterclockwise_red(逆時針紅色)</th>
+    <th>Counter-clockwise_green_route(逆時針綠色路線)</th>
     </tr><tr>
     <td align=center><img src="./img/Counterclockwise_green.png" width=400 /></td>
-    <td align=center><img src="./img/Counterclockwise_red.png" width=400 /></td>
+    <td align=center><img src="./img/Counter-clockwise green route.png" width=400 /></td>
     </tr>
     </table>
     </div>
@@ -122,33 +122,66 @@
     <div align=center>
     <table>
     <tr>
-    <th>Counterclockwise middle(逆時針方向中間)</th>
-    <th>Counterclockwise direction_No(逆時針方向_否)</th>
+    <th>Counterclockwise_red(逆時針紅色)</th>
+    <th>Counter-clockwise red route(逆時針紅色路線)</th>
     </tr><tr>
-    <td align=center><img src="./img/Counterclockwise middle.png" width=400 /></td>
-    <td align=center><img src="./img/Counterclockwise_NO.png" width=400 /></td>
+    <td align=center><img src="./img/Counterclockwise_red.png" width=400 /></td>
+    <td align=center><img src="./img/Counter-clockwise red route.png" width=400 /></td>
     </tr>
     </table>
     </div>
     <div align=center>
     <table>
     <tr>
-    <th>Green in clockwise direction(順時針方向綠色)</th>
-    <th>CClockwise_red(順時針方向紅色)</th>
+    <th>Counterclockwise has no color(逆時針沒有顏色)</th>
+    <th>Counter-clockwise uncolored route(逆時針沒有顏色路線)</th>
+    </tr><tr>
+    <td align=center><img src="./img/Counterclockwise_NO.png" width=400 /></td>
+    <td align=center><img src="./img/Counter-clockwise uncolored route.png" width=400 /></td>
+    </tr>
+    </table>
+    </div>
+    <div align=center>
+    <table>
+    <tr>
+    <th>Clockwise green (順時針綠色)</th>
+    <th>Clockwise green route(順時針綠色路線)</th>
     </tr><tr>
     <td align=center><img src="./img/Green in clockwise direction.png" width=400 /></td>
-    <td align=center><img src="./img/Clockwise_red.png" width=400 /></td>
+    <td align=center><img src="./img/Clockwise green route.png" width=400 /></td>
     </tr>
     </table>
     </div>
     <div align=center>
     <table>
     <tr>
-    <th>Clockwise middle(順時針方向中間)</th>
-    <th>Clockwise_NO(順時針方向_否)</th>
+    <th>Clockwise red(順時針紅色)</th>
+    <th>Clockwise red route(順時針紅色路線)</th>
     </tr><tr>
-    <td align=center><img src="./img/Clockwise middle.png" width=400 /></td>
-    <td align=center><img src="./img/Clockwise_NO.png" width=400 /></td>
+    <td align=center><img src="./img/Clockwise_red.png " width=400 /></td>
+    <td align=center><img src="./img/Clockwise red route.png" width=400 /></td>
+    </tr>
+    </table>
+    </div>
+    <div align=center>
+    <table>
+    <tr>
+    <th>Clockwise, the middle green(順時針中間綠色)</th>
+    <th>Clockwise green route(順時針中間綠色路線)</th>
+    </tr><tr>
+    <td align=center><img src="./img/Clockwise the middle green.png " width=400 /></td>
+    <td align=center><img src="./img/Clockwise green middle route.png" width=400 /></td>
+    </tr>
+    </table>
+    </div>
+    <div align=center>
+    <table>
+    <tr>
+    <th>Clockwise the middle red(順時針中間紅色)</th>
+    <th>Clockwise red route(順時針中間紅色路線)</th>
+    </tr><tr>
+    <td align=center><img src="./img/Clockwise middle.png " width=400 /></td>
+    <td align=center><img src="./img/Clockwise red middle route.png" width=400 /></td>
     </tr>
     </table>
     </div>
