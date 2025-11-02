@@ -46,12 +46,12 @@
 </th>
     </tr>
     <tr align="center">
-      <th>Left(左側)</th>
-      <th>Right(右側)</th>
+      <th>Left</th>
+      <th>Right</th>
       </tr>
     <tr>
-      <td align=center><img src="./img/Car Left HC.png" alt="HC-SR04" width="250" /></td>
-      <td align=center><img src="./img/Car Right HC.png" alt="HC-SR04" width="250" /></td>
+      <td align=center><img src="../../v-photos/img/left.png" alt="HC-SR04_left" width="50%" /></td>
+      <td align=center><img src="../../v-photos/img/right.png" alt="HC-SR04_right" width="50%" /></td>
       </tr>
     </table>
     </div>
