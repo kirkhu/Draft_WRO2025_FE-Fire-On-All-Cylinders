@@ -164,7 +164,7 @@
         write(color)
         time2 = time.time()
     ```
-        <div align=center>
+    <div align=center>
     <table>
     <tr>
     <th>Counterclockwise_green(逆時針綠色)</th>
