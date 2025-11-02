@@ -475,25 +475,28 @@
     </table>
 
   - #### TCRT5000 Infrared Sensor
-   <div align=center>
+    <div align=center>
     <table>
       <tr>
       <td>
+
+    __Specifications:__
  
-      __Specifications:__
       - Measuring Range: 0 to 1.5 centimeters (cm)
       - Operating Voltage: 3.3 Volts (V) to 5 Volts (V)
-      __Uses in Competition：__  
+      
+     __Uses in Competition：__  
       - The primary function of this system is to accurately measure the distance between the vehicle and the field boundary (or surrounding walls). The acquired data is then transmitted to the Raspberry Pi Pico W for efficient computation and decision-making processing, with the ultimate goal of achieving precise navigation and control over the vehicle's direction of travel.
 
-    <br></br>
-  
-      __產品規格__
+    <br>
+    </br> 
+
+    __產品規格__
 
       - 測量範圍：0 ~ 1.5cm
       - 操作電壓：3.3V ~ 5V
 
-     __競賽中之應用：__
+    __競賽中之應用：__
       - 本系統主要功能為精準量測車輛與場域邊界（或外牆）的距離，並將所獲取的數據傳輸至 Raspberry Pi Pico W 進行高效的運算及決策處理，以達成對車輛行駛路徑的精確導航與控制。
   
     __Purchase URL:<a href="https://www.icshop.com.tw/products/368030501146" target="_blank">TCRT5000</a>__
