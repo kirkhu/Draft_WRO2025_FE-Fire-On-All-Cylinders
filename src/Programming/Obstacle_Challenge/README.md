@@ -228,9 +228,8 @@ Based on the characteristics of each control board, we distributed the complex o
         __control_motor():__<br>
           - 取-100到100範圍內一個數的絕對值，轉換為PWM佔空比。同時，根據該值的符號設定兩個引腳的高低狀態，以控制馬達的正反轉或停止。
 
-          __ws_send_text(sock, text):__<br>
+        __ws_send_text(sock, text):__<br>
           - Jetson Orin Nano 控制器透過 WebSockets 協定將更新後的值傳送到佇列，確保流程持續運行，以保持資料即時更新。
-
 
         __run_encoder_Auto():__<br>
           - 在此函數中run_encoder()，伺服馬達角度被設定為固定值，以車輛操作期間保持車輛位置和方向的穩定控制。
