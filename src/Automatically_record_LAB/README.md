@@ -1,8 +1,9 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
 ## <div align="center"> Automatically record the LAB values of the field-自動保存記錄場地的 LAB 值</div>
-為了記錄交通標誌積木、停車區邊牆及場地線的顏色，我們撰寫了一個程式，能自動將最終的 LAB 值保存在 Jetson Orin Nano 控制器中。此功能省去手動記錄的麻煩，不僅節省時間，也確保了數據的準確性。
+- 為精確記錄交通標誌積木（紅、綠）、停車區的洋紅色邊牆 1，以及轉彎區的藍、橘線 2，我們開發了一套車輛控制程式 3，它能自動計算並將各物件顏色最終的 $LAB$ 值 4 儲存在 Jetson Orin Nano 控制器中。這項自動化功能省去了手動記錄的繁瑣步驟，不僅節省了時間，更確保了數據的準確性與一致性。
 
+- To accurately record the $LAB$ values for the traffic sign blocks (red and green) 5, the magenta 6side walls of the parking lot 7, and the blue and orange lines 8in the turning areas, we developed a Vehicle's control program9. This program automatically calculates and stores the final $LAB$ values for the color of each object in the Jetson Orin Nano controller. This automation eliminates the tedious step of manual recording, significantly saving time and ensuring the accuracy and consistency of the data.
 - #### Image processing-影像處理
     ### 中文:
     - 在影像處理時，使用 Color_LAB.py 檔案將交通標誌方塊與場地底圖上的線條轉換到不同的色彩空間是必須的步驟，以有效處理特定任務。
