@@ -164,9 +164,7 @@
         write(color)
         time2 = time.time()
     ```
-<<<<<<< HEAD
-    
-    <div align=center>
+        <div align=center>
     <table>
     <tr>
     <th>Counterclockwise_green(逆時針綠色)</th>
@@ -244,12 +242,6 @@
     </tr>
     </table>
     </div>
-
-
-=======
->>>>>>> 39acc558e3f6cbddef63015b2b521191298e2568
-
- 
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
 
