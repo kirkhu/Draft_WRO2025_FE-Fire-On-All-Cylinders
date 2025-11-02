@@ -5,12 +5,10 @@
 - ### 判斷行車方向
   ### 中文:
     - 我們首先判斷車輛的行駛方向是順時針還是逆時針，如果ROI2面積大於ROI1面積判斷是逆時針，ROI1面積大於ROI2面積是順時針。
-  1. **ROI讀取面積介紹**
-    - 我們使用 pOverlap(img_lab, ROI1)和pOverlap(img_lab, 
-      ROI2)，在左右兩側 ROI 區域中，從 LAB 色彩空間影像 img_lab 內偵測出黑色區域，並進一步判斷其中是否與品紅色標記區域產生重疊。這個函式的目的，是用來辨識左右側視野中可能的牆面或立柱位置，為後續輪廓分析與區域面積計算提供依據。
-  2. **找出ROI輪廓中最大面積**
-    - 我們使用 max_contour(contours_left, ROI1)[0] 與   
-      max_contour(contours_right, ROI2)[0]，分別從左右兩側偵測到的輪廓中篩選出面積最大的輪廓，並取得其對應的面積值或中心點資訊。
+  1. **ROI讀取面積介紹**:
+    - 我們分別使用 pOverlap(img_lab, ROI1) 和 pOverlap(img_lab, ROI2)，透過 pOverlap() 函式在左右兩側的 ROI 區域中，從 LAB 色彩空間影像 img_lab 內偵測出黑色區域，並進一步判斷這些區域是否與品紅色標記產生重疊。此步驟的主要目的在於辨識畫面左右兩側可能出現的牆面或立柱位置，為後續的輪廓擷取、面積分析與路徑判斷提供基礎依據。
+  2. **找出ROI輪廓中最大面積**:
+    - 我們使用 max_contour(contours_left, ROI1)[0] 與 max_contour(contours_right, ROI2)[0]，透過 max_contour() 函式分別從左右兩側偵測到的輪廓中，篩選出面積最大的輪廓區域，並取得其對應的面積值與中心點資訊。此步驟的目的在於找出畫面中最具代表性的牆面或立柱區塊，作為後續路徑判斷與方向控制的依據。
     
 - program code:
 
@@ -50,11 +48,11 @@
     - 若為逆時針方向，偵測到綠色柱子則行駛於內側，偵測到紅色柱子則行駛於外側，若未偵測到柱子，則預設行駛外側。
     - 若為順時針方向，偵測到綠色柱子則行駛於外側，偵測到紅色柱子則行駛於內側，若未偵測到顏色，則同樣行駛外側。
 
-  1. **顏色輪廓偵測**
+  1. **顏色輪廓偵測**:
     - 我們使用find_contours(img_lab, rRed,ROI3)和
     find_contours(img_lab, rGreen, ROI3)，這兩行使用 `find_contours()` 函式，在指定的區域 ROI3 內，從 LAB 色彩空間影像 img_lab 中分別偵測出**紅色區域（rRed）與綠色區
    （rGreen）**的所有輪廓（contours）。結果會是一組包含多個封閉區域的輪廓列表。
-  2. **找出最佳立柱**
+  2. **找出最佳立柱**:
     - 我們使用find_best_pillar(contours_red,redTarget,"red",img_lab)和find_best_pillar(contours_green, greenTarget, "green", img_lab)，這兩行使用
     `find_best_pillar()`函式會根據每個輪廓的大小、位置與距離目標點（redTarget / greenTarget）的遠近等條件進行評估。
     回傳的 best_red 與 best_green 各自顏色中評分最高、最接近可通過路線的立柱。若沒有找到符合條件的立柱，則可能回傳 None。
