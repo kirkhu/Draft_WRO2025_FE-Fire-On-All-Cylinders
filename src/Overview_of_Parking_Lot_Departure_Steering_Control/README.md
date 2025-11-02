@@ -146,7 +146,7 @@
     <table>
     <tr>
     <th>Clockwise Direction, Red Signal(順時針方向，紅色號誌)</th>
-    <th>CDrive on Inner Wall(行駛於車道內側)</th>
+    <th>Drive on Inner Wall(行駛於車道內側)</th>
     </tr><tr>
     <td align=center><img src="./img/Clockwise the middle red.png " width=400 /></td>
     <td align=center><img src="./img/Clockwise red middle route.png" width=400 /></td>
