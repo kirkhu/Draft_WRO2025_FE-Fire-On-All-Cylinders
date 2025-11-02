@@ -3,7 +3,7 @@ import Jetson.GPIO as GPIO
 from functions_jetson import find_contours, max_contour
 from masks import rOrange, rBlack, rBlue
 
-# ===================== WS 伺服器 =====================
+
 class WsServer:
     def __init__(self, host="0.0.0.0", port=8765):
         self.host = host
@@ -66,7 +66,6 @@ class WsServer:
         finally:
             self._loop.close()
 
-# ===================== WS 客戶端 =====================
 WS_SERVER_URL = "ws://127.0.0.1:8765"
 class WsBus:
     def __init__(self, url: str):
@@ -190,8 +189,8 @@ def gstreamer_pipeline(sensor_id=0, capture_width=640, capture_height=480,
 # ===================== LED =====================
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-LED_PIN = 21  # 實體腳位 40
-BUTTON_PIN = 18  # 實體腳位 12
+LED_PIN = 21  
+BUTTON_PIN = 18  
 GPIO.setup(LED_PIN, GPIO.OUT)
 GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
@@ -200,14 +199,13 @@ def led_off(): GPIO.output(LED_PIN, GPIO.LOW)
 
 def wait_for_button_press():
     led_on()
-    print("🟢 請按下按鈕以開始！")
+    print("Please press the button to begin.！")
     while GPIO.input(BUTTON_PIN) == GPIO.LOW:
         time.sleep(0.05)
-    print("🔘 按鈕被按下，開始執行！")
+    print(" The button was pressed, and execution began.！")
     
     time.sleep(0.3)
 
-# ===================== WS 控制 =====================
 ws_server = WsServer(host="0.0.0.0", port=8765)
 ws_bus = WsBus(WS_SERVER_URL)
 
@@ -220,7 +218,7 @@ def stop_car():
     ws_bus.send({"cmd": "steer", "angle": 0})
     led_off()
 
-# ===================== ROI 顯示 =====================
+
 def display_roi_with_contours(img, rois, color=(255, 204, 0)):
     preview = img.copy()
     for roi in rois:
@@ -233,25 +231,25 @@ def draw_contours_in_roi(preview_img, contours, roi, draw_color=(0, 255, 0)):
         offset_contour = contour + np.array([[roi[0], roi[1]]])
         cv2.drawContours(preview_img, [offset_contour], -1, draw_color, 2)      
 
-# ===================== 主程式 =====================
+
 if __name__ == '__main__':
     global leftArea, rightArea, orangeArea, blueArea
     led_off()
     ws_server.start()
     ws_bus.start()
-    print(f"🔌 WS 伺服器 at ws://0.0.0.0:8765，並連線 {WS_SERVER_URL} ...")
+    
     ws_bus.wait_until_ready(timeout_sec=5.0)
 
     cap = cv2.VideoCapture(gstreamer_pipeline(flip_method=0), cv2.CAP_GSTREAMER)
     if not cap.isOpened():
-        print("❌ 無法開啟 CSI 攝影機")
+        print("NO CSI camera")
         ws_bus.stop()
         ws_server.stop()
         sys.exit(1)
 
     ROI1, ROI2, ROI3 = [0,180,330,245], [330,180,640,245], [50,300,580,345]
 
-    # PID & 控制參數
+
     kp, kd, speed = 0.01, 0.015, 70
     turnThresh, exitThresh = 100, 0
     aDiff = prevDiff = prevAngle = 0
@@ -266,21 +264,21 @@ if __name__ == '__main__':
 
     leftArea = rightArea = blueArea = orangeArea = 0
 
-    print("📷 相機開啟，等待按鈕按下後才開始循跡...")
+
     try:
         count = 0
         start_time = 0
         angle = 120
         error = 0
         time1 = 0
-        # 等待按鈕按下
+
         wait_for_button_press()
         started = True
 
         while True:
             ret, img = cap.read()
             if not ret:
-                print("❌ 無法讀取影像")
+        
                 break
 
             preview_img = display_roi_with_contours(img.copy(), [ROI1, ROI2, ROI3], (255, 204, 0))
@@ -308,7 +306,7 @@ if __name__ == '__main__':
                 cv2.putText(preview_img, f"R:{rightArea}", (ROI2[0], ROI2[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0,255,0), 2)
                 cv2.putText(preview_img, f"Diff:{rightArea-leftArea}", (10,30), cv2.FONT_HERSHEY_SIMPLEX,0.7,(255,255,255),2)
                  
-                # 轉彎判斷
+        
                 if orangeArea > 100 and turnDir=="none" and time.time() - time1 > 1.5 and rightArea < 1600:
                     turnDir="right"
                     rTurn = True
@@ -317,19 +315,18 @@ if __name__ == '__main__':
                     turnDir="left"
                     lTurn = True
                     print("left")
-                     
-                # 偵測藍線計圈
+              
                 currentTime = time.time()
                 if blueArea > blueLineThreshold:
                     if not blueLineDetected and (currentTime - lastBlueDetectTime) > blueLineCooldown:
                         t += 1
                         blueLineDetected = True
                         lastBlueDetectTime = currentTime
-                        print(f" 偵測到藍線！圈數 +1，目前 t={t}")
+                        print(f"t +1， t={t}")
                 else:
                     blueLineDetected = False
 
-                # 轉向控制
+
                 if lTurn:
                     angle = -60
                     print(leftArea,rightArea,angle)
@@ -349,7 +346,7 @@ if __name__ == '__main__':
                     print("Forword",angle)
                     send_motor(int(angle), speed)
                     
-                # 出彎檢測
+ 
                 if (rightArea > exitThresh and rTurn) or (leftArea > exitThresh and lTurn):
                     turnDir = "none"
                     lTurn = rTurn = False
@@ -359,15 +356,14 @@ if __name__ == '__main__':
                 prevDiff = aDiff
                 prevAngle = int(angle)
                 
-                # ✅ 當 t >= 12 時，改為牆循跡 3 秒後停車
                 if t >= 12:
-                    print("🏁 完成 12 圈，進入牆循跡 1.7 秒模式")
+                    
                     if count == 0:
                         start_time = time.time()
                         count = count + 1
                         
                 if time.time() - start_time > 1.7 and count != 0:
-                    print("🛑 結束 1.7 秒牆循跡，停車")
+
                     stop_car()
                     break
 

@@ -5,13 +5,13 @@ import usocket as socket
 import uos, ubinascii
 import ujson as json
 
-# ===================== Wi-Fi / WebSocket 參數 =====================
+
 SSID = "iPhone_ron"
 PASSWORD = "ron0975750386"
 JETSON_IP = "172.20.10.8"
 PORT = 8765
 
-# ===================== 硬體初始化 =====================
+
 servo_pin = PWM(Pin(4), freq=50)
 motor_in1 = Pin(21, Pin.OUT)
 motor_in2 = Pin(20, Pin.OUT)
@@ -24,12 +24,12 @@ button = Pin(18, Pin.IN, Pin.PULL_UP)
 
 encoder_count = 0
 last_state_A = encoder_pin_A.value()
-_prev_speed_abs = 0  # 上一次實際輸出的絕對速度(%)
+_prev_speed_abs = 0 
 led = Pin("LED", Pin.OUT)
-# ===================== 基本控制 =====================
+
 def set_servo_angle(angle):
-    min_duty = 1000  # 1ms
-    max_duty = 2000  # 2ms
+    min_duty = 1000  
+    max_duty = 2000  
     duty = int(min_duty + (angle - 15 + 180) * (max_duty - min_duty) / 360)
     duty_u16 = int(duty * 65535 / 20000)
     servo_pin.duty_u16(duty_u16)
@@ -39,12 +39,10 @@ def control_motor(speed):
     global _prev_speed_abs
     abs_speed = abs(speed)
 
-    # 增加啟動脈衝與最小占空比，避免低速轉不動
     if abs_speed > 0 and abs_speed < 20:
         abs_speed = 20
     if _prev_speed_abs == 0 and abs_speed > 0:
-        motor_pwm.duty_u16(int(65535 * 0.6))  # 啟動瞬間脈衝
-        time.sleep(0.05)
+        motor_pwm.duty_u16(int(65535 * 0.6))  
     _prev_speed_abs = abs_speed
 
     if speed > 0:
@@ -59,7 +57,7 @@ def control_motor(speed):
 
     motor_pwm.duty_u16(int(abs_speed * 65535 / 100))
 
-# ===================== 編碼器中斷 =====================
+
 def encoder_interrupt(pin):
     global encoder_count, last_state_A
     state_a = encoder_pin_A.value()
@@ -70,7 +68,7 @@ def encoder_interrupt(pin):
 
 encoder_pin_A.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=encoder_interrupt)
 
-# ===================== Wi-Fi =====================
+
 def connect_wifi():
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
@@ -82,10 +80,10 @@ def connect_wifi():
             if time.time() - t0 > 20:
                 raise OSError("WiFi connect timeout")
             time.sleep(0.2)
-    print(" WiFi 已連線:", wlan.ifconfig())
+    print(" WiFi ", wlan.ifconfig())
     return wlan
 
-# ===================== WebSocket =====================
+
 def _recvn(sock, n):
     data = b""
     while len(data) < n:
@@ -156,7 +154,6 @@ def ws_recv_text(sock, timeout=0.2):
     return payload.decode("utf-8") if payload else ""
 
 
-# ===================== 主程式 =====================
 try:
     motor_in1.off(); motor_in2.off()
     control_motor(0)
@@ -187,7 +184,7 @@ try:
                         continue
 
                     if line == "STOP":
-                        print(" 收到 STOP → 停止車輛")
+                        print("  STOP")
                         control_motor(0)
                         set_servo_angle(0)
                         raise KeyboardInterrupt
@@ -200,7 +197,7 @@ try:
                             set_servo_angle(angle)
                             control_motor(speed)
 
-                            # 顯示即時控制數值
+                           
                             print(" 角度 = {:>4d}, 速度 = {:>4d}, 編碼器 = {:>6d}".format(
                                 angle, speed, encoder_count
                             ))
