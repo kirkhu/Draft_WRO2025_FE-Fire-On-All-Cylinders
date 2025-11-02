@@ -148,7 +148,7 @@
     <th>Clockwise the middle red(順時針中間紅色)</th>
     <th>Clockwise red route(順時針中間紅色路線)</th>
     </tr><tr>
-    <td align=center><img src="./img/Clockwise middle.png " width=400 /></td>
+    <td align=center><img src="./img/Clockwise the middle red.png " width=400 /></td>
     <td align=center><img src="./img/Clockwise red middle route.png" width=400 /></td>
     </tr>
     </table>
