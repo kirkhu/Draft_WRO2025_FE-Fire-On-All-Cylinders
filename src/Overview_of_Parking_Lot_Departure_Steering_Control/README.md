@@ -17,7 +17,15 @@
 
   2. **ROI Maximum Contour Area Extraction**:
     - In the left and right `ROI` areas, we utilize the two functions `max\_contour(contours_{left}, ROI_1)[0]` and `max\_contour(contours_{right}, ROI_2)[0]`. Through the `max\_contour()` function, the system can filter out the contour area of the largest black wall from the contours detected on both sides, and retrieve its corresponding area value and center point information. 
-    
+
+<div align=center>
+
+  |Counterclockwise direction(逆時針方向)|Clockwise direction(順時針方向)|
+  |:---:|:---:|
+  |<div align="center"> <img src="./img/Counterclockwise_direction.png" width="400"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/clockwise_direction.png" width="400" alt="Detecting_nearby_obstacles"></div>|
+
+</div> 
+
 - program code:
 ```
         a = 0
@@ -42,13 +50,6 @@
 
         write(start_turn)     
 ```
-<div align=center>
-
-  |Counterclockwise direction(逆時針方向)|Clockwise direction(順時針方向)|
-  |:---:|:---:|
-  |<div align="center"> <img src="./img/Counterclockwise_direction.png" width="400"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/clockwise_direction.png" width="400" alt="Detecting_nearby_obstacles"></div>|
-
-</div> 
 
 - ### 判斷顏色行駛路線
   ### 中文:
