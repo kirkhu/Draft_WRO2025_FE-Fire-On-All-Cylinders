@@ -163,7 +163,6 @@
       - 整合運算上述感測數據與控制指令，生成精確的致動訊號。
       - 驅動並控制前輪轉向伺服馬達（Steering Servo Motor）及後驅直流馬達（DC Motor），以實現車輛的精準轉向與行駛控制。
 
-    ### 英文:
     
     <br></br>
       __Purchase URL:[Raspberry Pi Pico w](https://piepie.com.tw/product/raspberry-pi-pico-w)__
