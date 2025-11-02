@@ -55,10 +55,10 @@ To accurately record the LAB values for the traffic sign blocks (red and green),
 
 
 
-**magenta sidewall-洋紅色測牆**
+**magenta side walls-洋紅牆面**
 
 
-|Adjusting the LAB Range Values for magenta Color(調整洋紅色的 LAB 範圍值)|Save the LAB range values for Pink(儲存洋紅色的 LAB )|Real-time image of the magenta side walls(洋紅色邊牆的即時影像)|
+|Adjusting the LAB Range Values for magenta Color(調整洋紅色的 LAB 範圍值)|Save the LAB range values for magenta(儲存洋紅色的 LAB )|Real-time image of the magenta side walls(洋紅色邊牆的即時影像)|
 |:----:|:----:|:----:|
 |<img src="./img//magenta/Adjusting_the_LAB_Range_Values_for_magenta_Color.png" alt="Adjusting_the_LAB_Range_Values_for_magenta_Color" align=center />|<img src="./img/magenta/Save_the_LAB_range_values_for_magenta.png"  alt="Save_the_LAB_range_values_for_pink" align=center />|<img src="./img/magenta/Live_image_ of_the_magenta_traffic_sign_block.png" alt="Live_image_ of_the_magenta_traffic_sign_block" align=center />|
 
