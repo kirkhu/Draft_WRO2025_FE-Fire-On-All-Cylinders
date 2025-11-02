@@ -2,16 +2,17 @@
 
 ## <div align="center">Overview of Parking Lot Departure Steering Control-停車場出發轉向控制概述</div> 
 
-- ### 判斷行車方向
+- ### Determination of the Driving direction - 行車方向的判斷
   ### 中文:
-    - 我們首先判斷車輛的行駛方向是順時針還是逆時針，如果ROI2面積大於ROI1面積判斷是逆時針，ROI1面積大於ROI2面積是順時針。
+    - 在車輛從停車區啟動之前，它會利用 CSI 鏡頭擷取的畫面，並結合感興趣區域 (ROI) 來預判行車方向。此判斷邏輯是透過比較 ROI_1 和 ROI_2 的面積：若 ROI_1 面積大於 ROI_2 面積，則判定本次行車方向為順時針方向；反之，若 ROI_2 面積大於 ROI_1 面積，則判定為逆時針方向。一旦行車方向確定，車輛隨即駛出停車區，之後系統會立即偵測車道上是否存在交通標誌積木 (即紅 、綠 99色交通標誌)，並根據偵測到的顏色執行相應的變道 (Lane Change) 決策。
+
+    - Before the Vehicle departs from the parking lot, it utilizes the image captured by the CSI camera and applies the Region of Interest (ROI) technique to pre-determine the Driving direction. The determination logic is based on comparing the areas of $ROI_1$ and $ROI_2$: if the area of $ROI_1$ is greater than the area of $ROI_2$, the current Driving direction is determined to be the clockwise direction ; conversely, if the area of $ROI_2$ is greater than the area of $ROI_1$, it is determined to be the Counterclockwise direction. Once the Driving direction is confirmed, the Vehicle exits the parking lot , and the system subsequently detects the presence of traffic signs blocks (red or green traffic signs) in the lane and executes the corresponding Lane Change decision based on the detected color.
   1. **ROI讀取面積介紹**:
     - 我們分別使用 pOverlap(img_lab, ROI1) 和 pOverlap(img_lab, ROI2)，透過 `pOverlap()`函式在左右兩側的 ROI 區域中，從 LAB 色彩空間影像 img_lab 內偵測出黑色區域，並進一步判斷這些區域是否與品紅色標記產生重疊。此步驟的主要目的在於辨識畫面左右兩側可能出現的牆面或立柱位置，為後續的輪廓擷取、面積分析與路徑判斷提供基礎依據。
   2. **找出ROI輪廓中最大面積**:
     - 我們使用 max_contour(contours_left, ROI1)[0] 與 max_contour(contours_right, ROI2)[0]，透過`max_contour()`函式分別從左右兩側偵測到的輪廓中，篩選出面積最大的輪廓區域，並取得其對應的面積值與中心點資訊。此步驟的目的在於找出畫面中最具代表性的牆面或立柱區塊，作為後續路徑判斷與方向控制的依據。
     
 - program code:
-
 ```
         a = 0
         start_turn = 0
