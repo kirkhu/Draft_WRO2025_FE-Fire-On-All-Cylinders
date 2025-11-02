@@ -63,86 +63,78 @@
          </tr>
          <tr>
          <td><img src="./img/17.png" width=400 /></td>
-         <td><img src="./img/18.png" width=400 /></td>
-         <td><img src="./img/19.png" width=400 /></td>
+         <td><img src="./img/18.png" width=450 /></td>
+         <td><img src="./img/19.png" width=500 /></td>
          </tr>
          </table>
       </div>
 
    - ### System environment initial setup Steps
+      - Update the operating environment.
+         ```bash
+         sudo apt update
+         sudo apt upgrade -y
+         ```
+     - Python version updata
+      ```bash
+  
+         sudo apt install update
+         sudo apt install -y make build-essential libssl-dev zlib1g-dev \
+            libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+            libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev nano
+      ```
+     - pyenv Installation
+      ```bash
+      curl https://pyenv.run | bash
+      export PATH="$HOME/.pyenv/bin:$PATH"
+      eval "$(pyenv init -)"
+      eval "$(pyenv virtualenv-init -)"
+      ```
+     -  Python Installation
+      ```bash      
+      pyenv install 3.11.7
+      pyenv global 3.11.7
+      echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
+      echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+      echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc  
+      source ~/.bashrc
 
- - Update the operating environment.
-    ```bash
-    sudo apt update
-    sudo apt upgrade -y
+      ```
 
-    ```
+      - **BNO055** Driver Installation 
+      ```bash
+      sudo apt update
+      sudo apt install i2c-tools -y
+      sudo i2cdetect -y -r 7 
+      python -m pip install --upgrade --user \
+         adafruit-circuitpython-bno055 \
+         circuitpython-bno055 \
+         Jetson.GPIO \
+         smbus2
 
- - **python**版本升級
-    ```bash
-    # 安裝所需的支援庫
-    sudo apt install update
-    sudo apt install -y make build-essential libssl-dev zlib1g-dev \
-      libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-      libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev nano
+      ```
+      - **WebSockets** Installation 
+       ```bash
+      pip install "websockets>=12<13"
+      ```
 
-    # 安装 pyenv
-    curl https://pyenv.run | bash
+      - ASUS AC1200 or TP Link AC1300 Driver Installation 
+      ```bash
+      mkdir -p ~/src && cd ~/src/
+      git clone https://github.com/morrownr/88x2bu-20210702.git
+      cd ~/src/88x2bu-20210702/
+      sudo ./install-driver.sh
 
-    # 临时设置环境（仅当前会话有效）
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+      ```
 
-    # 安装 Python
-    pyenv install 3.11.7
-    pyenv global 3.11.7
+      ```bash
+      sudo apt install dkms git -y && \
+      sudo git clone https://github.com/RinCat/RTL88x2BU-Linux-Driver.git /usr/src/rtl88x2bu-git && \
+      sudo sed -i 's/PACKAGE_VERSION="@PKGVER@"/PACKAGE_VERSION="git"/' /usr/src/rtl88x2bu-git/dkms.conf && \
+      sudo dkms add -m rtl88x2bu -v git && \
+      sudo dkms install -m rtl88x2bu -v git
 
-    # 永久设置环境
-    echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
-    echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-    echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-
-    # 重新加载配置
-    source ~/.bashrc
-
-    ```
-
- - 安裝**BNO055**所需的驅動程序
-    ```bash
-    sudo apt update
-    sudo apt install i2c-tools -y
-    sudo i2cdetect -y -r 7 # 這行指令應改會在輸出中看到28這個位址
-    python -m pip install --upgrade --user \
-      adafruit-circuitpython-bno055 \
-      circuitpython-bno055 \
-      Jetson.GPIO \
-      smbus2
-
-    ```
-
- - 安裝 **WebSockets** 12.x 的最新版本
-    ```bash
-    pip install "websockets>=12<13"
-    ```
-
- - 安裝ASUS AC1200驅動程式 或 安裝TP Link AC1300驅動程式
-    ```bash
-    mkdir -p ~/src && cd ~/src/
-    git clone https://github.com/morrownr/88x2bu-20210702.git
-    cd ~/src/88x2bu-20210702/
-    sudo ./install-driver.sh
-
-    ```
-
-    ```bash
-    sudo apt install dkms git -y && \
-    sudo git clone https://github.com/RinCat/RTL88x2BU-Linux-Driver.git /usr/src/rtl88x2bu-git && \
-    sudo sed -i 's/PACKAGE_VERSION="@PKGVER@"/PACKAGE_VERSION="git"/' /usr/src/rtl88x2bu-git/dkms.conf && \
-    sudo dkms add -m rtl88x2bu -v git && \
-    sudo dkms install -m rtl88x2bu -v git
-
-    ```
+      ```
 
  - 安裝支援CUDA加速的opencv
     ```bash
