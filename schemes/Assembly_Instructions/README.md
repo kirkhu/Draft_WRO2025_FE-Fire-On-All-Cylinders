@@ -65,6 +65,7 @@
 </div>
 
 - ### Overview of Important Parts List-重要零件清單總覽
+  
   - #### NVIDIA® Jetson Orin Nano
     <table border=0 width="100%" >
       <tr>
@@ -139,7 +140,7 @@
     ### 英文:
     
     <br></br>
-    __Purchase URL:[MG513-P30 336RPM DC reduction motor](https://www.amazon.com/-/zh_TW/MG513-12V-%E6%B8%9B%E9%80%9F%E9%BD%92%E8%BC%AA%E9%A6%AC%E9%81%94%E7%B7%A8%E7%A2%BC%E5%99%A8%E4%BB%A3%E7%A2%BC%E9%80%9F%E5%BA%A6%E6%B8%AC%E9%87%8F-DIY-%E8%87%AA%E5%B9%B3%E8%A1%A1%E6%B1%BD%E8%BB%8A%E5%80%92%E7%BD%AE%E6%93%BA/dp/B0B3LXV4PL)__
+      __Purchase URL:[MG513-P30 336RPM DC reduction motor](https://www.amazon.com/-/zh_TW/MG513-12V-%E6%B8%9B%E9%80%9F%E9%BD%92%E8%BC%AA%E9%A6%AC%E9%81%94%E7%B7%A8%E7%A2%BC%E5%99%A8%E4%BB%A3%E7%A2%BC%E9%80%9F%E5%BA%A6%E6%B8%AC%E9%87%8F-DIY-%E8%87%AA%E5%B9%B3%E8%A1%A1%E6%B1%BD%E8%BB%8A%E5%80%92%E7%BD%AE%E6%93%BA/dp/B0B3LXV4PL)__
     </td>
        <td >
     <img src="./img/Motor1.png" width = "500"  alt="MG513-P30" align=center />   
@@ -160,7 +161,7 @@
     - Fastest Rotation Speed: 0.11 seconds (at 4.8V)  
     - Operating Voltage: 4.8V - 7.2V  
 
-    __Uses in Competition：__
+  __Uses in Competition：__
     - Responsible for receiving control values from the Raspberry Pi Pico to adjust the front wheel steering angle, enabling precise steering during driving.
     <br></br>
 
@@ -391,14 +392,19 @@
     - Transmission Interface: Includes Trig and Echo pins, where Trig sends out the ultrasonic signal and Echo receives the reflected signal to calculate the distance.
 
     __Uses in Competition：__  
-    - Primarily responsible for collecting distance data from HC-SR04 ultrasonic distance sensors in three directions and providing it to the Raspberry Pi Pico controller for calculations to control the vehicle's direction.
+    - The core function of this system is to acquire real-time measurement data from two sets of HC-SR04 ultrasonic distance sensors. Subsequently, this distance data is transmitted to the Raspberry Pi Pico microcontroller for computational and decision-making processes, with the ultimate goal of achieving precise control over the vehicle's driving direction.
     <br></br>
-  __產品規格：__
+
+    __產品規格：__
     - 測量範圍： 2 公分至 400 公分，可偵測 2 公分至 4 公尺內的物體。
     - 測量精度： 約 ±3 毫米，誤差範圍大約為 ±3 毫米。
     - 工作電壓： 5V，採用直流供電。
     - 超音波頻率： 40kHz，透過發射 40kHz 的超音波訊號來進行距離測量。
     - 傳輸介面： 包含 Trig 與 Echo 腳位，Trig 負責發射超音波訊號，Echo 負責接收反射回來的訊號並計算距離。
+
+    __競賽中之應用：__
+    - 本本系統的核心功能在於實時獲取兩組 HC-SR04 超音波距離感測器所量測之數據。隨後，這些距離數據將傳輸至 Raspberry Pi Pico 微控制器進行運算與決策處理，其最終目的為實現對車輛行駛方向的精確控制。
+
     <br></br>
     __Purchase URL:<a href="https://robotkingdom.com.tw/product/hc-sr04p-ultrasonic-ranger/" target="_blank">HC-SR04</a>__
     </td>
@@ -408,18 +414,26 @@
       </tr>
     </table>
 
-   - ### TCRT5000 Infrared Sensor
+  - #### TCRT5000 Infrared Sensor
    <div align=center>
     <table>
       <tr>
-        <td>
-__產品規格__
-  - 測量範圍：0 ~ 1.5cm
-  - 測量精度：±0.05cm ~ ±0.3cm
-  - 工作電壓：3.3V ~ 5V
-  - 紅外波長：940 ~ 950(奈米)
-  - 紅外光波頻率：3.16x10 
-__Purchase URL:<a href="https://www.icshop.com.tw/products/368030501146" target="_blank">TCRT5000</a>__
+      <td>
+   
+      __Specifications:__
+
+
+      __Uses in Competition：__  
+
+
+    <br></br>
+  
+      __產品規格__
+
+      - 測量範圍：0 ~ 1.5cm
+      - 操作電壓：3.3V ~ 5V
+  
+    __Purchase URL:<a href="https://www.icshop.com.tw/products/368030501146" target="_blank">TCRT5000</a>__
         </td>
         <td>
           <img src="./img/TCRT5000.png" width=250 />
