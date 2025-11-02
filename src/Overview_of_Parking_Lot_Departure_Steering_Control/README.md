@@ -73,13 +73,8 @@
     <div align=center>
     <table>
     <tr>
-<<<<<<< HEAD
     <th>Counterclockwise_green(逆時針方向，綠色號誌)</th>
-    <th>Counterclockwise_red(逆時針紅色)</th>
-=======
-    <th>Counterclockwise_green(逆時針綠色)</th>
-    <th>Counter-clockwise_green_route(逆時針綠色路線)</th>
->>>>>>> b214266c72c4881eb9f757ae04c5f64fa21ce55e
+    <th>Counterclockwise_red(逆時針方向，紅色號誌)</th>
     </tr><tr>
     <td align=center><img src="./img/Counterclockwise_green.png" width=400 /></td>
     <td align=center><img src="./img/Counter-clockwise green route.png" width=400 /></td>
