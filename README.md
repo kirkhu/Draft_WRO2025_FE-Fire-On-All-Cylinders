@@ -46,7 +46,7 @@
       - [3-4-1 Image Recognition Processing(影像辨識處理) **已改動](src/Image_Recognition_Processing/README.md)
       - [3-4-2 Overview_of_Parking_Lot_Departure_Steering_Control(停車場出發轉向控制)](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
       - [3-4-3 Steering Control(轉向控制) ](src/Steering_Control/README.md) 
-      - [3-4-4 Automatically record the LAB values of the field (自動記錄田地的LAB值)](src/Automatically_record_LAB/README.md)
+      - [3-4-4 Automatically record the LAB values of the field (自動保存記錄場地的 LAB 值)](src/Automatically_record_LAB/README.md)
     - __3-5 Programming - Vehicle’s control program程式設計__
       - [3-5-1 Open Challenge Code Overview(開放挑戰程式碼概述) ](src/Programming/Open_Challenge/README.md)
       - [3-5-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) ](src/Programming/Obstacle_Challenge/README.md)
@@ -75,7 +75,7 @@
       - [July (七月)](other/work_diary/README.md#20250702--20250721)
       - [August (八月)](other/work_diary/README.md#20250818--20250824)
       - [September (九月)](other/work_diary/README.md#20250901--20250906)
-      - [October (十月)](other/work_diary/README.md#20251007--20251013)
+      - [October (十月)](other/work_diary/README.md#20250928--20251006)
 
 - ### 自動駕駛汽車設計：關鍵升級與迭代
   這款自動駕駛汽車設計建立在從前輩團隊（Shinan-Fire-On-All-Cylinders ）繼承的豐富經驗之上，並融入了我去年參加世界大賽的實踐經驗。
