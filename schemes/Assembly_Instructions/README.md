@@ -403,7 +403,7 @@
     __Purchase URL:<a href="https://robotkingdom.com.tw/product/hc-sr04p-ultrasonic-ranger/" target="_blank">HC-SR04</a>__
     </td>
        <td >
-    <img src="../../schemes/HC-SR04/img/HC-SR04.png" width = "250"  alt="HC-SR04 ultrasonic distance sensor" align=center />    
+    <img src="../../schemes/HC-SR04/img/HC-SR04.png" width = "100%"  alt="HC-SR04 ultrasonic distance sensor" align=center />    
        </td>
       </tr>
     </table>
