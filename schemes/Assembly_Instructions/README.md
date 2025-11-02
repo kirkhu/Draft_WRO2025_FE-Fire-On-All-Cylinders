@@ -163,7 +163,6 @@
       - 整合運算上述感測數據與控制指令，生成精確的致動訊號。
       - 驅動並控制前輪轉向伺服馬達（Steering Servo Motor）及後驅直流馬達（DC Motor），以實現車輛的精準轉向與行駛控制。
 
-    ### 英文:
     
     <br></br>
       __Purchase URL:[Raspberry Pi Pico w](https://piepie.com.tw/product/raspberry-pi-pico-w)__
@@ -470,37 +469,40 @@
     __Purchase URL:<a href="https://robotkingdom.com.tw/product/hc-sr04p-ultrasonic-ranger/" target="_blank">HC-SR04</a>__
     </td>
        <td >
-    <img src="../../schemes/HC-SR04/img/HC-SR04.png" width = "100%"  alt="HC-SR04 ultrasonic distance sensor" align=center />    
+    <img src="../../schemes/HC-SR04/img/HC-SR04.png" width = "800"  alt="HC-SR04 ultrasonic distance sensor" align=center />    
        </td>
       </tr>
     </table>
 
   - #### TCRT5000 Infrared Sensor
-   <div align=center>
+    <div align=center>
     <table>
       <tr>
       <td>
+
+    __Specifications:__
  
-      __Specifications:__
       - Measuring Range: 0 to 1.5 centimeters (cm)
       - Operating Voltage: 3.3 Volts (V) to 5 Volts (V)
-      __Uses in Competition：__  
+      
+     __Uses in Competition：__  
       - The primary function of this system is to accurately measure the distance between the vehicle and the field boundary (or surrounding walls). The acquired data is then transmitted to the Raspberry Pi Pico W for efficient computation and decision-making processing, with the ultimate goal of achieving precise navigation and control over the vehicle's direction of travel.
 
-    <br></br>
-  
-      __產品規格__
+    <br>
+    </br> 
+
+    __產品規格__
 
       - 測量範圍：0 ~ 1.5cm
       - 操作電壓：3.3V ~ 5V
 
-     __競賽中之應用：__
+    __競賽中之應用：__
       - 本系統主要功能為精準量測車輛與場域邊界（或外牆）的距離，並將所獲取的數據傳輸至 Raspberry Pi Pico W 進行高效的運算及決策處理，以達成對車輛行駛路徑的精確導航與控制。
   
-    __Purchase URL:<a href="https://www.icshop.com.tw/products/368030501146" target="_blank">TCRT5000</a>__
+      __Purchase URL:<a href="https://www.icshop.com.tw/products/368030501146" target="_blank">TCRT5000</a>__
         </td>
         <td>
-          <img src="./img/TCRT5000.png" width=250 />
+          <img src="./img/TCRT5000.png" width="800" />
         </td>
       </tr>
     </table>
