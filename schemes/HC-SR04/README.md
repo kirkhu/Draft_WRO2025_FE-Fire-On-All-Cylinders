@@ -47,12 +47,12 @@
     2.  鑑於市售的 **HC-SR04 超聲波距離感測器** 通常會輸出高達 **$5 \text{V}$ 的訊號電壓**，因此在選用或使用此感測器時，我們**必須採取電壓匹配措施**。
     3.  此舉是為了**避免因電壓不符導致的訊號讀取錯誤、操作異常，甚至控制器硬體永久損壞**。
 
-    ### Dual-Sided Ranging and Data Processing
+    #### Dual-Sided Ranging and Data Processing
 
     1.  To ensure precise situational awareness, we installed **HC-SR04 ultrasonic distance sensors** on both the **left side and the right side** of the vehicle, connecting them to the **Raspberry Pi Pico W** sub-controller. The primary role of these sensors is the **real-time detection of the distance between the vehicle and the side walls**.
 
 
-    ### Critical Voltage Compatibility and Protection
+    #### Critical Voltage Compatibility and Protection
 
     1.  However, **strict adherence to voltage specifications is required** during system integration: the GPIO pins on the **Raspberry Pi Pico W controller** can safely read a **maximum signal voltage of 3.3V**.
     2.  Given that commercially available **HC-SR04 ultrasonic distance sensors** typically output a signal voltage of up to **5V**, we **must implement voltage matching solutions** when selecting and utilizing this sensor.
