@@ -59,12 +59,13 @@
       <th> Overhead view of the switch circuit board(電路板頂視圖) </th><th>Bottom view of the switch circuit board(電路板底視圖)</th>
   </tr>
   <tr align=center>
-    <td><img src="./img/circuit_board_fount.png_2.png" width="200" /></td>
+    <td><img src="./img/circuit_board_fount_2.png" width="200" /></td>
     <td><img src="./img/circuit_board_back_2.png" width="200" /></td>
 </table>
 </div>
 
 - ### Overview of Important Parts List-重要零件清單總覽
+  
   - #### NVIDIA® Jetson Orin Nano
     <table border=0 width="100%" >
       <tr>
@@ -85,7 +86,7 @@
     - **Input Voltage**  DC **9V-20V** 
 
   __Uses in Competition:__ 
-    - Responsible for receiving image data from the camera module, performing image recognition via OpenCV, and sending the recognition results to the Raspberry Pi Pico for further processing.
+    - Responsible for receiving image data from the camera module, performing image recognition via OpenCV, and sending the recognition results to the Raspberry Pi Pico W for further processing.
     <br></br>
 
    __產品規格：__
@@ -103,7 +104,7 @@
     - **輸入電壓：** 9V-20V
 
   __競賽中之應用：__
-  - 本系統負責接收來自攝影機模組的原始影像資料，隨後利用 OpenCV 函式庫執行影像辨識與運算。同步地，整合 BNO055 慣性量測單元 (IMU) 所採集的方向數據，進行數據融合與姿態運算。最終，將處理後的控制指令傳輸至 Raspberry Pi Pico，以驅動其進行後續的決策與執行。
+  - 本系統負責接收來自攝影機模組的原始影像資料，隨後利用 OpenCV 函式庫執行影像辨識與運算。同步地，整合 BNO055 慣性量測單元 (IMU) 所採集的方向數據，進行數據融合與姿態運算。最終，將處理後的控制指令傳輸至 Raspberry Pi Pico W，以驅動其進行後續的決策與執行。
  
     <br></br>
     __Purchase URL:<a href="https://developer.download.nvidia.com/assets/embedded/secure/jetson/orin_nano/docs/Jetson-Orin-Nano-DevKit-Carrier-Board-Specification_SP-11324-001_v1.3.pdf?__token__=exp=1762055025~hmac=44deefcad3991bd2cb50e865d48d7e757ec2b7de324168816ccc7a624fe85ce0&t=eyJscyI6ImdzZW8iLCJsc2QiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyJ9" target="_blank">NVIDIA® Jetson Orin Nano</a>__
@@ -114,7 +115,64 @@
     </tr>
     </table>
 
-  - #### MG513-P30 Rear-Drive DC Motor-MG513-P30 後驅直流馬達
+  - #### Raspberry Pi Pico w
+    <table border=0 width="100%" >
+      <tr>
+      <td> 
+
+  __Specifications:__  
+
+  * **Processor (CPU):** Raspberry Pi RP2040 chip (dual-core ARM Cortex-M0+)
+  * **Clock Speed:** Up to 133 MHz
+  * **Memory (SRAM):** 264 KB
+  * **Flash Storage:** 2 MB external QSPI Flash
+  * **Wireless Connectivity:** 2.4GHz Wi-Fi (802.11 b/g/n) – powered by Infineon CYW43439 chip
+  * **Bluetooth:** Not supported (the CYW43439 includes Bluetooth hardware, but it is not enabled on the Pico W)
+  * **GPIO Pins:** 26 usable GPIO pins (3.3V logic)
+  * **ADC Analog Inputs:** 3 channels (12-bit resolution)
+  * **PWM Output:** Multiple channels available
+  * **Communication Interfaces:** I²C, SPI, UART, USB 1.1 (Device/Host)
+  * **Power Supply:** 1.8–5.5V (via USB or external power input)
+
+  __Uses in Competition：__
+  - This Low-Level Controller (LLC) is responsible for data acquisition, integration, and control execution. Its functions include:
+    - Real-time acquisition of environmental distance data from all ultrasonic distance sensors and the TCRT5000 Infrared Sensor.
+    - Receiving decisional control commands transmitted from the High-Level Controller (HLC), the NVIDIA® Jetson Orin Nano.
+    - Integrating and computing the acquired sensor data and control commands to generate precise actuation signals.
+    - Driving and controlling the front-wheel steering servo motor and the rear-drive DC motor to achieve precise vehicle steering and locomotion control.
+
+    <br></br>
+
+    __產品規格：__
+    - 處理器 (CPU)：	Raspberry Pi RP2040 晶片（雙核心 ARM Cortex-M0+）
+    - 主頻：	最高 133 MHz
+    - 記憶體 (SRAM)：	264 KB
+    - 快閃記憶體 (Flash)：	2 MB 外掛 QSPI Flash
+    - 無線連線：	2.4GHz Wi-Fi (802.11 b/g/n) – 透過 Infineon CYW43439 晶片
+    - 藍牙：	不支援（CYW43439 具備藍牙，但 Pico W 暫未開放）
+    - GPIO 腳位：	26 個可用 GPIO（3.3V 邏輯）
+    - ADC 類比輸入：	3 組 (12-bit)
+    - PWM 輸出：	多通道可用
+    - 通訊介面：	I²C、SPI、UART、USB 1.1（Device/Host）
+    - 電源供應：	1.8–5.5V（可由 USB 或外部電源供應）
+
+    __競賽中之應用：__
+    - 作為下位控制器（Low-Level Controller） 專責資料收集、整合與執行控制任務。它負責：
+      - 即時採集所有超音波距離感測器與 TCRT5000 紅外線感測器所提供的環境距離數據。
+      - 接收來自上位控制器（High-Level Controller） NVIDIA® Jetson Orin Nano 傳送的決策控制指令。
+      - 整合運算上述感測數據與控制指令，生成精確的致動訊號。
+      - 驅動並控制前輪轉向伺服馬達（Steering Servo Motor）及後驅直流馬達（DC Motor），以實現車輛的精準轉向與行駛控制。
+
+    
+    <br></br>
+      __Purchase URL:[Raspberry Pi Pico w](https://piepie.com.tw/product/raspberry-pi-pico-w)__
+    </td>
+       <td >
+    <img src="./img/Raspberry_Pi_Pico_W.png" width = "500"  alt="MG513-P30" align=center />   
+      </td>
+      </tr>
+    </table>
+- #### MG513-P30 Rear-Drive DC Motor-MG513-P30 後驅直流馬達
     <table border=0 width="100%" >
       <tr>
       <td> 
@@ -139,13 +197,16 @@
     ### 英文:
     
     <br></br>
-    __Purchase URL:[MG513-P30 336RPM DC reduction motor](https://www.amazon.com/-/zh_TW/MG513-12V-%E6%B8%9B%E9%80%9F%E9%BD%92%E8%BC%AA%E9%A6%AC%E9%81%94%E7%B7%A8%E7%A2%BC%E5%99%A8%E4%BB%A3%E7%A2%BC%E9%80%9F%E5%BA%A6%E6%B8%AC%E9%87%8F-DIY-%E8%87%AA%E5%B9%B3%E8%A1%A1%E6%B1%BD%E8%BB%8A%E5%80%92%E7%BD%AE%E6%93%BA/dp/B0B3LXV4PL)__
+      __Purchase URL:[MG513-P30 336RPM DC reduction motor](https://www.amazon.com/-/zh_TW/MG513-12V-%E6%B8%9B%E9%80%9F%E9%BD%92%E8%BC%AA%E9%A6%AC%E9%81%94%E7%B7%A8%E7%A2%BC%E5%99%A8%E4%BB%A3%E7%A2%BC%E9%80%9F%E5%BA%A6%E6%B8%AC%E9%87%8F-DIY-%E8%87%AA%E5%B9%B3%E8%A1%A1%E6%B1%BD%E8%BB%8A%E5%80%92%E7%BD%AE%E6%93%BA/dp/B0B3LXV4PL)__
     </td>
        <td >
     <img src="./img/Motor1.png" width = "500"  alt="MG513-P30" align=center />   
       </td>
       </tr>
     </table>
+
+
+
 
   - #### MG90S Front Steering Mechanism by Servo Motor -MG90S 前輪轉向伺服馬達機構
       <table border=0 width="100%" >
@@ -160,7 +221,7 @@
     - Fastest Rotation Speed: 0.11 seconds (at 4.8V)  
     - Operating Voltage: 4.8V - 7.2V  
 
-    __Uses in Competition：__
+  __Uses in Competition：__
     - Responsible for receiving control values from the Raspberry Pi Pico to adjust the front wheel steering angle, enabling precise steering during driving.
     <br></br>
 
@@ -391,38 +452,57 @@
     - Transmission Interface: Includes Trig and Echo pins, where Trig sends out the ultrasonic signal and Echo receives the reflected signal to calculate the distance.
 
     __Uses in Competition：__  
-    - Primarily responsible for collecting distance data from HC-SR04 ultrasonic distance sensors in three directions and providing it to the Raspberry Pi Pico controller for calculations to control the vehicle's direction.
+    - The core function of this system is to acquire real-time measurement data from two sets of HC-SR04 ultrasonic distance sensors. Subsequently, this distance data is transmitted to the Raspberry Pi Pico W microcontroller for computational and decision-making processes, with the ultimate goal of achieving precise control over the vehicle's driving direction.
     <br></br>
-  __產品規格：__
+
+    __產品規格：__
     - 測量範圍： 2 公分至 400 公分，可偵測 2 公分至 4 公尺內的物體。
     - 測量精度： 約 ±3 毫米，誤差範圍大約為 ±3 毫米。
     - 工作電壓： 5V，採用直流供電。
     - 超音波頻率： 40kHz，透過發射 40kHz 的超音波訊號來進行距離測量。
     - 傳輸介面： 包含 Trig 與 Echo 腳位，Trig 負責發射超音波訊號，Echo 負責接收反射回來的訊號並計算距離。
+
+    __競賽中之應用：__
+    - 本本系統的核心功能在於實時獲取兩組 HC-SR04 超音波距離感測器所量測之數據。隨後，這些距離數據將傳輸至 Raspberry Pi Pico W 微控制器進行運算與決策處理，其最終目的為實現對車輛行駛方向的精確控制。
+
     <br></br>
     __Purchase URL:<a href="https://robotkingdom.com.tw/product/hc-sr04p-ultrasonic-ranger/" target="_blank">HC-SR04</a>__
     </td>
        <td >
-    <img src="../../schemes/HC-SR04/img/HC-SR04.png" width = "100%"  alt="HC-SR04 ultrasonic distance sensor" align=center />    
+    <img src="../../schemes/HC-SR04/img/HC-SR04.png" width = "800"  alt="HC-SR04 ultrasonic distance sensor" align=center />    
        </td>
       </tr>
     </table>
 
-   - ### TCRT5000 Infrared Sensor
-   <div align=center>
+  - #### TCRT5000 Infrared Sensor
+    <div align=center>
     <table>
       <tr>
-        <td>
-__產品規格__
-  - 測量範圍：0 ~ 1.5cm
-  - 測量精度：±0.05cm ~ ±0.3cm
-  - 工作電壓：3.3V ~ 5V
-  - 紅外波長：940 ~ 950(奈米)
-  - 紅外光波頻率：3.16x10 
-__Purchase URL:<a href="https://www.icshop.com.tw/products/368030501146" target="_blank">TCRT5000</a>__
+      <td>
+
+    __Specifications:__
+ 
+      - Measuring Range: 0 to 1.5 centimeters (cm)
+      - Operating Voltage: 3.3 Volts (V) to 5 Volts (V)
+      
+     __Uses in Competition：__  
+      - The primary function of this system is to accurately measure the distance between the vehicle and the field boundary (or surrounding walls). The acquired data is then transmitted to the Raspberry Pi Pico W for efficient computation and decision-making processing, with the ultimate goal of achieving precise navigation and control over the vehicle's direction of travel.
+
+    <br>
+    </br> 
+
+    __產品規格__
+
+      - 測量範圍：0 ~ 1.5cm
+      - 操作電壓：3.3V ~ 5V
+
+    __競賽中之應用：__
+      - 本系統主要功能為精準量測車輛與場域邊界（或外牆）的距離，並將所獲取的數據傳輸至 Raspberry Pi Pico W 進行高效的運算及決策處理，以達成對車輛行駛路徑的精確導航與控制。
+  
+      __Purchase URL:<a href="https://www.icshop.com.tw/products/368030501146" target="_blank">TCRT5000</a>__
         </td>
         <td>
-          <img src="./img/TCRT5000.png" width=250 />
+          <img src="./img/TCRT5000.png" width="800" />
         </td>
       </tr>
     </table>

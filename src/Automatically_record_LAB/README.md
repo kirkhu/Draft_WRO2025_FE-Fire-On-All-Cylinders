@@ -1,15 +1,19 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
 ## <div align="center"> Automatically record the LAB values of the field-自動保存記錄場地的 LAB 值</div>
-為了記錄交通標誌積木、停車區邊牆及場地線的顏色，我們撰寫了一個程式，能自動將最終的 LAB 值保存在 Jetson Orin Nano 控制器中。此功能省去手動記錄的麻煩，不僅節省時間，也確保了數據的準確性。
+為精確記錄交通標誌積木（紅、綠）、停車區的洋紅色邊牆，以及轉彎區的藍、橘線，我們開發了一套車輛控制程式，它透過CSI鏡頭讀取到的畫面，將各物件顏色能最終的LAB值儲存在 Jetson Orin Nano 控制器中。這項自動化功能省去了手動記錄的繁瑣步驟，不僅節省了時間，更確保了數據的準確性與一致性。
 
-- #### Image processing-影像處理
-    ### 中文:
-    - 在影像處理時，使用 Color_LAB.py 檔案將交通標誌方塊與場地底圖上的線條轉換到不同的色彩空間是必須的步驟，以有效處理特定任務。
-    - 我們使用 cv2.cvtColor 函數將原始的 RGB 影像轉換成 LAB（明度、紅綠軸、黃藍軸）色彩空間。
-    - 轉換完成後，透過 cv2.inRange 函數並設定六個 LAB 閾值：L_low、L_high、A_low、A_high、B_low、B_high 來定義顏色範圍。cv2.inRange 函數會將 LAB 影像中每個像素與設定的範圍做比較，若像素值落在範圍內則保留，否則過濾掉。此過程可得到濾波後的影像。
-    - 取得濾波後影像後，我們將對應數值儲存進 masks.py 檔案中進行儲存。
-    - 在主程式中我們透過下方代碼呼叫masks檔案中的各物件數值，輸入給相對應的函數進行 LAB 視覺辨識。
+To accurately record the LAB values for the traffic sign blocks (red and green), the magenta side walls of the parking lot, and the blue lines and orange lines in the turning areas, we developed a Vehicle's control program. This program reads the image captured by the CSI camera and stores the final LAB values for the color of each object in the Jetson Orin Nano controller. This automation eliminates the tedious step of manual recording, significantly saving time and ensuring the accuracy and consistency of the data.
+- #### Introduction to LAB Image Processing and Automatic Recording - LAB影像處理與自動記錄
+    1. 色彩空間轉換：我們調用 cv2.cvtColor() 函數，將 CSI 鏡頭擷取到的原始 RGB 影像轉換成 LAB 色彩空間 (L：明度，A：紅綠軸，B：黃藍軸)。
+    2. 顏色範圍定義與濾波：接著，透過 cv2.inRange() 函數並設定六個 LAB 閾值 (L_{low}、L_{high}、A_{low}、A_{high}、B_{low}、B_{high})，精確定義目標顏色範圍。cv2.inRange() 會比較 LAB 影像中的每個像素，僅保留落在設定範圍內的像素，從而得到濾波後的影像。
+    3. 數值儲存與應用：取得濾波後影像後，我們透過圖形介面按鈕，選擇對應顏色物件來儲存其 LAB 數值。這些數值將被保存在 masks.py 檔案中。
+    4. 主程式呼叫：在車輛控制程式 的主程式中，我們透過以下代碼片段，呼叫 masks.py 中的各物件 LAB 數值，並輸入給相對應的視覺辨識函數，實現精確的顏色辨識。
+
+    1. Color Space Conversion: We use the $cv2.cvtColor()$ function to convert the original $RGB$ image captured by the CSI camera into the $LAB$ color space ($L$: Lightness, $A$: Red-Green axis, $B$: Yellow-Blue axis).
+    2. Color Range Definition and Filtering: Subsequently, we precisely define the target color range by utilizing the $cv2.inRange()$ function and setting six $LAB$ thresholds: $L_{low}$, $L_{high}$, $A_{low}$, $A_{high}$, $B_{low}$, and $B_{high}$. The $cv2.inRange()$ function compares every pixel in the $LAB$ image with the defined range, retaining only the pixels within the range and filtering out the rest, thus yielding the filtered image.
+    3. Value Storage and Application: After obtaining the filtered image, we use a graphical interface button to select the corresponding color object and save its $LAB$ values. These values are stored in the masks.py file.
+    4. Main Program Call: In the main Vehicle's control program10, we call the $LAB$ values for each object from the masks.py file using the code snippet below, and input them to the corresponding function for $LAB$ visual recognition.
         ```python
         from masks import rMagenta, rRed, rGreen, rBlue, rOrange, rBlack
         ```
