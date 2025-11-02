@@ -17,7 +17,7 @@
     3. This sensor supports multiple interfaces (e.g., I2C, UART), allowing for easy integration into different embedded systems. The BNO055 gyroscope orientation sensor’s built-in algorithm automatically adjusts to provide stable readings across different environments, making it suitable for applications requiring high stability and accuracy.
 
     <div align="center">
-    <table>
+    <table width="100%">
     <tr>  
     <th>Top View
     </th>
