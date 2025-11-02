@@ -125,9 +125,6 @@
       cd ~/src/88x2bu-20210702/
       sudo ./install-driver.sh
 
-      ```
-
-      ```bash
       sudo apt install dkms git -y && \
       sudo git clone https://github.com/RinCat/RTL88x2BU-Linux-Driver.git /usr/src/rtl88x2bu-git && \
       sudo sed -i 's/PACKAGE_VERSION="@PKGVER@"/PACKAGE_VERSION="git"/' /usr/src/rtl88x2bu-git/dkms.conf && \
@@ -139,7 +136,7 @@
       - Installing OpenCV with CUDA support 安裝支援CUDA加速的opencv套件
 
       ```bash
-      sudo apt install -y cmake
+         sudo apt install -y cmake
       ```
 
       -  Download the OpenCV Main Source Code - 取得 OpenCV 主程式碼 (Main Repository)
