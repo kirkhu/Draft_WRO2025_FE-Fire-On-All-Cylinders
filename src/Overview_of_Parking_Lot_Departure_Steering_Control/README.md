@@ -44,7 +44,7 @@
 ```
 <div align=center>
 
-  |Counterclockwise_direction(逆時針方向)|clockwise(順時針方向)|
+  |Counterclockwise direction(逆時針方向)|Clockwise direction(順時針方向)|
   |:---:|:---:|
   |<div align="center"> <img src="./img/Counterclockwise_direction.png" width="400"  alt="Detecting_nearby_obstacles"></div>|<div align="center"> <img src="./img/clockwise_direction.png" width="400" alt="Detecting_nearby_obstacles"></div>|
 
