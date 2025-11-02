@@ -18,7 +18,14 @@ Based on the characteristics of each control board, we distributed the complex o
    </li>
    </ol>
 
- - ### Jetson Orin Nano library
+ - ### Jetson Orin Nano library-Jetson Orin Nano 庫
+    ### 中文:
+    影像辨識、影像處理與視覺辨識函式等功能已整合到functions.py模組中，可直接導入使用。這些模組的功能如下：
+
+    process_roi()關於和 的解釋可以在開放挑戰代碼概述部分pd_control()找到，因此這裡不再贅述。
+
+    detect_color_final()該系統透過偵測地面標線的顏色來實現路徑或車道追蹤等應用。此外，該系統還能偵測交通標誌的座標，並將這些座標資料記錄下來以便進一步分析和處理。
+    ### 英文:
     The functions for image recognition, front-wheel servo motor proportional steering control, and ground line color recognition have been integrated into the [function.py](../common/function.py) module and can be directly imported for use.
     The functions of these modules are as follows:
     - The explanations for `process_roi()` and `pd_control()` can be found in the **[Open Challenge Code Overview](../Open_Challenge/README.md) section**, so they will not be repeated here.
@@ -155,8 +162,8 @@ Based on the characteristics of each control board, we distributed the complex o
 
    - #### Introduction to running programs on the Jetson Orin Nano controller:
 
-      - ##### [jetson_nano_main_final.py](./jetson_nano_main_final.py)
-        - The `jetson_nano_main.py` program is primarily responsible for controlling the entire task flow, including avoiding walls, steering control, dodging block obstacles, and lap counting to ensure the vehicle completes all tasks as planned.
+      - ##### [jetson_Orin_Nano_final.py](./jetson_orin_nano_final.py)
+        - The `jetson_Orin_Nano_final.py` program is primarily responsible for controlling the entire task flow, including avoiding walls, steering control, dodging block obstacles, and lap counting to ensure the vehicle completes all tasks as planned.
 
         - When the program starts, the vehicle is set to straight-driving mode by default. In this mode, the system converts the boundary range calculated by `process_roi()` into the angle for the servo motor and uses `pd_control()` to perform PD steering control to ensure the vehicle does not collide with the sidewall. As the vehicle approaches a turning area, the system uses `detect_color_final()` to detect blue or orange lines to determine whether to switch to turning mode.
 

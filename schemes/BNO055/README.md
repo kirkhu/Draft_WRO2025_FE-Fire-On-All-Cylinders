@@ -3,12 +3,6 @@
 ## <div align="center">Gyroscope orientation sensor Introduction-陀螺儀方向感測器簡介：</div> 
 
 - ### __Instruction to BNO055 Gyroscope orientation sensor-BNO055 陀螺儀方向感測器使用說明：__
-    <div align="center">
-    <table>
-    <tr>  
-    <td>
-    <ol>
-
     ### 中文:
     1. BNO055 陀螺儀方向感測器是由 Bosch Sensortec 開發的高精度九軸絕對方向感測器。它整合了加速度計、陀螺儀與磁力計，並內建用於感測器融合的微處理器，可提供即時的姿態與方向資訊。其主要特點是具備自動校準功能，能夠直接輸出三維空間中的絕對方向數據。
   
@@ -21,14 +15,21 @@
     2. The BNO055 gyroscope orientation sensor can provide data on azimuth, tilt angle, acceleration, angular velocity, and magnetic field strength, making it ideal for applications that require precise attitude and orientation sensing, such as autonomous driving, robotic navigation, virtual reality (VR) devices, and various industrial control systems. With its built-in sensor fusion technology, the BNO055 gyroscope orientation sensor simplifies system design, relieving developers from handling complex data fusion.
     
     3. This sensor supports multiple interfaces (e.g., I2C, UART), allowing for easy integration into different embedded systems. The BNO055 gyroscope orientation sensor’s built-in algorithm automatically adjusts to provide stable readings across different environments, making it suitable for applications requiring high stability and accuracy.
-    </ol>
-    </td>
-    <td width=300 align="center">
-      <img src="./img/BNO055up.png" alt="BNO055up" width="250" />
-      <img src="./img/BNO055.png" alt="BNO055" width="250" />
 
-    </td>
+    <div align="center">
+    <table width="100%">
+    <tr>  
+    <th>Top View
+    </th>
+    <th>Bottom View
+    </th>
     </tr>
+    
+    <tr>
+    <td align="center"> <img src="./img/BNO055up.png" alt="BNO055 Top View" width="50%"    /> </td>
+    <td align="center"> <img src="./img/BNO055.png" alt="BNO055 Bottom View  " width="50%"  /> </td>
+    </tr>
+    
     </table>
     </div>
 
@@ -38,15 +39,13 @@
     - We installed the BNO055 gyroscope orientation sensor on the vehicle and connected it to the Nvidia Jetson Nano controller, using I2C mode for data transmission. This setup is used to read the vehicle's current orientation, and the obtained orientation data is transmitted to the main program for calculation and analysis, serving as a basis for the vehicle's steering decisions.
  
 
-  - #### Hardware Connection:
-    **Power Supply:**
-    ### 中文:
-    - 將BNO055的VIN腳位接入到Jetson Orin Nano的3.3V腳位(Pin 1)。BNO055的工作電壓範圍是2.4V ~ 3.6V，而Jetson Orin Nano可以提供穩定的3.3V輸出，因此可作為其電源供應。
+   - #### 陀螺儀  連接至 Nvidia Jetson Orin Nano 主控制器的接線步驟：  
+    - BNO055 的 VCC 連接到 Nvidia Jetson Orin Nano的 3.3V（PIN 1）：提供正極電源。
+    - BNO055 的 GND 連接到 Nvidia Jetson Orin Nano的GND(PIN 6)：確保兩者共用接地。
+    - BNO055 的 SDA 連接到 Nvidia Jetson Orin Nano的SDA(PIN 3)。
+    - BNO055 的 SCL 連接到 Nvidia Jetson Orin Nano的SCL(PIN 5)。
+   
 
-    - 將BNO055的GND腳位接至Jetson Orin Nano的GND腳位(Pin 6)。這樣以確保BNO055形成正確的電壓迴路。
-    ### 英文:
-    - Connect VDD (BNO055) to the 3.3V pin on the Raspberry Pi Pico (pin 36). The BNO055 operates within a voltage range of 2.4V to 3.6V, and the Raspberry Pi Pico’s 3.3V pin provides a stable 3.3V voltage, making it suitable for powering the BNO055.
-    - Connect GND (BNO055) to one of the GND pins on the Raspberry Pi Pico(pin 8) to ensure a common ground between the two devices.
      
     **I²C Communication:**
     ### 中文:
@@ -63,9 +62,9 @@
    
 - The following is __Python__ code that implements orientation detection functionality from the __BNO055 gyroscope sensor__ on an __Nvidia Jetson Nano__ using a class-based approach.
 
-    - ####  Python code-Python 程式碼
-
-
+- ####  Python code-Python 程式碼
+```python
+     
 
             import time
             from Adafruit_BNO055 import BNO055
@@ -99,8 +98,10 @@
                         "magnetometer": mag
                     }
 
+```
 
-    - #### Example usage-範例用法
+- #### Example usage-範例用法
+```python
             sensor = BNO055Sensor()
             while True:
                 # Get orientation data
@@ -112,14 +113,14 @@
                 print("Calibration Status:", calibration_status)
 
                 time.sleep(1)
-
-   - #### Explanation-說明    
-        <p>
-        <ol>
-        <li><strong>__init__ method:</strong> Initializes the BNO055 Gyroscope orientation Sensor class, setting the I2C address and verifying the sensor connection. If the connection fails, it raises an error.</li>
-        <li><strong>get_orientation method:</strong> Retrieves orientation data from the sensor (Heading, Roll, and Pitch) and returns them in a dictionary.
+```
+   - #### Explanation-說明       
+    <p>
+    <ol>
+    <li><strong>__init__ method:</strong> Initializes the BNO055 Gyroscope orientation Sensor class, setting the I2C address and verifying the sensor connection. If the connection fails, it raises an error.</li>
+    <li><strong>get_orientation method:</strong> Retrieves orientation data from the sensor (Heading, Roll, and Pitch) and returns them in a dictionary.
         get_calibration_status method: Returns the calibration status for the system, gyroscope, accelerometer, and magnetometer, which is useful for ensuring accurate measurements.</li>
-        </ol></p>
+    </ol></p>
 
       __This code reads and prints the BNO055 Gyroscope orientation sensor's orientation data and calibration status every second.__
 
