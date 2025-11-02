@@ -18,16 +18,16 @@
   #### 1. Mobility Management-行動管理
     * [1-1 Vehicle 2D/3D Models in CAD (CAD 中的車輛 2D/3D 模型) **已改動](models/Vehicle_2D_3D/README.md)
     * [1-2 Vehicle Chassis Design(車輛底盤設計) **已改動](schemes/Vehicle_Chassis_Design/README.md)
-    * [1-3 Motor Selection (馬達選擇)](schemes/Motor/README.md)
+    * [1-3 Motor Selection (馬達選擇)OK](schemes/Motor/README.md)
   #### 2. Power and Sense Management-電源和感測管理
     - __2-1 Vehicle Design__
-      - [2-1-1 BOM Pats List (BOM零件清單) **已改動](schemes/Parts_List/README.md)
+      - [2-1-1 BOM Pats List (BOM零件清單) **已改動OK](schemes/Parts_List/README.md)
       - [2-1-2 Circuit Design (電路設計) **已改動](models/Circuit_Design/README.md)
-      - [2-1-3 Hardware Fool-Proof Design(硬體防呆設計) ](schemes/Fool-Proof-Design/README.md)
+      - [2-1-3 Hardware Fool-Proof Design(硬體防呆設計)OK ](schemes/Fool-Proof-Design/README.md)
       - [2-1-4 Assembly Instructions & Wiring Diagrams(裝配說明和接線圖) ](schemes/Assembly_Instructions/README.md)
     - __2-2 Power Management-電源管理__
-      - [2-2-1 Battery choice for self-driving cars(自動駕駛汽車的電池選擇) ](schemes/Battery/README.md)
-      - [2-2-2 Power Supply System(供電系統) ](schemes/Power_Supply_System/README.md)
+      - [2-2-1 Battery choice for self-driving cars(自動駕駛汽車的電池選擇) OK](schemes/Battery/README.md)
+      - [2-2-2 Power Supply System(供電系統) OK](schemes/Power_Supply_System/README.md)
     - __2-3 Controller Selection-控制器選擇__
       - [2-3-1 Main Controller Comparison(主控制器對比) **已改動](schemes/Main_Controller_Choosing/README.md)
       - [2-3-2 Motor & Sensor Intermediate I/O Controller Comparison(馬達和感測器中間 I/O 控制器比較) **已改動](schemes/Motor_Sensor_Controller_Choosing/README.md)
@@ -35,7 +35,7 @@
       - [2-4-1 Ultrasonic rangefinder(超音波測距儀) **已改動](schemes/HC-SR04/README.md)
       - [2-4-2 Infrared Sensor(紅外線感測器) **已改動](schemes/Infrared-Sensor/README.md)
       - [2-4-3 Gyroscope orientation sensor(陀螺儀方向感應器) **已改動](schemes/BNO055/README.md)
-      - [2-4-4 Camera Selection(相機選擇) ](schemes/Camera/README.md)
+      - [2-4-4 Camera Selection(相機選擇) OK](schemes/Camera/README.md)
 
 - ### ${{\color{red} Software Overview }} $ 
   #### 3. Obstacle Management-障礙管理
@@ -53,18 +53,18 @@
       - [3-5-3 Distinctive Pseudo Code(獨特的偽代碼) ](src/Distinctive_Pseudo_Code/README.md)
       - [3-5-4 Parking Instruction(停車指南) ](src/parking/README.md)
     - __3-6 Remote Connection-遠端連線__
-      - [3-6-1 NoMachine Introduction(NoMachine簡介) ](other/NoMachine/README.md)
+      - [3-6-1 NoMachine Introduction(NoMachine簡介) OK](other/NoMachine/README.md)
 
 - ### ${{\color{red} Other}} $
   #### 4. Pictures – Team and Vehicle-圖片 – 車隊和車輛
-    - [4-1 Team Members Introduction (團隊成員介紹)](t-photos/README.md)
-    - [4-2 Vehicle Photos ](v-photos/README.md)  
+    - [4-1 Team Members Introduction (團隊成員介紹)OK](t-photos/README.md)
+    - [4-2 Vehicle Photos OK](v-photos/README.md)  
   #### 5. Performance Videos - Challenge rounds 表演影片
-    - [5-1 Open Challenge rounds(公開挑戰) ](video/Open_Challenge/video.md)
-    - [5-2 Obstacle Challenge rounds (障礙挑戰)](video/Obstacle_Challenge/video.md)
+    - [5-1 Open Challenge rounds(公開挑戰) OK](video/Open_Challenge/video.md)
+    - [5-2 Obstacle Challenge rounds (障礙挑戰)OK](video/Obstacle_Challenge/video.md)
   #### 6. GitHub Utilization-GitHub 使用率
-    - [6-1 GitHub Editing Tools Introduction(VScode Edit/GIT) (GitHub 編輯VScode 編輯/GIT)](src/GitHub_Edit/README.md)
-    - [6-2 GitHub Web Editor Supported Markup Languages(GitHub 網頁編輯支援的標記語言) ](src/GitHub_Languages/README.md)  
+    - [6-1 GitHub Editing Tools Introduction(VScode Edit/GIT) (GitHub 編輯VScode 編輯/GIT)OK](src/GitHub_Edit/README.md)
+    - [6-2 GitHub Web Editor Supported Markup Languages(GitHub 網頁編輯支援的標記語言)OK ](src/GitHub_Languages/README.md)  
   #### 7. Engineering Factor -工程因素 
     - [7-1 Work Diary(工作日記) **已改動](other/work_diary/README.md)
       - [February (二月)](other/work_diary/README.md#20250228--20250330)
