@@ -24,7 +24,7 @@
       - [2-1-1 BOM Pats List (BOM零件清單) **已改動OK](schemes/Parts_List/README.md)
       - [2-1-2 Circuit Design (電路設計) **已改動](models/Circuit_Design/README.md)
       - [2-1-3 Hardware Fool-Proof Design(硬體防呆設計)OK ](schemes/Fool-Proof-Design/README.md)
-      - [2-1-4 Assembly Instructions & Wiring Diagrams(裝配說明和接線圖) ](schemes/Assembly_Instructions/README.md)
+      - [2-1-4 Assembly Instructions & Wiring Diagrams(裝配說明和接線圖) OK](schemes/Assembly_Instructions/README.md)
     - __2-2 Power Management-電源管理__
       - [2-2-1 Battery choice for self-driving cars(自動駕駛汽車的電池選擇) OK](schemes/Battery/README.md)
       - [2-2-2 Power Supply System(供電系統) OK](schemes/Power_Supply_System/README.md)
@@ -46,7 +46,7 @@
       - [3-4-1 Image Recognition Processing(影像辨識處理) **已改動](src/Image_Recognition_Processing/README.md)
       - [3-4-2 Overview_of_Parking_Lot_Departure_Steering_Control(停車場出發轉向控制)](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
       - [3-4-3 Steering Control(轉向控制) ](src/Steering_Control/README.md) 
-      - [3-4-4 Automatically record the LAB values of the field (自動保存記錄場地的 LAB 值)](src/Automatically_record_LAB/README.md)
+      - [3-4-4 Automatic storage and recording of game field object LAB values(場地物件LAB值的自動化儲存記錄) **已改動](src/Automatically_record_LAB/README.md)
     - __3-5 Programming - Vehicle’s control program程式設計__
       - [3-5-1 Open Challenge Code Overview(開放挑戰程式碼概述) ](src/Programming/Open_Challenge/README.md)
       - [3-5-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) ](src/Programming/Obstacle_Challenge/README.md)
