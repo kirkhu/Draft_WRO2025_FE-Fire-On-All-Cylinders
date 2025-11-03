@@ -72,7 +72,11 @@
 
 - 儘管 WebSockets 屬於網路應用層協定，但其雙向即時通訊模式與高穩定性，完美契合了 UART 協定在嵌入式系統中對穩定雙向資料交換的核心需求。因此，我們決定採用 WebSockets 作為解決 UART 固有缺陷的高效替代方案。
 
-- 在本次競賽的自駕車架構中，我們成功部署 WebSockets 協定，實現了 Jetson Orin Nano (作為主控端) 與 Raspberry Pi Pico W (作為下位控制器) 之間的高效資訊交換。這包括了精準的底盤控制參數傳輸，以及即時的感測器資料回傳。藉由此穩定且低延遲的通訊架構，我們顯著提升了車輛的反應速度與整體控制精準度。」
+- 在本次競賽的自駕車架構中，我們成功部署 WebSockets 協定，實現了 Jetson Orin Nano (作為主控端) 與 Raspberry Pi Pico W (作為下位控制器) 之間的高效資訊交換。這包括了精準的底盤控制參數傳輸，以及即時的感測器資料回傳。藉由此穩定且低延遲的通訊架構，我們顯著提升了車輛的反應速度與整體控制精準度。
+
+- **「為了確保通訊通道的專屬性與穩定性，我們決定將**上位控制器 Jetson Orin Nano** 系統配置為 **無線基地台 (Access Point, AP)** 模式。藉由建立此一獨立的區域網路環境，我們得以讓**下位控制器 Raspberry Pi Pico W** 作為用戶端 (Station Mode) 穩定連入，並在其上建立基於 WebSockets 的高效能傳輸通道。此部署策略能有效隔離外部網路干擾，確保自駕車系統內部通訊的**專屬性與低延遲運行**。
+
+
 
 -Based on the preceding analysis, we have confirmed that the WebSockets protocol represents a persistent-connection, bidirectional, real-time communication technology. Unlike the request-response paradigm of the traditional HTTP protocol, WebSockets enable the client and server to establish an always-open, dedicated data channel. Both parties can actively push messages at any time, significantly eliminating transmission latency caused by repetitive connection establishment. Its inherent characteristics of high speed and low latency make it an ideal choice for systems requiring rapid response, such as real-time IoT device monitoring and robotic control applications.
 
@@ -80,7 +84,9 @@
 
 - Although WebSockets operates at the network application layer, its bidirectional real-time communication model and high stability perfectly align with the core requirements for stable, two-way data exchange traditionally fulfilled by the UART protocol in embedded systems. Consequently, we have decided to adopt WebSockets as the high-efficiency alternative to resolve the inherent limitations of UART.
 
-- In the Self-Driving Cars architecture for this competition, we successfully deployed the WebSockets protocol to achieve efficient information exchange between the Jetson Orin Nano (acting as the main controller) and the Raspberry Pi Pico W (serving as the subordinate controller). This includes the transmission of precise chassis control parameters and the real-time return of sensor data. Through this stable and low-latency communication framework, we have significantly enhanced the vehicle's response speed and overall control accuracy."
+- In the Self-Driving Cars architecture for this competition, we successfully deployed the WebSockets protocol to achieve efficient information exchange between the Jetson Orin Nano (acting as the main controller) and the Raspberry Pi Pico W (serving as the subordinate controller). This includes the transmission of precise chassis control parameters and the real-time return of sensor data. Through this stable and low-latency communication framework, we have significantly enhanced the vehicle's response speed and overall control accuracy.
+
+- To ensure the exclusivity and stability of the communication channel, we have decided to configure the **main controller, the Jetson Orin Nano** system, to operate in **Access Point (AP) Mode**. By establishing this independent local area network environment, we enable the **subordinate controller, the Raspberry Pi Pico W**, to reliably connect as a client (Station Mode), thereby establishing the high-performance WebSockets transmission channel upon it. This deployment strategy effectively isolates external network interference, ensuring the **exclusivity and low-latency operation** of the autonomous vehicle system's internal communication.
 
 
 
