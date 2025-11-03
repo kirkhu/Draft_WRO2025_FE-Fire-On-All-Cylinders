@@ -66,10 +66,10 @@
     <th><div align=center>Vehicle Mid-Deck(車輛中層板)</th>
     <th><div align=center>Vehicle Top Deck(車輛頂層板)</th>
     </tr><tr>
-    <td align="center" width="25%"><img src="./Vehicle_Chassis_Sizse/img/Vehicle_cad.png" width="300" alt="Vehicle_cad"></td> 
-    <td align="center" width="25%"><img src="./Vehicle_Chassis_Sizse/img/vehicle_Underfloor.png" height="150"  alt="vehicle Underfloor"></td> 
-    <td align="center" width="25%"><img src="./Vehicle_Chassis_Sizse/img/Vehicle_Mid_deck.png" height="150" alt="Vehicle_Mid_deck"></td> 
-    <td align="center" width="25%"><img src="./Vehicle_Chassis_Sizse/img/Vehicle_Top_Deck.png" height="150" alt="Vehicle_Top_Deck"></td> 
+    <td align="center" width="25%"><img src="./Vehicle_Chassis_Sizse/img/Vehicle_cad.png" height="300"  alt="Vehicle_cad"></td> 
+    <td align="center" width="25%"><img src="./Vehicle_Chassis_Sizse/img/vehicle_Underfloor.png" height="300"  alt="vehicle Underfloor"></td> 
+    <td align="center" width="25%"><img src="./Vehicle_Chassis_Sizse/img/Vehicle_Mid_deck.png" height="300" alt="Vehicle_Mid_deck"></td> 
+    <td align="center" width="25%"><img src="./Vehicle_Chassis_Sizse/img/Vehicle_Top_Deck.png" height="300" alt="Vehicle_Top_Deck"></td> 
     </tr>
     </table>
     </div> 
@@ -80,7 +80,7 @@
     <th><div align=center>3D Vehicle Chassis Models (車輛底盤 3D 模型)</th>
     </tr><tr>
     <td width="50%"><div align=center><img src="./Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png" height=300 ></td> 
-    <td width="50%"><img src="./Vehicle_Chassis_CAD_File/img/onshape_3D_model_CAD.png" width="100%"  ></td> 
+    <td width="50%"><img src="./Vehicle_Chassis_CAD_File/img/onshape_3D_model_CAD.png"   ></td> 
     </tr>
     </table>
     </div> 
