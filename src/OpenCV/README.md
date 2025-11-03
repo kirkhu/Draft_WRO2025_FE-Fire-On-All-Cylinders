@@ -3,11 +3,18 @@
 ## <div align="center">OpenCV Introduction－OpenCV介紹</div> 
 
 ### 中文:
-- OpenCV（開源電腦視覺庫）是一個用於電腦視覺和機器學習的開源軟體庫。它包含 2,500 多種最佳化演算法，涵蓋影像處理、物件偵測、影像辨識、人臉辨識、運動追蹤和 3D 重建等各種視覺任務。 OpenCV 由於其多功能性和高效性，被廣泛應用於自動駕駛、機器人、醫學影像處理和安全監控等不同領域。
-- OpenCV 支援多種程式語言（例如 C++、Python 和 Java），並且可以在各種作業系統上運行，包括 Windows、Linux、macOS 和 Android。它不僅可以在 CPU 上運行，還支援 GPU 和嵌入式設備的硬體加速，使其適用於 Nvidia Jetson Orin Nano 和 Raspberry Pi 等資源有限的設備，並能有效運作。
-- 因此，可以透過OpenCV辨識技術，辨識賽道上的紅色/綠色柱體、黑色邊界牆、洋紅色停車區，乃至於地面上的藍線與橙線，進而控制車輛行進方向。
+- OpenCV（開源電腦視覺庫）是一個功能強大的**開源軟體庫**，**專注於**電腦視覺與機器學習。它內建了超過 2,500 種**最佳化**演算法，涵蓋了從**基礎**影像處理、物件偵測、影像辨識、人臉辨識到運動追蹤和 3D 重建等**多元視覺任務**。憑藉其卓越的**多功能性與高效能**，OpenCV 在自動駕駛、機器人技術、醫學影像處理和安全監控等**眾多領域**得到**廣泛應用**。
 
-### 英文:
+- OpenCV **具備優異的跨平台能力**，支援 C++、Python 和 Java 等多種程式語言，並可運行於 Windows、Linux、macOS 和 Android 等各種作業系統。它不僅能在中央處理器 (CPU) 上運行，還支援圖形處理器 (GPU) 和嵌入式設備的**硬體加速**，這使其能高效地部署在 **Nvidia Jetson Orin Nano 等**資源受限的設備上。
+
+- **因此，藉助** OpenCV 的視覺辨識技術，**車輛 (Vehicle)** 可以**精準地**識別**賽道 (game field)** 上的**紅柱 (red pillar)** 與**綠柱 (green pillar)**（即交通標誌）、**內牆 (interior walls)**  或**外牆 (exterior walls)**  等黑色邊界牆、**洋紅色 (magenta)** **停車區限制**，以及地面上的**藍線 (blue lines)** 與**橙線 (orange lines)**，從而**有效控制**車輛的**行車方向 (Driving direction)**。
+
+
+- **OpenCV (Open Source Computer Vision Library)** is a **robust open-source software library** **dedicated to** computer vision and machine learning. It incorporates over 2,500 **optimized** algorithms, covering a **wide array of visual tasks**, ranging from **fundamental** image processing, object detection, image recognition, and facial recognition to motion tracking and 3D reconstruction. Due to its exceptional **versatility and high efficiency**, OpenCV is **extensively utilized** in **numerous fields** such as autonomous driving, robotics, medical image processing, and security surveillance.
+
+- OpenCV **boasts excellent cross-platform compatibility**, supporting multiple programming languages like C++, Python, and Java, and runs on various operating systems including Windows, Linux, macOS, and Android. Beyond operation on the Central Processing Unit (CPU), it also supports **hardware acceleration** via the Graphics Processing Unit (GPU) and embedded devices. This capability allows for its efficient deployment on **resource-constrained devices** such as **Nvidia Jetson Orin Nano**.
+
+- **Consequently, by leveraging** OpenCV's visual recognition technology, the **Vehicle** can **accurately** identify the **red pillar** and **green pillar** (i.e., traffic signs) on the **game field**, black boundary walls such as the **interior walls**  or **exterior walls** , the **magenta** **parking lot limitations**, and the **blue lines** and **orange lines** on the ground, thereby **effectively controlling** the vehicle's **Driving direction**.
 
 
 - ### Steps to install the OpenCV application on the Nvidia Jetson Orin Nano:
