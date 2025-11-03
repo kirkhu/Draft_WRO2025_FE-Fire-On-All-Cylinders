@@ -122,11 +122,6 @@
       pip install "websockets>=12<13"
       ```
 
-      - **imx477** 驅動程式安裝
-      ```bash
-      sudo /etc/nvidia/jetson-io/jetson-io.py
-      ```
-
       - **ASUS AC1200** or **TP Link AC1300** Driver Installation 
       ```bash
       mkdir -p ~/src && cd ~/src/
@@ -143,17 +138,13 @@
       ```
       - __OpenCV Installation Instructions, please refer to Section [3-2 OpenCV Introduction](../OpenCV/README.md)-"安裝Open CV 說明，參考3-2 OpenCV Introduction單元"__
 
-      - AP Wi-Fi Autostart Configuration AP Wi-Fi 自啟動設定
+      - AP Wi-Fi Autostart Configuration AP Wi-Fi 自啟動設定 -> 需要下載 __[Set_AP.sh](./code/Set_AP.sh)__
       ```bash
-
-     
       sudo bash ./Set_AP.sh 
       ```
 
-      - Setting up Program Automatic Startup 程式開機自動啟動設定 **程序自啟動**設置
+      - Setting up Program Automatic Startup 程式開機自動啟動設定 **程序自啟動**設置 -> 需要下載 __[Set_Auto_Run.sh](./code/Set_Auto_Run.sh)__
       ```bash
-      curl -fsSL -u "if0_39931049:microhack188" -o "Set_Auto_Run.sh" "ftp://ftpupload.net/htdocs/UserData/WRO2025-Orin/set_auto_start_code.sh"
-
       sudo bash ./Set_Auto_Run.sh
       ```
 
