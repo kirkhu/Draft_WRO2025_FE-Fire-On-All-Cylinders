@@ -140,7 +140,7 @@
 
       - AP Wi-Fi Autostart Configuration AP Wi-Fi 自啟動設定
       ```bash
-      curl -fsSL -u "if0_39931049:microhack188" -o "Set_AP.sh" "ftp://ftpupload.net/htdocs/UserData/WRO2025-Orin/Set_Orin_AP_AutoStart.sh" 
+      
      
       sudo bash ./Set_AP.sh 
       ```
