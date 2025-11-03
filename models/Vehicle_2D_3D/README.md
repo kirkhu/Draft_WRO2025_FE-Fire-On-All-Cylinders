@@ -148,17 +148,26 @@
     <div align="center"><img src="./img/operate_Rachel.jpg" width="400" alt="car_board"></div>
 
  - ###  3D Vehicle Model - Onshape Model Sketch-3D 車輛模型 — Onshape 模型草圖
- - #### 中文:
-     - 我們使用 Onshape 進行設計，並使用光固化（SLA）3D 印表機製作本次競賽所需的車輛底盤 3D 列印零件。  其設計與製作流程如下：
- - #### 英文:   
-     - We used Onshape for the design and employed a Stereolithography (SLA) 3D Printer to manufacture the 3D-printed parts for the vehicle chassis needed for this competition. The design and production process is as follows:
+ - #### Design and Fabrication Process for Stereolithography (SLA) 3D Printed Parts 光固化（SLA）3D 打印零件的設計與製作流程
+  
+     - 我們主要使用 Onshape 進行 3D 模型結構 設計 。接著，我們利用 光固化（SLA）3D 打印機（Stereolithography (SLA) 3D Printer）來製作本次競賽所需的車輛底盤 3D 列印零件，其設計與製作流程如下：
+
+     - We primarily used Onshape for designing the 3D model structure. Subsequently, we utilized a Stereolithography (SLA) 3D Printer to fabricate the 3D printed parts for the vehicle chassis required for this competition.The design and fabrication process is as follows:
+     
     - #### The usage and introduction of Stereolithography (SLA) 3D printers -光固化（SLA）3D 印表機的使用與介紹
-    - #### 中文:
-      - 光固化（SLA）3D 列印技術使用液態感光樹脂作為材料，並透過雷射固化的方式逐層成型。SLA 印表機擅長製作高精度且幾何結構複雜的零件，特別適合用於對細節要求較高的原型製作與模型開發。
-      - 為了解決去年所使用的 SLA 3D 印表機在列印範圍與品質上的限制，我們特別採用了 8K 解析度的 SLA 3D 印表機（Phrozen Sonic Mini 8K）與紫外線固化箱，以提升列印品質與精度。
-      - #### 英文:
-      - Stereolithography (SLA) 3D printing technology uses liquid photosensitive resin as the material and forms objects layer by layer through laser curing.  SLA printers excel in producing high-precision parts with complex geometries, making them especially suitable for prototyping and model making where fine details are required.
-      - To address the limitations in printing range and quality of last year's SLA 3D printer, we specifically adopted an 8K resolution SLA 3D printer (Phrozen Sonic Mini 8K) and an ultraviolet curing box to enhance print quality and precision.
+      * **光固化（SLA）技術特性與設備升級** 
+        - 技術特性： 光固化（SLA）3D 列印技術 使用液態感光樹脂作為材料，並透過雷射（或高解析度光）固化的方式逐層成型。SLA 打印機擅長製作高精度且幾何結構複雜的零件，特別適合用於對細節要求較高的原型製作與模型開發。
+
+        - 設備升級： 為了克服去年所使用的 SLA 3D 打印機在列印範圍與品質上的限制，我們特別採用了配備 10.1 吋 14K 解析度 的大尺寸 SLA 3D 打印機（Phrozen Sonic Mighty Revo 14K），並搭配紫外線固化箱。
+
+        - 效益： 此次設備升級顯著提升了零件的列印品質與精度，確保我們能製造出符合 自駕車 嚴格結構要求的客製化組件。
+      * **Stereolithography (SLA) Technology and Equipment Upgrade**
+        - Technology Features: Stereolithography (SLA) 3D printing technology uses liquid photosensitive resin as the material and cures it layer by layer using a laser (or high-resolution light). SLA printers excel at producing parts with high precision and complex geometric structures, making them particularly suitable for prototyping and model development that require high detail.
+
+        - Equipment Upgrade: To address the limitations in printing area and quality of the SLA 3D printer used last year, we specifically adopted a large-format SLA 3D printer featuring a 10.1-inch 14K resolution (Phrozen Sonic Mighty Revo 14K), complemented by a UV curing station.
+
+        - Benefit: This equipment upgrade significantly enhanced the printing quality and precision of the components, ensuring we can manufacture customized parts that meet the stringent structural requirements of the Self-Driving Car.
+
       - #### 中文:
       - SLA 3D 印表機的使用流程通常包含以下幾個步驟：
 
