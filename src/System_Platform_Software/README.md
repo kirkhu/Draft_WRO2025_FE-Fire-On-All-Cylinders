@@ -122,6 +122,11 @@
       pip install "websockets>=12<13"
       ```
 
+      - **imx477** 驅動程式安裝
+      ```bash
+      sudo /etc/nvidia/jetson-io/jetson-io.py
+      ```
+
       - **ASUS AC1200** or **TP Link AC1300** Driver Installation 
       ```bash
       mkdir -p ~/src && cd ~/src/
@@ -140,7 +145,7 @@
 
       - AP Wi-Fi Autostart Configuration AP Wi-Fi 自啟動設定
       ```bash
-      
+
      
       sudo bash ./Set_AP.sh 
       ```
