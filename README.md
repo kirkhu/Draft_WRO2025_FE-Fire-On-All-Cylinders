@@ -63,6 +63,7 @@
   #### 5. Performance Videos - Challenge rounds 表演影片
     - [5-1 Open Challenge rounds(公開挑戰) OK](video/Open_Challenge/video.md)
     - [5-2 Obstacle Challenge rounds (障礙挑戰)OK](video/Obstacle_Challenge/video.md)
+    - [5-3 Self-Driving Car Design Process Video](video/Design_Process_Video/video.md)
   #### 6. GitHub Utilization-GitHub 使用率
     - [6-1 GitHub Editing Tools Introduction(VScode Edit/GIT) (GitHub 編輯VScode 編輯/GIT)OK](src/GitHub_Edit/README.md)
     - [6-2 GitHub Web Editor Supported Markup Languages(GitHub 網頁編輯支援的標記語言)OK ](src/GitHub_Languages/README.md)  
