@@ -29,39 +29,39 @@
         </tr>
         <tr>
             <th>Communication Type 通訊型態</th>
-            <td>請求 - 回應(半雙工)</td>
-            <td>持續連線(全雙工)</td>
-            <td>點對點(全雙工)</td>
+            <td>Single Request/Response (Half-Duplex)-請求 - 回應(半雙工)</td>
+            <td>Persistent Connection / Bidirectional Real-Time (Full-Duplex)-持續連線(全雙工 )</td>
+            <td>Hardware Point-to-Point Serial Communication (Full-Duplex)-點對點(全雙工)</td>
         </tr>
         <tr>
             <th>Connection Establishment Method - 建立連線</th>
-            <td>每次請求都重新建立</td>
-            <td>只需一次握手，保持連線</td>
-            <td>物理層面直接連線</td>
+            <td>Stateless Connection: Reestablished per Request-每次請求都重新建立</td>
+            <td>Persistent Connection After Single Handshake (Stateful)-只需一次握手，保持連線</td>
+            <td>No Software Handshake: Physical Layer Direct Connection-物理層面直接連線</td>
         </tr>
         <tr>
             <th>Real-time Capability-即時性</th>
-            <td>低(需重複請求)</td>
-            <td>高(伺服器可主動推送)</td>
-            <td>高(即時傳輸)</td>
+            <td>Lower (High Latency: Requires Repeated Connections and Polling)-低(需重複請求)</td>
+            <td>Extremely High (Low Latency: Features Server Push Capability)-高(伺服器可主動推送)</td>
+            <td>Extremely High (Ultra-Low Latency: Real-Time Hardware Signal Transfer)-高(即時傳輸)</td>
         </tr>
         <tr>
             <th>Transmission Medium 傳輸媒介</th>
-            <td>網路(TCP/HTTP)</td>
-            <td>網路(TCP/WebSocket協定)</td>
-            <td>實體線路（UART TX/RX）</td>
+            <td>Application Layer: Dependent on TCP/IP Network Infrastructure-網路(TCP/HTTP)</td>
+            <td>Application Layer: Protocol Upgrade Based on TCP/IP -網路(TCP/WebSocket協定)</td>
+            <td>Hardware Physical Layer: Directly via TX/RX Transmission Lines- 實體線路（UART TX/RX）</td>
         </tr>
         <tr>
             <th>Application Scenarios-適用場景</th>
-            <td>網頁瀏覽、API 請求</td>
-            <td>即時聊天、線上遊戲、IoT</td>
-            <td>裝置間資料傳輸</td>
+            <td>-Static Web Content Retrieval, RESTful API Services, Single Data Requests網頁瀏覽、API 請求</td>
+            <td>Real-Time Dashboards, Interactive Applications, Remote Robotics or IoT Monitoring-即時聊天、線上遊戲、IoT</td>
+            <td>Embedded System Inter-Device Communication, Main/Subordinate Controller Data Exchange-裝置間資料傳輸</td>
         </tr>
         <tr>
-            <th>Latency</th>
-            <td>高</td>
-            <td>低</td>
-            <td>低</td>
+            <th>Transmission Latencyy</th>
+            <td>High (Requires repeated connection establishment, Millisecond-level)</td>
+            <td>Low (Persistent connection, Stable Millisecond/Sub-millisecond level)</td>
+            <td>Ultra-Low (Hardware layer direct transmission, Microsecond level or lower)</td>
         </tr>
     </table>
 </div>
