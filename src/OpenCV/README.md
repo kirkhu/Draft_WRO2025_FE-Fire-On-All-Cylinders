@@ -24,7 +24,7 @@
       sudo apt-get update
       sudo apt-get upgrade
    ```
-   __2.Installing OpenCV with CUDA support 安裝支援CUDA加速的opencv套件__
+   __2.Installing OpenCV with CUDA support 安裝 CMake 通用編譯工具__
    ```bash
       sudo apt install -y cmake
    ```
@@ -93,14 +93,14 @@
          -D BUILD_PERF_TESTS=OFF \
          ...
   ```
-  __9.Build OpenCV - 編譯opencv__
+  __9.Build OpenCV - 編譯支援CUDA加速的opencv套件__
 
   ``` bash 
-            make -j$(nproc)
+      make -j$(nproc)
   ```
   __10.Installing Opencv__
   ```bash 
-            sudo make install
+      sudo make install
   ```
   __11.Confirm successful installation 驗證是否安裝成功__
   ```bash
