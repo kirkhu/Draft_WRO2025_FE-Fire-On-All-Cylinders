@@ -82,7 +82,7 @@
   <th><div align=center>Explanation(說明)</th>
   </tr><tr>
   <td width="30%"><img src="./img/Driver_top.png" ></td>
-  <td width="30%"><img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png" ></td>
+  <td width="30%"><img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description_2.png" ></td>
 
 
   <td>

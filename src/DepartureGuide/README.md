@@ -1,10 +1,17 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
 ## <div align="center">Explanation of the parking method-出發方法說明</div>
-  **The following is the code for "Departure".-以下是出發出發的程式碼。**
+  **The following is the code for "Departure". - 以下是出發出發的程式碼。**
 - ### Parking program-出發計劃
     ### 中文:
-    - 在車輛從停車區啟動之前，我們會利用 CSI 鏡頭擷取的畫面，並結合感興趣區域 (ROI) 來預判行車方向。此判斷邏輯是透過比較 ROI_1 和 ROI_2 的面積：若 ROI_1 面積大於 ROI_2 面積，則判定本次行車方向為順時針方向；反之，若 ROI_2 面積大於 ROI_1 面積，則判定為逆時針方向。一旦行車方向確定，車輛隨即駛出停車區，之後系統會立即偵測車道上是否存在交通標誌積木 (即紅 、綠色交通標誌)，並根據偵測到的顏色執行相應的變道 (Lane Change) 決策。
+    - 車輛啟動時，主控系統 (Jetson Orin Nano) 透過攝影機執行影像識別，首先判斷車輛的預設行駛方向，隨後識別並鎖定目標賽道路線的顏色。
+    - 逆時針方向:若行車方向為逆時針方向，當車輛偵測到綠柱時：車輛向左轉90度，往前進到綠柱內側，車輛會向右轉90度，後退至預定位置。偵測到紅柱時：車輛前進，車輛向左轉90度，往前進到紅柱外側，車輛會後退向右轉90度，後退至預定位置。未偵測到任何柱子時：則預設行駛於車道外側。
+    - 順時針方向:若行車方向為順時針方向，當車輛偵測到綠住時：車輛會向右轉90度，往前進到綠柱外側，車輛會向左轉90度，前進至預定位置。偵測到紅柱車輛時：車輛會向右轉90度，往前進到紅柱內側，車輛會向左轉90度，前進至預定位置。若未偵測到任何柱子時：則預設行駛於車道外側。
+- **Code running on the Raspberry Pi Pico W controller.-在 Raspberry Pi Pico W 控制器上執行的程式碼。**
+    ```
+
+    ```
+    
 
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
