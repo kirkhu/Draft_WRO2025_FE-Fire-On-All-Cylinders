@@ -87,16 +87,34 @@
 
   - #### The Production of Vehicle Chassis Panels Introduction - Using a laser-cutting machine -車輛底盤板件製作簡介 — 使用雷射切割機
   #### 中文:
-    - 隨著車身及
-    - 雷射切割機是一種利用雷射光束來切割材料的設備。雷射光束具有高能量密度，能夠快速且精確地切割各種材料，包括木材、金屬、塑膠、紙張等。
-    - 我們使用學校提供的雷射切割機，製作車輛底盤所需的「車輛底板」、「車輛中層板」與「車輛頂層板」。我們依照自行設計的車輛平面尺寸圖，切割厚度為 3mm 的木板。
-    - 我們選用較輕的木板作為車輛平面結構的材料，以降低車輛的整體重量。
-    - 在設計車輛結構時，我們首先使用 3D 建模軟體 Onshape 來創建設計草圖並生成工程圖（DXF 文件）。這些圖紙隨後被匯入雷射切割機的編輯軟體（LaserWorkV）進行詳細調整。最後，根據設計草圖，我們描繪出切割線並將木板切割成形。
-    #### 英文:
-  
+    - 為了應對新的競賽規則（例如新增的平行停車任務 ），我們不僅將 自駕車（Vehicle）的車身進行了加長 ，同時也優化了轉向結構（Steering Motor ）。因此，車輛底盤 的結構和尺寸也必須進行相應的全面調整，以更好地適應和支撐新系統的需求。
+    - **雷射切割機的應用與製造流程**
+      - 雷射切割機（Laser Cutting Machine）是一種利用高能量密度的雷射光束來精確切割材料的設備，能夠快速處理木材、金屬、塑膠、紙張等多種材料。
+      - 我們利用學校提供的雷射切割機，製作了 自駕車（Self-Driving-Cars）底盤 的主要平面結構件，包括：車輛底板、車輛中層板、與車輛頂層板。
 
- 
-  - #### Vehicle Chassis Panels Dimensions Chart -車輛底盤板件尺寸圖表
+      - **材料選用與設計整合：**
+        - 我們選用厚度為 3mm 的輕質木板 作為車輛平面結構的材料，這有助於有效降低車輛的整體重量。
+        - 在設計流程上，我們首先使用 Onshape 這款 3D 建模軟體來創建設計草圖，並生成工程圖文件（DXF 格式）。
+        - 隨後，這些圖紙會被匯入雷射切割機的編輯軟體（LaserWorkV）中進行細部調整。
+        - 最後，根據精確的設計草圖描繪出切割線，將輕質木板精確切割成所需的車輛底盤組件。
+  #### 英文: 
+    - To accommodate the new competition rules (such as the added parallel parking task ), we not only extended the length of the **Vehicle body** but also optimized the **Steering structure** . Consequently, the structure and dimensions of the vehicle chassis were comprehensively adjusted to better meet the requirements of the new system.
+    
+    - **Application and Manufacturing Process of the Laser Cutting Machine**
+      - A Laser Cutting Machine is an equipment that utilizes a high-energy-density laser beam to precisely cut materials. It is capable of rapidly processing various materials, including wood, metal, plastic, and paper.
+
+      - We utilized the laser cutting machine provided by our school to manufacture the main planar structural components of the Self-Driving Car's chassis, including the Vehicle Bottom Plate, the Vehicle Middle Plate, and the Vehicle Top Plate.
+      - **Material Selection and Design Integration:** 
+        - We selected 3mm thick lightweight wood panels as the material for the vehicle's planar structures, which helps to effectively reduce the overall weight of the vehicle.
+
+        - In the design process, we first used the 3D modeling software Onshape to create the design sketch and generate engineering drawing files (DXF format).
+
+        - Subsequently, these drawings were imported into the laser cutting machine's editing software (LaserWorkV) for detailed adjustments.
+
+        - Finally, the cutting lines were traced according to the precise design sketch, and the lightweight wood panels were accurately cut into the required vehicle chassis components.
+
+
+   - #### Vehicle Chassis Panels Dimensions Chart -車輛底盤板件尺寸圖表
     <div align=center>
     <table>
     <tr>
