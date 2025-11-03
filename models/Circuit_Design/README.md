@@ -127,7 +127,7 @@
       <tr>
          <td align=center ><img src="./img/New_3D_View_Button_and_Led.png" height=250 /></td>
          <td align=center ><img src="./img/New_Schematic_LED_and_button.png" height=250 /></td>
-         <td align=center ><img src="./img/New_PCB_Layouts_Button_and_Led.png" height=250 /></td>
+         <td align=center ><img src="./img/New_PCB_Layouts_Button_and_rLed.png" height=250 /></td>
       </tr>
    </table>
    <table>
