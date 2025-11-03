@@ -117,6 +117,10 @@
          smbus2
 
       ```
+      - **WebSockets** Installation 
+       ```bash
+      pip install "websockets>=12<13"
+      ```
 
       - **ASUS AC1200** or **TP Link AC1300** Driver Installation 
       ```bash
@@ -133,6 +137,11 @@
 
       ```
       - __OpenCV Installation Instructions, please refer to Section [3-2 OpenCV Introduction](../OpenCV/README.md)-"安裝Open CV 說明，參考3-2 OpenCV Introduction單元"__
+
+      - AP Wi-Fi Autostart Configuration AP Wi-Fi 自啟動設定 -> 需要下載 __[Set_AP.sh](./code/Set_AP.sh)__
+      ```bash
+      sudo bash ./Set_AP.sh 
+      ```
 
       - Setting up Program Automatic Startup 程式開機自動啟動設定 **程序自啟動**設置 -> 需要下載 __[Set_Auto_Run.sh](./code/Set_Auto_Run.sh)__
       ```bash

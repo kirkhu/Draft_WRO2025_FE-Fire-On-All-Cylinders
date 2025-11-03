@@ -117,6 +117,10 @@
          smbus2
 
       ```
+      - **WebSockets** Installation 
+       ```bash
+      pip install "websockets>=12<13"
+      ```
 
       - **ASUS AC1200** or **TP Link AC1300** Driver Installation 
       ```bash
@@ -132,10 +136,103 @@
       sudo dkms install -m rtl88x2bu -v git
 
       ```
-      - __OpenCV Installation Instructions, please refer to Section [3-2 OpenCV Introduction](../OpenCV/README.md)-"安裝Open CV 說明，參考3-2 OpenCV Introduction單元"__
 
-      - Setting up Program Automatic Startup 程式開機自動啟動設定 **程序自啟動**設置 -> 需要下載 __[Set_Auto_Run.sh](./code/Set_Auto_Run.sh)__
+      - Installing OpenCV with CUDA support 安裝支援CUDA加速的opencv套件
+
       ```bash
+         sudo apt install -y cmake
+      ```
+
+      -  Download the OpenCV Main Source Code - 取得 OpenCV 主程式碼 (Main Repository)
+      
+      ```bash
+      cd ~
+      git clone https://github.com/opencv/opencv.git
+      cd opencv
+      git checkout 4.7.0  
+      ``` 
+
+      -  Download the Opencv_contrib Module
+      ```bash
+      cd ~
+      git clone https://github.com/opencv/opencv_contrib.git
+      cd opencv_contrib
+      git checkout 4.7.0 
+      ```
+      - Installing Dependencies - 安裝所需依賴庫
+      ```bash
+      sudo apt update
+      sudo apt install -y libgtk-3-dev pkg-config build-essential cmake git \
+         libatlas-base-dev libjpeg-dev libpng-dev libtiff-dev \
+         libavcodec-dev libavformat-dev libswscale-dev \
+         libv4l-dev v4l-utils libxvidcore-dev libx264-dev \
+         libtbb2 libtbb-dev libdc1394-22-dev
+      ```
+      - Create and Clean the Build Folder - 建立並清理Build資料夾
+      ```bash
+      mkdir -p ~/opencv/build
+      cd ~/opencv/build
+      rm -rf *
+      ```
+      -  Configure the Python Path - 設定python路徑
+      ```bash
+      PYTHON_EXEC=$(pyenv which python3)
+      PYTHON_PREFIX=$(pyenv prefix)
+      PYTHON_INCLUDE=$PYTHON_PREFIX/include/python3.11
+      PYTHON_LIB=$PYTHON_PREFIX/lib/libpython3.11.so
+      PYTHON_PACKAGES=$PYTHON_PREFIX/lib/python3.11/site-packages
+      ```
+      - Configure the CMake
+      ```bash
+      cmake \
+         -D CMAKE_BUILD_TYPE=Release \
+         -D CMAKE_INSTALL_PREFIX=/usr/local \
+         -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+         -D WITH_GSTREAMER=ON \
+         -D WITH_CUDA=ON \
+         -D ENABLE_FAST_MATH=ON \
+         -D CUDA_FAST_MATH=ON \
+         -D WITH_CUBLAS=ON \
+         -D WITH_GTK=ON \
+         -D BUILD_opencv_python3=ON \
+         -D PYTHON3_EXECUTABLE=$PYTHON_EXEC \
+         -D PYTHON3_INCLUDE_DIR=$PYTHON_INCLUDE \
+         -D PYTHON3_LIBRARY=$PYTHON_LIB \
+         -D PYTHON3_PACKAGES_PATH=$PYTHON_PACKAGES \
+         -D BUILD_opencv_world=OFF \
+         -D BUILD_EXAMPLES=OFF \
+         -D BUILD_TESTS=OFF \
+         -D BUILD_DOCS=OFF \
+         -D BUILD_PERF_TESTS=OFF \
+         ...
+      ```
+     -  Build OpenCV - 編譯opencv
+
+      ``` bash 
+            make -j$(nproc)
+      ```
+      - Installing Opencv 
+      ```bash 
+            sudo make install
+      ```
+      - Confirm successful installation 驗證是否安裝成功
+      ```bash
+      python3 -c "import cv2; print('OpenCV version:', cv2.__version__)"
+      python3 -c "import cv2; print(cv2.getBuildInformation())" | grep -E "GStreamer|GTK|CUDA"
+
+      ```
+
+      - AP Wi-Fi Autostart Configuration AP Wi-Fi 自啟動設定
+      ```bash
+      curl -fsSL -u "if0_39931049:microhack188" -o "Set_AP.sh" "ftp://ftpupload.net/htdocs/UserData/WRO2025-Orin/Set_Orin_AP_AutoStart.sh" 
+     
+      sudo bash ./Set_AP.sh 
+      ```
+
+      - Setting up Program Automatic Startup 程式開機自動啟動設定 **程序自啟動**設置
+      ```bash
+      curl -fsSL -u "if0_39931049:microhack188" -o "Set_Auto_Run.sh" "ftp://ftpupload.net/htdocs/UserData/WRO2025-Orin/set_auto_start_code.sh"
+
       sudo bash ./Set_Auto_Run.sh
       ```
 
