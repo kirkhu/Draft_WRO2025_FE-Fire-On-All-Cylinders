@@ -20,122 +20,77 @@ Based on the characteristics of each control board, we distributed the complex o
 
  - ### Jetson Orin Nano library-Jetson Orin Nano 庫
     ### 中文:
-    影像辨識、影像處理與視覺辨識函式等功能已整合到functions.py模組中，可直接導入使用。這些模組的功能如下：
+    - 影像辨識、影像處理與視覺辨識函式等功能已整合到functions.py模組中，可直接導入使用。這些模組的功能如下：
 
-    detect_color_final()該系統透過偵測地面標線的顏色來實現路徑或車道追蹤等應用。此外，該系統還能偵測交通標誌的座標，並將這些座標資料記錄下來以便進一步分析和處理。
+
     ### 英文:
-    The functions for image recognition, front-wheel servo motor proportional steering control, and ground line color recognition have been integrated into the [function.py](../common/function.py) module and can be directly imported for use.
+    - The functions for image recognition, front-wheel servo motor proportional steering control, and ground line color recognition have been integrated into the [function.py](../common/function.py) module and can be directly imported for use.
     The functions of these modules are as follows:
-    - The explanations for `process_roi()` and `pd_control()` can be found in the **[Open Challenge Code Overview](../Open_Challenge/README.md) section**, so they will not be repeated here.
-
-    - `detect_color_final()`: The system detects the color of ground lines to enable applications such as path or lane tracking. Additionally, the system detects the coordinates of traffic signs and records this coordinate data for further analysis and processing.
-       ```
-          def detect_color_final(undistorted_frame, last_diffs, start_points, end_points, slope_values, curvature_factors, colors):
-              """Detect specific color regions, return the Y coordinates of color centers, and calculate X differences for red and green curves."""
-              hsv_frame = cv2.cvtColor(undistorted_frame, cv2.COLOR_BGR2HSV)
-              color_y_positions = []
-              pink_positions = [0] * 4
-              center_x, center_y = 0, 0
-              diffs = {'Red': 0, 'Green': 0, 'Pink_Red': 0, 'Pink_Green': 0}
-
-              for color, (lower, upper, bgr) in color_ranges_final.items():
-                  lower = np.array(lower, dtype=np.uint8)
-                  upper = np.array(upper, dtype=np.uint8)
-                  color_mask = cv2.inRange(hsv_frame, lower, upper)
-                  contours, _ = cv2.findContours(color_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-                  if contours:
-                      if color == 'Pink':
-                          sorted_contours = sorted(contours, key=cv2.contourArea, reverse=True)
-                          top_two_contours = [cnt for cnt in sorted_contours[:2] if cv2.contourArea(cnt) > 500]
-                          for i, cnt in enumerate(top_two_contours):
-                              x, y, w, h = cv2.boundingRect(cnt)
-                              center_x = x + w // 2
-                              center_y = y + h // 2
-                              pink_positions[2*i:2*i+2] = [center_x, center_y]
-                              cv2.rectangle(undistorted_frame, (x, y), (x + w,  y + h), bgr, 2)
-                              cv2.circle(undistorted_frame, (center_x, center_y), 5, bgr, -1)
-                          else:
-                              largest_contour = max(contours, key=cv2.contourArea)
-                              if cv2.contourArea(largest_contour) > 600:
-                                  x, y, w, h = cv2.boundingRect(largest_contour)
-                                  center_x = x + w // 2
-                                  center_y = y + h // 2
-                                  color_y_positions.append(center_y)
-                                  cv2.rectangle(undistorted_frame, (x, y), (x + w, y + h), bgr, 2)
-                                  cv2.circle(undistorted_frame, (center_x, center_y), 5, bgr, -1)
-                              else:
-                                  color_y_positions.append(0)
-
-                    red_curve_points, green_curve_points = draw_multiple_curves(undistorted_frame, start_points, end_points, slope_values, curvature_factors, colors)
-            
-                if color == 'Red':
-                    diffs['Red'] = calculate_x_diff(center_x, center_y, red_curve_points, last_diffs['Red'], undistorted_frame, (0, 0, 255))
-                elif color == 'Green':
-                    diffs['Green'] = calculate_x_diff(center_x, center_y, green_curve_points, last_diffs['Green'], undistorted_frame, (0, 255, 0))
-                elif color == 'Pink':
-                    diffs['Pink_Red'] = calculate_x_diff(pink_positions[0], pink_positions[1], red_curve_points, last_diffs['Pink_Red'], undistorted_frame, (255, 192, 203))
-                    diffs['Pink_Green'] = calculate_x_diff(pink_positions[0], pink_positions[1], green_curve_points, last_diffs['Pink_Green'], undistorted_frame, (255, 192, 203))
-            else:
-                color_y_positions.append(0)
-                pink_positions[:] = [0, 0, 0, 0]
-        
-          return color_y_positions, pink_positions, diffs['Red'], diffs['Green'], diffs['Pink_Red'], diffs['Pink_Green']
-        ```
-     - `calculate_x_diff`: Using the coordinates of traffic signs along with **raw_multiple_curves**, calculate the current coordinates and the ideal coordinates to enable `pd_control()` for PD tracking.
-        ```
-            def calculate_x_diff(center_x, center_y, curve_points, last_diff, frame, color):
-                """Calculate the X difference between the center point and curve point."""
-                max_curve_y = max(pt[1] for pt in curve_points)
-                if center_y < max_curve_y:
-                    for curve_x, curve_y in curve_points:
-                        if abs(curve_y - center_y) < 2:
-                            cv2.circle(frame, (curve_x, curve_y), 6, color, -1)
-                            return curve_x - center_x
-                    return last_diff
-                return 0
-       ```
-
-    - `draw_multiple_curves`: Use `detect_color_final()` to obtain and calculate the coordinates of the traffic sign blocks, then use Bézier curves to determine the x-values of the traffic sign blocks at the same y-coordinate. This will allow the calculation of deviation errors.
-       ```
-        def draw_multiple_curves(undistorted_frame, start_points, end_points, slope_values, curvature_factors, colors, thickness=2):
-        """
-        Draw multiple curves with different starting points, endpoints, slopes, and curvatures on the image, and return the coordinate list of the red curve.
-        """
-        red_curve_points = []  # store the coordinates of the points on the red curve.
-        green_curve_points = []  # store the coordinates of the points on the green curve.
 
 
-        for start_point, end_point, slope, curvature, color in zip(start_points, end_points, slope_values, curvature_factors, colors):
-            x1, y1 = start_point
-            x2, y2 = end_point
-
-            # Calculate the position of the intermediate control points to control the curvature.
-            mid_x = (x1 + x2) // 2
-            mid_y = (y1 + y2) // 2
-           control_x = mid_x
-           control_y = int(mid_y - curvature * slope * (x2 - x1))  # Use curvature and slope to adjust the intermediate control points.
-
-           # Draw using Bézier curves.
-           curve_points = []
-           for t in np.linspace(0, 1, 100):
-               xt = (1 - t)**2 * x1 + 2 * (1 - t) * t * control_x + t**2 * x2
-               yt = (1 - t)**2 * y1 + 2 * (1 - t) * t * control_y + t**2 * y2
-               curve_points.append((int(xt), int(yt)))
-
-           #  If it is a red curve, save the point coordinates.
-           if color == (0, 0, 255):  # Red curve.
-               red_curve_points = curve_points
-           if color == (0, 255, 0):  # Green curve.
-               green_curve_points = curve_points
-
-           # Draw the curve.
-           for i in range(len(curve_points) - 1):
-               cv2.line(undistorted_frame, curve_points[i], curve_points[i + 1], color, thickness)
-
-       return red_curve_points,green_curve_points  # Return the coordinates of the points on the red curve.
-
+    - display_roi()此函數的作用是在影像上繪製多個感興趣區域 (ROI) 的邊界框。它接收一個影像 (img)、一個包含多個 ROI 座標的列表 (ROIs)，以及繪製顏色 (color)。它透過繪製四條線段來組成每個 ROI 的矩形邊界，然後返回被標記過的影像。
       ```
+      def display_roi(img, ROIs, color):
+      for ROI in ROIs:
+          img = cv2.line(img, (ROI[0], ROI[1]), (ROI[2], ROI[1]), color, 4)
+          img = cv2.line(img, (ROI[0], ROI[1]), (ROI[0], ROI[3]), color, 4)
+          img = cv2.line(img, (ROI[2], ROI[3]), (ROI[2], ROI[1]), color, 4)
+          i
+          turn img
+      ```
+    - find_contours()此函數用於在影像中偵測特定顏色範圍的輪廓。它首先擷取影像中感興趣區域 (ROI) 的部分，接著將此區域的顏色轉換為二值遮罩 (mask)（使用 LAB 顏色空間及預設的顏色範圍 lab_range 進行過濾）。為了提高輪廓的準確性，它會對遮罩進行腐蝕（erode）和膨脹（dilate）處理，最後從處理後的遮罩中提取出外部輪廓並返回。
+      ```
+      def find_contours(img_lab, lab_range, ROI):
+          x1, y1, x2, y2 = ROI
+          seg = img_lab[y1:y2, x1:x2]
+          lo = np.array(lab_range[0]); hi = np.array(lab_range[1])
+          mask = cv2.inRange(seg, lo, hi)
+          k = np.ones((5,5), np.uint8)
+          mask = cv2.erode(mask, k, iterations=1)
+          mask = cv2.dilate(mask, k, iterations=1)
+          contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
+          return contours
+      ```
+    - max_contour()此函數用於從一個輪廓列表（contours）中，尋找面積最大的有效輪廓。它會過濾掉面積小於 150 的輪廓。對於合格的輪廓，該函數會計算其面積和相對於原始影像的中心底部座標（maxX, maxY），最終返回最大面積及其對應的座標及輪廓物件本身，作為循跡或目標識別的依據。
+      ```
+      def max_contour(contours, ROI):
+          maxArea = 0; maxY = 0; maxX = 0; mCnt = 0
+          for cnt in contours:
+              area = cv2.contourArea(cnt)
+              if area > 150:
+                  approx = cv2.approxPolyDP(cnt, 0.01*cv2.arcLength(cnt, True), True)
+                  x,y,w,h = cv2.boundingRect(approx)
+                  x += ROI[0] + w//2
+                  y += ROI[1] + h
+                  if area > maxArea:
+                      maxArea = area; maxY = y; maxX = x; mCnt = cnt
+          return [maxArea, maxX, maxY, mCnt]
+      ```
+    - 該函數用於在影像的特定區域 (ROI) 中偵測複合輪廓，主要針對黑色和洋紅色。它會根據參數 add 決定如何組合這兩種顏色：
+      - 如果 add=True，則合併（add）黑色和洋紅色的區域來尋找輪廓。
+      - 如果 add=False，則尋找純黑色區域（即黑色區域減去被洋紅色覆蓋的部分）。
+      - 無論哪種情況，它都會對結果遮罩進行運算和運算處理以優化形狀，最終提取並返回外部輪廓，主要用於牆壁或特殊標記的偵測。
+      ```
+      def pOverlap(img_lab, ROI, add=False):
+          x1, y1, x2, y2 = ROI
+          seg = img_lab[y1:y2, x1:x2]
+          from masks import rBlack, rMagenta
+          loB, hiB = np.array(rBlack[0]),   np.array(rBlack[1])
+          loM, hiM = np.array(rMagenta[0]), np.array(rMagenta[1])
+          mB = cv2.inRange(seg, loB, hiB)
+          mM = cv2.inRange(seg, loM, hiM)
+          if add:
+              mask = cv2.add(mB, mM)
+          else:
+              mask = cv2.bitwise_and(mB, cv2.bitwise_not(mM))
+          k_open  = np.ones((3,3), np.uint8)
+          k_close = np.ones((7,7), np.uint8)
+          mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN,  k_open,  iterations=1)
+          mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, k_close, iterations=1)
+          contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
+          return contours
+      ```
+
 
 
  - ### Obstacle_Challenge Code Overview of Jetson Orin Nano-Jetson Orin Nano 障礙挑戰程式碼概述
@@ -155,7 +110,7 @@ Based on the characteristics of each control board, we distributed the complex o
       ### 中文:
         - jetson_Orin_Nano_final.py程序主要負責控制整個任務流程，包括避開牆壁、控制方向、躲避障礙物和圈數計數，以確保車輛按計劃完成所有任務。
 
-        - 程序啟動時，車輛會先進行停車區出發模式。在此模式下，會先將車子開出來再進行壁障模式，避障系統將計算出柱子或是離邊牆範圍轉換為伺服馬達的角度，並利用該角度
+        - 程序啟動時，車輛會先進行停車區出發模式。在此模式下，會先將車子從停車區模式，避障系統將計算出柱子或是離邊牆範圍轉換為伺服馬達的角度，並利用該角度
         進行PD轉向控制，以確保車輛不會與牆壁發生碰撞。當車輛接近轉彎區域時，系統會偵測藍色或橘色線條，以判斷是否切換到轉彎模式。
 
         - 直線循跡模式：系統優先以紅色和綠色柱子(透過 detect_color_final() 計算出的中心偏差)作為主要校正依據；僅在未檢測到色塊時（cPillar.area == 0），才啟用兩側牆壁的面積差作為輔助校正參考。
