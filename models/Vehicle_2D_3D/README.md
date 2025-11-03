@@ -189,7 +189,7 @@
       
           SLA 3D printers are widely used in industries such as manufacturing, healthcare, jewelry, and industrial desgn. Due to their high precision and fine surface treatment, they are particularly suitable for producing parts that require high quality and detailed features.
 
-      - #### Comparison between Stacked 3D Printer and  Stereolithography (SLA) 3D Printer-堆疊式3D列印機與立體光固化（SLA）3D列印機的比較
+      - #### Comparison between Phrozen Sonic Mini 8K and  Stereolithography (SLA) 3D Printer-堆疊式3D列印機與立體光固化（SLA）3D列印機的比較
       
          透過對3D車用零件進行實際列印與操作比較，我們得出以下結論：
 
@@ -232,7 +232,7 @@
        - 高強度樹脂：具有較高的抗拉強度和剛性，適合需要承受力量的零件。
        - 彈性樹脂：具備彈性和柔韌性，適用於需要一定變形能力的零件。
        - 高溫樹脂：耐熱性優異，適合需在高溫環境下運作的零件。
-       -  耐衝擊樹脂：具有良好的抗衝擊性和韌性，適用於容易碰撞的零件。
+       - 耐衝擊樹脂：具有良好的抗衝擊性和韌性，適用於容易碰撞的零件。
        - 每種樹脂在物理特性、表面品質、強度和耐久性方面各有優勢，樹脂的選擇需根據具體應用需求決定。
        - 在比賽過程中，車輛經常碰撞側牆和障礙物，導致如「方向軸支架」和「十字銷」等零件斷裂。因此，我們進行了耐衝擊樹脂和高強度樹脂的實驗測試。測試結果顯示，使用耐衝擊樹脂製作的零件過於柔軟，無法滿足需求。最終，我們選擇使用高強度樹脂製造這些零件，以提升其耐久性和強度。
       - #### 英文:
