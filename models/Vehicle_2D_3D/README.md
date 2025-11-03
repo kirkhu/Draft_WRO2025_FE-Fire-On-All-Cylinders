@@ -122,9 +122,9 @@
     <th><div align=center>Vehicle Mid-Deck(車輛中層板)</th>
     <th><div align=center>Vehicle Top Deck(車輛頂層板)</th>
     </tr><tr>
-    <td><img src="./Vehicle_Chassis_Sizse/img/2D_bottom_size.jpg"  alt=" 2D_bottom"></td> 
-    <td><img src="./Vehicle_Chassis_Sizse/img/2D_mid_size.jpg"  alt=" 2D_mid"></td> 
-    <td><img src="./Vehicle_Chassis_Sizse/img/2D_top_size.jpg"  alt=" 2D_top"></td>
+    <td width="30%"><img src="./Vehicle_Chassis_Sizse/img/2D_bottom_size.jpg"  alt=" 2D_bottom"></td> 
+    <td width="30%"><img src="./Vehicle_Chassis_Sizse/img/2D_mid_size.jpg"  alt=" 2D_mid"></td> 
+    <td width="30%"><img src="./Vehicle_Chassis_Sizse/img/2D_top_size.jpg"  alt=" 2D_top"></td>
     </tr>
     </table>
     </div> 
