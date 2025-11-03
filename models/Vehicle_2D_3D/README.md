@@ -32,16 +32,16 @@
     </table>
  </div> 
 
-- ### Onshape Model Draft -Onshape 模型草圖
-  - #### 3D modeling software  Onshape Introduction -3D 建模軟體  Onshape 介紹
-    #### 中文
-    - 我們使用 Onshape 來設計自駕車的 3D 模型。Onshape 是一款免費且易於使用的網頁版 CAD 軟體。
-    - 在 Onshape 建立模型後，可以輸出 2D 尺寸圖，接著可將其送至雷射切割機進行切割，或轉換後送至 3D 印表機進行列印。
-    - 本次比賽所製作的所有 3D／2D 車輛模型皆使用 OnShape 設計完成。
-    #### 英文
-    - We use Onshape to design 3D models of self-driving cars. Onshape is a free and easy-to-use web-based CAD software.
-    - After creating a model in Onshape, you can output a 2D dimension drawing, which can then be sent to a laser-cutting machine for cutting or converted and sent to a 3D printer for output.
-    - All 3D/2D vehicle models created for this competition were designed in OnShape.
+- ### Onshape 3D Model Structure Sketch -Onshape 模型草圖
+  - #### 3D Modeling Software Onshape Introduction -3D 建模軟體  Onshape 介紹
+    * 我們選擇使用 **Onshape** [cite: 981, 982] 來設計 **自駕車** [cite: 1] 的 **3D 模型結構** ，這是一款免費且易於操作的網頁版 CAD 軟體。
+    * 在 **Onshape** 完成模型建立後，我們能夠輸出所需的 **2D 尺寸圖** 。這些圖檔可直接用於 **激光切割機** [cite: 593]（Laser Cutting Machine）進行切割，或轉換為適當格式後送至 **3D 打印機** （3D Printer）進行零件製造。
+    * 本次競賽中所需的所有 **3D/2D 車輛模型** ，均透過 **Onshape** 平台設計完成。
+
+    * We chose **Onshape** [cite: 981, 982] to design the **3D model structure**  of our **Self-Driving Car**[cite: 1]. It is a free and user-friendly web-based CAD software.
+    * After completing the model creation in **Onshape**, we can output the necessary **2D dimension drawings**. These files can then be sent directly to a **Laser Cutting Machine** [cite: 593] for cutting, or converted and sent to a **3D Printer** for part fabrication.
+    * All **3D/2D vehicle models**  required for this competition were designed entirely using the **Onshape** platform.
+
     - Software Website：[Onshape](https://www.onshape.com/en/) 
     <div align=center>
     <table>
@@ -80,22 +80,20 @@
     <th><div align=center>3D Vehicle Chassis Models (車輛底盤 3D 模型)</th>
     </tr><tr>
     <td width="50%"><div align=center><img src="./Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png" height=300 ></td> 
-    <td width="50%"><img src="./Vehicle_Chassis_CAD_File/img/onshape_3D_model_CAD.png" width="450"  ></td> 
+    <td width="50%"><img src="./Vehicle_Chassis_CAD_File/img/onshape_3D_model_CAD.png" width="100%"  ></td> 
     </tr>
     </table>
     </div> 
 
   - #### The Production of Vehicle Chassis Panels Introduction - Using a laser-cutting machine -車輛底盤板件製作簡介 — 使用雷射切割機
   #### 中文:
+    - 隨著車身及
     - 雷射切割機是一種利用雷射光束來切割材料的設備。雷射光束具有高能量密度，能夠快速且精確地切割各種材料，包括木材、金屬、塑膠、紙張等。
     - 我們使用學校提供的雷射切割機，製作車輛底盤所需的「車輛底板」、「車輛中層板」與「車輛頂層板」。我們依照自行設計的車輛平面尺寸圖，切割厚度為 3mm 的木板。
     - 我們選用較輕的木板作為車輛平面結構的材料，以降低車輛的整體重量。
     - 在設計車輛結構時，我們首先使用 3D 建模軟體 Onshape 來創建設計草圖並生成工程圖（DXF 文件）。這些圖紙隨後被匯入雷射切割機的編輯軟體（LaserWorkV）進行詳細調整。最後，根據設計草圖，我們描繪出切割線並將木板切割成形。
     #### 英文:
-    - A laser-cutting machine is a device that utilizes a laser beam to cut materials. The laser beam has high energy density and can cut a variety of materials, including wood, metal, plastic, paper, and more, quickly and precisely.
-    - We use the laser-Cutting machine provided by the school to produce the 'vehicle underfloor,' 'vehicle mid-deck,' and 'vehicle top deck' required for the vehicle chassis. We cut 3mm thick wooden boards according to the self-designed vehicle flat panel dimensions chart.  
-    - We use lighter-weight wooden boards as the material for vehicle flat panels to reduce the vehicle's weight. 
-    - When designing the vehicle structure, we first used 3D modeling software Onshape to create draft designs and generate engineering drawings (DXF files). These drawings were then imported into the laser cutter's editing software (LaserWorkV) for detailed adjustments. Finally, based on the design drafts, we outlined the lines and cut the wooden boards into shape.
+  
 
  
   - #### Vehicle Chassis Panels Dimensions Chart -車輛底盤板件尺寸圖表
@@ -180,8 +178,8 @@
         <td><img src="./img/SonicMighty14KRevo_1400x1600_1.png" width="300" alt="" ></td>
         </tr><tr align="">
         <td>The required printing time (所需列印時間)</td>
-        <td>Faster</td>
-        <td>Slower</td>
+        <td>Short</td>
+        <td>Long</td>
         </tr><tr>
         <td>printing precision(印刷精度)</td>
         <td>低</td>
