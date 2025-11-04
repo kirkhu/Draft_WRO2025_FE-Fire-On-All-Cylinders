@@ -204,14 +204,6 @@
 <div align="center" >
     <table>
         <tr>
-            <th width=500>Schematic</th>
-            <th width=500>PCB</th>
-        </tr>
-        <tr align=center>
-            <td><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 3.png" height=400 alt="Schematic" /></td>
-            <td><img src="" height=400 alt="PCB" /></td>
-        </tr>
-        <tr>
             <th>Second-Generation Front View</th>
             <th>Second-Generation Back View</th>
         </tr>
@@ -519,14 +511,6 @@ if combined_control_signal < -180:
 - 經修正前兩代的設計問題後，第四代版本已成功通過功能測試。實際運行測試顯示，排針接點與電路佈局無異常，系統可穩定運作。
 <div align="center" >
     <table >
-        <tr>
-            <th>Schematic</th>
-            <th>PCB</th>
-        </tr>
-        <tr align=center>
-            <td><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 4.png" height=400 alt="Schematic" /></td>
-            <td><img src="" height=400 alt="PCB" /></td>
-        </tr>
         <tr align="center">
             <th>Third-Generation Front View</th>
             <th>Third-Generation Back View</th>
