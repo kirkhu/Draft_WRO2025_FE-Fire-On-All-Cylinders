@@ -29,47 +29,32 @@
     - To precisely control the vehicle's optimal turning radius and flexibly adjust the Ackermann ratio, we used Stereolithography (SLA) 3D printers and 3D modeling technology to design the support frame for the Ackermann steering geometry on the vehicle chassis based on specific requirements.
 
 - #### Vehicle Chassis Improvement Record-車輛底盤改進紀錄
-  ### __去年比較全國賽機型__
+
+  ### __去年全國賽與今年全國賽機型比較__
 
   <div align=center>
     <table>
       <tr>
-        <th>2024 Season Competition Self-Driving Car Prototype 2024國際賽機型</th>
-        <th>2025 WRO World Final Competition Prototype 2025 - 2025最終國際賽機型 </th>
-        <th>Explanation(說明)</th>
+        <th width=50%>2024 Season Competition Self-Driving Car Prototype - 2024 年國際賽機型</th>
+        <th width=50%>2025 WRO World Final Competition Prototype - 2025 最終國際賽機型</th>
+      </tr>
+      <tr align=center>
+        <td><img src="./img/Last_years_car.png" width=400 alt="2024 Season Competition Self-Driving Car Prototype" /></td>
+        <td><img src="./img/International_competition_machine.png" width=400 alt="2025 WRO World Final Competition Prototype" /></td>
       </tr>
       <tr>
-        <td><img src="./img/Last_years_car.png" height=230 alt="2024 car" /></td>
-        <td><img src="./img/National_competition_machine.png" height=230 alt="2025 car" /></td>
-        <td>基於去年學長姐們2024年國際賽的機型我們做出一些更動：
+        <td colspan="2">
+          我們機型從去年的原型機到今年國際賽機型總共有已下變更
           <ol>
-            <li>機型過長導致避障容易撞到方塊，我們縮短機型整體長度。</li>
-            <li>重新設計轉向結構，我們將2024年機型採用的鐵絲改為使用3D物件連接。</li>
-          </ol>
+            <li>機型過長容易在避障時移動到方塊，因此我們縮短了機型整體長度。</li>
+            <li>重新設計轉向結構，2024年國際賽機型使用鐵絲來連動兩側轉向節，面積較大。因此我們使用 3D 物件重新設計。</li>
+            <li>在全國賽中我們發現 Jetson Nano 運算效率較不符合我們需求。因此我們將主控制器更換為運算效率更高的 Jetson Orin Nano。</li>
+            <li>自駕車轉向角度不夠，導致一些急轉彎無法通過。因此我們重新設計轉向結構使其有更大的轉向空間。</li>
+            <li>我們發現超音波感測器數據刷新頻率低，較不適合用於前後方物體判斷。因此我們在機型前後安裝 TCRT5000 紅外線感測器。</li>
+          <ol>
         </td>
       </tr>
     </table>
-  </div>
-
-  ### __全國賽比較國際賽機型__
-  <div align="center">
-  <table>
-  <th width="30%"><div align=center>2025全國賽機型</th>
-  <th width="30%"><div align=center>2025國際賽機型</th>
-  <th><div align=center>Explanation(說明)</th>
-  <tr>
-  <td><div align=center><img src="./img/National_competition_machine.png" ></td>
-  <td><div align=center><img src="./img/International_competition_machine.png" ></td>
-  <td>基於全國賽我們發現機型存在一些問題：<br><br>
-   <ol>
-    <li>Jetson Nano的運算效率不足，導致有時會太晚看到障礙物。</li>
-    <li>自駕車轉彎時角度不夠，導致有些急轉彎無法轉過去。</li>
-    <li>在車量前後安裝紅外線感測器用於輔助執行停車程序。</li>
-
-   <ol>
-  </td>
-  </tr>
-  </table>
   </div>
  
   ### __Final Build-最終組裝__
@@ -163,32 +148,32 @@
   - It allows the driven wheels to rotate at different speeds, especially during turns. This is crucial for enhancing the vehicle's agility and maneuverability. The gear differential achieves this function through a series of gear mechanisms, enabling the two drive wheels to rotate adaptively, ensuring the stability and balance of the vehicle, and maintaining good driving conditions regardless of road conditions.
    - #### The LEGO Brick Gear Differential Introduction 
         - In this competition, we use a LEGO brick gear differential to achieve the function of the vehicle driving and turning.
-        - There are two types of LEGO brick gear differentials: LEGO 65414 Differential Gear and LEGO 6573 Differential Gear.
-        - LEGO 65414 Differential Gear: It consists of the 28-tooth gear from LEGO 65413 and five LEGO Gear 12 Tooth Bevel 4565452.
+        - There are two types of LEGO brick gear differentials: LEGO 6573 Differential Gear and LEGO 62821 Differential Gear.
+        - LEGO 62821 Differential Gear: It features a single 28-tooth outer gear combined with four LEGO Gear 12 Tooth Bevel 4565452. The compact enclosed housing design improves durability and torque transmission efficiency. The center structure holds the bevel gears firmly in place, ensuring smooth power distribution to both output axles, making it more efficient and reliable than the older LEGO 6573 Differential Gear.
         - LEGO 6573 Differential Gear: Integrating a 16-tooth gear and a 24-tooth gear, both gears have a 5mm diameter hole in the center for easy placement of a cross axle. There is a small pillar in the center of the differential, allowing us to better secure the right-angle bevel gears and combine three LEGO Gear 12 Tooth Bevel 4565452.
 
           <div align=center>
           <table>
           <tr align=center>
-          <th>LEGO 65414 GearDifferential</th>
+          <th>LEGO 62821 GearDifferential</th>
           <th>LEGO 6573 Gear Differential</th>
           </tr><tr align=center>
-          <td><img src="./img/differential_2.png" width=250></td>
+          <td><img src="./img/lego62821.png" width=250></td>
           <td><img src="./img/differential.png" width=250></td>
           </tr>
           </table>
           </div>
 
     - #### Reason for Selection
-        - We originally used the LEGO 65414 gear differential as a steering system component. However, during testing, we found that the gear differential would occasionally disengage while the vehicle was driving, causing the vehicle to malfunction. As a result, we switched to the LEGO 6573 gear differential, which solved the problem.
+        - We originally used the LEGO 62821 gear differential as a component of the steering system. However, during the process of reducing the chassis size, we encountered the problem that the differential occupied too much space. Therefore, we switched to the LEGO 6573 gear differential, which successfully solved this issue.
 
         <div align="center">
         <table>
         <tr>
-        <th>LEGO 65414 Gear Differential </th>
+        <th>LEGO 62821 Gear Differential </th>
         <th>LEGO 6573 Gear Differential </th>
         </tr><tr align=center>
-        <td><img src="./img/LEGO_differential.jpg" width=250></td>
+        <td><img src="./img/LEGO_differential.png" width=250></td>
         <td><img src="./img/differential-1.png" width=300></td>
         </tr>
         </table>
