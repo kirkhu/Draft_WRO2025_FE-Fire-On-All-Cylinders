@@ -157,11 +157,42 @@
   </div>
 
 
-- ###  Gear Differential-齒輪差速器
-### 中文:
-  - 對於車輛的單一驅動系統來說，齒輪差速器是一個不可或缺的裝置，因為它能有效平衡動力並將動力分配到不同的車輪，使每個驅動車輪能以不同的速度旋轉，尤其是在轉彎時。這對提升車輛的靈活性和操控性能至關重要。
-  ### 英文:
-  - For a vehicle's single drive system, a gear differential is an indispensable device because it effectively balances power and distributes it to different wheels, allowing each driven wheel to rotate at different speeds, especially during turns. This is crucial for improving the vehicle's agility and handling performance.
+- ###  Gear Differential
+
+  - The gear differential is a crucial component of a vehicle's drivetrain, used to balance and distribute power to different wheels.
+  - It allows the driven wheels to rotate at different speeds, especially during turns. This is crucial for enhancing the vehicle's agility and maneuverability. The gear differential achieves this function through a series of gear mechanisms, enabling the two drive wheels to rotate adaptively, ensuring the stability and balance of the vehicle, and maintaining good driving conditions regardless of road conditions.
+   - #### The LEGO Brick Gear Differential Introduction 
+        - In this competition, we use a LEGO brick gear differential to achieve the function of the vehicle driving and turning.
+        - There are two types of LEGO brick gear differentials: LEGO 65414 Differential Gear and LEGO 6573 Differential Gear.
+        - LEGO 65414 Differential Gear: It consists of the 28-tooth gear from LEGO 65413 and five LEGO Gear 12 Tooth Bevel 4565452.
+        - LEGO 6573 Differential Gear: Integrating a 16-tooth gear and a 24-tooth gear, both gears have a 5mm diameter hole in the center for easy placement of a cross axle. There is a small pillar in the center of the differential, allowing us to better secure the right-angle bevel gears and combine three LEGO Gear 12 Tooth Bevel 4565452.
+
+          <div align=center>
+          <table>
+          <tr align=center>
+          <th>LEGO 65414 GearDifferential</th>
+          <th>LEGO 6573 Gear Differential</th>
+          </tr><tr align=center>
+          <td><img src="./img/differential_2.png" width=250></td>
+          <td><img src="./img/differential.png" width=250></td>
+          </tr>
+          </table>
+          </div>
+
+    - #### Reason for Selection
+        - We originally used the LEGO 65414 gear differential as a steering system component. However, during testing, we found that the gear differential would occasionally disengage while the vehicle was driving, causing the vehicle to malfunction. As a result, we switched to the LEGO 6573 gear differential, which solved the problem.
+
+        <div align="center">
+        <table>
+        <tr>
+        <th>LEGO 65414 Gear Differential </th>
+        <th>LEGO 6573 Gear Differential </th>
+        </tr><tr align=center>
+        <td><img src="./img/LEGO_differential.jpg" width=250></td>
+        <td><img src="./img/differential-1.png" width=300></td>
+        </tr>
+        </table>
+        </div>
 
 ### 中文:
 - ### Supplementary information-補充資訊
