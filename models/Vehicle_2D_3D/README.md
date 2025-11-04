@@ -196,7 +196,7 @@
         <table>
         <tr align="center">
         <th rowspan="2">Photo</th>
-        <th> FDM 3D Printe</th>
+        <th> FDM 3D Printer</th>
         <th> SLA 3D Printer(Sonic Mighty Revo 14K)</th>
         </tr><tr align="center">
         <td><img src="./img/Stacked_3D_Printe.png" width="300" alt="Stacked_3D_Printe"></td>
@@ -224,6 +224,7 @@
 
       * **Conclusion: Why SLA is Selected for the Competition Vehicle**
         - 在自動駕駛汽車競賽中，零件的幾何精度和結構細節至關重要。您的團隊選擇SLA 3D列印機（例如Phrozen Sonic Mighty Revo 14K）是因為它能夠有效率地生產高精度、幾何形狀複雜的零件，確保客製化零件滿足車輛嚴格的結構要求，尤其適用於轉向系統等高精度組件。
+        
         - In the Self-Driving Car competition, the geometric precision and structural detail of the parts are crucial. Your team's selection of an SLA 3D Printer (e.g., Phrozen Sonic Mighty Revo 14K) is due to its superior ability to produce high-precision, geometrically complex components, ensuring the custom-made parts meet the stringent structural demands of the vehicle, particularly for high-accuracy assemblies like the steering system.
         
         
