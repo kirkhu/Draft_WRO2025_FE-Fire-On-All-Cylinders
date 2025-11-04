@@ -3,30 +3,30 @@
 ## <div align="center">Vehicle Chassis Design Process-車輛底盤設計過程</div> 
 
 - ### Vehicle Chassis Design-車輛底盤設計
-### 中文:
-  - 這輛自駕車的軟硬體設計靈感來自於我們學長姐隊伍「Shinan-Fire-On-All-Cylinders」去年所打造的車型，並借鑑了去年世界冠軍車型的優點。在此基礎上，我們將主控制器從「Raspberry Pi 4B」升級為「Nvidia Jetson Orin Nano」，提升性能並引入創新設計，使車輛更具競爭力。
-  - 本次比賽所使用的車輛底盤為自主設計與開發。
-  - 車輛底盤採用了Ackermann轉向幾何結構，並針對去年機構的缺點進行改良，使避障及迴轉動作更加順暢。
+    __硬體設計理念與底盤架構優化__
+  1.  **設計傳承與創新：** 本次 **自駕車**（Self-Driving-Cars）的軟硬體設計靈感延續了去年的機型，並**借鑑了去年世界冠軍車型**的優點。在此基礎上，我們將主控制器從 **Nvidia Jetson Nano 升級為 Nvidia Jetson Orin Nano**，此舉不僅顯著提升了整體運算性能，更為引入創新的軟體設計提供了堅實基礎，使車輛具備更強的競爭力。
+  2.  **核心元件自主性：** 本次比賽所使用的**車輛底盤**為完全**自主設計與開發**。
+  3.  **轉向幾何改良：** 底盤結構採用了工程上常見的 **Ackermann 轉向幾何**（Ackermann Steering Geometry）。更重要的是，我們針對**去年機構的缺點進行了改良**，使車輛在執行**避障**及**迴轉動作**時能夠更加平穩順暢。
+
+    __Hardware Design Philosophy and Chassis Optimization__
+  1.  **Design Legacy and Innovation:** The software and hardware design of this **Self-Driving Car** continues the inspiration from last year's model while **drawing upon the strengths of last year's world champion vehicle design**. Building on this foundation, we upgraded the main controller from the **Nvidia Jetson Nano to the Nvidia Jetson Orin Nano**. This move not only significantly enhances the overall computational performance but also provides a robust basis for introducing innovative software designs, making the vehicle more competitive.
+  2.  **Autonomy of Core Components:** The **vehicle chassis** used in this competition was **independently designed and developed** by our team.
+  3.  **Steering Geometry Improvement:** The chassis structure utilizes the common engineering principle of **Ackermann Steering Geometry**. Crucially, we implemented **improvements based on the shortcomings of last year's mechanism**, ensuring the vehicle performs **obstacle avoidance** and **turning maneuvers** with greater stability and smoothness.
+
   - 下表展示了車輛底盤的3D模型與實體成品。
-  ### 英文:
-  - The design inspiration for both the hardware and software of this self-driving car came from last year’s model created by our sister team (Shinan-Fire-On-All-Cylinders) and drew upon the strengths of the world championship-winning model from last year. Based on this, we made improvements by upgrading the main controller from the "Raspberry Pi 4B" to the "Nvidia Jetson Nano" to enhance performance and introduce innovative design elements, making the vehicle more competitive.
-  - The vehicle chassis used in this competition is self-designed and developed.
-  - We applied Ackermann steering geometry to the vehicle chassis and made improvements based on the shortcomings of last year’s mechanism, resulting in smoother obstacle avoidance and U-turns.
-  - The following table shows the 3D models and finished products of the vehicle chassis.
-
-
+  - **The following table shows the 3D models and finished products of the vehicle chassis.** 
     |3D Vehicle Chassis Design(3D 車輛底盤設計)| Vehicle Chassis Top View(車輛底盤俯視圖) | Vehicle Chassis Bottom View(車輛底盤底部視圖)|
     |:----:|:----:|:----:|
-    |<img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png" width="400" alt="vehicle_chassis_design_3D">|<img src="./img/Driver_top.png" width="400" alt="2024Vehicle_Chassis_Design_down">|<img src="./img/Driver_down.png" width="400" alt="down_view">|
+    |<img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png"  alt="vehicle_chassis_design_3D">|<img src="./img/Driver_top.png" width="400" alt="2024Vehicle_Chassis_Design_down">|<img src="./img/Driver_down.png" width="400" alt="down_view">|
 
-  ### 中文:  
-  - 我們可以根據車輛的具體需求自訂零件的尺寸與形狀，並利用立體光刻（SLA）3D列印機與雷射切割機，設計並製造車輛底盤的所有零件，齒輪、樂高62821齒輪差速器及輪胎除外。
-  - 為了降低軸承的旋轉摩擦，我們在車輛支架中整合了軸承，從而提升車輛的速度。
-  - 為了精準控制車輛的最佳轉彎半徑並靈活調整Ackermann比率，我們利用立體光刻（SLA）3D列印機及3D建模技術，依照具體需求設計了裝配Ackermann轉向幾何結構的車輛支架。
-### 英文:英文:
-  - We can customize the size and shape of parts according to the specific needs of the vehicle and use Stereolithography (SLA) 3D printers and laser cutters to design and manufacture all parts of the vehicle chassis, except for the gears, Lego 62821Gear Differential and tires.
-  - To reduce rotational friction of the shafts, we integrated bearings into the vehicle's support frame, thereby increasing the vehicle's speed.
-  - To precisely control the vehicle's optimal turning radius and flexibly adjust the Ackermann ratio, we used Stereolithography (SLA) 3D printers and 3D modeling technology to design the support frame for the Ackermann steering geometry on the vehicle chassis based on specific requirements.
+
+    - 我們可以根據車輛的具體需求自訂零件的尺寸與形狀，並利用立體光刻（SLA）3D列印機與雷射切割機，設計並製造車輛底盤的所有零件，齒輪、樂高62821齒輪差速器及輪胎除外。
+    - 為了降低軸承的旋轉摩擦，我們在車輛支架中整合了軸承，從而提升車輛的速度。
+    - 為了精準控制車輛的最佳轉彎半徑並靈活調整Ackermann比率，我們利用立體光刻（SLA）3D列印機及3D建模技術，依照具體需求設計了裝配Ackermann轉向幾何結構的車輛支架。
+
+    - We can customize the size and shape of parts according to the specific needs of the vehicle and use Stereolithography (SLA) 3D printers and laser cutters to design and manufacture all parts of the vehicle chassis, except for the gears, Lego 62821Gear Differential and tires.
+    - To reduce rotational friction of the shafts, we integrated bearings into the vehicle's support frame, thereby increasing the vehicle's speed.
+    - To precisely control the vehicle's optimal turning radius and flexibly adjust the Ackermann ratio, we used Stereolithography (SLA) 3D printers and 3D modeling technology to design the support frame for the Ackermann steering geometry on the vehicle chassis based on specific requirements.
 
 - #### Vehicle Chassis Improvement Record-車輛底盤改進紀錄
   ### __去年比較全國賽機型__
@@ -34,8 +34,8 @@
   <div align=center>
     <table>
       <tr>
-        <th>2024國際賽機型</th>
-        <th>2025全國賽機型</th>
+        <th>2024 Season Competition Self-Driving Car Prototype 2024國際賽機型</th>
+        <th>2025 WRO World Final Competition Prototype 2025 - 2025最終國際賽機型 </th>
         <th>Explanation(說明)</th>
       </tr>
       <tr>
@@ -58,8 +58,8 @@
   <th width="30%"><div align=center>2025國際賽機型</th>
   <th><div align=center>Explanation(說明)</th>
   <tr>
-  <td><div align=center><img src="./img/National_competition_machine.png" height=230></td>
-  <td><div align=center><img src="./img/International_competition_machine.png" height=230></td>
+  <td><div align=center><img src="./img/National_competition_machine.png" ></td>
+  <td><div align=center><img src="./img/International_competition_machine.png" ></td>
   <td>基於全國賽我們發現機型存在一些問題：<br><br>
    <ol>
     <li>Jetson Nano的運算效率不足，導致有時會太晚看到障礙物。</li>
