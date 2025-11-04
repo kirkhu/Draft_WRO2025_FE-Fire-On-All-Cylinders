@@ -39,8 +39,8 @@
         <th width=50%>2025 WRO World Final Competition Prototype - 2025 最終國際賽機型</th>
       </tr>
       <tr align=center>
-        <td><img src="./img/Last_years_car.png" width=400 alt="2024 Season Competition Self-Driving Car Prototype" /></td>
-        <td><img src="./img/International_competition_machine.png" width=400 alt="2025 WRO World Final Competition Prototype" /></td>
+        <td><img src="./img/Last_years_car.png" height=150 alt="2024 Season Competition Self-Driving Car Prototype" /></td>
+        <td><img src="./img/International_competition_machine.png" height=150 alt="2025 WRO World Final Competition Prototype" /></td>
       </tr>
       <tr>
         <td colspan="2">
