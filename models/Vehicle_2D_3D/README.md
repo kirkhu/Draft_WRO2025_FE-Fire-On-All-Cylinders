@@ -191,38 +191,50 @@
 
       - #### Comparison between Phrozen Sonic Mini 8K and  Stereolithography (SLA) 3D Printer-堆疊式3D列印機與立體光固化（SLA）3D列印機的比較
       
-         透過對3D車用零件進行實際列印與操作比較，我們得出以下結論：
+        透過對 Phrozen Sonic Mini 8K 與 Phrozen Sonic Mighty Revo 14K 兩款 立體光固化（SLA）3D 打印機 進行實際列印與操作比較，我們得出了以下結論：
 
-         By conducting practical printing and operation comparisons of the 3D vehicle parts, we have reached the following conclusions:
-        <div align="center">
-        <table>
-        <tr align="center">
-        <th rowspan="2">Photo</th>
-        <th> Stereolithography (SLA) 3D Printer(Phrozen Sonic Mini 8K) (立體光固化（SLA）3D列印機（Phrozen Sonic Mini 8K）)</th>
-        <th> Stereolithography (SLA) 3D Printer (Phrozen Sonic Mighty Revo)（立體光固化（SLA）3D列印機（Phrozen Sonic Mighty Revo））</th>
-        </tr><tr align="center">
-        <td><img src="./img/Stereolithography_3D_Printer.png" width="320" alt="Stereolithography_3D_Printer"></td>
-        <td><img src="./img/SonicMighty14KRevo_1400x1600_1.png" width="300" alt="" ></td>
-        </tr><tr align="">
-        <td>The required printing time (所需列印時間)</td>
-        <td>Short</td>
-        <td>Long</td>
-        </tr><tr>
-        <td>printing precision(印刷精度)</td>
-        <td>低</td>
-        <td>高</td>
-        </tr><tr>
-        <td>Hardness(硬度)</td>
-        <td>較低</td>
-        <td>較高</td>
-        </tr>
-        </tr><tr>
-        <td>Size dimensions（尺寸規格) </td>
-        <td>僅支持小規格物件，略粗糙</td>
-        <td>可支持大規格物件，精細</td>
-        </tr>
-        </table>
-        </div>
+        Based on a practical printing and operational comparison between the Phrozen Sonic Mini 8K and the Phrozen Sonic Mighty Revo 14K Stereolithography (SLA) 3D Printers, we have reached the following conclusions:
+
+        - #### Phrozen Sonic 系列 SLA 3D 打印機比較
+        | 機型 | Phrozen Sonic Mini 8K | Phrozen Sonic Mighty Revo 14K |
+        | :--- | :--- | :--- |
+        | Photo |<img src="./img/Stereolithography_3D_Printer.png" width="320" alt="Phrozen Sonic Mini 8K"> | <img src="./img/SonicMighty14KRevo_1400x1600_1.png" width="300" alt="Phrozen Sonic Mighty Revo 14K" >|
+        | **主要特性** | 去年使用的機型，在列印範圍與品質上有一定限制 。 | 本次競賽特別採用的大尺寸、高解析度機型 。 |
+        | **列印尺寸** | 標準列印尺寸，相對較小。 | **大尺寸** 列印範圍（10.1 吋）。 |
+        | **解析度** | 高解析度（8K）。 | **極高解析度（14K）** 。 |
+        | **列印品質** | 品質良好，但相對 **14K** 機型細節表現有限。 | 顯著**提升列印品質與精度**，適合對細節要求更高的組件 。 |
+        | **適用性** | 適合較小、細節要求一般的原型零件。 | 適合**大尺寸**、**高精度**、**複雜幾何結構**的自駕車零件 。 |
+
+        **選擇 Sonic Mighty Revo 14K 的主要原因**
+
+        我們在本次競賽中採用 **Phrozen Sonic Mighty Revo 14K** 的決策，主要是為了克服去年 **Sonic Mini 8K** 在列印上的兩大限制 ：
+        1.  **擴大列印範圍：** 應對自駕車底盤加長後，部分零件可能需要的較大尺寸 。
+        2.  **提升精度與品質：** 確保製造出的客製化組件（例如轉向結構零件）具備最高的**細節精度**和**結構穩定性**，以符合自駕車的嚴格結構要求 。
+
+       
+
+
+        - #### Comparison of Phrozen Sonic Series SLA 3D Printers
+        | Model | Phrozen Sonic Mini 8K | Phrozen Sonic Mighty Revo 14K |
+        | :--- | :--- | :--- |
+        | Photo |<img src="./img/Stereolithography_3D_Printer.png" width="320" alt="Phrozen Sonic Mini 8K"> | <img src="./img/SonicMighty14KRevo_1400x1600_1.png" width="300" alt="Phrozen Sonic Mighty Revo 14K" >|
+        | **Main Feature** | The model used last year, which had limitations in printing area and quality. | The large-format, high-resolution model specifically adopted for this competition. |
+        | **Print Size** | Standard print size, relatively smaller. | **Large-format** printing area (10.1 inches). |
+        | **Resolution** | High resolution (8K). | **Ultra-high resolution (14K)**. |
+        | **Print Quality** | Good quality, but limited detail performance compared to the **14K** model. | Significantly **improved printing quality and precision**, suitable for components requiring higher detail. |
+        | **Applicability** | Suitable for smaller prototype parts with moderate detail requirements. | Ideal for **large-sized**, **high-precision**, and **complex geometric structure** parts of the Self-Driving Car. |
+
+        **Primary Rationale for Choosing the Sonic Mighty Revo 14K**
+
+        Our decision to adopt the **Phrozen Sonic Mighty Revo 14K** for this competition was mainly to overcome two limitations encountered with the previous **Sonic Mini 8K** model:
+
+        1.  **Expanded Printing Area:** To accommodate the larger size required for some components after the Self-Driving Car chassis was extended.
+        2.  **Enhanced Precision and Quality:** To ensure that the manufactured custom components (e.g., steering mechanism parts) possess the highest **detail accuracy** and **structural stability**, thereby meeting the rigorous structural demands of the Self-Driving Car.
+
+
+
+        
+        
      - #### Description of the resin used in Stereolithography (SLA) 3D Printer-立體光固化（SLA）3D列印機所使用樹脂的描述
        立體光固化（SLA）3D列印機所使用的樹脂種類多樣，不同樹脂在性能上有明顯差異。常見的SLA樹脂類型包括：
 
@@ -233,8 +245,10 @@
        - 彈性樹脂：具備彈性和柔韌性，適用於需要一定變形能力的零件。
        - 高溫樹脂：耐熱性優異，適合需在高溫環境下運作的零件。
        - 耐衝擊樹脂：具有良好的抗衝擊性和韌性，適用於容易碰撞的零件。
+
        - 每種樹脂在物理特性、表面品質、強度和耐久性方面各有優勢，樹脂的選擇需根據具體應用需求決定。
        - 在比賽過程中，車輛經常碰撞側牆和障礙物，導致如「方向軸支架」和「十字銷」等零件斷裂。因此，我們進行了耐衝擊樹脂和高強度樹脂的實驗測試。測試結果顯示，使用耐衝擊樹脂製作的零件過於柔軟，無法滿足需求。最終，我們選擇使用高強度樹脂製造這些零件，以提升其耐久性和強度。
+
       - #### 英文:
         - __Standard resin:__ Suitable for general use, offering good surface finish, but relatively lower strength and durability.
         - __High-strength resin:__ Provides higher tensile strength and rigidity, ideal for parts that need to withstand force.
@@ -244,14 +258,14 @@
 
           Each type of resin has different advantages in terms of physical properties, surface quality, strength, and durability, and the choice of resin depends on the specific application requirements.
 
-        During the competition, the vehicle often collided with side walls and obstacles, causing parts like the "Steering shaft holder" and "Cross pin" to break. As a result, we conducted experimental tests with impact-resistant resin and high-strength resin. The tests showed that parts made from impact-resistant resin were too soft to meet the requirements. In the end, we chose to use high-strength resin to manufacture these parts, improving their durability and strength.
+        During the competition, the vehicle often collided with side walls and obstacles, causing parts like the **"Steering shaft holder"** and **"Cross pin"** to break. As a result, we conducted experimental tests with **Impact-resistant resin** and **High-strength resin**. The tests showed that parts made from impact-resistant resin were too soft to meet the requirements. In the end, we chose to use **High-strength resin** to manufacture these parts, improving their durability and strength.
 
     <div align=center>
     <table>
     <tr>
     <th>High-strength resin(高強度樹脂)</th>
     <th>Impact-resistant resin(耐衝擊樹脂)</th>
-    <th>Printing completed(列印完成)</th>
+    <th>3D Fabrication Complete(3D列印完成)</th>
     </tr>
     <tr>
     <td align=center><img src="./img/High-strength_resin.png" width="150" ></td> 
@@ -311,8 +325,8 @@
       <div align=center>
         <table>
           <tr>
-            <th>鏡頭支架主體</th>
-            <th>鏡頭固定板</th>
+            <th>Lens Mount 鏡頭支架</th>
+            <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
           </tr>
           <tr>
             <td align=center width=500><img src="./Vehicle_Chassis_Sizse/img/Lens_holder_body_size.jpg" width=450 /></td>
