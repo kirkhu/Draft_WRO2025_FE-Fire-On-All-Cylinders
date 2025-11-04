@@ -113,24 +113,7 @@ bb      </td>
       </table>
    </div>
 
- ## WRO2025 全國賽電路比較 WRO 2025 世界賽電路
 
- - ### First Design 
-
- <div align=center>
-   <table>
-      <tr>
-         <th>3D view</th>
-         <th>circuit schematic</th>
-         <th>PBC layout drawing</th>
-      </tr>
-      <tr>
-         <td align=center ><img src="./img/Old_3D_View.png" height=250 /></td>
-         <td align=center ><img src="./img/Old_Schematic.png" height=250 /></td>
-         <td align=center ><img src="./img/Old_PCB_Layouts.png" height=250 /></td>
-      </tr>
-   </table>
- </div>
 
  - ### Lastest Design
 
