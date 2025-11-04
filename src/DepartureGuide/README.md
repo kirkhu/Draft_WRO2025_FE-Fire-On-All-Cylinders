@@ -11,7 +11,7 @@
     ```
 
     ```
-  - ## Counter-clockwise green departure process-逆時針綠色出發流程
+ ## <div align="center">Counter-clockwise green departure process-逆時針綠色出發流程</div>
 <div align=center>
 <table>
 <tr>
