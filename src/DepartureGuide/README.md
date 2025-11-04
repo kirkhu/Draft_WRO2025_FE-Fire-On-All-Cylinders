@@ -11,7 +11,7 @@
     ```
 
     ```
- ## <div align="center">Counter-clockwise green departure process-逆時針綠色出發流程</div>
+## <div align="center">Counter-clockwise green departure process-逆時針綠色出發流程</div>
 <div align=center>
 <table>
 <tr>
@@ -37,14 +37,14 @@
 <div align=center>
 <table>
 <tr>
-<th>Preparing to retreat(準備後退)</th>
+<th>Prepare to retreat to your reserved seat.(準備後退到預定位子)</th>
 </tr><tr>
 <td align=center><img src="./img/Start_in_green_counterclockwise-5.png" width=400 /></td>
 <tr>
 </table>
 </div>
 
- ## <div align="center">Counter-clockwise red departure process-逆時針紅色出發流程</div>
+## <div align="center">Counter-clockwise red departure process-逆時針紅色出發流程</div>
 <div align=center>
 <table>
 <tr>
@@ -60,10 +60,34 @@
 <table>
 <tr>
 <th>Prepare to back up and turn left(準備後退向左轉)</th>
-<th>Preparing to retreat(準備後退)</th>
+<th>Arrive at the designated location(到達預定位子)</th>
 </tr><tr>
 <td align=center><img src="./img/Start_in_red_counterclockwise-3.png" width=400 /></td>
 <td align=center><img src="./img/Start_in_green_counterclockwise-4.png" width=400 /></td>
+</tr>
+</table>
+</div>
+
+## <div align="center">Counter-clockwise, no color starting process-逆時針沒有顏色出發流程</div>
+<div align=center>
+<table>
+<tr>
+<th>Preparing to turn left(準備左轉)</th>
+<th>Start_reversing(準備向前)</th>
+</tr><tr>
+<td align=center><img src="./img/Start_in_no_counterclockwise-1.png" width=400 /></td>
+<td align=center><img src="./img/Start_in_no_counterclockwise-2.png" width=400 /></td>
+</tr>
+</table>
+</div>
+<div align=center>
+<table>
+<tr>
+<th>Prepare to back up and turn left(準備後退向左轉)</th>
+<th>Arrive at the designated location(到達預定位子)</th>
+</tr><tr>
+<td align=center><img src="./img/Start_in_no_counterclockwise-3.png" width=400 /></td>
+<td align=center><img src="./img/Start_in_no_counterclockwise-4.png" width=400 /></td>
 </tr>
 </table>
 </div>
