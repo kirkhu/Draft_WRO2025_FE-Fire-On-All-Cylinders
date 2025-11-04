@@ -1,41 +1,50 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
  ## <div align="center"> Circuit Design -電路設計</div>
- #### 中文:
-  - 在我們自動駕駛汽車的電路板設計中，我們採用了 EasyEDA一款具備直覺式圖形介面的電路設計軟體。透過這項工具，我們大幅提升了焊接的準確性與接線精度，減少了錯誤發生的機率，同時有效降低了元件燒毀的風險。
-  - 我們採用洗電路板方式，不僅有效降低焊接錯誤與短路風險，還能提升外觀品質。同時，此作法帶來更高的製程靈活性與操作便利性。
-  - 電路板的主要功能是為各種感測器、馬達及控制器提供電力與訊號連接，確保各元件之間能夠順暢通訊與協同運作。
- #### 英文:
-  - In the design of the circuit board for our autonomous vehicle, we used EasyEDA, a circuit design software with an intuitive graphical interface. By using this tool, we significantly improved the accuracy of soldering and the precision of wiring, reduced the likelihood of errors, and effectively minimized the risk of component damage.
-  - We adopted a PCB cleaning process that not only effectively reduces soldering errors and the risk of short circuits, but also enhances the visual quality of the board. Additionally, this approach offers greater flexibility in the manufacturing process and improved ease of operation.
-  -The primary function of the circuit board is to provide power and signal connections for various sensors, motors, and controllers, ensuring smooth communication and coordinated operation among all components.communication and cooperation among them.
+- 在我們的**自駕車**電路板設計過程中，我們選用了 **EasyEDA** 這款擁有**直覺式圖形介面**的專業電路設計軟體。藉由這項工具，我們**顯著提升**了焊接工作的**準確性**與接線的**精確度**，從而**有效地降低**了製造過程中的錯誤率，並將元件**燒毀的風險**控制在最低。
 
- ## 實體電路板問題發現與修正歷程
+- 我們採取了**專業的印刷電路板 (PCB) 製作方式**（即「洗電路板」）。此舉不僅**大幅減少**了焊接錯誤和短路的**潛在風險**，更**優化了成品的外觀品質**。同時，這種製造方法提供了**更高的製程靈活性**與**操作上的便利性**。
 
+- 該電路板的**核心功能**在於為**整合**的各類**感測器**、**馬達**以及**上下層控制器**提供穩定可靠的**電力供應**與**訊號傳輸介面**。這確保了所有關鍵電子元件之間能夠實現**順暢的通訊**與**高效的協同運作**，為**車輛控制程式**的運行奠定堅實基礎。
+
+- In the design process of our **Self-Driving Car** circuit board, we utilized **EasyEDA**, a professional circuit design software featuring an **intuitive graphical interface**. Through this tool, we have **significantly enhanced** the **accuracy** of soldering and the **precision** of wiring, thereby **effectively reducing** the error rate during the manufacturing process, and minimizing the **risk of component burnout**.
+
+- We adopted a **professional Printed Circuit Board (PCB) manufacturing method** (i.e., "PCB etching/fabrication"). This approach has not only **substantially mitigated** the **potential risks** of soldering errors and short circuits but has also **improved the aesthetic quality of the finished product**. Concurrently, this manufacturing technique offers **greater process flexibility** and **operational convenience**.
+
+- The **core function** of this circuit board is to provide a stable and reliable **power supply** and **signal transmission interface** for the **integrated** various **sensors**, **motors**, and the **upper and lower layer controllers**. This ensures that all critical electronic components can achieve **smooth communication** and **efficient collaborative operation**, laying a solid foundation for the execution of the **Vehicle's control program**.
+
+
+ - ### The Process of Identifying and Correcting Physical Circuit Board Design Issues - 實體電路板設計問題之發現與修正歷程
+   - ### Circuit Board Design Version History - 電路板設計版本 (Version) 歷程
  <div align=center>
-   <table>
-      <tr>
-         <th colspan=3>第一代</th>
+ <table>
+   <tr>
+   <th colspan=3 >V1.0 (Pegboard)</th>
+   </tr>
+   <tr>
+   <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_1.png" width="400" /></td>
+   <td align=center ><img src="../Circuit_Design/img/circuit_board_back_1.png" width="400" /></td>
+   <td>
+ 
+   __Description:__    
+   <br>        
+         此版本電路板焊接所需時間過長，且線路砸亂不美觀還不易檢查問題點。       
+         
+   </td>
       </tr>
       <tr>
-         <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_1.png" width=400 /></td>
-         <td align=center ><img src="../Circuit_Design/img/circuit_board_back_1.png" width=400 /></td>
+         <th colspan=3>V2.0 (PCB)</th>
+      </tr>
+      <tr>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_2.png"  /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_back_2.png"  /></td>
          <td>
-         描述：</br>&emsp;&emsp;
-         此版本電路板焊接所需時間過長，且線路砸亂不美觀還不易檢查問題點。
-         </td>
-      </tr>
-      <tr>
-         <th colspan=3>第二代</th>
-      </tr>
-      <tr>
-         <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_2.png" width=400 /></td>
-         <td align=center ><img src="../Circuit_Design/img/circuit_board_back_2.png" width=400 /></td>
-         <td>
-         描述：</br>&emsp;&emsp;
-         因上版電路板有焊接時間過長和線路雜亂的問題，因此我們使用EasyEDA繪畫並生成PCB電路。</br>&emsp;&emsp;
-         在測試過程中發現元件無法組裝上去，經過檢查後發現是針腳間距錯誤導致。
-         </td>
+         Description:<br>
+         
+         - 因上版電路板有焊接時間過長和線路雜亂的問題，因此我們使用EasyEDA繪畫並生成PCB電路。</br>&emsp;&emsp;
+         - 在測試過程中發現元件無法組裝上去，經過檢查後發現是針腳間距錯誤導致。
+         
+   </td>
       </tr>
       <tr>
          <th colspan=3>第三代</th>
@@ -44,7 +53,7 @@
          <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_3.png" width=400 /></td>
          <td align=center ><img src="../Circuit_Design/img/circuit_board_back_3.png" width=400 /></td>
          <td>
-         描述：</br>&emsp;&emsp;
+          Description:</br>&emsp;&emsp;
          因上版電路板有針腳間距不正確的問題，因此我們使用EasyEDA的內建範例圖重新校準針腳間距。</br>&emsp;&emsp;
          在測試過程中發現整體電路的極性顛倒了，經過查驗發現問題是因為繪畫時將電路板反面畫到正面導致的。
          </td>
@@ -56,7 +65,7 @@
          <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_4.png" width=400 /></td>
          <td align=center ><img src="../Circuit_Design/img/circuit_board_back_4.png" width=400 /></td>
          <td>
-         描述：</br>&emsp;&emsp;
+          Description:</br>&emsp;&emsp;
          因上版電路板有電路極性顛倒的問題，因此我們重新繪畫電路並且經過多次確認電路繪畫正確後送出。</br>&emsp;&emsp;
          因為機器將主控制器改為Jetson Orin Nano，並且改用紅外線感測器感測是否靠近物體，因此需要添加兩個2Pin插座母頭、插拔式接線端子。
          </td>
@@ -68,7 +77,7 @@
          <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_5.png" width=400 /></td>
          <td align=center ><img src="../Circuit_Design/img/circuit_board_back_5.png" width=400 /></td>
          <td>
-         描述：</br>&emsp;&emsp;
+          Description:</br>&emsp;&emsp;
          因新版機器需要新增兩個2Pin插座母頭和插拔式接線端子，所以我們重新給PCB排版並且加入所需元件。</br>&emsp;&emsp;
          此版本在運作程序讀取陀螺儀角度時，會有讀取數值為0的狀況，經過排查發現是電路的迴路問題，且需要將程序改為由Jetson Orin Nano偵測啟動按鈕是否按下，因此需要將陀螺儀的電路獨立連接到Jetson Orin Nano，並新增第二塊電路板用於繪畫程式啟動按鈕電路。
          </td>
@@ -80,7 +89,7 @@
          <td align=center><img src="./img/Circuit_6_Top.png" width=400 /></td>
          <td align=center><img src="./img/Circuit_6_Bottom.png" width=400 /></td>
          <td rowspan=2>
-         描述：</br>&emsp;&emsp;
+          Description:</br>&emsp;&emsp;
          因為新版機器人需要將按鈕電路獨立連接到Jetson orin nano的GPIO接口，並且新增RGB燈珠用於顯示當下看到最近物件顏色，所以在此版本會有兩塊電路板。
          </td>
       </tr>
