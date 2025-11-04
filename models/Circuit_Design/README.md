@@ -16,32 +16,32 @@
 
  - ### The Process of Identifying and Correcting Physical Circuit Board Design Issues - 實體電路板設計問題之發現與修正歷程
    - ### Circuit Board Design Version History - 電路板設計版本 (Version) 歷程
-   <div>
-   <table>
+
+      <div>
+      <table>
       <tr>
-      <th colspan=3 >V1.0 (Pegboard)</th>
+         <th colspan=3 >V1.0 (Pegboard)</th>
       </tr>
       <tr>
-      <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_1.png"  /></td>
-      <td align=center ><img src="../Circuit_Design/img/circuit_board_back_1.png"/></td>
-      <td>
-   
-   __Description:__    
-      <br> 
+         <td align=center  width="25%"><img src="../Circuit_Design/img/circuit_board_fount_1.png"  /></td>
+         <td align=center  width="25%"><img src="../Circuit_Design/img/circuit_board_back_1.png"/></td>
+         <td>
+
+   __Description:__          
 
       - 此版本電路板焊接所需時間過長，且線路砸亂不美觀還不易檢查問題點。     
-            
+               
       </td>
       </tr>
       <tr>
-      <th colspan=3>V2.0 (PCB)</th>
+         <th colspan=3>V2.0 (PCB)</th>
       </tr>
       <tr>
-      <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_2.png"  /></td>
-      <td align=center ><img src="../Circuit_Design/img/circuit_board_back_2.png"  /></td>
+         <td align=center width="25%" ><img src="../Circuit_Design/img/circuit_board_fount_2.png"  /></td>
+         <td align=center  width="25%"><img src="../Circuit_Design/img/circuit_board_back_2.png"  /></td>
       <td>
 
-   __Description:__<br>
+   __Description:__
             
       - 因上版電路板有焊接時間過長和線路雜亂的問題，因此我們使用EasyEDA繪畫並生成PCB電路。
       - 在測試過程中發現元件無法組裝上去，經過檢查後發現是針腳間距錯誤導致。
@@ -49,11 +49,11 @@
       </td>
       </tr>
       <tr>
-      <th colspan=3>V3.0 (PCB)</th>
+          <th colspan=3>V3.0 (PCB)</th>
       </tr>
       <tr>
-      <td align=center width="25%"><img src="../Circuit_Design/img/circuit_board_fount_3.png" /></td>
-      <td align=center width="25%"><img src="../Circuit_Design/img/circuit_board_back_3.png"  /></td>
+         <td align=center width="25%"><img src="../Circuit_Design/img/circuit_board_fount_3.png" /></td>
+         <td align=center width="25%"><img src="../Circuit_Design/img/circuit_board_back_3.png"  /></td>
       <td>
 
    __Description:__
@@ -64,46 +64,52 @@
       </td>
       </tr>
       <tr>
-      <th colspan=3>V4.0 (PCB)</th>
+         <th colspan=3>V4.0 (PCB)</th>
       </tr>
       <tr>
-      <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_4.png" width=400 /></td>
-      <td align=center ><img src="../Circuit_Design/img/circuit_board_back_4.png" width=400 /></td>
-      <td>
-   __Description:__</br>&emsp;&emsp;
+         <td align=center  width="25%"><img src="../Circuit_Design/img/circuit_board_fount_4.png" width=400 /></td>
+         <td align=center width="25%"><img src="../Circuit_Design/img/circuit_board_back_4.png" width=400 /></td>
+        <td>
+
+   __Description:__
+
       - 因上版電路板有電路極性顛倒的問題，因此我們重新繪畫電路並且經過多次確認電路繪畫正確後送出。
       
       - 因為機器將主控制器改為Jetson Orin Nano，並且改用紅外線感測器感測是否靠近物體，因此需要添加兩個2Pin插座母頭、插拔式接線端子。
+
+       </td>
+      </tr>
+      <tr>
+          <th colspan=3>V5.0 (PCB)</th>
+      </tr>
+      <tr>
+      <td align=center width="25%" ><img src="../Circuit_Design/img/circuit_board_fount_5.png" /></td>
+      <td align=center width="25%"><img src="../Circuit_Design/img/circuit_board_back_5.png"  /></td>
+      <td>
+      
+      __Description:__
+
+      - 因新版機器需要新增兩個2Pin插座母頭和插拔式接線端子，所以我們重新給PCB排版並且加入所需元件。
+      - 此版本在運作程序讀取陀螺儀角度時，會有讀取數值為0的狀況，經過排查發現是電路的迴路問題，且需要將程序改為由Jetson Orin Nano偵測啟動按鈕是否按下，因此需要將陀螺儀的電路獨立連接到Jetson Orin Nano，並新增第二塊電路板用於繪畫程式啟動按鈕電路。
       </td>
       </tr>
       <tr>
-      <th colspan=3>第五代</th>
+         <th colspan=3>V6.0 (PCB)</th>
       </tr>
       <tr>
-      <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_5.png" width=400 /></td>
-      <td align=center ><img src="../Circuit_Design/img/circuit_board_back_5.png" width=400 /></td>
-      <td>
-      
-      __Description:__</br>&emsp;&emsp;
-      - 因新版機器需要新增兩個2Pin插座母頭和插拔式接線端子，所以我們重新給PCB排版並且加入所需元件。</br>&emsp;&emsp;
-            此版本在運作程序讀取陀螺儀角度時，會有讀取數值為0的狀況，經過排查發現是電路的迴路問題，且需要將程序改為由Jetson Orin Nano偵測啟動按鈕是否按下，因此需要將陀螺儀的電路獨立連接到Jetson Orin Nano，並新增第二塊電路板用於繪畫程式啟動按鈕電路。
-            </td>
-         </tr>
-         <tr>
-            <th colspan=3>第六代</th>
-         </tr>
-         <tr>
-            <td align=center><img src="./img/Circuit_6_Top.png" width=400 /></td>
-            <td align=center><img src="./img/Circuit_6_Bottom.png" width=400 /></td>
-            <td rowspan=2>
-            __Description:__</br>&emsp;&emsp;
-            因為新版機器人需要將按鈕電路獨立連接到Jetson orin nano的GPIO接口，並且新增RGB燈珠用於顯示當下看到最近物件顏色，所以在此版本會有兩塊電路板。
-            </td>
-         </tr>
-         <tr>
+         <td align=center><img src="./img/Circuit_6_Top.png" width=400 /></td>
+         <td align=center><img src="./img/Circuit_6_Bottom.png" width=400 /></td>
+         <td rowspan=2>
+
+      __Description:__
+
+      - 因為新版機器人需要將按鈕電路獨立連接到Jetson orin nano的GPIO接口，並且新增RGB燈珠用於顯示當下看到最近物件顏色，所以在此版本會有兩塊電路板。
+bb      </td>
+       </tr>
+       <tr>
             <td align=center><img src="./img/Button_And_Led_Top.png" width=400 /></td>
             <td align=center><img src="./img/Button_And_Led_Bottom.png" width=400 /></td>
-         </tr>
+        </tr>
       </table>
    </div>
 
@@ -159,7 +165,7 @@
  ***
  - ### Supplementary Information -補充資訊
  
- - #### Adafruit BNO055 電路說明
+ - #### 經驗分享-Adafruit BNO055 電路
 
  #### 中文
    在自駕車電路設計的初始版本中，Adafruit BNO055 IMU感測器正極由Raspberry Pi Pico W提供，而資料傳輸是連接到Jetson Orin Nano。然而由於該設計未能形成完整電源迴路，導致系統缺乏統一電位基準，進而造成感測數據異常，尤其航向角輸出長時間固定於0°，無法反映實際姿態變化。

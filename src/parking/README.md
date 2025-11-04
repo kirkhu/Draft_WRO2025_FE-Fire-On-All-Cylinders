@@ -197,18 +197,18 @@
             motor_brake()
         
         ```
-- ### Counter-clockwise parking procedure-逆時針停車流程
+- ## <div align="center">Counter-clockwise parking procedure-逆時針停車流程</div>
 <div align=center>
 
   |Prepare_to_reverse(準備反轉)|Start_reversing(開始倒車)|Parking_ends(停車處結束)|
   |:---:|:---:|:---:|
   |<div align="center"> <img src="./img/Prepare_to_reverse.png"  alt="Prepare_to_reverse"></div>|<div align="center"> <img src="./img/Start_reversing.png"  alt="Start_reversing"></div>|<div align="center"> <img src="./img/Parking_ends.png"  alt="Parking_ends"></div>|
-- ### Clockwise parking procedure-順時針停車流程
+- ### <div align="center">Clockwise parking procedure-順時針停車流程</div>
 <div align=center>
 
   |Prepare_to_reverse(準備反轉)|Start_reversing(開始倒車)|Parking_ends(停車處結束)|
   |:---:|:---:|:---:|
-  |<div align="center"> <img src="./img/Prepare_to_reverse.png"  alt="Prepare_to_reverse"></div>|<div align="center"> <img src="./img/Start_reversing.png"  alt="Start_reversing"></div>|<div align="center"> <img src="./img/Parking_ends.png"  alt="Parking_ends"></div>|
+  |<div align="center"> <img src="./img/Prepare_to_reverse1.png"  alt="Prepare_to_reverse"></div>|<div align="center"> <img src="./img/Start_reversing1.png"  alt="Start_reversing"></div>|<div align="center"> <img src="./img/Parking_ends1.png"  alt="Parking_ends"></div>|
 
 - ### Parking test video-停車測試影片
 [![Parking @ Fire On All Cylinders](./img/parking.jpg)]( "Open Challange clockwise @ Fire On All Cylinders")

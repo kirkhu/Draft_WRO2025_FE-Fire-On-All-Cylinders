@@ -37,7 +37,7 @@
 <div align=center>
 <table>
 <tr>
-<th>Prepare to retreat to your reserved seat.(準備後退到預定位子)</th>
+<th>Arrive at the designated location(到達預定位子)</th>
 </tr><tr>
 <td align=center><img src="./img/Start_in_green_counterclockwise-5.png" width=400 /></td>
 <tr>
@@ -92,33 +92,127 @@
 </table>
 </div>
 
-- ## Clockwise Green Departure Process-順時針綠色出發流程
+## <div align="center">Clockwise Green Departure Process-順時針綠色出發流程</div>
 <div align=center>
-
-  |Preparing to turn right(準備右轉)|Start_reversing(開始倒車)|Parking_ends(停車處結束)|
-  |:---:|:---:|:---:|
-  |<div align="center"> <img src="./img/Prepare_to_reverse.png"  alt="Prepare_to_reverse"></div>|<div align="center"> <img src="./img/Start_reversing.png"  alt="Start_reversing"></div>|<div align="center"> <img src="./img/Parking_ends.png"  alt="Parking_ends"></div>| 
-
-- ## Clockwise Green Departure Process-順時針紅色出發流程
+<table>
+<tr>
+<th>Preparing to turn right(準備右轉)</th>
+<th>Ready to move forward(準備向前)</th>
+</tr><tr>
+<td align=center><img src="./img/Clockwise Green Departure Process-1.png" width=400 /></td>
+<td align=center><img src="./img/Clockwise Green Departure Process-2.png" width=400 /></td>
+</tr>
+</table>
+</div>
 <div align=center>
-
-  |Preparing to turn right(準備右轉)|Start_reversing(開始倒車)|Parking_ends(停車處結束)|
-  |:---:|:---:|:---:|
-  |<div align="center"> <img src="./img/Prepare_to_reverse.png"  alt="Prepare_to_reverse"></div>|<div align="center"> <img src="./img/Start_reversing.png"  alt="Start_reversing"></div>|<div align="center"> <img src="./img/Parking_ends.png"  alt="Parking_ends"></div>| 
-
-- ## Clockwise, the green departure process in the middle-順時針中間綠色出發流程
+<table>
+<tr>
+<th>Preparing to turn left(準備向左轉)</th>
+<th>Ready to move forward(準備向前)</th>
+</tr><tr>
+<td align=center><img src="./img/Clockwise Green Departure Process-3.png" width=400 /></td>
+<td align=center><img src="./img/Clockwise Green Departure Process-4.png" width=400 /></td>
+</tr>
+</table>
+</div>
 <div align=center>
+<table>
+<tr>
+<th>Arrive at the designated location(到達預定位子)</th>
+</tr><tr>
+<td align=center><img src="./img/Clockwise Green Departure Process-5.png" width=400 /></td>
+</tr>
+</table>
+</div>
 
-  |Preparing to turn right(準備右轉)|Start_reversing(開始倒車)|Parking_ends(停車處結束)|
-  |:---:|:---:|:---:|
-  |<div align="center"> <img src="./img/Prepare_to_reverse.png"  alt="Prepare_to_reverse"></div>|<div align="center"> <img src="./img/Start_reversing.png"  alt="Start_reversing"></div>|<div align="center"> <img src="./img/Parking_ends.png"  alt="Parking_ends"></div>|
-
-- ## Clockwise, red starting process-順時針中間紅色出發流程
+## <div align="center">Clockwise Green Departure Process-順時針紅色出發流程</div>
 <div align=center>
+<table>
+<tr>
+<th>Preparing to turn right(準備右轉)</th>
+<th>Ready to move forward(準備向前)</th>
+</tr><tr>
+<td align=center><img src="./img/Clockwise red Departure Process-1.png" width=400 /></td>
+<td align=center><img src="./img/Clockwise red Departure Process-2.png" width=400 /></td>
+</tr>
+</table>
+</div>
+<div align=center>
+<table>
+<tr>
+<th>Preparing to turn left(準備向左轉)</th>
+<th>Ready to move forward(準備向前)</th>
+</tr><tr>
+<td align=center><img src="./img/Clockwise red Departure Process-3.png" width=400 /></td>
+<td align=center><img src="./img/Clockwise red Departure Process-4.png" width=400 /></td>
+</tr>
+</table>
+</div>
+<div align=center>
+<table>
+<tr>
+<th>Arrive at the designated location(到達預定位子)</th>
+</tr><tr>
+<td align=center><img src="./img/Clockwise red Departure Process-5.png" width=400 /></td>
+</tr>
+</table>
+</div>
 
-  |Preparing to turn right(準備右轉)|Start_reversing(開始倒車)|Parking_ends(停車處結束)|
-  |:---:|:---:|:---:|
-  |<div align="center"> <img src="./img/Prepare_to_reverse.png"  alt="Prepare_to_reverse"></div>|<div align="center"> <img src="./img/Start_reversing.png"  alt="Start_reversing"></div>|<div align="center"> <img src="./img/Parking_ends.png"  alt="Parking_ends"></div>|
+## <div align="center">Clockwise green center departure process-順時針綠色中間出發流程</div>
+<div align=center>
+<table>
+<tr>
+<th>Preparing to turn right(準備右轉)</th>
+<th>Preparing to turn left(準備向左轉)</th>
+</tr><tr>
+<td align=center><img src="./img/Clockwise green center departure process-1.png" width=400 /></td>
+<td align=center><img src="./img/Clockwise green center departure process-2.png" width=400 /></td>
+</tr>
+</table>
+</div>
+<div align=center>
+<table>
+<tr>
+<th>Ready to move forward(準備向前)</th>
+<th>Arrive at the designated location(到達預定位子)</th>
+</tr><tr>
+<td align=center><img src="./img/Clockwise green center departure process-3.png" width=400 /></td>
+<td align=center><img src="./img/Clockwise green center departure process-4.png" width=400 /></td>
+</tr>
+</table>
+</div>
 
+## <div align="center">Clockwise red center departure process-順時針紅色中間出發流程</div>
+<div align=center>
+<table>
+<tr>
+<th>Preparing to turn right(準備右轉)</th>
+<th>Ready to move forward(準備向前)</th>
+</tr><tr>
+<td align=center><img src="./img/Clockwise red center departure process-1.png" width=400 /></td>
+<td align=center><img src="./img/Clockwise red center departure process-2.png" width=400 /></td>
+</tr>
+</table>
+</div>
+<div align=center>
+<table>
+<tr>
+<th>Preparing to turn left(準備向左轉)</th>
+<th>Ready to move forward(準備向前)</th>
+</tr><tr>
+<td align=center><img src="./img/Clockwise red center departure process-3.png" width=400 /></td>
+<td align=center><img src="./img/Clockwise red center departure process-4.png" width=400 /></td>
+</tr>
+</table>
+</div>
+<div align=center>
+<table>
+<tr>
+<th>Arrive at the designated location(到達預定位子)</th>
+</tr><tr>
+<td align=center><img src="./img/Clockwise red center departure process-5.png" width=400 /></td>
+</tr>
+</table>
+</div>
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
