@@ -20,11 +20,11 @@
     |<img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png"  alt="vehicle_chassis_design_3D">|<img src="./img/Driver_top.png" width="400" alt="2024Vehicle_Chassis_Design_down">|<img src="./img/Driver_down.png" width="400" alt="down_view">|
 
 
-    - 我們可以根據車輛的具體需求自訂零件的尺寸與形狀，並利用立體光刻（SLA）3D列印機與雷射切割機，設計並製造車輛底盤的所有零件，齒輪、樂高62821齒輪差速器及輪胎除外。
+    - 我們可以根據車輛的具體需求自訂零件的尺寸與形狀，並利用立體光刻（SLA）3D列印機與雷射切割機，設計並製造車輛底盤的所有零件，齒輪、樂高6376齒輪差速器及輪胎除外。
     - 為了降低軸承的旋轉摩擦，我們在車輛支架中整合了軸承，從而提升車輛的速度。
     - 為了精準控制車輛的最佳轉彎半徑並靈活調整Ackermann比率，我們利用立體光刻（SLA）3D列印機及3D建模技術，依照具體需求設計了裝配Ackermann轉向幾何結構的車輛支架。
 
-    - We can customize the size and shape of parts according to the specific needs of the vehicle and use Stereolithography (SLA) 3D printers and laser cutters to design and manufacture all parts of the vehicle chassis, except for the gears, Lego 62821Gear Differential and tires.
+    - We can customize the size and shape of parts according to the specific needs of the vehicle and use Stereolithography (SLA) 3D printers and laser cutters to design and manufacture all parts of the vehicle chassis, except for the gears, Lego 6573 Gear Differential and tires.
     - To reduce rotational friction of the shafts, we integrated bearings into the vehicle's support frame, thereby increasing the vehicle's speed.
     - To precisely control the vehicle's optimal turning radius and flexibly adjust the Ackermann ratio, we used Stereolithography (SLA) 3D printers and 3D modeling technology to design the support frame for the Ackermann steering geometry on the vehicle chassis based on specific requirements.
 
@@ -55,7 +55,7 @@
   <li>Redesigned the steering structure, the 2024 International Competition Vehicle Prototype used wire to link the two steering knuckles, which took up a larger area. Therefore, we used 3D-printed components for the redesign.</li>
   <li>During the national competition, we found that the computational efficiency of the Jetson Nano did not meet our requirements. Therefore, we replaced the main controller with the Jetson Orin Nano, which has higher computational efficiency.</li>
   <li>The Self-Driving-Car (Vehicle)'s steering angle was insufficient, resulting in the inability to pass some sharp turns. Therefore, we redesigned the steering structure to allow for a larger steering space.</li>
-  <li>We found that the data refresh rate of the ultrasonic sensor was low, making it less suitable for object detection in the front and rear. Therefore, we installed TCRT5000 infrared sensors on the front and rear of the model (Vehicle).</li>
+  <li>TCRT5000 infrared sensors were added to the front and rear of the Self-Driving-Car (Vehicle) to assist the execution of the parking procedure (parking lot).</li>
   <ol>
   </td>
   </tr>
@@ -83,7 +83,7 @@
   <li>重新設計轉向結構，2024年國際賽機型使用鐵絲來連動兩側轉向節，面積較大。因此我們使用 3D 物件重新設計。</li>
   <li>在全國賽中我們發現 Jetson Nano 運算效率較不符合我們需求。因此我們將主控制器更換為運算效率更高的 Jetson Orin Nano。</li>
   <li>自駕車轉向角度不夠，導致一些急轉彎無法通過。因此我們重新設計轉向結構使其有更大的轉向空間。</li>
-  <li>我們發現超音波感測器數據刷新頻率低，較不適合用於前後方物體判斷。因此我們在機型前後安裝 TCRT5000 紅外線感測器。</li>
+  <li>在自駕車前後方新增 TCRT5000 紅外感測器，用於輔助停車程序運行。</li>
   <ol>
   </td>
   </tr>
@@ -125,8 +125,8 @@
         <th colspan=2>第一代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/steering_1.jpg" width=500 /></td>
-        <td width=400>
+        <td width=40%><img src="./img/steering_1.jpg" /></td>
+        <td width=60%>
           描述：<br>&emsp;&emsp;
           這版轉向結構過於寬大，因此第二版中我們縮小版型，以提升自駕車的靈活度。
         </td>
@@ -135,7 +135,7 @@
         <th colspan=2>第二代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/steering_2.png" width=500 /></td>
+        <td><img src="./img/steering_2.png" /></td>
         <td width=400>
           描述：<br>&emsp;&emsp;
           此版本因使用螺絲與樂高零件連接，轉向角度受限，因此下一版將改用圓頭十字軸與圓頭舵盤以增加轉向範圍。
@@ -145,7 +145,7 @@
         <th colspan=2>第三代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/steering_3.jpg" width=500 /></td>
+        <td><img src="./img/steering_3.jpg" /></td>
         <td width=400>
           描述：<br>&emsp;&emsp;
           這一版因轉向力矩出現問題，我們重新檢視設計圖。下一版將把轉向拉桿與連桿連接位置調整至與圓頭舵盤平行，並增加轉向極限擋塊，避免角度過大導致結構內凹。
@@ -155,7 +155,7 @@
         <th colspan=2>第四代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/steering_4.jpg" width=500 /></td>
+        <td><img src="./img/steering_4.jpg" /></td>
         <td width=400>
           描述：<br>&emsp;&emsp;
           這一版因轉向極限擋塊過大，限制了轉向角度，降低了自駕車靈活性。因此在下一版中，我們會縮短極限擋塊，以兼顧轉向幅度與結構保護。
@@ -165,7 +165,7 @@
         <th colspan=2>第五代轉向結構</th>
       </tr>
       <tr>
-        <td><img src="./img/steering_5.jpg" width=500 /></td>
+        <td><img src="./img/steering_5.jpg" /></td>
         <td width=400>
           描述：<br>&emsp;&emsp;
           經過前幾代轉向結構的修正與優化，目前的轉向結構已能滿足我們機型的需求。
