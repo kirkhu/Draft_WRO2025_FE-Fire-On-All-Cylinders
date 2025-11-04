@@ -189,50 +189,42 @@
       
           SLA 3D printers are widely used in industries such as manufacturing, healthcare, jewelry, and industrial desgn. Due to their high precision and fine surface treatment, they are particularly suitable for producing parts that require high quality and detailed features.
 
-      - #### Comparison between Phrozen Sonic Mini 8K and  Stereolithography (SLA) 3D Printer-堆疊式3D列印機與立體光固化（SLA）3D列印機的比較
-      
-        透過對 Phrozen Sonic Mini 8K 與 Phrozen Sonic Mighty Revo 14K 兩款 立體光固化（SLA）3D 打印機 進行實際列印與操作比較，我們得出了以下結論：
+      - #### Comparison between Fused Deposition Modeling (FDM) 3D Printer and  Stereolithography (SLA) 3D Printer
 
-        Based on a practical printing and operational comparison between the Phrozen Sonic Mini 8K and the Phrozen Sonic Mighty Revo 14K Stereolithography (SLA) 3D Printers, we have reached the following conclusions:
+         By conducting practical printing and operation comparisons of the 3D vehicle parts, we have reached the following conclusions:
+        <div align="center">
+        <table>
+        <tr align="center">
+        <th rowspan="2">Photo</th>
+        <th> FDM 3D Printe</th>
+        <th> SLA 3D Printer(Sonic Mighty Revo 14K)</th>
+        </tr><tr align="center">
+        <td><img src="./img/Stacked_3D_Printe.png" width="300" alt="Stacked_3D_Printe"></td>
+        <td><img src="./img/SonicMighty14KRevo_1400x1600_1.png" width="300" alt="Stereolithography_3D_Printer" ></td>
+        </tr><tr align="">
+        <td>The required printing time</td>
+        <td>Faster</td>
+        <td>Slower</td>
+        </tr><tr>
+        <td>Exterior</td>
+        <td>Exterior with signs of layering</td>
+        <td>Smooth</td>
+        </tr><tr>
+        <td>Hardness</td>
+        <td>Dependent on the density</td>
+        <td>Dependent on the exposure time</td>
+        </tr>
+        </tr><tr>
+        <td>Size dimensions.</td>
+        <td>Supports larger dimensions but does not support overly small dimensions.</td>
+        <td>Supports smaller dimensions.</td>
+        </tr>
+        </table>
+        </div>
 
-        - #### Phrozen Sonic 系列 SLA 3D 打印機比較
-        | 機型 | Phrozen Sonic Mini 8K | Phrozen Sonic Mighty Revo 14K |
-        | :--- | :--- | :--- |
-        | Photo |<img src="./img/Stereolithography_3D_Printer.png" width="320" alt="Phrozen Sonic Mini 8K"> | <img src="./img/SonicMighty14KRevo_1400x1600_1.png" width="300" alt="Phrozen Sonic Mighty Revo 14K" >|
-        | **主要特性** | 去年使用的機型，在列印範圍與品質上有一定限制 。 | 本次競賽特別採用的大尺寸、高解析度機型 。 |
-        | **列印尺寸** | 標準列印尺寸，相對較小。 | **大尺寸** 列印範圍（10.1 吋）。 |
-        | **解析度** | 高解析度（8K）。 | **極高解析度（14K）** 。 |
-        | **列印品質** | 品質良好，但相對 **14K** 機型細節表現有限。 | 顯著**提升列印品質與精度**，適合對細節要求更高的組件 。 |
-        | **適用性** | 適合較小、細節要求一般的原型零件。 | 適合**大尺寸**、**高精度**、**複雜幾何結構**的自駕車零件 。 |
-
-        **選擇 Sonic Mighty Revo 14K 的主要原因**
-
-        我們在本次競賽中採用 **Phrozen Sonic Mighty Revo 14K** 的決策，主要是為了克服去年 **Sonic Mini 8K** 在列印上的兩大限制 ：
-        1.  **擴大列印範圍：** 應對自駕車底盤加長後，部分零件可能需要的較大尺寸 。
-        2.  **提升精度與品質：** 確保製造出的客製化組件（例如轉向結構零件）具備最高的**細節精度**和**結構穩定性**，以符合自駕車的嚴格結構要求 。
-
-       
-
-
-        - #### Comparison of Phrozen Sonic Series SLA 3D Printers
-        | Model | Phrozen Sonic Mini 8K | Phrozen Sonic Mighty Revo 14K |
-        | :--- | :--- | :--- |
-        | Photo |<img src="./img/Stereolithography_3D_Printer.png" width="320" alt="Phrozen Sonic Mini 8K"> | <img src="./img/SonicMighty14KRevo_1400x1600_1.png" width="300" alt="Phrozen Sonic Mighty Revo 14K" >|
-        | **Main Feature** | The model used last year, which had limitations in printing area and quality. | The large-format, high-resolution model specifically adopted for this competition. |
-        | **Print Size** | Standard print size, relatively smaller. | **Large-format** printing area (10.1 inches). |
-        | **Resolution** | High resolution (8K). | **Ultra-high resolution (14K)**. |
-        | **Print Quality** | Good quality, but limited detail performance compared to the **14K** model. | Significantly **improved printing quality and precision**, suitable for components requiring higher detail. |
-        | **Applicability** | Suitable for smaller prototype parts with moderate detail requirements. | Ideal for **large-sized**, **high-precision**, and **complex geometric structure** parts of the Self-Driving Car. |
-
-        **Primary Rationale for Choosing the Sonic Mighty Revo 14K**
-
-        Our decision to adopt the **Phrozen Sonic Mighty Revo 14K** for this competition was mainly to overcome two limitations encountered with the previous **Sonic Mini 8K** model:
-
-        1.  **Expanded Printing Area:** To accommodate the larger size required for some components after the Self-Driving Car chassis was extended.
-        2.  **Enhanced Precision and Quality:** To ensure that the manufactured custom components (e.g., steering mechanism parts) possess the highest **detail accuracy** and **structural stability**, thereby meeting the rigorous structural demands of the Self-Driving Car.
-
-
-
+      * **Conclusion: Why SLA is Selected for the Competition Vehicle**
+        - 在自動駕駛汽車競賽中，零件的幾何精度和結構細節至關重要。您的團隊選擇SLA 3D列印機（例如Phrozen Sonic Mighty Revo 14K）是因為它能夠有效率地生產高精度、幾何形狀複雜的零件，確保客製化零件滿足車輛嚴格的結構要求，尤其適用於轉向系統等高精度組件。
+        - In the Self-Driving Car competition, the geometric precision and structural detail of the parts are crucial. Your team's selection of an SLA 3D Printer (e.g., Phrozen Sonic Mighty Revo 14K) is due to its superior ability to produce high-precision, geometrically complex components, ensuring the custom-made parts meet the stringent structural demands of the vehicle, particularly for high-accuracy assemblies like the steering system.
         
         
      - #### Description of the resin used in Stereolithography (SLA) 3D Printer-立體光固化（SLA）3D列印機所使用樹脂的描述
@@ -245,7 +237,7 @@
        - 彈性樹脂：具備彈性和柔韌性，適用於需要一定變形能力的零件。
        - 高溫樹脂：耐熱性優異，適合需在高溫環境下運作的零件。
        - 耐衝擊樹脂：具有良好的抗衝擊性和韌性，適用於容易碰撞的零件。
-
+       
        - 每種樹脂在物理特性、表面品質、強度和耐久性方面各有優勢，樹脂的選擇需根據具體應用需求決定。
        - 在比賽過程中，車輛經常碰撞側牆和障礙物，導致如「方向軸支架」和「十字銷」等零件斷裂。因此，我們進行了耐衝擊樹脂和高強度樹脂的實驗測試。測試結果顯示，使用耐衝擊樹脂製作的零件過於柔軟，無法滿足需求。最終，我們選擇使用高強度樹脂製造這些零件，以提升其耐久性和強度。
 
