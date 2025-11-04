@@ -13,10 +13,36 @@
     ```
 - ## Counter-clockwise green departure process-逆時針綠色出發流程
 <div align=center>
+<table>
+<tr>
+<th>Preparing to turn left(準備左轉)</th>
+<th>Start_reversing(準備向前)</th>
+</tr><tr>
+<td align=center><img src="./img/Start_in_green_counterclockwise-1.png" width=400 /></td>
+<td align=center><img src="./img/Start_in_green_counterclockwise-2.png" width=400 /></td>
+</tr>
+</table>
+</div>
+<div align=center>
+<table>
+<tr>
+<th>reparing to turn right(準備右轉)</th>
+<th>Start_reversing(準備向前)</th>
+</tr><tr>
+<td align=center><img src="./img/Start_in_green_counterclockwise-3.png" width=400 /></td>
+<td align=center><img src="./img/Start_in_green_counterclockwise-4.png" width=400 /></td>
+</tr>
+</table>
+</div>
+<div align=center>
+<table>
+<th>reparing to turn right(準備右轉)</th>
+</tr><tr>
+<td align=center><img src="./img/Start_in_green_counterclockwise-3.png" width=400 /></td>
+</table>
+</div>
 
-  |Preparing to turn left(準備左轉)|Start_reversing(開始倒車)|Parking_ends(停車處結束)|
-  |:---:|:---:|:---:|
-  |<div align="center"> <img src="./img/Prepare_to_reverse.png"  alt="Prepare_to_reverse"></div>|<div align="center"> <img src="./img/Start_reversing.png"  alt="Start_reversing"></div>|<div align="center"> <img src="./img/Parking_ends.png"  alt="Parking_ends"></div>|
+  
 
 - ## Counter-clockwise red departure process-逆時針紅色出發流程
 <div align=center>
