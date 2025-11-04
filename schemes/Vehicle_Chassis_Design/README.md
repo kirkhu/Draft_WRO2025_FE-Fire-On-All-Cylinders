@@ -49,7 +49,7 @@
   </tr>
   <tr>
   <td colspan="2">
-  Vehicle Prototype Evolution: Key Changes from Last Year's Version to This Year's International Competition Model
+  Key Changes from Last Year's Version to This Year's International Competition Version：
   <ol>
   <li>The model's excessive length easily moves the blocks during obstacle avoidance, so we shortened the model's overall length.</li>
   <li>Redesigned the steering structure, the 2024 International Competition Vehicle Prototype used wire to link the two steering knuckles, which took up a larger area. Therefore, we used 3D-printed components for the redesign.</li>
@@ -77,7 +77,7 @@
   </tr>
   <tr>
   <td colspan="2">
-  我們機型從去年的原型機到今年國際賽機型總共有已下變更
+  從去年度版本到本年度國際賽版本的主要變更：
   <ol>
   <li>機型過長容易在避障時移動到方塊，因此我們縮短了機型整體長度。</li>
   <li>重新設計轉向結構，2024年國際賽機型使用鐵絲來連動兩側轉向節，面積較大。因此我們使用 3D 物件重新設計。</li>
