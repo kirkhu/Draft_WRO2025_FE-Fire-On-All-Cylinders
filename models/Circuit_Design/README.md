@@ -36,8 +36,8 @@
          <th colspan=3>V2.0 (PCB)</th>
       </tr>
       <tr>
-         <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_2.png" width=400 /></td>
-         <td align=center ><img src="../Circuit_Design/img/circuit_board_back_2.png" width=400 /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_2.png"  /></td>
+         <td align=center ><img src="../Circuit_Design/img/circuit_board_back_2.png"  /></td>
          <td>
          Description:<br>
          
