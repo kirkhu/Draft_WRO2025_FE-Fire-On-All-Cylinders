@@ -45,6 +45,9 @@
   <td><img src="./img/International_competition_machine.png" alt="2025 WRO World Final Competition Prototype" /></td>
   </tr>
   <tr>
+  <th colspan=2>Explanation</th>
+  </tr>
+  <tr>
   <td colspan="2">
   Vehicle Prototype Evolution: Key Changes from Last Year's Version to This Year's International Competition Model
   <ol>
@@ -68,6 +71,9 @@
   <tr align=center>
   <td><img src="./img/Last_years_car.png" alt="2024 Season Competition Self-Driving Car Prototype" /></td>
   <td><img src="./img/International_competition_machine.png" alt="2025 WRO World Final Competition Prototype" /></td>
+  </tr>
+  <tr>
+  <th colspan=2>說明</th>
   </tr>
   <tr>
   <td colspan="2">
