@@ -32,29 +32,56 @@
 
   ### __WRO International Competition Vehicle Prototype Comparison: Last Year vs. This Year__
 
+  ### __WRO 國際賽 Vehicle 原型機規格對比：去年度與本年度__
+
   <div align=center>
-    <table>
-      <tr>
-        <th width=50%>2024 Season Competition Self-Driving Car Prototype - 2024 年國際賽機型</th>
-        <th width=50%>2025 WRO World Final Competition Prototype - 2025 最終國際賽機型</th>
-      </tr>
-      <tr align=center>
-        <td width=50%><img src="./img/Last_years_car.png" alt="2024 Season Competition Self-Driving Car Prototype" /></td>
-        <td width=50%><img src="./img/International_competition_machine.png" alt="2025 WRO World Final Competition Prototype" /></td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          我們機型從去年的原型機到今年國際賽機型總共有已下變更
-          <ol>
-            <li>機型過長容易在避障時移動到方塊，因此我們縮短了機型整體長度。</li>
-            <li>重新設計轉向結構，2024年國際賽機型使用鐵絲來連動兩側轉向節，面積較大。因此我們使用 3D 物件重新設計。</li>
-            <li>在全國賽中我們發現 Jetson Nano 運算效率較不符合我們需求。因此我們將主控制器更換為運算效率更高的 Jetson Orin Nano。</li>
-            <li>自駕車轉向角度不夠，導致一些急轉彎無法通過。因此我們重新設計轉向結構使其有更大的轉向空間。</li>
-            <li>我們發現超音波感測器數據刷新頻率低，較不適合用於前後方物體判斷。因此我們在機型前後安裝 TCRT5000 紅外線感測器。</li>
-          <ol>
-        </td>
-      </tr>
-    </table>
+  <table>
+  <tr>
+  <th width=50%>2024 Season Competition Self-Driving Car Prototype</th>
+  <th width=50%>2025 WRO World Final Competition Prototype</th>
+  </tr>
+  <tr align=center>
+  <td><img src="./img/Last_years_car.png" alt="2024 Season Competition Self-Driving Car Prototype" /></td>
+  <td><img src="./img/International_competition_machine.png" alt="2025 WRO World Final Competition Prototype" /></td>
+  </tr>
+  <tr>
+  <td colspan="2">
+  Vehicle Prototype Evolution: Key Changes from Last Year's Version to This Year's International Competition Model
+  <ol>
+  <li>The model's excessive length easily moves the blocks during obstacle avoidance, so we shortened the model's overall length.</li>
+  <li>Redesigned the steering structure, the 2024 International Competition Vehicle Prototype used wire to link the two steering knuckles, which took up a larger area. Therefore, we used 3D-printed components for the redesign.</li>
+  <li>During the national competition, we found that the computational efficiency of the Jetson Nano did not meet our requirements. Therefore, we replaced the main controller with the Jetson Orin Nano, which has higher computational efficiency.</li>
+  <li>The Self-Driving-Car (Vehicle)'s steering angle was insufficient, resulting in the inability to pass some sharp turns. Therefore, we redesigned the steering structure to allow for a larger steering space.</li>
+  <li>We found that the data refresh rate of the ultrasonic sensor was low, making it less suitable for object detection in the front and rear. Therefore, we installed TCRT5000 infrared sensors on the front and rear of the model (Vehicle).</li>
+  <ol>
+  </td>
+  </tr>
+  </table>
+  </div>
+
+  <div align=center>
+  <table>
+  <tr>
+  <th width=50%>2024 年國際賽機型</th>
+  <th width=50%>2025 最終國際賽機型</th>
+  </tr>
+  <tr align=center>
+  <td><img src="./img/Last_years_car.png" alt="2024 Season Competition Self-Driving Car Prototype" /></td>
+  <td><img src="./img/International_competition_machine.png" alt="2025 WRO World Final Competition Prototype" /></td>
+  </tr>
+  <tr>
+  <td colspan="2">
+  我們機型從去年的原型機到今年國際賽機型總共有已下變更
+  <ol>
+  <li>機型過長容易在避障時移動到方塊，因此我們縮短了機型整體長度。</li>
+  <li>重新設計轉向結構，2024年國際賽機型使用鐵絲來連動兩側轉向節，面積較大。因此我們使用 3D 物件重新設計。</li>
+  <li>在全國賽中我們發現 Jetson Nano 運算效率較不符合我們需求。因此我們將主控制器更換為運算效率更高的 Jetson Orin Nano。</li>
+  <li>自駕車轉向角度不夠，導致一些急轉彎無法通過。因此我們重新設計轉向結構使其有更大的轉向空間。</li>
+  <li>我們發現超音波感測器數據刷新頻率低，較不適合用於前後方物體判斷。因此我們在機型前後安裝 TCRT5000 紅外線感測器。</li>
+  <ol>
+  </td>
+  </tr>
+  </table>
   </div>
  
   ### __Final Build-最終組裝__
