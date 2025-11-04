@@ -16,7 +16,7 @@
 
  - ### The Process of Identifying and Correcting Physical Circuit Board Design Issues - 實體電路板設計問題之發現與修正歷程
    - ### Circuit Board Design Version History - 電路板設計版本 (Version) 歷程
- <div align=center>
+ <div>
  <table>
    <tr>
    <th colspan=3 >V1.0 (Pegboard)</th>
