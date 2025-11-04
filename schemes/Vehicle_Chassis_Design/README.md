@@ -30,7 +30,7 @@
 
 - #### Vehicle Chassis Improvement Record-車輛底盤改進紀錄
 
-  ### __去年全國賽與今年全國賽機型比較__
+  ### __WRO International Competition Vehicle Prototype Comparison: Last Year vs. This Year__
 
   <div align=center>
     <table>
