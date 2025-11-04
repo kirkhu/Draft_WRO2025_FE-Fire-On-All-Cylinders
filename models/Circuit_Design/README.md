@@ -26,23 +26,25 @@
    <td align=center ><img src="../Circuit_Design/img/circuit_board_back_1.png" width="400" /></td>
    <td>
  
-   __Description:__    
-   <br>        
-         此版本電路板焊接所需時間過長，且線路砸亂不美觀還不易檢查問題點。       
+ __Description:__    
+   <br> 
+          
+   - 此版本電路板焊接所需時間過長，且線路砸亂不美觀還不易檢查問題點。     
          
    </td>
-      </tr>
-      <tr>
-         <th colspan=3>V2.0 (PCB)</th>
-      </tr>
-      <tr>
-         <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_2.png"  /></td>
-         <td align=center ><img src="../Circuit_Design/img/circuit_board_back_2.png"  /></td>
-         <td>
-         Description:<br>
+   </tr>
+   <tr>
+   <th colspan=3>V2.0 (PCB)</th>
+   </tr>
+   <tr>
+   <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_2.png"  /></td>
+   <td align=center ><img src="../Circuit_Design/img/circuit_board_back_2.png"  /></td>
+   <td>
+
+__Description:__<br>
          
-         - 因上版電路板有焊接時間過長和線路雜亂的問題，因此我們使用EasyEDA繪畫並生成PCB電路。</br>&emsp;&emsp;
-         - 在測試過程中發現元件無法組裝上去，經過檢查後發現是針腳間距錯誤導致。
+   - 因上版電路板有焊接時間過長和線路雜亂的問題，因此我們使用EasyEDA繪畫並生成PCB電路。
+   - 在測試過程中發現元件無法組裝上去，經過檢查後發現是針腳間距錯誤導致。
          
    </td>
       </tr>
