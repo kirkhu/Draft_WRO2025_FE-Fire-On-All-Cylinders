@@ -9,7 +9,7 @@
 
 - 接下來，我們將詳細介紹本次競賽中自駕車（Self-Driving-Cars）底盤（Chassis）的設計理念與精密的製作過程。
 
-- Our teammate, Hu Xianyi, possesses a solid foundation of practical experience in mechanical design and **Vehicle’s control program** optimization, leveraged from years of participation in the **WRO Future Engineers Category**.
+- Our teammate, HU,SIAN-YI, possesses a solid foundation of practical experience in mechanical design and **Vehicle’s control program** optimization, leveraged from years of participation in the **WRO Future Engineers Category**.
 - Considering the annual changes to the competition themes and rules, particularly the addition this year of executing **parallel parking**  during **Obstacle Challenge rounds**  and starting from the **starting section (including the parking lot)**. We determined that reusing last year's vehicle design (9.8 cm wide, 18.5 cm long) would be disadvantageous for the parking maneuver, as the rules stipulate that the parking lot length is $1.5 \times$ the length of the robot. Consequently, we decided to modify and extend the length of our **Self-Driving Car**from the original 18.5 cm to 23.4 cm, and adopt an ellipsoidal body shape. This optimization not only significantly enhances parking flexibility but also allows the vehicle to navigate a **narrow corridor**  more smoothly.
 - Overall, to more effectively complete the current competition tasks, we conducted a comprehensive adjustment and optimization of the vehicle's design and mechanical structure, leading to a notable improvement in the vehicle's overall performance and operational stability.
 - For this competition, we continued to utilize the foundational equipment and technical expertise accumulated from our previous vehicle builds. Critically, the core component of our **Self-Driving Car**—the **chassis**—was entirely developed and designed in-house by our team, ensuring technical independence and high customizability.
@@ -122,9 +122,9 @@
     <th><div align=center>Vehicle Mid-Deck(車輛中層板)</th>
     <th><div align=center>Vehicle Top Deck(車輛頂層板)</th>
     </tr><tr>
-    <td><img src="./Vehicle_Chassis_Sizse/img/2D_bottom_size.jpg"  alt=" 2D_bottom"></td> 
-    <td><img src="./Vehicle_Chassis_Sizse/img/2D_mid_size.jpg"  alt=" 2D_mid"></td> 
-    <td><img src="./Vehicle_Chassis_Sizse/img/2D_top_size.jpg"  alt=" 2D_top"></td>
+    <td width="30%"><img src="./Vehicle_Chassis_Sizse/img/2D_bottom_size.jpg"  alt=" 2D_bottom"></td> 
+    <td width="30%"><img src="./Vehicle_Chassis_Sizse/img/2D_mid_size.jpg"  alt=" 2D_mid"></td> 
+    <td width="30%"><img src="./Vehicle_Chassis_Sizse/img/2D_top_size.jpg"  alt=" 2D_top"></td>
     </tr>
     </table>
     </div> 
@@ -148,110 +148,105 @@
     <div align="center"><img src="./img/operate_Rachel.jpg" width="400" alt="car_board"></div>
 
  - ###  3D Vehicle Model - Onshape Model Sketch-3D 車輛模型 — Onshape 模型草圖
- - #### Design and Fabrication Process for Stereolithography (SLA) 3D Printed Parts 光固化（SLA）3D 打印零件的設計與製作流程
+    - #### Design and Fabrication Process for Stereolithography (SLA) 3D Printed Parts 光固化（SLA）3D 打印零件的設計與製作流程
   
-     - 我們主要使用 Onshape 進行 3D 模型結構 設計 。接著，我們利用 光固化（SLA）3D 打印機（Stereolithography (SLA) 3D Printer）來製作本次競賽所需的車輛底盤 3D 列印零件，其設計與製作流程如下：
+      我們主要使用 Onshape 進行 3D 模型結構 設計 。接著，我們利用 光固化（SLA）3D 打印機（Stereolithography (SLA) 3D Printer）來製作本次競賽所需的車輛底盤 3D 列印零件，其設計與製作流程如下：
 
-     - We primarily used Onshape for designing the 3D model structure. Subsequently, we utilized a Stereolithography (SLA) 3D Printer to fabricate the 3D printed parts for the vehicle chassis required for this competition.The design and fabrication process is as follows:
-     
-    - #### The usage and introduction of Stereolithography (SLA) 3D printers -光固化（SLA）3D 印表機的使用與介紹
-      * **光固化（SLA）技術特性與設備升級** 
-        - 技術特性： 光固化（SLA）3D 列印技術 使用液態感光樹脂作為材料，並透過雷射（或高解析度光）固化的方式逐層成型。SLA 打印機擅長製作高精度且幾何結構複雜的零件，特別適合用於對細節要求較高的原型製作與模型開發。
+      We primarily used Onshape for designing the 3D model structure. Subsequently, we utilized a Stereolithography (SLA) 3D Printer to fabricate the 3D printed parts for the vehicle chassis required for this competition.The design and fabrication process is as follows:
 
-        - 設備升級： 為了克服去年所使用的 SLA 3D 打印機在列印範圍與品質上的限制，我們特別採用了配備 10.1 吋 14K 解析度 的大尺寸 SLA 3D 打印機（Phrozen Sonic Mighty Revo 14K），並搭配紫外線固化箱。
-
-        - 效益： 此次設備升級顯著提升了零件的列印品質與精度，確保我們能製造出符合 自駕車 嚴格結構要求的客製化組件。
-      * **Stereolithography (SLA) Technology and Equipment Upgrade**
-        - Technology Features: Stereolithography (SLA) 3D printing technology uses liquid photosensitive resin as the material and cures it layer by layer using a laser (or high-resolution light). SLA printers excel at producing parts with high precision and complex geometric structures, making them particularly suitable for prototyping and model development that require high detail.
-
-        - Equipment Upgrade: To address the limitations in printing area and quality of the SLA 3D printer used last year, we specifically adopted a large-format SLA 3D printer featuring a 10.1-inch 14K resolution (Phrozen Sonic Mighty Revo 14K), complemented by a UV curing station.
-
-        - Benefit: This equipment upgrade significantly enhanced the printing quality and precision of the components, ensuring we can manufacture customized parts that meet the stringent structural requirements of the Self-Driving Car.
-
-      - #### 中文:
-      - SLA 3D 印表機的使用流程通常包含以下幾個步驟：
-
-        - 設計與準備： 首先在 CAD 軟體中設計 3D 模型，並轉換成可列印的 STL 檔案。
-
-        - 列印設定： 將 STL 檔匯入 SLA 印表機的切片軟體中，並設定如層厚、樹脂種類等列印參數。
-
-        - 列印過程： SLA 印表機利用雷射逐層固化樹脂來成型模型。由於每一層都由雷射精準固化，因此成品具有高精度與光滑的表面。
-
-        - 後處理： 列印完成後，從樹脂槽中取出成品，清洗以去除多餘樹脂，並放入紫外線固化箱中進行二次固化，以提升硬度與穩定性。
-
-        - SLA 3D 印表機廣泛應用於製造、醫療、珠寶及工業設計等領域。由於其高精度與優異的表面處理能力，特別適合製作對品質與細節要求極高的零件。
-      - #### 英文:
-       - __The usage process of SLA 3D printers typically includes the following steps:__ 
-         - __Design and Preparation:__ First, design the 3D model in CAD software and convert it into a printable STL file.
-         - __Print Setup:__ Load the STL file into the slicing software of the SLA printer, and set printing parameters such as layer thickness and resin type.
-         - __Printing Process:__ The SLA printer uses a laser to cure the resin layer by layer, forming the model. Since each layer is precisely cured by the laser, the printed product has high precision and a smooth surface.
-         - __Post-Processing:__ After printing, the finished product is removed from the resin vat, cleaned to remove excess resin, and subjected to secondary curing in a UV curing box to increase hardness and stability.
-      
-          SLA 3D printers are widely used in industries such as manufacturing, healthcare, jewelry, and industrial desgn. Due to their high precision and fine surface treatment, they are particularly suitable for producing parts that require high quality and detailed features.
-
-      - #### Comparison between Stacked 3D Printer and  Stereolithography (SLA) 3D Printer-堆疊式3D列印機與立體光固化（SLA）3D列印機的比較
-      
-         透過對3D車用零件進行實際列印與操作比較，我們得出以下結論：
+      - #### Comparison between Fused Deposition Modeling (FDM) 3D Printer and  Stereolithography (SLA) 3D Printer
 
          By conducting practical printing and operation comparisons of the 3D vehicle parts, we have reached the following conclusions:
         <div align="center">
         <table>
         <tr align="center">
         <th rowspan="2">Photo</th>
-        <th> Stereolithography (SLA) 3D Printer(Phrozen Sonic Mini 8K) (立體光固化（SLA）3D列印機（Phrozen Sonic Mini 8K）)</th>
-        <th> Stereolithography (SLA) 3D Printer (Phrozen Sonic Mighty Revo)（立體光固化（SLA）3D列印機（Phrozen Sonic Mighty Revo））</th>
+        <th> FDM 3D Printer</th>
+        <th> SLA 3D Printer(Sonic Mighty Revo 14K)</th>
         </tr><tr align="center">
-        <td><img src="./img/Stereolithography_3D_Printer.png" width="320" alt="Stereolithography_3D_Printer"></td>
-        <td><img src="./img/SonicMighty14KRevo_1400x1600_1.png" width="300" alt="" ></td>
+        <td><img src="./img/Stacked_3D_Printe.png" width="300" alt="Stacked_3D_Printe"></td>
+        <td><img src="./img/SonicMighty14KRevo_1400x1600_1.png" width="300" alt="Stereolithography_3D_Printer" ></td>
         </tr><tr align="">
-        <td>The required printing time (所需列印時間)</td>
-        <td>Short</td>
-        <td>Long</td>
+        <td>The required printing time</td>
+        <td>Faster</td>
+        <td>Slower</td>
         </tr><tr>
-        <td>printing precision(印刷精度)</td>
-        <td>低</td>
-        <td>高</td>
+        <td>Exterior</td>
+        <td>Exterior with signs of layering</td>
+        <td>Smooth</td>
         </tr><tr>
-        <td>Hardness(硬度)</td>
-        <td>較低</td>
-        <td>較高</td>
+        <td>Hardness</td>
+        <td>Dependent on the density</td>
+        <td>Dependent on the exposure time</td>
         </tr>
         </tr><tr>
-        <td>Size dimensions（尺寸規格) </td>
-        <td>僅支持小規格物件，略粗糙</td>
-        <td>可支持大規格物件，精細</td>
+        <td>Size dimensions.</td>
+        <td>Supports larger dimensions but does not support overly small dimensions.</td>
+        <td>Supports smaller dimensions.</td>
         </tr>
         </table>
         </div>
-     - #### Description of the resin used in Stereolithography (SLA) 3D Printer-立體光固化（SLA）3D列印機所使用樹脂的描述
-       立體光固化（SLA）3D列印機所使用的樹脂種類多樣，不同樹脂在性能上有明顯差異。常見的SLA樹脂類型包括：
 
-       The types of resin used in Stereolithography (SLA) 3D printers vary, and different resins offer distinct performance comparisons. Common types of SLA resins include:
-       - #### 中文:
-       - 標準樹脂：適用於一般用途，表面光滑度佳，但強度和耐久性相對較低。
-       - 高強度樹脂：具有較高的抗拉強度和剛性，適合需要承受力量的零件。
-       - 彈性樹脂：具備彈性和柔韌性，適用於需要一定變形能力的零件。
-       - 高溫樹脂：耐熱性優異，適合需在高溫環境下運作的零件。
-       -  耐衝擊樹脂：具有良好的抗衝擊性和韌性，適用於容易碰撞的零件。
-       - 每種樹脂在物理特性、表面品質、強度和耐久性方面各有優勢，樹脂的選擇需根據具體應用需求決定。
-       - 在比賽過程中，車輛經常碰撞側牆和障礙物，導致如「方向軸支架」和「十字銷」等零件斷裂。因此，我們進行了耐衝擊樹脂和高強度樹脂的實驗測試。測試結果顯示，使用耐衝擊樹脂製作的零件過於柔軟，無法滿足需求。最終，我們選擇使用高強度樹脂製造這些零件，以提升其耐久性和強度。
-      - #### 英文:
-        - __Standard resin:__ Suitable for general use, offering good surface finish, but relatively lower strength and durability.
-        - __High-strength resin:__ Provides higher tensile strength and rigidity, ideal for parts that need to withstand force.
-        - __Flexible resin:__ Has elasticity and flexibility, suitable for parts that require some degree of deformation.
-        - __High-temperature resin:__ Excellent heat resistance, suitable for parts that need to operate at high temperatures.
-        - __Impact-resistant resin:__ Offers good impact resistance and toughness, ideal for parts that are prone to collisions.
+        在自動駕駛汽車競賽中，零件的幾何精度和結構細節至關重要。您的團隊選擇SLA 3D列印機（例如Phrozen Sonic Mighty Revo 14K）是因為它能夠有效率地生產高精度、幾何形狀複雜的零件，確保客製化零件滿足車輛嚴格的結構要求，尤其適用於轉向系統等高精度組件。
+        
+        In the Self-Driving Car competition, the geometric precision and structural detail of the parts are crucial. Your team's selection of an **SLA 3D Printer (e.g., Phrozen Sonic Mighty Revo 14K)** is due to its superior ability to produce high-precision, geometrically complex components, ensuring the custom-made parts meet the stringent structural demands of the vehicle, particularly for high-accuracy assemblies like the steering system.
+        
+     
+      - #### The usage and introduction of Stereolithography (SLA) 3D printers -光固化（SLA）3D 印表機的使用與介紹
 
-          Each type of resin has different advantages in terms of physical properties, surface quality, strength, and durability, and the choice of resin depends on the specific application requirements.
+        - SLA 3D 印表機的使用流程通常包含以下幾個步驟：
 
-        During the competition, the vehicle often collided with side walls and obstacles, causing parts like the "Steering shaft holder" and "Cross pin" to break. As a result, we conducted experimental tests with impact-resistant resin and high-strength resin. The tests showed that parts made from impact-resistant resin were too soft to meet the requirements. In the end, we chose to use high-strength resin to manufacture these parts, improving their durability and strength.
+          - 設計與準備： 首先在 CAD 軟體中設計 3D 模型，並轉換成可列印的 STL 檔案。
+
+          - 列印設定： 將 STL 檔匯入 SLA 印表機的切片軟體中，並設定如層厚、樹脂種類等列印參數。
+
+          - 列印過程： SLA 印表機利用雷射逐層固化樹脂來成型模型。由於每一層都由雷射精準固化，因此成品具有高精度與光滑的表面。
+
+          - 後處理： 列印完成後，從樹脂槽中取出成品，清洗以去除多餘樹脂，並放入紫外線固化箱中進行二次固化，以提升硬度與穩定性。
+
+          - SLA 3D 印表機廣泛應用於製造、醫療、珠寶及工業設計等領域。由於其高精度與優異的表面處理能力，特別適合製作對品質與細節要求極高的零件。    
+
+        - __The usage process of SLA 3D printers typically includes the following steps:__ 
+          - __Design and Preparation:__ First, design the 3D model in CAD software and convert it into a printable STL file.
+          - __Print Setup:__ Load the STL file into the slicing software of the SLA printer, and set printing parameters such as layer thickness and resin type.
+          - __Printing Process:__ The SLA printer uses a laser to cure the resin layer by layer, forming the model. Since each layer is precisely cured by the laser, the printed product has high precision and a smooth surface.
+          - __Post-Processing:__ After printing, the finished product is removed from the resin vat, cleaned to remove excess resin, and subjected to secondary curing in a UV curing box to increase hardness and stability.
+        
+          SLA 3D printers are widely used in industries such as manufacturing, healthcare, jewelry, and industrial desgn. Due to their high precision and fine surface treatment, they are particularly suitable for producing parts that require high quality and detailed features.
+
+
+        
+       - #### Description of the resin used in Stereolithography (SLA) 3D Printer-立體光固化（SLA）3D列印機所使用樹脂的描述
+          立體光固化（SLA）3D列印機所使用的樹脂種類多樣，不同樹脂在性能上有明顯差異。常見的SLA樹脂類型包括：
+
+          The types of resin used in Stereolithography (SLA) 3D printers vary, and different resins offer distinct performance comparisons. Common types of SLA resins include:
+          - #### 中文:
+          - 標準樹脂：適用於一般用途，表面光滑度佳，但強度和耐久性相對較低。
+          - 高強度樹脂：具有較高的抗拉強度和剛性，適合需要承受力量的零件。
+          - 彈性樹脂：具備彈性和柔韌性，適用於需要一定變形能力的零件。
+          - 高溫樹脂：耐熱性優異，適合需在高溫環境下運作的零件。
+          - 耐衝擊樹脂：具有良好的抗衝擊性和韌性，適用於容易碰撞的零件。
+          
+          - 每種樹脂在物理特性、表面品質、強度和耐久性方面各有優勢，樹脂的選擇需根據具體應用需求決定。
+          - 在比賽過程中，車輛經常碰撞側牆和障礙物，導致如「方向軸支架」和「十字銷」等零件斷裂。因此，我們進行了耐衝擊樹脂和高強度樹脂的實驗測試。測試結果顯示，使用耐衝擊樹脂製作的零件過於柔軟，無法滿足需求。最終，我們選擇使用高強度樹脂製造這些零件，以提升其耐久性和強度。
+
+
+          - __Standard resin:__ Suitable for general use, offering good surface finish, but relatively lower strength and durability.
+          - __High-strength resin:__ Provides higher tensile strength and rigidity, ideal for parts that need to withstand force.
+          - __Flexible resin:__ Has elasticity and flexibility, suitable for parts that require some degree of deformation.
+          - __High-temperature resin:__ Excellent heat resistance, suitable for parts that need to operate at high temperatures.
+          - __Impact-resistant resin:__ Offers good impact resistance and toughness, ideal for parts that are prone to collisions.
+
+            Each type of resin has different advantages in terms of physical properties, surface quality, strength, and durability, and the choice of resin depends on the specific application requirements.
+
+          During the competition, the vehicle often collided with side walls and obstacles, causing parts like the **"Steering shaft holder"** and **"Cross pin"** to break. As a result, we conducted experimental tests with **Impact-resistant resin** and **High-strength resin**. The tests showed that parts made from impact-resistant resin were too soft to meet the requirements. In the end, we chose to use **High-strength resin** to manufacture these parts, improving their durability and strength.
 
     <div align=center>
     <table>
     <tr>
-    <th>High-strength resin(高強度樹脂)</th>
-    <th>Impact-resistant resin(耐衝擊樹脂)</th>
-    <th>Printing completed(列印完成)</th>
+    <th>High-strength resin</th>
+    <th>Impact-resistant resin</th>
+    <th>3D Fabrication Complete</th>
     </tr>
     <tr>
     <td align=center><img src="./img/High-strength_resin.png" width="150" ></td> 
@@ -311,8 +306,8 @@
       <div align=center>
         <table>
           <tr>
-            <th>鏡頭支架主體</th>
-            <th>鏡頭固定板</th>
+            <th>Lens Mount 鏡頭支架</th>
+            <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
           </tr>
           <tr>
             <td align=center width=500><img src="./Vehicle_Chassis_Sizse/img/Lens_holder_body_size.jpg" width=450 /></td>
@@ -371,8 +366,8 @@
       <div align=center>
         <table>
           <tr>
-            <th>鏡頭支架主體</th>
-            <th>鏡頭固定板</th>
+            <th>Lens Mount 鏡頭支架</th>
+            <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
           </tr>
           <tr>
             <td align=center width=500><img src="./Vehicle_Chassis_CAD_File/img/Lens support frame body.png" width=450 /></td>
