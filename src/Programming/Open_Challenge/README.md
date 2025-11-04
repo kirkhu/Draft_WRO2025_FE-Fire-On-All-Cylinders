@@ -76,7 +76,7 @@ from functions_jetson import *
 
       - In turning mode, the servo motor angle remains fixed, and the vehicle uses the gyroscope angle and elapsed time to determine if it has reached the next turning point, thereby deciding when to return to straight-line mode to avoid repeated detections.
 
-      __Program operation flow__ - 程式運行流程
+      ### Program operation flow - 程式運行流程
       ### 中文:
       - jetson_nano_main.py程式開始執行，初始化所有變量，並進入循環，持續從 find_contours和max_contour 函數中獲取數據，然後根據當前狀態進入不同的條件分支以執行相應的控制操作。在每個循環中，程式將jetson_nano_main.py計算出的直流馬達值、伺服馬達角度和當前狀態打包成二進位數據，並透過UART發送到 Raspberry Pi Pico w 控制。 
       ### 英文:
