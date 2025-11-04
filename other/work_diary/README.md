@@ -102,12 +102,12 @@
 <div align="center" >
     <table >
         <tr>
-            <th width=500>Schematic</th>
-            <th width=500>PCB</th>
+            <th width=50%>Schematic</th>
+            <th width=50%>PCB</th>
         </tr>
         <tr align=center>
-            <td><img src="" height=400 alt="Schematic" /></td>
-            <td><img src="" height=400 alt="PCB" /></td>
+            <td><img src="../../models/Circuit_Design/img/Old_Schematic.png" alt="Schematic" /></td>
+            <td><img src="../../models/Circuit_Design/img/Old_PCB_Layouts.png" alt="PCB" /></td>
         </tr>
         <tr align="center">
             <th>First-Generation PCB Front View</th>
