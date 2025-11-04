@@ -22,13 +22,13 @@
    <th colspan=3 >V1.0 (Pegboard)</th>
    </tr>
    <tr>
-   <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_1.png" width="400" /></td>
-   <td align=center ><img src="../Circuit_Design/img/circuit_board_back_1.png" width="400" /></td>
+   <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_1.png"  /></td>
+   <td align=center ><img src="../Circuit_Design/img/circuit_board_back_1.png"/></td>
    <td>
  
  __Description:__    
    <br> 
-          
+
    - 此版本電路板焊接所需時間過長，且線路砸亂不美觀還不易檢查問題點。     
          
    </td>
