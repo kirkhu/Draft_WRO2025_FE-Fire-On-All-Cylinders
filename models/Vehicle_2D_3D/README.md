@@ -385,8 +385,8 @@
       <div align=center>
         <table>
           <tr>
-            <th>鏡頭支架主體</th>
-            <th>鏡頭固定板</th>
+            <th>Lens Mount 鏡頭支架</th>
+            <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
           </tr>
           <tr>
             <td align=center width=500><img src="./Vehicle_Chassis_CAD_File/img/Lens support frame body.png" width=450 /></td>
