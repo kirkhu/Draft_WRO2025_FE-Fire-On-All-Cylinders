@@ -101,14 +101,6 @@
 - This error provided invaluable practical experience, immediately driving us to initiate a design revision and optimization process, followed by sending the updated design for the fabrication of the second-generation board.
 <div align="center" >
     <table >
-        <tr>
-            <th width=50%>Schematic</th>
-            <th width=50%>PCB</th>
-        </tr>
-        <tr align=center>
-            <td><img src="../../models/Circuit_Design/img/Old_Schematic.png" alt="Schematic" /></td>
-            <td><img src="../../models/Circuit_Design/img/Old_PCB_Layouts.png" alt="PCB" /></td>
-        </tr>
         <tr align="center">
             <th>First-Generation PCB Front View</th>
             <th>First-Generation PCB Back View</th>
