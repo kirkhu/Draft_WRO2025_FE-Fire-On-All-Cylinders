@@ -19,7 +19,7 @@
  <div align=center>
  <table>
    <tr>
-   <th colspan=3>V1.0 (Pegboard)</th>
+   <th colspan=3 >V1.0 (Pegboard)</th>
    </tr>
    <tr>
    <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_1.png" width="400" /></td>
@@ -44,7 +44,7 @@
          - 因上版電路板有焊接時間過長和線路雜亂的問題，因此我們使用EasyEDA繪畫並生成PCB電路。</br>&emsp;&emsp;
          - 在測試過程中發現元件無法組裝上去，經過檢查後發現是針腳間距錯誤導致。
          
-         </td>
+   </td>
       </tr>
       <tr>
          <th colspan=3>第三代</th>
