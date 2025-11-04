@@ -27,7 +27,7 @@
 <table>
 <tr>
 <th>reparing to turn right(準備右轉)</th>
-<th>Start_reversing(準備向前)</th>
+<th>Preparing to retreat(準備後退)</th>
 </tr><tr>
 <td align=center><img src="./img/Start_in_green_counterclockwise-3.png" width=400 /></td>
 <td align=center><img src="./img/Start_in_green_counterclockwise-4.png" width=400 /></td>
@@ -36,27 +36,37 @@
 </div>
 <div align=center>
 <table>
-<th>reparing to turn right(準備右轉)</th>
+<tr>
+<th>Preparing to retreat(準備後退)</th>
 </tr><tr>
-<td align=center><img src="./img/Start_in_green_counterclockwise-3.png" width=400 /></td>
+<td align=center><img src="./img/Start_in_green_counterclockwise-5.png" width=400 /></td>
+<tr>
 </table>
 </div>
 
-  
-
-- ## Counter-clockwise red departure process-逆時針紅色出發流程
+ ## <div align="center">Counter-clockwise red departure process-逆時針紅色出發流程</div>
 <div align=center>
-
-  |Preparing to turn left(準備左轉)|Start_reversing(開始倒車)|Parking_ends(停車處結束)|
-  |:---:|:---:|:---:|
-  |<div align="center"> <img src="./img/Prepare_to_reverse.png"  alt="Prepare_to_reverse"></div>|<div align="center"> <img src="./img/Start_reversing.png"  alt="Start_reversing"></div>|<div align="center"> <img src="./img/Parking_ends.png"  alt="Parking_ends"></div>|
-
-- ## Counter-clockwise, no color starting process-逆時針沒有顏色出發流程
+<table>
+<tr>
+<th>Preparing to turn left(準備左轉)</th>
+<th>Start_reversing(準備向前)</th>
+</tr><tr>
+<td align=center><img src="./img/Start_in_green_counterclockwise-1.png" width=400 /></td>
+<td align=center><img src="./img/Start_in_green_counterclockwise-2.png" width=400 /></td>
+</tr>
+</table>
+</div>
 <div align=center>
-
-  |Preparing to turn left(準備左轉)|Start_reversing(開始倒車)|Parking_ends(停車處結束)|
-  |:---:|:---:|:---:|
-  |<div align="center"> <img src="./img/Prepare_to_reverse.png"  alt="Prepare_to_reverse"></div>|<div align="center"> <img src="./img/Start_reversing.png"  alt="Start_reversing"></div>|<div align="center"> <img src="./img/Parking_ends.png"  alt="Parking_ends"></div>| 
+<table>
+<tr>
+<th>Prepare to back up and turn left(準備後退向左轉)</th>
+<th>Preparing to retreat(準備後退)</th>
+</tr><tr>
+<td align=center><img src="./img/Start_in_green_counterclockwise-3.png" width=400 /></td>
+<td align=center><img src="./img/Start_in_green_counterclockwise-4.png" width=400 /></td>
+</tr>
+</table>
+</div>
 
 - ## Clockwise Green Departure Process-順時針綠色出發流程
 <div align=center>
