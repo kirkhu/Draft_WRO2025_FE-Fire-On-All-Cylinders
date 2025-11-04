@@ -51,8 +51,8 @@
 <th>Preparing to turn left(準備左轉)</th>
 <th>Start_reversing(準備向前)</th>
 </tr><tr>
-<td align=center><img src="./img/Start_in_green_counterclockwise-1.png" width=400 /></td>
-<td align=center><img src="./img/Start_in_green_counterclockwise-2.png" width=400 /></td>
+<td align=center><img src="./img/Start_in_red_counterclockwise-1.png" width=400 /></td>
+<td align=center><img src="./img/Start_in_red_counterclockwise-2.png" width=400 /></td>
 </tr>
 </table>
 </div>
@@ -62,7 +62,7 @@
 <th>Prepare to back up and turn left(準備後退向左轉)</th>
 <th>Preparing to retreat(準備後退)</th>
 </tr><tr>
-<td align=center><img src="./img/Start_in_green_counterclockwise-3.png" width=400 /></td>
+<td align=center><img src="./img/Start_in_red_counterclockwise-3.png" width=400 /></td>
 <td align=center><img src="./img/Start_in_green_counterclockwise-4.png" width=400 /></td>
 </tr>
 </table>
