@@ -47,40 +47,45 @@
       - 在測試過程中發現元件無法組裝上去，經過檢查後發現是針腳間距錯誤導致。
             
       </td>
-         </tr>
-         <tr>
-            <th colspan=3>第三代</th>
-         </tr>
-         <tr>
-            <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_3.png" width=400 /></td>
-            <td align=center ><img src="../Circuit_Design/img/circuit_board_back_3.png" width=400 /></td>
-            <td>
-            Description:</br>&emsp;&emsp;
-            因上版電路板有針腳間距不正確的問題，因此我們使用EasyEDA的內建範例圖重新校準針腳間距。</br>&emsp;&emsp;
-            在測試過程中發現整體電路的極性顛倒了，經過查驗發現問題是因為繪畫時將電路板反面畫到正面導致的。
-            </td>
-         </tr>
-         <tr>
-            <th colspan=3>第四代</th>
-         </tr>
-         <tr>
-            <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_4.png" width=400 /></td>
-            <td align=center ><img src="../Circuit_Design/img/circuit_board_back_4.png" width=400 /></td>
-            <td>
-            Description:</br>&emsp;&emsp;
-            因上版電路板有電路極性顛倒的問題，因此我們重新繪畫電路並且經過多次確認電路繪畫正確後送出。</br>&emsp;&emsp;
-            因為機器將主控制器改為Jetson Orin Nano，並且改用紅外線感測器感測是否靠近物體，因此需要添加兩個2Pin插座母頭、插拔式接線端子。
-            </td>
-         </tr>
-         <tr>
-            <th colspan=3>第五代</th>
-         </tr>
-         <tr>
-            <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_5.png" width=400 /></td>
-            <td align=center ><img src="../Circuit_Design/img/circuit_board_back_5.png" width=400 /></td>
-            <td>
-            Description:</br>&emsp;&emsp;
-            因新版機器需要新增兩個2Pin插座母頭和插拔式接線端子，所以我們重新給PCB排版並且加入所需元件。</br>&emsp;&emsp;
+      </tr>
+      <tr>
+      <th colspan=3>V3.0 (PCB)</th>
+      </tr>
+      <tr>
+      <td align=center width="25%"><img src="../Circuit_Design/img/circuit_board_fount_3.png" /></td>
+      <td align=center width="25%"><img src="../Circuit_Design/img/circuit_board_back_3.png"  /></td>
+      <td>
+
+   __Description:__
+      
+      - 因上版電路板有針腳間距不正確的問題，因此我們使用EasyEDA的內建範例圖重新校準針腳間距。
+      - 在測試過程中發現整體電路的極性顛倒了，經過查驗發現問題是因為繪畫時將電路板反面畫到正面導致的。
+            
+      </td>
+      </tr>
+      <tr>
+      <th colspan=3>V4.0 (PCB)</th>
+      </tr>
+      <tr>
+      <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_4.png" width=400 /></td>
+      <td align=center ><img src="../Circuit_Design/img/circuit_board_back_4.png" width=400 /></td>
+      <td>
+   __Description:__</br>&emsp;&emsp;
+      - 因上版電路板有電路極性顛倒的問題，因此我們重新繪畫電路並且經過多次確認電路繪畫正確後送出。
+      
+      - 因為機器將主控制器改為Jetson Orin Nano，並且改用紅外線感測器感測是否靠近物體，因此需要添加兩個2Pin插座母頭、插拔式接線端子。
+      </td>
+      </tr>
+      <tr>
+      <th colspan=3>第五代</th>
+      </tr>
+      <tr>
+      <td align=center ><img src="../Circuit_Design/img/circuit_board_fount_5.png" width=400 /></td>
+      <td align=center ><img src="../Circuit_Design/img/circuit_board_back_5.png" width=400 /></td>
+      <td>
+      
+      __Description:__</br>&emsp;&emsp;
+      - 因新版機器需要新增兩個2Pin插座母頭和插拔式接線端子，所以我們重新給PCB排版並且加入所需元件。</br>&emsp;&emsp;
             此版本在運作程序讀取陀螺儀角度時，會有讀取數值為0的狀況，經過排查發現是電路的迴路問題，且需要將程序改為由Jetson Orin Nano偵測啟動按鈕是否按下，因此需要將陀螺儀的電路獨立連接到Jetson Orin Nano，並新增第二塊電路板用於繪畫程式啟動按鈕電路。
             </td>
          </tr>
@@ -91,7 +96,7 @@
             <td align=center><img src="./img/Circuit_6_Top.png" width=400 /></td>
             <td align=center><img src="./img/Circuit_6_Bottom.png" width=400 /></td>
             <td rowspan=2>
-            Description:</br>&emsp;&emsp;
+            __Description:__</br>&emsp;&emsp;
             因為新版機器人需要將按鈕電路獨立連接到Jetson orin nano的GPIO接口，並且新增RGB燈珠用於顯示當下看到最近物件顏色，所以在此版本會有兩塊電路板。
             </td>
          </tr>
