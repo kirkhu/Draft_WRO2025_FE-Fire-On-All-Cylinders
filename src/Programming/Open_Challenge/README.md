@@ -66,7 +66,7 @@ from functions_jetson import *
       - ##### [jetson_orin_nano_main.py](./jetson_orin_nano_main.py)
       ### 中文:
       - 此 jetson_nano_main.py程式主要負責控制整體任務流程，包括避牆、轉向控制和圈數計數即啟動程式。
-      - Jetson Orin Nano程式啟動後，樹莓派 Pico w 會進入等待狀態，直到Jetson Orin Nano按下按鈕後進入jetson_nano_main.py程式，並透過UART發送馬達數據給樹莓派 Pico w 運行。
+      - Jetson Orin Nano程式啟動後，樹莓派 Pico w 會進入等待狀態，直到按下啟動開關時，Jetson Orin Nano接收到啟動訊號，並發送高電平訊號以啟動`jetson_nano_main.py`主程式，並透過UART發送舵機和直流馬達數據給樹莓派 Pico w 運行。
       - 程序啟動時，車輛預設為直線行駛模式。在此模式下，系統會計算出的邊牆範圍轉換為伺服馬達的角度，並透過PD轉向控制確保車輛不會撞到牆壁​​。當車輛接近彎道時，系統會偵測藍色或橘色線條，判斷是否進入轉彎模式。
       - 在轉彎模式下，伺服馬達角度保持固定，車輛利用看牆的方式來判斷內牆面積是否大於4000，從而決定何時返回直線模式。
       ### 英文:
