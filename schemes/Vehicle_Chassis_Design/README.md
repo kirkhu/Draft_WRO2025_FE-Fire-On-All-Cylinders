@@ -2,21 +2,19 @@
 
 ## <div align="center">Vehicle Chassis Design Process-車輛底盤設計過程</div> 
 
-- ### Vehicle Chassis Design-車輛底盤設計
-    __硬體設計理念與底盤架構優化__
+ __硬體設計理念與底盤架構優化__
   1.  **設計傳承與創新：** 本次 **自駕車**（Self-Driving-Cars）的軟硬體設計靈感延續了去年的機型，並**借鑑了去年世界冠軍車型**的優點。在此基礎上，我們將主控制器從 **Nvidia Jetson Nano 升級為 Nvidia Jetson Orin Nano**，此舉不僅顯著提升了整體運算性能，更為引入創新的軟體設計提供了堅實基礎，使車輛具備更強的競爭力。
   2.  **轉向幾何改良：** 底盤結構採用了工程上常見的 **Ackermann 轉向幾何**（Ackermann Steering Geometry）。更重要的是，我們針對**去年機構的缺點進行了改良**，使車輛在執行**避障**及**迴轉動作**時能夠更加平穩順暢。
   3.  **核心元件自主性：** 本次比賽所使用的**車輛底盤**為完全**自主設計與開發**。
 
-    __Hardware Design Philosophy and Chassis Optimization__
+__Hardware Design Philosophy and Chassis Optimization__
   1.  **Design Legacy and Innovation:** The software and hardware design of this **Self-Driving Car** continues the inspiration from last year's model while **drawing upon the strengths of last year's world champion vehicle design**. Building on this foundation, we upgraded the main controller from the **Nvidia Jetson Nano to the Nvidia Jetson Orin Nano**. This move not only significantly enhances the overall computational performance but also provides a robust basis for introducing innovative software designs, making the vehicle more competitive.
 
   2.  **Steering Geometry Improvement:** The chassis structure utilizes the common engineering principle of **Ackermann Steering Geometry**. Crucially, we implemented **improvements based on the shortcomings of last year's mechanism**, ensuring the vehicle performs **obstacle avoidance** and **turning maneuvers** with greater stability and smoothness.
   
   3.  **Autonomy of Core Components:** The **vehicle chassis** used in this competition was **independently designed and developed** by our team.
-
-
-- #### Vehicle Chassis Improvement Record-車輛底盤改進紀錄
+  
+- ### Vehicle Chassis Improvement Record-車輛底盤設計改進紀錄
 
   <div align=center>
   <table>
@@ -53,11 +51,23 @@
   </table>
   </div> 
 
+- 下表展示了車輛底盤的3D模型與實體成品。
+- **The following table shows the 3D models and finished products of the vehicle chassis.** 
+    |3D Vehicle Chassis Design(3D 車輛底盤設計)| Vehicle Chassis Top View(車輛底盤俯視圖) | Vehicle Chassis Bottom View(車輛底盤底部視圖)|
+    |:----:|:----:|:----:|
+    |<img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png"  alt="vehicle_chassis_design_3D">|<img src="./img/Driver_top.png" width="400" alt="2024Vehicle_Chassis_Design_down">|<img src="./img/Driver_down.png" width="400" alt="down_view">|
+
+
+  - 我們根據自駕車的具體性能需求，客製化設計了零件的尺寸與形狀 。利用 立體光刻（SLA）3D 列印機 和 雷射切割機，我們自行設計並製造了車輛底盤的所有零件，齒輪、樂高 6573 齒輪差速器及輪胎則為例外 。
+
+
+  - 為大幅降低軸承的旋轉摩擦，我們將軸承精確地整合到車輛支架結構中，這一優化措施有效地提升了車輛的整體行駛速度。
+
+  - 為了精準控制車輛的最佳轉彎半徑，並靈活調整阿克曼（Ackermann）比率，我們利用 3D 建模技術和 立體光刻（SLA）3D 列印機，依照具體需求客製化設計了 阿克曼轉向幾何結構 的關鍵零件和車輛支架 。
+- ### Evolution of the Ackermann Steering Geometry Structure 阿克曼轉向幾何結構的優化歷程
   <div align=center>
   <table>
-  <tr>
-    <th colspan=2>Evolution of the Ackermann Steering Geometry Structure 阿克曼轉向幾何結構的優化歷程</th>
-  </tr>
+
   <tr>
     <th colspan=2>第一代轉向結構</th>
   </tr>
@@ -112,29 +122,46 @@
   </div>
 
 
-  - 下表展示了車輛底盤的3D模型與實體成品。
-  - **The following table shows the 3D models and finished products of the vehicle chassis.** 
-    |3D Vehicle Chassis Design(3D 車輛底盤設計)| Vehicle Chassis Top View(車輛底盤俯視圖) | Vehicle Chassis Bottom View(車輛底盤底部視圖)|
-    |:----:|:----:|:----:|
-    |<img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png"  alt="vehicle_chassis_design_3D">|<img src="./img/Driver_top.png" width="400" alt="2024Vehicle_Chassis_Design_down">|<img src="./img/Driver_down.png" width="400" alt="down_view">|
+
+- ###  Selection and Modification of LEGO Differential Gears- 樂高齒輪差速器的選用與修改
+
+  齒輪差速器是車輛傳動系統中的關鍵核心部件 ，其主要功能在於平衡並精確分配驅動動力至各個車輪。
+
+  它允許驅動輪以不同的速度旋轉 ，這在車輛轉彎時尤為重要 。齒輪差速器透過一系列精密設計的齒輪機構 實現此功能，使兩個驅動輪能夠自適應地調整旋轉速度 ，這對於提高車輛的靈活性和操控性至關重要 。無論路況如何，差速器都能確保車輛的穩定性和平衡性 ，從而維持良好的行駛狀態。
+  
+  The gear differential is a critical core component of a vehicle's drivetrain , used to balance and precisely distribute power to the driving wheels.
+
+  It enables the driving wheels to rotate at different speeds , which is especially crucial during turns. The differential achieves this function through a series of precisely engineered gear mechanisms , allowing the two driving wheels to adaptively adjust their rotational speeds. This capability is vital for enhancing the vehicle's agility and handling. Regardless of road conditions, the differential ensures the vehicle's stability and balance, thereby maintaining excellent driving performance.
 
 
-  - 我們根據自駕車的具體性能需求，客製化設計了零件的尺寸與形狀 。利用 立體光刻（SLA）3D 列印機 和 雷射切割機，我們自行設計並製造了車輛底盤的所有零件，齒輪、樂高 6573 齒輪差速器及輪胎則為例外 。
+   - #### Application and Comparison of LEGO Differential Gears 樂高積木齒輪差速器的應用與比較
+      在本次自駕車競賽中，我們利用樂高積木齒輪差速器來實現車輛行駛與轉彎的核心功能。這類差速器主要分為兩種型號：樂高 6573 差速器 和 樂高 62821 差速器。
 
+      __樂高 62821 差速器__
+        - 結構組成： 該差速器由一個 28 齒外齒輪 和四個樂高 12 齒錐齒輪 (零件號 4565452) 組成。
 
-  - 為大幅降低軸承的旋轉摩擦，我們將軸承精確地整合到車輛支架結構中，這一優化措施有效地提升了車輛的整體行駛速度。
+        - 設計優勢： 其緊湊的封閉式外殼設計顯著提高了耐用性與扭矩傳遞效率。中心結構能夠將錐齒輪牢固地固定在位，確保動力平穩地分配到兩個輸出軸。
 
-  - 為了精準控制車輛的最佳轉彎半徑，並靈活調整阿克曼（Ackermann）比率，我們利用 3D 建模技術和 立體光刻（SLA）3D 列印機，依照具體需求客製化設計了 阿克曼轉向幾何結構 的關鍵零件和車輛支架 。
+        - 性能定位： 這使其比舊款樂高 6573 差速器更有效率且更可靠。
 
-- ###  Gear Differential
+      __樂高 6573 差速器__
+        - 結構組成： 該差速器整合了一個 16 齒齒輪 和一個 24 齒齒輪。兩個齒輪的中心都有一個直徑 5 毫米的孔，方便安裝十字軸。
 
-  - The gear differential is a crucial component of a vehicle's drivetrain, used to balance and distribute power to different wheels.
-  - It allows the driven wheels to rotate at different speeds, especially during turns. This is crucial for enhancing the vehicle's agility and maneuverability. The gear differential achieves this function through a series of gear mechanisms, enabling the two drive wheels to rotate adaptively, ensuring the stability and balance of the vehicle, and maintaining good driving conditions regardless of road conditions.
-   - #### The LEGO Brick Gear Differential Introduction 
-        - In this competition, we use a LEGO brick gear differential to achieve the function of the vehicle driving and turning.
-        - There are two types of LEGO brick gear differentials: LEGO 6573 Differential Gear and LEGO 62821 Differential Gear.
-        - LEGO 62821 Differential Gear: It features a single 28-tooth outer gear combined with four LEGO Gear 12 Tooth Bevel 4565452. The compact enclosed housing design improves durability and torque transmission efficiency. The center structure holds the bevel gears firmly in place, ensuring smooth power distribution to both output axles, making it more efficient and reliable than the older LEGO 6573 Differential Gear.
-        - LEGO 6573 Differential Gear: Integrating a 16-tooth gear and a 24-tooth gear, both gears have a 5mm diameter hole in the center for easy placement of a cross axle. There is a small pillar in the center of the differential, allowing us to better secure the right-angle bevel gears and combine three LEGO Gear 12 Tooth Bevel 4565452.
+        - 結構特點： 差速器中心設有一個小支柱，旨在更好地固定直角錐齒輪，並可與三個樂高 12 齒錐齒輪 (零件號 4565452) 組合使用。
+
+      In this competition, we utilized LEGO differential gears to implement the core functions of vehicle driving and turning. These differential gears primarily come in two models: the LEGO 6573 Differential and the LEGO 62821 Differential.
+
+      __LEGO 62821 Differential__
+        - Composition: This differential consists of one 28-tooth outer gear and four LEGO 12-tooth bevel gears (part number 4565452).
+
+        - Design Advantages: Its compact, enclosed casing design enhances durability and torque transfer efficiency. The central structure securely holds the bevel gears in place, ensuring smooth power distribution to the two output shafts.
+
+        - Performance Positioning: This makes it more efficient and reliable than the older LEGO 6573 Differential.
+
+      __LEGO 6573 Differential__
+        - Composition: This differential integrates one 16-tooth gear and one 24-tooth gear. Both gears feature a 5 mm diameter hole at their center for easy cross axle installation.
+
+        - Structural Features: The center of the differential includes a small pillar designed to better secure the right-angle bevel gears, and it can be used in combination with three LEGO 12-tooth bevel gears (part number 4565452).
 
           <div align=center>
           <table>
@@ -148,8 +175,14 @@
           </table>
           </div>
 
-    - #### Reason for Selection
-        - We originally used the LEGO 62821 gear differential as a component of the steering system. However, during the process of reducing the chassis size, we encountered the problem that the differential occupied too much space. Therefore, we switched to the LEGO 6573 gear differential, which successfully solved this issue.
+    - #### Reason for Selection 選擇理由
+      - 我們最初在轉向系統中採用了 樂高 62821 齒輪差速器作為核心組件。然而，在執行底盤尺寸縮小化的設計目標時，我們發現該差速器佔用空間過大，難以符合新的結構限制。
+
+      - 因此，儘管 樂高 62821 齒輪差速器 具有較好的轉向效果，我們決定捨棄它，改用體積更小的 樂高 6573 齒輪差速器。這項替換成功解決了底盤尺寸必須縮小的結構問題，使我們得以實現緊湊型的車輛設計。
+
+      - We initially incorporated the LEGO 62821 differential gear as a component in our steering system. However, during the process of meeting the design goal of reducing the chassis dimensions, we discovered that this differential occupied excessive space, making it incompatible with the new structural constraints.
+
+      - Consequently, despite the LEGO 62821 differential gear offering superior steering performance, we chose to abandon it in favor of the smaller LEGO 6573 differential gear. This substitution successfully resolved the structural issue related to the required chassis size reduction, allowing us to achieve a compact vehicle design.
 
         <div align="center">
         <table>
