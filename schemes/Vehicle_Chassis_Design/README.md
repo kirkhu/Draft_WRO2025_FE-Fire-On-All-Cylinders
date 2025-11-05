@@ -163,7 +163,7 @@ To solve the V1.0 structure's bulkiness and accuracy issues, in V2.0 we:
     </td>
     </tr>
   <tr>
-    <th colspan=2>最終版轉向結構 (V5.0)</th>
+    <th colspan=2>Final Version Steering Structure (V5.0) - 最終版轉向結構 (V5.0)</th>
   </tr>
   <tr>
     <td><img src="./img/steering_5.jpg" /></td>
