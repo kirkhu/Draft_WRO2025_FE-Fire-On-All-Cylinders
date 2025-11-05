@@ -50,8 +50,8 @@
           return [maxArea, maxX, maxY, mCnt]
       ```             
 
- - ### Jetson Orin nano 開放挑戰程式碼概述
-   - #### Jetson Orin nano 函式庫的開放挑戰程式碼計劃
+ - ### Jetson Orin Nano Open Challenge Code Overview - Jetson Orin nano 開放挑戰程式碼概述
+   - #### Jetson Orin Nano Core Library Open Challenge Code Plan - Jetson Orin nano 函式庫的開放挑戰程式碼計劃
     
 ```
 import os, sys                                                                 
