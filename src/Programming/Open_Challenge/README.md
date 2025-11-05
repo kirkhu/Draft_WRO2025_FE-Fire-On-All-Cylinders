@@ -79,9 +79,9 @@ from functions_jetson import *
 
       ### Program operation flow - 程式運行流程
       ### 中文:
-      - jetson_nano_main.py程式開始執行，初始化所有變量，並進入循環，持續從 find_contours和max_contour 函數中獲取數據，然後根據當前狀態進入不同的條件分支以執行相應的控制操作。在每個循環中，程式將jetson_nano_main.py計算出的直流馬達值、伺服馬達角度和當前狀態打包成二進位數據，並透過UART發送到 Raspberry Pi Pico w 控制。 
+      - `jetson_nano_main.py` 程式啟動後，首先初始化所有系統變數。隨後，程式進入主循環 (Main Loop)，在循環中持續調用 `find_contours()`與 `max_contour()` 函式來獲取實時視覺數據。接著，系統會根據當前車輛狀態進入不同的條件分支，以執行相應的控制操作。在每個運行週期結束時，程式會將 Jetson Orin Nano 計算出的直流馬達驅動值、伺服馬達轉向角度以及當前運行狀態，打包成二進位數據格式，並透過 UART 介面發送給 Raspberry Pi Pico W，由其進行底層硬體控制。
       ### 英文:
-       - jetson_nano_main.py starts execution, initializes all variables, and enters a loop, continuously retrieving data from process_roi and detect_color, then entering different conditional branches based on the current state to perform the appropriate control actions. In each loop, jetson_nano_main.py packages the calculated DC motor value, servo motor angle, and current status into binary data and sends it to the Raspberry Pi Pico via UART.
+       - Upon execution, the `jetson_nano_main.py` program first initializes all system variables. Subsequently, the program enters a Main Loop, where it continuously calls the `find_contours()` and `max_contour()` functions to acquire real-time visual data. The system then branches into different conditional blocks based on the current vehicle status to execute the corresponding control operations.At the conclusion of each cycle, the program packages the calculated DC motor values, servo motor angles, and the current operating status into a binary data format. This package is then transmitted via the UART interface to the Raspberry Pi Pico W for low-level hardware control.
 
    - ##### Jetson Orin Nano控制器的程式操作流程圖
      ![flowchart_open](./img/open_challange_Jetson_nano.jpg)
