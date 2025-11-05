@@ -33,7 +33,9 @@
         mask = cv2.dilate(mask, k, iterations=1)
         contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
         return contours
-
+      ```
+    - `find_contours,max_contour`: 處理影像資料以識別場景中的物體或特徵.
+      ```
       def max_contour(contours, ROI):
           maxArea = 0; maxY = 0; maxX = 0; mCnt = 0
           for cnt in contours:
