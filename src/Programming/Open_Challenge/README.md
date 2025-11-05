@@ -99,14 +99,13 @@ from functions_jetson import *
 
       - ##### [pico_main.py](./pico_main.py)
       ### 中文:
-          
+      - 此`pico_main.py`程式運行於樹莓派 Pico 控制器上，作為自動駕駛車輛的中間控制系統，負責管理直流馬達和伺服馬達的運作。該程式透過 UART 介面接收來自 Jetson Nano 控制器的計算結果，並控制後輪直流馬達的轉速、前輪伺服馬達的角度，同時監控車輛狀態參數。    
       - 在控制後輪直流馬達時，我們透過調節PWM的佔空比來控制電壓，並使用L293D驅動晶片來實現後輪直流馬達的速度控制。此外，透過設定L293D晶片上兩個控制引腳（20、21）的高低電平，我們可以控制後輪直流馬達的正反轉。
       - 在控制前輪伺服馬達時，我們直接利用PWM訊號的佔空比來調整輸出，進而控制伺服馬達的轉向角度，PWM訊號佔空比的變化對應於伺服馬達的不同角度設置，從而實現精確轉向。
-        ### 英文:
-        - The `pico_main.py` program runs on the Raspberry Pi Pico controller as an intermediary control system for an autonomous vehicle, managing the operation of the DC motor and servo motor. This program receives computation results from the Jetson Orin nano controller via UART and controls the speed of the rear-wheel DC motor, the angle of the front-wheel servo motor, while also monitoring vehicle status parameters.
-        -  When the start switch is pressed, the Raspberry Pi Pico controller receives a start signal and sends a high-level signal to initiate the main program `jetson_orin_nano_main.py` on the Jetson Orin nano.
-        - When controlling the rear-wheel DC motor, we adjust the voltage through the duty cycle of PWM, using the L293D driver chip to achieve speed control of the rear-wheel DC motor. Additionally, by setting the high and low levels of the two control pins (20,21) on the L293D, we can control the forward and reverse rotation of the rear-wheel DC motor.
-        - When controlling the front-wheel servo motor, we directly use the duty cycle of the PWM signal to adjust the output and control the steering angle of the servo motor, without the need for an L293D driver. Changes in the PWM signal’s duty cycle correspond to different angle settings for the servo motor, allowing for precise steering.
+      ### 英文:
+      - The pico_main.py program runs on the Raspberry Pi Pico W controller, functioning as the intermediate control system for the self-driving vehicle. It is primarily responsible for managing the operation of both the DC driving motor and the servo steering motor. The program receives calculation results from the Jetson Orin Nano controller via the UART interface, using this data to control the rotational speed of the rear DC motor and the angle of the front servo motor, while simultaneously monitoring vehicle status parameters.
+      - To control the rear DC motor, we regulate the voltage by adjusting the PWM duty cycle, utilizing the L293D driver chip to manage the motor's speed. Furthermore, setting the high/low logic levels on the two control pins (20, 21) of the L293D chip allows for precise control over the rear DC motor's forward and reverse rotation.
+      - For steering control with the front servo motor, we directly utilize the PWM signal's duty cycle to adjust the output, thereby commanding the servo motor's turning angle. The variation in the PWM duty cycle corresponds to different angle settings of the servo motor, which enables highly accurate steering.
       
 
       - ##### Program Operation flowchart of the Raspberry Pi Pico W controller
