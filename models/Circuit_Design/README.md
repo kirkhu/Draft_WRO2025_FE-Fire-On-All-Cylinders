@@ -108,6 +108,8 @@
    - 另外，因應規則規定，需要由Jetson Orin Nano偵測啟動按鈕是否按下，才能動作，因此將按鈕電路獨立連接到Jetson orin nano的GPIO接口，並且新增RGB燈珠用於顯示當下看到最近物件顏色，因此新增第二塊電路板用於自駕車啟動按鈕控制電路。
    </td>
    </tr>
+     </table>  
+  </div>
    <tr>
        <th colspan=4>Final(PCB)</th>
    </tr>
@@ -118,7 +120,7 @@
       <td align=center width="25%"><img src="./img/Button_And_Led_Bottom.png" /></td>
    </tr>
       </table>
-   </div>
+
 
  - ### Circuit Schematic Drawing 電路原理圖
  <div align=center>
