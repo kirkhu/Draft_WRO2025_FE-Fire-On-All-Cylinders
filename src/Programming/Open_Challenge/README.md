@@ -20,8 +20,7 @@
    </ol>
 
  - ### Jetson Orin nano library - Jetson Orin nano庫
-    The functions for image recognition, front-wheel servo motor proportional steering control, and ground line color recognition have been integrated into the [function.py](../common/function.py) module and can be directly imported for use.
-    The functions of these modules are as follows:
+    The core functions for image recognition and ground line color recognition have been fully integrated into the function.py module and can be directly imported and called for use. The specific functions of these [function.py](../common/function.py) modules are listed as follows:
     - `find_contours,max_contour`: 處理影像資料以識別場景中的物體或特徵.
       ```
       def find_contours(img_lab, lab_range, ROI):
