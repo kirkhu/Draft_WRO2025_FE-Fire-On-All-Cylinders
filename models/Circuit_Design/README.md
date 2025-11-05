@@ -104,25 +104,18 @@
       
    __Description:__
 
-   - 拿到新的印刷電路板(V5.0)，在測試過程中，在讀取陀螺儀角度時，會有讀取數值為0的狀況，經過排查發現是陀螺儀感測器的電源正負極接在Raspberry Pi Pico W提供的電源，但陀螺儀感測器的訊線線卻接在Jetson Orin Nano控制器上，且需要將程式改為由Jetson Orin Nano偵測啟動按鈕是否按下，因此需要將陀螺儀的電源電路由Raspberry Pi Pico W 獨立連接到Jetson Orin Nano，並新增第二塊電路板用於繪畫程式啟動按鈕電路。
+   - 拿到新的印刷電路板(V5.0)，在測試過程中，在讀取陀螺儀角度時，會有讀取數值為0的狀況，經過排查發現是陀螺儀感測器的電源正負極接在Raspberry Pi Pico W提供的電源，但陀螺儀感測器的訊線線卻接在Jetson Orin Nano控制器上，造成電源與信號源是不同迴路，因此產生誤動作，所以修改陀螺儀感測器的電源與信號源均由Jetson Orin Nano控制器提供。
+   - 另外，因應規則規定，需要由Jetson Orin Nano偵測啟動按鈕是否按下，才能動作，因此將按鈕電路獨立連接到Jetson orin nano的GPIO接口，並且新增RGB燈珠用於顯示當下看到最近物件顏色，因此新增第二塊電路板用於自駕車啟動按鈕控制電路。
    </td>
    </tr>
    <tr>
-       <th colspan=3>V6.0 (PCB)</th>
+       <th colspan=4>Final(PCB)</th>
    </tr>
    <tr>
       <td align=center width="25%"><img src="./img/Circuit_6_Top.png" /></td>
-      <td align=center width="25%"><img src="./img/Circuit_6_Bottom.png"  /></td>
-   <td rowspan=2>
-
- __Description:__
-
-   - 因為新版機器人需要將按鈕電路獨立連接到Jetson orin nano的GPIO接口，並且新增RGB燈珠用於顯示當下看到最近物件顏色，所以在此版本會有兩塊電路板。
-   </td>
-   </tr>
-   <tr>
-      <td align=center><img src="./img/Button_And_Led_Top.png" width=400 /></td>
-      <td align=center><img src="./img/Button_And_Led_Bottom.png" width=400 /></td>
+      <td align=center width="25%"><img src="./img/Circuit_6_Bottom.png" /></td>   
+      <td align=center width="25%"><img src="./img/Button_And_Led_Top.png"  /></td>
+      <td align=center width="25%"><img src="./img/Button_And_Led_Bottom.png" /></td>
    </tr>
       </table>
    </div>
