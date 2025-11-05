@@ -28,34 +28,64 @@ __Hardware Design Philosophy and Chassis Optimization__
   <td width="33%"><img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description_2.png"  alt="2025 WRO World Final Competition Prototype" /></td>
   </tr>
   <tr>
-  <th colspan=2>說明</th>
+  <th colspan=2>Description 說明</th>
   </tr>
   <tr>
   <td colspan="3">
-  從去年度版本到本年度國際賽版本的主要變更：
 
-  機型過長容易在避障時移動到方塊，因此我們縮短了機型整體長度。
-  重新設計轉向結構，2024年國際賽機型使用鐵絲來連動兩側轉向節，面積較大。因此我們使用 3D 物件重新設計。
-  在全國賽中我們發現 Jetson Nano 運算效率較不符合我們需求。因此我們將主控制器更換為運算效率更高的 Jetson Orin Nano。
-  自駕車轉向角度不夠，導致一些急轉彎無法通過。因此我們重新設計轉向結構使其有更大的轉向空間。
-  在自駕車前後方新增 TCRT5000 紅外感測器，用於輔助停車程序運行。
+#### **機型與功能的主要變更**
 
-    我們在底盤的設計上經歷了四次改版
-  第一次改版我們在車頭加入弧形導角，避免前輪接觸邊牆時發生卡住的情況。
-  第二版我們加大轉向節放置孔，改用軸承降低摩擦，使轉彎更順暢。
-  第三版我們縮小轉向結構與馬達支架間的空隙，減短軸距以提升轉彎角度。
-  第四版我們在車頭延伸出小長方區塊，用來保護紅外線感測器避免撞牆損壞。
-  <ol>
+從去年度版本到本年度國際賽版本，我們的機型設計進行了多項關鍵優化：
+
+* **機體尺寸優化：** 由於機型長度過長容易在**避障時移動場地方塊**，我們**縮短了機型整體長度**以提高避障穩定性。
+* **主控制器升級：** 在全國賽中，我們發現 **Jetson Nano 的運算效率**已不符合需求。因此，我們將主控制器更換為**運算效率更高的 Jetson Orin Nano**。
+* **轉向結構重設計（I）：** 去年度國際賽機型使用**鐵絲**來連動兩側轉向節，不僅**佔用面積較大**，且效率不佳。因此，我們**使用 3D 列印物件**重新設計了整個轉向結構。
+* **轉向結構重設計（II）：** 鑑於自駕車的**轉向角度不足**，導致無法通過某些**急轉彎**。我們**重新設計轉向結構**，使其具備**更大的轉向空間**，以提升靈活性。
+* **新增停車輔助感測器：** 在自駕車**前後方新增 TCRT5000 紅外感測器**，專用於**輔助停車程序**的精準運行。
+
+#### **底盤設計的四次改版歷程**
+
+我們的底盤設計總共經歷了四次迭代改版：
+
+1.  **第一次改版：** 在車頭加入**弧形導角（Chamfer）**，以避免前輪接觸邊牆時發生**卡住**的情況，優化撞牆後的脫困能力。
+2.  **第二次改版：** **加大轉向節放置孔**，並**改用軸承**來降低摩擦，使車輛轉彎過程更為**順暢**。
+3.  **第三次改版：** 縮小轉向結構與馬達支架間的**空隙**，同時**減短軸距**（Wheelbase）以**提升轉彎角度**（縮小轉彎半徑）。
+4.  **第四次改版：** 在車頭**延伸出小長方區塊**，目的是**保護紅外線感測器**，避免撞牆時遭受損壞。
+
+#### **Major Changes in Model and Functionality**
+
+From the previous year's version to this year's international competition version, our model design underwent several key optimizations:
+
+* **Model Size Optimization:** Since the vehicle model was too long, it frequently **moved the field pillars/blocks during obstacle avoidance**. We **shortened the overall length of the model** to enhance obstacle clearance stability.
+* **Main Controller Upgrade:** During the National Competition, we found that the **Jetson Nano's computing efficiency** was insufficient for our needs. Consequently, we replaced the main controller with the **higher-computing-efficiency Jetson Orin Nano**.
+* **Steering Structure Redesign (I):** Last year's international model used **metal wires** to link the two steering knuckles, which **occupied a large area** and was inefficient. We therefore **redesigned the entire steering structure using 3D printed components**.
+* **Steering Structure Redesign (II):** The autonomous vehicle's **steering angle was insufficient**, preventing it from navigating certain **sharp turns**. We **redesigned the steering structure** to allow for a **larger steering space**, enhancing its maneuverability.
+* **Addition of Parking Assistance Sensors:** We **added TCRT5000 infrared sensors to the front and rear** of the vehicle, specifically dedicated to **assisting the precision of the parking procedure**.
+
+#### **The Four Iterations of Chassis Design**
+
+Our chassis design underwent a total of four iterations:
+
+1.  **First Iteration:** **Arc-shaped chamfers** were added to the front of the car to prevent the front wheels from **getting stuck** when contacting the side walls, improving self-extrication capabilities after collision.
+2.  **Second Iteration:** We **enlarged the mounting holes for the steering knuckles** and **switched to using bearings** to reduce friction, making the steering process **smoother**.
+3.  **Third Iteration:** We **reduced the gap** between the steering structure and the motor brackets, and **shortened the wheelbase** to **increase the steering angle** (reducing the turning radius).
+4.  **Fourth Iteration:** A **small rectangular block was extended** from the front of the car, specifically to **protect the infrared sensors** from damage during wall collisions.
+
   </td>
   </tr>
   </table>
   </div> 
 
 - 下表展示了車輛底盤的3D模型與實體成品。
-- **The following table shows the 3D models and finished products of the vehicle chassis.** 
-    |3D Vehicle Chassis Design(3D 車輛底盤設計)| Vehicle Chassis Top View(車輛底盤俯視圖) | Vehicle Chassis Bottom View(車輛底盤底部視圖)|
-    |:----:|:----:|:----:|
-    |<img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png"  alt="vehicle_chassis_design_3D">|<img src="./img/Driver_top.png" width="400" alt="2024Vehicle_Chassis_Design_down">|<img src="./img/Driver_down.png" width="400" alt="down_view">|
+- **The following table shows the 3D models and finished products of the vehicle chassis.**
+
+下圖展示了我們設計的車輛底盤（Vehicle Chassis）的 3D 模型 與 最終製造的實體成品 之間的對應關係。
+
+The image below illustrates the correspondence between the 3D Model and the final manufactured physical product of our designed Vehicle Chassis.
+
+|3D Vehicle Chassis Design(3D 車輛底盤設計)| Vehicle Chassis Top View(車輛底盤俯視圖) | Vehicle Chassis Bottom View(車輛底盤底部視圖)|
+|:----:|:----:|:----:|
+|<img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png"  alt="vehicle_chassis_design_3D">|<img src="./img/Driver_top.png" width="400" alt="2024Vehicle_Chassis_Design_down">|<img src="./img/Driver_down.png" width="400" alt="down_view">|
 
 
   - 我們根據自駕車的具體性能需求，客製化設計了零件的尺寸與形狀 。利用 立體光刻（SLA）3D 列印機 和 雷射切割機，我們自行設計並製造了車輛底盤的所有零件，齒輪、樂高 6573 齒輪差速器及輪胎則為例外 。
