@@ -19,6 +19,8 @@ echo "Set auto run code."
 
 sudo chmod +x /home/user/code/open-mode.sh
 
+sed -i 's/\r$//' /home/user/code/open-mode.sh
+
 sudo systemctl daemon-reload
 sudo systemctl enable open-mode
 sudo systemctl start open-mode
