@@ -26,7 +26,7 @@
   <tr align=center>
   <td width="30%"><img src="./img/2024Vehicle_Chassis_Design_down.png"  width="400" alt="2024 Season Competition Self-Driving Car Prototype" /></td>
   <td width="30%"><img src="./img/Driver_top.png"  alt="2025 WRO World Final Competition Prototype" width="400" /></td>
-  <td width="30%"><img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description_2.png"  alt="2025 WRO World Final Competition Prototype" width="400"/></td>
+  <td ><img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description_2.png"  alt="2025 WRO World Final Competition Prototype" width="400"/></td>
   </tr>
   <tr>
   <th colspan=2>說明</th>
