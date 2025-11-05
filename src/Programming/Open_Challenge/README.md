@@ -1,7 +1,7 @@
 <div align=center> <img src="../../../other/img/logo.png" width = 300 alt=" logo"> </div>
 
 ## <div align="center">Open Challenge Code Overview</div> 
-  Based on the characteristics of each control board, we distributed the complex operations required for the race vehicle:
+  Based on the characteristics of each control board, we distributed the complex operations required for the race vehicle: - 考量到各控制板的運算特性與專長，我們對競賽車輛所需的複雜操作進行了專業的職責劃分：
   ### 中文:
    1. Jetson Orin Nano 核心處理影像辨識與行駛方向判斷，憑藉其強大的運算性能實現即時影像分析。
    2. 樹莓派 Pico W 則同步負責馬達驅動及車輛轉向，利用其高效的 GPIO 控制功能達成精準的硬體管理。
@@ -61,7 +61,7 @@ from masks import rMagenta, rRed, rGreen, rBlue, rOrange, rBlack
 from functions_jetson import * 
 ```  
 
-   - #### Introduction to running programs on the Jetson Orin nano controller:
+   - #### Introduction to running programs on the Jetson Orin nano controller: - Jetson Orin Nano 控制器上程式運行之簡介:
 
       - ##### [jetson_orin_nano_main.py](./jetson_orin_nano_main.py)
       ### 中文:
