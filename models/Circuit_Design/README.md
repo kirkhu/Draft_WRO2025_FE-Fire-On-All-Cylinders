@@ -15,11 +15,13 @@
 
 
  - ### The Process of Identifying and Correcting Physical Circuit Board Design Issues - 實體電路板設計問題之發現與修正歷程
-   - ### Circuit Board Design Version History - 電路板設計版本 (Version) 歷程
+   - ### Circuit Design Optimization and Iteration - 電路設計最佳化與迭代
+   本專案的電路設計歷經了數個版本的迭代，以追求最高的效能與可靠性：
+   The circuit design for this project underwent several versions to achieve maximum performance and reliability:
 <div>
 <table>
    <tr>
-      <th colspan=3 >V1.0 (Pegboard)</th>
+      <th colspan=3 >Initial Phase and Fundamental Design Flaws V1.0 (Pegboard)</th>
    </tr>
    <tr>
       <td align=center  width="25%"><img src="../Circuit_Design/img/circuit_board_fount_1.png"  /></td>
@@ -28,13 +30,13 @@
 
    __Description:__          
 
-   - 此版本採用電木板作為電路設計材料 ，其設計和焊接過程極為耗時 。同時，線路佈局雜亂且缺乏美觀性 。這不僅大幅提高了除錯與故障診斷的難度 ，更潛藏了焊接不良、虛焊（假焊）以及短路的重大風險 。
-   - This version utilizes a PCB pegboard (or Bakelite board) as the material for circuit design , making the design and soldering process exceedingly time-consuming. Furthermore, the circuit layout is disorganized and lacks aesthetic quality. This deficiency not only significantly increases the difficulty of debugging and troubleshooting but also poses substantial risks of poor solder joints, cold joints (or pseudo-soldering), and short circuits.
+   - 本設計採用了 電木板（PCB 萬用板） 進行電路製作，然而，這種選擇使得電路設計與焊接過程變得極度耗時 。此外，線路佈局顯得雜亂，缺乏系統性的規劃與美觀性。這不僅嚴重影響了後續的除錯（Debugging） 與故障診斷（Fault Diagnosis） 效率，更存在虛焊（冷焊）、焊接不良及短路等重大的電路可靠性風險。
+   - This design utilized a PCB pegboard (also known as a universal PCB) as the material for circuit construction. However, this choice resulted in an extremely time-consuming process for circuit design and soldering. Furthermore, the wiring layout appeared cluttered, lacking systematic planning and aesthetic quality. This not only severely hindered the efficiency of subsequent debugging and fault diagnosis, but also posed significant circuit reliability risks, including issues like cold solder joints, poor soldering, and short circuits.
                
    </td>
    </tr>
    <tr>
-      <th colspan=3>V2.0 (PCB)</th>
+      <th colspan=3>Adopting Professional Fabrication and Discovering Parameter Errors V2.0 (PCB)</th>
    </tr>
    <tr>
       <td align=center width="25%" ><img src="../Circuit_Design/img/circuit_board_fount_2.png"  /></td>
@@ -43,18 +45,18 @@
 
    __Description:__
             
-   - 為了解決舊版本電路板(V1.0)設計中的問題，我們決定使用 EasyEDA 軟體來繪製電路，並生成 PCB 電路圖(V2.0)，送交工廠進行印刷製作。這次經驗讓我們成功學習到如何設計出符合業界標準的印刷電路板。
+   - 為了解決舊版本電路板（V1.0）設計中存在的諸多問題，我們採用 EasyEDA 軟體 重新繪製電路，並生成了新的 印刷電路板（PCB）圖稿（V2.0）。隨後，我們將此設計送交工廠進行專業印刷製作。這次完整的流程讓我們成功掌握了業界標準的 PCB 設計與製造知識。
 
-   - 當我們拿到製作完成的印刷電路板(V2.0)時，感到十分興奮。然而，在安裝電子元件的過程中，卻發現元件無法順利組裝。經檢查後確認，這是因為我們在設計時錯誤地設定了針腳插座間距所導致。
+   - 當我們收到工廠製作完成的 V2.0 印刷電路板時，團隊感到非常興奮。然而，在著手安裝電子元件的過程中，我們發現元件無法順利組裝。經仔細檢查與確認，這是由於我們在 PCB 設計階段錯誤地設定了元件的針腳插座間距（Pin Header Pitch） 所造成的設計失誤。
 
-   - To address the issues in the previous version's circuit board design, we decided to use the EasyEDA software to design the circuit and generate the PCB schematic, which was then sent to a factory for printing and manufacturing. This experience allowed us to learn how to design a printed circuit board that meets industry standards.
+   - In order to resolve the various issues present in the old circuit board design (V1.0), we utilized EasyEDA software to redraw the circuit and generate a new Printed Circuit Board (PCB) layout (V2.0). We then submitted this design for professional manufacturing at a factory. This comprehensive process allowed us to successfully acquire industry-standard knowledge of PCB design and fabrication.
 
-   - We were very excited upon receiving the finished printed circuit boards. However, during the process of installing the electronic components, we discovered that the components could not be successfully assembled. Upon inspection, we confirmed that this issue was caused by an incorrectly designed pin socket pitch in our layout.
+   - The team was highly excited upon receiving the factory-produced V2.0 PCB. However, during the component installation phase, we discovered that the electronic components could not be properly assembled. After careful inspection and verification, we confirmed that this was a design error caused by incorrectly setting the component's pin header pitch during the PCB design stage.
             
    </td>
    </tr>
    <tr>
-      <th colspan=3>V3.0 (PCB)</th>
+      <th colspan=3>Critical Polarity Error and Subsequent Rectification V3.0 (PCB)</th>
    </tr>
    <tr>
       <td align=center width="25%"><img src="../Circuit_Design/img/circuit_board_fount_3.png" /></td>
@@ -63,19 +65,19 @@
 
    __Description:__
       
-   - 鑑於上一版印刷電路板(V2.0)出現針腳間距錯誤的問題，我們利用 EasyEDA 軟體內建的標準範例圖進行參照，精確地重新校準了正確的針腳間距參數，送工廠製作。
+   - 鑑於上一版印刷電路板（V2.0）出現元件針腳間距錯誤的問題，我們立即利用 EasyEDA 軟體內建的標準範例圖作為參考，精確地重新校準了正確的針腳間距參數，並將修正後的設計（V3.0）送交工廠製作。
 
-   - 然而拿到製作完成的印刷電路板(V3.0)時，在後續的功能測試環節中，我們發現整個電路的極性呈現反向。經過詳細的檢查與追溯，最終確認問題是源於電路板設計階段的操作失誤，即誤將電路板的背面佈局層繪製到了正面。
+   - 然而，當我們收到製作完成的 V3.0 PCB 並進行功能測試時，卻發現整個電路的極性（Polarity）呈現反向。經過詳細的電路追溯與檢查，最終確認此問題是源於電路板設計階段的一次操作失誤：我們誤將原本應佈局於電路板背面的線路層（Bottom Layer）繪製到了正面（Top Layer）。
 
-   - Given the issue of incorrect pin pitch present in the previous PCB version, we utilized the standard built-in example layouts of the EasyEDA software as a reference to accurately re-calibrate the correct pin pitch parameters.
+   - Given the incorrect component pin pitch issue found in the previous PCB version (V2.0), we immediately referenced the standard example diagrams built into the EasyEDA software to precisely recalibrate the correct pin pitch parameters. We then sent this revised design (V3.0) to the factory for production.
 
-   - However, during the subsequent functional testing phase, we detected that the overall circuit polarity was inverted. Following a detailed inspection and root cause analysis, we confirmed that the problem arose from a procedural error during the PCB design stage, specifically mistakenly drawing the board's backside layout layer onto the front side.
+   - However, upon receiving the factory-produced V3.0 PCB and proceeding with the functional testing phase, we discovered that the polarity of the entire circuit was reversed. After detailed circuit tracing and inspection, we ultimately confirmed that this problem stemmed from an operational error during the circuit board design stage: we mistakenly drew the trace layer that should have been on the bottom layer of the PCB onto the top layer.
 
             
    </td>
    </tr>
    <tr>
-       <th colspan=3>V4.0 (PCB)</th>
+       <th colspan=3>Critical Polarity Error and Subsequent Rectification V4.0 (PCB)</th>
    </tr>
     <tr>
       <td align=center  width="25%"><img src="../Circuit_Design/img/circuit_board_fount_4.png" width=400 /></td>
@@ -84,18 +86,18 @@
 
    __Description:__
 
-   - 由於上一版印刷電路板(V3.0)存在電路極性顛倒的問題，我們對電路圖進行了重新繪製，並經過多次嚴格確認繪圖無誤後，才將檔案送出製作，得到印刷電路板(V4.0)。
+   - 針對上一版印刷電路板（V3.0）電路極性顛倒的問題，我們對電路圖進行了徹底重新繪製，並經過多次嚴格確認設計無誤後，才將檔案送出製作，最終獲得了正確無誤的印刷電路板（V4.0）。
 
-   - 由於我們將機器人主控制器升級為 Jetson Orin Nano，並改用紅外線感測器來偵測是否靠近停-車區牆面，因此需要在電路板上增設兩個 2 Pin 的母頭插座，同時為 Jetson Orin Nano 設計可插拔式接線端子以提供電源連接點，只好重新設計送工廠重新印刷電路板(V5.0)。
+   - 隨後，由於我們將機器人主控制器升級為 Jetson Orin Nano，並決定改用紅外線感測器來偵測車輛是否靠近停車區牆面，因此需要在電路板上增設兩個 2-Pin 的母頭插座。同時，為了提供穩定且可插拔的電源連接點給 Jetson Orin Nano，我們也重新設計了接線端子。基於這些功能上的變動與升級，我們不得不重新設計電路，並送交工廠印刷製作新版電路板（V5.0）。
 
-   - Due to the issue of inverted circuit polarity in the previous PCB version, we re-drew the circuit diagram and sent the file for manufacturing only after multiple rigorous checks confirmed the drawing's accuracy.
+   - Addressing the issue of reversed circuit polarity in the previous PCB version (V3.0), we performed a complete redraw of the schematic. Only after multiple strict verifications to ensure the design was correct did we submit the file for production, resulting in the accurate Printed Circuit Board (V4.0).
 
-   - As we upgraded the robot's main controller to the Jetson Orin Nano and switched to using infrared sensors to detect proximity to the parking zone walls, it was necessary to add two 2-pin female headers to the PCB and design pluggable terminal blocks for the Jetson Orin Nano to provide power connection points.
+   - Subsequently, due to upgrading the robot's main controller to a Jetson Orin Nano and deciding to switch to infrared sensors for detecting proximity to the parking area walls, it became necessary to add two 2-Pin female connectors to the circuit board. Simultaneously, we redesigned the terminal blocks to provide a stable, plug-and-play power connection point for the Jetson Orin Nano. Based on these functional changes and upgrades, we were compelled to redesign the circuit and submit the new board version (V5.0) to the factory for re-printing.
 
    </td>
    </tr>
    <tr>
-      <th colspan=3>V5.0 (PCB)</th>
+      <th colspan=3>Functional Upgrades and Final Circuit Architecture V5.0 (PCB)</th>
    </tr>
    <tr>
       <td align=center width="25%" ><img src="../Circuit_Design/img/circuit_board_fount_5.png" /></td>
@@ -104,15 +106,21 @@
       
    __Description:__
 
-   - 拿到新的印刷電路板(V5.0)，在測試過程中，在讀取陀螺儀角度時，會有讀取數值為0的狀況，經過排查發現是陀螺儀感測器的電源正負極接在Raspberry Pi Pico W提供的電源，但陀螺儀感測器的訊線線卻接在Jetson Orin Nano控制器上，造成電源與信號源是不同迴路，因此產生誤動作，所以修改陀螺儀感測器的電源與信號源均由Jetson Orin Nano控制器提供。
-   - 另外，因應規則規定，需要由Jetson Orin Nano偵測啟動按鈕是否按下，才能動作，因此將按鈕電路獨立連接到Jetson orin nano的GPIO接口，並且新增RGB燈珠用於顯示當下看到最近物件顏色，因此新增第二塊電路板用於自駕車啟動按鈕控制電路。
+   - 在取得新版印刷電路板（V5.0）後，我們在測試過程中發現讀取 BNO055 陀螺儀感測器的角度時，偶爾會出現數值為 0 的異常情況。經排查確認，此問題是因 BNO055 感測器的電源正負極連接至 Raspberry Pi Pico W 提供的電源，而其訊號線卻接在 Jetson Orin Nano 主控制器上。這種電源與信號源不在同一迴路的配置導致了感測器誤動作。因此，我們修正設計，確保 BNO055 陀螺儀感測器的電源和訊號源皆由 Jetson Orin Nano 主控制器統一提供。
+
+   - 此外，為符合競賽規則中必須由 Jetson Orin Nano 偵測啟動按鈕才能開始運行的規定，我們將啟動按鈕電路獨立連接至 Jetson Orin Nano 的通用輸入/輸出（GPIO）接口。同時，為了優化除錯流程，我們新增了 RGB 燈珠，用於即時顯示車輛偵測到的最近物件顏色。基於這些新增功能，我們設計並製作了第二塊電路板，專門用於自駕車的啟動按鈕控制與狀態顯示。
+
+   - Upon receiving the new PCB (V5.0), functional testing revealed an intermittent issue where the BNO055 gyroscope sensor would return an angle reading of zero. Troubleshooting confirmed that this anomaly occurred because the BNO055 sensor was drawing power from the Raspberry Pi Pico W, while its signal lines were connected to the Jetson Orin Nano main controller. This configuration, where the power and signal sources were on different circuits, caused the sensor malfunction. Consequently, we modified the design to ensure that both the power and signal lines for the BNO055 gyroscope sensor are now supplied exclusively by the Jetson Orin Nano controller.
+
+   - Separately, to comply with the rule requiring the Jetson Orin Nano to detect the start button press before operation, we dedicated a circuit to connect the start button directly to the Jetson Orin Nano's General-Purpose Input/Output (GPIO) interface. Furthermore, to enhance the debugging process, we added RGB LEDs to display the color of the nearest object detected by the vehicle in real-time. Based on these additions, we designed and manufactured a second circuit board dedicated to the self-driving car's start button control and status indication.
+
    </td>
    </tr>
      </table>  
   </div>
      <table>
    <tr>
-       <th colspan=4>Final(PCB)</th>
+       <th colspan=4>Final Version(PCB)</th>
    </tr>
    <tr>
       <td align=center width="25%"><img src="./img/Circuit_6_Top.png"  width="200"/></td>
@@ -127,6 +135,9 @@
  <div align=center>
    <table>
       <tr>
+      <th colspan=3>主電路板（Main PCB）</th>
+      </tr>
+      <tr>
          <th>3D view</th>
          <th>circuit schematic</th>
          <th>PBC layout drawing</th>
@@ -135,6 +146,14 @@
          <td align=center ><img src="./img/New_3D_View.png" height=250 /></td>
          <td align=center ><img src="./img/New_Schematic.png" height=250 /></td>
          <td align=center ><img src="./img/New_PCB_Layouts.png" height=250 /></td>
+      </tr>
+      <tr>
+      <th colspan=3>Switch Control Circuit Board (Secondary PCB) - 開關控制電路板</th>
+      </tr>
+      <tr>
+         <th>3D view</th>
+         <th>circuit schematic</th>
+         <th>PBC layout drawing</th>
       </tr>
       <tr>
          <td align=center ><img src="./img/New_3D_View_Button_and_Led.png" height=250 /></td>
@@ -155,8 +174,7 @@
  ***
  - ### Supplementary Information -補充資訊
  
- - #### 經驗分享-Adafruit BNO055 電路
-   
+ - #### 經驗分享-Adafruit BNO055 電路 
 
  #### 中文
    在自駕車電路設計的初始版本中，Adafruit BNO055 IMU感測器正極由Raspberry Pi Pico W提供，而資料傳輸是連接到Jetson Orin Nano。然而由於該設計未能形成完整電源迴路，導致系統缺乏統一電位基準，進而造成感測數據異常，尤其航向角輸出長時間固定於0°，無法反映實際姿態變化。
