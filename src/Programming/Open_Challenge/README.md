@@ -50,7 +50,7 @@
           return [maxArea, maxX, maxY, mCnt]
       ```             
 
- - ### Jetson Orin Nano Open Challenge Code Overview - Jetson Orin nano 開放挑戰程式碼概述
+ - ### Jetson Orin Nano Open Challenge Code Overview - Jetson Orin nano 公開挑戰程式碼概述
    - #### Jetson Orin Nano Core Library Open Challenge Code Plan - Jetson Orin nano 函式庫的開放挑戰程式碼計劃
     
 ```
@@ -77,17 +77,17 @@ from functions_jetson import *
       - Curve Mode Transition (Curve Detection): As the vehicle approaches a curve, the system detects the blue or orange lines on the track. Once these lines are detected, the system automatically switches to the turning mode.
       - Turning and Mode Return: In the turning mode, the servo motor angle remains fixed, and the vehicle still uses visual wall perception for auxiliary judgment. The turning is deemed complete when the system confirms that the inner wall area is greater than 4000, upon which the vehicle immediately returns to the straight driving mode.
 
-      ### Program operation flow - 程式運行流程
+      ### Jetson Orin Nano Program Execution Flow - Jetson Orin Nano程式運行流程
       ### 中文:
       - `jetson_nano_main.py` 程式啟動後，首先初始化所有系統變數。隨後，程式進入主循環 (Main Loop)，在循環中持續調用 `find_contours()`與 `max_contour()` 函式來獲取實時視覺數據。接著，系統會根據當前車輛狀態進入不同的條件分支，以執行相應的控制操作。在每個運行週期結束時，程式會將 Jetson Orin Nano 計算出的直流馬達驅動值、伺服馬達轉向角度以及當前運行狀態，打包成二進位數據格式，並透過 UART 介面發送給 Raspberry Pi Pico W，由其進行底層硬體控制。
       ### 英文:
        - Upon execution, the `jetson_nano_main.py` program first initializes all system variables. Subsequently, the program enters a Main Loop, where it continuously calls the `find_contours()` and `max_contour()` functions to acquire real-time visual data. The system then branches into different conditional blocks based on the current vehicle status to execute the corresponding control operations.At the conclusion of each cycle, the program packages the calculated DC motor values, servo motor angles, and the current operating status into a binary data format. This package is then transmitted via the UART interface to the Raspberry Pi Pico W for low-level hardware control.
 
-   - ##### Jetson Orin Nano控制器的程式操作流程圖
+   - ##### Jetson Orin Nano Controller Main Program Flowchart - Jetson Orin Nano控制器主程式流程圖
      ![flowchart_open](./img/open_challange_Jetson_nano.jpg)
 
- - ### 樹莓派 Pico W 公開挑戰代碼概述
-   - #### 樹莓派 Pico W 庫開放挑戰程式碼程序
+ - ### Raspberry Pi Pico W Open Challenge Code Overview - 樹莓派 Pico W 公開挑戰代碼概述
+   - #### Raspberry Pi Pico W Core Library / Module Program Plan for the Open Challenge - 樹莓派 Pico W 庫公開挑戰程式碼程序
     
       ```
       from machine import Pin, PWM, UART,I2C,time_pulse_us
@@ -95,7 +95,7 @@ from functions_jetson import *
       import struct
       ```  
      
-   - #### 樹莓派 Pico W 控制器程式運作簡介:
+   - #### Raspberry Pi Pico W Controller Program Operation Overview - 樹莓派 Pico W 控制器程式運作簡介:
 
       - ##### [pico_main.py](./pico_main.py)
       ### 中文:
