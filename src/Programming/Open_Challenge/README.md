@@ -65,16 +65,17 @@ from functions_jetson import *
 
       - ##### [jetson_orin_nano_main.py](./jetson_orin_nano_main.py)
       ### 中文:
-      - 此 jetson_nano_main.py程式主要負責控制整體任務流程，包括避牆、轉向控制和圈數計數即啟動程式。
-      - Jetson Orin Nano程式啟動後，樹莓派 Pico w 會進入等待狀態，直到按下啟動開關時，Jetson Orin Nano接收到啟動訊號，並發送高電平訊號以啟動`jetson_nano_main.py`主程式，並透過UART發送舵機和直流馬達數據給樹莓派 Pico w 運行。
-      - 程序啟動時，車輛預設為直線行駛模式。在此模式下，系統會計算出的邊牆範圍轉換為伺服馬達的角度，並透過PD轉向控制確保車輛不會撞到牆壁​​。當車輛接近彎道時，系統會偵測藍色或橘色線條，判斷是否進入轉彎模式。
-      - 在轉彎模式下，伺服馬達角度保持固定，車輛利用看牆的方式來判斷內牆面積是否大於4000，從而決定何時返回直線模式。
+      - `jetson_nano_main.py` 主程式負責掌控整體任務流程，包含避牆導航、轉向控制及圈數計數等核心功能。
+      - 系統啟動流程： Jetson Orin Nano 啟動後，樹莓派 Pico W 會進入待命狀態。當使用者按下實體啟動開關後，Jetson Orin Nano 接收到啟動訊號，隨即發送高電平訊號來啟動 `jetson_nano_main.py` 主程式。主程式運行後，便透過 UART 介面持續將舵機（轉向）和直流馬達（驅動）的數據傳送給樹莓派 Pico W 執行。
+      - 直線行駛模式 (Wall Following): 程式啟動時，車輛預設進入直線行駛模式。在此模式下，系統會將計算出的邊牆範圍轉換為伺服馬達的精確轉向角度，並利用 PD 控制演算法確保車輛能穩定循跡，避免碰撞牆壁。
+      - 轉彎模式切換 (Curve Detection): 當車輛接近彎道時，系統會偵測賽道上的藍色或橘色線條，一旦偵測到這些線條，即自動切換至轉彎模式。
+      - 轉彎與模式返回： 在轉彎模式下，伺服馬達的角度保持固定不變，車輛仍利用視覺看牆的方式進行輔助判斷。當系統確認內牆面積（inner wall area）大於 4000 時，即認定轉彎完成，隨即返回直線行駛模式。
       ### 英文:
-      - The jetson_nano_main.py program is primarily responsible for controlling the overall task flow, including wall avoidance, steering control, and lap counting.
-
-      - When the program starts, the vehicle defaults to a straight-line mode. In this mode, the boundary range calculated by process_roi() is converted into an angle for the servo motor, and PD steering control is executed via pd_control() to ensure the vehicle does not hit the sidewall. When the vehicle approaches a turn, detect_color() detects blue or orange lines to determine whether to enter turning mode.
-
-      - In turning mode, the servo motor angle remains fixed, and the vehicle uses the gyroscope angle and elapsed time to determine if it has reached the next turning point, thereby deciding when to return to straight-line mode to avoid repeated detections.
+      - The `jetson_nano_main.py` primary program is responsible for controlling the overall mission flow, encompassing core functions such as wall avoidance navigation, steering control, and lap counting.
+      - System Startup Process: After the Jetson Orin Nano boots up, the Raspberry Pi Pico W enters a waiting state. Upon the user pressing the physical start switch, the Jetson Orin Nano receives the activation signal and immediately transmits a high-level signal to initiate the `jetson_nano_main.py` main program. Once running, the main program continuously sends servo motor (steering) and DC motor (drive) data to the Raspberry Pi Pico W via the UART interface for execution.
+      - Straight Driving Mode (Wall Following): When the program starts, the vehicle defaults to the straight driving mode. In this mode, the system converts the calculated side wall range into a precise steering angle for the servo motor, utilizing a PD control algorithm to ensure stable tracking and prevent collisions with the walls.
+      - Curve Mode Transition (Curve Detection): As the vehicle approaches a curve, the system detects the blue or orange lines on the track. Once these lines are detected, the system automatically switches to the turning mode.
+      - Turning and Mode Return: In the turning mode, the servo motor angle remains fixed, and the vehicle still uses visual wall perception for auxiliary judgment. The turning is deemed complete when the system confirms that the inner wall area is greater than 4000, upon which the vehicle immediately returns to the straight driving mode.
 
       ### Program operation flow - 程式運行流程
       ### 中文:
