@@ -28,7 +28,8 @@
 
    __Description:__          
 
-   - 此版本電路板焊接所需時間過長，且線路砸亂不美觀還不易檢查問題點。     
+   - 此版本採用電木板作為電路設計材料 ，其設計和焊接過程極為耗時 。同時，線路佈局雜亂且缺乏美觀性 。這不僅大幅提高了除錯與故障診斷的難度 ，更潛藏了焊接不良、虛焊（假焊）以及短路的重大風險 。
+   - This version utilizes a PCB pegboard (or Bakelite board) as the material for circuit design , making the design and soldering process exceedingly time-consuming. Furthermore, the circuit layout is disorganized and lacks aesthetic quality. This deficiency not only significantly increases the difficulty of debugging and troubleshooting but also poses substantial risks of poor solder joints, cold joints (or pseudo-soldering), and short circuits.
                
    </td>
    </tr>
@@ -42,8 +43,13 @@
 
    __Description:__
             
-   - 因上版電路板有焊接時間過長和線路雜亂的問題，因此我們使用EasyEDA繪畫並生成PCB電路。
-   - 在測試過程中發現元件無法組裝上去，經過檢查後發現是針腳間距錯誤導致。
+   - 為了解決舊版本電路板(V1.0)設計中的問題，我們決定使用 EasyEDA 軟體來繪製電路，並生成 PCB 電路圖(V2.0)，送交工廠進行印刷製作。這次經驗讓我們成功學習到如何設計出符合業界標準的印刷電路板。
+
+   - 當我們拿到製作完成的印刷電路板(V2.0)時，感到十分興奮。然而，在安裝電子元件的過程中，卻發現元件無法順利組裝。經檢查後確認，這是因為我們在設計時錯誤地設定了針腳插座間距所導致。
+
+   - To address the issues in the previous version's circuit board design, we decided to use the EasyEDA software to design the circuit and generate the PCB schematic, which was then sent to a factory for printing and manufacturing. This experience allowed us to learn how to design a printed circuit board that meets industry standards.
+
+   - We were very excited upon receiving the finished printed circuit boards. However, during the process of installing the electronic components, we discovered that the components could not be successfully assembled. Upon inspection, we confirmed that this issue was caused by an incorrectly designed pin socket pitch in our layout.
             
    </td>
    </tr>
@@ -57,8 +63,14 @@
 
    __Description:__
       
-   - 因上版電路板有針腳間距不正確的問題，因此我們使用EasyEDA的內建範例圖重新校準針腳間距。
-   - 在測試過程中發現整體電路的極性顛倒了，經過查驗發現問題是因為繪畫時將電路板反面畫到正面導致的。
+   - 鑑於上一版印刷電路板(V2.0)出現針腳間距錯誤的問題，我們利用 EasyEDA 軟體內建的標準範例圖進行參照，精確地重新校準了正確的針腳間距參數，送工廠製作。
+
+   - 然而拿到製作完成的印刷電路板(V3.0)時，在後續的功能測試環節中，我們發現整個電路的極性呈現反向。經過詳細的檢查與追溯，最終確認問題是源於電路板設計階段的操作失誤，即誤將電路板的背面佈局層繪製到了正面。
+
+   - Given the issue of incorrect pin pitch present in the previous PCB version, we utilized the standard built-in example layouts of the EasyEDA software as a reference to accurately re-calibrate the correct pin pitch parameters.
+
+   - However, during the subsequent functional testing phase, we detected that the overall circuit polarity was inverted. Following a detailed inspection and root cause analysis, we confirmed that the problem arose from a procedural error during the PCB design stage, specifically mistakenly drawing the board's backside layout layer onto the front side.
+
             
    </td>
    </tr>
@@ -72,9 +84,13 @@
 
    __Description:__
 
-   - 因上版電路板有電路極性顛倒的問題，因此我們重新繪畫電路並且經過多次確認電路繪畫正確後送出。
-      
-   - 因為機器將主控制器改為Jetson Orin Nano，並且改用紅外線感測器感測是否靠近物體，因此需要添加兩個2Pin插座母頭、插拔式接線端子。
+   - 由於上一版印刷電路板(V3.0)存在電路極性顛倒的問題，我們對電路圖進行了重新繪製，並經過多次嚴格確認繪圖無誤後，才將檔案送出製作，得到印刷電路板(V4.0)。
+
+   - 由於我們將機器人主控制器升級為 Jetson Orin Nano，並改用紅外線感測器來偵測是否靠近停-車區牆面，因此需要在電路板上增設兩個 2 Pin 的母頭插座，同時為 Jetson Orin Nano 設計可插拔式接線端子以提供電源連接點，只好重新設計送工廠重新印刷電路板(V5.0)。
+
+   - Due to the issue of inverted circuit polarity in the previous PCB version, we re-drew the circuit diagram and sent the file for manufacturing only after multiple rigorous checks confirmed the drawing's accuracy.
+
+   - As we upgraded the robot's main controller to the Jetson Orin Nano and switched to using infrared sensors to detect proximity to the parking zone walls, it was necessary to add two 2-pin female headers to the PCB and design pluggable terminal blocks for the Jetson Orin Nano to provide power connection points.
 
    </td>
    </tr>
@@ -88,8 +104,7 @@
       
    __Description:__
 
-   - 因新版機器需要新增兩個2Pin插座母頭和插拔式接線端子，所以我們重新給PCB排版並且加入所需元件。
-   - 此版本在運作程序讀取陀螺儀角度時，會有讀取數值為0的狀況，經過排查發現是電路的迴路問題，且需要將程序改為由Jetson Orin Nano偵測啟動按鈕是否按下，因此需要將陀螺儀的電路獨立連接到Jetson Orin Nano，並新增第二塊電路板用於繪畫程式啟動按鈕電路。
+   - 拿到新的印刷電路板(V5.0)，在測試過程中，在讀取陀螺儀角度時，會有讀取數值為0的狀況，經過排查發現是陀螺儀感測器的電源正負極接在Raspberry Pi Pico W提供的電源，但陀螺儀感測器的訊線線卻接在Jetson Orin Nano控制器上，且需要將程式改為由Jetson Orin Nano偵測啟動按鈕是否按下，因此需要將陀螺儀的電源電路由Raspberry Pi Pico W 獨立連接到Jetson Orin Nano，並新增第二塊電路板用於繪畫程式啟動按鈕電路。
    </td>
    </tr>
    <tr>
