@@ -5,72 +5,28 @@
 - ### Vehicle Chassis Design-車輛底盤設計
     __硬體設計理念與底盤架構優化__
   1.  **設計傳承與創新：** 本次 **自駕車**（Self-Driving-Cars）的軟硬體設計靈感延續了去年的機型，並**借鑑了去年世界冠軍車型**的優點。在此基礎上，我們將主控制器從 **Nvidia Jetson Nano 升級為 Nvidia Jetson Orin Nano**，此舉不僅顯著提升了整體運算性能，更為引入創新的軟體設計提供了堅實基礎，使車輛具備更強的競爭力。
-  2.  **核心元件自主性：** 本次比賽所使用的**車輛底盤**為完全**自主設計與開發**。
-  3.  **轉向幾何改良：** 底盤結構採用了工程上常見的 **Ackermann 轉向幾何**（Ackermann Steering Geometry）。更重要的是，我們針對**去年機構的缺點進行了改良**，使車輛在執行**避障**及**迴轉動作**時能夠更加平穩順暢。
+  2.  **轉向幾何改良：** 底盤結構採用了工程上常見的 **Ackermann 轉向幾何**（Ackermann Steering Geometry）。更重要的是，我們針對**去年機構的缺點進行了改良**，使車輛在執行**避障**及**迴轉動作**時能夠更加平穩順暢。
+  3.  **核心元件自主性：** 本次比賽所使用的**車輛底盤**為完全**自主設計與開發**。
 
     __Hardware Design Philosophy and Chassis Optimization__
   1.  **Design Legacy and Innovation:** The software and hardware design of this **Self-Driving Car** continues the inspiration from last year's model while **drawing upon the strengths of last year's world champion vehicle design**. Building on this foundation, we upgraded the main controller from the **Nvidia Jetson Nano to the Nvidia Jetson Orin Nano**. This move not only significantly enhances the overall computational performance but also provides a robust basis for introducing innovative software designs, making the vehicle more competitive.
-  2.  **Autonomy of Core Components:** The **vehicle chassis** used in this competition was **independently designed and developed** by our team.
-  3.  **Steering Geometry Improvement:** The chassis structure utilizes the common engineering principle of **Ackermann Steering Geometry**. Crucially, we implemented **improvements based on the shortcomings of last year's mechanism**, ensuring the vehicle performs **obstacle avoidance** and **turning maneuvers** with greater stability and smoothness.
 
-  - 下表展示了車輛底盤的3D模型與實體成品。
-  - **The following table shows the 3D models and finished products of the vehicle chassis.** 
-    |3D Vehicle Chassis Design(3D 車輛底盤設計)| Vehicle Chassis Top View(車輛底盤俯視圖) | Vehicle Chassis Bottom View(車輛底盤底部視圖)|
-    |:----:|:----:|:----:|
-    |<img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png"  alt="vehicle_chassis_design_3D">|<img src="./img/Driver_top.png" width="400" alt="2024Vehicle_Chassis_Design_down">|<img src="./img/Driver_down.png" width="400" alt="down_view">|
+  2.  **Steering Geometry Improvement:** The chassis structure utilizes the common engineering principle of **Ackermann Steering Geometry**. Crucially, we implemented **improvements based on the shortcomings of last year's mechanism**, ensuring the vehicle performs **obstacle avoidance** and **turning maneuvers** with greater stability and smoothness.
+  
+  3.  **Autonomy of Core Components:** The **vehicle chassis** used in this competition was **independently designed and developed** by our team.
 
-
-    - 我們可以根據車輛的具體需求自訂零件的尺寸與形狀，並利用立體光刻（SLA）3D列印機與雷射切割機，設計並製造車輛底盤的所有零件，齒輪、樂高6376齒輪差速器及輪胎除外。
-    - 為了降低軸承的旋轉摩擦，我們在車輛支架中整合了軸承，從而提升車輛的速度。
-    - 為了精準控制車輛的最佳轉彎半徑並靈活調整Ackermann比率，我們利用立體光刻（SLA）3D列印機及3D建模技術，依照具體需求設計了裝配Ackermann轉向幾何結構的車輛支架。
-
-    - We can customize the size and shape of parts according to the specific needs of the vehicle and use Stereolithography (SLA) 3D printers and laser cutters to design and manufacture all parts of the vehicle chassis, except for the gears, Lego 6573 Gear Differential and tires.
-    - To reduce rotational friction of the shafts, we integrated bearings into the vehicle's support frame, thereby increasing the vehicle's speed.
-    - To precisely control the vehicle's optimal turning radius and flexibly adjust the Ackermann ratio, we used Stereolithography (SLA) 3D printers and 3D modeling technology to design the support frame for the Ackermann steering geometry on the vehicle chassis based on specific requirements.
 
 - #### Vehicle Chassis Improvement Record-車輛底盤改進紀錄
-
-  ### __WRO International Competition Vehicle Prototype Comparison: Last Year vs. This Year__
-
-  ### __WRO 國際賽 Vehicle 原型機規格對比：去年度與本年度__
-
   <div align=center>
   <table>
   <tr>
-  <th width=50%>2024 Season Competition Self-Driving Car Prototype</th>
-  <th width=50%>2025 WRO World Final Competition Prototype</th>
+  <th width=50%>2024 Season Competition Self-Driving Car Prototype-2024 年國際賽機型</th>
+  <th  colspan=2 width=50%>2025 WRO World Final Competition Prototype - 2025 最終國際賽機型</th>
   </tr>
   <tr align=center>
-  <td><img src="./img/Last_years_car.png" alt="2024 Season Competition Self-Driving Car Prototype" /></td>
-  <td><img src="./img/International_competition_machine.png" width="70%" alt="2025 WRO World Final Competition Prototype" /></td>
-  </tr>
-  <tr>
-  <th colspan=2>Explanation</th>
-  </tr>
-  <tr>
-  <td colspan="2">
-  Key Changes from Last Year's Version to This Year's International Competition Version：
-  <ol>
-  <li>The model's excessive length easily moves the blocks during obstacle avoidance, so we shortened the model's overall length.</li>
-  <li>Redesigned the steering structure, the 2024 International Competition Vehicle Prototype used wire to link the two steering knuckles, which took up a larger area. Therefore, we used 3D-printed components for the redesign.</li>
-  <li>During the national competition, we found that the computational efficiency of the Jetson Nano did not meet our requirements. Therefore, we replaced the main controller with the Jetson Orin Nano, which has higher computational efficiency.</li>
-  <li>The Self-Driving-Car (Vehicle)'s steering angle was insufficient, resulting in the inability to pass some sharp turns. Therefore, we redesigned the steering structure to allow for a larger steering space.</li>
-  <li>TCRT5000 infrared sensors were added to the front and rear of the Self-Driving-Car (Vehicle) to assist the execution of the parking procedure (parking lot).</li>
-  <ol>
-  </td>
-  </tr>
-  </table>
-  </div>
-
-  <div align=center>
-  <table>
-  <tr>
-  <th width=50%>2024 年國際賽機型</th>
-  <th width=50%>2025 最終國際賽機型</th>
-  </tr>
-  <tr align=center>
-  <td><img src="./img/Last_years_car.png" alt="2024 Season Competition Self-Driving Car Prototype" /></td>
-  <td><img src="./img/International_competition_machine.png" width="70%" alt="2025 WRO World Final Competition Prototype" /></td>
+  <td width="30%"><img src="./img/2024Vehicle_Chassis_Design_down.png"  width="400" alt="2024 Season Competition Self-Driving Car Prototype" /></td>
+  <td width="30%"><img src="./img/Driver_top.png"  alt="2025 WRO World Final Competition Prototype" width="400" /></td>
+  <td width="30%"><img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description_2.png"  alt="2025 WRO World Final Competition Prototype" width="400"/></td>
   </tr>
   <tr>
   <th colspan=2>說明</th>
@@ -90,36 +46,12 @@
   </table>
   </div>
  
-  ### __Final Build-最終組裝__
-
-  <div align=center>
-  <table>
-  <tr align=center>
-  <th><div align=center>Photos of the final Build(最終組裝照片)</th>
-  <th><div align=center>3D modeling of the final Build(最終組裝的3D建模)</th>
-  <th><div align=center>Explanation(說明)</th>
-  </tr><tr>
-  <td width="30%"><img src="./img/Driver_top.png" ></td>
-  <td width="30%"><img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description_2.png" ></td>
-
-
-  <td>
-    我們在底盤的設計上經歷了四次改版
-    <ol>
-      <li>第一次改版我們在車頭加入弧形導角，避免前輪接觸邊牆時發生卡住的情況。</li>
-      <li>第二版我們加大轉向節放置孔，改用軸承降低摩擦，使轉彎更順暢。</li>
-      <li>第三版我們縮小轉向結構與馬達支架間的空隙，減短軸距以提升轉彎角度。</li>
-      <li>第四版我們在車頭延伸出小長方區塊，用來保護紅外線感測器避免撞牆損壞。</li>
-    </ol>
-  </td>
-  </tr>
-  </table>
-  </div>
+ 
 
   <div align=center>
     <table>
       <tr>
-        <th colspan=2>轉向結構修改歷程</th>
+        <th colspan=2> 阿克曼轉向幾何結構 轉向結構修改歷程</th>
       </tr>
       <tr>
         <th colspan=2>第一代轉向結構</th>
@@ -173,7 +105,45 @@
       </tr>
     </table>
   </div>
+   ### __Final Build-最終組裝__
 
+  <div align=center>
+  <table>
+  <tr align=center>
+  <th><div align=center>Photos of the final Build(最終組裝照片)</th>
+  <th><div align=center>3D modeling of the final Build(最終組裝的3D建模)</th>
+  <th><div align=center>Explanation(說明)</th>
+  </tr><tr>
+  <td width="30%"><img src="./img/Driver_top.png" ></td>
+  <td width="30%"><img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description_2.png" ></td>
+
+
+  <td>
+    我們在底盤的設計上經歷了四次改版
+    <ol>
+      <li>第一次改版我們在車頭加入弧形導角，避免前輪接觸邊牆時發生卡住的情況。</li>
+      <li>第二版我們加大轉向節放置孔，改用軸承降低摩擦，使轉彎更順暢。</li>
+      <li>第三版我們縮小轉向結構與馬達支架間的空隙，減短軸距以提升轉彎角度。</li>
+      <li>第四版我們在車頭延伸出小長方區塊，用來保護紅外線感測器避免撞牆損壞。</li>
+    </ol>
+  </td>
+  </tr>
+  </table>
+  </div>
+
+  - 下表展示了車輛底盤的3D模型與實體成品。
+  - **The following table shows the 3D models and finished products of the vehicle chassis.** 
+    |3D Vehicle Chassis Design(3D 車輛底盤設計)| Vehicle Chassis Top View(車輛底盤俯視圖) | Vehicle Chassis Bottom View(車輛底盤底部視圖)|
+    |:----:|:----:|:----:|
+    |<img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description.png"  alt="vehicle_chassis_design_3D">|<img src="./img/Driver_top.png" width="400" alt="2024Vehicle_Chassis_Design_down">|<img src="./img/Driver_down.png" width="400" alt="down_view">|
+
+
+  - 我們根據自駕車的具體性能需求，客製化設計了零件的尺寸與形狀 。利用 立體光刻（SLA）3D 列印機 和 雷射切割機，我們自行設計並製造了車輛底盤的所有零件，齒輪、樂高 6573 齒輪差速器及輪胎則為例外 。
+
+
+  - 為大幅降低軸承的旋轉摩擦，我們將軸承精確地整合到車輛支架結構中，這一優化措施有效地提升了車輛的整體行駛速度。
+
+  - 為了精準控制車輛的最佳轉彎半徑，並靈活調整阿克曼（Ackermann）比率，我們利用 3D 建模技術和 立體光刻（SLA）3D 列印機，依照具體需求客製化設計了 阿克曼轉向幾何結構 的關鍵零件和車輛支架 。
 
 - ###  Gear Differential
 
