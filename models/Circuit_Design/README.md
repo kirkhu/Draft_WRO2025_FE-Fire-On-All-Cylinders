@@ -106,13 +106,13 @@
       
    __Description:__
 
-   - 在取得新版印刷電路板（V5.0）後，我們在測試過程中發現讀取 BNO055 陀螺儀感測器的角度時，偶爾會出現數值為 0 的異常情況。經排查確認，此問題是因 BNO055 感測器的電源正負極連接至 Raspberry Pi Pico W 提供的電源，而其訊號線卻接在 Jetson Orin Nano 主控制器上。這種電源與信號源不在同一迴路的配置導致了感測器誤動作。因此，我們修正設計，確保 BNO055 陀螺儀感測器的電源和訊號源皆由 Jetson Orin Nano 主控制器統一提供。
+   - 在自駕車電路設計的初始階段，Adafruit BNO055 IMU 感測器的電源正負極（VCC/GND）由 Raspberry Pi Pico W 供應，而資料傳輸線（訊號線）則連接至 Jetson Orin Nano 主控制器。然而，由於這種配置導致 電源迴路未能與訊號迴路共用地線（GND），系統因此缺乏統一的電位基準（Common Ground Reference），進而造成感測數據異常。具體表現為：航向角（Heading Angle） 輸出長時間固定於 0°，無法準確反映車體實際的姿態變化。
 
-   - 此外，為符合競賽規則中必須由 Jetson Orin Nano 偵測啟動按鈕才能開始運行的規定，我們將啟動按鈕電路獨立連接至 Jetson Orin Nano 的通用輸入/輸出（GPIO）接口。同時，為了優化除錯流程，我們新增了 RGB 燈珠，用於即時顯示車輛偵測到的最近物件顏色。基於這些新增功能，我們設計並製作了第二塊電路板，專門用於自駕車的啟動按鈕控制與狀態顯示。
+   - 為徹底解決此問題，設計方案被修正為：改由 Jetson Orin Nano 直接提供 BNO055 感測器的正極電源，並將感測器的地線（GND）直接連接至 Orin 的 GND 腳位。這項調整確保了電源迴路的閉合，並在兩設備間建立了穩定的統一電位基準。經過此修正後，感測器數據恢復正常，航向角能隨著車體旋轉而準確變化，完全滿足自駕車在定位與導航控制上的高精度需求。
 
-   - Upon receiving the new PCB (V5.0), functional testing revealed an intermittent issue where the BNO055 gyroscope sensor would return an angle reading of zero. Troubleshooting confirmed that this anomaly occurred because the BNO055 sensor was drawing power from the Raspberry Pi Pico W, while its signal lines were connected to the Jetson Orin Nano main controller. This configuration, where the power and signal sources were on different circuits, caused the sensor malfunction. Consequently, we modified the design to ensure that both the power and signal lines for the BNO055 gyroscope sensor are now supplied exclusively by the Jetson Orin Nano controller.
+   - In the initial design phase of the self-driving car's circuitry, the VCC/GND for the Adafruit BNO055 IMU sensor was supplied by the Raspberry Pi Pico W, while the data lines (signal lines) were connected to the Jetson Orin Nano main controller. This configuration, however, prevented the power loop from sharing a common ground (GND) with the signal loop, causing the system to lack a unified electrical potential reference (Common Ground Reference), which resulted in anomalous sensor data. Specifically, the Heading Angle output was stuck at 0° for extended periods, failing to accurately reflect the vehicle's true attitude changes.
 
-   - Separately, to comply with the rule requiring the Jetson Orin Nano to detect the start button press before operation, we dedicated a circuit to connect the start button directly to the Jetson Orin Nano's General-Purpose Input/Output (GPIO) interface. Furthermore, to enhance the debugging process, we added RGB LEDs to display the color of the nearest object detected by the vehicle in real-time. Based on these additions, we designed and manufactured a second circuit board dedicated to the self-driving car's start button control and status indication.
+   - To definitively solve this issue, the design scheme was revised: the Jetson Orin Nano was tasked with directly providing the positive power to the BNO055 sensor, and the sensor's ground line (GND) was connected directly to the Orin's GND pin. This adjustment ensured the closure of the power circuit and established a stable common ground reference between the two devices. Following this correction, the sensor data returned to normal, and the heading angle accurately varied with the vehicle's rotation, successfully meeting the high-precision requirements for autonomous vehicle localization and navigation control.
 
    </td>
    </tr>
@@ -174,10 +174,10 @@
  ***
  - ### Supplementary Information -補充資訊
  
- - #### 經驗分享-Adafruit BNO055 電路 
+ - #### 經驗分享-Adafruit BNO055 電路設計錯誤 
 
  #### 中文
-   在自駕車電路設計的初始版本中，Adafruit BNO055 IMU感測器正極由Raspberry Pi Pico W提供，而資料傳輸是連接到Jetson Orin Nano。然而由於該設計未能形成完整電源迴路，導致系統缺乏統一電位基準，進而造成感測數據異常，尤其航向角輸出長時間固定於0°，無法反映實際姿態變化。
+   在自駕車電路設計的初始版本中，Adafruit BNO055 IMU感測器正負極由Raspberry Pi Pico W提供，而資料傳輸是連接到Jetson Orin Nano。然而由於該設計未能形成完整電源迴路，導致系統缺乏統一電位基準，進而造成感測數據異常，尤其航向角輸出長時間固定於0°，無法反映實際姿態變化。
    
    為解決此問題，設計方案改以 Jetson Orin Nano 提供 BNO055 的正極電源，並將地線直接連接至 Orin 之 GND 腳位，以確保電源迴路閉合並建立穩定的電位基準。經過此調整後，感測器數據恢復正常，航向角能隨著車體旋轉而準確變化，滿足自駕車定位與導航控制之需求。
 
