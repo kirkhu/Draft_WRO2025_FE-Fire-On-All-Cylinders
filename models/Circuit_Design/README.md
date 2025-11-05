@@ -188,7 +188,7 @@ Furthermore, to comply with the competition rule requiring the Jetson Orin Nano 
  ***
  - ### Supplementary Information -補充資訊
  
- - #### 經驗分享-Adafruit BNO055 電路設計錯誤與修正
+ - #### Experience Sharing - BNO055 Gyroscope Sensor Circuit Design Error and Establishment of Common Ground Reference經驗分享-Adafruit BNO055 電路設計錯誤與修正
 
 
  #### 中文
