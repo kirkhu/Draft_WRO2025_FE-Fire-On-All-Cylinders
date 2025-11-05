@@ -21,7 +21,7 @@
 
  - ### Jetson Orin nano library - Jetson Orin nano庫
     The core functions for image recognition and ground line color recognition have been fully integrated into the [function.py](../common/function.py) module and can be directly imported and called for use. The specific functions of these modules are listed as follows:
-    - `find_contours,max_contour`: 處理影像資料以識別場景中的物體或特徵.
+    - `find_contours()`: Process image data to identify objects or features of specific colors in the scene.(處理影像資料以識別場景中的特定顏色物體或特徵。)
       ```
       def find_contours(img_lab, lab_range, ROI):
         x1, y1, x2, y2 = ROI
@@ -34,7 +34,7 @@
         contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
         return contours
       ```
-    - `find_contours,max_contour`: 處理影像資料以識別場景中的物體或特徵.
+    - `max_contour()`: This function filters the input list of contours by selecting those with an area greater than a specific threshold, then identifies the largest contour among them, calculates its centroid coordinates,and finally returns this largest contour's area, coordinates, and the contour itself.(從輸入的輪廓列表中，篩選出面積大於特定閾值的輪廓，並找出其中面積最大的輪廓，計算其中心點座標，最終回傳此最大輪廓的面積、座標與輪廓本身。)
       ```
       def max_contour(contours, ROI):
           maxArea = 0; maxY = 0; maxX = 0; mCnt = 0
