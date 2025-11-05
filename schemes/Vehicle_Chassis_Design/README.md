@@ -35,102 +35,82 @@
   <tr>
   <td colspan="3">
   從去年度版本到本年度國際賽版本的主要變更：
-  <ol>
-  <li>機型過長容易在避障時移動到方塊，因此我們縮短了機型整體長度。</li>
-  <li>重新設計轉向結構，2024年國際賽機型使用鐵絲來連動兩側轉向節，面積較大。因此我們使用 3D 物件重新設計。</li>
-  <li>在全國賽中我們發現 Jetson Nano 運算效率較不符合我們需求。因此我們將主控制器更換為運算效率更高的 Jetson Orin Nano。</li>
-  <li>自駕車轉向角度不夠，導致一些急轉彎無法通過。因此我們重新設計轉向結構使其有更大的轉向空間。</li>
-  <li>在自駕車前後方新增 TCRT5000 紅外感測器，用於輔助停車程序運行。</li>
+
+  機型過長容易在避障時移動到方塊，因此我們縮短了機型整體長度。
+  重新設計轉向結構，2024年國際賽機型使用鐵絲來連動兩側轉向節，面積較大。因此我們使用 3D 物件重新設計。
+  在全國賽中我們發現 Jetson Nano 運算效率較不符合我們需求。因此我們將主控制器更換為運算效率更高的 Jetson Orin Nano。
+  自駕車轉向角度不夠，導致一些急轉彎無法通過。因此我們重新設計轉向結構使其有更大的轉向空間。
+  在自駕車前後方新增 TCRT5000 紅外感測器，用於輔助停車程序運行。
+
+    我們在底盤的設計上經歷了四次改版
+  第一次改版我們在車頭加入弧形導角，避免前輪接觸邊牆時發生卡住的情況。
+  第二版我們加大轉向節放置孔，改用軸承降低摩擦，使轉彎更順暢。
+  第三版我們縮小轉向結構與馬達支架間的空隙，減短軸距以提升轉彎角度。
+  第四版我們在車頭延伸出小長方區塊，用來保護紅外線感測器避免撞牆損壞。
   <ol>
   </td>
   </tr>
   </table>
-  </div>
- 
- 
-
-  <div align=center>
-    <table>
-      <tr>
-        <th colspan=2> 阿克曼轉向幾何結構 轉向結構修改歷程</th>
-      </tr>
-      <tr>
-        <th colspan=2>第一代轉向結構</th>
-      </tr>
-      <tr>
-        <td width=40%><img src="./img/steering_1.jpg" /></td>
-        <td width=60%>
-          描述：<br>&emsp;&emsp;
-          這版轉向結構過於寬大，因此第二版中我們縮小版型，以提升自駕車的靈活度。
-        </td>
-      </tr>
-      <tr>
-        <th colspan=2>第二代轉向結構</th>
-      </tr>
-      <tr>
-        <td><img src="./img/steering_2.png" /></td>
-        <td width=400>
-          描述：<br>&emsp;&emsp;
-          此版本因使用螺絲與樂高零件連接，轉向角度受限，因此下一版將改用圓頭十字軸與圓頭舵盤以增加轉向範圍。
-        </td>
-      </tr>
-      <tr>
-        <th colspan=2>第三代轉向結構</th>
-      </tr>
-      <tr>
-        <td><img src="./img/steering_3.jpg" /></td>
-        <td width=400>
-          描述：<br>&emsp;&emsp;
-          這一版因轉向力矩出現問題，我們重新檢視設計圖。下一版將把轉向拉桿與連桿連接位置調整至與圓頭舵盤平行，並增加轉向極限擋塊，避免角度過大導致結構內凹。
-        </td>
-      </tr>
-      <tr>
-        <th colspan=2>第四代轉向結構</th>
-      </tr>
-      <tr>
-        <td><img src="./img/steering_4.jpg" /></td>
-        <td width=400>
-          描述：<br>&emsp;&emsp;
-          這一版因轉向極限擋塊過大，限制了轉向角度，降低了自駕車靈活性。因此在下一版中，我們會縮短極限擋塊，以兼顧轉向幅度與結構保護。
-        </td>
-      </tr>
-      <tr>
-        <th colspan=2>第五代轉向結構</th>
-      </tr>
-      <tr>
-        <td><img src="./img/steering_5.jpg" /></td>
-        <td width=400>
-          描述：<br>&emsp;&emsp;
-          經過前幾代轉向結構的修正與優化，目前的轉向結構已能滿足我們機型的需求。
-        </td>
-      </tr>
-    </table>
-  </div>
-   ### __Final Build-最終組裝__
+  </div> 
 
   <div align=center>
   <table>
-  <tr align=center>
-  <th><div align=center>Photos of the final Build(最終組裝照片)</th>
-  <th><div align=center>3D modeling of the final Build(最終組裝的3D建模)</th>
-  <th><div align=center>Explanation(說明)</th>
-  </tr><tr>
-  <td width="30%"><img src="./img/Driver_top.png" ></td>
-  <td width="30%"><img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description_2.png" ></td>
-
-
-  <td>
-    我們在底盤的設計上經歷了四次改版
-    <ol>
-      <li>第一次改版我們在車頭加入弧形導角，避免前輪接觸邊牆時發生卡住的情況。</li>
-      <li>第二版我們加大轉向節放置孔，改用軸承降低摩擦，使轉彎更順暢。</li>
-      <li>第三版我們縮小轉向結構與馬達支架間的空隙，減短軸距以提升轉彎角度。</li>
-      <li>第四版我們在車頭延伸出小長方區塊，用來保護紅外線感測器避免撞牆損壞。</li>
-    </ol>
+  <tr>
+    <th colspan=2>Evolution of the Ackermann Steering Geometry Structure 阿克曼轉向幾何結構的優化歷程</th>
+  </tr>
+  <tr>
+    <th colspan=2>第一代轉向結構</th>
+  </tr>
+  <tr>
+    <td width=40%><img src="./img/steering_1.jpg" /></td>
+    <td width=60%>
+          描述：<br>&emsp;&emsp;
+          這版轉向結構過於寬大，因此第二版中我們縮小版型，以提升自駕車的靈活度。
+    </td>
+  </tr>
+  <tr>
+    <th colspan=2>第二代轉向結構</th>
+  </tr>
+  <tr>
+    <td><img src="./img/steering_2.png" /></td>
+    <td width=400>
+          描述：<br>&emsp;&emsp;
+          此版本因使用螺絲與樂高零件連接，轉向角度受限，因此下一版將改用圓頭十字軸與圓頭舵盤以增加轉向範圍。
+    </td>
+  </tr>
+  <tr>
+    <th colspan=2>第三代轉向結構</th>
+  </tr>
+  <tr>
+  <td><img src="./img/steering_3.jpg" /></td>
+  <td width=400>
+          描述：<br>&emsp;&emsp;
+          這一版因轉向力矩出現問題，我們重新檢視設計圖。下一版將把轉向拉桿與連桿連接位置調整至與圓頭舵盤平行，並增加轉向極限擋塊，避免角度過大導致結構內凹。
   </td>
+  </tr>
+  <tr>
+    <th colspan=2>第四代轉向結構</th>
+  </tr>
+  <tr>
+    <td><img src="./img/steering_4.jpg" /></td>
+    <td width=400>
+          描述：<br>&emsp;&emsp;
+          這一版因轉向極限擋塊過大，限制了轉向角度，降低了自駕車靈活性。因此在下一版中，我們會縮短極限擋塊，以兼顧轉向幅度與結構保護。
+    </td>
+    </tr>
+  <tr>
+    <th colspan=2>第五代轉向結構</th>
+  </tr>
+  <tr>
+    <td><img src="./img/steering_5.jpg" /></td>
+    <td width=400>
+          描述：<br>&emsp;&emsp;
+          經過前幾代轉向結構的修正與優化，目前的轉向結構已能滿足我們機型的需求。
+    </td>
   </tr>
   </table>
   </div>
+
 
   - 下表展示了車輛底盤的3D模型與實體成品。
   - **The following table shows the 3D models and finished products of the vehicle chassis.** 
