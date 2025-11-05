@@ -3,20 +3,19 @@
 ## <div align="center">Open Challenge Code Overview</div> 
   Based on the characteristics of each control board, we distributed the complex operations required for the race vehicle:
   ### 中文:
-   1. Jetson Orin Nano 負責影像辨識和方向偵測，利用其強大的運算能力進行即時影像分析。
-   2. 同時，樹莓派 Pico W 負責馬達驅動和車輛轉向，利用其高效的  GPIO 控制功能進行精確的硬體管理。
-   3. 這種分工最大限度地發揮了每個控制板的優勢，使整個系統更加穩定有效率。
+   1. Jetson Orin Nano 核心處理影像辨識與行駛方向判斷，憑藉其強大的運算性能實現即時影像分析。
+   2. 樹莓派 Pico W 則同步負責馬達驅動及車輛轉向，利用其高效的 GPIO 控制功能達成精準的硬體管理。
+   3. 此種專業分工的架構能最大化各控制板的專長優勢，進而讓整個系統運行更為穩定且高效。
    ### 英文:
    <ol>
    <li>
-    The Jetson Orin nano is responsible for image recognition and direction detection, leveraging its powerful computing 
-   capability to process real-time image analysis.    
+    The Jetson Orin Nano is primarily responsible for image recognition and driving direction determination, leveraging its powerful computational capabilities to perform real-time image analysis.     
    </li>
    <li>
-    Meanwhile , the Raspberry Pi Pico handles motor driving, and vehicle steering, utilizing its efficient GPIO control features for precise hardware management.
+    The Raspberry Pi Pico W handles the motor drive and vehicle steering, utilizing its efficient GPIO control functions to achieve precise hardware management.
    </li>
    <li>
-    This division of labor maximizes the advantages of each control board, making the overall system more stable and efficient.
+    This specialized division of labor architecture maximizes the unique strengths of each control board, resulting in a system that operates with enhanced stability and efficiency.
    </li>
    </ol>
 
