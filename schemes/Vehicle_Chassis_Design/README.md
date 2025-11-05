@@ -28,7 +28,7 @@ __Hardware Design Philosophy and Chassis Optimization__
   <td width="33%"><img src="../../models/Vehicle_2D_3D/Vehicle_Chassis_CAD_File/img/Vehicle_chassis_description_2.png"  alt="2025 WRO World Final Competition Prototype" /></td>
   </tr>
   <tr>
-  <th colspan=2>Description 說明</th>
+  <th colspan=3>Description 說明</th>
   </tr>
   <tr>
   <td colspan="3">
