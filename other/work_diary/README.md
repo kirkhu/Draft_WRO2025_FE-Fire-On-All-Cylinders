@@ -45,7 +45,7 @@
 <table width="100%">
 <tr>
 <th>Team photo </th>
-<th>Funny_photo </th>
+<th>Funny photo </th>
 </tr>
 <tr>
 <td><img src="../../t-photos/img/team_photo.jpg"  width="300" alt="team_photo">
@@ -87,7 +87,7 @@ By simplifying the overall structure, we achieved multiple benefits:
 
 </tr>
 <tr align="center">
-<td> <img src="./img/find_data.jpg" width = "500"  alt="data" align=center /></td>
+<td> <img src="./img/find_data.jpg" width = "300"  alt="data" align=center /></td>
 <tr>
 <td>
 
