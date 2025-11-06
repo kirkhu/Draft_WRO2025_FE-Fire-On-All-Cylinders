@@ -36,7 +36,7 @@ Based on the characteristics of each control board, we distributed the complex o
           img = cv2.line(img, (ROI[2], ROI[3]), (ROI[2], ROI[1]), color, 4)
       ```
     - The **`find_contours()` function** is used to **detect object contours** within a specific color range in an image.It first **extracts** the **Region of Interest (ROI)** portion of the image. It then performs **color thresholding** using the **LAB color space** and the predefined **`lab_range` parameters** to convert this area into a **binary mask**. To **enhance contour accuracy**, the function performs **morphological operations**—specifically **erosion** and **dilation**—on the mask. Finally, the function **extracts the external contours** from the processed mask and **returns** them.
-    - `find_contours()`此函數用於在影像中偵測特定顏色範圍的輪廓。它首先擷取影像中感興趣區域 (ROI) 的部分，接著將此區域的顏色轉換為二值遮罩 (mask)（使用 LAB 顏色空間及預設的顏色範圍 lab_range 進行過濾）。為了提高輪廓的準確性，它會對遮罩進行腐蝕（erode）和膨脹（dilate）處理，最後從處理後的遮罩中提取出外部輪廓並返回。
+    - **`find_contours()` 函式**旨在**從影像中偵測特定色彩範圍的物體輪廓**。此函式首先**擷取**影像中的**感興趣區域 (ROI)**。接著，它利用 **LAB 顏色空間**與預設的 **`lab_range` 參數**進行**顏色閾值分割**，將該區域轉換為**二值遮罩 (mask)**。為**優化輪廓的精確度**，程式會對遮罩執行**形態學操作**，即**腐蝕 (erode)** 與**膨脹 (dilate)** 處理。最終，函式會從處理完成的遮罩中**提取外部輪廓**並將其**返回**。
       ```
       def find_contours(img_lab, lab_range, ROI):
           x1, y1, x2, y2 = ROI
