@@ -1129,18 +1129,26 @@ sudo apt-get -y install sdkmanager
             <td><img src="./img/9/Circuit PCB.png" height=250 /></td>
         </tr>
         <tr>
+            <th>電路原理圖</th>
+            <th>電路PCB分佈圖</th>
+        </tr>
+        <tr>
+            <td><img src="./img/9/Schematic_Version_5.png" height=100%/></td>
+            <td><img src="./img/9/PCB_Version_5.png" height=100%/></td>
+        </tr>
+        <tr>
             <th>使用 8K 3D打印機</th>
             <th>使用 14K 3D打印機</th>
         </tr>
         <tr>
-            <td align=center><img src="./img/9/steering knuckle 8K.png" width=400 /></td>
-            <td align=center><img src="./img/9/steering knuckle 14K.png" width=400 /></td>
+            <td align=center><img src="./img/9/steering knuckle 8K.png" width=100% /></td>
+            <td align=center><img src="./img/9/steering knuckle 14K.png" width=100% /></td>
         </tr>
         <tr>
             <th colspan=2>轉向結構呈現內八</th>
         </tr>
         <tr>
-            <td colspan=2 align=center><img src="./img/9/Inner Eight.png" width=600 /></td>
+            <td colspan=2 align=center><img src="./img/9/Inner Eight.png" width=100% /></td>
         </tr>
     </table>
  </div>
@@ -1180,6 +1188,17 @@ sudo apt-get -y install sdkmanager
         <tr>
             <td><img src="./img/9/New Medium Board.jpg" width=400 /></td>
             <td><img src="./img/9/infrared sensor Bracket.jpg" width=400 /></td>
+        </tr>
+    </table>
+ </div>
+
+ <div align=center>
+    <table width=100%>
+        <tr>
+            <th>實際安裝照片</th>
+        </tr>
+        <tr>
+            <td><img src="./img/9/Untrasonic_Car.jpg" width=100% alt="Untrasonic Car" /></td>
         </tr>
     </table>
  </div>
