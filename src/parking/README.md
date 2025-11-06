@@ -32,7 +32,6 @@
     
 
 - **Code Executed on the Raspberry Pi Pico W Controller- Raspberry Pi Pico W 控制器上執行的程式碼。**
-
         ``` 
         while mode == 3:
             json_obj, _, got_stop = pump_ws(s)
