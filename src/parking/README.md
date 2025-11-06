@@ -32,186 +32,215 @@
     
 
 - **Code Executed on the Raspberry Pi Pico W Controller- Raspberry Pi Pico W 控制器上執行的程式碼。**
-        ``` 
-        while mode == 3:
-            json_obj, _, got_stop = pump_ws(s)
-            extract_magenta_from_json(json_obj)
-            while abs(yaw) < 73:
-                json_obj, _, got_stop = pump_ws(s)
-                if json_obj:
-                    if "yaw" in json_obj:
-                        try:
-                            yaw = float(json_obj["yaw"])
-                            except:
-                                pass
-                        extract_magenta_from_json(json_obj)
-                    if turn == 2:    
-                        set_servo_angle(50)
-                        control_motor(35)
-                    else:
-                        set_servo_angle(-50)
-                        control_motor(35)                        
-                motor_brake()
-                set_servo_angle(0)
-                mode = 4
+``` 
+while mode == 3:
+    json_obj, _, got_stop = pump_ws(s)
+    extract_magenta_from_json(json_obj)
+    # 模式 3: 初始轉彎並前進 (利用陀螺儀 yaw < 73 度控制)
+    while abs(yaw) < 73:
+        json_obj, _, got_stop = pump_ws(s)
+        if json_obj:
+            if "yaw" in json_obj:
+                try:
+                    yaw = float(json_obj["yaw"])
+                except:
+                    pass
+                extract_magenta_from_json(json_obj)
+            if turn == 2:    
+                set_servo_angle(50)
+                control_motor(35)
+            else:
+                set_servo_angle(-50)
+                control_motor(35)
+    
+    # 轉彎完成，進入下一階段
+    motor_brake()
+    set_servo_angle(0)
+    mode = 4
 
-        while mode == 4:
-            a0_value = A0.read_u16()
-            time_a0=time.time()
-            set_servo_angle(0)
-            while a0_value > 64500 and time.time()- time_a0 < 6:
-                a0_value = A0.read_u16()
+while mode == 4:
+    a0_value = A0.read_u16()
+    time_a0=time.time()
+    set_servo_angle(0)
+    # 模式 4: 前行直到紅外線 (A0) 偵測到牆壁 (a0_value 掉落) 或超時
+    while a0_value > 64500 and time.time()- time_a0 < 6:
+        a0_value = A0.read_u16()
+        extract_magenta_from_json(json_obj) 
+        json_obj, _, got_stop = pump_ws(s)
+        if json_obj:
+            if "yaw" in json_obj:
+                try:
+                    yaw = float(json_obj["yaw"])
+                except:
+                    pass
                 extract_magenta_from_json(json_obj) 
-                json_obj, _, got_stop = pump_ws(s)
-                if json_obj:
-                    if "yaw" in json_obj:
-                        try:
-                            yaw = float(json_obj["yaw"])
-                            except:
-                                pass
-                        extract_magenta_from_json(json_obj)  
-                set_servo_angle(0)
-                control_motor(30)
-            control_motor(-40)
-            time.sleep(0.15)
-            control_motor(0)
-            run_encoder_Auto(100, -35, 0)
-            mode = 5
+        set_servo_angle(0)
+        control_motor(30)
+    
+    # 偵測到牆壁後，後退煞車並執行編碼器移動
+    control_motor(-40)
+    time.sleep(0.15)
+    control_motor(0)
+    # 執行編碼器自動倒退 (run_encoder_Auto 可能是 Pico W 上的函式)
+    run_encoder_Auto(100, -35, 0) 
+    mode = 5
 
-        while mode == 5:
-            json_obj, _, got_stop = pump_ws(s)
-            while abs(yaw) < 177:
-                extract_magenta_from_json(json_obj)
-                json_obj, _, got_stop = pump_ws(s)
-                if json_obj:
-                    if "yaw" in json_obj:
-                        try:
-                            yaw = float(json_obj["yaw"])
-                            except:
-                                pass
-                if turn == 2:
-                    set_servo_angle(-180)
-                    control_motor(-35)
-                else:
-                    set_servo_angle(180)
-                    control_motor(-35)                        
-            motor_brake()
-            set_servo_angle(0)
-            mode = 6
+while mode == 5:
+    json_obj, _, got_stop = pump_ws(s)
+    # 模式 5: 執行大角度轉彎 (利用陀螺儀 yaw < 177 度控制) 進行平行入庫準備
+    while abs(yaw) < 177:
+        extract_magenta_from_json(json_obj)
+        json_obj, _, got_stop = pump_ws(s)
+        if json_obj:
+            if "yaw" in json_obj:
+                try:
+                    yaw = float(json_obj["yaw"])
+                except:
+                    pass
+            if turn == 2:
+                set_servo_angle(-180)
+                control_motor(-35)
+            else:
+                set_servo_angle(180)
+                control_motor(-35) 
+                
+    # 轉彎完成，進入下一階段
+    motor_brake()
+    set_servo_angle(0)
+    mode = 6
+
+while mode == 6:
+    control_motor(38)
+    json_obj, m_tuple, got_stop = pump_ws(s)
+    extract_magenta_from_json(json_obj)
+    # 模式 6: 視覺循跡，直到洋紅色面積 (magArea) 小於 100 (定位完成)
+    while magArea > 100:
+        extract_magenta_from_json(json_obj)
+        json_obj, m_tuple, got_stop = pump_ws(s)
+        if json_obj:
+            try:
+                if "leftArea" in json_obj:
+                    leftArea = int(json_obj.get("leftArea", leftArea))
+                if "rightArea" in json_obj:
+                    rightArea = int(json_obj.get("rightArea", rightArea))
+            except:
+                pass
         
-        while mode == 6:
-            control_motor(38)
-            json_obj, m_tuple, got_stop = pump_ws(s)
-            extract_magenta_from_json(json_obj)
-            while magArea > 100:
-                extract_magenta_from_json(json_obj)
-                json_obj, m_tuple, got_stop = pump_ws(s)
-                if json_obj:
-                    try:
-                        if "leftArea" in json_obj:
-                            leftArea = int(json_obj.get("leftArea", leftArea))
-                        if "rightArea" in json_obj:
-                            rightArea = int(json_obj.get("rightArea", rightArea))
-                        except:
-                            pass
-                if turn ==2:
-                    if magArea > 3000:
-                        error = magCX - 150 
-                        Servo_angle = int(error*0.15 + (error - error1)*0.2)
-                        error1 = error
-                        set_servo_angle(Servo_angle)
-                    else:
-                        error = leftArea - 6500
-                        Servo_angle = int(error*0.003 + (error - error1)*0.008)
-                        error1 = error
-                        set_servo_angle(Servo_angle)
-                else:
-                    if magArea > 3000:
-                        error = magCX - 470
-                        Servo_angle = int(error*0.13 + (error - error1)*0.2)
-                        error1 = error
-                        set_servo_angle(Servo_angle)
-                    else:
-                        error = 8000 - rightArea 
-                        Servo_angle = int(error*0.003 + (error - error1)*0.008)
-                        error1 = error
-                        set_servo_angle(Servo_angle)
-            control_motor(-30)
-            time.sleep(0.1)
-            control_motor(0)
-            mode = 7
-        while mode == 7:
-            encoder_count = 0
-            control_motor(38)
-            json_obj, m_tuple, got_stop = pump_ws(s)
-            extract_magenta_from_json(json_obj)
-            while abs(encoder_count) < 100:
-                extract_magenta_from_json(json_obj)
-                json_obj, m_tuple, got_stop = pump_ws(s)
-                if json_obj:
-                    try:
-                        if "leftArea" in json_obj:
-                            leftArea = int(json_obj.get("leftArea", leftArea))
-                        if "rightArea" in json_obj:
-                            rightArea = int(json_obj.get("rightArea", rightArea))
-                        except:
-                            pass
-                if turn == 2:
-                    error = leftArea - 6500
-                    Servo_angle = int(error*0.005 + (error - error1)*0.008)
-                    error1 = error
-                    set_servo_angle(Servo_angle)
-                else:
-                    error = 3500 - rightArea
-                    Servo_angle = int(error*0.005 + (error - error1)*0.01)
-                    error1 = error
-                    set_servo_angle(Servo_angle)
-            mode = 8
-        while mode == 8:
-            json_obj, _, got_stop = pump_ws(s)
-            while abs(yaw) > 123:
-                json_obj, _, got_stop = pump_ws(s)
-                if json_obj:
-                    if "yaw" in json_obj:
-                        try:
-                            yaw = float(json_obj["yaw"])
-                            except:
-                                pass
-                if turn == 2:     
-                    set_servo_angle(-180)
-                    control_motor(-37)
-                else:
-                    set_servo_angle(180)
-                    control_motor(-37)
-            motor_brake()
-            set_servo_angle(0)
-            mode =9 
-        while mode == 9:
-            json_obj, _, got_stop = pump_ws(s)
-            a1_value = A1.read_u16()
-            while abs(yaw) < 177 and a1_value > 64000:
-                a0_value = A0.read_u16()
-                json_obj, _, got_stop = pump_ws(s)
-                if json_obj:
-                    if "yaw" in json_obj:
-                        try:
-                            yaw = float(json_obj["yaw"])
-                            except:
-                                pass
-                if turn == 2:     
-                    set_servo_angle(180)
-                    control_motor(-35)
-                else:
-                    set_servo_angle(-180)
-                    control_motor(-35)   
-            control_motor(40)
-            time.sleep(0.15)
-            control_motor(0)
-            set_servo_angle(0)
-            mode =10 
-        while mode == 10:
-            motor_brake()
-        ```
+        # 複雜循跡邏輯 (根據 magArea 大小切換為洋紅色中心追蹤或牆壁面積差追蹤)
+        if turn == 2:
+            if magArea > 3000:
+                error = magCX - 150 
+                Servo_angle = int(error*0.15 + (error - error1)*0.2)
+                error1 = error
+                set_servo_angle(Servo_angle)
+            else:
+                error = leftArea - 6500
+                Servo_angle = int(error*0.003 + (error - error1)*0.008)
+                error1 = error
+                set_servo_angle(Servo_angle)
+        else:
+            if magArea > 3000:
+                error = magCX - 470
+                Servo_angle = int(error*0.13 + (error - error1)*0.2)
+                error1 = error
+                set_servo_angle(Servo_angle)
+            else:
+                error = 8000 - rightArea 
+                Servo_angle = int(error*0.003 + (error - error1)*0.008)
+                error1 = error
+                set_servo_angle(Servo_angle)
+                
+    # 循跡完成，進入下一階段
+    control_motor(-30)
+    time.sleep(0.1)
+    control_motor(0)
+    mode = 7
+
+while mode == 7:
+    encoder_count = 0
+    control_motor(38)
+    json_obj, m_tuple, got_stop = pump_ws(s)
+    extract_magenta_from_json(json_obj)
+    # 模式 7: 沿牆邊線循跡 100 單位 (利用編碼器 encoder_count < 100)
+    while abs(encoder_count) < 100:
+        extract_magenta_from_json(json_obj)
+        json_obj, m_tuple, got_stop = pump_ws(s)
+        if json_obj:
+            try:
+                if "leftArea" in json_obj:
+                    leftArea = int(json_obj.get("leftArea", leftArea))
+                if "rightArea" in json_obj:
+                    rightArea = int(json_obj.get("rightArea", rightArea))
+            except:
+                pass
+        
+        # 繼續執行牆壁面積差循跡
+        if turn == 2:
+            error = leftArea - 6500
+            Servo_angle = int(error*0.005 + (error - error1)*0.008)
+            error1 = error
+            set_servo_angle(Servo_angle)
+        else:
+            error = 3500 - rightArea
+            Servo_angle = int(error*0.005 + (error - error1)*0.01)
+            error1 = error
+            set_servo_angle(Servo_angle)
+    mode = 8
+
+while mode == 8:
+    json_obj, _, got_stop = pump_ws(s)
+    # 模式 8: 執行倒車入庫的第二次轉向 (利用陀螺儀 yaw > 123 度控制)
+    while abs(yaw) > 123:
+        json_obj, _, got_stop = pump_ws(s)
+        if json_obj:
+            if "yaw" in json_obj:
+                try:
+                    yaw = float(json_obj["yaw"])
+                except:
+                    pass
+            if turn == 2:    
+                set_servo_angle(-180)
+                control_motor(-37)
+            else:
+                set_servo_angle(180)
+                control_motor(-37)
+    
+    # 轉彎完成，進入下一階段
+    motor_brake()
+    set_servo_angle(0)
+    mode =9 
+
+while mode == 9:
+    json_obj, _, got_stop = pump_ws(s)
+    a1_value = A1.read_u16()
+    # 模式 9: 最後的微調入庫 (利用陀螺儀 yaw < 177 度和紅外線 A1 控制)
+    while abs(yaw) < 177 and a1_value > 64000:
+        a0_value = A0.read_u16()
+        json_obj, _, got_stop = pump_ws(s)
+        if json_obj:
+            if "yaw" in json_obj:
+                try:
+                    yaw = float(json_obj["yaw"])
+                except:
+                    pass
+            if turn == 2:    
+                set_servo_angle(180)
+                control_motor(-35)
+            else:
+                set_servo_angle(-180)
+                control_motor(-35)
+    
+    # 最終微調動作
+    control_motor(40)
+    time.sleep(0.15)
+    control_motor(0)
+    set_servo_angle(0)
+    mode =10 
+
+while mode == 10:
+    # 模式 10: 停車結束，最終制動
+    motor_brake() 
+```
 ## <div align="center">Counter-clockwise parking procedure-逆時針停車流程</div>
 <div align=center>
 
