@@ -107,7 +107,7 @@ Based on the characteristics of each control board, we distributed the complex o
       from functions_jetson import * 
       ```  
 
-   - #### Introduction to running programs on the Jetson Orin Nano controller:-Jetson Orin Nano 控制器程式運作簡介：
+   - #### Introduction to Running Programs on the Jetson Orin Nano Controller: - Jetson Orin Nano 控制器程式運作簡介：
 
       - ##### [jetson_Orin_Nano_final.py](./jetson_orin_nano_final.py)
       ### 中文:
