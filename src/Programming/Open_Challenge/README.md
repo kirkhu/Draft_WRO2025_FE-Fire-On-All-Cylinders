@@ -85,6 +85,7 @@ from functions_jetson import *
 
    - ##### Jetson Orin Nano Controller Main Program Flowchart - Jetson Orin Nano控制器主程式流程圖
      ![flowchart_open](./img/open_challange_Jetson_nano.jpg)
+     ![flowchart_open](./img/Chinese%20Qualifying%20Tournament%20Operation%20Flowchart.jpg)
 
  - ### Raspberry Pi Pico W Open Challenge Code Overview - 樹莓派 Pico W 公開挑戰代碼概述
    - #### Raspberry Pi Pico W Core Library / Module Program Plan for the Open Challenge - 樹莓派 Pico W 庫公開挑戰程式碼程序
@@ -110,6 +111,7 @@ from functions_jetson import *
 
       - ##### Program Operation flowchart of the Raspberry Pi Pico W controller - 樹莓派 Pico W 控制器程式運作流程圖
         ![flowchart_open](./img/open_challange_Pico.jpg)
+        ![flowchart_open](./img/Chinese%20pico%20operation%20flowchart.jpg)
         
           __set_servo_angle():__<br>
           - 計算並轉換±180度的角度值到伺服馬達所需的PWM佔空比範圍（0到65535），並將其輸出到前輪伺服馬達。
