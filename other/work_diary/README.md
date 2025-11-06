@@ -316,16 +316,25 @@ This week, team member **HU,SIAN-YI** successfully completed the **operating sys
 
 **Content:**  
 
----
+### **PCB 佈局失誤修正與 UART 傳輸優化** 
 
-第三代 PCB 佈局失誤修正與 UART 傳輸優化
-1. 第三代 PCB（V3.0）佈局失誤與修正
-在 第二代版本 的開發過程中，我們根據第一代的回饋，利用設計軟體內建的標準範例圖重新校準了排針間距，成功改善了原始設計的錯誤。
+#### **1. PCB 佈局失誤與版本修正 (V3.0/V4.0)**
+* **間距修正：** 在**第二代版本**的開發過程中，我們根據前一代的回饋，利用設計軟體內建的**標準範例圖**重新校準了排針間距，成功改善了原始設計的錯誤。
+* **極性顛倒：** 然而，由於**作業上的疏忽**，我們在進行 PCB 佈局時**誤將背面視圖當作正面設計**，導致電路板輸出後發生了**極性顛倒**的重大問題。
+* **錯誤修正：** 所幸，此錯誤在組裝與測試階段便被立即發現。我們隨即在**後續版本**中修正了佈局方向，並**全面複查了各層的對齊規範**，以確保設計檔案與最終的實體成品能夠**完全一致**。
 
-然而，由於作業上的疏忽，我們在進行 PCB 佈局時誤將背面視圖當作正面設計，導致電路板輸出後發生了極性顛倒的重大問題。所幸，此錯誤在組裝與測試階段便被立即發現。我們隨即在第三代版本中修正了佈局方向，並全面複查了各層的對齊規範，以確保設計檔案與最終的實體成品能夠完全一致。
+#### **2. UART 傳輸問題與持續優化**
+在測試 **UART 數據傳輸**時，我們發現會出現**掉資料（Data Loss / Dropping）的情況**。為確保控制指令的傳輸可靠性，我們正在**持續撰寫程式碼**，專注於修正這個錯誤問題，以**提升通訊的穩定度**。
 
-2. UART 傳輸問題與持續優化
-在測試 UART 數據傳輸時，我們發現會有掉資料（Data Loss / Dropping）的情況。為確保控制指令的傳輸可靠性，我們正在持續撰寫程式碼，專注於修正這個錯誤問題，以提升通訊的穩定度。
+### ** PCB Layout Error Correction and UART Transmission Optimization** 
+
+#### **1. PCB Layout Error and Version Correction (V3.0/V4.0)**
+* **Pitch Correction:** During the development of the **Second Generation Version**, based on feedback from the prior generation, we used the design software's built-in **standard example diagrams** to recalibrate the pin header pitch, successfully correcting the original design error.
+* **Polarity Reversal:** However, due to an **operational oversight**, when implementing the PCB layout, we **mistakenly treated the back view as the front design**, which resulted in a major issue of **reversed polarity** upon board fabrication.
+* **Error Fix:** Fortunately, this error was discovered immediately during the assembly and testing phase. We promptly corrected the layout orientation in the **subsequent version** and **comprehensively reviewed the alignment specifications of all layers** to ensure the design file and the final physical product were **completely consistent**.
+
+#### **2. UART Transmission Issue and Ongoing Optimization**
+While testing **UART data transmission**, we discovered **instances of data loss (dropping data)**. To ensure the reliability of control command transmission, we are **continuously developing and debugging the code**, focusing on correcting this error to **enhance communication stability**.
 
 <div align="center" >
     <table>
