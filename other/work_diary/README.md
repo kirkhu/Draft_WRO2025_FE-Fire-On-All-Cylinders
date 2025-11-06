@@ -916,23 +916,23 @@ Following the main controller upgrade, we began investigating the use of the **W
 <div align=center>
     <table>
        <tr>
-           <th width=50%>2025 National Competition Vehicle Model</th>
-           <th width=50%></th>
+           <th width=50%>2025 National Competition Vehicle Model 2025年國賽機型
+           <th width=50%>2025 National Competition Model: Latest Version Under Ongoing Optimization - 2025 年全國賽機型：持續優化中的最新版本
        </tr>
        <tr>
            <td align=center><img src="./img/8/5.png" height=200/></td>
            <td align=center><img src="./img/8/6.png" height=200/></td>
        </tr>
        <tr>
-           <th>First-Generation Steering Structure</th>
-           <th>Second-Generation Steering Structure</th>
+           <th>Second Generation Steering Structure (V2.0) </th>
+           <th>Third Generation Steering Structure (V3.0) </th>
        </tr>
        <tr>
            <td align=center><img src="./img/8/2.jpg"/></td>
            <td align=center><img src="./img/8/1.jpg"/></td>
        </tr>
        <tr>
-           <th colspan=2>Onshape 設計畫面</th>
+           <th colspan=2>Onshape 3D Model Structure Sketch - Onshape 設計畫面</th>
        </tr>
        <tr>
            <td align=center><img src="./img/8/8.png"/></td>
