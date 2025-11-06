@@ -734,10 +734,6 @@ if combined_control_signal < -180:
 
 在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，主電路板的第四代版本（V4.0）已成功通過功能測試。實際運行測試的結果顯示，排針接點與電路佈局均無異常，且系統可穩定運作。
 
-### **Main Circuit Board Fourth Generation Functional Test Results** 
-
-Following the successful correction of design issues found in the previous two versions (V2.0 and V3.0), the **Main Circuit Board's Fourth Generation Version (V4.0) has successfully passed functional testing**. The results from actual operational tests indicate that there are **no anomalies in the pin header connections or the circuit layout**, and the **system operates stably**.
-
 <div align="center" >
     <table >
         <tr align="center">
