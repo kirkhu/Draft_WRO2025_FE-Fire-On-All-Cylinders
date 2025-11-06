@@ -801,7 +801,7 @@ Following testing, the **new chassis structure incorporating bearings effectivel
        <tr>
           <th>3D view</th>
           <th>circuit schematic</th>
-          <th>PBC layout drawing</th>
+          <th>PCB layout drawing</th>
        </tr>
        <tr>
           <td align=center ><img src="../../models/Circuit_Design/img/Old_3D_View.png" height=250 /></td>
@@ -1111,37 +1111,67 @@ sudo apt-get -y install sdkmanager
 
 **Content:**
 
- - 由於我們將原本的I/O控制器Raspberry Pi Pico更換為Raspberry Pi Pico W，因此我們在嘗試將超音波感測器改為紅外線感測器時遇到了腳位無法使用的問題，加上我們要在電路板上新增 **插拔式接線端子** 用來給Jetson Orin Nano連接供電線，所以我們開始進行第五代PCB電路板的設計。
 
- - 在本週我們發現了 **轉向節** 存在外八的問題，由於第一、二代轉向結構是使用 **8K** 3D打印機打印的，而我們的第三、四代轉向結構是使用 **14K** 3D打印機，因此在列印上會因精度問題而導致列印出來的原件與我們實際設計的還要大一些，也因使用了14K 3D打印機之後 **轉向節** 出現了元件的角度上面比原先設計的角度還要大，因此轉向結構組裝完畢後機器人會出現內八的情況。
+### **V5.0 PCB 設計動機與 3D 列印精度修正** 
+
+#### **1. 第五代 PCB 設計需求與動機**
+由於我們將原本的 I/O 控制器 **Raspberry Pi Pico 更換為 Raspberry Pi Pico W**，在嘗試將**超音波感測器改為紅外線感測器**時，我們遇到了**腳位無法使用**的問題。加上我們需要在電路板上**新增插拔式接線端子** 來為 **Jetson Orin Nano 連接供電線**，因此我們啟動了**第五代 PCB 電路板**的設計工作。
+
+#### **2. 轉向節內八問題：8K 與 14K 列印精度的影響**
+在本週，我們發現組裝後的**轉向節**存在**內八（Toe-in）** 的問題。此問題與 3D 列印機的精度升級有關：
+* **舊版列印：** 我們的第一、二代轉向結構是使用 **Stereolithography (SLA) 3D Printer 8K 打印機**列印的。
+* **新版列印與問題：** 第三、四代轉向結構升級使用了 **Stereolithography (SLA) 3D Printer 14K 打印機**。然而，14K 打印機在列印特定角度元件時，**列印出來的原件角度比實際設計的角度還要大**，導致組裝後車輛前兩輪出現**內八**的情況。
+* **解決方案：** 我們針對**轉向節的設計又做了修改**，確保車輛前兩輪能夠**平行**，從而解決了轉向不順的困擾。
+
+
+### **V5.0 PCB Design Motivation and 3D Printing Precision Correction** 
+
+#### **1. Fifth Generation PCB Design Requirement and Motivation**
+Because we replaced the original I/O controller, the **Raspberry Pi Pico, with the Raspberry Pi Pico W**, we encountered an issue with **unavailable pins** when attempting to **switch the ultrasonic sensors to infrared sensors**. Furthermore, we needed to **add plug-in terminal blocks** to the circuit board for connecting the **power supply lines for the Jetson Orin Nano**. Consequently, we initiated the design process for the **Fifth Generation PCB**.
+
+#### **2. Steering Knuckle Toe-in Issue: The Impact of 8K vs. 14K Print Precision**
+This week, we discovered that the assembled **steering knuckles** exhibited a **toe-in** problem. This issue was related to the upgrade in 3D printer precision:
+* **Older Prints:** Our first and second-generation steering structures were printed using a **Stereolithography (SLA) 3D Printer 8K**.
+* **New Print and Issue:** The third and fourth-generation steering structures were upgraded to use a **Stereolithography (SLA) 3D Printer 14K**. However, the 14K printer, due to its precision characteristics, printed the component's angles **larger than the original design angle** in specific areas. This resulted in the vehicle's two front wheels exhibiting a **toe-in** issue after the steering structure was assembled.
+* **Solution:** We made **further modifications to the steering knuckle design** to ensure the vehicle's two front wheels are **parallel**, thereby resolving the steering difficulty.
 
  <div align=center>
     <table>
         <tr>
-            <th colspan=2>設計第五代PCB電路板</th>
+            <th colspan=2>Design Evolution of the Fifth GenerationPCB (V5.0) - 設計第五代PCB電路板</th>
         </tr>
         <tr>
             <td><img src="./img/9/Design Circuit.jpg" height=100% /></td>
             <td><img src="./img/9/Circuit PCB.png" height=100% /></td>
         </tr>
         <tr>
-            <th>電路原理圖</th>
-            <th>電路PCB分佈圖</th>
+            <th>Circuit schematic</th>
+            <th>PCB layout drawing</th>
         </tr>
         <tr>
             <td><img src="./img/9/Schematic_Version_5.png" /></td>
             <td><img src="./img/9/PCB_Version_5.png" /></td>
         </tr>
         <tr>
-            <th>使用 8K 3D打印機</th>
-            <th>使用 14K 3D打印機</th>
+        <th>Overhead view of the main circuit board(電路板頂視圖)	</th>
+         <th>Bottom View of the Main Circuit Board(電路板底視圖)</th>
+        </tr>
+        <tr>
+            <td align=center width="25%" ><img src="../../models/Circuit_Design/img/circuit_board_Front_5.png" /></td>
+            <td align=center width="25%"><img src="../../models/Circuit_Design/img/circuit_board_back_5.png"  /></td>
+        <tr>
+        <th  colspan = 2>SLA 3D Printer 8K 14K 比較</th>
+        </tr>
+        <tr>
+            <th> Stereolithography (SLA) 3D Printer 8K - 使用 8K 3D打印機</th>
+            <th> Stereolithography (SLA) 3D Printer 14K 使用 14K 3D打印機</th>
         </tr>
         <tr>
             <td align=center><img src="./img/9/steering knuckle 8K.png" width=100% /></td>
             <td align=center><img src="./img/9/steering knuckle 14K.png" width=100% /></td>
         </tr>
         <tr>
-            <th colspan=2>轉向結構呈現內八</th>
+            <th colspan=2>The Steering Structure Exhibits a Toe-in Phenomenon(This condition is visible as the two front wheels noticeably converge inwards)轉向結構呈現內八(可由兩輪子向內可看出)</th>
         </tr>
         <tr>
             <td colspan=2 align=center><img src="./img/9/Inner Eight.png" width=100% /></td>
@@ -1296,22 +1326,37 @@ sudo apt-get -y install sdkmanager
  - 我們在測試的過程中因為Web Sockets在成功連線之前會將成功前的所有動作堵住，並在連線成功後一次性執行，這樣會造成我們程式啟動時會有機器再向前行走但是舵機沒有運作、底盤沒有任何反應等...。所以我們決定將程序的啟動控制由Jetson Orin Nano來控制，因此我們須將程式啟動按鈕的電路更改，再更改過程中我們遇到程式按鈕按下狀態沒有更新，經過網路資料查詢發現我們需要使用上拉電阻的方式進行電路連接，所以我們使用EasyEDA另外繪畫了一塊電路板將程式啟動按鈕的電路獨立。
 
  - 由於我們需要新增遮光板因此我們在鏡頭支架上面新增樂高插銷孔洞用於安裝樂高的5x11科技面板零件，後來又因為設計了第二塊按鈕Led獨立電路，因此我們在鏡頭支架上方設計螺絲孔位用於安裝第二塊按鈕Led獨立電路板。
+ <div align=center>
+ <table>
+    <tr>
+      <th colspan=3>Switch Control Circuit Board (Secondary PCB) - 開關控制電路板</th>
+      </tr>
+      <tr>
+      <th>3D view</th>
+      <th>circuit schematic</th>
+      <th>PBC layout drawing</th>
+      </tr>
+      <tr>
+      <td align=center ><img src="../../models/Circuit_Design/img/New_3D_View_Button_and_Led.png" height=250 /></td>
+         <td align=center ><img src="../../models/Circuit_Design/img/New_Schematic_LED_and_button.png" height=250 /></td>
+         <td align=center ><img src="../../models/Circuit_Design/img/New_PCB_Layouts_Button_and_Led.png" height=250 /></td>
+      </tr>
+      <tr>
+      <th align=center colspan=3>	Overall circuit schematic  </th> 
+      </tr>
+      <tr>
+    <td align=center colspan=3><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version_all.png"   />
+   </td>
+   </tr>
+      </tr>
+      </table>
+      </div>
+
 
 <div align=center>
     <table>
         <tr>
             <th colspan=2>新增遮光板</th>
-        </tr>
-        <tr>
-            <td colspan=2 align=center><img src="" width=900 /></td>
-        </tr>
-        <tr>
-            <th>獨立按鈕電路 - 原理圖</th>
-            <th>獨立按鈕電路 - PCB原理圖</th>
-        </tr>
-        <tr>
-            <td align=center width=500><img src="./img/10/Led and Button a Circuit.png" height=300 /></td>
-            <td align=center width=500><img src="./img/10/Led and Button a PCB.png" height=300 /></td>
         </tr>
         <tr>
             <th>鏡頭支架主體 - Onshape</th>
