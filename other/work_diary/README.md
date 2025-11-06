@@ -1125,8 +1125,8 @@ sudo apt-get -y install sdkmanager
             <th colspan=2>設計第五代PCB電路板</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Design Circuit.jpg" width=100% /></td>
-            <td><img src="./img/9/Circuit PCB.png" width=100% /></td>
+            <td><img src="./img/9/Design Circuit.jpg" height=100% /></td>
+            <td><img src="./img/9/Circuit PCB.png" height=100% /></td>
         </tr>
         <tr>
             <th>電路原理圖</th>
