@@ -1359,7 +1359,7 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
             <th colspan=2>新增遮光板</th>
         </tr>
         <tr>	
-            <th>Lens Mount 鏡頭支架</th>
+            <th>Lens Mount with Integrated Light Shielding Functionality 鏡頭支架（Lens Mount）：整合遮光罩功能設計</th>
             <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
         </tr>
         <tr>
