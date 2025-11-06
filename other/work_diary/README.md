@@ -893,7 +893,24 @@ Despite a **difficult and challenging competition process**, we successfully sec
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:**
-- 在參加全國賽的過程中，我們發現 Jetson Nano 在運算效能上存在不足，因此決定將主控制器升級為運算效率更高的 Jetson Orin Nano。同時，我們開始研究如何利用 WebSockets 建立 Jetson Orin Nano 與 Raspberry Pi Pico 之間的通訊。由於 WebSockets 通訊需要雙方皆能連線至網路，我們將原本的 Raspberry Pi Pico 更換為具備 WiFi 功能的 Raspberry Pi Pico W，以滿足無線連線的需求。
+
+### **主控制器升級 Jetson Orin Nano 與通訊方案優化** 🚀
+
+#### **1. 主控制器升級決策與原因**
+在參與全國賽的過程中，我們發現 **Jetson Nano 在運算效能上存在不足**，難以應對複雜的競賽程式需求。同時，考量到**運算效能更佳的 Nvidia Jetson Orin Nano 控制器近期降價**，加上 **Nvidia Jetson Nano 已停售**，造成未來備用控制器取得不易的問題。基於效能與備用策略的雙重考量，我們決定將主控制器**升級為運算效率顯著更高的 Jetson Orin Nano**。
+
+#### **2. 通訊協議與輔助控制器更換**
+隨著主控器的升級，我們也開始研究如何利用 **WebSockets 協議**建立 **Jetson Orin Nano 與 Raspberry Pi Pico 之間的通訊**。由於 WebSockets 通訊需要**雙方皆能穩定連線至網路**，我們將原本的 Raspberry Pi Pico 更換為**內建 WiFi 功能的 Raspberry Pi Pico W**，以滿足無線連線的需求，為未來的系統架構奠定基礎。
+
+---
+
+### **Main Controller Upgrade to Jetson Orin Nano and Communication Optimization** 
+
+#### **1. Main Controller Upgrade Decision and Rationale**
+During our participation in the National Competition, we identified that the **Jetson Nano lacked sufficient computational performance** to handle the complexity of the required competition programs. Concurrently, considering that the **more efficient Nvidia Jetson Orin Nano controller had seen a price reduction**, and the **Nvidia Jetson Nano is now discontinued**—making the procurement of backup controllers challenging—we decided to upgrade the main controller to the **significantly more computationally efficient Jetson Orin Nano**.
+
+#### **2. Communication Protocol and Auxiliary Controller Swap**
+Following the main controller upgrade, we began investigating the use of the **WebSockets protocol** to establish **communication between the Jetson Orin Nano and the Raspberry Pi Pico**. As WebSockets communication necessitates **stable network connectivity for both ends**, we replaced the original Raspberry Pi Pico with the **WiFi-enabled Raspberry Pi Pico W**, meeting the requirement for wireless communication and setting the foundation for the future system architecture.
 
 
 <div align=center>
