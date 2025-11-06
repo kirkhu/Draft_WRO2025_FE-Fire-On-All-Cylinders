@@ -107,38 +107,37 @@ Based on the characteristics of each control board, we distributed the complex o
       from functions_jetson import * 
       ```  
 
-   - #### Introduction to running programs on the Jetson Orin Nano controller:-Jetson Orin Nano 控制器程式運作簡介：
+   - #### Introduction to Running Programs on the Jetson Orin Nano Controller: - Jetson Orin Nano 控制器程式運作簡介：
 
       - ##### [jetson_Orin_Nano_final.py](./jetson_orin_nano_final.py)
       ### 中文:
-        - jetson_Orin_Nano_final.py程序主要負責控制整個任務流程，包括避開牆壁、控制方向、躲避障礙物和圈數計數，以確保車輛按計劃完成所有任務。
+        - 自駕車系統的啟動流程採**主從協作機制**：Jetson Orin Nano 啟動後，**樹莓派 Pico W** 即進入**硬體待命狀態**。當使用者按下**實體啟動開關**後，Jetson Orin Nano 接收到啟動訊號，並發送**高電平訊號**以啟動其核心程式 **`jetson_Orin_Nano_final.py`**。此主程式全面負責**綜觀調度**整個自動駕駛任務的執行流程。其核心功能涵蓋**避開牆壁（循牆導航）**、**精確的方向控制（轉向決策）**、**動態的障礙物躲避**以及**圈數計數**。程式運行後，便透過 **UART 介面**持續將計算出的**舵機（轉向）**和**直流馬達（驅動）**數據傳送給樹莓派 Pico W 執行，從而**保障行駛的穩定性與任務的完整性**，確保車輛按預定計畫完成所有競賽任務。
 
-        - 程序啟動時，車輛會先進行停車區出發模式。在此模式下，會先將車子從停車區模式，避障系統將計算出柱子或是離邊牆範圍轉換為伺服馬達的角度，並利用該角度
-        進行PD轉向控制，以確保車輛不會與牆壁發生碰撞。當車輛接近轉彎區域時，系統會偵測藍色或橘色線條，以判斷是否切換到轉彎模式。
-
-        - 直線循跡模式：系統優先以紅色和綠色柱子(透過 detect_color_final() 計算出的中心偏差)作為主要校正依據；僅在未檢測到色塊時（cPillar.area == 0），才啟用兩側牆壁的面積差作為輔助校正參考。
-
-        - 系統主要負責偵測賽道上的藍線或橘線，並以此觸發轉彎信號（設定 rTurn 或 lTurn 旗標）。轉彎一旦開始，舵角即被鎖定；而判斷轉彎是否完成並切換回直線循跡模式
+        - 程式啟動之初，車輛會優先執行**停車區出發模式 (Parking Lot Exit Mode)**。在此模式下，避障系統會**即時計算**偵測到的**柱子或邊牆範圍**，並將此範圍轉換為**伺服馬達的轉向角度**。隨後，系統利用此角度進行 **PD 轉向控制**，以確保車輛能**穩定地離開停車區**，並**避免與牆壁發生任何碰撞**。當車輛接近**轉彎區域**時，系統會**偵測賽道上的藍色或橘色線條**，以作為**切換至轉彎模式**的判斷依據。
+        
+        - 在**直線循跡模式 (Straight Line Following Mode)** 中，系統會優先以**紅色與綠色柱子**（透過 `detect_color_final()` 函式計算出的**中心偏差**）作為**主要的轉向校正依據**。僅當**未檢測到任何色塊**時（判斷條件為 `cPillar.area == 0`），系統才會啟用**兩側牆壁的輪廓面積差異**，將其作為**輔助性的循跡校正參考**。
+        
+        - 在**直線循跡模式**下，系統會持續監測**影像感興趣區域 (ROI4)**，一旦偵測到賽道上的**藍色或橘色線條**，即以此觸發訊號，**設定 `rTurn` 或 `lTurn` 旗標**，**進入轉彎模式**。轉彎模式啟動後，**伺服舵角即被鎖定於固定值**。而**判斷轉彎是否完成**並**切換回直線循跡模式**的完整依據是：車輛在轉彎期間持續利用**視覺看牆**的方式，確認**內牆的輪廓面積**是否**大於預設閾值**（例如：**4000**）。一旦內牆面積確認符合此條件，系統即判定轉彎結束，並**立即返回直線循跡模式**。
         ### 英文:
-        - The `jetson_Orin_Nano_final.py` program is primarily responsible for controlling the entire task flow, including avoiding walls, steering control, dodging block obstacles, and lap counting to ensure the vehicle completes all tasks as planned.
+        - The startup process of the self-driving car system employs a **master-slave collaboration mechanism**: After the Jetson Orin Nano boots up, the **Raspberry Pi Pico W** immediately enters a **hardware standby state**. Upon the user pressing the **physical start switch**, the Jetson Orin Nano receives the activation signal and transmits a **high-level signal** to initiate its core program, **`jetson_Orin_Nano_final.py`**.This main program is entirely responsible for **supervising and coordinating** the execution flow of the entire autonomous driving mission. Its core functionalities encompass **wall avoidance (wall following navigation)**, **precise direction control (steering decision-making)**, **dynamic obstacle evasion**, and **lap counting**. Once running, the program continuously transmits the calculated **servo motor (steering)** and **DC motor (drive)** data to the Raspberry Pi Pico W via the **UART interface** for execution, thereby **guaranteeing driving stability and mission integrity** and ensuring the vehicle completes all competition tasks according to the predetermined plan.
 
-        - When the program starts, the vehicle is set to straight-driving mode by default. In this mode, the system converts the boundary range calculated by `process_roi()` into the angle for the servo motor and uses `pd_control()` to perform PD steering control to ensure the vehicle does not collide with the sidewall. As the vehicle approaches a turning area, the system uses `detect_color_final()` to detect blue or orange lines to determine whether to switch to turning mode.
+        - Upon program startup, the vehicle first executes the **Parking Lot Exit Mode**. In this mode, the obstacle avoidance system **calculates in real-time** the range of the detected **pillars or side walls**, converting this range into a **steering angle for the servo motor**. Subsequently, this angle is used for **PD steering control** to ensure the vehicle **stably exits the parking zone** and **avoids any collision with the walls**. As the vehicle approaches a **turning area**, the system will **detect the blue or orange lines on the track** to serve as the criterion for **switching to the turning mode**.
 
-        - **In straight-driving mode**, the system primarily uses the deviation of red and green blocks from the track curve, calculated by `detect_color_final()`, as a reference for correction, and uses the sidewall as a secondary correction reference when necessary.
+        - In the **Straight Line Following Mode**, the system prioritizes using the **red and green pillars** (specifically, the **center deviation** calculated by the `detect_color_final()` function) as the **primary reference for steering correction**. Only when **no color blocks are detected** (under the condition `cPillar.area == 0`) does the system activate the **area difference of the side walls** as an **auxiliary reference for line following correction**.
 
-        - **In turning mode**, the servo motor angle remains fixed. The system determines whether it has reached the next turning point based on changes in the gyroscope angle and elapsed time, allowing it to decide when to return to straight-driving mode and avoid repeated detection.
+        - While in **Straight Line Following Mode**, the system continuously monitors the **Region of Interest (ROI4)** for the detection of **blue or orange lines** on the track. This detection serves as the trigger signal, **setting the `rTurn` or `lTurn` flag to initiate the turning mode**.Once the turning mode is activated, the **servo steering angle is locked to a fixed value**. The complete criterion for **determining whether the turn is complete** and **switching back to the straight line following mode** is as follows: The vehicle continuously uses **visual wall perception** during the turn to confirm whether the **contour area of the inner wall** is **greater than a preset threshold** (e.g., **4000**). Once the inner wall area is confirmed to satisfy this condition, the system determines the turn is complete and **immediately returns to the straight line following mode**.
 
       __Program operation flow__ - 程式運行流程
         ### 中文:
-        - jetson_Orin_Nano_final.py程式開始執行，初始化所有變量，並進入循環，持續從 find_contours 和 max_contour 函數中獲取數據，然後根據當前狀態進入不同的條件分支以執行相應的控制操作。在每個循環中，程式將jetson_Orin_Nano_final.py計算出的直流馬達值、伺服馬達角度和當前狀態打包成二進位數據，並透過UART將其發送到 Raspberry Pi Pico W 控制。
+        - `jetson_Orin_Nano_final.py` 程式啟動後，首先執行**系統變數的初始化**。隨後，程式進入**主循環 (Main Loop)**，在循環中持續調用 `find_contours` 與 `max_contour` 函式來**獲取實時的視覺感知數據**。接著，系統依據**當前的運行狀態**進入不同的**條件分支**，以執行相應的**控制邏輯與決策**。在每個運行週期結束時，程式會將 Jetson Orin Nano 計算出的**直流馬達驅動值**、**伺服馬達轉向角度**以及**當前車輛狀態**，**打包成二進位數據格式**，並透過 **UART 介面**發送給 Raspberry Pi Pico W，由其進行**底層的硬體驅動控制**。
         ### 英文:
-        - `jetson_nano_main_fianl.py` starts execution, initializes all variables, and enters a loop, continuously retrieving data from process_roi and detect_color, then entering different conditional branches based on the current state to perform the appropriate control actions. In each loop, `jetson_nano_main_final.py` packages the calculated DC motor value, servo motor angle, and current status into binary data and sends it to the Raspberry Pi Pico via UART. 
+        - Upon execution, the `jetson_Orin_Nano_final.py` program first performs the **initialization of all system variables**. Subsequently, the program enters a **Main Loop**, where it continuously calls the `find_contours` and `max_contour` functions to **acquire real-time visual perception data**. The system then branches into different **conditional blocks** based on the **current operating status** to execute the corresponding **control logic and decisions**.At the conclusion of each cycle, the program **packages** the calculated **DC motor drive values**, **servo motor steering angle**, and the **current vehicle status** into a **binary data format**. This package is then transmitted via the **UART interface** to the Raspberry Pi Pico W for **low-level hardware drive control**.
 
-   - ##### Program Operation flowchart of the Jetson Orin Nano controller
+   - ##### Jetson Orin Nano Controller Main Program Flowchart Overview - Jetson Orin Nano控制器程式流程圖
      ![Obstacle_Challenge_Jetson_nano](./img/FE-obstacle_challenge_Jetson_nano.jpg)
 
- - ### Obstacle_Challenge Code Overview of Raspberry Pi Pico W-樹莓派 Pico W 障礙挑戰代碼概述
-   - ####  Obstacle_Challenge Code Program Raspberry Pi Pico W Libraries-障礙挑戰程式碼程式 Raspberry Pi Pico W函式庫
+ - ### Raspberry Pi Pico W Obstacle Challenge Code Overview - 樹莓派 Pico W 障礙挑戰代碼概述
+   - ####  Raspberry Pi Pico W Function Library for the Obstacle Challenge Program - 障礙挑戰程式碼程式 Raspberry Pi Pico W函式庫
     
       ```
       from machine import Pin, PWM, UART,I2C,time_pulse_us
