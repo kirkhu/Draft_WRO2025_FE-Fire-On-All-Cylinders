@@ -1239,9 +1239,9 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
  <div align=center>
     <table>
         <tr>
-            <th>新版中木板(新增超音波支架鎖孔)</th>
-            <th>新版中木板(新增紅外線支架鎖孔)</th>
-            <th>新版上木板</th>
+            <th>Central Wooden Layer with Added Mounting Holes for the Ultrasonic Sensor Bracket - 增設超音波感測器支架鎖孔的中央層木板</th>
+            <th>Additionally, the Central Wooden Layer After Modification to Include Infrared Sensor Bracket Mounting Holes - 修正並增設紅外線感測器支架鎖孔的中央層木板</th>
+            <th>Synchronizing and Optimizing the Top Wooden Layer Based on the Revised Specifications of the Central Plate - 根據中央層木板的修正規格，同步調整並優化頂層木板</th>
         </tr>
         <tr>
             <td><img src="./img/9/Medium Board.jpg" width=300 /></td>
@@ -1254,8 +1254,8 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
  <div align=center>
     <table>
         <tr>
-            <th>新版超音波支架</th>
-            <th>紅外線感測器L型支架</th>
+            <th>Ultrasonic Sensor stent</th>
+            <th>Infrared Sensor bracket</th>
         </tr>
         <tr>
             <td><img src="./img/9/New Ultrasonic sensor Bracket.jpg" width=400 /></td>
