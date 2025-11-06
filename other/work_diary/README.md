@@ -1413,19 +1413,61 @@ The commands for manual setup and using the auto-script are provided below.
 
  **Content:**
 
- - 本周我們再進行LAB數值調試時，遇到了數值調整時正常但程式運行時卻無法準確辨識到物件的問題，經過測試發現問題在於環境光線的干擾和數值抓得太緊繃導致。解決問題的方法是：1.在鏡頭支架上方新增遮光罩、2.在調整LAB時一個物件的數值調整完畢後拉一些容許誤差。
+### **系統穩定性、啟動機制與硬體優化** 
 
- - 我們在測試的過程中因為Web Sockets在成功連線之前會將成功前的所有動作堵住，並在連線成功後一次性執行，這樣會造成我們程式啟動時會有機器再向前行走但是舵機沒有運作、底盤沒有任何反應等...。所以我們決定將程序的啟動控制由Jetson Orin Nano來控制，因此我們須將程式啟動按鈕的電路更改，再更改過程中我們遇到程式按鈕按下狀態沒有更新，經過網路資料查詢發現我們需要使用上拉電阻的方式進行電路連接，所以我們使用EasyEDA另外繪畫了一塊電路板將程式啟動按鈕的電路獨立。
+#### **1. 影像辨識穩定性修正**
+* **問題根源：** 我們在進行 **LAB 數值調試**時發現，數值在調整階段正常，但在程式實際運行時卻**無法準確辨識到物件**。經測試確認，問題在於**環境光線的干擾**和**數值抓得太緊繃**。
+* **解決方案：** 我們採取了兩項修正措施：
+    1.  在**鏡頭支架上方新增遮光罩**。
+    2.  在調整 LAB 數值時，對單一物件的數值調整完畢後，**拉大一些容許誤差範圍**。
 
- - 由於我們需要新增遮光板因此我們在鏡頭支架上面新增樂高插銷孔洞用於安裝樂高的5x11科技面板零件，後來又因為設計了第二塊按鈕Led獨立電路，因此我們在鏡頭支架上方設計螺絲孔位用於安裝第二塊按鈕Led獨立電路板。
+#### **2. WebSockets 阻塞問題與啟動電路獨立**
+* **通訊阻塞問題：** 在測試過程中，我們發現 **WebSockets 在成功連線之前會將連線前的所有動作堵住**，並在連線成功後才一次性執行。這導致程式啟動時會出現**機器向前行走但舵機沒有運作、底盤沒有任何反應**等異常情況。
+* **啟動控制轉移：** 為了解決此問題，我們決定將**程序的啟動控制由 Jetson Orin Nano 來負責**。
+* **電路修正：** 因此，我們必須更改程式啟動按鈕的電路。在更改過程中，我們遇到**程式按鈕按下狀態沒有更新**的問題。透過網路資料查詢，我們發現需要使用**上拉電阻（Pull-up Resistor）** 的方式進行電路連接。
+* **獨立電路板設計：** 最終，我們使用 **EasyEDA 另外繪製了一塊獨立電路板**，專門用於**程式啟動按鈕的電路**。
 
+#### **3. 鏡頭支架結構優化**
+* **新增遮光板：** 由於需要新增遮光板，我們在鏡頭支架上面**新增樂高插銷孔洞**，用於安裝**樂高的 $5 \times 11$ 科技面板零件**。
+* **新增螺絲孔位：** 後來因為設計了**第二塊按鈕 LED 獨立電路板**，我們在鏡頭支架上方設計了**螺絲孔位**，用於安裝這塊獨立電路板。
 
-獨立開關控制電路板（第二塊電路板） 此外，為符合競賽規則中必須由 Jetson Orin Nano 偵測啟動按鈕才能開始運行的規定 ，我們設計了第二塊獨立的電路板：
+---
 
-啟動按鈕整合： 將啟動按鈕電路獨立連接至 Jetson Orin Nano 的通用輸入/輸出（GPIO）接口，確保主控制器能依規程偵測發車指令。
-除錯與狀態顯示： 為了優化除錯流程，我們在電路板上新增了 RGB 燈珠。
-功能目的： 該燈珠用於即時顯示車輛偵測到的最近物件顏色，以便於快速診斷與狀態監控。
-這塊電路板專門用於自駕車的啟動按鈕控制與狀態顯示。
+### **獨立開關控制電路板（第二塊電路板）功能總結**
+
+此獨立電路板的設計目的為：
+* **啟動按鈕整合：** 將啟動按鈕電路**獨立連接至 Jetson Orin Nano 的 GPIO 接口**，確保主控制器能依規程偵測發車指令。
+* **除錯與狀態顯示：** 為了優化除錯流程，在電路板上**新增了 RGB 燈珠**。
+* **功能目的：** 該燈珠用於**即時顯示車輛偵測到的最近物件顏色**，以便於快速診斷與狀態監控。
+* **定位：** 這塊電路板專門用於自駕車的**啟動按鈕控制與狀態顯示**。
+
+### **System Stability, Startup Mechanism, and Hardware Optimization** 
+
+#### **1. Image Recognition Stability Correction**
+* **Root Cause:** While conducting **LAB value tuning**, we found that although the values were normal during the adjustment phase, the program **failed to accurately identify objects** during actual operation. Testing confirmed the issue stemmed from **environmental light interference** and **overly strict value tolerances**.
+* **Solution:** We implemented two corrective measures:
+    1.  **Adding a light shield (hood) above the lens mount**.
+    2.  **Allowing a larger margin of error** after tuning the LAB values for a specific object.
+
+#### **2. WebSockets Blocking Issue and Isolated Startup Circuit**
+* **Communication Blockage:** During testing, we found that **WebSockets would block all previous actions until a connection was successfully established**, executing them simultaneously afterward. This caused anomalies upon program startup, such as the **robot moving forward while the servo motor was inactive, or the chassis being unresponsive**.
+* **Startup Control Transfer:** To resolve this, we decided to assign **program startup control to the Jetson Orin Nano**.
+* **Circuit Correction:** We needed to modify the program start button circuit. During this change, we encountered a problem where the **button's pressed state was not updating**. Consulting online resources revealed the necessity of connecting the circuit using a **pull-up resistor**.
+* **Isolated PCB Design:** Consequently, we used **EasyEDA to custom-design a separate circuit board** dedicated solely to the **program startup button circuit**.
+
+#### **3. Lens Mount Structure Optimization**
+* **Adding Light Shield:** Since a light shield was required, we **added LEGO pinholes** to the lens mount for mounting a **LEGO $5 \times 11$ Technic panel**.
+* **Adding Screw Holes:** Later, because we designed the **second independent button/LED circuit board**, we designed **screw holes** above the lens mount for installing this secondary board.
+
+---
+
+### **Independent Switch Control Board (Secondary PCB) Summary**
+
+The purpose of this independent board is:
+* **Start Button Integration:** The start button circuit is **independently connected to the Jetson Orin Nano's GPIO interface**, ensuring the main controller detects the start command as per regulations.
+* **Debugging and Status Display:** An **RGB LED was added** to the board to optimize the debugging process.
+* **Function:** The LED is used to **display the color of the nearest object detected by the vehicle in real-time**, facilitating quick diagnostics and status monitoring.
+* **Role:** **This board is dedicated to the autonomous car's start button control and status indication**.
 
  <div align=center>
  <table>
@@ -1457,10 +1499,10 @@ The commands for manual setup and using the auto-script are provided below.
 <div align=center>
     <table>
         <tr>
-            <th colspan=2>新增遮光板</th>
+            <th colspan=2>Lens Mount with Integrated Light Shielding Functionality</th>
         </tr>
         <tr>	
-            <th>Lens Mount with Integrated Light Shielding Functionality 鏡頭支架（Lens Mount）：整合遮光罩功能設計</th>
+            <th>Lens Mount鏡頭支架</th>
             <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
         </tr>
         <tr>
