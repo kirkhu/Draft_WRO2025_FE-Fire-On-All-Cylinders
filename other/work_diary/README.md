@@ -41,7 +41,7 @@
 * **顯著提升了場地移動的靈活性**；
 * 使其能**更精準地規避障礙物**；
 * 從而**全面穩固了車輛的運行表現**。
-
+<div align="center">
 <table width="100%">
 <tr>
 <th>Team photo </th>
@@ -54,7 +54,8 @@
 </td>
 </tr>
 </table>
----
+</div>
+
 
 ### **Team Experience and Model Weight Reduction Strategy** 
 
