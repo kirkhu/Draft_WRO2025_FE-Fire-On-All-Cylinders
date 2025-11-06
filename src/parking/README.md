@@ -244,11 +244,13 @@
 ## <div align="center">Counter-clockwise parking procedure-逆時針停車流程</div>
 <div align=center>
 
-  |向前行走|???|???|???|
+  |向前行走|向右正轉|向前行走|開始向左反轉|
   |:---:|:---:|:---:|:---:|
-  
-  |???|Start reversing to the left(開始向左反轉)|Then turn right(然後向右正轉)|Parking ended(停車結束)|
+  |<div align=center><img src="./img/parking_1-1.png" /></div>|<div align=center><img src="./img/parking_1-2.png" /></div>|<div align=center><img src="./img/parking_1-3.png" /></div>|<div align=center><img src="./img/parking_1-4.png" /></div>|
+
+  |向前行走|Start reversing to the left(開始向左反轉)|Then turn right(然後向右正轉)|Parking ended(停車結束)|
   |:---:|:---:|:---:|:---:|
+  |||||
 
 ## <div align="center">Clockwise parking procedure-順時針停車流程</div>
 <div align=center>
