@@ -1591,7 +1591,10 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
  **Content:**
- 整理資料，並上傳GIHUB
+**全體成員已分配工作職責，持續將已修改的工程文件資料上傳至 GitHub 專案儲存庫**。
+
+**All team members have allocated work responsibilities and are continuing to upload the modified engineering documentation to the GitHub project repository**.
+
 
  ## 2025/10/27 ~ 2025/11/01
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
@@ -1607,7 +1610,7 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
 **持續上傳修改後的工程文件資料**。
 
 
-### **Communication Protocol Adjustment and Ongoing Engineering Document Updates** 🌐
+### **Communication Protocol Adjustment and Ongoing Engineering Document Updates** 
 
 #### **1. Communication Protocol Adjustment Decision**
 Following confirmation with the **World Final judges**, the communication between the main and auxiliary controllers (Jetson Orin Nano and Raspberry Pi Pico W) **is prohibited from using stable wireless communication protocols such as WebSocket**. Given this rule restriction, we decided to **abandon the previously investigated WebSocket solution** and **revert to the established UART (Universal Asynchronous Receiver-Transmitter) communication protocol** for data transmission.
