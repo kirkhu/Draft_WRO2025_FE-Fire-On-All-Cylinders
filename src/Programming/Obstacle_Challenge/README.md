@@ -147,21 +147,20 @@ Based on the characteristics of each control board, we distributed the complex o
      
    - #### Introduction to running programs on the Raspberry Pi Pico W controller:-樹莓派 Pico W 控制器程式運作簡介：
       ### 中文:
-      - `pico_main_final.py` 程式運行在 Raspberry Pi Pico 控制器上，作為自動駕駛車輛的中間控制系統，管理直流馬達和伺服馬達的運作。該程式透過UART從Jetson Orin Nano控制器接收計算結果，並控制後輪直流馬達的轉速、前輪伺服馬達的角度，同時監控車輛狀態參數。
 
+      - **`pico_main_final.py` 程式**運行於 **Raspberry Pi Pico 控制器**上，擔任自駕車系統的**底層中間控制單元**，負責**管理直流馬達和伺服馬達的驅動與運行**。該程式透過 **UART 介面**接收來自 **Jetson Orin Nano** 控制器的**即時計算結果**，並依此**精確控制後輪直流馬達的轉速**及**前輪伺服馬達的轉向角度**，同時也負責**監控車輛狀態參數**。
 
-      - 在控制後輪直流馬達時，我們使用 L293D 驅動晶片，透過 PWM 的佔空比調節電壓，實現後輪直流馬達的轉速控制。此外，透過設定 L293D 上的兩個控制引腳（20 和 21）的高低電平，可以控制後輪直流馬達的正反轉。
+      - 在控制後輪直流馬達時，我們選用 **L293D 驅動晶片**。系統透過**調節 PWM 訊號的佔空比**來精確控制電壓輸出，從而**實現後輪直流馬達的轉速控制**。此外，藉由設定 L293D 晶片上的**兩個控制引腳（20 和 21）的高低電平邏輯**，我們能進一步**控制後輪直流馬達的正向與反向轉動**。
 
-      - 在控制前輪伺服馬達時，我們直接利用PWM訊號的佔空比來調節輸出，從而控制伺服馬達的轉向角度， PWM訊號佔空比的變化對應伺服馬達的不同角度設置，實現精準轉向。
+      - 在控制前輪伺服馬達時，我們**直接利用 PWM 訊號的佔空比**來**調節輸出脈衝的寬度**，從而**精確控制伺服馬達的轉向角度**。PWM 訊號**佔空比的微小變化**與伺服馬達的**不同角度設定**直接對應，確保了**車輛轉向的精準度**。
 
-      - 當程式運作至count=1時，系統接管直流馬達的控制權，並開始轉彎往前走直到紅外線感測到牆壁再進行後退轉彎追蹤停車區域的洋紅色。在追蹤過程中，會一直沿著洋紅色循跡直到如果洋紅色面積<100，在使用牆壁循跡往前100度，在使用陀螺儀轉彎進入停車區，以確保精準停車。
+      - 當程式運行至 **`mode=3`** 時，系統即取得直流馬達的控制權，開始**轉向前行**。車輛會持續前進，直到**紅外線感測器偵測到牆壁**，隨即切換至**後退轉彎**，並開始**循跡追蹤停車區域的洋紅色標記**。在洋紅色循跡過程中，車輛將持續沿著標記行駛，直到**洋紅色輪廓面積小於閾值 100**。此時，系統會利用**牆壁循跡機制向前移動一段距離**（例如：100 個單位），隨後運用**陀螺儀**進行**精確的角度轉彎**，最終駛入停車區，以**確保最終停車定位的精準性**。
       ### 英文:
       - ##### [pico_main_final.py](./pico_main_final.py)
-        - The `pico_main_final.py` program runs on the Raspberry Pi Pico controller as an intermediary control system for an autonomous vehicle, managing the operation of the DC motor and servo motor. This program receives computation results from the Jetson Orin Nano controller via UART and controls the speed of the rear-wheel DC motor, the angle of the front-wheel servo motor, while also monitoring vehicle status parameters.
-        -  When the start switch is pressed, the Raspberry Pi Pico controller receives a start signal and sends a high-level signal to initiate the main program `jetson_nano_main_final.py` on the Jetson Orin Nano.
-        - When controlling the rear-wheel DC motor, we adjust the voltage through the duty cycle of PWM, using the L293D driver chip to achieve speed control of the rear-wheel DC motor. Additionally, by setting the high and low levels of the two control pins (20,21) on the L293D, we can control the forward and reverse rotation of the rear-wheel DC motor.
-        - When controlling the front-wheel servo motor, we directly use the duty cycle of the PWM signal to adjust the output and control the steering angle of the servo motor, without the need for an L293D driver. Changes in the PWM signal’s duty cycle correspond to different angle settings for the servo motor, allowing for precise steering.
-        - When the program reaches state five, the system takes over the control of the DC motor and begins tracking the pink sidewall of the parking area. During tracking, the ultrasonic distance sensor detects the parking area; when the sensor detects that the sidewall is pink, the system simultaneously takes control of both the servo motor and the DC motor. It then uses `run_encoder_Auto()` to adjust the forward angle of the DC motor to ensure precise parking.
+        - The **`pico_main_final.py` program** runs on the **Raspberry Pi Pico W controller**, serving as the **low-level intermediate control unit** for the autonomous vehicle system. It is responsible for **managing the drive and operation of both the DC motor and the servo motor**. The program receives **real-time calculation results** from the **Jetson Orin Nano** controller via the **UART interface**, using this data to **precisely control the rotational speed of the rear DC motor** and the **steering angle of the front servo motor**, while also being responsible for **monitoring vehicle status parameters**.
+        -  When controlling the rear DC motor, we utilize the **L293D driver chip**. The system achieves **rotational speed control of the rear DC motor** by precisely regulating the output voltage through **adjusting the PWM signal's duty cycle**. Furthermore, by setting the **high/low logic levels of the two control pins (20 and 21)** on the L293D chip, we can also control the **forward and reverse rotation of the rear DC motor**.
+        - When controlling the front servo motor, we **directly utilize the PWM signal's duty cycle** to **adjust the width of the output pulse**, thereby **precisely controlling the servo motor's steering angle**. The **slight variation in the PWM signal's duty cycle** directly corresponds to **different angle settings** of the servo motor, which ensures the **accuracy of the vehicle's steering**.
+        - When the program operates in **`mode=3`**, the system assumes control of the DC motor and initiates a **forward turn**. The vehicle continues its forward movement until the **infrared sensor detects a wall**, immediately switching to a **reverse turn** and commencing **line tracking of the magenta marker** for the parking zone.During magenta tracking, the vehicle persists in following the marker until the **magenta contour area is less than the threshold (100)**. At this point, the system utilizes the **wall-following mechanism to move forward by a set distance** (e.g., 100 units/steps), subsequently employing the **gyroscope** to execute a **precise angle turn** and finally entering the parking bay, thereby **ensuring the accuracy of the final parking position**.
       
 
       __Program operation flow__-程式運行流程
