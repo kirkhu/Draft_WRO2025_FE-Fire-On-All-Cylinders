@@ -894,7 +894,7 @@ Despite a **difficult and challenging competition process**, we successfully sec
 
 **Content:**
 
-### **主控制器升級 Jetson Orin Nano 與通訊方案優化** 🚀
+### **主控制器升級 Jetson Orin Nano 與通訊方案優化** 
 
 #### **1. 主控制器升級決策與原因**
 在參與全國賽的過程中，我們發現 **Jetson Nano 在運算效能上存在不足**，難以應對複雜的競賽程式需求。同時，考量到**運算效能更佳的 Nvidia Jetson Orin Nano 控制器近期降價**，加上 **Nvidia Jetson Nano 已停售**，造成未來備用控制器取得不易的問題。基於效能與備用策略的雙重考量，我們決定將主控制器**升級為運算效率顯著更高的 Jetson Orin Nano**。
@@ -916,8 +916,8 @@ Following the main controller upgrade, we began investigating the use of the **W
 <div align=center>
     <table>
        <tr>
-           <th width=50%>Model Used in the National Competition</th>
-           <th width=50%>Model Used in the International Competition</th>
+           <th width=50%>2025 National Competition Vehicle Model</th>
+           <th width=50%></th>
        </tr>
        <tr>
            <td align=center><img src="./img/8/5.png" height=200/></td>
