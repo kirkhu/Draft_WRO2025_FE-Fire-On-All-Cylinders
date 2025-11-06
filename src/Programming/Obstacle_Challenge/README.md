@@ -11,10 +11,10 @@ Based on the characteristics of each control board, we distributed the complex o
    ### 英文:
    <ol>
    <li>
-    This time, in addition to handling sidewall image recognition and direction detection, the Jetson Orin Nano has added an obstacle block recognition feature. Leveraging its powerful computing capabilities, the Jetson Orin Nano can perform real-time image analysis and processing, accurately detecting the vehicle's direction while also quickly recognizing and avoiding obstacles in its path, thereby enhancing the stability and safety of autonomous driving. 
+    This time, in addition to its capabilities in image recognition and direction detection, the Jetson Orin Nano has been enhanced with an obstacle recognition function. Leveraging its powerful computational capabilities, the Jetson Orin Nano can perform real-time image analysis and processing, precisely detect the vehicle's driving direction, and simultaneously quickly identify and avoid obstacles in its path, thereby improving the stability and safety of autonomous driving.
    </li>
    <li>
-    Additionally, this time, the Raspberry Pi Pico not only controls the DC motor speed and vehicle steering but also needs to detect the distance to the parking lot sidewall. Utilizing its efficient GPIO control capabilities, the Raspberry Pi Pico can perform precise distance measurements and hardware management, ensuring the vehicle parks safely in the lot while maintaining an appropriate distance.
+    Furthermore, the Raspberry Pi Pico W is not only required to control the DC motor speed and vehicle steering this time, but also needs to use infrared sensors to detect the distance between the vehicle and the walls. With its efficient GPIO control capability, the Raspberry Pi Pico W can perform precise distance measurement and hardware management, ensuring the vehicle safely parks within the designated parking lot and maintains an appropriate safety distance.
    </li>
    </ol>
 
