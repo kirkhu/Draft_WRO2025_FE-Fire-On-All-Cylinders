@@ -831,7 +831,7 @@ Following testing, the **new chassis structure incorporating bearings effectivel
     <table>
     <tr>
     <th>3D view</th>
-    <th>circuit schematic</th>
+    <th>Circuit schematic</th>
     <th>PCB layout drawing</th>
        </tr>
        <tr>
@@ -1141,7 +1141,6 @@ sudo apt-get -y install sdkmanager
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:**
-
 
 ### **V5.0 PCB 設計動機與 3D 列印精度修正** 
 
