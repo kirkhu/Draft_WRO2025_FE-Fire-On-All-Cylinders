@@ -783,7 +783,7 @@ Notably, due to its stable performance, the V4.0 version **became the primary ci
 
 **Content:** 
 
-### **底盤摩擦力問題修正與轉向流暢度優化** 🛠️
+### **底盤摩擦力問題修正與轉向流暢度優化** 
 
 在進行避障程式測試時，我們注意到自駕車在**過彎時會出現些許卡頓**。經檢查後發現問題源自**底盤結構**：由於**轉向節與底盤直接接觸**，產生了**過大的摩擦力**，導致傳動結構**卡滯**。
 
@@ -829,15 +829,15 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 
   <div align=center>
     <table>
-       <tr>
-          <th>3D view</th>
-          <th>circuit schematic</th>
-          <th>PCB layout drawing</th>
+    <tr>
+    <th>3D view</th>
+    <th>circuit schematic</th>
+    <th>PCB layout drawing</th>
        </tr>
        <tr>
-          <td align=center ><img src="../../models/Circuit_Design/img/Old_3D_View.png" height=250 /></td>
-          <td align=center ><img src="../../models/Circuit_Design/img/Old_Schematic.png" height=250 /></td>
-          <td align=center ><img src="../../models/Circuit_Design/img/Old_PCB_Layouts.png" height=250 /></td>
+    <td align=center ><img src="../../models/Circuit_Design/img/Old_3D_View.png" height=250 /></td>
+    <td align=center ><img src="../../models/Circuit_Design/img/Old_Schematic.png" height=250 /></td>
+    <td align=center ><img src="../../models/Circuit_Design/img/Old_PCB_Layouts.png" height=250 /></td>
        </tr>
     </table>
   </div>
