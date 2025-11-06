@@ -74,22 +74,15 @@ By simplifying the overall structure, we achieved multiple benefits:
 <tr align="center">
 <th>2024 World Championship Vehicle Model</th>
 <th>2025 National Competition Vehicle Model</th>
+<th>2025 National Competition Vehicle Model</th>
 </tr>
 <tr align="center">
 <td><img src="./img/2/Last_year's.png"  width="300" alt="Vehicle_cad"></td> 
     <td><img src="./img/2/This_year's.png" width="300" alt="vehicle Underfloor"></td> 
+    <td> <img src="./img/find_data.jpg" width = "300"  alt="data" align=center /></td>
 </tr>
 </table>
 </div>
-<div align="center">
-<table>
-<tr align="center">
-
-</tr>
-<tr align="center">
-<td> <img src="./img/find_data.jpg" width = "300"  alt="data" align=center /></td>
-<tr>
-<td>
 
 **設計參考、技術發現與修正方向**
 - 為了奠定本專案的設計基礎與優化方向，我們進行了以下參考與分析：
@@ -109,11 +102,6 @@ Design Reference Sources: We reviewed the engineering documentation from our sch
 
     - Model Size and Obstacle Avoidance: Furthermore, we observed that some teams' vehicle models were significantly smaller than ours. These smaller models demonstrated superior performance in their ability to avoid obstacles.
 
-
-</td>
-</tr>
-</table>
-</div>
 
 ## 2025/03/01 ~ 2025/03/07
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
