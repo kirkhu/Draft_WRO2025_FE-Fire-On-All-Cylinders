@@ -147,14 +147,26 @@ Photos of the system installation, driver downloads, and remote desktop function
 
 **Content:** 
 
+### **第二代電路設計與初次 PCB 實戰經驗** 
+#### **設計動機與製程轉換**
+為了**避免使用電木板焊接時可能導致的控制器短路損毀**，並追求**更整潔、更易於配置**的電路板佈局，我們決定採用 **EasyEDA 軟體繪製印刷電路板（PCB）**。隨後，我們透過**化學蝕刻（洗印）製程**完成了**第二代電路板**的製作。
 
-第二代電路設計與學習
+#### **設計失誤與實戰學習**
+由於這是團隊**首次**進行 PCB 設計，我們初期**忽略了設計軟體（EasyEDA）內建的標準元件排版範例**。我們轉而依賴**手動測量排針間距**作為設計依據。然而，由於**經驗尚淺**，在第二代電路板製作完成後，我們發現**間距設定過小**，最終導致電子元件**無法順利插裝**。
 
-為了避免使用電木板焊接時可能導致的控制器短路損毀，並追求更整潔、更易於配置的電路板佈局，我們決定採用 EasyEDA 軟體繪製印刷電路板（PCB），並透過化學蝕刻（洗印）製程完成了第二代電路板的製作。
+#### **經驗總結與後續行動**
+儘管遭遇了這次失誤，它卻提供了**寶貴的實戰經驗**。這促使我們立即啟動**設計修正與優化流程**，並隨即將修正後的設計送廠製作了**第三代版本**。
 
-由於這是團隊首次進行 PCB 設計，我們初期忽略了設計軟體（EasyEDA）內建的標準元件排版範例。我們轉而依賴手動測量排針間距作為設計依據。然而，由於經驗尚淺，在首代電路板製作完成後，我們才發現間距設定過小，最終導致電子元件無法順利插裝。
+### **Second Generation Circuit Design and Initial PCB Practical Experience** 
 
-儘管遭遇了這次失誤，它卻提供了寶貴的實戰經驗。這促使我們立即啟動設計修正與優化流程，並隨即將修正後的設計送廠製作了第三代版本。
+#### **Design Motivation and Process Transition**
+To **prevent potential short-circuit damage to the controllers caused by soldering on pegboards** and to achieve a **cleaner, more configurable** board layout, we decided to use **EasyEDA software to draw the Printed Circuit Board (PCB)**. Subsequently, we produced the **Second Generation circuit board** using the **chemical etching process**.
+
+#### **Design Error and Practical Learning**
+As this was the team's **first time** designing a PCB, we initially **overlooked the standard component layout templates built into the design software (EasyEDA)**. Instead, we relied on **manual measurement of the pin header pitch** as the design basis. However, due to our **limited experience**, after the second-generation board was fabricated, we discovered that the **pitch setting was too small**, ultimately preventing the electronic components from being properly inserted.
+
+#### **Experience Summary and Subsequent Action**
+Despite this setback, this failure provided **invaluable hands-on experience**. It prompted us to immediately launch the **design correction and optimization process**, and the revised design was subsequently sent to the factory for the **Third Generation Version**.
 
 <div align="center">
     <table>
