@@ -1518,7 +1518,17 @@ The purpose of this independent board is:
 
  **Content:**
 
- - 本周我們使用安裝在機器前後的紅外線感測器進行停車流程。下方為紅外線感測器的類比訊號讀取程序。
+### **紅外線感測器輔助停車與訊號讀取** 
+
+本週，我們實施了**利用安裝在機器人前後方的紅外線感測器進行停車流程**。
+
+下方展示了**紅外線感測器的類比訊號讀取程序**。
+
+### **Infrared Sensor-Assisted Parking and Signal Reading** 
+
+This week, we implemented the **parking procedure using the infrared sensors installed on the front and rear of the robot**.
+
+The **analog signal reading procedure for the infrared sensors** is shown below.
 
     ```python
     class TCRT5000:
@@ -1551,14 +1561,23 @@ The purpose of this independent board is:
 
  **Content:**
 
- - 本周我們完成了最終的程式架構，經過先前的更動我們的停車流程也做了些微的更動。下面為最終版的停車流程順序示意圖。
+### **最終程式架構完成與影片拍攝** 
 
- - 在完成程式架構和流程後我們也開始進行介紹影片的拍攝。
+* **最終架構與流程：** 本週，我們已**完成了最終的程式架構**。根據先前的硬體和邏輯更動，我們的**停車流程也進行了些微的調整與優化**。下方展示了**最終版的停車流程順序示意圖**。
+* **影片製作：** 在完成程式架構和流程的定案後，我們也**開始進行介紹影片的拍攝工作**。
+* **[5-1 Open Challenge rounds](video/Open_Challenge/video.md)**
+* **[5-2 Obstacle Challenge rounds](video/Obstacle_Challenge/video.md)**
+
+### **Final Program Architecture Completion and Video Production** 
+
+* **Final Architecture and Flow:** This week, we have **completed the final program architecture**. Following previous hardware and logic modifications, our **parking procedure flow has also undergone slight adjustments and optimization**. The diagram below illustrates the **sequential flow of the final version of the parking procedure**.
+* **Video Production:** After finalizing the program architecture and procedures, we also **commenced the filming of the introduction video**.
+
 
  <div align=center>
     <table>
         <tr>
-            <th>最終停車程序示意圖</th>
+            <th>Final Version Parking Procedure Flow Diagram - 最終版停車程序流程示意圖</th>
         </tr>
         <tr>
             <td width=1000 align=center><img src="./img/10/Parking_process.png" width=700 /></td>
@@ -1566,7 +1585,7 @@ The purpose of this independent board is:
     </table>
  </div>
 
-# <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>
+
 
  ## 2025/10/27 ~ 2025/11/01
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
@@ -1579,5 +1598,7 @@ The purpose of this independent board is:
 
  **Content:**
  經詢問世界賽裁判，上下位控制器不得使用穩定傳輸之無線傳輸websocket通訊協定，那只能改回原本使用的UART通訊協定的。
+
+ # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>
 
 
