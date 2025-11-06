@@ -1273,8 +1273,8 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
  <div align=center>
     <table>
         <tr>
-            <th>鏡頭支架主體</th>
-            <th>鏡頭固定板</th>
+            <th>Lens Mount with Integrated Light Shielding Functionality 鏡頭支架（Lens Mount）：整合遮光罩功能設計</th>
+            <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
         </tr>
         <tr>
             <td align=center><img src="./img/9/Camera Bracket Main Body.png" width=500 /></td>
@@ -1326,6 +1326,15 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
  - 我們在測試的過程中因為Web Sockets在成功連線之前會將成功前的所有動作堵住，並在連線成功後一次性執行，這樣會造成我們程式啟動時會有機器再向前行走但是舵機沒有運作、底盤沒有任何反應等...。所以我們決定將程序的啟動控制由Jetson Orin Nano來控制，因此我們須將程式啟動按鈕的電路更改，再更改過程中我們遇到程式按鈕按下狀態沒有更新，經過網路資料查詢發現我們需要使用上拉電阻的方式進行電路連接，所以我們使用EasyEDA另外繪畫了一塊電路板將程式啟動按鈕的電路獨立。
 
  - 由於我們需要新增遮光板因此我們在鏡頭支架上面新增樂高插銷孔洞用於安裝樂高的5x11科技面板零件，後來又因為設計了第二塊按鈕Led獨立電路，因此我們在鏡頭支架上方設計螺絲孔位用於安裝第二塊按鈕Led獨立電路板。
+
+
+獨立開關控制電路板（第二塊電路板） 此外，為符合競賽規則中必須由 Jetson Orin Nano 偵測啟動按鈕才能開始運行的規定 ，我們設計了第二塊獨立的電路板：
+
+啟動按鈕整合： 將啟動按鈕電路獨立連接至 Jetson Orin Nano 的通用輸入/輸出（GPIO）接口，確保主控制器能依規程偵測發車指令。
+除錯與狀態顯示： 為了優化除錯流程，我們在電路板上新增了 RGB 燈珠。
+功能目的： 該燈珠用於即時顯示車輛偵測到的最近物件顏色，以便於快速診斷與狀態監控。
+這塊電路板專門用於自駕車的啟動按鈕控制與狀態顯示。
+
  <div align=center>
  <table>
     <tr>
