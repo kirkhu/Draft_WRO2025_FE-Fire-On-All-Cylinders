@@ -42,7 +42,7 @@
 * 使其能**更精準地規避障礙物**；
 * 從而**全面穩固了車輛的運行表現**。
 
-<table>
+<table width="100%>
 <tr>
 <th>Team photo </th>
 <th>Funny_photo </th>
