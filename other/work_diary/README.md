@@ -1016,7 +1016,7 @@ A comparison diagram of the two procedures is shown below.
     <table>
         <tr>
             <th>2025 National Competition: Parallel Reverse Parking Procedure Diagram - 2025 年全國賽：平行倒車入庫程序示意圖</th>
-            <th>國際賽停車流程</th>
+            <th>2025 WRO World Final: Diagram of the Parallel Reverse Parking Procedure - 2025 年世界賽：平行倒車入庫程序示意圖</th>
         </tr>
         <tr>
             <td><img src="./img/9/Forward Parking process.png" width=400 /></td>
@@ -1028,16 +1028,16 @@ A comparison diagram of the two procedures is shown below.
  <div align=center>
     <table>
         <tr>
-            <th>細磨球接頭</th>
-            <th>組裝轉向結構</th>
+            <th>Fine Sanding the Ball Joints of the Steering Mechanism - 使用砂紙細磨轉向結構的球形接頭</th>
+            <th>Assembly of the Steering Mechanism - 轉向機構的組裝作業</th>
         </tr>
         <tr>
             <td><img src="./img/9/Structure processing steps 1.jpg" width=400 /></td>
             <td><img src="./img/9/Structure processing steps 2.jpg" width=400 /></td>
         </tr>
         <tr>
-            <th>紫外線固化</th>
-            <th>球形接頭上油</th>
+            <th>Ultraviolet (UV) Post-Curing of 3D Printed Parts - 對 3D 列印零件進行紫外線（UV）後固化處理</th>
+            <th>Applying Silicone Oil to the Ball Joints - 對球形接頭塗抹矽油</th>
         </tr>
         <tr>
             <td><img src="./img/9/Structure processing steps 3.jpg" width=400 /></td>
@@ -1051,12 +1051,31 @@ A comparison diagram of the two procedures is shown below.
 
 **Content:**
 
- - 本週我們向指導教練學習到了如何進行JetPack的升級和降級，不過因為Nvidia SDK Manager必須在實體的Ubuntu主機上才有辦法正常操作，因此老師在社團教室後方架設了一台Ubuntu系統的主機用於操作SDK Manager，以下是如何使用SDK Manager進行JetPack升降級操作流程。
+### **Jetson Nano 系統降級與專用工作站建置** 
+
+由於我們**最新購買的 Nvidia Jetson Nano** 搭載了最新的**作業系統版本（JetPack 6.2.1）**，經過測試發現**並不支援**我們競賽中**重要的設備——IMX477 鏡頭模組**。
+
+為了解決這個關鍵問題，我們決定**降級作業系統至 JetPack 5.1.2 版本**，才能確保鏡頭模組獲得支援並正常運作。
+
+在這個過程中，我們向指導教練學習了**如何進行 JetPack 系統的升級和降級操作流程**。但由於 **Nvidia SDK Manager** 必須在**實體的 Ubuntu 主機上**才能正常操作，指導教練特地在社團教室後方**架設了一台 Ubuntu 系統的主機**，專門用於操作 SDK Manager。
+
+以下是如何使用 SDK Manager 進行 JetPack 升級和降級的操作流程。
+
+
+### **Jetson Nano System Downgrade and Dedicated Workstation Setup** 
+
+As the **newly purchased Nvidia Jetson Nano** was equipped with the **latest operating system version (JetPack 6.2.1)**, testing revealed that it **did not support** the **IMX477 camera module**, a crucial piece of equipment for our competition.
+
+To resolve this critical issue, we decided to **downgrade the operating system to JetPack version 5.1.2**, which ensures that the camera module is supported and fully operational.
+
+During this process, we learned the procedures for **upgrading and downgrading the JetPack system** from our instructor. However, since the **Nvidia SDK Manager** requires a **physical Ubuntu host machine** to function correctly, our instructor specially **set up an Ubuntu system host machine** at the back of the club room, dedicated solely to operating the SDK Manager.
+
+The procedure for using the SDK Manager to perform JetPack upgrades and downgrades is as follows.
 
  <div align=center>
     <table>
         <tr>
-            <th colspan=2>學習如何進行JetPack升降級</th>
+            <th colspan=2>Learning the Operational Procedures for JetPack Operating System Upgrades and Downgrades - 學習 JetPack 作業系統升級與降級的操作程序</th>
         </tr>
         <tr>
             <td><img src="./img/9/Study.jpg" width=400 /></td>
@@ -1065,7 +1084,7 @@ A comparison diagram of the two procedures is shown below.
     </table>
  </div>
 
-  - ### 安裝指令
+- ### Installation Commands 安裝指令
 
  ```bash
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
@@ -1074,41 +1093,41 @@ sudo apt-get update
 sudo apt-get -y install sdkmanager
  ```
 
-  - ### 介面操作
- <div align=center>
-    <table>
-        <tr>
-            <th>將Jetson Orin Nano連接上電腦</th>
-            <th>確認是否連接成功</th>
-            <th>選擇開發者套件</th>
-        </tr>
-        <tr>
-            <td><img src="./img/9/JetPack Process 1.jpg" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 2.png" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 3.png" width=400 /></td>
-        </tr>
-        <tr>
-            <th>在選單中選中所需的JetPack版本</th>
-            <th>勾選左側選項，點擊下一步</th>
-            <th>輸入管理者密碼</th>
-        </tr>
-        <tr>
-            <td><img src="./img/9/JetPack Process 4.png" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 5.png" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 6.png" width=400></td>
-        </tr>
-        <tr>
-            <th>填入主機板的相關資訊</th>
-            <th>安裝完畢後點擊"Finish"結束</th>
-            <th>安裝完畢後的Jetson Orin Nano系統介面</th>
-        </tr>
-        <tr>
-            <td><img src="./img/9/JetPack Process 7.png" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 8.png" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 9.png" width=400 /></td>
-        </tr>
-    </table>
- </div>
+  - ### NVIDIA SDK Manager: Operational Procedure for JetPack OS Upgrades and Downgrades - NVIDIA SDK Manager：JetPack 作業系統升級與降級的操作程序
+<div align=center>
+<table>
+<tr>
+<th>Connect the Nvidia Jetson Orin Nano to the host computer.</th>
+<th>Verify whether the connection is successful.</th>
+<th>Select the developer kit.</th>
+</tr>
+<tr>
+<td><img src="../../src/System_Platform_Software/img/11.jpg" width=400 /></td>
+<td><img src="../../src/System_Platform_Software/img/12.png" width=400 /></td>
+<td><img src="../../src/System_Platform_Software/img/13.png" width=400 /></td>
+</tr>
+<tr>
+<th>Select the desired JetPack version from the menu.</th>
+<th>Check the option on the left side and click Next.</th>
+<th>Enter the administrator password.</th>
+</tr>
+<tr>
+<td><img src="../../src/System_Platform_Software/img/14.png" width=400 /></td>
+<td><img src="../../src/System_Platform_Software/img/15.png" width=400 /></td>
+<td><img src="../../src/System_Platform_Software/img/16.png" width=400></td>
+</tr>
+<tr>
+<th>Enter the relevant information of the motherboard.</th>
+<th>After the installation is complete, click "Finish" to exit.</th>
+<th>Successful login screen of Jetson Orin Nano</th>
+</tr>
+<tr>
+<td><img src="../../src/System_Platform_Software/img/17.png" width=400 /></td>
+<td><img src="../../src/System_Platform_Software/img/18.png" width=450 /></td>
+<td><img src="../../src/System_Platform_Software/img/19.png" width=500 /></td>
+</tr>
+</table>
+</div>
 
 ## 2025/09/14 ~ 2025/09/20
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
