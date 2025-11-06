@@ -366,7 +366,7 @@
       <div align=center>
         <table>
           <tr>
-            <th>Lens Mount 鏡頭支架</th>
+            <th>Lens Mount with Integrated Light Shielding Functionality 鏡頭支架兼遮光功能</th>
             <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
           </tr>
           <tr>
