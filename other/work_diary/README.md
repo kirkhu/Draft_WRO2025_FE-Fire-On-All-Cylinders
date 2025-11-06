@@ -473,13 +473,7 @@ if elapsed_time >= 0.7 and color_y_positions[0] ==0 and color_y_positions[1] == 
 
 **Content:** 
 
-好的，這是對您提供的關於 Jetson Nano **自動啟動機制**的內容所進行的文詞修飾與專業翻譯。
-
-同時，由於您提供了程式碼檔案名稱（`open-mode.service`、`open-mode.sh`、`open-mode.py`），我會將這部分描述作為**程式碼實作的背景說明**。
-
----
-
-### **中文文章修飾：程式自動啟動機制與 Pico 訊號偵測** 💻
+### **程式自動啟動機制與 Pico 訊號偵測** 
 
 #### **自動啟動機制需求與實作**
 為了解決每次運作前都需**手動啟動主程式**的效率問題，我們在 **Jetson Nano** 上設計並實作了**自動化啟動機制**。
@@ -491,7 +485,7 @@ if elapsed_time >= 0.7 and color_y_positions[0] ==0 and color_y_positions[1] == 
 
 ---
 
-### **英文翻譯：Program Auto-Startup Mechanism and Pico Signal Detection** 🌐
+### **Program Auto-Startup Mechanism and Pico Signal Detection**
 
 #### **Need and Implementation of Auto-Startup Mechanism**
 To address the efficiency issue of manually starting the main program before every operation, we designed and implemented an **automated startup mechanism** on the **Jetson Nano**.
@@ -501,10 +495,6 @@ To address the efficiency issue of manually starting the main program before eve
 
 The code for `open-mode.service`, `open-mode.sh`, and `open-mode.py` is provided below.
 
----
-
-**請問您是否要提供這三個檔案的程式碼內容？** 我可以協助您將程式碼進行格式化並加入專業註解。
- 
 * **open-mode.service Code**
  ```bash
 [Unit]
@@ -527,30 +517,23 @@ RestartSec=5s
 WantedBy=default.target
  ```
 
- open-mode.sh
+* **open-mode.sh Code**
  ```bash
 #!/bin/bash
-
-# 等待X伺服器準備好
 while [ ! -e /tmp/.X11-unix/X0 ]; do
     sleep 1
 done
-
-# 等待使用者會話完全啟動
 until xhost >/dev/null 2>&1; do
     sleep 1
 done
-
-# 設置必要的環境變量
 export DISPLAY=:0
 export XAUTHORITY=/home/user/.Xauthority
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 
-# 啟動終端並保持打開
 /usr/bin/gnome-terminal --title='start code' -- bash -c '/home/user/code/open-mode.py; exec bash'
  ```
 
- open-mode.py
+* **open-mode.py Code**
  ```python
 #!/usr/bin/python3
 import Jetson.GPIO as GPIO
@@ -558,17 +541,12 @@ import time
 import subprocess
 import os
 
-
-# 设置 GPIO 模式
-GPIO.setmode(GPIO.BOARD)  # 使用引脚编号方式
-
-# 设置 GPIO 12 为输入模式
+GPIO.setmode(GPIO.BOARD) 
 input_pin = 7
 output_pin = 40
 GPIO.setup(output_pin, GPIO.OUT)
 GPIO.setup(input_pin, GPIO.IN)
 
-# 保存进程信息的变量
 process = None
 GPIO.output(output_pin, GPIO.LOW)
 try:
@@ -576,37 +554,32 @@ try:
     subprocess.run(command, shell=True)
     GPIO.output(output_pin, GPIO.LOW)
     while True:
-        # 检测引脚电平状态
+ 
         if GPIO.input(input_pin) == GPIO.HIGH:
-            print("检测到高电平，执行另一个程序")
-            # 执行另一个程序（例如运行一个脚本）并避免阻塞主程序
-            if process is not None and process.poll() is None:  # 检查进程是否仍在运行
-                time.sleep(1)  # 每隔1秒检测一次
+            print("A high level was detected, so another program was executed.")        
+            if process is not None and process.poll() is None: 
+                time.sleep(1)  
                 continue
             command = "echo '0000' | sudo -S chmod 777 /dev/ttyTHS1"
             subprocess.run(command, shell=True)
-            folder_path = "/home/user/code/"  # 替换为你要进入的目录路径
-            os.chdir(folder_path)
+            folder_path = "/home/user/code/"  
+            os.chdir(folder_path)          
             
-            #process = subprocess.Popen(
-            #    ["xterm", "-e", "/usr/bin/python3", "/home/user/code/jetson_nano_main.py"]
-            #) # 資格賽
             process = subprocess.Popen(
                 ["xterm", "-e", "/usr/bin/python3", "/home/user/code/jetson_nano_main_final.py"]
-            ) # 決賽
+            ) 
 
         else:
-            if process is not None and process.poll() is None:  # 检查进程是否仍在运行
-                print("终止先前运行的程序")
-                process.terminate()  # 可以用 kill() 强制关闭
-                process.wait()       # 等待进程完全结束
+            if process is not None and process.poll() is None: 
+                print("Terminate the previously running program.")
+                process.terminate()  
+                process.wait()      
             GPIO.output(output_pin, GPIO.LOW)
-            print("低电平，熄燈")
+            print("LOW，Turn Light")
 
-        time.sleep(1)  # 每隔1秒检测一次
+        time.sleep(1)
 
 except KeyboardInterrupt:
-    # 清理 GPIO 设置
     GPIO.cleanup()
  ```
 
@@ -614,17 +587,25 @@ except KeyboardInterrupt:
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:**
+### **任務賽停車程序設計與策略** 
 
- - 本週我們完成了自駕車的停車程序設計。
+本週，我們將重點投入於解決**任務挑戰賽（Obstacle Challenge rounds）中的停車區停車程式設計**。
 
- - 在本次實作中，我們採用 直角倒車入庫 的方式作為主要停車策略，使車輛能精準地進入指定停車區域。
+* **停車策略：** 我們採用**直角倒車入庫**的方式作為主要的停車策略，旨在確保車輛能夠**精準、有效地停入指定的停車區域**。
+* **流程說明：** 下圖展示了**停車程序（Parking Procedure）的詳細執行流程示意圖**。
 
- - 下圖為停車程序流程的示意圖。
+### **Obstacle Challenge Parking Procedure Design and Strategy**
+
+This week, our focus is dedicated to finalizing the **parking procedure programming for the Obstacle Challenge rounds**.
+
+* **Parking Strategy:** We adopted the method of **Perpendicular Reverse Parking** (or **Right-Angle Back-in Parking**) as our primary strategy, ensuring the vehicle can **precisely and efficiently enter the designated parking area**.
+* **Flow Description:** The image below illustrates the **detailed execution flow diagram for the parking procedure**.
+
 
  <div align=center>
     <table>
         <tr>
-            <th>停車流程示意圖</th>
+            <th>detailed execution flow diagram for the parking procedure - 停車流程示意圖</th>
         </tr>
         <tr>
             <td><img src="./img/4/5.png" width=600 /></td>
@@ -638,13 +619,19 @@ except KeyboardInterrupt:
 
 **Content:** 
 
- - 本週我們發現，自駕車的停車參數調整過於繁瑣，主要原因是程式設定的容許誤差範圍太小。
+### 停車程序穩定性優化與超音波感測器導入** 
 
- - 為了解決這個問題，我們啟用了先前預留的 超音波感測器孔位，並利用超音波感測數值來輔助自駕車完成停車動作。
+* 經過反覆測試，我們發現自駕車的**停車參數調整過程過於繁瑣**，主要問題在於**程式設定的容許誤差範圍太小**，容易導致車輛在執行程序時**碰撞到停車區的牆面**。
+* 為了解決這個問題，我們**啟用了先前在底盤上預留的超音波感測器孔位**，並**利用超音波感測數值來輔助**自駕車完成精準的停車動作。
+* 這樣的設計**大幅提升了停車程序的穩定性與成功率**，有效解決了容錯率過低的問題。
 
- - 這樣的設計大幅提升了停車程序的穩定性與成功率。
+### **Parking Procedure Stability Optimization and Ultrasonic Sensor Integration** 
 
- - 下方為超音波數值的讀取程式。
+* After repeated testing, we found that the autonomous car's **parking parameter tuning process was overly cumbersome**. The main reason was that the **tolerance range set in the program was too small**, often causing the vehicle to **collide with the parking zone walls** during execution.
+* To resolve this issue, we **activated the ultrasonic sensor mounting holes previously reserved on the chassis** and **utilized the ultrasonic sensor readings to assist** the autonomous car in completing the parking maneuver.
+* This design **significantly enhanced the stability and success rate of the parking procedure**, effectively addressing the low tolerance problem.
+
+The code for reading the ultrasonic sensor values is shown below.
 
  ```python
 def measure_distance(trig, echo):
@@ -669,14 +656,32 @@ def measure_distance(trig, echo):
 
 **Content:** 
 
- - 有了上週加入的超音波輔助停車功能後，自駕車在停車時所需的調整次數明顯減少。
+### ：停車優化成果與停車區出發程序開發** 
 
- - 本週我們開始著手撰寫「出發程序」。
- - 出發程序由 Jetson Nano 負責控制，透過偵測畫面中左右側的 ROI（感興趣區域）數值，判斷比賽起始階段應該採取順時針或逆時針的行進方向。
+#### **1. 停車功能優化成果**
+有了上週**導入的超音波輔助停車功能**後，自駕車在停車時所需的**參數調整次數明顯減少**，這驗證了新設計的有效性。
 
- - 當自駕車成功出發後，系統會自動將模式切換為「避障模式」，並持續前進。
+#### **2. 停車區出發程序開發**
+本週，我們開始撰寫**任務挑戰賽（Obstacle Challenge）** 的**「停車區出發程序」**。此程序設計的關鍵如下：
+* **控制單元：** 出發程序由 **Jetson Nano 主控制器**負責控制。
+* **方向判斷邏輯：** 系統透過偵測影像畫面中**左右側的 ROI（感興趣區域）數值**，來**判斷競賽起始階段應該採取的順時針或逆時針行進方向**。
+* **模式切換：** 當自駕車**成功出發並離開停車區後**，系統會自動將模式切換為**「避障模式」**，並持續依據避障邏輯前進。
 
- - 以下為自駕車的出發程序。
+以下為自駕車的**出發程序程式碼**。
+
+
+### **Parking Optimization Results and Parking Zone Exit Procedure Development**
+
+#### **1. Parking Feature Optimization Results**
+With the **integration of the ultrasonic sensor-assisted parking function** last week, the number of required **parameter adjustments during parking significantly decreased**, validating the effectiveness of the new design.
+
+#### **2. Parking Zone Exit Procedure Development**
+This week, we began coding the **"Parking Zone Exit Procedure"** for the **Obstacle Challenge rounds**. The key design aspects of this procedure are:
+* **Control Unit:** The exit procedure is controlled by the **Jetson Nano main controller**.
+* **Direction Determination Logic:** The system determines the required **clockwise or counterclockwise travel direction** at the start of the competition by **detecting the Region of Interest (ROI) values on the left and right sides of the image frame**.
+* **Mode Switching:** Once the autonomous car **successfully exits the parking zone**, the system automatically switches the mode to **"Obstacle Avoidance Mode"** and continues to proceed based on the avoidance logic.
+
+The **autonomous car's exit procedure code** is shown below.
 
  ```python
 if turn_side == 8:
@@ -719,7 +724,23 @@ if turn_side == 8:
 
 **Content:**
 
- - 由於轉向結構可以轉動的角度有限，如果角度太大可能會使轉向結構扭斷，因此我們在程式碼結尾加入了角度限制，以防止Servo燒壞或轉向結構被扭斷。以下為限制轉向角度的程式碼。
+### **轉向角度限制與機構保護** 
+
+由於自駕車**伺服馬達驅動的前輪轉向機構**的**可轉動角度存在物理限制**。若轉動角度設定過大，可能導致**轉向結構被扭斷**，甚至**伺服馬達燒壞**。
+
+因此，為了**防止伺服馬達驅動的前輪轉向機構損毀或轉向結構被扭斷**，我們在程式碼結尾處**加入了嚴格的角度限制**，以確保轉向動作始終維持在機構的安全工作範圍內。
+
+以下為**限制轉向角度的程式碼**。
+
+---
+
+### **Steering Angle Limitation and Mechanism Protection** 
+
+The **servo motor-driven front-wheel steering mechanism** of the autonomous car has **physical limits on its rotation angle**. Setting the angle too wide could potentially lead to the **steering structure being twisted and broken**, or even cause the **servo motor to burn out**.
+
+Therefore, to **prevent damage to the servo motor-driven front-wheel steering mechanism or the steering structure from being twisted**, we **added a strict angle limitation** at the end of the code, ensuring that steering maneuvers always remain within the safe operating range of the mechanism.
+
+The code for **limiting the steering angle** is shown below.
 
  ```python
 if combined_control_signal > 180:
