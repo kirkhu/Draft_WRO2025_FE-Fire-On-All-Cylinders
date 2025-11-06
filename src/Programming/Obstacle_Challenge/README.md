@@ -111,7 +111,8 @@ Based on the characteristics of each control board, we distributed the complex o
 
       - ##### [jetson_Orin_Nano_final.py](./jetson_orin_nano_final.py)
       ### 中文:
-        - jetson_Orin_Nano_final.py程序主要負責控制整個任務流程，包括避開牆壁、控制方向、躲避障礙物和圈數計數，以確保車輛按計劃完成所有任務。
+        - **`jetson_Orin_Nano_final.py`** 主程式主要負責**綜觀調度**整個自動駕駛任務的執行流程。其核心功能包括：**避開牆壁（循牆導航）**、**精確的方向控制（轉向決策）**、**動態的障礙物躲避**以及**圈數計數**。該程式確保車輛能夠**按預定計畫**完成所有競賽任務，從而**保障行駛的穩定性與任務的完整性**。
+        - `jetson_Orin_Nano_final.py`程序主要負責控制整個任務流程，包括避開牆壁、控制方向、躲避障礙物和圈數計數，以確保車輛按計劃完成所有任務。
 
         - 程序啟動時，車輛會先進行停車區出發模式。在此模式下，會先將車子從停車區模式，避障系統將計算出柱子或是離邊牆範圍轉換為伺服馬達的角度，並利用該角度
         進行PD轉向控制，以確保車輛不會與牆壁發生碰撞。當車輛接近轉彎區域時，系統會偵測藍色或橘色線條，以判斷是否切換到轉彎模式。
@@ -120,7 +121,7 @@ Based on the characteristics of each control board, we distributed the complex o
 
         - 系統主要負責偵測賽道上的藍線或橘線，並以此觸發轉彎信號（設定 rTurn 或 lTurn 旗標）。轉彎一旦開始，舵角即被鎖定；而判斷轉彎是否完成並切換回直線循跡模式
         ### 英文:
-        - The `jetson_Orin_Nano_final.py` program is primarily responsible for controlling the entire task flow, including avoiding walls, steering control, dodging block obstacles, and lap counting to ensure the vehicle completes all tasks as planned.
+        - The **`jetson_Orin_Nano_final.py`** program is primarily responsible for **supervising and coordinating** the execution flow of the entire autonomous driving mission. Its core functionalities encompass **wall avoidance (wall following navigation)**, **precise direction control (steering decision-making)**, **dynamic obstacle evasion**, and **lap counting**. The program ensures the vehicle **completes all competition tasks according to the predetermined plan**, thereby **guaranteeing driving stability and mission integrity**.
 
         - When the program starts, the vehicle is set to straight-driving mode by default. In this mode, the system converts the boundary range calculated by `process_roi()` into the angle for the servo motor and uses `pd_control()` to perform PD steering control to ensure the vehicle does not collide with the sidewall. As the vehicle approaches a turning area, the system uses `detect_color_final()` to detect blue or orange lines to determine whether to switch to turning mode.
 
