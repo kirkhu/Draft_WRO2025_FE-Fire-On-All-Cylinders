@@ -1267,7 +1267,7 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
  <div align=center>
     <table width=100%>
         <tr>
-            <th>實際安裝照片</th>
+            <th>Photo of the Actual Installation Location of the Ultrasonic Sensor - 超音波感測器（Ultrasonic Sensor）的實際安裝位置照片</th>
         </tr>
         <tr>
             <td><img src="./img/9/Untrasonic_Car.jpg" width=100% alt="Untrasonic Car" /></td>
