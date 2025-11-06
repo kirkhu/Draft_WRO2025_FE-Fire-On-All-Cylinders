@@ -3,7 +3,7 @@
 # <div align="center">Work Diary-工作日記</div>
 以下是本次自動駕駛汽車模型設計與任務解決的開發記錄，涵蓋了機械設計與製造、電路設計與實現、電子裝置選型、程式設計與測試以及整體的解題過程。
 
-- ### 自動駕駛汽車設計：關鍵升級與迭代
+ ### 自動駕駛汽車設計：關鍵升級與迭代
   這款自動駕駛汽車設計建立在從前輩團隊（Shinan-Fire-On-All-Cylinders ）繼承的豐富經驗之上，並融入了我去年參加世界大賽的實踐經驗。
   我們不僅借鑒了上一年冠軍隊伍的成功要素，還實施了關鍵的技術迭代：
   * **控制器升級：**主控制器已從標準的 Jetson Orin Nano 升級為性能更優越的 Nvidia Jetson Orin Nano。
@@ -30,46 +30,103 @@
 
 **Content:**  
 
+### **團隊經驗傳承與模型輕量化策略** 
 
- - 我們的隊友胡賢邑，憑藉多年參與「未來工程競賽」的經驗，在機構設計與程式控制優化領域累積了深厚的實戰基礎。 考量到每年賽事主題與規則的變動，並吸收了去年世界冠軍隊伍在影像辨識技術上的卓越成果，我們團隊經深入研討後，決定針對今年的參賽模型實施關鍵的輕量化設計。 透過整體結構的精簡化，我們達成多重效益：優化了機器進出停車區的流暢性、顯著提升了場地移動的靈活性，使其能更精準地規避障礙物，從而全面穩固了車輛的運行表現。
+我們的隊友**胡賢邑**憑藉多年參與「未來工程競賽」（Future Engineers）的豐富經驗，在**機構設計**與**程式控制優化**領域累積了深厚的**實戰基礎**。
 
- - Our teammate, HU,SIAN-YI, has accumulated solid hands-on experience in mechanical design and programming optimization through years of participation in the "Future Engineering Competition."
-- Considering the annual changes in competition themes and rules—and drawing inspiration from the world champion team’s outstanding achievements in image recognition technology last year—our team conducted in-depth discussions and decided to implement a key lightweight design for this year’s competition model.
-- By streamlining the overall structure, we achieved multiple benefits: improved the vehicle’s smooth entry and exit from parking zones, significantly enhanced maneuverability on the field, and enabled more precise obstacle avoidance, thereby comprehensively reinforcing the vehicle’s operational performance.
+考量到每年賽事主題與規則的變動，並**吸收了去年世界冠軍隊伍在影像辨識技術上的卓越成果**，我們團隊經深入研討後，決定針對今年的參賽模型實施**關鍵的輕量化設計**。
+
+透過整體結構的精簡化，我們達成了多重效益：
+* **優化了機器進出停車區的流暢性**；
+* **顯著提升了場地移動的靈活性**；
+* 使其能**更精準地規避障礙物**；
+* 從而**全面穩固了車輛的運行表現**。
+<div align="center">
+<table width="100%">
+<tr>
+<th>Team photo </th>
+<th>Funny photo </th>
+</tr>
+<tr>
+<td><img src="../../t-photos/img/team_photo.jpg"  width="300" alt="team_photo">
+</td>
+<td><img src="../../t-photos/img/funny_photo.jpg"  width="300" alt="team_photo">
+</td>
+</tr>
+</table>
+</div>
+
+
+### **Team Experience and Model Weight Reduction Strategy** 
+
+Our teammate, **Hu Xianyi**, has accumulated a profound **practical foundation** in the fields of **mechanical design** and **program control optimization**, drawing upon his years of experience participating in the "Future Engineers Competition".
+
+Considering the annual changes in competition themes and rules, and having **assimilated the excellent achievements of last year's world champion team in image recognition technology**, our team conducted in-depth discussions and decided to implement a **critical weight reduction design** for this year's competition model.
+
+By simplifying the overall structure, we achieved multiple benefits:
+* We **optimized the fluidity of the robot's entry and exit from the parking area**;
+* **Significantly enhanced its mobility and agility** on the field;
+* Enabled it to **more precisely avoid obstacles**;
+* Thereby **comprehensively stabilizing the vehicle's operational performance**.
 
 <div align="center">
 <table>
 <tr align="center">
-<th>Last year's competition vehicle model</th>
-<th>This year's competition vehicle model</th>
+<th>2024 World Championship Vehicle Model</th>
+<th>2025 National Competition Vehicle Model</th>
+<th>Team Research and Data Review Process Documentation - 團隊研究與資料查閱過程記錄</th>
 </tr>
 <tr align="center">
 <td><img src="./img/2/Last_year's.png"  width="300" alt="Vehicle_cad"></td> 
     <td><img src="./img/2/This_year's.png" width="300" alt="vehicle Underfloor"></td> 
+    <td> <img src="./img/find_data.jpg" width = "300"  alt="data" align=center /></td>
 </tr>
 </table>
 </div>
-<div align="center">
-<table>
-<tr align="center">
-<th >For the design reference of this project, we consulted the engineering documents from our school's past teams and conducted a deep dive analysis of the technical files from last year's world champion team.</th>
-</tr>
-<tr align="center">
-<td> <img src="./img/find_data.jpg" width = "500"  alt="data" align=center /></td>
-</tr>
-</table>
-</div>
+
+**設計參考、技術發現與修正方向**
+- 為了奠定本專案的設計基礎與優化方向，我們進行了以下參考與分析：
+設計參考來源： 我們查閱了學校歷屆團隊的工程文件，並對去年世界冠軍隊伍的技術文件進行了深入分析 。
+- 技術發現與修正方向：
+   - 影像辨識： 我們發現去年世界優勝隊伍在影像辨識技術上處理得極為正確且高效，這是一個值得我們深度學習的領域。因此，我們確立將此技術方向作為我們的主要修正與提升方向。
+   - 機型體積與避障： 此外，我們觀察到有部分隊伍的機型體積遠小於我們的機型。在避開障礙物的能力上，這些小型機型展現出更優越的性能。
+
+**Design Reference, Technical Findings, and Correction Strategy**
+- To establish the design foundation and optimization direction for this project, we conducted the following referencing and analysis:
+Design Reference Sources: We reviewed the engineering documentation from our school's past teams and conducted a deep analysis of the technical files from last year's world champion team.
+
+- Technical Findings and Correction Strategy:
+
+   - Image Recognition: We found that last year's world champion team executed image recognition technology in an extremely correct and highly efficient manner, marking this as an area worthy of deep study and emulation. Consequently, we established this technical direction as our primary strategy for correction and enhancement.
+
+    - Model Size and Obstacle Avoidance: Furthermore, we observed that some teams' vehicle models were significantly smaller than ours. These smaller models demonstrated superior performance in their ability to avoid obstacles.
+
 
 ## 2025/03/01 ~ 2025/03/07
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:**
 
- - 本週的工作重點是系統安裝與驅動程式下載。考量到直接透過小型螢幕操作 Jetson Nano 存在介面操作不便與連接埠損壞的風險，我們決定採用更高效的方式：在 Jetson Nano 上部署了 NoMachine 遠端桌面軟體，以便後續進行自動駕駛程式的編寫與除錯。
- - 以下附有系統安裝、驅動程式下載及遠端桌面功能測試的照片作為佐證。
+### **系統部署與遠端開發環境建置** 
 
- - This week's focus was on system installation and driver download. Considering the inconvenience and the risk of physical port damage associated with operating the Jetson Nano directly via a small monitor, we opted for a more efficient approach: deploying the NoMachine remote desktop software onto the Jetson Nano. This enables smooth coding and debugging of the autonomous driving programs going forward. 
- - Attached are supporting photos documenting the system installation, driver download, and remote desktop functionality testing.
+本週的工作重點在於**系統安裝**與**驅動程式下載**。
+
+考量到直接透過小型螢幕操作 **Jetson Nano** 存在**介面操作不便**以及**連接埠潛在損壞**的風險，我們決定採用更高效的開發模式：在 Jetson Nano 上部署了 **NoMachine 遠端桌面軟體**。此舉旨在為後續的**自動駕駛程式編寫**與**系統除錯**工作提供一個**高效且穩定**的遠端操作環境。
+
+**佐證資料：**
+
+下方附有系統安裝、驅動程式下載及遠端桌面功能測試的照片作為佐證。
+
+
+### **System Deployment and Remote Development Environment Setup** 
+
+This week's work focused on **system installation** and **driver downloads**.
+
+Considering the risks associated with directly operating the **Jetson Nano** via a small screen, specifically **inconvenient interface operation** and the potential for **damage to the connection ports**, we decided to adopt a more efficient development approach: we deployed **NoMachine remote desktop software** on the Jetson Nano. This action aims to provide an **efficient and stable** remote operational environment for the subsequent tasks of **autonomous driving program writing** and **system debugging**.
+
+**Supporting Documentation:**
+Photos of the system installation, driver downloads, and remote desktop functionality test are attached below as evidence.
+
 
 <div align="center">
     <table>
@@ -88,17 +145,39 @@
 
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
-**Content:**  ( 補電路設計圖)
+**Content:** 
 
-- 為了避免使用電木板焊接時可能導致的控制器短路損毀，並實現更整潔、更易於配置的電路板佈局，我們決定採用 EasyEDA 繪製 PCB，並透過**化學蝕刻（洗印）**製作了第一代電路板。
-- 由於這是團隊首次進行 PCB 設計，我們初期忽略了設計軟體內建的標準元件排版範例，轉而依賴手動測量排針間距作為設計依據。然而，由於經驗尚淺，首代電路板在製作完成後才發現間距設定過小，導致元件無法順利插裝。
-- 這次失誤提供了寶貴的實戰經驗，促使我們立即啟動設計修正與優化流程，並隨即送廠製作了第二代版本。
 
-- To prevent controller short-circuit damage that could result from soldering on perfboard (bakelite board), and to achieve a neater and more easily configurable circuit board layout, we opted to use EasyEDA for PCB layout, producing the first-generation board via chemical etching (PCB fabrication).
+### 第一代 PCB 設計的挑戰與學習** 
 
-- As this was the team's initial foray into PCB design, we initially overlooked the standard component placement examples built into the design software, relying instead on manually measuring the spacing between pin headers as our basis. However, due to inexperience, we discovered after the first board was fabricated that the spacing was set too narrowly, resulting in the inability to successfully insert the components.
+* 為了**避免使用電木板焊接時可能導致的控制器短路損毀**，並追求**更整潔、更易於配置**的電路板佈局，我們決定採用 **EasyEDA 軟體繪製印刷電路板（PCB）**，並透過**化學蝕刻（洗印）**製程完成了**第一代電路板**的製作。
 
-- This error provided invaluable practical experience, immediately driving us to initiate a design revision and optimization process, followed by sending the updated design for the fabrication of the second-generation board.
+
+* 由於這是團隊**首次**進行 PCB 設計，我們初期**忽略了設計軟體（EasyEDA）內建的標準元件排版範例**。我們轉而依賴**手動測量排針間距**作為設計依據。然而，由於**經驗尚淺**，在首代電路板製作完成後，我們才發現**間距設定過小**，最終導致電子元件**無法順利插裝**。
+* 儘管遭遇了這次失誤，它卻提供了**寶貴的實戰經驗**。這促使我們立即啟動**設計修正與優化流程**，並隨即將修正後的設計送廠製作了**第二代版本**。
+
+
+
+### **Challenges and Learning from the First Generation PCB Design** 
+
+* To **prevent potential short-circuit damage to the controllers caused by soldering on pegboards** and to achieve a **cleaner, more configurable** board layout, we decided to use **EasyEDA software to draw the Printed Circuit Board (PCB)**. We then produced the **first generation circuit board** using the **chemical etching process**.
+
+<div align="center">
+    <table>
+        <tr align=center>
+            <th width=50% style="text-align: center;">Jetson  Nano Software Environment Installation</th>
+            <th width=50% style="text-align: center;">Jetson  Nano Software Environment Testing</th>
+        </tr>
+        <tr>
+            <td><img src="../../models/Circuit_Design/img/circuit_board_Front_1.png"/></td>
+            <td><img src="../../models/Circuit_Design/img/circuit_board_back_1.png"/></td>
+        </tr>
+    </table>
+</div>
+
+* As this was the team's **first time** designing a PCB, we initially **overlooked the standard component layout templates built into the design software (EasyEDA)**. Instead, we relied on **manual measurement of the pin header pitch** as the design basis. However, due to our **limited experience**, we only discovered after the first-generation board was fabricated that the **pitch setting was too small**, ultimately preventing the electronic components from being properly inserted.
+* Despite this setback, this failure provided **invaluable hands-on experience**. It prompted us to immediately launch the **design correction and optimization process**, and the revised design was subsequently sent to the factory for the **second-generation version**.
+
 <div align="center" >
     <table >
         <tr align="center">
@@ -117,14 +196,29 @@
 
 **Content:** 
 
- - 本週，我們正式啟動了自駕車程序的編寫工作。為了確保主控單元（Jetson Nano）與輔助單元（Raspberry Pi Pico）之間能順利協同運作，我們投入時間研究了關鍵的通訊協議。具體研究方向包括：Jetson Nano 與 Raspberry Pi Pico 之間的通訊機制、如何利用 Raspberry Pi Pico 精準控制直流馬達的編碼器（Encoder），以及實施超音波感測器的數值讀取等技術環節。
- - This week, we officially commenced the development of the Self-Driving-Cars software. To ensure seamless coordination between the main control unit (Jetson Nano) and the auxiliary unit (Raspberry Pi Pico), we dedicated time to researching critical communication protocols. Our specific areas of investigation included: the communication mechanism between the Jetson Nano and the Raspberry Pi Pico, how to precisely control the DC motor encoder using the Raspberry Pi Pico, and the implementation strategy for reading ultrasonic sensor data.
+### 自駕車程式啟動與通訊協議研究** 
+
+本週，我們正式啟動了**自駕車核心程式的編寫工作**。為了確保**主控單元（Nvidia Jetson Nano）** 與 **輔助單元（Raspberry Pi Pico）** 之間能順利實現**高效的協同運作**，我們投入時間深入研究了關鍵的**通訊協議與技術環節**。
+
+具體研究方向包括：
+* **主輔單元通訊機制：** 探討 **Nvidia Jetson Nano 與 Raspberry Pi Pico 之間的穩定通訊機制**。
+* **編碼器精準控制：** 研究如何利用 **Raspberry Pi Pico 精準控制直流馬達的編碼器（Encoder）**，以實現精確的速度與位置控制。
+* **感測器數據獲取：** 實施**超音波感測器**的**數值讀取與數據處理**等技術環節。
+
+### **Autonomous Car Program Commencement and Communication Protocol Study**
+
+This week, we officially initiated the **coding of the autonomous car's core program**. To ensure the **Main Control Unit (Nvidia Jetson Nano)** and the **Auxiliary Unit (Raspberry Pi Pico)** can achieve **efficient coordinated operation**, we dedicated time to deeply research key **communication protocols and technical aspects**.
+
+The specific research areas included:
+* **Main-Auxiliary Unit Communication:** Investigating the **stable communication mechanism between the Nvidia Jetson Nano and the Raspberry Pi Pico**.
+* **Precise Encoder Control:** Studying how to utilize the **Raspberry Pi Pico to precisely control the DC motor's encoder**, enabling accurate speed and position management.
+* **Sensor Data Acquisition:** Implementing technical steps such as **value reading and data processing** for the **ultrasonic sensor**.
 
  <div align=center>
     <table>
         <tr>
-            <th align=center>Searched for relevant information online.查找相關資料</th>
-            <th align=center>Coding the self-driving-cars program.撰寫自駕車程序</th>
+            <th align=center>Search for relevant materials.查找相關資料</th>
+            <th align=center>Write a self-driving car program.撰寫自駕車程序</th>
         </tr>
         <tr>
             <td><img src="./img/3/4.jpg" alt="Searched for relevant information online." width=400 /></td>
@@ -137,11 +231,38 @@
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
+### **Jetson Nano 系統建置與 UART 通訊實作**
 
- - 本周我們撰寫出了基本的程序架構，並且成功使用**UART**的方式搭建了Raspberry Pi Pico和Jetson Nano之間的通訊，將Jetson Nano上的控制指令傳輸到Raspberry Pi Pico。
-    
-    **Jetson Nano端**
-    ```python
+本週，隊友 **HU,SIAN-YI** 已順利完成 **Nvidia Jetson Nano 的作業系統安裝**，並配置了所有必要的硬體驅動與軟體套件。
+
+#### **系統配置重點：**
+* **硬體驅動：** 成功安裝了 **TP-Link T3U Plus (AC1300)** 無線網卡、**IMX477 鏡頭模組**以及 **BNO055 陀螺儀感測器**的驅動程式。
+* **軟體環境：** 安裝了用於影像辨識的 **OPENCV** 套件、用於效能加速的 **Cython**，以及 **UART、I2C 等通訊工具套件軟體**。
+
+#### **程式開發與通訊實作：**
+* 在此基礎上，我們已**成功撰寫出自駕車的基礎程序架構**。
+* 更重要的是，我們**成功採用 UART（通用非同步收發傳輸器）協議**，搭建並驗證了 **Raspberry Pi Pico 與 Nvidia Jetson Nano 之間的穩定通訊機制**。
+* 這項關鍵成果使得我們能夠順利地將由 **Nvidia Jetson Nano（主控單元）** 所生成的**控制指令（如速度、轉向等）**，準確、可靠地傳輸到 **Raspberry Pi Pico（輔助控制單元）** 進行底層執行。
+
+---
+
+### **Jetson Nano System Setup and UART Communication Implementation**
+
+This week, team member **HU,SIAN-YI** successfully completed the **operating system installation for the Nvidia Jetson Nano**, configuring all necessary hardware drivers and software packages.
+
+#### **System Configuration Highlights:**
+* **Hardware Drivers:** Successfully installed drivers for the **TP-Link T3U Plus (AC1300)** wireless adapter, the **IMX477 camera module**, and the **BNO055 gyroscope sensor**.
+* **Software Environment:** Installed the **OPENCV** package for image recognition, **Cython** for performance acceleration, and software utility packages for **UART and I2C communication tools**.
+
+#### **Program Development and Communication Implementation:**
+* Building on this foundation, we have **successfully written the basic program architecture for the autonomous car**.
+* Crucially, we **successfully implemented the UART (Universal Asynchronous Receiver-Transmitter) protocol**, establishing and verifying a **stable communication mechanism between the Raspberry Pi Pico and the Nvidia Jetson Nano**.
+* This key achievement allows us to smoothly and reliably transmit **control commands (such as speed and steering)** generated by the **Nvidia Jetson Nano (Main Control Unit)** to the **Raspberry Pi Pico (Auxiliary Control Unit)** for low-level execution.
+
+#### The UART Program is Shown Below
+
+  **Nvidia Jetson Nano**
+   ```python
     import serial as AC
     import struct
     combined_control_signal = 30
@@ -157,9 +278,10 @@
     send_data_value = struct.pack('3i', *data_to_send)
     send_data_value = header + send_data_value
     ser.write(send_data_value)
-    ```
-    **Raspberry Pi Pico端**
-    ```python
+   ```
+   **Raspberry Pi Pico端**
+   
+   ```python
     from machine import UART, Pin
     import struct
     uart = UART(0, baudrate=115200, tx=Pin(16), rx=Pin(17))
@@ -183,15 +305,35 @@
             else:
                 print("Error: Incomplete data received.")
         return data_value[number]
-    ```
+
+   ```
 ## 2025/04/03 ~ 2025/04/14
 
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:**  
- - 在第二代版本的開發過程中，我們根據第一代的回饋，利用設計軟體內建的範例圖重新校準了排針間距，成功改善了原始設計。然而，由於作業上的疏忽，我們在進行 PCB 佈局時誤將背面視圖當作正面設計，導致電路板輸出後發生極性顛倒的問題。所幸在組裝與測試階段便立即發現此錯誤，並在第三代版本中修正了佈局方向。同時，我們也全面複查了各層的對齊規範，以確保設計檔與實體成品能夠完全一致。
 
- - During the development of the second-generation version, we incorporated feedback from the first generation and recalibrated the pin header spacing using the built-in reference templates in the design software, successfully improving the original layout. However, due to an operational oversight, we mistakenly treated the back view as the front view during the PCB layout process, which resulted in polarity reversal after fabrication. Fortunately, this issue was identified immediately during the assembly and testing stage. In the third-generation version, we corrected the layout orientation and also conducted a thorough review of alignment rules across all layers to ensure full consistency between the design files and the physical product.
+---
+
+### **第二代 PCB 佈局失誤修正與 UART 傳輸優化** 
+
+#### **1. 第二代 PCB（V2.0）佈局失誤與修正**
+在 **第二代版本** 的開發過程中，我們根據**第一代的回饋**，利用設計軟體內建的**標準範例圖**重新校準了**排針間距**，成功改善了原始設計的錯誤。
+
+然而，由於**作業上的疏忽**，我們在進行 PCB 佈局時**誤將背面視圖當作正面設計**，導致電路板輸出後發生了**極性顛倒**的重大問題。所幸，此錯誤在**組裝與測試階段**便被立即發現。我們隨即在**第三代版本**中修正了佈局方向，並**全面複查了各層的對齊規範**，以確保設計檔案與最終的實體成品能夠**完全一致**。
+
+#### **2. UART 傳輸問題與持續優化**
+在測試 **UART 數據傳輸**時，我們發現**會有掉資料（Data Loss / Dropping）的情況**。為確保控制指令的傳輸可靠性，我們正在**持續撰寫程式碼，專注於修正這個錯誤問題**，以提升通訊的穩定度。
+
+### **Second Generation PCB Layout Error Correction and UART Transmission Optimization** 
+
+#### **1. Second Generation PCB (V2.0) Layout Error and Correction**
+During the development of the **Second Generation Version**, based on **feedback from the first generation**, we used the design software's built-in **standard example diagrams** to recalibrate the **pin header pitch**, successfully correcting the original design error.
+
+However, due to an **operational oversight**, when implementing the PCB layout, we **mistakenly treated the back view as the front design**, which resulted in a major issue of **reversed polarity** upon board fabrication. Fortunately, this error was discovered immediately during the **assembly and testing phase**. We promptly corrected the layout orientation in the **Third Generation Version** and **comprehensively reviewed the alignment specifications of all layers** to ensure the design file and the final physical product were **completely consistent**.
+
+#### **2. UART Transmission Issue and Ongoing Optimization**
+While testing **UART data transmission**, we discovered **instances of data loss (dropping data)**. To ensure the reliability of control command transmission, we are **continuously developing and debugging the code, focusing on correcting this error** to enhance communication stability.
 
 <div align="center" >
     <table>
@@ -210,40 +352,46 @@
     </table>
 </div>
 
+
 ## 2025/04/15 ~ 2025/04/21
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:**
 
- - 本週我們完成了自駕車的停車程序設計。
+### **資格挑戰賽程式應用與任務挑戰賽避障策略優化**
 
- - 在本次實作中，我們採用 直角倒車入庫 的方式作為主要停車策略，使車輛能精準地進入指定停車區域。
+#### **1. 資格挑戰賽（Open Challenge）程式應用**
+由於**資格挑戰賽（Open Challenge rounds）** 的競賽規則與往年保持一致，我們決定直接**採用去年的成熟程式進行初步的性能測試**。
 
- - 下圖為停車程序流程的示意圖。
+#### **2. 任務挑戰賽（Obstacle Challenge rounds）避障程式修改與優化**
+鑑於今年的競賽規則在**任務挑戰賽（Obstacle Challenge rounds）** 中**新增了從停車區出發**以及**平行停入停車區**兩項關鍵任務，我們必須針對去年的自駕車**避障程式進行修改與深度優化**。
 
+#### **3. 避障策略與邏輯**
+我們採用的避障策略與邏輯如下：
+* **路徑參考：** 在影像畫面中**繪製兩條具有特定斜率的路徑線**，作為車輛行進時的**參考方向**。
+* **目標物體中心計算：** 透過 `function.py` 檔案中的 `detect_color_final` 副程式，系統會**計算畫面中目標物體的中心座標**。
+* **轉彎角度計算：** 自駕車隨後**根據目標物體中心座標與路徑線之間的座標差**，計算出**所需的轉彎角度**，進而完成**精準的避障動作**。
+- 自駕車在執行任務時的實際運作畫面
+
+### **Open Challenge Program Application and Obstacle Challenge Strategy Optimization** 
+
+#### **1. Open Challenge Program Application**
+Since the competition rules for the **Open Challenge rounds** remain consistent with previous years, we decided to **utilize last year's established program for initial performance testing**.
+
+#### **2. Obstacle Challenge Rounds Program Modification and Optimization**
+Given that this year's competition rules **added the task of starting from the parking lot** and **parallel parking into the parking zone** within the **Obstacle Challenge rounds**, we were required to **modify and deeply optimize** last year's autonomous car **obstacle avoidance program**.
+
+#### **3. Obstacle Avoidance Strategy and Logic**
+Our implemented obstacle avoidance strategy and logic are as follows:
+* **Path Reference:** **Two path lines with specific slopes are drawn** on the image screen, serving as the vehicle's **reference direction** for travel.
+* **Target Center Calculation:** Through the `detect_color_final` subroutine located in the `function.py` file, the system **calculates the center coordinates of the target object** on the screen.
+* **Turning Angle Calculation:** The autonomous car subsequently **calculates the required turning angle based on the coordinate difference between the object's center coordinates and the path lines**, thereby executing **precise obstacle avoidance maneuvers**.
+
+- The image below displays the autonomous car's actual operational screen during mission execution.
  <div align=center>
     <table>
         <tr>
-            <th>停車流程示意圖</th>
-        </tr>
-        <tr>
-            <td><img src="./img/4/5.png" width=600 /></td>
-        </tr>
-    </table>
- </div>
-
-## 2025/04/22 ~ 2025/04/30
-**Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
-
-**Content:**
-
- - 本週，我們開始撰寫自駕車的避障程式。我們的避障方式是：在影像畫面中繪製兩條具有斜率的路徑線，作為車輛行進的參考方向。在 function.py 檔案中的 detect_color_final 副程式中，系統會計算畫面中目標物體的中心座標。自駕車再根據物體中心座標與路徑線之間的座標差，計算出所需的轉彎角度，進而完成避障動作。
-
- - 下方為自駕車的實際運作畫面。
- <div align=center>
-    <table>
-        <tr>
-            <th colspan=3 >Jetson Nano程序執行畫面</th>
+            <th colspan=3 >Screenshot of the Image Feed During Jetson Nano Program Execution - Jetson Nano 程式執行時的影像畫面截圖</th>
         </tr>
         <tr>
             <td><img src="./img/4/binarization_run.png" width=400 /></td>
@@ -253,23 +401,56 @@
     </table>
  </div>
 
-## 2025/05/01 ~ 2025/05/07
+
+## 2025/04/22 ~ 2025/04/30
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:**
 
- - 本週我們在程式中加入了轉向開始與結束的判斷機制。
+好的，這是對您提供的關於任務賽程式優化、轉向模式判斷機制，以及避障策略新增邏輯的內容所進行的文詞修飾與專業翻譯。
 
- - 當畫面中偵測到轉向區的線條時，系統會自動切換至「轉向模式」。
- - 在判斷是否離開轉向區時，程式需要同時滿足 航向角變化、HSV 顏色辨識、以及 時間條件 三項判定，才能將轉向次數加一。
+---
 
- - 經過實際測試後，我們發現這種方式有時會導致車輛與障礙物方塊發生碰撞。
- - 為了解決這個問題，我們在轉向機制中新增了障礙物偵測邏輯：
- - 當自駕車在轉向過程中識別到方塊時，會優先執行避障；
- - 若偵測到車體即將接近牆面，則會先執行遠離邊牆的動作，
- - 最後再判斷是否已離開轉向區。
+### **任務賽程式優化與複合式轉向判斷邏輯** 
+
+#### **1. 轉向模式與遶行計數機制**
+本週，我們持續優化任務挑戰賽（Obstacle Challenge）程式，並加入了**轉向開始與結束的判斷機制**。此機制用於**判斷車輛是否還在轉向區內**，以利**準確計數是否完成遶行場地三圈的任務**。
+
+* **模式切換：** 當影像畫面中**偵測到轉向區的特定線條時**，系統會自動切換至**「轉向模式」**。
+* **離開轉向區判斷邏輯：** 程式必須同時滿足以下**三項條件判定**，才能確認車輛已離開轉向區並將轉向次數加一：
+    * **航向角變化（Heading Angle Change）**
+    * **HSV 顏色辨識**
+    * **時間條件**
+
+#### **2. 轉向過程中的複合式避障優化**
+* 經過實際測試後，我們發現原有的轉向邏輯有時會導致車輛與**障礙物方塊發生碰撞**。
+* 為了解決這個問題，我們在轉向機制中**新增了複合式的障礙物偵測邏輯**：
+    1.  當自駕車在**轉向過程中識別到方塊時**，會**優先執行避障**。
+    2.  若偵測到車體**即將接近牆面**，則會**優先執行遠離邊牆的動作**。
+    3.  **最後**，再判斷是否已離開轉向區。
 
 下方為判斷是否離開轉向區的邏輯程式。
+
+
+### **Obstacle Challenge Program Optimization and Compound Steering Logic**
+
+#### **1. Steering Mode and Lap Counting Mechanism**
+This week, we continued optimizing the Obstacle Challenge program by adding a **detection mechanism for the start and end of steering**. This mechanism is used to **determine if the vehicle is still within the turning zone**, facilitating the **accurate counting of completed laps** around the field.
+
+* **Mode Switching:** When the image screen **detects the specific lines marking the turning zone**, the system automatically switches to the **"Steering Mode"**.
+* **Exit Turning Zone Logic:** The program requires the simultaneous satisfaction of **three conditions** to confirm the vehicle has left the turning zone and increment the steering count:
+    * **Heading Angle Change**
+    * **HSV Color Recognition**
+    * **Time Condition**
+
+#### **2. Compound Obstacle Avoidance Optimization During Steering**
+* Following practical testing, we found that the original steering logic occasionally led to the vehicle **colliding with the obstacle blocks**.
+* To resolve this issue, we **added a compound obstacle detection logic** within the steering mechanism:
+    1.  When the autonomous car **identifies an obstacle block during the turning process**, it **prioritizes obstacle avoidance**.
+    2.  If it detects the vehicle body is **approaching a wall**, it **prioritizes moving away from the wall**.
+    3.  **Finally**, it determines whether the vehicle has exited the turning zone.
+
+**The logic code for determining the exit from the turning zone is shown below.**
 
 ```python
 if elapsed_time >= 0.7 and color_y_positions[0] ==0 and color_y_positions[1] == 0 and heading < target_heading[count+1] + 35 and heading > target_heading[count+1] - 35:
@@ -286,16 +467,35 @@ if elapsed_time >= 0.7 and color_y_positions[0] ==0 and color_y_positions[1] == 
         combined_control_signal = 0
 ```
 
-## 2025/05/08 ~ 2025/05/14
+
+## 2025/05/01 ~ 2025/05/07
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
 
- - 我們的程式在每次運作前，都需要手動啟動主程式。為了讓系統能自動啟動，我們在 Jetson Nano 上撰寫了一個啟動腳本，並透過 Linux 的 Systemctl 服務 讓系統在每次開機時自動執行該腳本。腳本運行後，會持續偵測 Raspberry Pi Pico 是否發出「程式啟動」的訊號。
+### **程式自動啟動機制與 Pico 訊號偵測** 
 
- - 以下為 open-mode.service、open-mode.sh、以及 open-mode.py 的程式碼。
- 
- open-mode.service
+#### **自動啟動機制需求與實作**
+為了解決每次運作前都需**手動啟動主程式**的效率問題，我們在 **Jetson Nano** 上設計並實作了**自動化啟動機制**。
+
+* **服務腳本撰寫：** 我們撰寫了一個**啟動腳本（`open-mode.sh`）**，並透過 **Linux 的 Systemctl 服務（`open-mode.service`）** 進行配置，讓系統能在**每次開機時自動執行該腳本**。
+* **啟動訊號偵測：** 該啟動腳本（運行 `open-mode.py`）運行後，會持續透過 **UART 協定偵測 Raspberry Pi Pico 是否發出「程式啟動」的特定訊號**，一旦接收到有效訊號，便會開始執行自駕車的主控制迴圈。
+
+下方為 `open-mode.service`、`open-mode.sh`、以及 `open-mode.py` 的程式碼。
+
+---
+
+### **Program Auto-Startup Mechanism and Pico Signal Detection**
+
+#### **Need and Implementation of Auto-Startup Mechanism**
+To address the efficiency issue of manually starting the main program before every operation, we designed and implemented an **automated startup mechanism** on the **Jetson Nano**.
+
+* **Service Script Writing:** We authored a **startup script (`open-mode.sh`)** and configured it using the **Linux Systemctl service (`open-mode.service`)**, enabling the system to **automatically execute this script upon every boot**.
+* **Startup Signal Detection:** After execution, the startup script (running `open-mode.py`) continuously **monitors the Raspberry Pi Pico via the UART protocol for a specific "Program Start" signal**. Once a valid signal is received, the main control loop of the autonomous car commences execution.
+
+The code for `open-mode.service`, `open-mode.sh`, and `open-mode.py` is provided below.
+
+* **open-mode.service Code**
  ```bash
 [Unit]
 Description=Open Terminal with Python Script on Boot
@@ -317,30 +517,23 @@ RestartSec=5s
 WantedBy=default.target
  ```
 
- open-mode.sh
+* **open-mode.sh Code**
  ```bash
 #!/bin/bash
-
-# 等待X伺服器準備好
 while [ ! -e /tmp/.X11-unix/X0 ]; do
     sleep 1
 done
-
-# 等待使用者會話完全啟動
 until xhost >/dev/null 2>&1; do
     sleep 1
 done
-
-# 設置必要的環境變量
 export DISPLAY=:0
 export XAUTHORITY=/home/user/.Xauthority
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 
-# 啟動終端並保持打開
 /usr/bin/gnome-terminal --title='start code' -- bash -c '/home/user/code/open-mode.py; exec bash'
  ```
 
- open-mode.py
+* **open-mode.py Code**
  ```python
 #!/usr/bin/python3
 import Jetson.GPIO as GPIO
@@ -348,17 +541,12 @@ import time
 import subprocess
 import os
 
-
-# 设置 GPIO 模式
-GPIO.setmode(GPIO.BOARD)  # 使用引脚编号方式
-
-# 设置 GPIO 12 为输入模式
+GPIO.setmode(GPIO.BOARD) 
 input_pin = 7
 output_pin = 40
 GPIO.setup(output_pin, GPIO.OUT)
 GPIO.setup(input_pin, GPIO.IN)
 
-# 保存进程信息的变量
 process = None
 GPIO.output(output_pin, GPIO.LOW)
 try:
@@ -366,52 +554,84 @@ try:
     subprocess.run(command, shell=True)
     GPIO.output(output_pin, GPIO.LOW)
     while True:
-        # 检测引脚电平状态
+ 
         if GPIO.input(input_pin) == GPIO.HIGH:
-            print("检测到高电平，执行另一个程序")
-            # 执行另一个程序（例如运行一个脚本）并避免阻塞主程序
-            if process is not None and process.poll() is None:  # 检查进程是否仍在运行
-                time.sleep(1)  # 每隔1秒检测一次
+            print("A high level was detected, so another program was executed.")        
+            if process is not None and process.poll() is None: 
+                time.sleep(1)  
                 continue
             command = "echo '0000' | sudo -S chmod 777 /dev/ttyTHS1"
             subprocess.run(command, shell=True)
-            folder_path = "/home/user/code/"  # 替换为你要进入的目录路径
-            os.chdir(folder_path)
+            folder_path = "/home/user/code/"  
+            os.chdir(folder_path)          
             
-            #process = subprocess.Popen(
-            #    ["xterm", "-e", "/usr/bin/python3", "/home/user/code/jetson_nano_main.py"]
-            #) # 資格賽
             process = subprocess.Popen(
                 ["xterm", "-e", "/usr/bin/python3", "/home/user/code/jetson_nano_main_final.py"]
-            ) # 決賽
+            ) 
 
         else:
-            if process is not None and process.poll() is None:  # 检查进程是否仍在运行
-                print("终止先前运行的程序")
-                process.terminate()  # 可以用 kill() 强制关闭
-                process.wait()       # 等待进程完全结束
+            if process is not None and process.poll() is None: 
+                print("Terminate the previously running program.")
+                process.terminate()  
+                process.wait()      
             GPIO.output(output_pin, GPIO.LOW)
-            print("低电平，熄燈")
+            print("LOW，Turn Light")
 
-        time.sleep(1)  # 每隔1秒检测一次
+        time.sleep(1)
 
 except KeyboardInterrupt:
-    # 清理 GPIO 设置
     GPIO.cleanup()
  ```
+
+## 2025/05/08 ~ 2025/05/14
+**Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
+
+**Content:**
+### **任務賽停車程序設計與策略** 
+
+本週，我們將重點投入於解決**任務挑戰賽（Obstacle Challenge rounds）中的停車區停車程式設計**。
+
+* **停車策略：** 我們採用**直角倒車入庫**的方式作為主要的停車策略，旨在確保車輛能夠**精準、有效地停入指定的停車區域**。
+* **流程說明：** 下圖展示了**停車程序（Parking Procedure）的詳細執行流程示意圖**。
+
+### **Obstacle Challenge Parking Procedure Design and Strategy**
+
+This week, our focus is dedicated to finalizing the **parking procedure programming for the Obstacle Challenge rounds**.
+
+* **Parking Strategy:** We adopted the method of **Perpendicular Reverse Parking** (or **Right-Angle Back-in Parking**) as our primary strategy, ensuring the vehicle can **precisely and efficiently enter the designated parking area**.
+* **Flow Description:** The image below illustrates the **detailed execution flow diagram for the parking procedure**.
+
+
+ <div align=center>
+    <table>
+        <tr>
+            <th>detailed execution flow diagram for the parking procedure - 停車流程示意圖</th>
+        </tr>
+        <tr>
+            <td><img src="./img/4/5.png" width=600 /></td>
+        </tr>
+    </table>
+ </div>
+
 
 ## 2025/05/15 ~ 2025/05/21
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
 
- - 本週我們發現，自駕車的停車參數調整過於繁瑣，主要原因是程式設定的容許誤差範圍太小。
+### 停車程序穩定性優化與超音波感測器導入** 
 
- - 為了解決這個問題，我們啟用了先前預留的 超音波感測器孔位，並利用超音波感測數值來輔助自駕車完成停車動作。
+* 經過反覆測試，我們發現自駕車的**停車參數調整過程過於繁瑣**，主要問題在於**程式設定的容許誤差範圍太小**，容易導致車輛在執行程序時**碰撞到停車區的牆面**。
+* 為了解決這個問題，我們**啟用了先前在底盤上預留的超音波感測器孔位**，並**利用超音波感測數值來輔助**自駕車完成精準的停車動作。
+* 這樣的設計**大幅提升了停車程序的穩定性與成功率**，有效解決了容錯率過低的問題。
 
- - 這樣的設計大幅提升了停車程序的穩定性與成功率。
+### **Parking Procedure Stability Optimization and Ultrasonic Sensor Integration** 
 
- - 下方為超音波數值的讀取程式。
+* After repeated testing, we found that the autonomous car's **parking parameter tuning process was overly cumbersome**. The main reason was that the **tolerance range set in the program was too small**, often causing the vehicle to **collide with the parking zone walls** during execution.
+* To resolve this issue, we **activated the ultrasonic sensor mounting holes previously reserved on the chassis** and **utilized the ultrasonic sensor readings to assist** the autonomous car in completing the parking maneuver.
+* This design **significantly enhanced the stability and success rate of the parking procedure**, effectively addressing the low tolerance problem.
+
+The code for reading the ultrasonic sensor values is shown below.
 
  ```python
 def measure_distance(trig, echo):
@@ -436,14 +656,32 @@ def measure_distance(trig, echo):
 
 **Content:** 
 
- - 有了上週加入的超音波輔助停車功能後，自駕車在停車時所需的調整次數明顯減少。
+### ：停車優化成果與停車區出發程序開發** 
 
- - 本週我們開始著手撰寫「出發程序」。
- - 出發程序由 Jetson Nano 負責控制，透過偵測畫面中左右側的 ROI（感興趣區域）數值，判斷比賽起始階段應該採取順時針或逆時針的行進方向。
+#### **1. 停車功能優化成果**
+有了上週**導入的超音波輔助停車功能**後，自駕車在停車時所需的**參數調整次數明顯減少**，這驗證了新設計的有效性。
 
- - 當自駕車成功出發後，系統會自動將模式切換為「避障模式」，並持續前進。
+#### **2. 停車區出發程序開發**
+本週，我們開始撰寫**任務挑戰賽（Obstacle Challenge）** 的**「停車區出發程序」**。此程序設計的關鍵如下：
+* **控制單元：** 出發程序由 **Jetson Nano 主控制器**負責控制。
+* **方向判斷邏輯：** 系統透過偵測影像畫面中**左右側的 ROI（感興趣區域）數值**，來**判斷競賽起始階段應該採取的順時針或逆時針行進方向**。
+* **模式切換：** 當自駕車**成功出發並離開停車區後**，系統會自動將模式切換為**「避障模式」**，並持續依據避障邏輯前進。
 
- - 以下為自駕車的出發程序。
+以下為自駕車的**出發程序程式碼**。
+
+
+### **Parking Optimization Results and Parking Zone Exit Procedure Development**
+
+#### **1. Parking Feature Optimization Results**
+With the **integration of the ultrasonic sensor-assisted parking function** last week, the number of required **parameter adjustments during parking significantly decreased**, validating the effectiveness of the new design.
+
+#### **2. Parking Zone Exit Procedure Development**
+This week, we began coding the **"Parking Zone Exit Procedure"** for the **Obstacle Challenge rounds**. The key design aspects of this procedure are:
+* **Control Unit:** The exit procedure is controlled by the **Jetson Nano main controller**.
+* **Direction Determination Logic:** The system determines the required **clockwise or counterclockwise travel direction** at the start of the competition by **detecting the Region of Interest (ROI) values on the left and right sides of the image frame**.
+* **Mode Switching:** Once the autonomous car **successfully exits the parking zone**, the system automatically switches the mode to **"Obstacle Avoidance Mode"** and continues to proceed based on the avoidance logic.
+
+The **autonomous car's exit procedure code** is shown below.
 
  ```python
 if turn_side == 8:
@@ -485,8 +723,21 @@ if turn_side == 8:
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:**
+### **轉向角度限制與機構保護** 
 
- - 由於轉向結構可以轉動的角度有限，如果角度太大可能會使轉向結構扭斷，因此我們在程式碼結尾加入了角度限制，以防止Servo燒壞或轉向結構被扭斷。以下為限制轉向角度的程式碼。
+由於自駕車**伺服馬達驅動的前輪轉向機構**所能轉動的**角度有限**。若轉動角度設定**過大**，可能導致**轉向結構被扭斷**，或造成**伺服馬達燒壞**。
+
+因此，為了**防止伺服馬達驅動的前輪轉向機構損毀或轉向結構被扭斷**，我們在程式碼的控制邏輯**結尾加入了嚴格的角度限制**，以確保轉向動作始終維持在機構的安全工作範圍內。
+
+以下為**限制轉向角度的程式碼**。
+
+### **Steering Angle Limitation and Mechanism Protection**
+
+The **servo motor-driven front-wheel steering mechanism** of the autonomous car has **limited rotation angle capacity**. If the rotation angle is set **too wide**, it could potentially lead to the **steering structure being twisted and broken**, or cause the **servo motor to burn out**.
+
+Therefore, to **prevent damage to the servo motor-driven front-wheel steering mechanism or the steering structure from being twisted**, we **added a strict angle limitation** at the end of the code's control logic, ensuring that steering maneuvers always remain within the safe operating range of the mechanism.
+
+The code for **limiting the steering angle** is shown below.
 
  ```python
 if combined_control_signal > 180:
@@ -499,8 +750,14 @@ if combined_control_signal < -180:
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
+### **主電路板第四代版本功能測試成果** 
 
-- 經修正前兩代的設計問題後，第四代版本已成功通過功能測試。實際運行測試顯示，排針接點與電路佈局無異常，系統可穩定運作。
+在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，**主電路板的第四代版本（V4.0）已成功通過功能測試**。實際運行測試的結果顯示，**排針接點與電路佈局均無異常**，且**系統可穩定運作**。
+
+### **Main Circuit Board Fourth Generation Functional Test Results** 
+
+Following the successful correction of design issues found in the previous two versions (V2.0 and V3.0), the **Main Circuit Board's Fourth Generation Version (V4.0) has successfully passed functional testing**. The results from actual operational tests indicate that there are **no anomalies in the pin header connections or the circuit layout**, and the **system operates stably**.
+
 <div align="center" >
     <table >
         <tr align="center">
@@ -519,9 +776,26 @@ if combined_control_signal < -180:
 
 **Content:** 
 
- - 在進行避障程式測試時，我們注意到自駕車在過彎時會出現些許卡頓。經檢查後發現問題源自底盤結構，因為轉向節與底盤直接接觸，過大的摩擦力導致傳動結構卡滯。為了解決此問題，我們將原本用來固定轉向節的孔洞擴大，並改為放置軸承以降低摩擦。經過測試後，採用軸承的新底盤結構有效改善了轉向的流暢度，使自駕車在過彎時更加平順。
+### **底盤摩擦力問題修正與轉向流暢度優化** 🛠️
 
- - During obstacle-avoidance testing, we noticed that the autonomous car experienced slight stuttering when making turns. Upon inspection, we identified the issue in the chassis design: the steering knuckle was in direct contact with the chassis, and the resulting friction caused binding in the transmission structure. To address this, we enlarged the original holes used for mounting the steering knuckle and replaced them with bearings to reduce friction. Testing confirmed that the updated chassis with the bearing structure significantly improved turning smoothness, allowing the car to navigate corners more fluidly.
+在進行避障程式測試時，我們注意到自駕車在**過彎時會出現些許卡頓**。經檢查後發現問題源自**底盤結構**：由於**轉向節與底盤直接接觸**，產生了**過大的摩擦力**，導致傳動結構**卡滯**。
+
+為了解決此問題，我們對底盤進行了以下優化：
+* 將**原本用於固定轉向節的孔洞擴大**。
+* **改為放置軸承（Bearing）** 以**降低摩擦**。
+
+經過實際測試，採用軸承的**新底盤結構有效改善了轉向的流暢度**，使自駕車在過彎時**更加平順**。
+
+
+### **英文翻譯：Chassis Friction Correction and Steering Smoothness Optimization** 
+
+While testing the obstacle avoidance program, we observed that the autonomous car experienced **slight stuttering during cornering**. Inspection revealed the problem originated from the **chassis structure**: as the **steering knuckle was in direct contact with the chassis**, the resulting **excessive friction** caused the drivetrain to **jam**.
+
+To resolve this issue, we implemented the following chassis optimization:
+* **Enlarged the holes originally used to fix the steering knuckle**.
+* **Switched to placing bearings** within the enlarged holes to **reduce friction**.
+
+Following testing, the **new chassis structure incorporating bearings effectively improved steering smoothness**, allowing the autonomous car to navigate corners **more smoothly**.
 
  <div align=center>
     <table>
@@ -1003,3 +1277,17 @@ sudo apt-get -y install sdkmanager
  </div>
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>
+
+ ## 2025/10/27 ~ 2025/11/01
+ **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
+
+ **Content:**
+ 整理資料，並上傳GIHUB
+
+ ## 2025/10/27 ~ 2025/11/01
+ **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
+
+ **Content:**
+ 經詢問世界賽裁判，上下位控制器不得使用穩定傳輸之無線傳輸websocket通訊協定，那只能改回原本使用的UART通訊協定的。
+
+
