@@ -1358,9 +1358,9 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
         <tr>
             <th colspan=2>新增遮光板</th>
         </tr>
-        <tr>
-            <th>鏡頭支架主體 - Onshape</th>
-            <th>鏡頭支架主體 - 照片</th>
+        <tr>	
+            <th>Lens Mount 鏡頭支架</th>
+            <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
         </tr>
         <tr>
             <td align=center width=500><img src="./img/10/Lens holder body Onshape.png" width=450 /></td>
