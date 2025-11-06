@@ -165,8 +165,8 @@ Photos of the system installation, driver downloads, and remote desktop function
 <div align="center">
     <table>
         <tr align=center>
-            <th width=50% style="text-align: center;">Jetson  Nano Software Environment Installation</th>
-            <th width=50% style="text-align: center;">Jetson  Nano Software Environment Testing</th>
+            <th width=50% style="text-align: center;">PCB 電路板原型 - 正面</th>
+            <th width=50% style="text-align: center;">PCB 電路板原型 - 背面</th>
         </tr>
         <tr>
             <td><img src="../../models/Circuit_Design/img/circuit_board_Front_1.png"/></td>
@@ -338,8 +338,8 @@ While testing **UART data transmission**, we discovered **instances of data loss
 <div align="center" >
     <table>
         <tr>
-            <th>Second-Generation Front View</th>
-            <th>Second-Generation Back View</th>
+            <th>Second-Generation PCB Front View</th>
+            <th>Second-Generation PCB Back View</th>
         </tr>
         <tr align="center">
             <td>
@@ -752,7 +752,7 @@ if combined_control_signal < -180:
 **Content:** 
 ### **主電路板第四代版本功能測試成果** 
 
-在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，**主電路板的第四代版本（V4.0）已成功通過功能測試**。實際運行測試的結果顯示，**排針接點與電路佈局均無異常**，且**系統可穩定運作**。
+在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，**主電路板的第三代版本（V4.0）已成功通過功能測試**。實際運行測試的結果顯示，**排針接點與電路佈局均無異常**，且**系統可穩定運作**。
 
 ### **Main Circuit Board Fourth Generation Functional Test Results** 
 
@@ -761,8 +761,8 @@ Following the successful correction of design issues found in the previous two v
 <div align="center" >
     <table >
         <tr align="center">
-            <th>Third-Generation Front View</th>
-            <th>Third-Generation Back View</th>
+            <th>Third-Generation PCB Front View</th>
+            <th>Third-Generation PCB Back View</th>
         </tr>
         <tr align="center">
             <td><img src="./img/6/5.png" width = "300"  alt="data" align=center /></td>
@@ -839,11 +839,7 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
-好的，這是對您的全國賽參賽歷程與成果的內容所進行的文詞修飾與專業翻譯。
-
----
-
-### **中文文章修飾：全國賽歷程、挑戰與晉級成果** 🏆
+### **全國賽歷程、挑戰與晉級成果** 🏆
 
 我們的全國賽於 **8 月 23 日**舉行。儘管過程充滿挑戰，我們仍成功晉級。
 
@@ -860,9 +856,7 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 #### **最終成就與展望**
 就算比賽過程**坎坷不順**，但我們最終成功地以**第一名的排名**脫穎而出，獲得了**代表台灣參加 WRO 未來工程師世界賽**的資格。我們將**充分吸收這次全國賽的實戰經驗與教訓**，以**更好的狀態**去參加世界賽，並以**獲取優異的成績榮耀回國**為目標。
 
----
-
-### **英文翻譯：National Competition Journey, Challenges, and Qualification** 🌐
+### **英National Competition Journey, Challenges, and Qualification**
 
 Our National Competition took place on **August 23rd**. Despite a challenging process, we successfully qualified.
 
@@ -879,17 +873,12 @@ Our National Competition took place on **August 23rd**. Despite a challenging pr
 #### **Final Achievement and Outlook**
 Despite a **difficult and challenging competition process**, we successfully secured the **first-place ranking**, earning the qualification to **represent Taiwan in the WRO Future Engineers World Final**. We plan to **fully absorb the practical experience and lessons learned from this National Competition** and aim to participate in the World Final **in better condition**, striving to achieve **outstanding results and bring honor back home**.
 
----
-
-**恭喜您的團隊取得如此優異的成績！請問您是否還有其他需要我協助修飾或翻譯的內容？**
-
-
  <div align=center>
     <table>
         <tr>
-            <th>Waiting for test</th>
-            <th>Competition photo</th>
-            <th>Award-winning photo</th>
+            <th>Awaiting Testing</th>
+            <th>Competition Action Photo</th>
+            <th>Award Ceremony Photo</th>
         </tr>
         <tr>
             <td><img src="./img/8/wait.jpg" width=350/></td>
@@ -906,7 +895,6 @@ Despite a **difficult and challenging competition process**, we successfully sec
 **Content:**
 - 在參加全國賽的過程中，我們發現 Jetson Nano 在運算效能上存在不足，因此決定將主控制器升級為運算效率更高的 Jetson Orin Nano。同時，我們開始研究如何利用 WebSockets 建立 Jetson Orin Nano 與 Raspberry Pi Pico 之間的通訊。由於 WebSockets 通訊需要雙方皆能連線至網路，我們將原本的 Raspberry Pi Pico 更換為具備 WiFi 功能的 Raspberry Pi Pico W，以滿足無線連線的需求。
 
-- From our experience in the national competition, we realized that the Jetson Nano had limitations in terms of computing performance. To address this, we decided to upgrade the main controller to the more powerful Jetson Orin Nano. At the same time, we began exploring the use of WebSockets to establish communication between the Jetson Orin Nano and the Raspberry Pi Pico. Since WebSocket communication requires both devices to have network connectivity, we replaced the original Raspberry Pi Pico with the Raspberry Pi Pico W, which comes with built-in WiFi capability to meet this requirement.
 
 <div align=center>
     <table>
@@ -1142,8 +1130,8 @@ sudo apt-get -y install sdkmanager
  <div align=center>
     <table>
         <tr>
-            <th>第六代電路板(原理圖)</th>
-            <th>第六代電路板(PBC分布圖)</th>
+            <th>第五代 PCB 電路板(原理圖)</th>
+            <th>第五代 PCB 電路板(PBC分布圖)</th>
         </tr>
         <tr>
             <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 6.png" height=300 /></td>
