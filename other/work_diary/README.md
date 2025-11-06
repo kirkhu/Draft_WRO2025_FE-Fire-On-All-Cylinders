@@ -1273,7 +1273,7 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
             <td colspan=2><img src="./img/9/Untrasonic_Car.jpg" width=100% alt="Untrasonic Car" /></td>
         </tr>
         <tr>
-            <th colspan=2>紅外線感測器的實際安裝位置照片</th>
+            <th colspan=2>Photo of the Final Actual Installation Location of the Infrared Sensor - 紅外線感測器的實際安裝位置照片</th>
         </tr>
         <tr align=center>
             <td width=50% ><img src="./img/9/Infared_Car_Front.jpg" /></td>
@@ -1381,8 +1381,8 @@ The commands for manual setup and using the auto-script are provided below.
  <div align=center>
     <table>
         <tr>
-            <th>TPLink AC1300 接收器</th>
-            <th>ASUS AC1200 接收器</th>
+            <th>TP-Link AC1300 Wi-Fi Wireless Adapter</th>
+            <th>ASUS AC1200  Wi-F  Wireless Adapter</th>
         </tr>
         <tr>
             <td align=center ><img src="./img/10/TPLink AC1300.png" width=150 /></td>
@@ -1391,22 +1391,21 @@ The commands for manual setup and using the auto-script are provided below.
     </table>
  </div>
 
- - ## 設置AP - 手動下指令
+ - #### Setting Up Access Point (AP) Mode: Manual Command Operation - 設置AP - 手動下指令
 
     ```bash
-    sudo nmcli dev wifi hotspot ifname wlan0 ssid "snjh_jetson" password "1234567890" # 創建AP設置
+    sudo nmcli dev wifi hotspot ifname wlan0 ssid "snjh_jetson" password "1234567890" 
 
-    # 設置AP模式自啟動
     sudo nmcli connection modify Hotspot connection.autoconnect yes
     sudo systemctl enable NetworkManager.service
     sudo systemctl status NetworkManager
 
     ```
 
- - ## 設置AP - 使用自動腳本 [Set_AP.sh](../../src/System_Platform_Software/code/Set_AP.sh)
+ - #### Setting Up Access Point (AP) Mode: Using Automated Script Execution[Set_AP.sh](../../src/System_Platform_Software/code/Set_AP.sh)
 
     ```bash
-    sudo bash ./Set_AP.sh # 執行腳本進行配置及啟用動作
+    sudo bash ./Set_AP.sh 
     ```
 
  ## 2025/10/07 ~ 2025/10/13
