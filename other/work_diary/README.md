@@ -165,8 +165,8 @@ Photos of the system installation, driver downloads, and remote desktop function
 <div align="center">
     <table>
         <tr align=center>
-            <th width=50% style="text-align: center;">Jetson  Nano Software Environment Installation</th>
-            <th width=50% style="text-align: center;">Jetson  Nano Software Environment Testing</th>
+            <th width=50% style="text-align: center;">PCB 電路板原型 - 正面</th>
+            <th width=50% style="text-align: center;">PCB 電路板原型 - 背面</th>
         </tr>
         <tr>
             <td><img src="../../models/Circuit_Design/img/circuit_board_Front_1.png"/></td>
@@ -338,8 +338,8 @@ While testing **UART data transmission**, we discovered **instances of data loss
 <div align="center" >
     <table>
         <tr>
-            <th>Second-Generation Front View</th>
-            <th>Second-Generation Back View</th>
+            <th>Second-Generation PCB Front View</th>
+            <th>Second-Generation PCB Back View</th>
         </tr>
         <tr align="center">
             <td>
@@ -752,7 +752,7 @@ if combined_control_signal < -180:
 **Content:** 
 ### **主電路板第四代版本功能測試成果** 
 
-在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，**主電路板的第四代版本（V4.0）已成功通過功能測試**。實際運行測試的結果顯示，**排針接點與電路佈局均無異常**，且**系統可穩定運作**。
+在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，**主電路板的第三代版本（V4.0）已成功通過功能測試**。實際運行測試的結果顯示，**排針接點與電路佈局均無異常**，且**系統可穩定運作**。
 
 ### **Main Circuit Board Fourth Generation Functional Test Results** 
 
@@ -761,8 +761,8 @@ Following the successful correction of design issues found in the previous two v
 <div align="center" >
     <table >
         <tr align="center">
-            <th>Third-Generation Front View</th>
-            <th>Third-Generation Back View</th>
+            <th>Third-Generation PCB Front View</th>
+            <th>Third-Generation PCB Back View</th>
         </tr>
         <tr align="center">
             <td><img src="./img/6/5.png" width = "300"  alt="data" align=center /></td>
@@ -1130,8 +1130,8 @@ sudo apt-get -y install sdkmanager
  <div align=center>
     <table>
         <tr>
-            <th>第六代電路板(原理圖)</th>
-            <th>第六代電路板(PBC分布圖)</th>
+            <th>第五代 PCB 電路板(原理圖)</th>
+            <th>第五代 PCB 電路板(PBC分布圖)</th>
         </tr>
         <tr>
             <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 6.png" height=300 /></td>
