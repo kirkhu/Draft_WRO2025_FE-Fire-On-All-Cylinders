@@ -96,8 +96,8 @@ Based on the characteristics of each control board, we distributed the complex o
 
 
 
- - ### Obstacle_Challenge Code Overview of Jetson Orin Nano-Jetson Orin Nano 障礙挑戰程式碼概述
-   - #### Obstacle_Challenge Code Program Jetson Orin Nano Libraries-障礙挑戰程式碼程式 Jetson Orin Nano 函式庫
+ - ### Overview of the Jetson Orin Nano Obstacle Challenge Code - Jetson Orin Nano 障礙挑戰程式碼概述
+   - #### Obstacle Challenge Code Jetson Orin Nano Library - 障礙挑戰程式碼程式 Jetson Orin Nano 函式庫
     
       ```
       import os, sys                                                          
