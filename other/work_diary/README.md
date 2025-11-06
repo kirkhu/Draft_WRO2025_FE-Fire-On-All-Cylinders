@@ -814,7 +814,11 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 
 **Content:** 
 
- - 以下是目前最新電路板的3D檢視圖、原理圖、PCB分布圖。
+* 下方展示了**目前已修正並最終定版的電路板**的 **3D 檢視圖**、**原理圖**，以及 **PCB 分布圖**。
+* 本週將**持續進行任務挑戰賽（Obstacle Challenge rounds）的程式與功能測試**。
+
+* Below are the **3D View**, **Schematic Diagram**, and **PCB Layout** of the **currently corrected and finalized circuit board**.
+* We are **continuing to conduct program and functional testing for the Obstacle Challenge rounds** this week.
 
   <div align=center>
     <table>
@@ -835,12 +839,39 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
- - 我們的比賽是在8月23日，在早上的資格賽中第一局因為撞到內側邊牆直接結束比賽，而第二局時我們完成了繞場三圈的任務但是在最後的停車節自駕車超出了指定區塊而無法獲取完整分數，但就算如此我們也成功進入到了下午的決賽中。
+### **全國賽歷程、挑戰與晉級成果** 🏆
 
- - 到了下午的決賽中，我們依舊未能完成滿解，第一場自駕車移動到障礙物因此未能完成躲避障礙物的分數，在最後停車環節因為經過了最後障礙物後又離開了出發區因此無法完成停車任務。
+我們的全國賽於 **8 月 23 日**舉行。儘管過程充滿挑戰，我們仍成功晉級。
 
- - 就算比賽過程坎坷但我們也成功的以第一名的排名代表台灣出賽WRO未來工程師世界賽，我們將吸收這次全國賽的經驗，以更好的狀態去參加世界賽並且獲取優異的成績榮耀回國。
+#### **上午資格挑戰賽 (Qualifying Rounds)**
+* **第一局：** 比賽一開始便因車輛**撞到內側邊牆**而**提前終止**。
+* **第二局：** 我們成功**完成了繞場三圈**的任務，但在**最後的停車環節**，自駕車**超出了指定的停車區塊**，因此未能獲取完整分數。
+* **結果：** 儘管未能滿分完成，但憑藉優異的表現，我們**成功晉級到下午的決賽**。
 
+#### **下午任務挑戰賽 (Final Rounds)**
+* **決賽挑戰：** 在下午的決賽中，我們**依舊未能達成滿分解**。
+    * **避障問題：** 在第一場比賽中，自駕車**移動到了障礙物（方塊）**，導致未能獲得完整的躲避障礙物分數。
+    * **停車問題：** 在最後的停車環節，車輛在**經過最後障礙物之後又離開了停車區（出發區）**，因此無法完成停車任務。
+
+#### **最終成就與展望**
+就算比賽過程**坎坷不順**，但我們最終成功地以**第一名的排名**脫穎而出，獲得了**代表台灣參加 WRO 未來工程師世界賽**的資格。我們將**充分吸收這次全國賽的實戰經驗與教訓**，以**更好的狀態**去參加世界賽，並以**獲取優異的成績榮耀回國**為目標。
+
+### **英National Competition Journey, Challenges, and Qualification**
+
+Our National Competition took place on **August 23rd**. Despite a challenging process, we successfully qualified.
+
+#### **Morning Qualifying Rounds**
+* **First Attempt:** The round ended prematurely as the vehicle **collided with the inner side wall**.
+* **Second Attempt:** We successfully **completed the three-lap circuit task**, but during the **final parking maneuver**, the autonomous car **exceeded the designated parking zone**, preventing us from earning full points.
+* **Result:** Even without achieving a perfect score, our strong performance allowed us to **successfully advance to the afternoon final rounds**.
+
+#### **Afternoon Final Rounds (Obstacle Challenge)**
+* **Final Challenges:** In the afternoon finals, we **still failed to achieve a perfect solution**.
+    * **Obstacle Avoidance:** In the first round, the autonomous car **moved an obstacle block**, resulting in an incomplete score for the obstacle avoidance task.
+    * **Parking Issue:** During the final parking sequence, the vehicle **left the parking/starting zone after passing the final obstacle**, thus failing to complete the parking task.
+
+#### **Final Achievement and Outlook**
+Despite a **difficult and challenging competition process**, we successfully secured the **first-place ranking**, earning the qualification to **represent Taiwan in the WRO Future Engineers World Final**. We plan to **fully absorb the practical experience and lessons learned from this National Competition** and aim to participate in the World Final **in better condition**, striving to achieve **outstanding results and bring honor back home**.
 
  <div align=center>
     <table>

@@ -11,34 +11,32 @@ Based on the characteristics of each control board, we distributed the complex o
    ### 英文:
    <ol>
    <li>
-    This time, in addition to handling sidewall image recognition and direction detection, the Jetson Orin Nano has added an obstacle block recognition feature. Leveraging its powerful computing capabilities, the Jetson Orin Nano can perform real-time image analysis and processing, accurately detecting the vehicle's direction while also quickly recognizing and avoiding obstacles in its path, thereby enhancing the stability and safety of autonomous driving. 
+    This time, in addition to its capabilities in image recognition and direction detection, the Jetson Orin Nano has been enhanced with an obstacle recognition function. Leveraging its powerful computational capabilities, the Jetson Orin Nano can perform real-time image analysis and processing, precisely detect the vehicle's driving direction, and simultaneously quickly identify and avoid obstacles in its path, thereby improving the stability and safety of autonomous driving.
    </li>
    <li>
-    Additionally, this time, the Raspberry Pi Pico not only controls the DC motor speed and vehicle steering but also needs to detect the distance to the parking lot sidewall. Utilizing its efficient GPIO control capabilities, the Raspberry Pi Pico can perform precise distance measurements and hardware management, ensuring the vehicle parks safely in the lot while maintaining an appropriate distance.
+    Furthermore, the Raspberry Pi Pico W is not only required to control the DC motor speed and vehicle steering this time, but also needs to use infrared sensors to detect the distance between the vehicle and the walls. With its efficient GPIO control capability, the Raspberry Pi Pico W can perform precise distance measurement and hardware management, ensuring the vehicle safely parks within the designated parking lot and maintains an appropriate safety distance.
    </li>
    </ol>
 
  - ### Jetson Orin Nano library-Jetson Orin Nano 庫
     ### 中文:
-    - 影像辨識、影像處理與視覺辨識函式等功能已整合到functions.py模組中，可直接導入使用。這些模組的功能如下：
+    - 影像辨識、影像處理與視覺辨識函式等功能已整合到`functions.py`模組中，可直接導入使用。這些模組的功能如下：
 
 
     ### 英文:
-    - The functions for image recognition, front-wheel servo motor proportional steering control, and ground line color recognition have been integrated into the [function.py](../common/function.py) module and can be directly imported for use.
-    The functions of these modules are as follows:
+    **All functions related to image recognition, image processing, and key visual identification** have been **highly integrated** into the **[function.py](../common/function.py) module** and can be directly **imported and called** by the higher-level program. The **specific functionalities** of these modules are outlined as follows:
 
-
-    - display_roi()此函數的作用是在影像上繪製多個感興趣區域 (ROI) 的邊界框。它接收一個影像 (img)、一個包含多個 ROI 座標的列表 (ROIs)，以及繪製顏色 (color)。它透過繪製四條線段來組成每個 ROI 的矩形邊界，然後返回被標記過的影像。
+    - `display_roi()`此函數的作用是在影像上繪製多個感興趣區域 (ROI) 的邊界框。它接收一個影像 (img)、一個包含多個 ROI 座標的列表 (ROIs)，以及繪製顏色 (color)。它透過繪製四條線段來組成每個 ROI 的矩形邊界，然後返回被標記過的影像。
+    - The **`display_roi()` function** is designed to **visualize** multiple **Regions of Interest (ROIs)** on an image. It accepts the **source image (`img`)**, a **list containing the coordinates of multiple ROIs (`ROIs`)**, and the **drawing color (`color`)** for the boundary boxes as input parameters.Its mechanism involves **drawing four line segments** to form the **rectangular boundary** for each ROI. Upon completion, the function **returns** the processed image marked with the boundary boxes.
       ```
       def display_roi(img, ROIs, color):
       for ROI in ROIs:
           img = cv2.line(img, (ROI[0], ROI[1]), (ROI[2], ROI[1]), color, 4)
           img = cv2.line(img, (ROI[0], ROI[1]), (ROI[0], ROI[3]), color, 4)
           img = cv2.line(img, (ROI[2], ROI[3]), (ROI[2], ROI[1]), color, 4)
-          i
-          turn img
       ```
-    - find_contours()此函數用於在影像中偵測特定顏色範圍的輪廓。它首先擷取影像中感興趣區域 (ROI) 的部分，接著將此區域的顏色轉換為二值遮罩 (mask)（使用 LAB 顏色空間及預設的顏色範圍 lab_range 進行過濾）。為了提高輪廓的準確性，它會對遮罩進行腐蝕（erode）和膨脹（dilate）處理，最後從處理後的遮罩中提取出外部輪廓並返回。
+    - **`find_contours()` 函式**旨在**從影像中偵測特定色彩範圍的物體輪廓**。此函式首先**擷取**影像中的**感興趣區域 (ROI)**。接著，它利用 **LAB 顏色空間**與預設的 **`lab_range` 參數**進行**顏色閾值分割**，將該區域轉換為**二值遮罩 (mask)**。為**優化輪廓的精確度**，程式會對遮罩執行**形態學操作**，即**腐蝕 (erode)** 與**膨脹 (dilate)** 處理。最終，函式會從處理完成的遮罩中**提取外部輪廓**並將其**返回**。
+    - The **`find_contours()` function** is used to **detect object contours** within a specific color range in an image.It first **extracts** the **Region of Interest (ROI)** portion of the image. It then performs **color thresholding** using the **LAB color space** and the predefined **`lab_range` parameters** to convert this area into a **binary mask**. To **enhance contour accuracy**, the function performs **morphological operations**—specifically **erosion** and **dilation**—on the mask. Finally, the function **extracts the external contours** from the processed mask and **returns** them.
       ```
       def find_contours(img_lab, lab_range, ROI):
           x1, y1, x2, y2 = ROI
@@ -51,7 +49,8 @@ Based on the characteristics of each control board, we distributed the complex o
           contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
           return contours
       ```
-    - max_contour()此函數用於從一個輪廓列表（contours）中，尋找面積最大的有效輪廓。它會過濾掉面積小於 150 的輪廓。對於合格的輪廓，該函數會計算其面積和相對於原始影像的中心底部座標（maxX, maxY），最終返回最大面積及其對應的座標及輪廓物件本身，作為循跡或目標識別的依據。
+    - `max_contour()` 函式旨在從輸入的輪廓列表 (contours) 中，識別並選取面積最大的有效目標輪廓。此函式首先**篩選**掉所有**面積小於 150 的雜訊輪廓**。對於符合標準的輪廓，它會計算其**面積**以及相對於**原始影像的中心底部座標 (`maxX`, `maxY`)**。最終，函式會**返回**最大面積的數值、其對應的校正座標，以及該**輪廓物件本身**，作為車輛進行**循跡導航或目標識別**的關鍵依據。
+    - The **`max_contour()` function** is used to **identify and select the largest valid target contour** from an input **list of contours (`contours`)**.The function first **filters out** all **noise contours** with an **area less than 150**. For the qualified contours, it calculates their **area** and the **center-bottom coordinates (`maxX`, `maxY`)** relative to the original image. Finally, the function **returns** the value of the largest area, its corresponding corrected coordinates, and the **contour object itself**, serving as the key basis for the vehicle's **line following or target recognition**.
       ```
       def max_contour(contours, ROI):
           maxArea = 0; maxY = 0; maxX = 0; mCnt = 0
@@ -66,10 +65,14 @@ Based on the characteristics of each control board, we distributed the complex o
                       maxArea = area; maxY = y; maxX = x; mCnt = cnt
           return [maxArea, maxX, maxY, mCnt]
       ```
-    - 該函數用於在影像的特定區域 (ROI) 中偵測複合輪廓，主要針對黑色和洋紅色。它會根據參數 add 決定如何組合這兩種顏色：
-      - 如果 add=True，則合併（add）黑色和洋紅色的區域來尋找輪廓。
-      - 如果 add=False，則尋找純黑色區域（即黑色區域減去被洋紅色覆蓋的部分）。
-      - 無論哪種情況，它都會對結果遮罩進行運算和運算處理以優化形狀，最終提取並返回外部輪廓，主要用於牆壁或特殊標記的偵測。
+    - **`pOverlap()` 函式**用於在影像的**特定感興趣區域 (ROI)** 中，**偵測包含黑色和洋紅色組合的複合輪廓**，主要應用於牆壁或特殊標記的識別。此函式根據布林參數 `add` 的值，來決定如何處理這兩種顏色的區域：
+    1.  **若 `add=True`：** 函式會將**黑色區域與洋紅色區域進行邏輯合併 (Union)**，以尋找融合後的複合輪廓。
+    2.  **若 `add=False`：** 函式會尋找**純黑色區域**，即**從黑色區域中減去 (Subtract) 被洋紅色覆蓋的部分**。
+    - 無論選擇哪種組合方式，函式都會對最終產生的遮罩執行**運算（通常指腐蝕和膨脹）**處理來**優化輪廓形狀**，最後**提取並返回外部輪廓**。
+    - The **`pOverlap()` function** is used to **detect composite contours** that involve a combination of black and magenta within a **specific Region of Interest (ROI)** in an image, primarily intended for the detection of walls or special markers.The function determines how to combine these two color regions based on the boolean parameter `add`:
+    1.  **If `add=True`:** The function **logically combines (Union)** the black and magenta areas to find the resulting composite contours.
+    2.  **If `add=False`:** The function searches for the **pure black area**, which means **subtracting the portion covered by magenta from the black area**.
+    - In either scenario, the function performs **morphological operations (implied erosion and dilation)** on the resulting mask to **optimize the contour shape**. Finally, it **extracts and returns the external contours**.
       ```
       def pOverlap(img_lab, ROI, add=False):
           x1, y1, x2, y2 = ROI

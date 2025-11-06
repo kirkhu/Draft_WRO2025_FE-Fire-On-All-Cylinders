@@ -108,7 +108,7 @@ from functions_jetson import *
       - For steering control with the front servo motor, we directly utilize the PWM signal's duty cycle to adjust the output, thereby commanding the servo motor's turning angle. The variation in the PWM duty cycle corresponds to different angle settings of the servo motor, which enables highly accurate steering.
       
 
-      - ##### Program Operation flowchart of the Raspberry Pi Pico W controller
+      - ##### Program Operation flowchart of the Raspberry Pi Pico W controller - 樹莓派 Pico W 控制器程式運作流程圖
         ![flowchart_open](./img/open_challange_Pico.jpg)
         
           __set_servo_angle():__<br>
