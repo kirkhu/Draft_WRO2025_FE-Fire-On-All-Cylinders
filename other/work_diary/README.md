@@ -1267,10 +1267,17 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
  <div align=center>
     <table width=100%>
         <tr>
-            <th>Photo of the Actual Installation Location of the Ultrasonic Sensor - 超音波感測器（Ultrasonic Sensor）的實際安裝位置照片</th>
+            <th colspan=2>Photo of the Actual Installation Location of the Ultrasonic Sensor - 超音波感測器（Ultrasonic Sensor）的實際安裝位置照片</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Untrasonic_Car.jpg" width=100% alt="Untrasonic Car" /></td>
+            <td colspan=2><img src="./img/9/Untrasonic_Car.jpg" width=100% alt="Untrasonic Car" /></td>
+        </tr>
+        <tr>
+            <th colspan=2>紅外線感測器的實際安裝位置照片</th>
+        </tr>
+        <tr align=center>
+            <td width=50% ><img src="" /></td>
+            <td width=50% ><img src="" /></td>
         </tr>
     </table>
  </div>
