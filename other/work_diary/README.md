@@ -814,19 +814,7 @@ Following testing, the **new chassis structure incorporating bearings effectivel
        </tr>
     </table>
   </div>
-
-  <div align="center" >
-    <table >
-        <tr align="center">
-            <th>Fourth-Generation Design V4.0 (PCB) - Front View</th>
-            <th>Fourth-Generation Design V4.0 (PCB) - Back View</th>
-        </tr>
-        <tr align="center">
-            <td><img src="./img/6/5.png" width = "300"  alt="data" align=center /></td>
-            <td><img src="./img/6/6.png" width = "300"  alt="data" align=center /></td>
-        </tr>
-    </table>
-  </div>
+ 
 
 ## 2025/08/18 ~ 2025/08/24
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
@@ -1127,7 +1115,7 @@ sudo apt-get -y install sdkmanager
 
 **Content:**
 
- - 由於我們將原本的I/O控制器Raspberry Pi Pico更換為Raspberry Pi Pico WH，因此我們在嘗試將超音波感測器改為紅外線感測器時遇到了腳位無法使用的問題，加上我們要在電路板上新增 **插拔式接線端子** 用來給Jetson Orin Nano連接供電線，所以我們開始進行第五代PCB電路板的設計。
+ - 由於我們將原本的I/O控制器Raspberry Pi Pico更換為Raspberry Pi Pico W，因此我們在嘗試將超音波感測器改為紅外線感測器時遇到了腳位無法使用的問題，加上我們要在電路板上新增 **插拔式接線端子** 用來給Jetson Orin Nano連接供電線，所以我們開始進行第五代PCB電路板的設計。
 
  - 在本週我們發現了 **轉向節** 存在外八的問題，由於第一、二代轉向結構是使用 **8K** 3D打印機打印的，而我們的第三、四代轉向結構是使用 **14K** 3D打印機，因此在列印上會因精度問題而導致列印出來的原件與我們實際設計的還要大一些，也因使用了14K 3D打印機之後 **轉向節** 出現了元件的角度上面比原先設計的角度還要大，因此轉向結構組裝完畢後機器人會出現內八的情況。
 
