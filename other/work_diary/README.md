@@ -30,12 +30,44 @@
 
 **Content:**  
 
+### **團隊經驗傳承與模型輕量化策略** 
 
- - 我們的隊友胡賢邑，憑藉多年參與「未來工程競賽」的經驗，在機構設計與程式控制優化領域累積了深厚的實戰基礎。 考量到每年賽事主題與規則的變動，並吸收了去年世界冠軍隊伍在影像辨識技術上的卓越成果，我們團隊經深入研討後，決定針對今年的參賽模型實施關鍵的輕量化設計。 透過整體結構的精簡化，我們達成多重效益：優化了機器進出停車區的流暢性、顯著提升了場地移動的靈活性，使其能更精準地規避障礙物，從而全面穩固了車輛的運行表現。
+我們的隊友**胡賢邑**憑藉多年參與「未來工程競賽」（Future Engineers）的豐富經驗，在**機構設計**與**程式控制優化**領域累積了深厚的**實戰基礎**。
 
- - Our teammate, HU,SIAN-YI, has accumulated solid hands-on experience in mechanical design and programming optimization through years of participation in the "Future Engineering Competition."
-- Considering the annual changes in competition themes and rules—and drawing inspiration from the world champion team’s outstanding achievements in image recognition technology last year—our team conducted in-depth discussions and decided to implement a key lightweight design for this year’s competition model.
-- By streamlining the overall structure, we achieved multiple benefits: improved the vehicle’s smooth entry and exit from parking zones, significantly enhanced maneuverability on the field, and enabled more precise obstacle avoidance, thereby comprehensively reinforcing the vehicle’s operational performance.
+考量到每年賽事主題與規則的變動，並**吸收了去年世界冠軍隊伍在影像辨識技術上的卓越成果**，我們團隊經深入研討後，決定針對今年的參賽模型實施**關鍵的輕量化設計**。
+
+透過整體結構的精簡化，我們達成了多重效益：
+* **優化了機器進出停車區的流暢性**；
+* **顯著提升了場地移動的靈活性**；
+* 使其能**更精準地規避障礙物**；
+* 從而**全面穩固了車輛的運行表現**。
+
+<table>
+<tr>
+<th>Team photo </th>
+<th>Funny_photo </th>
+</tr>
+<tr>
+
+<td><img src="../../t-photos/img/team_photo.jpg"  width="300" alt="team_photo">
+</td>
+<td><img src="../../t-photos/img/funny_photo.jpg"  width="300" alt="team_photo">
+</td>
+</tr>
+</table>
+---
+
+### **Team Experience and Model Weight Reduction Strategy** 
+
+Our teammate, **Hu Xianyi**, has accumulated a profound **practical foundation** in the fields of **mechanical design** and **program control optimization**, drawing upon his years of experience participating in the "Future Engineers Competition".
+
+Considering the annual changes in competition themes and rules, and having **assimilated the excellent achievements of last year's world champion team in image recognition technology**, our team conducted in-depth discussions and decided to implement a **critical weight reduction design** for this year's competition model.
+
+By simplifying the overall structure, we achieved multiple benefits:
+* We **optimized the fluidity of the robot's entry and exit from the parking area**;
+* **Significantly enhanced its mobility and agility** on the field;
+* Enabled it to **more precisely avoid obstacles**;
+* Thereby **comprehensively stabilizing the vehicle's operational performance**.
 
 <div align="center">
 <table>
