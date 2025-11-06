@@ -876,9 +876,9 @@ Despite a **difficult and challenging competition process**, we successfully sec
  <div align=center>
     <table>
         <tr>
-            <th>Waiting for test</th>
-            <th>Competition photo</th>
-            <th>Award-winning photo</th>
+            <th>Awaiting Testing</th>
+            <th>Competition Action Photo</th>
+            <th>Award Ceremony Photo</th>
         </tr>
         <tr>
             <td><img src="./img/8/wait.jpg" width=350/></td>
@@ -895,7 +895,6 @@ Despite a **difficult and challenging competition process**, we successfully sec
 **Content:**
 - 在參加全國賽的過程中，我們發現 Jetson Nano 在運算效能上存在不足，因此決定將主控制器升級為運算效率更高的 Jetson Orin Nano。同時，我們開始研究如何利用 WebSockets 建立 Jetson Orin Nano 與 Raspberry Pi Pico 之間的通訊。由於 WebSockets 通訊需要雙方皆能連線至網路，我們將原本的 Raspberry Pi Pico 更換為具備 WiFi 功能的 Raspberry Pi Pico W，以滿足無線連線的需求。
 
-- From our experience in the national competition, we realized that the Jetson Nano had limitations in terms of computing performance. To address this, we decided to upgrade the main controller to the more powerful Jetson Orin Nano. At the same time, we began exploring the use of WebSockets to establish communication between the Jetson Orin Nano and the Raspberry Pi Pico. Since WebSocket communication requires both devices to have network connectivity, we replaced the original Raspberry Pi Pico with the Raspberry Pi Pico W, which comes with built-in WiFi capability to meet this requirement.
 
 <div align=center>
     <table>
