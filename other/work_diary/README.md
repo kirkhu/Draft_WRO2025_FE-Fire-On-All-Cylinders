@@ -1184,21 +1184,37 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
 
  **Content:**
 
- - 由於未來工程世界賽規則更新中提到 __"自駕車再進行停車時車身僅部分可以離開出發區，若是車身完全離開出發區將會時間終止以當下情況計分"__ ，原先我們自駕車的超音波感測器是安裝在車身的中尾部，很容易因為沒有偵測到停車場方塊而整個車身離開出發區，因此我們設計了新的木板及支架讓超音波可以安裝在自駕車的前方。
+### **停車定位感測器優化與 BNO055 供電修正** 
 
- - 本週我們決定將紅外線感測器安裝在自駕車的前後用於偵測邊牆及停車場方塊，於是我們設計了新的木板和紅外線L型支架用於安裝紅外線感測器。
+#### **1. 停車定位感測器硬體調整**
+* **超音波感測器位置修正：** 原先我們自駕車的超音波感測器安裝在**車身的中尾部兩側**，很容易因為**沒有偵測到停車場方塊**而導致**整個車身離開出發區**。因此，我們設計了**新的木板及支架**，讓超音波感測器可以安裝在自駕車的**前方兩側**。
+* **新增紅外線感測器：** 鑑於僅使用超音波感測器仍**無法實現精準的停車定位**，我們決定**再增加紅外線感測器**，安裝在自駕車的**前、後方**，用於**偵測邊牆及停車場牆面**。為此，我們**重新設計了新的車輛底板和紅外線 L 型支架**。
 
- - 我們在本週測試第五代電路板時發現了一個會導致陀螺儀不被Jetson Orin Nano偵測到的問題，由於我們在主控制器從Jetson Nano改為Jetson Orin Nano時將排線的VCC、GND...等Pin腳取消只剩下陀螺儀的SDA和SCL腳位，結果因為GND沒有接地的關係導致連接時沒有產生迴路而沒有辦法被Jetson Orin Nano偵測到，因此我們改出了第六代電路板將排線的GND腳位重新接上以解決GND沒有接地的問題。
+#### **2. BNO055 陀螺儀感測器異常的電子修正**
+在取得新版印刷電路板（V5.0）後，測試中發現 **BNO055 陀螺儀感測器**的角度讀取會偶發性地出現**數值為 0 的異常現象**。
+* **問題根源：** 此問題源於感測器的電源正負極由 **Raspberry Pi Pico W** 供應，而訊號線卻連接至 **Jetson Orin Nano 主控制器**。這種**電源與信號源不在同一電路迴路（即電位基準不統一）**的配置，導致感測器產生**誤動作**。
+* **修正方案：** 我們隨即修正設計方案，確保 **BNO055 陀螺儀感測器的電源和訊號源皆由 Jetson Orin Nano 主控制器統一提供**，從而**建立了穩定的電位基準**。
+
+### **Parking Positioning Sensor Optimization and BNO055 Power Correction**
+
+#### **1. Hardware Adjustment for Parking Positioning Sensors**
+* **Ultrasonic Sensor Repositioning:** Initially, our autonomous car's ultrasonic sensors were mounted on the **mid-rear sides of the vehicle body**, making it easy for the **entire vehicle body to leave the starting zone** without detecting the parking block. We therefore designed **new wooden plates and brackets** to mount the ultrasonic sensors on the **front sides of the autonomous car**.
+* **Infrared Sensor Integration:** Since relying solely on ultrasonic sensors **could not achieve precise positioning for parking**, we decided to **add infrared sensors**, installing them on the **front and rear** of the car to **detect side walls and parking lot walls**. Consequently, we **redesigned the new vehicle chassis plate and L-shaped infrared brackets**.
+
+#### **2. Electronic Correction of BNO055 Gyroscope Sensor Anomaly**
+Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where the **BNO055 gyroscope sensor** would return an angle reading of **zero**.
+* **Root Cause:** This anomaly occurred because the sensor's VCC/GND was supplied by the **Raspberry Pi Pico W**, while its signal lines were connected to the **Jetson Orin Nano main controller**. This configuration, where the **power and signal sources were on different circuits (i.e., lacking a common ground reference)**, caused the sensor to **malfunction**.
+* **Correction:** We revised the design to ensure that **both the power and signal sources for the BNO055 gyroscope sensor are uniformly supplied by the Jetson Orin Nano controller**, thereby **establishing a stable electrical potential reference**.
 
  <div align=center>
     <table>
         <tr>
-            <th>新版超音波支架</th>
+            <th>新版中木板</th>
             <th>新版中木板</th>
             <th>新版上木板</th>
         </tr>
         <tr>
-            <td><img src="./img/9/New Ultrasonic sensor Bracket.jpg" width=300 /></td>
+            <td><img src="./img/9/New Medium Board.jpg" width=400 /></td>
             <td><img src="./img/9/Medium Board.jpg" width=300 /></td>
             <td><img src="./img/9/Upper Board.jpg" width=300 /></td>
         </tr>
@@ -1208,11 +1224,11 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
  <div align=center>
     <table>
         <tr>
-            <th>新版中木板</th>
+            <th>新版超音波支架</th>
             <th>紅外線感測器L型支架</th>
         </tr>
         <tr>
-            <td><img src="./img/9/New Medium Board.jpg" width=400 /></td>
+            <td><img src="./img/9/New Ultrasonic sensor Bracket.jpg" width=400 /></td>
             <td><img src="./img/9/infrared sensor Bracket.jpg" width=400 /></td>
         </tr>
     </table>
@@ -1316,9 +1332,11 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
 
     ```
 
- - ## 設置AP - 使用自動腳本 [Set_AP.sh](../../src/System_Platform_Software/code/Set_AP.sh)
+ - ## 設置AP - 使用自動腳本
 
     ```bash
+    curl -fsSL -u "if0_39931049:microhack188" -o "Set_AP.sh" "ftp://ftpupload.net/htdocs/UserData/WRO2025-Orin/Set_Orin_AP_AutoStart.sh" # 獲取配置腳本
+
     sudo bash ./Set_AP.sh # 執行腳本進行配置及啟用動作
     ```
 
