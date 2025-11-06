@@ -358,13 +358,40 @@ While testing **UART data transmission**, we discovered **instances of data loss
 
 **Content:**
 
- - 本週，我們開始撰寫自駕車的避障程式。我們的避障方式是：在影像畫面中繪製兩條具有斜率的路徑線，作為車輛行進的參考方向。在 function.py 檔案中的 detect_color_final 副程式中，系統會計算畫面中目標物體的中心座標。自駕車再根據物體中心座標與路徑線之間的座標差，計算出所需的轉彎角度，進而完成避障動作。
+### **資格挑戰賽程式應用與任務挑戰賽避障策略優化**
 
- - 下方為自駕車的實際運作畫面。
+#### **1. 資格挑戰賽（Open Challenge）程式應用**
+由於**資格挑戰賽（Open Challenge rounds）** 的競賽規則與往年保持一致，我們決定直接**採用去年的成熟程式進行初步的性能測試**。
+
+#### **2. 任務挑戰賽（Obstacle Challenge rounds）避障程式修改與優化**
+鑑於今年的競賽規則在**任務挑戰賽（Obstacle Challenge rounds）** 中**新增了從停車區出發**以及**平行停入停車區**兩項關鍵任務，我們必須針對去年的自駕車**避障程式進行修改與深度優化**。
+
+#### **3. 避障策略與邏輯**
+我們採用的避障策略與邏輯如下：
+* **路徑參考：** 在影像畫面中**繪製兩條具有特定斜率的路徑線**，作為車輛行進時的**參考方向**。
+* **目標物體中心計算：** 透過 `function.py` 檔案中的 `detect_color_final` 副程式，系統會**計算畫面中目標物體的中心座標**。
+* **轉彎角度計算：** 自駕車隨後**根據目標物體中心座標與路徑線之間的座標差**，計算出**所需的轉彎角度**，進而完成**精準的避障動作**。
+- 自駕車在執行任務時的實際運作畫面
+
+### **Open Challenge Program Application and Obstacle Challenge Strategy Optimization** 
+
+#### **1. Open Challenge Program Application**
+Since the competition rules for the **Open Challenge rounds** remain consistent with previous years, we decided to **utilize last year's established program for initial performance testing**.
+
+#### **2. Obstacle Challenge Rounds Program Modification and Optimization**
+Given that this year's competition rules **added the task of starting from the parking lot** and **parallel parking into the parking zone** within the **Obstacle Challenge rounds**, we were required to **modify and deeply optimize** last year's autonomous car **obstacle avoidance program**.
+
+#### **3. Obstacle Avoidance Strategy and Logic**
+Our implemented obstacle avoidance strategy and logic are as follows:
+* **Path Reference:** **Two path lines with specific slopes are drawn** on the image screen, serving as the vehicle's **reference direction** for travel.
+* **Target Center Calculation:** Through the `detect_color_final` subroutine located in the `function.py` file, the system **calculates the center coordinates of the target object** on the screen.
+* **Turning Angle Calculation:** The autonomous car subsequently **calculates the required turning angle based on the coordinate difference between the object's center coordinates and the path lines**, thereby executing **precise obstacle avoidance maneuvers**.
+
+- The image below displays the autonomous car's actual operational screen during mission execution.
  <div align=center>
     <table>
         <tr>
-            <th colspan=3 >Jetson Nano程序執行畫面</th>
+            <th colspan=3 >Screenshot of the Image Feed During Jetson Nano Program Execution - Jetson Nano 程式執行時的影像畫面截圖</th>
         </tr>
         <tr>
             <td><img src="./img/4/binarization_run.png" width=400 /></td>
@@ -380,18 +407,50 @@ While testing **UART data transmission**, we discovered **instances of data loss
 
 **Content:**
 
- - 本週我們在程式中加入了轉向開始與結束的判斷機制。
+好的，這是對您提供的關於任務賽程式優化、轉向模式判斷機制，以及避障策略新增邏輯的內容所進行的文詞修飾與專業翻譯。
 
- - 當畫面中偵測到轉向區的線條時，系統會自動切換至「轉向模式」。
- - 在判斷是否離開轉向區時，程式需要同時滿足 航向角變化、HSV 顏色辨識、以及 時間條件 三項判定，才能將轉向次數加一。
+---
 
- - 經過實際測試後，我們發現這種方式有時會導致車輛與障礙物方塊發生碰撞。
- - 為了解決這個問題，我們在轉向機制中新增了障礙物偵測邏輯：
- - 當自駕車在轉向過程中識別到方塊時，會優先執行避障；
- - 若偵測到車體即將接近牆面，則會先執行遠離邊牆的動作，
- - 最後再判斷是否已離開轉向區。
+### **任務賽程式優化與複合式轉向判斷邏輯** 
+
+#### **1. 轉向模式與遶行計數機制**
+本週，我們持續優化任務挑戰賽（Obstacle Challenge）程式，並加入了**轉向開始與結束的判斷機制**。此機制用於**判斷車輛是否還在轉向區內**，以利**準確計數是否完成遶行場地三圈的任務**。
+
+* **模式切換：** 當影像畫面中**偵測到轉向區的特定線條時**，系統會自動切換至**「轉向模式」**。
+* **離開轉向區判斷邏輯：** 程式必須同時滿足以下**三項條件判定**，才能確認車輛已離開轉向區並將轉向次數加一：
+    * **航向角變化（Heading Angle Change）**
+    * **HSV 顏色辨識**
+    * **時間條件**
+
+#### **2. 轉向過程中的複合式避障優化**
+* 經過實際測試後，我們發現原有的轉向邏輯有時會導致車輛與**障礙物方塊發生碰撞**。
+* 為了解決這個問題，我們在轉向機制中**新增了複合式的障礙物偵測邏輯**：
+    1.  當自駕車在**轉向過程中識別到方塊時**，會**優先執行避障**。
+    2.  若偵測到車體**即將接近牆面**，則會**優先執行遠離邊牆的動作**。
+    3.  **最後**，再判斷是否已離開轉向區。
 
 下方為判斷是否離開轉向區的邏輯程式。
+
+
+### **Obstacle Challenge Program Optimization and Compound Steering Logic**
+
+#### **1. Steering Mode and Lap Counting Mechanism**
+This week, we continued optimizing the Obstacle Challenge program by adding a **detection mechanism for the start and end of steering**. This mechanism is used to **determine if the vehicle is still within the turning zone**, facilitating the **accurate counting of completed laps** around the field.
+
+* **Mode Switching:** When the image screen **detects the specific lines marking the turning zone**, the system automatically switches to the **"Steering Mode"**.
+* **Exit Turning Zone Logic:** The program requires the simultaneous satisfaction of **three conditions** to confirm the vehicle has left the turning zone and increment the steering count:
+    * **Heading Angle Change**
+    * **HSV Color Recognition**
+    * **Time Condition**
+
+#### **2. Compound Obstacle Avoidance Optimization During Steering**
+* Following practical testing, we found that the original steering logic occasionally led to the vehicle **colliding with the obstacle blocks**.
+* To resolve this issue, we **added a compound obstacle detection logic** within the steering mechanism:
+    1.  When the autonomous car **identifies an obstacle block during the turning process**, it **prioritizes obstacle avoidance**.
+    2.  If it detects the vehicle body is **approaching a wall**, it **prioritizes moving away from the wall**.
+    3.  **Finally**, it determines whether the vehicle has exited the turning zone.
+
+**The logic code for determining the exit from the turning zone is shown below.**
 
 ```python
 if elapsed_time >= 0.7 and color_y_positions[0] ==0 and color_y_positions[1] == 0 and heading < target_heading[count+1] + 35 and heading > target_heading[count+1] - 35:
@@ -414,11 +473,39 @@ if elapsed_time >= 0.7 and color_y_positions[0] ==0 and color_y_positions[1] == 
 
 **Content:** 
 
- - 我們的程式在每次運作前，都需要手動啟動主程式。為了讓系統能自動啟動，我們在 Jetson Nano 上撰寫了一個啟動腳本，並透過 Linux 的 Systemctl 服務 讓系統在每次開機時自動執行該腳本。腳本運行後，會持續偵測 Raspberry Pi Pico 是否發出「程式啟動」的訊號。
+好的，這是對您提供的關於 Jetson Nano **自動啟動機制**的內容所進行的文詞修飾與專業翻譯。
 
- - 以下為 open-mode.service、open-mode.sh、以及 open-mode.py 的程式碼。
+同時，由於您提供了程式碼檔案名稱（`open-mode.service`、`open-mode.sh`、`open-mode.py`），我會將這部分描述作為**程式碼實作的背景說明**。
+
+---
+
+### **中文文章修飾：程式自動啟動機制與 Pico 訊號偵測** 💻
+
+#### **自動啟動機制需求與實作**
+為了解決每次運作前都需**手動啟動主程式**的效率問題，我們在 **Jetson Nano** 上設計並實作了**自動化啟動機制**。
+
+* **服務腳本撰寫：** 我們撰寫了一個**啟動腳本（`open-mode.sh`）**，並透過 **Linux 的 Systemctl 服務（`open-mode.service`）** 進行配置，讓系統能在**每次開機時自動執行該腳本**。
+* **啟動訊號偵測：** 該啟動腳本（運行 `open-mode.py`）運行後，會持續透過 **UART 協定偵測 Raspberry Pi Pico 是否發出「程式啟動」的特定訊號**，一旦接收到有效訊號，便會開始執行自駕車的主控制迴圈。
+
+下方為 `open-mode.service`、`open-mode.sh`、以及 `open-mode.py` 的程式碼。
+
+---
+
+### **英文翻譯：Program Auto-Startup Mechanism and Pico Signal Detection** 🌐
+
+#### **Need and Implementation of Auto-Startup Mechanism**
+To address the efficiency issue of manually starting the main program before every operation, we designed and implemented an **automated startup mechanism** on the **Jetson Nano**.
+
+* **Service Script Writing:** We authored a **startup script (`open-mode.sh`)** and configured it using the **Linux Systemctl service (`open-mode.service`)**, enabling the system to **automatically execute this script upon every boot**.
+* **Startup Signal Detection:** After execution, the startup script (running `open-mode.py`) continuously **monitors the Raspberry Pi Pico via the UART protocol for a specific "Program Start" signal**. Once a valid signal is received, the main control loop of the autonomous car commences execution.
+
+The code for `open-mode.service`, `open-mode.sh`, and `open-mode.py` is provided below.
+
+---
+
+**請問您是否要提供這三個檔案的程式碼內容？** 我可以協助您將程式碼進行格式化並加入專業註解。
  
- open-mode.service
+* **open-mode.service Code**
  ```bash
 [Unit]
 Description=Open Terminal with Python Script on Boot
