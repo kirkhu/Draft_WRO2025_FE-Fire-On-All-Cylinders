@@ -17,12 +17,12 @@
 - ###  ${{\color{red} Hardware Overview }} $ 
   #### 1. Mobility Management-行動管理
     * [1-1 Vehicle 2D/3D Models in CAD (CAD 中的車輛 2D/3D 模型) **已改動OK](models/Vehicle_2D_3D/README.md)
-    * [1-2 Vehicle Chassis Design(車輛底盤設計) **已改動](schemes/Vehicle_Chassis_Design/README.md)
+    * [1-2 Vehicle Chassis Design(車輛底盤設計) **已改動OK](schemes/Vehicle_Chassis_Design/README.md)
     * [1-3 Motor Selection (馬達選擇)OK](schemes/Motor/README.md)
   #### 2. Power and Sense Management-電源和感測管理
     - __2-1 Vehicle Design__
       - [2-1-1 BOM Pats List (BOM零件清單) **已改動OK](schemes/Parts_List/README.md)
-      - [2-1-2 Circuit Design (電路設計) **已改動](models/Circuit_Design/README.md)
+      - [2-1-2 Circuit Design (電路設計) **已改動 OK](models/Circuit_Design/README.md)
       - [2-1-3 Hardware Fool-Proof Design(硬體防呆設計)OK ](schemes/Fool-Proof-Design/README.md)
       - [2-1-4 Assembly Instructions & Wiring Diagrams(裝配說明和接線圖) OK](schemes/Assembly_Instructions/README.md)
     - __2-2 Power Management-電源管理__
@@ -39,7 +39,7 @@
 
 - ### ${{\color{red} Software Overview }} $ 
   #### 3. Obstacle Management-障礙管理
-    - [3-1 Software Platform Construction(軟體平台建設) **已改動](src/System_Platform_Software/README.md)
+    - [3-1 Software Platform Construction(軟體平台建設) **已改動OK](src/System_Platform_Software/README.md)
     - [3-2 OpenCV Introduction (OpenCV介紹)](src/OpenCV/README.md)
     - __3-4 Image Recognition Processing and Steering-影像辨識處理和控制__
       - [3-4-1 Image Recognition Processing(影像辨識處理) **已改動 OK](src/Image_Recognition_Processing/README.md)

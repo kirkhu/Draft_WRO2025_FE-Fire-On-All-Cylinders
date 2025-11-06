@@ -22,7 +22,7 @@ To ensure smooth vehicle operation, choosing the right drive motors is essential
 
 Through careful selection of these two motors, we enhanced vehicle performance and addressed last year's challenges related to power transmission and steering control.
 
-### Front Steering Mechanism by Servo Motor-使用伺服馬達的前輪轉向機構
+### Drive Servo Motor for the Front-Wheel Steering Mechanism - 前輪轉向機構的驅動伺服馬達
 ### 中文:
 - MG90S 與 SG90 是在台灣市面上常見且容易購買的伺服馬達。它們的重量、旋轉角度與扭力等規格均符合我們的需求。
 - 考量到耐用性，我們選擇了採用金屬齒輪的 MG90S 作為比賽中的轉向控制馬達，以確保在高強度操作下的穩定性與可靠性。
