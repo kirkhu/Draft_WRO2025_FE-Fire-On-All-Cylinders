@@ -1597,7 +1597,23 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
  **Content:**
- 經詢問世界賽裁判，上下位控制器不得使用穩定傳輸之無線傳輸websocket通訊協定，那只能改回原本使用的UART通訊協定的。
+
+### **通訊協議調整與工程文件持續更新** 
+
+#### **1. 通訊協議調整決策**
+經向**世界賽裁判**確認，上下位控制器（Jetson Orin Nano 與 Raspberry Pi Pico W）之間**不得使用 WebSocket 等穩定傳輸的無線通訊協議**。鑑於此項規則限制，我們決定**捨棄原先研究的 WebSocket 方案**，並**改回使用先前已驗證的 UART（通用非同步收發傳輸器）通訊協議** 進行數據傳輸。
+
+#### **2. 工程文件進度**
+**持續上傳修改後的工程文件資料**。
+
+
+### **Communication Protocol Adjustment and Ongoing Engineering Document Updates** 🌐
+
+#### **1. Communication Protocol Adjustment Decision**
+Following confirmation with the **World Final judges**, the communication between the main and auxiliary controllers (Jetson Orin Nano and Raspberry Pi Pico W) **is prohibited from using stable wireless communication protocols such as WebSocket**. Given this rule restriction, we decided to **abandon the previously investigated WebSocket solution** and **revert to the established UART (Universal Asynchronous Receiver-Transmitter) communication protocol** for data transmission.
+
+#### **2. Engineering Document Progress**
+**Continuing to upload the modified engineering documentation.**
 
  # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>
 
