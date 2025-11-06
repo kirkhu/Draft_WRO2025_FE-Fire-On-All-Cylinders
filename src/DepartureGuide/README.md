@@ -237,7 +237,7 @@
 </table>
 </div>
 
-## <div align="center">Clockwise Green Departure Process-順時針紅色出發流程</div>
+## <div align="center">Clockwise Red Departure Process-順時針紅色出發流程</div>
 <div align=center>
 <table>
 <tr>
