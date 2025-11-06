@@ -1209,13 +1209,13 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
  <div align=center>
     <table>
         <tr>
-            <th>新版中木板</th>
-            <th>新版中木板</th>
+            <th>新版中木板(新增超音波支架鎖孔)</th>
+            <th>新版中木板(新增紅外線支架鎖孔)</th>
             <th>新版上木板</th>
         </tr>
         <tr>
-            <td><img src="./img/9/New Medium Board.jpg" width=400 /></td>
             <td><img src="./img/9/Medium Board.jpg" width=300 /></td>
+            <td><img src="./img/9/New Medium Board.jpg" width=400 /></td>
             <td><img src="./img/9/Upper Board.jpg" width=300 /></td>
         </tr>
     </table>
