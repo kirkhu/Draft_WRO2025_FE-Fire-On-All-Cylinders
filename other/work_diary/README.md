@@ -723,22 +723,19 @@ if turn_side == 8:
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:**
-
 ### **轉向角度限制與機構保護** 
 
-由於自駕車**伺服馬達驅動的前輪轉向機構**的**可轉動角度存在物理限制**。若轉動角度設定過大，可能導致**轉向結構被扭斷**，甚至**伺服馬達燒壞**。
+由於自駕車**伺服馬達驅動的前輪轉向機構**所能轉動的**角度有限**。若轉動角度設定**過大**，可能導致**轉向結構被扭斷**，或造成**伺服馬達燒壞**。
 
-因此，為了**防止伺服馬達驅動的前輪轉向機構損毀或轉向結構被扭斷**，我們在程式碼結尾處**加入了嚴格的角度限制**，以確保轉向動作始終維持在機構的安全工作範圍內。
+因此，為了**防止伺服馬達驅動的前輪轉向機構損毀或轉向結構被扭斷**，我們在程式碼的控制邏輯**結尾加入了嚴格的角度限制**，以確保轉向動作始終維持在機構的安全工作範圍內。
 
 以下為**限制轉向角度的程式碼**。
 
----
+### **Steering Angle Limitation and Mechanism Protection**
 
-### **Steering Angle Limitation and Mechanism Protection** 
+The **servo motor-driven front-wheel steering mechanism** of the autonomous car has **limited rotation angle capacity**. If the rotation angle is set **too wide**, it could potentially lead to the **steering structure being twisted and broken**, or cause the **servo motor to burn out**.
 
-The **servo motor-driven front-wheel steering mechanism** of the autonomous car has **physical limits on its rotation angle**. Setting the angle too wide could potentially lead to the **steering structure being twisted and broken**, or even cause the **servo motor to burn out**.
-
-Therefore, to **prevent damage to the servo motor-driven front-wheel steering mechanism or the steering structure from being twisted**, we **added a strict angle limitation** at the end of the code, ensuring that steering maneuvers always remain within the safe operating range of the mechanism.
+Therefore, to **prevent damage to the servo motor-driven front-wheel steering mechanism or the steering structure from being twisted**, we **added a strict angle limitation** at the end of the code's control logic, ensuring that steering maneuvers always remain within the safe operating range of the mechanism.
 
 The code for **limiting the steering angle** is shown below.
 
@@ -753,8 +750,14 @@ if combined_control_signal < -180:
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
+### **主電路板第四代版本功能測試成果** 
 
-- 經修正前兩代的設計問題後，第四代版本已成功通過功能測試。實際運行測試顯示，排針接點與電路佈局無異常，系統可穩定運作。
+在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，**主電路板的第四代版本（V4.0）已成功通過功能測試**。實際運行測試的結果顯示，**排針接點與電路佈局均無異常**，且**系統可穩定運作**。
+
+### **Main Circuit Board Fourth Generation Functional Test Results** 
+
+Following the successful correction of design issues found in the previous two versions (V2.0 and V3.0), the **Main Circuit Board's Fourth Generation Version (V4.0) has successfully passed functional testing**. The results from actual operational tests indicate that there are **no anomalies in the pin header connections or the circuit layout**, and the **system operates stably**.
+
 <div align="center" >
     <table >
         <tr align="center">
@@ -773,9 +776,26 @@ if combined_control_signal < -180:
 
 **Content:** 
 
- - 在進行避障程式測試時，我們注意到自駕車在過彎時會出現些許卡頓。經檢查後發現問題源自底盤結構，因為轉向節與底盤直接接觸，過大的摩擦力導致傳動結構卡滯。為了解決此問題，我們將原本用來固定轉向節的孔洞擴大，並改為放置軸承以降低摩擦。經過測試後，採用軸承的新底盤結構有效改善了轉向的流暢度，使自駕車在過彎時更加平順。
+### **底盤摩擦力問題修正與轉向流暢度優化** 🛠️
 
- - During obstacle-avoidance testing, we noticed that the autonomous car experienced slight stuttering when making turns. Upon inspection, we identified the issue in the chassis design: the steering knuckle was in direct contact with the chassis, and the resulting friction caused binding in the transmission structure. To address this, we enlarged the original holes used for mounting the steering knuckle and replaced them with bearings to reduce friction. Testing confirmed that the updated chassis with the bearing structure significantly improved turning smoothness, allowing the car to navigate corners more fluidly.
+在進行避障程式測試時，我們注意到自駕車在**過彎時會出現些許卡頓**。經檢查後發現問題源自**底盤結構**：由於**轉向節與底盤直接接觸**，產生了**過大的摩擦力**，導致傳動結構**卡滯**。
+
+為了解決此問題，我們對底盤進行了以下優化：
+* 將**原本用於固定轉向節的孔洞擴大**。
+* **改為放置軸承（Bearing）** 以**降低摩擦**。
+
+經過實際測試，採用軸承的**新底盤結構有效改善了轉向的流暢度**，使自駕車在過彎時**更加平順**。
+
+
+### **英文翻譯：Chassis Friction Correction and Steering Smoothness Optimization** 
+
+While testing the obstacle avoidance program, we observed that the autonomous car experienced **slight stuttering during cornering**. Inspection revealed the problem originated from the **chassis structure**: as the **steering knuckle was in direct contact with the chassis**, the resulting **excessive friction** caused the drivetrain to **jam**.
+
+To resolve this issue, we implemented the following chassis optimization:
+* **Enlarged the holes originally used to fix the steering knuckle**.
+* **Switched to placing bearings** within the enlarged holes to **reduce friction**.
+
+Following testing, the **new chassis structure incorporating bearings effectively improved steering smoothness**, allowing the autonomous car to navigate corners **more smoothly**.
 
  <div align=center>
     <table>
