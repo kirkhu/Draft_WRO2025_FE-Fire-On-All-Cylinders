@@ -1276,8 +1276,8 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
             <th colspan=2>紅外線感測器的實際安裝位置照片</th>
         </tr>
         <tr align=center>
-            <td width=50% ><img src="" /></td>
-            <td width=50% ><img src="" /></td>
+            <td width=50% ><img src="./img/9/Infared_Car_Front.jpg" /></td>
+            <td width=50% ><img src="./img/9/Infard_Car_Back.jpg" /></td>
         </tr>
     </table>
  </div>
