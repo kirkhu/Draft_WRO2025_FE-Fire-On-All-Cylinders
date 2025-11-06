@@ -40,8 +40,8 @@
 <div align="center">
 <table>
 <tr align="center">
-<th>Last year's competition vehicle model</th>
-<th>This year's competition vehicle model</th>
+<th>2024 World Championship Vehicle Model</th>
+<th>2025 National Competition Vehicle Model</th>
 </tr>
 <tr align="center">
 <td><img src="./img/2/Last_year's.png"  width="300" alt="Vehicle_cad"></td> 
@@ -52,10 +52,33 @@
 <div align="center">
 <table>
 <tr align="center">
-<th >For the design reference of this project, we consulted the engineering documents from our school's past teams and conducted a deep dive analysis of the technical files from last year's world champion team.</th>
+
 </tr>
 <tr align="center">
 <td> <img src="./img/find_data.jpg" width = "500"  alt="data" align=center /></td>
+<tr>
+<td>
+
+**設計參考、技術發現與修正方向**
+- 為了奠定本專案的設計基礎與優化方向，我們進行了以下參考與分析：
+設計參考來源： 我們查閱了學校歷屆團隊的工程文件，並對去年世界冠軍隊伍的技術文件進行了深入分析 。
+- 技術發現與修正方向：
+
+   - 影像辨識： 我們發現去年世界優勝隊伍在影像辨識技術上處理得極為正確且高效，這是一個值得我們深度學習的領域。因此，我們確立將此技術方向作為我們的主要修正與提升方向。
+
+   - 機型體積與避障： 此外，我們觀察到有部分隊伍的機型體積遠小於我們的機型。在避開障礙物的能力上，這些小型機型展現出更優越的性能。
+**Design Reference, Technical Findings, and Correction Strategy**
+- To establish the design foundation and optimization direction for this project, we conducted the following referencing and analysis:
+Design Reference Sources: We reviewed the engineering documentation from our school's past teams and conducted a deep analysis of the technical files from last year's world champion team.
+
+- Technical Findings and Correction Strategy:
+
+   - Image Recognition: We found that last year's world champion team executed image recognition technology in an extremely correct and highly efficient manner, marking this as an area worthy of deep study and emulation. Consequently, we established this technical direction as our primary strategy for correction and enhancement.
+
+    - Model Size and Obstacle Avoidance: Furthermore, we observed that some teams' vehicle models were significantly smaller than ours. These smaller models demonstrated superior performance in their ability to avoid obstacles.
+
+
+</td>
 </tr>
 </table>
 </div>
@@ -65,11 +88,27 @@
 
 **Content:**
 
- - 本週的工作重點是系統安裝與驅動程式下載。考量到直接透過小型螢幕操作 Jetson Nano 存在介面操作不便與連接埠損壞的風險，我們決定採用更高效的方式：在 Jetson Nano 上部署了 NoMachine 遠端桌面軟體，以便後續進行自動駕駛程式的編寫與除錯。
- - 以下附有系統安裝、驅動程式下載及遠端桌面功能測試的照片作為佐證。
+### **系統部署與遠端開發環境建置** 💻
 
- - This week's focus was on system installation and driver download. Considering the inconvenience and the risk of physical port damage associated with operating the Jetson Nano directly via a small monitor, we opted for a more efficient approach: deploying the NoMachine remote desktop software onto the Jetson Nano. This enables smooth coding and debugging of the autonomous driving programs going forward. 
- - Attached are supporting photos documenting the system installation, driver download, and remote desktop functionality testing.
+本週的工作重點在於**系統安裝**與**驅動程式下載**。
+
+考量到直接透過小型螢幕操作 **Jetson Nano** 存在**介面操作不便**以及**連接埠潛在損壞**的風險，我們決定採用更高效的開發模式：在 Jetson Nano 上部署了 **NoMachine 遠端桌面軟體**。此舉旨在為後續的**自動駕駛程式編寫**與**系統除錯**工作提供一個**高效且穩定**的遠端操作環境。
+
+**佐證資料：**
+
+下方附有系統安裝、驅動程式下載及遠端桌面功能測試的照片作為佐證。
+
+---
+
+### **System Deployment and Remote Development Environment Setup** 
+
+This week's work focused on **system installation** and **driver downloads**.
+
+Considering the risks associated with directly operating the **Jetson Nano** via a small screen, specifically **inconvenient interface operation** and the potential for **damage to the connection ports**, we decided to adopt a more efficient development approach: we deployed **NoMachine remote desktop software** on the Jetson Nano. This action aims to provide an **efficient and stable** remote operational environment for the subsequent tasks of **autonomous driving program writing** and **system debugging**.
+
+**Supporting Documentation:**
+Photos of the system installation, driver downloads, and remote desktop functionality test are attached below as evidence.
+
 
 <div align="center">
     <table>
@@ -88,7 +127,7 @@
 
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
-**Content:**  ( 補電路設計圖)
+**Content:** 
 
 - 為了避免使用電木板焊接時可能導致的控制器短路損毀，並實現更整潔、更易於配置的電路板佈局，我們決定採用 EasyEDA 繪製 PCB，並透過**化學蝕刻（洗印）**製作了第一代電路板。
 - 由於這是團隊首次進行 PCB 設計，我們初期忽略了設計軟體內建的標準元件排版範例，轉而依賴手動測量排針間距作為設計依據。然而，由於經驗尚淺，首代電路板在製作完成後才發現間距設定過小，導致元件無法順利插裝。
