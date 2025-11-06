@@ -1239,6 +1239,14 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
             <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 6.png" height=300 /></td>
             <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/PCB_Version 6.png" height=300 /></td>
         </tr>
+        <tr>
+            <th>第六代PCB電路板(實體) - 正面</th>
+            <th>第六代PCB電路板(實體) - 反面</th>
+        </tr>
+        <tr align=center>
+            <td><img src="../../models/Circuit_Design/img/Circuit_6_Top.png" /></td>
+            <td><img src="../../models/Circuit_Design/img/Circuit_6_Bottom.png" /></td>
+        </tr>
     </table>
  </div>
 
