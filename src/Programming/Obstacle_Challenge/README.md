@@ -27,15 +27,14 @@ Based on the characteristics of each control board, we distributed the complex o
     **All functions related to image recognition, image processing, and key visual identification** have been **highly integrated** into the **[function.py](../common/function.py) module** and can be directly **imported and called** by the higher-level program. The **specific functionalities** of these modules are outlined as follows:
 
 
-    - display_roi()此函數的作用是在影像上繪製多個感興趣區域 (ROI) 的邊界框。它接收一個影像 (img)、一個包含多個 ROI 座標的列表 (ROIs)，以及繪製顏色 (color)。它透過繪製四條線段來組成每個 ROI 的矩形邊界，然後返回被標記過的影像。
+    - The **`display_roi()` function** is designed to **visualize** multiple **Regions of Interest (ROIs)** on an image. It accepts the **source image (`img`)**, a **list containing the coordinates of multiple ROIs (`ROIs`)**, and the **drawing color (`color`)** for the boundary boxes as input parameters.Its mechanism involves **drawing four line segments** to form the **rectangular boundary** for each ROI. Upon completion, the function **returns** the processed image marked with the boundary boxes.
+    - `display_roi()`此函數的作用是在影像上繪製多個感興趣區域 (ROI) 的邊界框。它接收一個影像 (img)、一個包含多個 ROI 座標的列表 (ROIs)，以及繪製顏色 (color)。它透過繪製四條線段來組成每個 ROI 的矩形邊界，然後返回被標記過的影像。
       ```
       def display_roi(img, ROIs, color):
       for ROI in ROIs:
           img = cv2.line(img, (ROI[0], ROI[1]), (ROI[2], ROI[1]), color, 4)
           img = cv2.line(img, (ROI[0], ROI[1]), (ROI[0], ROI[3]), color, 4)
           img = cv2.line(img, (ROI[2], ROI[3]), (ROI[2], ROI[1]), color, 4)
-          i
-          turn img
       ```
     - find_contours()此函數用於在影像中偵測特定顏色範圍的輪廓。它首先擷取影像中感興趣區域 (ROI) 的部分，接著將此區域的顏色轉換為二值遮罩 (mask)（使用 LAB 顏色空間及預設的顏色範圍 lab_range 進行過濾）。為了提高輪廓的準確性，它會對遮罩進行腐蝕（erode）和膨脹（dilate）處理，最後從處理後的遮罩中提取出外部輪廓並返回。
       ```
