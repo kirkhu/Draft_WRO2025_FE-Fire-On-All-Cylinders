@@ -20,12 +20,11 @@ Based on the characteristics of each control board, we distributed the complex o
 
  - ### Jetson Orin Nano library-Jetson Orin Nano 庫
     ### 中文:
-    - 影像辨識、影像處理與視覺辨識函式等功能已整合到functions.py模組中，可直接導入使用。這些模組的功能如下：
+    - 影像辨識、影像處理與視覺辨識函式等功能已整合到`functions.py`模組中，可直接導入使用。這些模組的功能如下：
 
 
     ### 英文:
-    - The functions for image recognition, front-wheel servo motor proportional steering control, and ground line color recognition have been integrated into the [function.py](../common/function.py) module and can be directly imported for use.
-    The functions of these modules are as follows:
+    **All functions related to image recognition, image processing, and key visual identification** have been **highly integrated** into the **[function.py](../common/function.py) module** and can be directly **imported and called** by the higher-level program. The **specific functionalities** of these modules are outlined as follows:
 
 
     - display_roi()此函數的作用是在影像上繪製多個感興趣區域 (ROI) 的邊界框。它接收一個影像 (img)、一個包含多個 ROI 座標的列表 (ROIs)，以及繪製顏色 (color)。它透過繪製四條線段來組成每個 ROI 的矩形邊界，然後返回被標記過的影像。
