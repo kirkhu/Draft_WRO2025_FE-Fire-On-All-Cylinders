@@ -151,6 +151,17 @@ Photos of the system installation, driver downloads, and remote desktop function
 ### 第一代 PCB 設計的挑戰與學習** 
 
 * 為了**避免使用電木板焊接時可能導致的控制器短路損毀**，並追求**更整潔、更易於配置**的電路板佈局，我們決定採用 **EasyEDA 軟體繪製印刷電路板（PCB）**，並透過**化學蝕刻（洗印）**製程完成了**第一代電路板**的製作。
+
+
+* 由於這是團隊**首次**進行 PCB 設計，我們初期**忽略了設計軟體（EasyEDA）內建的標準元件排版範例**。我們轉而依賴**手動測量排針間距**作為設計依據。然而，由於**經驗尚淺**，在首代電路板製作完成後，我們才發現**間距設定過小**，最終導致電子元件**無法順利插裝**。
+* 儘管遭遇了這次失誤，它卻提供了**寶貴的實戰經驗**。這促使我們立即啟動**設計修正與優化流程**，並隨即將修正後的設計送廠製作了**第二代版本**。
+
+
+
+### **Challenges and Learning from the First Generation PCB Design** 
+
+* To **prevent potential short-circuit damage to the controllers caused by soldering on pegboards** and to achieve a **cleaner, more configurable** board layout, we decided to use **EasyEDA software to draw the Printed Circuit Board (PCB)**. We then produced the **first generation circuit board** using the **chemical etching process**.
+
 <div align="center">
     <table>
         <tr align=center>
@@ -164,21 +175,9 @@ Photos of the system installation, driver downloads, and remote desktop function
     </table>
 </div>
 
-
-* 由於這是團隊**首次**進行 PCB 設計，我們初期**忽略了設計軟體（EasyEDA）內建的標準元件排版範例**。我們轉而依賴**手動測量排針間距**作為設計依據。然而，由於**經驗尚淺**，在首代電路板製作完成後，我們才發現**間距設定過小**，最終導致電子元件**無法順利插裝**。
-* 儘管遭遇了這次失誤，它卻提供了**寶貴的實戰經驗**。這促使我們立即啟動**設計修正與優化流程**，並隨即將修正後的設計送廠製作了**第二代版本**。
-
-
-
-### **Challenges and Learning from the First Generation PCB Design** 
-
-* To **prevent potential short-circuit damage to the controllers caused by soldering on pegboards** and to achieve a **cleaner, more configurable** board layout, we decided to use **EasyEDA software to draw the Printed Circuit Board (PCB)**. We then produced the **first generation circuit board** using the **chemical etching process**.
 * As this was the team's **first time** designing a PCB, we initially **overlooked the standard component layout templates built into the design software (EasyEDA)**. Instead, we relied on **manual measurement of the pin header pitch** as the design basis. However, due to our **limited experience**, we only discovered after the first-generation board was fabricated that the **pitch setting was too small**, ultimately preventing the electronic components from being properly inserted.
 * Despite this setback, this failure provided **invaluable hands-on experience**. It prompted us to immediately launch the **design correction and optimization process**, and the revised design was subsequently sent to the factory for the **second-generation version**.
 
----
-
-**請問您對這次的修飾與翻譯是否滿意？**
 <div align="center" >
     <table >
         <tr align="center">
@@ -197,14 +196,29 @@ Photos of the system installation, driver downloads, and remote desktop function
 
 **Content:** 
 
- - 本週，我們正式啟動了自駕車程序的編寫工作。為了確保主控單元（Jetson Nano）與輔助單元（Raspberry Pi Pico）之間能順利協同運作，我們投入時間研究了關鍵的通訊協議。具體研究方向包括：Jetson Nano 與 Raspberry Pi Pico 之間的通訊機制、如何利用 Raspberry Pi Pico 精準控制直流馬達的編碼器（Encoder），以及實施超音波感測器的數值讀取等技術環節。
- - This week, we officially commenced the development of the Self-Driving-Cars software. To ensure seamless coordination between the main control unit (Jetson Nano) and the auxiliary unit (Raspberry Pi Pico), we dedicated time to researching critical communication protocols. Our specific areas of investigation included: the communication mechanism between the Jetson Nano and the Raspberry Pi Pico, how to precisely control the DC motor encoder using the Raspberry Pi Pico, and the implementation strategy for reading ultrasonic sensor data.
+### 自駕車程式啟動與通訊協議研究** 
+
+本週，我們正式啟動了**自駕車核心程式的編寫工作**。為了確保**主控單元（Nvidia Jetson Nano）** 與 **輔助單元（Raspberry Pi Pico）** 之間能順利實現**高效的協同運作**，我們投入時間深入研究了關鍵的**通訊協議與技術環節**。
+
+具體研究方向包括：
+* **主輔單元通訊機制：** 探討 **Nvidia Jetson Nano 與 Raspberry Pi Pico 之間的穩定通訊機制**。
+* **編碼器精準控制：** 研究如何利用 **Raspberry Pi Pico 精準控制直流馬達的編碼器（Encoder）**，以實現精確的速度與位置控制。
+* **感測器數據獲取：** 實施**超音波感測器**的**數值讀取與數據處理**等技術環節。
+
+### **Autonomous Car Program Commencement and Communication Protocol Study**
+
+This week, we officially initiated the **coding of the autonomous car's core program**. To ensure the **Main Control Unit (Nvidia Jetson Nano)** and the **Auxiliary Unit (Raspberry Pi Pico)** can achieve **efficient coordinated operation**, we dedicated time to deeply research key **communication protocols and technical aspects**.
+
+The specific research areas included:
+* **Main-Auxiliary Unit Communication:** Investigating the **stable communication mechanism between the Nvidia Jetson Nano and the Raspberry Pi Pico**.
+* **Precise Encoder Control:** Studying how to utilize the **Raspberry Pi Pico to precisely control the DC motor's encoder**, enabling accurate speed and position management.
+* **Sensor Data Acquisition:** Implementing technical steps such as **value reading and data processing** for the **ultrasonic sensor**.
 
  <div align=center>
     <table>
         <tr>
-            <th align=center>Searched for relevant information online.查找相關資料</th>
-            <th align=center>Coding the self-driving-cars program.撰寫自駕車程序</th>
+            <th align=center>Search for relevant materials.查找相關資料</th>
+            <th align=center>Write a self-driving car program.撰寫自駕車程序</th>
         </tr>
         <tr>
             <td><img src="./img/3/4.jpg" alt="Searched for relevant information online." width=400 /></td>
@@ -217,11 +231,23 @@ Photos of the system installation, driver downloads, and remote desktop function
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
+### **基礎程序架構完成與 UART 通訊實作** 
 
- - 本周我們撰寫出了基本的程序架構，並且成功使用**UART**的方式搭建了Raspberry Pi Pico和Jetson Nano之間的通訊，將Jetson Nano上的控制指令傳輸到Raspberry Pi Pico。
-    
-    **Jetson Nano端**
-    ```python
+本週，我們已成功撰寫出**自駕車的基礎程序架構**。更重要的是，我們**成功採用 UART（通用非同步收發傳輸器）協議**，搭建並驗證了 **Raspberry Pi Pico 與 Nvidia Jetson Nano** 之間的**穩定通訊機制**。
+
+這項成果使得我們能夠順利地將由 **Nvidia Jetson Nano（主控單元）** 所生成的**控制指令（如速度、轉向等）**，準確地傳輸到 **Raspberry Pi Pico（輔助控制單元）** 進行底層執行。
+
+
+### **Completion of Basic Program Structure and UART Communication Implementation** 
+
+This week, we successfully developed the **basic program architecture for the autonomous car**. Crucially, we **successfully implemented the UART (Universal Asynchronous Receiver-Transmitter) protocol** to establish and verify a **stable communication mechanism between the Raspberry Pi Pico and the Nvidia Jetson Nano**.
+
+This achievement allows us to smoothly and accurately transmit **control commands (such as speed and steering)** generated by the **Nvidia Jetson Nano (Main Control Unit)** to the **Raspberry Pi Pico (Auxiliary Control Unit)** for low-level execution.
+
+#### The UART Program is Shown Below
+
+  **Nvidia Jetson Nano**
+   ```python
     import serial as AC
     import struct
     combined_control_signal = 30
@@ -237,8 +263,8 @@ Photos of the system installation, driver downloads, and remote desktop function
     send_data_value = struct.pack('3i', *data_to_send)
     send_data_value = header + send_data_value
     ser.write(send_data_value)
-    ```
-    **Raspberry Pi Pico端**
+   ```
+   **Raspberry Pi Pico端**
     ```python
     from machine import UART, Pin
     import struct
