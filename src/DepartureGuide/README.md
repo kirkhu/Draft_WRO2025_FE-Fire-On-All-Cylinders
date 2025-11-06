@@ -8,27 +8,27 @@
       * 車輛啟動時，**主控系統 (Jetson Orin Nano)** 會透過攝影機執行影像識別，首先**確定車輛的預設行駛方向**（逆時針或順時針），隨後識別並鎖定**目標賽道路線的顏色**，作為整個任務的基礎。
 
     2.  **逆時針方向 (Counter-Clockwise) 行駛邏輯**
-      * **偵測到綠柱時：** 車輛執行**向左轉 90 度**的換道動作，**前進至綠柱的內側**。隨後，車輛會**向右轉 90 度**，**後退至預定位置**（完成內側換道）。
-      * **偵測到紅柱時：** 車輛執行**前進**，接著**向左轉 90 度**，**前進至紅柱的外側**。隨後，車輛會**後退並向右轉 90 度**，**後退至預定位置**（完成外側換道或避障）。
-      * **未偵測到任何柱子時：** 系統將預設車輛**行駛於車道的外側**。
+      - **偵測到綠柱時：** 車輛執行**向左轉 90 度**的換道動作，**前進至綠柱的內側**。隨後，車輛會**向右轉 90 度**，**後退至預定位置**（完成內側換道）。
+      - **偵測到紅柱時：** 車輛執行**前進**，接著**向左轉 90 度**，**前進至紅柱的外側**。隨後，車輛會**後退並向右轉 90 度**，**後退至預定位置**（完成外側換道或避障）。
+      - **未偵測到任何柱子時：** 系統將預設車輛**行駛於車道的外側**。
 
     3.  **順時針方向 (Clockwise) 行駛邏輯**
-      * **偵測到綠柱時：** 車輛執行**向右轉 90 度**的換道動作，**前進至綠柱的外側**。隨後，車輛會**向左轉 90 度**，**前進至預定位置**（完成外側換道）。
-      * **偵測到紅柱時：** 車輛執行**向右轉 90 度**的換道動作，**前進至紅柱的內側**。隨後，車輛會**向左轉 90 度**，**前進至預定位置**（完成內側換道）。
-      * **未偵測到任何柱子時：** 系統將預設車輛**行駛於車道的外側**。
+      - **偵測到綠柱時：** 車輛執行**向右轉 90 度**的換道動作，**前進至綠柱的外側**。隨後，車輛會**向左轉 90 度**，**前進至預定位置**（完成外側換道）。
+      - **偵測到紅柱時：** 車輛執行**向右轉 90 度**的換道動作，**前進至紅柱的內側**。隨後，車輛會**向左轉 90 度**，**前進至預定位置**（完成內側換道）。
+      - **未偵測到任何柱子時：** 系統將預設車輛**行駛於車道的外側**。
     ### 英文:
     1.  **System Startup and Direction Determination (Jetson Orin Nano Responsibility)**
-      * When the vehicle starts, the **main control system (Jetson Orin Nano)** performs image recognition via the camera to first **determine the vehicle's default driving direction** (Counter-Clockwise or Clockwise). Subsequently, it identifies and locks onto the **color of the target track line**, which serves as the basis for the entire mission.
+      - When the vehicle starts, the **main control system (Jetson Orin Nano)** performs image recognition via the camera to first **determine the vehicle's default driving direction** (Counter-Clockwise or Clockwise). Subsequently, it identifies and locks onto the **color of the target track line**, which serves as the basis for the entire mission.
 
     2.  **Counter-Clockwise (CCW) Driving Logic**
-      * **Upon detecting a Green Pillar:** The vehicle executes a **90-degree turn to the left** for a lane change, **driving forward to the inner side of the Green Pillar**. Subsequently, the vehicle **turns 90 degrees to the right** and **reverses to a predetermined position** (completing the inner lane change).
-      * **Upon detecting a Red Pillar:** The vehicle **drives forward**, then **turns 90 degrees to the left**, **driving forward to the outer side of the Red Pillar**. Subsequently, the vehicle **reverses, turns 90 degrees to the right**, and **reverses to a predetermined position** (completing the outer lane change or avoidance).
-      * **When no pillars are detected:** The system defaults the vehicle to **drive on the outer side of the lane**.
+      - **Upon detecting a Green Pillar:** The vehicle executes a **90-degree turn to the left** for a lane change, **driving forward to the inner side of the Green Pillar**. Subsequently, the vehicle **turns 90 degrees to the right** and **reverses to a predetermined position** (completing the inner lane change).
+      - **Upon detecting a Red Pillar:** The vehicle **drives forward**, then **turns 90 degrees to the left**, **driving forward to the outer side of the Red Pillar**. Subsequently, the vehicle **reverses, turns 90 degrees to the right**, and **reverses to a predetermined position** (completing the outer lane change or avoidance).
+      - **When no pillars are detected:** The system defaults the vehicle to **drive on the outer side of the lane**.
 
     3.  **Clockwise (CW) Driving Logic**
-      * **Upon detecting a Green Pillar:** The vehicle executes a **90-degree turn to the right** for a lane change, **driving forward to the outer side of the Green Pillar**. Subsequently, the vehicle **turns 90 degrees to the left** and **drives forward to a predetermined position** (completing the outer lane change).
-      * **Upon detecting a Red Pillar:** The vehicle executes a **90-degree turn to the right** for a lane change, **driving forward to the inner side of the Red Pillar**. Subsequently, the vehicle **turns 90 degrees to the left** and **drives forward to a predetermined position** (completing the inner lane change).
-      * **When no pillars are detected:** The system defaults the vehicle to **drive on the outer side of the lane**.
+      - **Upon detecting a Green Pillar:** The vehicle executes a **90-degree turn to the right** for a lane change, **driving forward to the outer side of the Green Pillar**. Subsequently, the vehicle **turns 90 degrees to the left** and **drives forward to a predetermined position** (completing the outer lane change).
+      - **Upon detecting a Red Pillar:** The vehicle executes a **90-degree turn to the right** for a lane change, **driving forward to the inner side of the Red Pillar**. Subsequently, the vehicle **turns 90 degrees to the left** and **drives forward to a predetermined position** (completing the inner lane change).
+      - **When no pillars are detected:** The system defaults the vehicle to **drive on the outer side of the lane**.
 - **Code running on the Raspberry Pi Pico W controller.-在 Raspberry Pi Pico W 控制器上執行的程式碼。**
     ```
 
