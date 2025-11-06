@@ -1125,16 +1125,16 @@ sudo apt-get -y install sdkmanager
             <th colspan=2>設計第五代PCB電路板</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Design Circuit.jpg" height=250 /></td>
-            <td><img src="./img/9/Circuit PCB.png" height=250 /></td>
+            <td><img src="./img/9/Design Circuit.jpg" width=100% /></td>
+            <td><img src="./img/9/Circuit PCB.png" width=100% /></td>
         </tr>
         <tr>
             <th>電路原理圖</th>
             <th>電路PCB分佈圖</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Schematic_Version_5.png" height=100%/></td>
-            <td><img src="./img/9/PCB_Version_5.png" height=100%/></td>
+            <td><img src="./img/9/Schematic_Version_5.png" /></td>
+            <td><img src="./img/9/PCB_Version_5.png" /></td>
         </tr>
         <tr>
             <th>使用 8K 3D打印機</th>
