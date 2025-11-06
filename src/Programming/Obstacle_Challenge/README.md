@@ -49,7 +49,8 @@ Based on the characteristics of each control board, we distributed the complex o
           contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
           return contours
       ```
-    - max_contour()此函數用於從一個輪廓列表（contours）中，尋找面積最大的有效輪廓。它會過濾掉面積小於 150 的輪廓。對於合格的輪廓，該函數會計算其面積和相對於原始影像的中心底部座標（maxX, maxY），最終返回最大面積及其對應的座標及輪廓物件本身，作為循跡或目標識別的依據。
+    - 此函式首先**篩選**掉所有**面積小於 150 的雜訊輪廓**。對於符合標準的輪廓，它會計算其**面積**以及相對於**原始影像的中心底部座標 (`maxX`, `maxY`)**。最終，函式會**返回**最大面積的數值、其對應的校正座標，以及該**輪廓物件本身**，作為車輛進行**循跡導航或目標識別**的關鍵依據。
+    - The **`max_contour()` function** is used to **identify and select the largest valid target contour** from an input **list of contours (`contours`)**.The function first **filters out** all **noise contours** with an **area less than 150**. For the qualified contours, it calculates their **area** and the **center-bottom coordinates (`maxX`, `maxY`)** relative to the original image. Finally, the function **returns** the value of the largest area, its corresponding corrected coordinates, and the **contour object itself**, serving as the key basis for the vehicle's **line following or target recognition**.
       ```
       def max_contour(contours, ROI):
           maxArea = 0; maxY = 0; maxX = 0; mCnt = 0
