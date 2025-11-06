@@ -117,7 +117,6 @@ Design Reference Sources: We reviewed the engineering documentation from our sch
 
 下方附有系統安裝、驅動程式下載及遠端桌面功能測試的照片作為佐證。
 
----
 
 ### **System Deployment and Remote Development Environment Setup** 
 
@@ -149,15 +148,29 @@ Photos of the system installation, driver downloads, and remote desktop function
 **Content:** 
 
 
-### 第一代 PCB 設計的挑戰與學習** 💡
+### 第一代 PCB 設計的挑戰與學習** 
 
 * 為了**避免使用電木板焊接時可能導致的控制器短路損毀**，並追求**更整潔、更易於配置**的電路板佈局，我們決定採用 **EasyEDA 軟體繪製印刷電路板（PCB）**，並透過**化學蝕刻（洗印）**製程完成了**第一代電路板**的製作。
+<div align="center">
+    <table>
+        <tr align=center>
+            <th width=50% style="text-align: center;">Jetson  Nano Software Environment Installation</th>
+            <th width=50% style="text-align: center;">Jetson  Nano Software Environment Testing</th>
+        </tr>
+        <tr>
+            <td><img src="../../models/Circuit_Design/img/circuit_board_Front_1.png"/></td>
+            <td><img src="../../models/Circuit_Design/img/circuit_board_back_1.png"/></td>
+        </tr>
+    </table>
+</div>
+
+
 * 由於這是團隊**首次**進行 PCB 設計，我們初期**忽略了設計軟體（EasyEDA）內建的標準元件排版範例**。我們轉而依賴**手動測量排針間距**作為設計依據。然而，由於**經驗尚淺**，在首代電路板製作完成後，我們才發現**間距設定過小**，最終導致電子元件**無法順利插裝**。
 * 儘管遭遇了這次失誤，它卻提供了**寶貴的實戰經驗**。這促使我們立即啟動**設計修正與優化流程**，並隨即將修正後的設計送廠製作了**第二代版本**。
 
----
 
-### **英文翻譯：Challenges and Learning from the First Generation PCB Design** 🌐
+
+### **Challenges and Learning from the First Generation PCB Design** 
 
 * To **prevent potential short-circuit damage to the controllers caused by soldering on pegboards** and to achieve a **cleaner, more configurable** board layout, we decided to use **EasyEDA software to draw the Printed Circuit Board (PCB)**. We then produced the **first generation circuit board** using the **chemical etching process**.
 * As this was the team's **first time** designing a PCB, we initially **overlooked the standard component layout templates built into the design software (EasyEDA)**. Instead, we relied on **manual measurement of the pin header pitch** as the design basis. However, due to our **limited experience**, we only discovered after the first-generation board was fabricated that the **pitch setting was too small**, ultimately preventing the electronic components from being properly inserted.
