@@ -839,11 +839,7 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
-好的，這是對您的全國賽參賽歷程與成果的內容所進行的文詞修飾與專業翻譯。
-
----
-
-### **中文文章修飾：全國賽歷程、挑戰與晉級成果** 🏆
+### **全國賽歷程、挑戰與晉級成果** 🏆
 
 我們的全國賽於 **8 月 23 日**舉行。儘管過程充滿挑戰，我們仍成功晉級。
 
@@ -860,9 +856,7 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 #### **最終成就與展望**
 就算比賽過程**坎坷不順**，但我們最終成功地以**第一名的排名**脫穎而出，獲得了**代表台灣參加 WRO 未來工程師世界賽**的資格。我們將**充分吸收這次全國賽的實戰經驗與教訓**，以**更好的狀態**去參加世界賽，並以**獲取優異的成績榮耀回國**為目標。
 
----
-
-### **英文翻譯：National Competition Journey, Challenges, and Qualification** 🌐
+### **英National Competition Journey, Challenges, and Qualification**
 
 Our National Competition took place on **August 23rd**. Despite a challenging process, we successfully qualified.
 
@@ -878,11 +872,6 @@ Our National Competition took place on **August 23rd**. Despite a challenging pr
 
 #### **Final Achievement and Outlook**
 Despite a **difficult and challenging competition process**, we successfully secured the **first-place ranking**, earning the qualification to **represent Taiwan in the WRO Future Engineers World Final**. We plan to **fully absorb the practical experience and lessons learned from this National Competition** and aim to participate in the World Final **in better condition**, striving to achieve **outstanding results and bring honor back home**.
-
----
-
-**恭喜您的團隊取得如此優異的成績！請問您是否還有其他需要我協助修飾或翻譯的內容？**
-
 
  <div align=center>
     <table>
