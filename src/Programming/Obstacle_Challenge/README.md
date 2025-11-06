@@ -165,11 +165,12 @@ Based on the characteristics of each control board, we distributed the complex o
 
       __Program operation flow__-程式運行流程
         ### 中文:
-        - Jetson Orin Nano程式啟動後，樹莓派 Pico w 會進入等待狀態，直到Jetson Orin Nano按下按鈕後進入 jetson_Orin_Nano_final.py程式，並透過UART發送馬達數據給樹莓派 Pico w 運行。
-        ### 英文:
-        - When  `pico_main_final.py` starts, it sends a high-frequency signal to the Jetson Orin Nano to trigger the execution of the `jetson_nano_main_final.py` program. Then, `pico_main_final.py` enters a waiting mode until the button is pressed. After pressing the button,`pico_main_final.py` enters the main loop, starts receiving data transmitted via UART from the Jetson Orin Nano, and continues running. When it receives a status value of 5, the Pico takes over vehicle control and performs the parking operation.
+        - 當 **`pico_main_final.py` 程式啟動**時，它會立即進入**硬體等待模式**。程式將持續駐留於此狀態，直到**實體啟動按鈕被按下**。一旦按鈕觸發，**Jetson Orin Nano 控制板**隨即發送啟動訊號給 Pico W 控制板，此時 `pico_main_final.py` 便**進入主循環**，開始**持續接收** Jetson Orin Nano 透過 **UART 介面**傳送來的控制數據，並執行常規的馬達驅動任務。特別地，當接收到的**狀態參數為 `mode=3`** 時，**Pico W 將接手車輛的完整控制權**，並獨立執行**泊車（入庫）操作**。
 
-    - ##### Program Operation flowchart of the Raspberry Pi Pico W controller-樹莓派 Pico W 控制器的程式操作流程圖
+        ### 英文:
+        - Upon the **start of the `pico_main_final.py` program**, it immediately enters a **hardware waiting mode**. The program remains in this state until the **physical start button is pressed**. Once triggered, the **Jetson Orin Nano controller** sends an activation signal to the Pico W controller. At this point, `pico_main_final.py` **enters its main loop**, beginning to **continuously receive** control data transmitted by the Jetson Orin Nano via the **UART interface**, and executes routine motor driving tasks.Specifically, when the received **status parameter is `mode=3`**, the **Pico W takes over the vehicle's full control authority** and independently executes the **parking (bay entry) operation**.
+
+    - ##### Raspberry Pi Pico W Controller Program Flowchart-樹莓派 Pico W 控制器的程式流程圖
         ![FE-obstacle_challenge_Pico](./img/FE-obstacle_challenge_Pico.jpg)
 
        **set_servo_angle():** <br>
