@@ -1316,11 +1316,9 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
 
     ```
 
- - ## 設置AP - 使用自動腳本
+ - ## 設置AP - 使用自動腳本 [Set_AP.sh](../../src/System_Platform_Software/code/Set_AP.sh)
 
     ```bash
-    curl -fsSL -u "if0_39931049:microhack188" -o "Set_AP.sh" "ftp://ftpupload.net/htdocs/UserData/WRO2025-Orin/Set_Orin_AP_AutoStart.sh" # 獲取配置腳本
-
     sudo bash ./Set_AP.sh # 執行腳本進行配置及啟用動作
     ```
 
