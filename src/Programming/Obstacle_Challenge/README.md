@@ -65,10 +65,14 @@ Based on the characteristics of each control board, we distributed the complex o
                       maxArea = area; maxY = y; maxX = x; mCnt = cnt
           return [maxArea, maxX, maxY, mCnt]
       ```
-    - 該函數用於在影像的特定區域 (ROI) 中偵測複合輪廓，主要針對黑色和洋紅色。它會根據參數 add 決定如何組合這兩種顏色：
-      - 如果 add=True，則合併（add）黑色和洋紅色的區域來尋找輪廓。
-      - 如果 add=False，則尋找純黑色區域（即黑色區域減去被洋紅色覆蓋的部分）。
-      - 無論哪種情況，它都會對結果遮罩進行運算和運算處理以優化形狀，最終提取並返回外部輪廓，主要用於牆壁或特殊標記的偵測。
+    - **`pOverlap()` 函式**用於在影像的**特定感興趣區域 (ROI)** 中，**偵測包含黑色和洋紅色組合的複合輪廓**，主要應用於牆壁或特殊標記的識別。此函式根據布林參數 `add` 的值，來決定如何處理這兩種顏色的區域：
+    1.  **若 `add=True`：** 函式會將**黑色區域與洋紅色區域進行邏輯合併 (Union)**，以尋找融合後的複合輪廓。
+    2.  **若 `add=False`：** 函式會尋找**純黑色區域**，即**從黑色區域中減去 (Subtract) 被洋紅色覆蓋的部分**。
+    - 無論選擇哪種組合方式，函式都會對最終產生的遮罩執行**運算（通常指腐蝕和膨脹）**處理來**優化輪廓形狀**，最後**提取並返回外部輪廓**。
+    - The **`pOverlap()` function** is used to **detect composite contours** that involve a combination of black and magenta within a **specific Region of Interest (ROI)** in an image, primarily intended for the detection of walls or special markers.The function determines how to combine these two color regions based on the boolean parameter `add`:
+    1.  **If `add=True`:** The function **logically combines (Union)** the black and magenta areas to find the resulting composite contours.
+    2.  **If `add=False`:** The function searches for the **pure black area**, which means **subtracting the portion covered by magenta from the black area**.
+    - In either scenario, the function performs **morphological operations (implied erosion and dilation)** on the resulting mask to **optimize the contour shape**. Finally, it **extracts and returns the external contours**.
       ```
       def pOverlap(img_lab, ROI, add=False):
           x1, y1, x2, y2 = ROI
