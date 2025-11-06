@@ -1304,21 +1304,52 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
 
  **Content:**
 
- - 我們再進行出發程序撰寫時發現自駕車會有出發時容易觸碰停車場方塊的情況，因此我們先嘗試修改整體機器人的軸距，將底板上的空位刪除以縮短軸距。經過測試之後問題有減緩但是容許誤差還是太小，因此我們修改的轉向結構中拉桿的極限方塊，將方塊縮小讓轉向結構有更多空間可以轉動。與此同時我們在測試中發現一個問題，如果自駕車出現誤判導致撞牆、方塊時都是紅外線感測器先波及到，因此我們在設計上將前方的紅外線固定區塊縮短並且在底板上延伸出19mm的區塊讓紅外線不會因為誤判而導致撞擊損壞。
+### **全國賽後機型優化與系統穩定性提升** 
 
- - 本週我們再進行程式測試時，遇到陀螺儀數值讀取一直為0的狀態，經過相關技術文件查詢和實際電路測試後發現，BNO055的電路未形成正確的迴路。我們的電路是BNO055的VIN腳位由Raspberry Pi Pico W提供、GND和PCB上的原件共地，這樣的電路並未形成正確迴路。因此我們會再新一代電路板上將BNO055的電路使用排線腳位獨立連接到Jetson Orin Nano上的GPIO腳位上。
+#### **1. 機構與感測器保護優化**
+* **縮短軸距與轉向修正：** 在撰寫出發程序時，我們發現自駕車容易觸碰停車場方塊。為此，我們首先**嘗試修改整體機器人的軸距**，通過**刪除底板上的空位來縮短軸距**。問題雖有減緩，但容許誤差仍小。因此，我們進一步修改了轉向結構中**拉桿的極限方塊**，將方塊**縮小**以賦予轉向結構**更多轉動空間**。
+* **紅外線感測器保護：** 在測試中發現，自駕車出現誤判導致**撞牆或撞方塊時，紅外線感測器會先受到波及**。因此，我們在設計上**將前方的紅外線固定區塊縮短**，並在**底板上延伸出 19 mm 的區塊**，以防止紅外線感測器因撞擊而損壞。
 
- - 由於我們的自駕車已經採用WebSocket進行數據傳輸，因此網路天線對我們的自駕車來說就非常重要，但是目前使用的網路接收器是使用TPLink的AC1300，其長度就有約18CM左右，所以我們在網路上找到了另外一種網路接收器，ASUS的AC1200，其大小只有2CM*1.5CM，因此我們將網路接收器更換為ASUS的AC1200。
+#### **2. 通訊硬體更換與優化**
+* **網路接收器更換：** 由於自駕車採用 **WebSocket 進行數據傳輸**，網路天線至關重要。但原使用的 **TP-Link AC1300 接收器長度約 18 CM 左右**，體積過大。我們在網路上找到體積只有 $2 \text{CM} \times 1.5 \text{CM}$ 的 **ASUS AC1200 接收器**，並將其替換。
 
- - 由於我們的鏡頭支架是使用樂高零件進行組裝，這樣我們的鏡頭支架會有意外被拆開的情況，因此我們使用Onshape繪畫鏡頭支架模組，總共分為兩個元件：鏡頭固定板、鏡頭支架主體。我們為了之後如果需要調整鏡頭可視角度的需求，在鏡頭支架模組上繪畫可調整角度的滑軌。
+#### **3. 鏡頭支架客製化設計**
+* **設計需求：** 原先使用的鏡頭支架是**樂高零件組裝**而成，容易意外被拆開。
+* **客製化實作：** 我們使用 **Onshape 繪製了鏡頭支架模組**，該模組分為**鏡頭固定板**與**鏡頭支架主體**兩個元件。
+* **功能優化：** 為了預留未來調整鏡頭可視角度的需求，我們在鏡頭支架模組上繪製了**可調整角度的滑軌**。
 
- - 我們再進行測試時發現，我們當初未進行Jetson Orin Nano網路設置為AP模式，一直都是使用手機作為網路傳輸媒介，後來我們透過網路查找到Jetson Orin Nano要如何切換到AP模式的指令，成功啟動AP之後也設置了讓AP自行啟動的行為。下面是手動設置及使用自動腳本的指令。
+#### **4. Jetson Orin Nano 網路 AP 模式設定**
+* **問題發現：** 在測試中，我們發現最初**未將 Jetson Orin Nano 網路設置為 AP（Access Point）模式**，一直都是使用手機作為網路傳輸媒介。
+* **AP 模式設置：** 透過網路查找，我們成功啟動了 **Jetson Orin Nano 的 AP 模式**，並設置了讓 AP 自行啟動的行為。
+
+下方是手動設置及使用自動腳本的指令。
+
+
+### **Post-National Competition Model Optimization and System Stability Enhancement** 
+
+#### **1. Mechanism and Sensor Protection Optimization**
+* **Shortening Wheelbase and Steering Correction:** While coding the exit procedure, we noticed the car was prone to colliding with parking blocks. We initially attempted to **modify the robot's overall wheelbase** by **removing empty space on the base plate to shorten the wheel distance**. Although the issue was mitigated, the tolerance remained too small. Thus, we further modified the **limit block of the steering linkage**, **reducing its size** to give the steering mechanism **more rotation space**.
+* **Infrared Sensor Protection:** During testing, we found that if the autonomous car malfunctioned and **collided with a wall or block, the infrared sensors were usually the first to be damaged**. To protect them, we **shortened the front infrared mounting block** and **extended the base plate by 19 mm**, preventing the infrared sensors from sustaining impact damage due to erroneous judgment.
+
+#### **2. Communication Hardware Replacement and Optimization**
+* **Network Receiver Swap:** Since the autonomous car uses **WebSocket for data transmission**, the network antenna is critical. However, the original **TP-Link AC1300 receiver was about 18 CM long**, making it bulky. We found an alternative, the **ASUS AC1200 receiver**, which is only $2 \text{CM} \times 1.5 \text{CM}$ in size, and **replaced the original receiver with the ASUS AC1200**.
+
+#### **3. Customized Camera Bracket Design**
+* **Design Requirement:** The original camera bracket was **assembled using LEGO parts**, making it prone to accidental disassembly.
+* **Custom Implementation:** We used **Onshape to design a custom camera bracket module**, consisting of two components: the **lens mounting plate** and the **main bracket body**.
+* **Functional Enhancement:** To allow for future adjustments to the camera's viewing angle, we designed **angle-adjustable sliding rails** into the bracket module.
+
+#### **4. Jetson Orin Nano Network AP Mode Setup**
+* **Issue Discovered:** During testing, we realized the **Jetson Orin Nano's network had not been set to AP (Access Point) mode**; we were instead using a mobile phone as the network transmission medium.
+* **AP Mode Setup:** By searching online, we successfully found the commands to enable the **Jetson Orin Nano's AP mode** and configured it for **automatic startup**.
+
+The commands for manual setup and using the auto-script are provided below.
 
  <div align=center>
     <table>
         <tr>
-            <th>第三代底盤</th>
-            <th>第三代中板</th>
+            <th>The Optimized and Revised Vehicle Bottom Wooden Layer - 經優化修正後的車輛底層木板</th>
+            <th>The Revised Vehicle Mid-Layer Wooden Plate - 經修正優化後的車輛中央層木板</th>
         </tr>
         <tr>
             <td align=center><img src="./img/9/Driver Board 3.jpg" width=500 /></td>
