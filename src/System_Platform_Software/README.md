@@ -42,9 +42,9 @@
       <th>Select Dev Kit - Select the target Developer Kit in the interface. - 選擇套件-在介面中選擇目標開發者套件（Developer Kit）。</th>
       </tr>
       <tr>
-      <td><img src="../../src/System_Platform_Software/img/11.jpg" width=400 /></td>
-      <td><img src="../../src/System_Platform_Software/img/12.png" width=400 /></td>
-      <td><img src="../../src/System_Platform_Software/img/13.png" width=400 /></td>
+      <td><img src="./img/11.jpg" width=400 /></td>
+      <td><img src="./img/12.png" width=400 /></td>
+      <td><img src="./img/13.png" width=400 /></td>
       </tr>
       <tr>
       <th>Choose Version - Select the desired JetPack version from the menu for installation or downgrade. -  選擇版本 - 在選單中選中所需的 JetPack 版本進行安裝或降級。</th>
@@ -52,9 +52,9 @@
       <th>Enter Password - Enter the administrator password as prompted. - 輸入密碼-依照提示輸入管理者密碼。</th>
       </tr>
       <tr>
-      <td><img src="../../src/System_Platform_Software/img/14.png" width=400 /></td>
-      <td><img src="../../src/System_Platform_Software/img/15.png" width=400 /></td>
-      <td><img src="../../src/System_Platform_Software/img/16.png" width=400></td>
+      <td><img src="./img/14.png" width=400 /></td>
+      <td><img src="./img/15.png" width=400 /></td>
+      <td><img src="./img/16.png" width=400></td>
       </tr>
       <tr>
       <th>Fill Info - Fill in the relevant information for the target board. - 填寫資訊-填入目標主機板的相關資訊。</th>
@@ -62,9 +62,9 @@
       <th>System Interface - The Jetson Orin Nano system interface after installation is complete (Result presentation). - 系統介面-安裝完畢後的 Jetson Orin Nano 系統介面（此為結果呈現）。</th>
       </tr>
       <tr>
-      <td><img src="../../src/System_Platform_Software/img/17.png" width=400 /></td>
-      <td><img src="../../src/System_Platform_Software/img/18.png" width=450 /></td>
-      <td><img src="../../src/System_Platform_Software/img/19.png" width=500 /></td>
+      <td><img src="./img/17.png" width=400 /></td>
+      <td><img src="./img/18.png" width=450 /></td>
+      <td><img src="./img/19.png" width=500 /></td>
       </tr>
       </table>
       </div>
