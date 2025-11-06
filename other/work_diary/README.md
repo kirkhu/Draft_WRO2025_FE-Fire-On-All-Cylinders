@@ -3,7 +3,7 @@
 # <div align="center">Work Diary-工作日記</div>
 以下是本次自動駕駛汽車模型設計與任務解決的開發記錄，涵蓋了機械設計與製造、電路設計與實現、電子裝置選型、程式設計與測試以及整體的解題過程。
 
-- ### 自動駕駛汽車設計：關鍵升級與迭代
+ ### 自動駕駛汽車設計：關鍵升級與迭代
   這款自動駕駛汽車設計建立在從前輩團隊（Shinan-Fire-On-All-Cylinders ）繼承的豐富經驗之上，並融入了我去年參加世界大賽的實踐經驗。
   我們不僅借鑒了上一年冠軍隊伍的成功要素，還實施了關鍵的技術迭代：
   * **控制器升級：**主控制器已從標準的 Jetson Orin Nano 升級為性能更優越的 Nvidia Jetson Orin Nano。
@@ -74,7 +74,7 @@ By simplifying the overall structure, we achieved multiple benefits:
 <tr align="center">
 <th>2024 World Championship Vehicle Model</th>
 <th>2025 National Competition Vehicle Model</th>
-<th>2025 National Competition Vehicle Model</th>
+<th>Team Research and Data Review Process Documentation - 團隊研究與資料查閱過程記錄</th>
 </tr>
 <tr align="center">
 <td><img src="./img/2/Last_year's.png"  width="300" alt="Vehicle_cad"></td> 
@@ -88,10 +88,9 @@ By simplifying the overall structure, we achieved multiple benefits:
 - 為了奠定本專案的設計基礎與優化方向，我們進行了以下參考與分析：
 設計參考來源： 我們查閱了學校歷屆團隊的工程文件，並對去年世界冠軍隊伍的技術文件進行了深入分析 。
 - 技術發現與修正方向：
-
    - 影像辨識： 我們發現去年世界優勝隊伍在影像辨識技術上處理得極為正確且高效，這是一個值得我們深度學習的領域。因此，我們確立將此技術方向作為我們的主要修正與提升方向。
-
    - 機型體積與避障： 此外，我們觀察到有部分隊伍的機型體積遠小於我們的機型。在避開障礙物的能力上，這些小型機型展現出更優越的性能。
+
 **Design Reference, Technical Findings, and Correction Strategy**
 - To establish the design foundation and optimization direction for this project, we conducted the following referencing and analysis:
 Design Reference Sources: We reviewed the engineering documentation from our school's past teams and conducted a deep analysis of the technical files from last year's world champion team.
@@ -108,7 +107,7 @@ Design Reference Sources: We reviewed the engineering documentation from our sch
 
 **Content:**
 
-### **系統部署與遠端開發環境建置** 💻
+### **系統部署與遠端開發環境建置** 
 
 本週的工作重點在於**系統安裝**與**驅動程式下載**。
 
@@ -149,15 +148,24 @@ Photos of the system installation, driver downloads, and remote desktop function
 
 **Content:** 
 
-- 為了避免使用電木板焊接時可能導致的控制器短路損毀，並實現更整潔、更易於配置的電路板佈局，我們決定採用 EasyEDA 繪製 PCB，並透過**化學蝕刻（洗印）**製作了第一代電路板。
-- 由於這是團隊首次進行 PCB 設計，我們初期忽略了設計軟體內建的標準元件排版範例，轉而依賴手動測量排針間距作為設計依據。然而，由於經驗尚淺，首代電路板在製作完成後才發現間距設定過小，導致元件無法順利插裝。
-- 這次失誤提供了寶貴的實戰經驗，促使我們立即啟動設計修正與優化流程，並隨即送廠製作了第二代版本。
 
-- To prevent controller short-circuit damage that could result from soldering on perfboard (bakelite board), and to achieve a neater and more easily configurable circuit board layout, we opted to use EasyEDA for PCB layout, producing the first-generation board via chemical etching (PCB fabrication).
+### 第一代 PCB 設計的挑戰與學習** 💡
 
-- As this was the team's initial foray into PCB design, we initially overlooked the standard component placement examples built into the design software, relying instead on manually measuring the spacing between pin headers as our basis. However, due to inexperience, we discovered after the first board was fabricated that the spacing was set too narrowly, resulting in the inability to successfully insert the components.
+* 為了**避免使用電木板焊接時可能導致的控制器短路損毀**，並追求**更整潔、更易於配置**的電路板佈局，我們決定採用 **EasyEDA 軟體繪製印刷電路板（PCB）**，並透過**化學蝕刻（洗印）**製程完成了**第一代電路板**的製作。
+* 由於這是團隊**首次**進行 PCB 設計，我們初期**忽略了設計軟體（EasyEDA）內建的標準元件排版範例**。我們轉而依賴**手動測量排針間距**作為設計依據。然而，由於**經驗尚淺**，在首代電路板製作完成後，我們才發現**間距設定過小**，最終導致電子元件**無法順利插裝**。
+* 儘管遭遇了這次失誤，它卻提供了**寶貴的實戰經驗**。這促使我們立即啟動**設計修正與優化流程**，並隨即將修正後的設計送廠製作了**第二代版本**。
 
-- This error provided invaluable practical experience, immediately driving us to initiate a design revision and optimization process, followed by sending the updated design for the fabrication of the second-generation board.
+---
+
+### **英文翻譯：Challenges and Learning from the First Generation PCB Design** 🌐
+
+* To **prevent potential short-circuit damage to the controllers caused by soldering on pegboards** and to achieve a **cleaner, more configurable** board layout, we decided to use **EasyEDA software to draw the Printed Circuit Board (PCB)**. We then produced the **first generation circuit board** using the **chemical etching process**.
+* As this was the team's **first time** designing a PCB, we initially **overlooked the standard component layout templates built into the design software (EasyEDA)**. Instead, we relied on **manual measurement of the pin header pitch** as the design basis. However, due to our **limited experience**, we only discovered after the first-generation board was fabricated that the **pitch setting was too small**, ultimately preventing the electronic components from being properly inserted.
+* Despite this setback, this failure provided **invaluable hands-on experience**. It prompted us to immediately launch the **design correction and optimization process**, and the revised design was subsequently sent to the factory for the **second-generation version**.
+
+---
+
+**請問您對這次的修飾與翻譯是否滿意？**
 <div align="center" >
     <table >
         <tr align="center">
