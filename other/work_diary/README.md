@@ -148,25 +148,19 @@ Photos of the system installation, driver downloads, and remote desktop function
 **Content:** 
 
 
-### 第一代 PCB 設計的挑戰與學習** 
+第二代電路設計與學習
 
-* 為了**避免使用電木板焊接時可能導致的控制器短路損毀**，並追求**更整潔、更易於配置**的電路板佈局，我們決定採用 **EasyEDA 軟體繪製印刷電路板（PCB）**，並透過**化學蝕刻（洗印）**製程完成了**第一代電路板**的製作。
+為了避免使用電木板焊接時可能導致的控制器短路損毀，並追求更整潔、更易於配置的電路板佈局，我們決定採用 EasyEDA 軟體繪製印刷電路板（PCB），並透過化學蝕刻（洗印）製程完成了第二代電路板的製作。
 
+由於這是團隊首次進行 PCB 設計，我們初期忽略了設計軟體（EasyEDA）內建的標準元件排版範例。我們轉而依賴手動測量排針間距作為設計依據。然而，由於經驗尚淺，在首代電路板製作完成後，我們才發現間距設定過小，最終導致電子元件無法順利插裝。
 
-* 由於這是團隊**首次**進行 PCB 設計，我們初期**忽略了設計軟體（EasyEDA）內建的標準元件排版範例**。我們轉而依賴**手動測量排針間距**作為設計依據。然而，由於**經驗尚淺**，在首代電路板製作完成後，我們才發現**間距設定過小**，最終導致電子元件**無法順利插裝**。
-* 儘管遭遇了這次失誤，它卻提供了**寶貴的實戰經驗**。這促使我們立即啟動**設計修正與優化流程**，並隨即將修正後的設計送廠製作了**第二代版本**。
-
-
-
-### **Challenges and Learning from the First Generation PCB Design** 
-
-* To **prevent potential short-circuit damage to the controllers caused by soldering on pegboards** and to achieve a **cleaner, more configurable** board layout, we decided to use **EasyEDA software to draw the Printed Circuit Board (PCB)**. We then produced the **first generation circuit board** using the **chemical etching process**.
+儘管遭遇了這次失誤，它卻提供了寶貴的實戰經驗。這促使我們立即啟動設計修正與優化流程，並隨即將修正後的設計送廠製作了第三代版本。
 
 <div align="center">
     <table>
         <tr align=center>
-            <th width=50% style="text-align: center;">PCB 電路板原型 - 正面</th>
-            <th width=50% style="text-align: center;">PCB 電路板原型 - 背面</th>
+            <th width=50% style="text-align: center;">Initial Design V1.0 (Pegboard) - Front View</th>
+            <th width=50% style="text-align: center;">Initial Design V1.0 (Pegboard) - Back View</th>
         </tr>
         <tr>
             <td><img src="../../models/Circuit_Design/img/circuit_board_Front_1.png"/></td>
@@ -175,14 +169,11 @@ Photos of the system installation, driver downloads, and remote desktop function
     </table>
 </div>
 
-* As this was the team's **first time** designing a PCB, we initially **overlooked the standard component layout templates built into the design software (EasyEDA)**. Instead, we relied on **manual measurement of the pin header pitch** as the design basis. However, due to our **limited experience**, we only discovered after the first-generation board was fabricated that the **pitch setting was too small**, ultimately preventing the electronic components from being properly inserted.
-* Despite this setback, this failure provided **invaluable hands-on experience**. It prompted us to immediately launch the **design correction and optimization process**, and the revised design was subsequently sent to the factory for the **second-generation version**.
-
 <div align="center" >
     <table >
         <tr align="center">
-            <th>First-Generation PCB Front View</th>
-            <th>First-Generation PCB Back View</th>
+            <th>Second-Generation Design V2.0 (PCB) - Front View</th>
+            <th>Second-Generation Design V2.0 (PCB) - Back View</th>
         </tr>
         <tr align="center">
             <td><img src="./img/4/1.png" width = "300"  alt="First-Generation PCB Front View" align=center /></td>
@@ -315,31 +306,20 @@ This week, team member **HU,SIAN-YI** successfully completed the **operating sys
 
 ---
 
-### **第二代 PCB 佈局失誤修正與 UART 傳輸優化** 
+第三代 PCB 佈局失誤修正與 UART 傳輸優化
+1. 第三代 PCB（V3.0）佈局失誤與修正
+在 第二代版本 的開發過程中，我們根據第一代的回饋，利用設計軟體內建的標準範例圖重新校準了排針間距，成功改善了原始設計的錯誤。
 
-#### **1. 第二代 PCB（V2.0）佈局失誤與修正**
-在 **第二代版本** 的開發過程中，我們根據**第一代的回饋**，利用設計軟體內建的**標準範例圖**重新校準了**排針間距**，成功改善了原始設計的錯誤。
+然而，由於作業上的疏忽，我們在進行 PCB 佈局時誤將背面視圖當作正面設計，導致電路板輸出後發生了極性顛倒的重大問題。所幸，此錯誤在組裝與測試階段便被立即發現。我們隨即在第三代版本中修正了佈局方向，並全面複查了各層的對齊規範，以確保設計檔案與最終的實體成品能夠完全一致。
 
-然而，由於**作業上的疏忽**，我們在進行 PCB 佈局時**誤將背面視圖當作正面設計**，導致電路板輸出後發生了**極性顛倒**的重大問題。所幸，此錯誤在**組裝與測試階段**便被立即發現。我們隨即在**第三代版本**中修正了佈局方向，並**全面複查了各層的對齊規範**，以確保設計檔案與最終的實體成品能夠**完全一致**。
-
-#### **2. UART 傳輸問題與持續優化**
-在測試 **UART 數據傳輸**時，我們發現**會有掉資料（Data Loss / Dropping）的情況**。為確保控制指令的傳輸可靠性，我們正在**持續撰寫程式碼，專注於修正這個錯誤問題**，以提升通訊的穩定度。
-
-### **Second Generation PCB Layout Error Correction and UART Transmission Optimization** 
-
-#### **1. Second Generation PCB (V2.0) Layout Error and Correction**
-During the development of the **Second Generation Version**, based on **feedback from the first generation**, we used the design software's built-in **standard example diagrams** to recalibrate the **pin header pitch**, successfully correcting the original design error.
-
-However, due to an **operational oversight**, when implementing the PCB layout, we **mistakenly treated the back view as the front design**, which resulted in a major issue of **reversed polarity** upon board fabrication. Fortunately, this error was discovered immediately during the **assembly and testing phase**. We promptly corrected the layout orientation in the **Third Generation Version** and **comprehensively reviewed the alignment specifications of all layers** to ensure the design file and the final physical product were **completely consistent**.
-
-#### **2. UART Transmission Issue and Ongoing Optimization**
-While testing **UART data transmission**, we discovered **instances of data loss (dropping data)**. To ensure the reliability of control command transmission, we are **continuously developing and debugging the code, focusing on correcting this error** to enhance communication stability.
+2. UART 傳輸問題與持續優化
+在測試 UART 數據傳輸時，我們發現會有掉資料（Data Loss / Dropping）的情況。為確保控制指令的傳輸可靠性，我們正在持續撰寫程式碼，專注於修正這個錯誤問題，以提升通訊的穩定度。
 
 <div align="center" >
     <table>
         <tr>
-            <th>Second-Generation PCB Front View</th>
-            <th>Second-Generation PCB Back View</th>
+            <th>Third-Generation Design V3.0 (PCB) - Front View</th>
+            <th>Third-Generation Design V3.0 (PCB) - Back View</th>
         </tr>
         <tr align="center">
             <td>
@@ -750,9 +730,9 @@ if combined_control_signal < -180:
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
-### **主電路板第四代版本功能測試成果** 
+主電路板第四代版本功能測試成果
 
-在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，**主電路板的第三代版本（V4.0）已成功通過功能測試**。實際運行測試的結果顯示，**排針接點與電路佈局均無異常**，且**系統可穩定運作**。
+在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，主電路板的第四代版本（V4.0）已成功通過功能測試。實際運行測試的結果顯示，排針接點與電路佈局均無異常，且系統可穩定運作。
 
 ### **Main Circuit Board Fourth Generation Functional Test Results** 
 
@@ -761,8 +741,8 @@ Following the successful correction of design issues found in the previous two v
 <div align="center" >
     <table >
         <tr align="center">
-            <th>Third-Generation PCB Front View</th>
-            <th>Third-Generation PCB Back View</th>
+            <th>Fourth-Generation Design V4.0 (PCB) - Front View</th>
+            <th>Fourth-Generation Design V4.0 (PCB) - Back View</th>
         </tr>
         <tr align="center">
             <td><img src="./img/6/5.png" width = "300"  alt="data" align=center /></td>
@@ -834,6 +814,7 @@ Following testing, the **new chassis structure incorporating bearings effectivel
        </tr>
     </table>
   </div>
+ 
 
 ## 2025/08/18 ~ 2025/08/24
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
@@ -1016,7 +997,7 @@ A comparison diagram of the two procedures is shown below.
     <table>
         <tr>
             <th>2025 National Competition: Parallel Reverse Parking Procedure Diagram - 2025 年全國賽：平行倒車入庫程序示意圖</th>
-            <th>國際賽停車流程</th>
+            <th>2025 WRO World Final: Diagram of the Parallel Reverse Parking Procedure - 2025 年世界賽：平行倒車入庫程序示意圖</th>
         </tr>
         <tr>
             <td><img src="./img/9/Forward Parking process.png" width=400 /></td>
@@ -1028,16 +1009,16 @@ A comparison diagram of the two procedures is shown below.
  <div align=center>
     <table>
         <tr>
-            <th>細磨球接頭</th>
-            <th>組裝轉向結構</th>
+            <th>Fine Sanding the Ball Joints of the Steering Mechanism - 使用砂紙細磨轉向結構的球形接頭</th>
+            <th>Assembly of the Steering Mechanism - 轉向機構的組裝作業</th>
         </tr>
         <tr>
             <td><img src="./img/9/Structure processing steps 1.jpg" width=400 /></td>
             <td><img src="./img/9/Structure processing steps 2.jpg" width=400 /></td>
         </tr>
         <tr>
-            <th>紫外線固化</th>
-            <th>球形接頭上油</th>
+            <th>Ultraviolet (UV) Post-Curing of 3D Printed Parts - 對 3D 列印零件進行紫外線（UV）後固化處理</th>
+            <th>Applying Silicone Oil to the Ball Joints - 對球形接頭塗抹矽油</th>
         </tr>
         <tr>
             <td><img src="./img/9/Structure processing steps 3.jpg" width=400 /></td>
@@ -1051,12 +1032,31 @@ A comparison diagram of the two procedures is shown below.
 
 **Content:**
 
- - 本週我們向指導教練學習到了如何進行JetPack的升級和降級，不過因為Nvidia SDK Manager必須在實體的Ubuntu主機上才有辦法正常操作，因此老師在社團教室後方架設了一台Ubuntu系統的主機用於操作SDK Manager，以下是如何使用SDK Manager進行JetPack升降級操作流程。
+### **Jetson Nano 系統降級與專用工作站建置** 
+
+由於我們**最新購買的 Nvidia Jetson Nano** 搭載了最新的**作業系統版本（JetPack 6.2.1）**，經過測試發現**並不支援**我們競賽中**重要的設備——IMX477 鏡頭模組**。
+
+為了解決這個關鍵問題，我們決定**降級作業系統至 JetPack 5.1.2 版本**，才能確保鏡頭模組獲得支援並正常運作。
+
+在這個過程中，我們向指導教練學習了**如何進行 JetPack 系統的升級和降級操作流程**。但由於 **Nvidia SDK Manager** 必須在**實體的 Ubuntu 主機上**才能正常操作，指導教練特地在社團教室後方**架設了一台 Ubuntu 系統的主機**，專門用於操作 SDK Manager。
+
+以下是如何使用 SDK Manager 進行 JetPack 升級和降級的操作流程。
+
+
+### **Jetson Nano System Downgrade and Dedicated Workstation Setup** 
+
+As the **newly purchased Nvidia Jetson Nano** was equipped with the **latest operating system version (JetPack 6.2.1)**, testing revealed that it **did not support** the **IMX477 camera module**, a crucial piece of equipment for our competition.
+
+To resolve this critical issue, we decided to **downgrade the operating system to JetPack version 5.1.2**, which ensures that the camera module is supported and fully operational.
+
+During this process, we learned the procedures for **upgrading and downgrading the JetPack system** from our instructor. However, since the **Nvidia SDK Manager** requires a **physical Ubuntu host machine** to function correctly, our instructor specially **set up an Ubuntu system host machine** at the back of the club room, dedicated solely to operating the SDK Manager.
+
+The procedure for using the SDK Manager to perform JetPack upgrades and downgrades is as follows.
 
  <div align=center>
     <table>
         <tr>
-            <th colspan=2>學習如何進行JetPack升降級</th>
+            <th colspan=2>Learning the Operational Procedures for JetPack Operating System Upgrades and Downgrades - 學習 JetPack 作業系統升級與降級的操作程序</th>
         </tr>
         <tr>
             <td><img src="./img/9/Study.jpg" width=400 /></td>
@@ -1065,7 +1065,7 @@ A comparison diagram of the two procedures is shown below.
     </table>
  </div>
 
-  - ### 安裝指令
+- ### Installation Commands 安裝指令
 
  ```bash
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
@@ -1074,48 +1074,48 @@ sudo apt-get update
 sudo apt-get -y install sdkmanager
  ```
 
-  - ### 介面操作
- <div align=center>
-    <table>
-        <tr>
-            <th>將Jetson Orin Nano連接上電腦</th>
-            <th>確認是否連接成功</th>
-            <th>選擇開發者套件</th>
-        </tr>
-        <tr>
-            <td><img src="./img/9/JetPack Process 1.jpg" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 2.png" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 3.png" width=400 /></td>
-        </tr>
-        <tr>
-            <th>在選單中選中所需的JetPack版本</th>
-            <th>勾選左側選項，點擊下一步</th>
-            <th>輸入管理者密碼</th>
-        </tr>
-        <tr>
-            <td><img src="./img/9/JetPack Process 4.png" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 5.png" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 6.png" width=400></td>
-        </tr>
-        <tr>
-            <th>填入主機板的相關資訊</th>
-            <th>安裝完畢後點擊"Finish"結束</th>
-            <th>安裝完畢後的Jetson Orin Nano系統介面</th>
-        </tr>
-        <tr>
-            <td><img src="./img/9/JetPack Process 7.png" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 8.png" width=400 /></td>
-            <td><img src="./img/9/JetPack Process 9.png" width=400 /></td>
-        </tr>
-    </table>
- </div>
+  - ### NVIDIA SDK Manager: Operational Procedure for JetPack OS Upgrades and Downgrades - NVIDIA SDK Manager：JetPack 作業系統升級與降級的操作程序
+<div align=center>
+<table>
+<tr>
+<th>Connect Host - Connect the Jetson Orin Nano controller to the Ubuntu host machine via a USB cable. - 連線主機-將 Jetson Orin Nano 控制器透過 USB 線連接到 Ubuntu 主機。.</th>
+<th>Confirm Connection - Verify that the Jetson Orin Nano is successfully connected and recognized by the SDK Manager. - 確認連線-確認 Jetson Orin Nano 是否成功連線並被 SDK Manager 識別。.</th>
+<th>Select Dev Kit - Select the target Developer Kit in the interface. - 選擇套件-在介面中選擇目標開發者套件（Developer Kit）。</th>
+</tr>
+<tr>
+<td><img src="../../src/System_Platform_Software/img/11.jpg" width=400 /></td>
+<td><img src="../../src/System_Platform_Software/img/12.png" width=400 /></td>
+<td><img src="../../src/System_Platform_Software/img/13.png" width=400 /></td>
+</tr>
+<tr>
+<th>Choose Version - Select the desired JetPack version from the menu for installation or downgrade. -  選擇版本 - 在選單中選中所需的 JetPack 版本進行安裝或降級。</th>
+<th>Check Options - Check the required software components on the left side (such as OS, SDKs), and click "Next". - 勾選選項-勾選左側所需的軟體組件選項（如作業系統、SDKs），然後點擊**「下一步」（Next）**。</th>
+<th>Enter Password - Enter the administrator password as prompted. - 輸入密碼-依照提示輸入管理者密碼。</th>
+</tr>
+<tr>
+<td><img src="../../src/System_Platform_Software/img/14.png" width=400 /></td>
+<td><img src="../../src/System_Platform_Software/img/15.png" width=400 /></td>
+<td><img src="../../src/System_Platform_Software/img/16.png" width=400></td>
+</tr>
+<tr>
+<th>Fill Info - Fill in the relevant information for the target board. - 填寫資訊-填入目標主機板的相關資訊。</th>
+<th>Finish Install - After installation is complete, click "Finish" to exit. - 完成安裝-安裝完畢後，點擊 "Finish" 結束操作。</th>
+<th>System Interface - The Jetson Orin Nano system interface after installation is complete (Result presentation). - 系統介面-安裝完畢後的 Jetson Orin Nano 系統介面（此為結果呈現）。</th>
+</tr>
+<tr>
+<td><img src="../../src/System_Platform_Software/img/17.png" width=400 /></td>
+<td><img src="../../src/System_Platform_Software/img/18.png" width=450 /></td>
+<td><img src="../../src/System_Platform_Software/img/19.png" width=500 /></td>
+</tr>
+</table>
+</div>
 
 ## 2025/09/14 ~ 2025/09/20
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:**
 
- - 由於我們將原本的I/O控制器Raspberry Pi Pico更換為Raspberry Pi Pico WH，因此我們在嘗試將超音波感測器改為紅外線感測器時遇到了腳位無法使用的問題，加上我們要在電路板上新增 **插拔式接線端子** 用來給Jetson Orin Nano連接供電線，所以我們開始進行第五代PCB電路板的設計。
+ - 由於我們將原本的I/O控制器Raspberry Pi Pico更換為Raspberry Pi Pico W，因此我們在嘗試將超音波感測器改為紅外線感測器時遇到了腳位無法使用的問題，加上我們要在電路板上新增 **插拔式接線端子** 用來給Jetson Orin Nano連接供電線，所以我們開始進行第五代PCB電路板的設計。
 
  - 在本週我們發現了 **轉向節** 存在外八的問題，由於第一、二代轉向結構是使用 **8K** 3D打印機打印的，而我們的第三、四代轉向結構是使用 **14K** 3D打印機，因此在列印上會因精度問題而導致列印出來的原件與我們實際設計的還要大一些，也因使用了14K 3D打印機之後 **轉向節** 出現了元件的角度上面比原先設計的角度還要大，因此轉向結構組裝完畢後機器人會出現內八的情況。
 
@@ -1125,22 +1125,30 @@ sudo apt-get -y install sdkmanager
             <th colspan=2>設計第五代PCB電路板</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Design Circuit.jpg" height=250 /></td>
-            <td><img src="./img/9/Circuit PCB.png" height=250 /></td>
+            <td><img src="./img/9/Design Circuit.jpg" height=100% /></td>
+            <td><img src="./img/9/Circuit PCB.png" height=100% /></td>
+        </tr>
+        <tr>
+            <th>電路原理圖</th>
+            <th>電路PCB分佈圖</th>
+        </tr>
+        <tr>
+            <td><img src="./img/9/Schematic_Version_5.png" /></td>
+            <td><img src="./img/9/PCB_Version_5.png" /></td>
         </tr>
         <tr>
             <th>使用 8K 3D打印機</th>
             <th>使用 14K 3D打印機</th>
         </tr>
         <tr>
-            <td align=center><img src="./img/9/steering knuckle 8K.png" width=400 /></td>
-            <td align=center><img src="./img/9/steering knuckle 14K.png" width=400 /></td>
+            <td align=center><img src="./img/9/steering knuckle 8K.png" width=100% /></td>
+            <td align=center><img src="./img/9/steering knuckle 14K.png" width=100% /></td>
         </tr>
         <tr>
             <th colspan=2>轉向結構呈現內八</th>
         </tr>
         <tr>
-            <td colspan=2 align=center><img src="./img/9/Inner Eight.png" width=600 /></td>
+            <td colspan=2 align=center><img src="./img/9/Inner Eight.png" width=100% /></td>
         </tr>
     </table>
  </div>
@@ -1185,10 +1193,21 @@ sudo apt-get -y install sdkmanager
  </div>
 
  <div align=center>
+    <table width=100%>
+        <tr>
+            <th>實際安裝照片</th>
+        </tr>
+        <tr>
+            <td><img src="./img/9/Untrasonic_Car.jpg" width=100% alt="Untrasonic Car" /></td>
+        </tr>
+    </table>
+ </div>
+
+ <div align=center>
     <table>
         <tr>
-            <th>第五代 PCB 電路板(原理圖)</th>
-            <th>第五代 PCB 電路板(PBC分布圖)</th>
+            <th>第六代 PCB 電路板(原理圖)</th>
+            <th>第六代 PCB 電路板(PBC分布圖)</th>
         </tr>
         <tr>
             <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 6.png" height=300 /></td>
