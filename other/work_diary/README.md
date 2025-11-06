@@ -148,25 +148,19 @@ Photos of the system installation, driver downloads, and remote desktop function
 **Content:** 
 
 
-### 第一代 PCB 設計的挑戰與學習** 
+第二代電路設計與學習
 
-* 為了**避免使用電木板焊接時可能導致的控制器短路損毀**，並追求**更整潔、更易於配置**的電路板佈局，我們決定採用 **EasyEDA 軟體繪製印刷電路板（PCB）**，並透過**化學蝕刻（洗印）**製程完成了**第一代電路板**的製作。
+為了避免使用電木板焊接時可能導致的控制器短路損毀，並追求更整潔、更易於配置的電路板佈局，我們決定採用 EasyEDA 軟體繪製印刷電路板（PCB），並透過化學蝕刻（洗印）製程完成了第二代電路板的製作。
 
+由於這是團隊首次進行 PCB 設計，我們初期忽略了設計軟體（EasyEDA）內建的標準元件排版範例。我們轉而依賴手動測量排針間距作為設計依據。然而，由於經驗尚淺，在首代電路板製作完成後，我們才發現間距設定過小，最終導致電子元件無法順利插裝。
 
-* 由於這是團隊**首次**進行 PCB 設計，我們初期**忽略了設計軟體（EasyEDA）內建的標準元件排版範例**。我們轉而依賴**手動測量排針間距**作為設計依據。然而，由於**經驗尚淺**，在首代電路板製作完成後，我們才發現**間距設定過小**，最終導致電子元件**無法順利插裝**。
-* 儘管遭遇了這次失誤，它卻提供了**寶貴的實戰經驗**。這促使我們立即啟動**設計修正與優化流程**，並隨即將修正後的設計送廠製作了**第二代版本**。
-
-
-
-### **Challenges and Learning from the First Generation PCB Design** 
-
-* To **prevent potential short-circuit damage to the controllers caused by soldering on pegboards** and to achieve a **cleaner, more configurable** board layout, we decided to use **EasyEDA software to draw the Printed Circuit Board (PCB)**. We then produced the **first generation circuit board** using the **chemical etching process**.
+儘管遭遇了這次失誤，它卻提供了寶貴的實戰經驗。這促使我們立即啟動設計修正與優化流程，並隨即將修正後的設計送廠製作了第三代版本。
 
 <div align="center">
     <table>
         <tr align=center>
-            <th width=50% style="text-align: center;">PCB 電路板原型 - 正面</th>
-            <th width=50% style="text-align: center;">PCB 電路板原型 - 背面</th>
+            <th width=50% style="text-align: center;">Initial Design V1.0 (Pegboard) - Front View</th>
+            <th width=50% style="text-align: center;">Initial Design V1.0 (Pegboard) - Back View</th>
         </tr>
         <tr>
             <td><img src="../../models/Circuit_Design/img/circuit_board_Front_1.png"/></td>
@@ -175,14 +169,11 @@ Photos of the system installation, driver downloads, and remote desktop function
     </table>
 </div>
 
-* As this was the team's **first time** designing a PCB, we initially **overlooked the standard component layout templates built into the design software (EasyEDA)**. Instead, we relied on **manual measurement of the pin header pitch** as the design basis. However, due to our **limited experience**, we only discovered after the first-generation board was fabricated that the **pitch setting was too small**, ultimately preventing the electronic components from being properly inserted.
-* Despite this setback, this failure provided **invaluable hands-on experience**. It prompted us to immediately launch the **design correction and optimization process**, and the revised design was subsequently sent to the factory for the **second-generation version**.
-
 <div align="center" >
     <table >
         <tr align="center">
-            <th>First-Generation PCB Front View</th>
-            <th>First-Generation PCB Back View</th>
+            <th>Second-Generation Design V2.0 (PCB) - Front View</th>
+            <th>Second-Generation Design V2.0 (PCB) - Back View</th>
         </tr>
         <tr align="center">
             <td><img src="./img/4/1.png" width = "300"  alt="First-Generation PCB Front View" align=center /></td>
@@ -315,31 +306,20 @@ This week, team member **HU,SIAN-YI** successfully completed the **operating sys
 
 ---
 
-### **第二代 PCB 佈局失誤修正與 UART 傳輸優化** 
+第三代 PCB 佈局失誤修正與 UART 傳輸優化
+1. 第三代 PCB（V3.0）佈局失誤與修正
+在 第二代版本 的開發過程中，我們根據第一代的回饋，利用設計軟體內建的標準範例圖重新校準了排針間距，成功改善了原始設計的錯誤。
 
-#### **1. 第二代 PCB（V2.0）佈局失誤與修正**
-在 **第二代版本** 的開發過程中，我們根據**第一代的回饋**，利用設計軟體內建的**標準範例圖**重新校準了**排針間距**，成功改善了原始設計的錯誤。
+然而，由於作業上的疏忽，我們在進行 PCB 佈局時誤將背面視圖當作正面設計，導致電路板輸出後發生了極性顛倒的重大問題。所幸，此錯誤在組裝與測試階段便被立即發現。我們隨即在第三代版本中修正了佈局方向，並全面複查了各層的對齊規範，以確保設計檔案與最終的實體成品能夠完全一致。
 
-然而，由於**作業上的疏忽**，我們在進行 PCB 佈局時**誤將背面視圖當作正面設計**，導致電路板輸出後發生了**極性顛倒**的重大問題。所幸，此錯誤在**組裝與測試階段**便被立即發現。我們隨即在**第三代版本**中修正了佈局方向，並**全面複查了各層的對齊規範**，以確保設計檔案與最終的實體成品能夠**完全一致**。
-
-#### **2. UART 傳輸問題與持續優化**
-在測試 **UART 數據傳輸**時，我們發現**會有掉資料（Data Loss / Dropping）的情況**。為確保控制指令的傳輸可靠性，我們正在**持續撰寫程式碼，專注於修正這個錯誤問題**，以提升通訊的穩定度。
-
-### **Second Generation PCB Layout Error Correction and UART Transmission Optimization** 
-
-#### **1. Second Generation PCB (V2.0) Layout Error and Correction**
-During the development of the **Second Generation Version**, based on **feedback from the first generation**, we used the design software's built-in **standard example diagrams** to recalibrate the **pin header pitch**, successfully correcting the original design error.
-
-However, due to an **operational oversight**, when implementing the PCB layout, we **mistakenly treated the back view as the front design**, which resulted in a major issue of **reversed polarity** upon board fabrication. Fortunately, this error was discovered immediately during the **assembly and testing phase**. We promptly corrected the layout orientation in the **Third Generation Version** and **comprehensively reviewed the alignment specifications of all layers** to ensure the design file and the final physical product were **completely consistent**.
-
-#### **2. UART Transmission Issue and Ongoing Optimization**
-While testing **UART data transmission**, we discovered **instances of data loss (dropping data)**. To ensure the reliability of control command transmission, we are **continuously developing and debugging the code, focusing on correcting this error** to enhance communication stability.
+2. UART 傳輸問題與持續優化
+在測試 UART 數據傳輸時，我們發現會有掉資料（Data Loss / Dropping）的情況。為確保控制指令的傳輸可靠性，我們正在持續撰寫程式碼，專注於修正這個錯誤問題，以提升通訊的穩定度。
 
 <div align="center" >
     <table>
         <tr>
-            <th>Second-Generation PCB Front View</th>
-            <th>Second-Generation PCB Back View</th>
+            <th>Third-Generation Design V3.0 (PCB) - Front View</th>
+            <th>Third-Generation Design V3.0 (PCB) - Back View</th>
         </tr>
         <tr align="center">
             <td>
@@ -750,9 +730,9 @@ if combined_control_signal < -180:
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
-### **主電路板第四代版本功能測試成果** 
+主電路板第四代版本功能測試成果
 
-在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，**主電路板的第三代版本（V4.0）已成功通過功能測試**。實際運行測試的結果顯示，**排針接點與電路佈局均無異常**，且**系統可穩定運作**。
+在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，主電路板的第四代版本（V4.0）已成功通過功能測試。實際運行測試的結果顯示，排針接點與電路佈局均無異常，且系統可穩定運作。
 
 ### **Main Circuit Board Fourth Generation Functional Test Results** 
 
@@ -761,8 +741,8 @@ Following the successful correction of design issues found in the previous two v
 <div align="center" >
     <table >
         <tr align="center">
-            <th>Third-Generation PCB Front View</th>
-            <th>Third-Generation PCB Back View</th>
+            <th>Fourth-Generation Design V4.0 (PCB) - Front View</th>
+            <th>Fourth-Generation Design V4.0 (PCB) - Back View</th>
         </tr>
         <tr align="center">
             <td><img src="./img/6/5.png" width = "300"  alt="data" align=center /></td>
@@ -832,6 +812,19 @@ Following testing, the **new chassis structure incorporating bearings effectivel
           <td align=center ><img src="../../models/Circuit_Design/img/Old_Schematic.png" height=250 /></td>
           <td align=center ><img src="../../models/Circuit_Design/img/Old_PCB_Layouts.png" height=250 /></td>
        </tr>
+    </table>
+  </div>
+
+  <div align="center" >
+    <table >
+        <tr align="center">
+            <th>Fourth-Generation Design V4.0 (PCB) - Front View</th>
+            <th>Fourth-Generation Design V4.0 (PCB) - Back View</th>
+        </tr>
+        <tr align="center">
+            <td><img src="./img/6/5.png" width = "300"  alt="data" align=center /></td>
+            <td><img src="./img/6/6.png" width = "300"  alt="data" align=center /></td>
+        </tr>
     </table>
   </div>
 
@@ -1130,8 +1123,8 @@ sudo apt-get -y install sdkmanager
  <div align=center>
     <table>
         <tr>
-            <th>第五代 PCB 電路板(原理圖)</th>
-            <th>第五代 PCB 電路板(PBC分布圖)</th>
+            <th>第六代 PCB 電路板(原理圖)</th>
+            <th>第六代 PCB 電路板(PBC分布圖)</th>
         </tr>
         <tr>
             <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 6.png" height=300 /></td>
