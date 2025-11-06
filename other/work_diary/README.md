@@ -605,7 +605,7 @@ This week, our focus is dedicated to finalizing the **parking procedure programm
  <div align=center>
     <table>
         <tr>
-            <th>detailed execution flow diagram for the parking procedure - 停車流程示意圖</th>
+            <th>2025 National Competition: Parallel Reverse Parking Procedure Diagram - 2025 年全國賽：平行倒車入庫程序示意圖</th>
         </tr>
         <tr>
             <td><img src="./img/4/5.png" width=600 /></td>
@@ -932,7 +932,7 @@ Following the main controller upgrade, we began investigating the use of the **W
            <td align=center><img src="./img/8/1.jpg"/></td>
        </tr>
        <tr>
-           <th colspan=2>Onshape 3D Model Structure Sketch - Onshape 設計畫面</th>
+           <th colspan=2>Onshape 3D Model Structure Sketch -Onshape 設計畫面</th>
        </tr>
        <tr>
            <td align=center><img src="./img/8/8.png"/></td>
@@ -953,17 +953,57 @@ Following the main controller upgrade, we began investigating the use of the **W
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:**
- - 我們在本週發現了第三版轉向結構上存在力矩結構問題，我們將原先的球型十字元件棄用，將圓頭改到連桿上，使其角度為0度時可以使舵盤和拉桿呈現90度。
 
- - 同時我們開始重新撰寫新的自駕車停車程序流程，新版的停車流程會較於全國賽的流程複雜。下面為兩種流程的示意圖比較。
+### **轉向結構優化、停車流程複雜化與組裝經驗** 
 
- - 我們在安裝轉向結構的球形接頭部分時因為已經經過紫外線固化的原因而導致安裝困難，解決方法是在進行紫外線固化前先使用砂紙細磨，組裝起來後放進UV固化機，在固化完畢之後再給活動元件連接處上油，這樣一來就解決了安裝困難及轉動不順滑等問題了。
+#### **1. 第三版轉向結構力矩問題修正**
+在發現第三版轉向結構存在**力矩（Torque）結構問題** 後，我們進行了關鍵修正：
+* **元件棄用與調整：** 我們**棄用了原先的球型十字元件**。
+* **優化目標：** 將**圓頭設計改到連桿上**，目標是確保當**轉向角度為 0 度**時，**舵盤和拉桿可以精確地呈現 90 度**（垂直關係），以優化力學傳輸效率。
+
+#### **2. 新版複雜化停車程序流程**
+* **程序複雜化：** 我們開始**重新撰寫新的自駕車停車程序流程**。
+* **設計目標：** 新版的停車流程將**較全國賽採用的流程更為複雜**，以應對國際賽可能出現的更嚴苛要求。
+
+下方為兩種流程的示意圖比較。
+
+#### **3. 3D 列印零件組裝經驗分享**
+* **組裝挑戰：** 我們在**安裝轉向結構的球形接頭部分**時，因為零件已**經過紫外線（UV）固化**，導致組裝過程**十分困難**。
+* **解決方案與流程：** 我們的解決方法是：
+    1.  在**進行紫外線固化前**，先使用**砂紙對零件進行細磨**。
+    2.  將零件**組裝起來後**，再整體放進 **UV 固化機**。
+    3.  在固化完畢之後，給**活動元件的連接處上油**。
+* **成果：** 這一連串步驟**成功解決了安裝困難及轉動不順滑等問題**。
+
+---
+
+### **Steering Optimization, Complex Parking Flow, and Assembly Experience**
+
+#### **1. Correction of Third-Generation Steering Torque Issue**
+After identifying a **torque structure problem** in the third-generation steering mechanism, we implemented a critical correction:
+* **Component Replacement:** We **deprecated the original spherical cross joint component**.
+* **Optimization Goal:** The **rounded end was moved to the linkage rod**, ensuring that when the **steering angle is 0 degrees**, the **steering rack and the linkage rod are precisely aligned at 90 degrees**, thus optimizing mechanical transmission efficiency.
+
+#### **2. New Complexified Parking Procedure Flow**
+* **Procedure Refinement:** We began **rewriting a new autonomous car parking procedure flow**.
+* **Design Objective:** The new parking flow is designed to be **more complex than the procedure used in the National Competition**, anticipating stricter requirements in the World Final.
+
+A comparison diagram of the two procedures is shown below.
+
+#### **3. Experience Sharing on 3D Printed Parts Assembly**
+* **Assembly Challenge:** We faced **significant difficulties** when **installing the spherical joint section of the steering structure** because the parts had already **undergone UV curing**.
+* **Solution and Process:** Our solution involved the following steps:
+    1.  Prior to **UV curing**, we first **finely sanded the parts with sandpaper**.
+    2.  The parts were then **assembled** and placed into the **UV curing machine as an assembled unit**.
+    3.  After curing was complete, **oil was applied to the connection points of the movable components**.
+* **Result:** This sequence of steps **successfully resolved issues related to difficult assembly and rough rotation**.
+
 
  <div align=center>
     <table>
         <tr>
-            <th>第四版轉向結構</th>
-            <th>撰寫順向停車</th>
+            <th>Fourth Generation Steering Structure (V4.0) - 第四代轉向結構 (V4.0)</th>
+            <th>Photo of Teammate Coding the Forward Parking Program - 隊友正在撰寫順向停車程式碼的照片</th></th>
         </tr>
         <tr>
             <td><img src="./img/9/steering structure 4.jpg" width=400/></td>
@@ -975,7 +1015,7 @@ Following the main controller upgrade, we began investigating the use of the **W
  <div align=center>
     <table>
         <tr>
-            <th>全國賽停車流程</th>
+            <th>2025 National Competition: Parallel Reverse Parking Procedure Diagram - 2025 年全國賽：平行倒車入庫程序示意圖</th>
             <th>國際賽停車流程</th>
         </tr>
         <tr>
