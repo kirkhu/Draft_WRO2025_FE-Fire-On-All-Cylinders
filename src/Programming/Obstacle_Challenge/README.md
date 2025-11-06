@@ -129,15 +129,15 @@ Based on the characteristics of each control board, we distributed the complex o
 
       __Program operation flow__ - 程式運行流程
         ### 中文:
-        - jetson_Orin_Nano_final.py程式開始執行，初始化所有變量，並進入循環，持續從 find_contours 和 max_contour 函數中獲取數據，然後根據當前狀態進入不同的條件分支以執行相應的控制操作。在每個循環中，程式將jetson_Orin_Nano_final.py計算出的直流馬達值、伺服馬達角度和當前狀態打包成二進位數據，並透過UART將其發送到 Raspberry Pi Pico W 控制。
+        - `jetson_Orin_Nano_final.py` 程式啟動後，首先執行**系統變數的初始化**。隨後，程式進入**主循環 (Main Loop)**，在循環中持續調用 `find_contours` 與 `max_contour` 函式來**獲取實時的視覺感知數據**。接著，系統依據**當前的運行狀態**進入不同的**條件分支**，以執行相應的**控制邏輯與決策**。在每個運行週期結束時，程式會將 Jetson Orin Nano 計算出的**直流馬達驅動值**、**伺服馬達轉向角度**以及**當前車輛狀態**，**打包成二進位數據格式**，並透過 **UART 介面**發送給 Raspberry Pi Pico W，由其進行**底層的硬體驅動控制**。
         ### 英文:
-        - `jetson_nano_main_fianl.py` starts execution, initializes all variables, and enters a loop, continuously retrieving data from process_roi and detect_color, then entering different conditional branches based on the current state to perform the appropriate control actions. In each loop, `jetson_nano_main_final.py` packages the calculated DC motor value, servo motor angle, and current status into binary data and sends it to the Raspberry Pi Pico via UART. 
+        - Upon execution, the `jetson_Orin_Nano_final.py` program first performs the **initialization of all system variables**. Subsequently, the program enters a **Main Loop**, where it continuously calls the `find_contours` and `max_contour` functions to **acquire real-time visual perception data**. The system then branches into different **conditional blocks** based on the **current operating status** to execute the corresponding **control logic and decisions**.At the conclusion of each cycle, the program **packages** the calculated **DC motor drive values**, **servo motor steering angle**, and the **current vehicle status** into a **binary data format**. This package is then transmitted via the **UART interface** to the Raspberry Pi Pico W for **low-level hardware drive control**.
 
-   - ##### Program Operation flowchart of the Jetson Orin Nano controller
+   - ##### Jetson Orin Nano Controller Main Program Flowchart Overview - Jetson Orin Nano控制器程式流程圖
      ![Obstacle_Challenge_Jetson_nano](./img/FE-obstacle_challenge_Jetson_nano.jpg)
 
- - ### Obstacle_Challenge Code Overview of Raspberry Pi Pico W-樹莓派 Pico W 障礙挑戰代碼概述
-   - ####  Obstacle_Challenge Code Program Raspberry Pi Pico W Libraries-障礙挑戰程式碼程式 Raspberry Pi Pico W函式庫
+ - ### Raspberry Pi Pico W Obstacle Challenge Code Overview - 樹莓派 Pico W 障礙挑戰代碼概述
+   - ####  Raspberry Pi Pico W Function Library for the Obstacle Challenge Program - 障礙挑戰程式碼程式 Raspberry Pi Pico W函式庫
     
       ```
       from machine import Pin, PWM, UART,I2C,time_pulse_us
