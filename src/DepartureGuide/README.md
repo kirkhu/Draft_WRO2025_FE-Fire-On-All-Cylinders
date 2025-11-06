@@ -31,6 +31,96 @@
     - * **When no pillars are detected:** The system defaults the vehicle to **drive on the outer side of the lane**.
 - **Code running on the Raspberry Pi Pico W controller.-在 Raspberry Pi Pico W 控制器上執行的程式碼。**
     ```
+    if turn in (1, 2):
+        if turn == 1:
+            print("right")
+            run_encoder_Auto(500, 40, 180)
+        else:
+            print("left")
+            run_encoder_Auto(1200, 40, -180)
+
+        mode = 1
+    else:
+
+        mode = 2
+
+    LAST_COLOR = 0
+    color = 0
+    print(mode, color)
+    print(' color（M,<1..6>[,<...>]  {"color":n}）...')
+
+    while mode == 1 and color == 0:
+        json_obj, m_tuple, got_stop = pump_uart()
+
+        if json_obj:
+            v = None
+            try:
+                if "color" in json_obj:
+                    v = int(json_obj["color"])
+                elif "c" in json_obj:
+                    v = int(json_obj["c"])
+            except:
+                v = None
+            
+            if v is not None:
+                if 1 <= v <= 6:
+                    color = v
+                    LAST_COLOR = color
+                    print("[JSON] color =", color)
+                    break # 收到有效 color，跳出 while 迴圈
+                else:
+                    if DEBUG: print("[IGNORE] JSON color out of range:", v)
+            
+            extract_magenta_from_json(json_obj)
+
+        if m_tuple:
+            first = m_tuple[0]
+            if 1 <= first <= 6:
+                color = first
+                LAST_COLOR = color
+                print("[M] color =", color, "raw:", m_tuple)
+                break 
+            else:
+                if DEBUG: print("[IGNORE] M packet in mode1 (not color):", m_tuple)
+
+        if json_obj is None and m_tuple is None:
+            import time 
+            time.sleep(0.002)
+
+    if mode == 1 and color != 0: 
+        if color == 1:
+            print("1")
+            run_encoder_Auto(2100, 60, 0)
+            run_encoder_Auto(1400, 40, 180)
+            run_encoder_Auto(1200, -45, 0)
+        elif color == 2:
+            print("2")
+            run_encoder_Auto(1700, 60, 0)
+            run_encoder_Auto(1150, -40, -180)
+        elif color == 3:
+            print("3")
+            run_encoder_Auto(1700, 60, 0)
+            run_encoder_Auto(1150, -40, -180)
+        elif color == 4:
+            print("4")
+            run_encoder_Auto(600, 40, 180)
+            run_encoder_Auto(400, 50, 0)
+            run_encoder_Auto(1100, 40, -180)
+            run_encoder_Auto(800, 50, 0)
+        elif color == 5:
+            print("5")
+            run_encoder_Auto(600, 40, 180)
+            run_encoder_Auto(2200, 60, 0)
+            run_encoder_Auto(1150, 40, -180)
+            run_encoder_Auto(800, 50, 0)
+        elif color == 6:
+            print("6")
+            run_encoder_Auto(600, 40, 180)
+            run_encoder_Auto(1500, 60, 0)
+            run_encoder_Auto(1150, 40, -180)
+
+    control_motor(0)
+    set_servo_angle(0)
 
     ```
 ## <div align="center">Counter-clockwise green departure process-逆時針綠色出發流程</div>
