@@ -1509,6 +1509,13 @@ The purpose of this independent board is:
             <td align=center width=500><img src="./img/10/Lens holder body Onshape.png" width=450 /></td>
             <td align=center width=500><img src="./img/10/Lens holder body imager.png" width=450 /></td>
         </tr>
+        <tr>	
+            <th>Lens Mount Physical Side View - 鏡頭支架側視圖</th>
+            <th>Lens Mount Physical Front View - 鏡頭支架實體正面視圖</th>
+        </tr>        
+        <td align=center width=500><img src="./img/10/Lens holder body Onshape.png" width=450 /></td>
+        <td align=center width=500><img src="./img/10/Lens holder body imager.png" width=450 /></td>
+        </tr>
     </table>
 </div>
 
@@ -1591,9 +1598,12 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
  **Content:**
-**全體成員已分配工作職責，持續將已修改的工程文件資料上傳至 GitHub 專案儲存庫**。
+ 
+**全體成員已依據先前分配的工作職責，正挑燈夜戰全力衝刺，持續將已修改的工程文件資料上傳至 GitHub 專案儲存庫**。
 
-**All team members have allocated work responsibilities and are continuing to upload the modified engineering documentation to the GitHub project repository**.
+
+
+**All team members, working diligently overnight in accordance with their previously allocated responsibilities, are urgently continuing to upload the modified engineering documentation to the GitHub project repository**.
 
 
  ## 2025/10/27 ~ 2025/11/01
@@ -1601,22 +1611,33 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
 
  **Content:**
 
+
 ### **通訊協議調整與工程文件持續更新** 
 
-#### **1. 通訊協議調整決策**
-經向**世界賽裁判**確認，上下位控制器（Jetson Orin Nano 與 Raspberry Pi Pico W）之間**不得使用 WebSocket 等穩定傳輸的無線通訊協議**。鑑於此項規則限制，我們決定**捨棄原先研究的 WebSocket 方案**，並**改回使用先前已驗證的 UART（通用非同步收發傳輸器）通訊協議** 進行數據傳輸。
+#### **1. 通訊協議調整決策與新挑戰**
+前幾天經向**世界賽裁判**確認，上下位控制器（**Jetson Orin Nano** 與 **Raspberry Pi Pico W**）之間**不得使用 WebSocket 等穩定傳輸的無線通訊協議**。
+
+鑑於此項規則限制，我們決定**捨棄原先研究的 WebSocket 方案**，並**改回使用先前已驗證的 UART（通用非同步收發傳輸器）通訊協議** 進行數據傳輸。
+
+然而，由於主控制器已升級為 **Jetson Orin Nano**，而我們**尚未在其上進行過 UART 通訊的實作**，這對團隊來說是一個**新的技術挑戰**。
 
 #### **2. 工程文件進度**
-**持續上傳修改後的工程文件資料**。
+**持續在 GitHub 專案儲存庫上修改工程文件資料**。
 
 
-### **Communication Protocol Adjustment and Ongoing Engineering Document Updates** 
 
-#### **1. Communication Protocol Adjustment Decision**
-Following confirmation with the **World Final judges**, the communication between the main and auxiliary controllers (Jetson Orin Nano and Raspberry Pi Pico W) **is prohibited from using stable wireless communication protocols such as WebSocket**. Given this rule restriction, we decided to **abandon the previously investigated WebSocket solution** and **revert to the established UART (Universal Asynchronous Receiver-Transmitter) communication protocol** for data transmission.
+### **英文翻譯：Communication Protocol Adjustment and Ongoing Engineering Document Updates**
+
+#### **1. Communication Protocol Adjustment Decision and New Challenge**
+Following confirmation with the **World Final judges** a few days ago, the communication between the main and auxiliary controllers (**Jetson Orin Nano** and **Raspberry Pi Pico W**) **is prohibited from using stable wireless communication protocols such as WebSocket**.
+
+Given this rule restriction, we decided to **abandon the previously investigated WebSocket solution** and **revert to the established UART (Universal Asynchronous Receiver-Transmitter) communication protocol** for data transmission.
+
+However, since the main controller has been upgraded to the **Jetson Orin Nano**, and we **have not yet implemented UART communication on this specific controller**, this presents a **new technical challenge** for the team.
 
 #### **2. Engineering Document Progress**
-**Continuing to upload the modified engineering documentation.**
+**Continuing to modify engineering documentation on the GitHub project repository**.
+
 
  # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>
 
