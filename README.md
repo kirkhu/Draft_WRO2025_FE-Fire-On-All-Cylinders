@@ -76,7 +76,7 @@
       - [August (八月)](other/Learning_Journey/README.md#20250818--20250824)
       - [September (九月)](other/Learning_Journey/README.md#20250901--20250906)
       - [October (十月)](other/Learning_Journey/README.md#20250928--20251006)
-      - [November (十一月)](other/Learning_Journey/README.md#20251027--20251101-1)
+      - [November (十一月)](other/Learning_Journey/README.md#20251027--20251101)
 
 - ### 自動駕駛汽車設計：關鍵升級與迭代
   這款自動駕駛汽車設計建立在從前輩團隊（Shinan-Fire-On-All-Cylinders ）繼承的豐富經驗之上，並融入了我去年參加世界大賽的實踐經驗。
