@@ -134,7 +134,8 @@
 </tr><tr>
 <td  align=center width="50%"><img src="./img/Detecting_nearby_obstacles.png"  alt="Detecting_nearby_obstacles"></td>
 <td align=center width="50%">><img src="./img/Obstacle_XY_coordinates.png"  alt="Obstacle_XY_coordinates"></td>
-
+</table>
+</div>
 
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
