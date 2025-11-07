@@ -49,8 +49,8 @@
     - __3-5 Programming - Vehicle’s control program程式設計__
       - [3-5-1 Open Challenge Code Overview(開放挑戰程式碼概述) ](src/Programming/Open_Challenge/README.md)
       - [3-5-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) ](src/Programming/Obstacle_Challenge/README.md)
-      - [3-5-3 Departure Guide(出發指南) **已改動](src/DepartureGuide/README.md)
-      - [3-5-4 Parking Instruction(停車指南) ](src/parking/README.md)
+      - [3-5-3 Vehicle Departure Procedure Guide(車輛出發程序指南) **已改動](src/DepartureGuide/README.md)
+      - [3-5-4 Vehicle Parking Procedure Guide(車輛停車程序指南) ](src/parking/README.md)
     - __3-6 Remote Connection-遠端連線__
       - [3-6-1 NoMachine Introduction(NoMachine簡介) OK](other/NoMachine/README.md)
 
