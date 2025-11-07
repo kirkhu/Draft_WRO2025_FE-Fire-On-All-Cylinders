@@ -231,12 +231,12 @@
   |:---:|:---:|
   |<div align=center><img src="img/parking_1-1.png" /></div>|<div align=center><img src="img/parking_1-2.png" /></div>|
 
-  |向前行走|開始向左反轉|
+  |The vehicle drives straight toward the 90-degree azimuth until the infrared sensor detects the outer wall, then brakes.|The vehicle reverses towards the left-rear until its yaw angle exceeds 170 degrees.|
   |:---:|:---:|
   |<div align=center><img src="img/parking_1-3.png" /></div>|<div align=center><img src="img/parking_1-4.png" /></div>|
 
 
-  |向前行走|Start reversing to the left(開始向左反轉)|
+  |The vehicle follows the outer wall until the area of the magenta wall contour is less than 100, then the vehicle moves forward another 100 degrees.|The vehicle reverses towards the rear-left into the parking area until its heading angle reaches 123 degrees.|
   |:---:|:---:|
   |<div align=center><img src="img/parking_1-5.png" /></div>|<div align=center><img src="img/parking_1-6.png" /></div>|
 
