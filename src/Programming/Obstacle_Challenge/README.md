@@ -173,13 +173,20 @@ Based on the characteristics of each control board, we distributed the complex o
     - ##### Raspberry Pi Pico W Controller Program Flowchart-樹莓派 Pico W 控制器的程式流程圖
         ![FE-obstacle_challenge_Pico](./img/FE-obstacle_challenge_Pico.jpg)
 
-       **set_servo_angle():** <br>
+        `set_servo_angle():`<br>
           - 計算並轉換±180度的角度值到伺服馬達所需的PWM佔空比範圍（0到65535），並將其輸出到前輪伺服馬達。
 
-        __control_motor():__<br>
+        `control_motor():`<br>
           - 取-100到100範圍內一個數的絕對值，轉換為PWM佔空比。同時，根據該值的符號設定兩個引腳的高低狀態，以控制馬達的正反轉或停止。
 
-        __run_encoder_Auto():__<br>
+        `run_encoder_Auto():`<br>
           - 在此函數中run_encoder()，伺服馬達角度被設定為固定值，以車輛操作期間保持車輛位置和方向的穩定控制。
+
+        `pump_uart():`<br>
+          - Jetson Orin Nano 控制器透過 UART 協定將更新後的模式、舵機角度和直流馬達速度數值傳送到佇列，確保流程持續運行，以保持資料即時更新。
+
+        `extract_magenta_from_json():`<br>
+          - Jetson Orin Nano 控制器透過 UART 協定將更新後的洋紅牆面積、X座標和Y座標數值傳送到佇列，確保流程持續運行，以保持資料即時更新。
+
        </ol>
 # <div align="center">![HOME](../../../other/img/home.png)[Return Home](../../../)</div>  
