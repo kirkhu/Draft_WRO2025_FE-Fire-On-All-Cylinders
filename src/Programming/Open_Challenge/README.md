@@ -85,7 +85,6 @@ from functions_jetson import *
 
    - ##### Jetson Orin Nano Controller Main Program Flowchart - Jetson Orin Nano控制器主程式流程圖
      ![flowchart_open](./img/open_challange_Jetson_nano.jpg)
-     ![flowchart_open](./img/Chinese%20Qualifying%20Tournament%20Operation%20Flowchart.jpg)
 
  - ### Raspberry Pi Pico W Open Challenge Code Overview - 樹莓派 Pico W 公開挑戰代碼概述
    - #### Raspberry Pi Pico W Core Library / Module Program Plan for the Open Challenge - 樹莓派 Pico W 庫公開挑戰程式碼程序
@@ -111,7 +110,6 @@ from functions_jetson import *
 
       - ##### Program Operation flowchart of the Raspberry Pi Pico W controller - 樹莓派 Pico W 控制器程式運作流程圖
         ![flowchart_open](./img/open_challange_Pico.jpg)
-        ![flowchart_open](./img/Chinese%20pico%20operation%20flowchart.jpg)
         
       - #### 1. `set_servo_angle()`：伺服馬達角度設定
         * **功能：** 負責將人機可讀的**角度值（範圍通常為 $\pm 180$ 度）**，計算並**轉換**成伺服馬達所需的**PWM 佔空比範圍（0 到 65535）**。
