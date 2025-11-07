@@ -146,7 +146,7 @@
 <th align="center" colspan = 2>Arrive at the designated location(到達預定位子)</th>
 </tr><tr>
 <td align="center" colspan = 2><img src="./img/Start_in_green_counterclockwise-5.png"  /></td>
-<tr>
+</tr>
 </table>
 </div>
 
