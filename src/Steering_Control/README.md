@@ -55,8 +55,8 @@
      <div align=center>
         <table>
         <tr>
-        <th>Blue Line Recognition(藍線偵測)</th>
-        <th>Orange Line Recognition(橘線偵測)</th>
+        <th>Blue Line Detected in ROI4(ROI4偵測到藍線)</th>
+        <th>Orange Line Detected in ROI4(ROI4偵測到橘線)</th>
         </tr><tr>
         <td><img src="./img/Blue Line Recognition.png" width=400 height="400"></td>
         <td><img src="./img/Orange Line Recognition.png" width="400" height="395" ></td>
