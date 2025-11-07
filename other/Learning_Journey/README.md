@@ -1385,7 +1385,7 @@ The commands for manual setup and using the auto-script are provided below.
             <th>ASUS AC1200  Wi-F  Wireless Adapter</th>
         </tr>
         <tr>
-            <td align=center ><img src="./img/10/TPLink AC1300.png" width=150 /></td>
+            <td align=center ><img src="./img/10/TPLink_AC1300.png" width=150 /></td>
             <td align=center ><img src="./img/10/ASUS_AC1200.png" width=150 /></td>
         </tr>
     </table>
@@ -1506,8 +1506,8 @@ The purpose of this independent board is:
             <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
         </tr>
         <tr>
-            <td align=center width=500><img src="./img/10/Lens holder body Onshape.png" width=450 /></td>
-            <td align=center width=500><img src="./img/10/Lens holder body imager.png" width=450 /></td>
+            <td align=center width=500><img src="./img/10/Lens_holder_body_Onshape.png" width=450 /></td>
+            <td align=center width=500><img src="./img/10/Lens_holder_body_imager.png" width=450 /></td>
         </tr>
         <tr>	
             <th>Lens Mount Physical Side View - 鏡頭支架側視圖</th>
