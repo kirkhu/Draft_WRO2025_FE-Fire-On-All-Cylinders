@@ -10,7 +10,7 @@
     2.  **精準定位與入庫起始 (Jetson Orin Nano)**
       * 車輛朝向停車場區域後，**Jetson Orin Nano** 透過攝影機**即時測量**車輛與**洋紅色停車位標記**之間的**橫向距離**，以確保維持適當的進場間距。
       * 為確認車輛已抵達**精確的入庫起始位置**，程式持續監測攝影機所擷取的**洋紅色標誌面積**。
-      * 一旦**洋紅色區域的面積小於 100**，即確認完成定位。車輛隨即**沿牆邊線循跡 100 單位**（或度數），隨後執行**轉入停車位的動作**。
+      * 一旦**洋紅色區域的面積小於 100**，即確認完成定位。車輛隨即**沿牆邊線循跡 100 度**，隨後執行**轉入停車位的動作**。
     3.  **平行倒車入庫與姿態控制 (Raspberry Pi Pico W)**
       * 在確認目標停車方向後，系統將執行**模擬真實世界的平行停車**動作。
       * 首先，**Jetson Orin Nano** 計算並設定轉向**伺服馬達的起始角度**及**直流驅動馬達的數值**。
@@ -23,7 +23,7 @@
     2.  **Precise Positioning and Bay Entry Start (Jetson Orin Nano)**
       * Once the vehicle is oriented towards the parking area, the **Jetson Orin Nano** **measures the lateral distance** between the vehicle and the **magenta parking bay marker** in real-time via the camera, ensuring an appropriate entry gap is maintained.
       * To confirm the vehicle has reached the **precise entry starting position**, the program continuously monitors the **area of the magenta marker** captured by the camera.
-      * Once the **area of the magenta region is less than 100**, the positioning is confirmed. The vehicle then continues to **follow the wall line for 100 units** (or degrees), followed by executing the **turning action to enter the parking bay**.
+      * Once the **area of the magenta region is less than 100**, the positioning is confirmed. The vehicle then continues to **follow the wall line for 100 degrees** , followed by executing the **turning action to enter the parking bay**.
 
     3.  **Parallel Reverse Parking and Attitude Control (Raspberry Pi Pico W)**
       * After confirming the target parking direction, the system executes a maneuver that **simulates real-world parallel parking**.
