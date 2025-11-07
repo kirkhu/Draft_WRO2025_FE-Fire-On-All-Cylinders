@@ -28,7 +28,7 @@
     - __Image Recognition Processing and Steering__
       - [Image Recognition Processing](./src/Image_Recognition_Processing/README.md) 
       - [Steering Control](./src/Steering_Control/README.md)  
-      - [Parking Lot Departure Steering Control Overview OK](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md)   
+      - [Parking Lot Departure Steering Control Overview](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md)   
       - [Automatically record the LAB values of the field](src/Automatically_record_LAB/README.md)
     - __Programming__
       - [Open Challenge Code Overview](./src/Programming/Open_Challenge/README.md)
