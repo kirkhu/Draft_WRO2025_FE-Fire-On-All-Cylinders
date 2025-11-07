@@ -58,24 +58,24 @@
       <th align=center width="50%">Blue Line Detected in ROI4(ROI4偵測到藍線)</th>
       <th  align=center width="50%">Orange Line Detected in ROI4(ROI4偵測到橘線)</th>
       </tr><tr>
-      <td  align=center width="50%"><img src="./img/Blue_Line_Recognition.png" width=400 height="400"></td>
-      <td  align=center width="50%"><img src="./img/Orange_Line_Recognition.png" width="400" height="395" ></td>
+      <td  align=center width="50%"><img src="./img/Blue_Line_Recognition.png" ></td>
+      <td  align=center width="50%"><img src="./img/Orange_Line_Recognition.png" ></td>
       </tr>
   
       <tr>
       <th  align=center width="50%">Performing Avoidance Maneuvers Upon Traffic Signal Detection(偵測到交通號誌後執行規避操作)</th>
       <th  align=center width="50%">Performing Turns Without Traffic Signal Detection(無偵測交通號誌即可進行轉彎)</th>
       </tr><tr>
-      <td  align=center width="50%"><img src="./img/Traffic_Signal_Evaluation_and_Steering_Control.png" width=400 height="400"></td>
-      <td  align=center width="50%"><img src="./img/Unsignalized_Intersection_Steering_Control.png" width="400" height="400"></td>
+      <td  align=center width="50%"><img src="./img/Traffic_Signal_Evaluation_and_Steering_Control.png" ></td>
+      <td  align=center width="50%"><img src="./img/Unsignalized_Intersection_Steering_Control.png"  ></td>
       </tr>
 
       <tr>
       <th  align=center width="50%">Activation of Auxiliary ROI5 Triggered by Inner Wall Detection During Turning Mode(轉彎模式下，內壁偵測觸發輔助 ROI5 開啟)</th>
       <th  align=center width="50%">>Executing Evasion Maneuver Upon Outer Wall Detection by ROI5(ROI5 偵測到外牆後執行規避動作)</th>
       </tr><tr>
-      <td  align=center width="50%"><img src="./img/Inner_Side_Obstacle_Avoidance_and_Steering_Control.png" width="400" height="400"></td>
-      <td align=center width="50%"><img src="./img/ROI_5_assisted_turning_detection.png" width=400 height="400"></td>
+      <td  align=center width="50%"><img src="./img/Inner_Side_Obstacle_Avoidance_and_Steering_Control.png"  ></td>
+      <td align=center width="50%"><img src="./img/ROI_5_assisted_turning_detection.png" ></td>
       </tr>
       </table>
       </div>   
