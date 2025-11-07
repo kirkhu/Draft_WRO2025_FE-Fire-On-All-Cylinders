@@ -227,7 +227,7 @@
 ## <div align="center">Counter-Clockwise Vehicle Parking Procedure - 逆時針方向車輛停車流程</div>
 <div align=center>
 
-  |向前行走|向右正轉|
+  |The vehicle proceeds forward through the parking area.|The vehicle turns to the right, with its front facing the outer wall at a 90-degree azimuth.|
   |:---:|:---:|
   |<div align=center><img src="img/parking_1-1.png" /></div>|<div align=center><img src="img/parking_1-2.png" /></div>|
 
