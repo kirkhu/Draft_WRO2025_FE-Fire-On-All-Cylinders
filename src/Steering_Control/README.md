@@ -95,11 +95,40 @@
    * 根據任務需求，當車輛偵測到**紅色交通號誌**或**紅色障礙物**時，系統將觸發**向右繞行機動 (Right Evasion Maneuver)**。相反，當偵測到**綠色障礙物**時，系統會觸發**向左繞行機動 (Left Evasion Maneuver)**。 
    * 當車輛移動時，**攝影機**會將**視訊流**傳輸到主控制器（**Jetson Orin Nano**）。控制器隨後進行**影像處理**，以確定**目標柱子**在畫面中的**理想 X 座標位置**。這些視覺數據（特別是 X 座標）能夠協助控制器**確定物體在空間中的位置和距離**，從而實現**精確的導航和避障**。
    * 在拍攝的影像上，系統利用 **`boundingRect()` 函式**在目標輪廓周圍**繪製一個矩形**。該函式會傳回矩形**左上角的 X 和 Y 座標**。將其應用於訊號柱的輪廓時，這些座標即可用於**確定該柱子在畫面中的精確位置**。
-   
+
   - 車輛透過以下步驟完成避開交通號誌的操作：
     1. 如果螢幕上出現兩根或多根柱子，我們會計算螢幕底部中心點到柱子底部中心點的距離。我們使用距離最近的柱子來計算伺服角度。
     2. 根據柱子的 x 座標與目標 x 座標的差值進行 PD 控制計算。綠色立柱的目標 x 座標設定 430，紅色立柱的目標 x 座標設定 110。
     3. 在偵測到柱子的同時，若左側或右側牆壁的面積過大，我們會取消當前柱子的選擇，改由牆壁面積決定轉向角度。這樣可以讓車子朝中間轉動，避免撞上牆壁。
+
+  - 車輛透過以下三個主要步驟，完成避開交通號誌（色柱）的精確操作：
+    1.  **目標柱子選擇與距離計算：**
+      * 如果攝影機畫面中出現**兩根或多根柱子**，系統會計算**螢幕底部中心點**到**每根柱子底部中心點**的距離。
+      * 系統將選定**距離車輛最近的柱子**作為當前避障的目標，並以此柱子的數據來計算伺服馬達所需的轉向角度。
+    2.  **基於 PD 控制的轉向決策：**
+      * 轉向控制採用 **PD 控制演算法**。系統根據**柱子的 X 座標**與**預設目標 X 座標**之間的差值（即誤差 `error`）進行計算。
+      * **目標 X 座標設定：**
+        * **綠色立柱**的目標 X 座標設定為 **430**。
+        * **紅色立柱**的目標 X 座標設定為 **110**。
+    3.  **安全避牆優先級機制：**
+      * **優先級判斷：** 在偵測到柱子的同時，系統會**持續監測左側或右側牆壁的輪廓面積**。
+      * **安全接管：** 若任一側牆壁的面積**過大**（達到危險閾值），系統會**取消當前柱子的選擇**，將控制優先級**切換至牆壁避障**。轉向角度將改由牆壁面積的偏差量決定，使車輛**朝向車道中心轉動**，以**避免撞上牆壁**，確保安全。
+
+The vehicle completes the precise maneuver to avoid traffic signals (colored pillars) through the following three main steps:
+
+1.  **Target Pillar Selection and Distance Calculation:**
+    * If **two or more pillars** appear on the camera screen, the system calculates the distance from the **center point of the screen's bottom edge** to the **center point of the bottom of each pillar**.
+    * The system selects the **pillar closest to the vehicle** as the current avoidance target, using its data to calculate the required servo motor steering angle.
+
+2.  **PD Control-Based Steering Decision:**
+    * Steering control employs a **PD Control Algorithm**. The system calculates the angle based on the difference (error) between the **pillar's X-coordinate** and its **predetermined target X-coordinate**.
+    * **Target X-coordinate Settings:**
+        * The target X-coordinate for the **Green Pillar** is set to **430**.
+        * The target X-coordinate for the **Red Pillar** is set to **110**.
+
+3.  **Safety Wall Avoidance Priority Mechanism:**
+    * **Priority Check:** Simultaneously while detecting pillars, the system **continuously monitors the contour area of the left or right side walls**.
+    * **Safety Override:** If the area of either side wall is **excessively large** (reaching a critical threshold), the system **cancels the current pillar selection** and **switches the control priority to wall avoidance**. The steering angle is then determined by the wall area deviation, causing the vehicle to **steer towards the center of the lane** to **prevent collision with the walls**, thereby ensuring safety.
     
    ### 英文:
   * According to the mission requirements, when the vehicle detects a **Red Traffic Sign/Obstacle**, the system triggers a **Right Evasion Maneuver**.Conversely, when a **Green Obstacle** is encountered, the system triggers a **Left Evasion Maneuver**.
