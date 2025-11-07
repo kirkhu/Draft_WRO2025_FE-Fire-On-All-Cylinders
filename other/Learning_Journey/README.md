@@ -1027,8 +1027,8 @@ A comparison diagram of the two procedures is shown below.
             <th>2025 WRO World Final: Diagram of the Parallel Reverse Parking Procedure - 2025 年世界賽：平行倒車入庫程序示意圖</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Forward Parking process.png" width=400 /></td>
-            <td><img src="./img/9/New Parking process.png" width=400 /></td>
+            <td><img src="./img/9/Parking_Process_1.png" width=400 /></td>
+            <td><img src="./img/9/Parking_Process_2.png" width=400 /></td>
         </tr>
     </table>
  </div>
@@ -1513,8 +1513,8 @@ The purpose of this independent board is:
             <th>Lens Mount Physical Side View - 鏡頭支架側視圖</th>
             <th>Lens Mount Physical Front View - 鏡頭支架實體正面視圖</th>
         </tr>        
-        <td align=center width=500><img src="./img/10/Lens holder body Onshape.png" width=450 /></td>
-        <td align=center width=500><img src="./img/10/Lens holder body imager.png" width=450 /></td>
+        <td align=center width=500><img src="./img/10/Visor_Side.jpg" width=450 /></td>
+        <td align=center width=500><img src="./img/10/Visor_Front.jpg" width=450 /></td>
         </tr>
     </table>
 </div>
@@ -1588,7 +1588,7 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
             <th>Final Version Parking Procedure Flow Diagram - 最終版停車程序流程示意圖</th>
         </tr>
         <tr>
-            <td width=1000 align=center><img src="./img/10/Parking_process.png" width=700 /></td>
+            <td width=1000 align=center><img src="./img/10/Parking_process_3.png" width=700 /></td>
         </tr>
     </table>
  </div>
