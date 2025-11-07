@@ -54,6 +54,8 @@
     - [July](./other/Learning_Journey/README.md#20250702--20250721)
     - [August](./other/Learning_Journey/README.md#20250818--20250824)
     - [September](./other/Learning_Journey/README.md#20250901--20250906)
+    - [October](other/Learning_Journey/README.md#20250928--20251006)
+    - [November](other/Learning_Journey/README.md#20251027--20251101-1)
 
   <div align="center"><img src="./other/img/Gantt-Chart_5.png" width="1300" alt="Gantt Chart" /></div> 
 
