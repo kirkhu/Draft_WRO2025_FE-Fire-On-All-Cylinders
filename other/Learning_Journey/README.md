@@ -1244,9 +1244,9 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
             <th>Synchronizing and Optimizing the Top Wooden Layer Based on the Revised Specifications of the Central Plate - 根據中央層木板的修正規格，同步調整並優化頂層木板</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Medium Board.jpg" width=300 /></td>
-            <td><img src="./img/9/New Medium Board.jpg" width=400 /></td>
-            <td><img src="./img/9/Upper Board.jpg" width=300 /></td>
+            <td><img src="./img/9/Medium_Board.jpg" width=300 /></td>
+            <td><img src="./img/9/New_Medium_Board.jpg" width=400 /></td>
+            <td><img src="./img/9/Upper_Board.jpg" width=300 /></td>
         </tr>
     </table>
  </div>
