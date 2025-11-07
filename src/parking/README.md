@@ -1,6 +1,6 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-## <div align="center">Description of the Parking Method - 停車方法說明</div>
+## <div align="center">Vehicle Parking Procedure Guide - 車輛停車程序指南</div>
   **Code Logic Description: Parking Task After Three Laps - 程式碼邏輯說明：三圈後停車任務。**
 - ### Parking program-停車計劃
     ### 中文:
@@ -10,7 +10,7 @@
     2.  **精準定位與入庫起始 (Jetson Orin Nano)**
       * 車輛朝向停車場區域後，**Jetson Orin Nano** 透過攝影機**即時測量**車輛與**洋紅色停車位標記**之間的**橫向距離**，以確保維持適當的進場間距。
       * 為確認車輛已抵達**精確的入庫起始位置**，程式持續監測攝影機所擷取的**洋紅色標誌面積**。
-      * 一旦**洋紅色區域的面積小於 100**，即確認完成定位。車輛隨即**沿牆邊線循跡 100 單位**（或度數），隨後執行**轉入停車位的動作**。
+      * 一旦**洋紅色區域的面積小於 100**，即確認完成定位。車輛隨即**沿牆邊線循跡 100 度**，隨後執行**轉入停車位的動作**。
     3.  **平行倒車入庫與姿態控制 (Raspberry Pi Pico W)**
       * 在確認目標停車方向後，系統將執行**模擬真實世界的平行停車**動作。
       * 首先，**Jetson Orin Nano** 計算並設定轉向**伺服馬達的起始角度**及**直流驅動馬達的數值**。
@@ -23,7 +23,7 @@
     2.  **Precise Positioning and Bay Entry Start (Jetson Orin Nano)**
       * Once the vehicle is oriented towards the parking area, the **Jetson Orin Nano** **measures the lateral distance** between the vehicle and the **magenta parking bay marker** in real-time via the camera, ensuring an appropriate entry gap is maintained.
       * To confirm the vehicle has reached the **precise entry starting position**, the program continuously monitors the **area of the magenta marker** captured by the camera.
-      * Once the **area of the magenta region is less than 100**, the positioning is confirmed. The vehicle then continues to **follow the wall line for 100 units** (or degrees), followed by executing the **turning action to enter the parking bay**.
+      * Once the **area of the magenta region is less than 100**, the positioning is confirmed. The vehicle then continues to **follow the wall line for 100 degrees** , followed by executing the **turning action to enter the parking bay**.
 
     3.  **Parallel Reverse Parking and Attitude Control (Raspberry Pi Pico W)**
       * After confirming the target parking direction, the system executes a maneuver that **simulates real-world parallel parking**.
@@ -36,7 +36,6 @@
     while mode == 3:
         json_obj, _, got_stop = pump_ws(s)
         extract_magenta_from_json(json_obj)
-        # 模式 3: 初始轉彎並前進 (利用陀螺儀 yaw < 73 度控制)
         while abs(yaw) < 73:
             json_obj, _, got_stop = pump_ws(s)
             if json_obj:
@@ -53,7 +52,6 @@
                     set_servo_angle(-50)
                     control_motor(35)
         
-        # 轉彎完成，進入下一階段
         motor_brake()
         set_servo_angle(0)
         mode = 4
@@ -62,7 +60,6 @@
         a0_value = A0.read_u16()
         time_a0=time.time()
         set_servo_angle(0)
-        # 模式 4: 前行直到紅外線 (A0) 偵測到牆壁 (a0_value 掉落) 或超時
         while a0_value > 64500 and time.time()- time_a0 < 6:
             a0_value = A0.read_u16()
             extract_magenta_from_json(json_obj) 
@@ -77,17 +74,14 @@
             set_servo_angle(0)
             control_motor(30)
         
-        # 偵測到牆壁後，後退煞車並執行編碼器移動
         control_motor(-40)
         time.sleep(0.15)
         control_motor(0)
-        # 執行編碼器自動倒退 (run_encoder_Auto 可能是 Pico W 上的函式)
         run_encoder_Auto(100, -35, 0) 
         mode = 5
 
     while mode == 5:
         json_obj, _, got_stop = pump_ws(s)
-        # 模式 5: 執行大角度轉彎 (利用陀螺儀 yaw < 177 度控制) 進行平行入庫準備
         while abs(yaw) < 177:
             extract_magenta_from_json(json_obj)
             json_obj, _, got_stop = pump_ws(s)
@@ -104,7 +98,6 @@
                     set_servo_angle(180)
                     control_motor(-35) 
                     
-        # 轉彎完成，進入下一階段
         motor_brake()
         set_servo_angle(0)
         mode = 6
@@ -113,7 +106,6 @@
         control_motor(38)
         json_obj, m_tuple, got_stop = pump_ws(s)
         extract_magenta_from_json(json_obj)
-        # 模式 6: 視覺循跡，直到洋紅色面積 (magArea) 小於 100 (定位完成)
         while magArea > 100:
             extract_magenta_from_json(json_obj)
             json_obj, m_tuple, got_stop = pump_ws(s)
@@ -126,7 +118,6 @@
                 except:
                     pass
             
-            # 複雜循跡邏輯 (根據 magArea 大小切換為洋紅色中心追蹤或牆壁面積差追蹤)
             if turn == 2:
                 if magArea > 3000:
                     error = magCX - 150 
@@ -150,7 +141,6 @@
                     error1 = error
                     set_servo_angle(Servo_angle)
                     
-        # 循跡完成，進入下一階段
         control_motor(-30)
         time.sleep(0.1)
         control_motor(0)
@@ -161,7 +151,6 @@
         control_motor(38)
         json_obj, m_tuple, got_stop = pump_ws(s)
         extract_magenta_from_json(json_obj)
-        # 模式 7: 沿牆邊線循跡 100 單位 (利用編碼器 encoder_count < 100)
         while abs(encoder_count) < 100:
             extract_magenta_from_json(json_obj)
             json_obj, m_tuple, got_stop = pump_ws(s)
@@ -174,7 +163,6 @@
                 except:
                     pass
             
-            # 繼續執行牆壁面積差循跡
             if turn == 2:
                 error = leftArea - 6500
                 Servo_angle = int(error*0.005 + (error - error1)*0.008)
@@ -189,7 +177,6 @@
 
     while mode == 8:
         json_obj, _, got_stop = pump_ws(s)
-        # 模式 8: 執行倒車入庫的第二次轉向 (利用陀螺儀 yaw > 123 度控制)
         while abs(yaw) > 123:
             json_obj, _, got_stop = pump_ws(s)
             if json_obj:
@@ -205,7 +192,6 @@
                     set_servo_angle(180)
                     control_motor(-37)
         
-        # 轉彎完成，進入下一階段
         motor_brake()
         set_servo_angle(0)
         mode =9 
@@ -213,7 +199,6 @@
     while mode == 9:
         json_obj, _, got_stop = pump_ws(s)
         a1_value = A1.read_u16()
-        # 模式 9: 最後的微調入庫 (利用陀螺儀 yaw < 177 度和紅外線 A1 控制)
         while abs(yaw) < 177 and a1_value > 64000:
             a0_value = A0.read_u16()
             json_obj, _, got_stop = pump_ws(s)
@@ -230,7 +215,6 @@
                     set_servo_angle(-180)
                     control_motor(-35)
         
-        # 最終微調動作
         control_motor(40)
         time.sleep(0.15)
         control_motor(0)
@@ -238,26 +222,46 @@
         mode =10 
 
     while mode == 10:
-        # 模式 10: 停車結束，最終制動
         motor_brake() 
     ```
-## <div align="center">Counter-clockwise parking procedure-逆時針停車流程</div>
+## <div align="center">Counter-Clockwise Vehicle Parking Procedure - 逆時針方向車輛停車流程</div>
 <div align=center>
 
-  |向前行走|???|???|???|
-  |:---:|:---:|:---:|:---:|
+  |The vehicle proceeds forward through the parking area.|The vehicle turns to the right, with its front facing the outer wall at a 90-degree azimuth.|
+  |:---:|:---:|
+  |<div align=center><img src="img/parking_1-1.png" /></div>|<div align=center><img src="img/parking_1-2.png" /></div>|
+
+  |The vehicle drives straight toward the 90-degree azimuth until the infrared sensor detects the outer wall, then brakes.|The vehicle reverses towards the left-rear until its yaw angle exceeds 177 degrees.|
+  |:---:|:---:|
+  |<div align=center><img src="img/parking_1-3.png" /></div>|<div align=center><img src="img/parking_1-4.png" /></div>|
+
+
+  |The vehicle follows the outer wall until the area of the magenta wall contour is less than 100, then the vehicle moves forward another 100 degrees.|The vehicle reverses towards the rear-left into the parking area until its heading angle reaches 123 degrees.|
+  |:---:|:---:|
+  |<div align=center><img src="img/parking_1-5.png" /></div>|<div align=center><img src="img/parking_1-6.png" /></div>|
+
+  |The vehicle reverses towards the rear-right into the parking area until its heading angle reaches 177 degrees.|Vehicle Parking Finished|
+  |:---:|:---:|
+  |<div align=center><img src="img/parking_1-7.png" /></div>|<div align=center><img src="img/parking_1-8.png" /></div>|
+
+## <div align="center">Clockwise Vehicle Parking Procedure - 順時針方向停車輛車流程</div>
+<div align=center>
+
+  |The vehicle proceeds forward through the parking area.|The vehicle turns to the left, with its front facing the outer wall at a 90-degree azimuth.|
+  |:---:|:---:|
+  |<div align=center><img src="img/parking_2-1.png" /></div>|<div align=center><img src="img/parking_2-2.png" /></div>|
+
+  |The vehicle drives straight toward the 90-degree azimuth until the infrared sensor detects the outer wall, then brakes.|The vehicle reverses towards the right-rear until its yaw angle exceeds 177 degrees.|
+  |:---:|:---:|
+  |<div align=center><img src="img/parking_2-3.png" /></div>|<div align=center><img src="img/parking_2-4.png" /></div>|
+
+  |The vehicle follows the outer wall until the area of the magenta wall contour is less than 100, then the vehicle moves forward another 100 degrees.|The vehicle reverses towards the rear-right into the parking area until its heading angle reaches 123 degrees.|
+  |:---:|:---:|
+  |<div align=center><img src="img/parking_2-5.png" /></div>|<div align=center><img src="img/parking_2-6.png" /></div>|
+
+  |The vehicle reverses towards the rear-left into the parking area until its heading angle reaches 177 degrees.|Vehicle Parking Finished|
+  |:---:|:---:|
+  |<div align=center><img src="img/parking_2-7.png" /></div>|<div align=center><img src="img/parking_2-8.png" /></div>|
   
-  |???|Start reversing to the left(開始向左反轉)|Then turn right(然後向右正轉)|Parking ended(停車結束)|
-  |:---:|:---:|:---:|:---:|
-
-## <div align="center">Clockwise parking procedure-順時針停車流程</div>
-<div align=center>
-
-  |Start turning right clockwise(開始向右正轉)|Then reverse to the left(然後向左反轉)|Parking ended(停車結束)|
-  |:---:|:---:|:---:|
-  |<div align="center"> <img src="./img/Prepare_to_reverse1.png"  alt="Prepare_to_reverse"></div>|<div align="center"> <img src="./img/Start_reversing1.png"  alt="Start_reversing"></div>|<div align="center"> <img src="./img/Parking_ends1.png"  alt="Parking_ends"></div>|
-
-- ### Parking test video-停車測試影片
-![Parking @ Fire On All Cylinders](./img/parking.jpg)( "Open Challange clockwise @ Fire On All Cylinders")
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  

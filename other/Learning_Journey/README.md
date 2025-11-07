@@ -1,6 +1,6 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-# <div align="center">Work Diary-工作日記</div>
+# <div align="center">Project Development and Technical Learning Journey-專案開發與技術學習歷程</div>
 以下是本次自動駕駛汽車模型設計與任務解決的開發記錄，涵蓋了機械設計與製造、電路設計與實現、電子裝置選型、程式設計與測試以及整體的解題過程。
 
  ### 自動駕駛汽車設計：關鍵升級與迭代
@@ -609,7 +609,7 @@ This week, our focus is dedicated to finalizing the **parking procedure programm
             <th>2025 National Competition: Parallel Reverse Parking Procedure Diagram - 2025 年全國賽：平行倒車入庫程序示意圖</th>
         </tr>
         <tr>
-            <td><img src="./img/4/5.png" width=600 /></td>
+            <td><img src="./img/4/Parking_Process_1.png" width=600 /></td>
         </tr>
     </table>
  </div>
@@ -794,7 +794,7 @@ Notably, due to its stable performance, the V4.0 version **became the primary ci
 經過實際測試，採用軸承的**新底盤結構有效改善了轉向的流暢度**，使自駕車在過彎時**更加平順**。
 
 
-### **英文翻譯：Chassis Friction Correction and Steering Smoothness Optimization** 
+### **Chassis Friction Correction and Steering Smoothness Optimization** 
 
 While testing the obstacle avoidance program, we observed that the autonomous car experienced **slight stuttering during cornering**. Inspection revealed the problem originated from the **chassis structure**: as the **steering knuckle was in direct contact with the chassis**, the resulting **excessive friction** caused the drivetrain to **jam**.
 
@@ -864,7 +864,7 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 #### **最終成就與展望**
 就算比賽過程**坎坷不順**，但我們最終成功地以**第一名的排名**脫穎而出，獲得了**代表台灣參加 WRO 未來工程師世界賽**的資格。我們將**充分吸收這次全國賽的實戰經驗與教訓**，以**更好的狀態**去參加世界賽，並以**獲取優異的成績榮耀回國**為目標。
 
-### **英National Competition Journey, Challenges, and Qualification**
+### **National Competition Journey, Challenges, and Qualification**
 
 Our National Competition took place on **August 23rd**. Despite a challenging process, we successfully qualified.
 
@@ -1027,8 +1027,8 @@ A comparison diagram of the two procedures is shown below.
             <th>2025 WRO World Final: Diagram of the Parallel Reverse Parking Procedure - 2025 年世界賽：平行倒車入庫程序示意圖</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Forward Parking process.png" width=400 /></td>
-            <td><img src="./img/9/New Parking process.png" width=400 /></td>
+            <td><img src="./img/9/Parking_Process_1.png" width=400 /></td>
+            <td><img src="./img/9/Parking_Process_2.png" width=400 /></td>
         </tr>
     </table>
  </div>
@@ -1190,7 +1190,7 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
             <td align=center width="25%" ><img src="../../models/Circuit_Design/img/circuit_board_Front_5.png" /></td>
             <td align=center width="25%"><img src="../../models/Circuit_Design/img/circuit_board_back_5.png"  /></td>
         <tr>
-        <th  colspan = 2>SLA 3D Printer 8K 14K 比較</th>
+        <th  colspan = 2>Comparison of Physical Print Results Between SLA 3D Printers at 8K and 14K Resolutions - SLA 3D 列印機 8K 與 14K 解析度之實際列印成果比較</th>
         </tr>
         <tr>
             <th> Stereolithography (SLA) 3D Printer 8K - 使用 8K 3D打印機</th>
@@ -1273,7 +1273,7 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
             <td colspan=2><img src="./img/9/Untrasonic_Car.jpg" width=100% alt="Untrasonic Car" /></td>
         </tr>
         <tr>
-            <th colspan=2>紅外線感測器的實際安裝位置照片</th>
+            <th colspan=2>Photo of the Final Actual Installation Location of the Infrared Sensor - 紅外線感測器的實際安裝位置照片</th>
         </tr>
         <tr align=center>
             <td width=50% ><img src="./img/9/Infared_Car_Front.jpg" /></td>
@@ -1381,8 +1381,8 @@ The commands for manual setup and using the auto-script are provided below.
  <div align=center>
     <table>
         <tr>
-            <th>TPLink AC1300 接收器</th>
-            <th>ASUS AC1200 接收器</th>
+            <th>TP-Link AC1300 Wi-Fi Wireless Adapter</th>
+            <th>ASUS AC1200  Wi-F  Wireless Adapter</th>
         </tr>
         <tr>
             <td align=center ><img src="./img/10/TPLink AC1300.png" width=150 /></td>
@@ -1391,22 +1391,21 @@ The commands for manual setup and using the auto-script are provided below.
     </table>
  </div>
 
- - ## 設置AP - 手動下指令
+ - #### Setting Up Access Point (AP) Mode: Manual Command Operation - 設置AP - 手動下指令
 
     ```bash
-    sudo nmcli dev wifi hotspot ifname wlan0 ssid "snjh_jetson" password "1234567890" # 創建AP設置
+    sudo nmcli dev wifi hotspot ifname wlan0 ssid "snjh_jetson" password "1234567890" 
 
-    # 設置AP模式自啟動
     sudo nmcli connection modify Hotspot connection.autoconnect yes
     sudo systemctl enable NetworkManager.service
     sudo systemctl status NetworkManager
 
     ```
 
- - ## 設置AP - 使用自動腳本 [Set_AP.sh](../../src/System_Platform_Software/code/Set_AP.sh)
+ - #### Setting Up Access Point (AP) Mode: Using Automated Script Execution[Set_AP.sh](../../src/System_Platform_Software/code/Set_AP.sh)
 
     ```bash
-    sudo bash ./Set_AP.sh # 執行腳本進行配置及啟用動作
+    sudo bash ./Set_AP.sh 
     ```
 
  ## 2025/10/07 ~ 2025/10/13
@@ -1414,19 +1413,61 @@ The commands for manual setup and using the auto-script are provided below.
 
  **Content:**
 
- - 本周我們再進行LAB數值調試時，遇到了數值調整時正常但程式運行時卻無法準確辨識到物件的問題，經過測試發現問題在於環境光線的干擾和數值抓得太緊繃導致。解決問題的方法是：1.在鏡頭支架上方新增遮光罩、2.在調整LAB時一個物件的數值調整完畢後拉一些容許誤差。
+### **系統穩定性、啟動機制與硬體優化** 
 
- - 我們在測試的過程中因為Web Sockets在成功連線之前會將成功前的所有動作堵住，並在連線成功後一次性執行，這樣會造成我們程式啟動時會有機器再向前行走但是舵機沒有運作、底盤沒有任何反應等...。所以我們決定將程序的啟動控制由Jetson Orin Nano來控制，因此我們須將程式啟動按鈕的電路更改，再更改過程中我們遇到程式按鈕按下狀態沒有更新，經過網路資料查詢發現我們需要使用上拉電阻的方式進行電路連接，所以我們使用EasyEDA另外繪畫了一塊電路板將程式啟動按鈕的電路獨立。
+#### **1. 影像辨識穩定性修正**
+* **問題根源：** 我們在進行 **LAB 數值調試**時發現，數值在調整階段正常，但在程式實際運行時卻**無法準確辨識到物件**。經測試確認，問題在於**環境光線的干擾**和**數值抓得太緊繃**。
+* **解決方案：** 我們採取了兩項修正措施：
+    1.  在**鏡頭支架上方新增遮光罩**。
+    2.  在調整 LAB 數值時，對單一物件的數值調整完畢後，**拉大一些容許誤差範圍**。
 
- - 由於我們需要新增遮光板因此我們在鏡頭支架上面新增樂高插銷孔洞用於安裝樂高的5x11科技面板零件，後來又因為設計了第二塊按鈕Led獨立電路，因此我們在鏡頭支架上方設計螺絲孔位用於安裝第二塊按鈕Led獨立電路板。
+#### **2. WebSockets 阻塞問題與啟動電路獨立**
+* **通訊阻塞問題：** 在測試過程中，我們發現 **WebSockets 在成功連線之前會將連線前的所有動作堵住**，並在連線成功後才一次性執行。這導致程式啟動時會出現**機器向前行走但舵機沒有運作、底盤沒有任何反應**等異常情況。
+* **啟動控制轉移：** 為了解決此問題，我們決定將**程序的啟動控制由 Jetson Orin Nano 來負責**。
+* **電路修正：** 因此，我們必須更改程式啟動按鈕的電路。在更改過程中，我們遇到**程式按鈕按下狀態沒有更新**的問題。透過網路資料查詢，我們發現需要使用**上拉電阻（Pull-up Resistor）** 的方式進行電路連接。
+* **獨立電路板設計：** 最終，我們使用 **EasyEDA 另外繪製了一塊獨立電路板**，專門用於**程式啟動按鈕的電路**。
 
+#### **3. 鏡頭支架結構優化**
+* **新增遮光板：** 由於需要新增遮光板，我們在鏡頭支架上面**新增樂高插銷孔洞**，用於安裝**樂高的 $5 \times 11$ 科技面板零件**。
+* **新增螺絲孔位：** 後來因為設計了**第二塊按鈕 LED 獨立電路板**，我們在鏡頭支架上方設計了**螺絲孔位**，用於安裝這塊獨立電路板。
 
-獨立開關控制電路板（第二塊電路板） 此外，為符合競賽規則中必須由 Jetson Orin Nano 偵測啟動按鈕才能開始運行的規定 ，我們設計了第二塊獨立的電路板：
+---
 
-啟動按鈕整合： 將啟動按鈕電路獨立連接至 Jetson Orin Nano 的通用輸入/輸出（GPIO）接口，確保主控制器能依規程偵測發車指令。
-除錯與狀態顯示： 為了優化除錯流程，我們在電路板上新增了 RGB 燈珠。
-功能目的： 該燈珠用於即時顯示車輛偵測到的最近物件顏色，以便於快速診斷與狀態監控。
-這塊電路板專門用於自駕車的啟動按鈕控制與狀態顯示。
+### **獨立開關控制電路板（第二塊電路板）功能總結**
+
+此獨立電路板的設計目的為：
+* **啟動按鈕整合：** 將啟動按鈕電路**獨立連接至 Jetson Orin Nano 的 GPIO 接口**，確保主控制器能依規程偵測發車指令。
+* **除錯與狀態顯示：** 為了優化除錯流程，在電路板上**新增了 RGB 燈珠**。
+* **功能目的：** 該燈珠用於**即時顯示車輛偵測到的最近物件顏色**，以便於快速診斷與狀態監控。
+* **定位：** 這塊電路板專門用於自駕車的**啟動按鈕控制與狀態顯示**。
+
+### **System Stability, Startup Mechanism, and Hardware Optimization** 
+
+#### **1. Image Recognition Stability Correction**
+* **Root Cause:** While conducting **LAB value tuning**, we found that although the values were normal during the adjustment phase, the program **failed to accurately identify objects** during actual operation. Testing confirmed the issue stemmed from **environmental light interference** and **overly strict value tolerances**.
+* **Solution:** We implemented two corrective measures:
+    1.  **Adding a light shield (hood) above the lens mount**.
+    2.  **Allowing a larger margin of error** after tuning the LAB values for a specific object.
+
+#### **2. WebSockets Blocking Issue and Isolated Startup Circuit**
+* **Communication Blockage:** During testing, we found that **WebSockets would block all previous actions until a connection was successfully established**, executing them simultaneously afterward. This caused anomalies upon program startup, such as the **robot moving forward while the servo motor was inactive, or the chassis being unresponsive**.
+* **Startup Control Transfer:** To resolve this, we decided to assign **program startup control to the Jetson Orin Nano**.
+* **Circuit Correction:** We needed to modify the program start button circuit. During this change, we encountered a problem where the **button's pressed state was not updating**. Consulting online resources revealed the necessity of connecting the circuit using a **pull-up resistor**.
+* **Isolated PCB Design:** Consequently, we used **EasyEDA to custom-design a separate circuit board** dedicated solely to the **program startup button circuit**.
+
+#### **3. Lens Mount Structure Optimization**
+* **Adding Light Shield:** Since a light shield was required, we **added LEGO pinholes** to the lens mount for mounting a **LEGO $5 \times 11$ Technic panel**.
+* **Adding Screw Holes:** Later, because we designed the **second independent button/LED circuit board**, we designed **screw holes** above the lens mount for installing this secondary board.
+
+---
+
+### **Independent Switch Control Board (Secondary PCB) Summary**
+
+The purpose of this independent board is:
+* **Start Button Integration:** The start button circuit is **independently connected to the Jetson Orin Nano's GPIO interface**, ensuring the main controller detects the start command as per regulations.
+* **Debugging and Status Display:** An **RGB LED was added** to the board to optimize the debugging process.
+* **Function:** The LED is used to **display the color of the nearest object detected by the vehicle in real-time**, facilitating quick diagnostics and status monitoring.
+* **Role:** **This board is dedicated to the autonomous car's start button control and status indication**.
 
  <div align=center>
  <table>
@@ -1458,15 +1499,22 @@ The commands for manual setup and using the auto-script are provided below.
 <div align=center>
     <table>
         <tr>
-            <th colspan=2>新增遮光板</th>
+            <th colspan=2>Lens Mount with Integrated Light Shielding Functionality</th>
         </tr>
         <tr>	
-            <th>Lens Mount with Integrated Light Shielding Functionality 鏡頭支架（Lens Mount）：整合遮光罩功能設計</th>
+            <th>Lens Mount鏡頭支架</th>
             <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
         </tr>
         <tr>
             <td align=center width=500><img src="./img/10/Lens holder body Onshape.png" width=450 /></td>
             <td align=center width=500><img src="./img/10/Lens holder body imager.png" width=450 /></td>
+        </tr>
+        <tr>	
+            <th>Lens Mount Physical Side View - 鏡頭支架側視圖</th>
+            <th>Lens Mount Physical Front View - 鏡頭支架實體正面視圖</th>
+        </tr>        
+        <td align=center width=500><img src="./img/10/Visor_Side.jpg" width=450 /></td>
+        <td align=center width=500><img src="./img/10/Visor_Front.jpg" width=450 /></td>
         </tr>
     </table>
 </div>
@@ -1477,7 +1525,17 @@ The commands for manual setup and using the auto-script are provided below.
 
  **Content:**
 
- - 本周我們使用安裝在機器前後的紅外線感測器進行停車流程。下方為紅外線感測器的類比訊號讀取程序。
+### **紅外線感測器輔助停車與訊號讀取** 
+
+本週，我們實施了**利用安裝在機器人前後方的紅外線感測器進行停車流程**。
+
+下方展示了**紅外線感測器的類比訊號讀取程序**。
+
+### **Infrared Sensor-Assisted Parking and Signal Reading** 
+
+This week, we implemented the **parking procedure using the infrared sensors installed on the front and rear of the robot**.
+
+The **analog signal reading procedure for the infrared sensors** is shown below.
 
     ```python
     class TCRT5000:
@@ -1510,33 +1568,79 @@ The commands for manual setup and using the auto-script are provided below.
 
  **Content:**
 
- - 本周我們完成了最終的程式架構，經過先前的更動我們的停車流程也做了些微的更動。下面為最終版的停車流程順序示意圖。
+### **最終程式架構完成與影片拍攝** 
 
- - 在完成程式架構和流程後我們也開始進行介紹影片的拍攝。
+* **最終架構與流程：** 本週，我們已**完成了最終的程式架構**。根據先前的硬體和邏輯更動，我們的**停車流程也進行了些微的調整與優化**。下方展示了**最終版的停車流程順序示意圖**。
+* **影片製作：** 在完成程式架構和流程的定案後，我們也**開始進行介紹影片的拍攝工作**。
+
+
+### **Final Program Architecture Completion and Video Production** 
+
+* **Final Architecture and Flow:** This week, we have **completed the final program architecture**. Following previous hardware and logic modifications, our **parking procedure flow has also undergone slight adjustments and optimization**. The diagram below illustrates the **sequential flow of the final version of the parking procedure**.
+* **Video Production:** After finalizing the program architecture and procedures, we also **commenced the filming of the introduction video**.
+    * **[5-1 Open Challenge rounds](video/Open_Challenge/video.md)**
+    * **[5-2 Obstacle Challenge rounds](video/Obstacle_Challenge/video.md)**
+
 
  <div align=center>
     <table>
         <tr>
-            <th>最終停車程序示意圖</th>
+            <th>Final Version Parking Procedure Flow Diagram - 最終版停車程序流程示意圖</th>
         </tr>
         <tr>
-            <td width=1000 align=center><img src="./img/10/Parking_process.png" width=700 /></td>
+            <td width=1000 align=center><img src="./img/10/Parking_Process_3.png" width=700 /></td>
         </tr>
     </table>
  </div>
 
-# <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>
+
 
  ## 2025/10/27 ~ 2025/11/01
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
  **Content:**
- 整理資料，並上傳GIHUB
+ 
+**全體成員已依據先前分配的工作職責，正挑燈夜戰全力衝刺，持續將已修改的工程文件資料上傳至 GitHub 專案儲存庫**。
 
- ## 2025/10/27 ~ 2025/11/01
+
+
+**All team members, working diligently overnight in accordance with their previously allocated responsibilities, are urgently continuing to upload the modified engineering documentation to the GitHub project repository**.
+
+
+ ## 2025/11/02 ~ 2025/11/08
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
  **Content:**
- 經詢問世界賽裁判，上下位控制器不得使用穩定傳輸之無線傳輸websocket通訊協定，那只能改回原本使用的UART通訊協定的。
+
+
+### **通訊協議調整與工程文件持續更新** 
+
+#### **1. 通訊協議調整決策與新挑戰**
+前幾天經向**世界賽裁判**確認，上下位控制器（**Jetson Orin Nano** 與 **Raspberry Pi Pico W**）之間**不得使用 WebSocket 等穩定傳輸的無線通訊協議**。
+
+鑑於此項規則限制，我們決定**捨棄原先研究的 WebSocket 方案**，並**改回使用先前已驗證的 UART（通用非同步收發傳輸器）通訊協議** 進行數據傳輸。
+
+然而，由於主控制器已升級為 **Jetson Orin Nano**，而我們**尚未在其上進行過 UART 通訊的實作**，這對團隊來說是一個**新的技術挑戰**。
+
+#### **2. 工程文件進度**
+**持續在 GitHub 專案儲存庫上修改工程文件資料**。
+
+
+
+### **Communication Protocol Adjustment and Ongoing Engineering Document Updates**
+
+#### **1. Communication Protocol Adjustment Decision and New Challenge**
+
+  - Following confirmation with the **World Final judges** a few days ago, the communication between the main and auxiliary controllers (**Jetson Orin Nano** and **Raspberry Pi Pico W**) **is prohibited from using stable wireless communication protocols such as WebSocket**.
+
+  - Given this rule restriction, we decided to **abandon the previously investigated WebSocket solution** and **revert to the established UART (Universal Asynchronous Receiver-Transmitter) communication protocol** for data transmission.
+
+  - However, since the main controller has been upgraded to the **Jetson Orin Nano**, and we **have not yet implemented UART communication on this specific controller**, this presents a **new technical challenge** for the team.
+
+#### **2. Engineering Document Progress**
+  - **Continuing to modify engineering documentation on the GitHub project repository**.
+
+
+ # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>
 
 
