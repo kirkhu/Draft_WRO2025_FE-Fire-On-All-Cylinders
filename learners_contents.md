@@ -29,7 +29,6 @@
       - [Image Recognition Processing](./src/Image_Recognition_Processing/README.md) 
       - [Steering Control](./src/Steering_Control/README.md)  
       - [verview_of_Parking_Lot_Departure_Steering_Control](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
-
       - [Automatically record the LAB values of the field](src/Automatically_record_LAB/README.md)
     - __Programming__
       - [Open Challenge Code Overview](./src/Programming/Open_Challenge/README.md)
