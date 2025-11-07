@@ -1,7 +1,7 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
 ## <div align="center">Vehicle Parking Procedure Guide - 車輛停車程序指南</div>
-  **Code Logic Description: Parking Task After Three Laps - 程式碼邏輯說明：三圈後停車任務。**
+###  **Code Logic Description: Parking Task After Three Laps - 程式碼邏輯說明：三圈後停車任務。**
 - ### Parking program-停車計劃
     ### 中文:
     1.  **停車區識別與入庫準備 (Jetson Orin Nano)**
@@ -32,7 +32,7 @@
     
 
 - **Code Executed on the Raspberry Pi Pico W Controller- Raspberry Pi Pico W 控制器上執行的程式碼。**
-    ``` 
+    ```python
     while mode == 3:
         json_obj, _, got_stop = pump_ws(s)
         extract_magenta_from_json(json_obj)
@@ -226,42 +226,87 @@
     ```
 ## <div align="center">Counter-Clockwise Vehicle Parking Procedure - 逆時針方向車輛停車流程</div>
 <div align=center>
+<table>
+<tr>
+<th align="center" width="50%">The vehicle proceeds forward through the parking area. </th>
+<th align="center"  width="50%"> The vehicle turns to the right, with its front facing the outer wall at a 90-degree azimuth.</th>
+</tr>
+<tr>
+<td align="center"  width="50%"><img src="img/parking_1-1.png" /> </td>
+<td align="center"  width="50%"><img src="img/parking_1-2.png" /></td>
 
-  |The vehicle proceeds forward through the parking area.|The vehicle turns to the right, with its front facing the outer wall at a 90-degree azimuth.|
-  |:---:|:---:|
-  |<div align=center><img src="img/parking_1-1.png" /></div>|<div align=center><img src="img/parking_1-2.png" /></div>|
+</tr>
+<tr>
+<th align="center"  width="50%">The vehicle drives straight toward the 90-degree azimuth until the infrared sensor detects the outer wall, then brakes.</th>
+<th align="center"  width="50%">The vehicle reverses towards the left-rear until its yaw angle exceeds 177 degrees.</th>
+</tr>
+<tr>
+<td align="center"  width="50%"><img src="img/parking_1-3.png" /></td>
+<td align="center"  width="50%"><img src="img/parking_1-4.png" /></td>
+</tr>
 
-  |The vehicle drives straight toward the 90-degree azimuth until the infrared sensor detects the outer wall, then brakes.|The vehicle reverses towards the left-rear until its yaw angle exceeds 177 degrees.|
-  |:---:|:---:|
-  |<div align=center><img src="img/parking_1-3.png" /></div>|<div align=center><img src="img/parking_1-4.png" /></div>|
-
-
-  |The vehicle follows the outer wall until the area of the magenta wall contour is less than 100, then the vehicle moves forward another 100 degrees.|The vehicle reverses towards the rear-left into the parking area until its heading angle reaches 123 degrees.|
-  |:---:|:---:|
-  |<div align=center><img src="img/parking_1-5.png" /></div>|<div align=center><img src="img/parking_1-6.png" /></div>|
-
-  |The vehicle reverses towards the rear-right into the parking area until its heading angle reaches 177 degrees.|Vehicle Parking Finished|
-  |:---:|:---:|
-  |<div align=center><img src="img/parking_1-7.png" /></div>|<div align=center><img src="img/parking_1-8.png" /></div>|
+<tr>
+<th align="center"  width="50%"> The vehicle follows the outer wall until the area of the magenta wall contour is less than 100, then the vehicle moves forward another 100 degrees.</th>
+<th align="center"  width="50%">The vehicle reverses towards the rear-left into the parking area until its heading angle reaches 123 degrees.</th>
+</tr>
+<tr>
+<td align="center"  width="50%"><img src="img/parking_1-5.png" /> </td>
+<td align="center"  width="50%"><img src="img/parking_1-6.png" /> </td>
+</tr>
+<tr>
+<th align="center"  width="50%">The vehicle reverses towards the rear-right into the parking area until its heading angle reaches 177 degrees.</th>
+<th align="center"  width="50%">Vehicle Parking Finished </th>
+</tr>
+<tr>
+<td align="center"  width="50%"><img src="img/parking_1-7.png" /> </td>
+<td align="center"  width="50%"><img src="img/parking_1-8.png" /> </td>
+</tr>
+</table>
+</div>
 
 ## <div align="center">Clockwise Vehicle Parking Procedure - 順時針方向停車輛車流程</div>
-<div align=center>
 
-  |The vehicle proceeds forward through the parking area.|The vehicle turns to the left, with its front facing the outer wall at a 90-degree azimuth.|
-  |:---:|:---:|
-  |<div align=center><img src="img/parking_2-1.png" /></div>|<div align=center><img src="img/parking_2-2.png" /></div>|
+<table>
+<tr>
+<th align="center"  width="50%"> The vehicle proceeds forward through the parking area.</th>
+<th align="center"  width="50%"> The vehicle turns to the left, with its front facing the outer wall at a 90-degree azimuth.</th>
+</tr>
+<tr>
+<td align="center"  width="50%"> <img src="img/parking_2-1.png" /></td>
+<td align="center"  width="50%"> <img src="img/parking_2-2.png" /></td>
+</tr>
 
-  |The vehicle drives straight toward the 90-degree azimuth until the infrared sensor detects the outer wall, then brakes.|The vehicle reverses towards the right-rear until its yaw angle exceeds 177 degrees.|
-  |:---:|:---:|
-  |<div align=center><img src="img/parking_2-3.png" /></div>|<div align=center><img src="img/parking_2-4.png" /></div>|
+<tr>
+<th align="center"  width="50%">The vehicle drives straight toward the 90-degree azimuth until the infrared sensor detects the outer wall, then brakes. </th>
+<th align="center"  width="50%">The vehicle reverses towards the right-rear until its yaw angle exceeds 177 degrees. </th>
+</tr>
+<tr>
+<td align="center"  width="50%"><img src="img/parking_2-3.png" /> </td>
+<td align="center"  width="50%"><img src="img/parking_2-4.png" /> </td>
+</tr>
 
-  |The vehicle follows the outer wall until the area of the magenta wall contour is less than 100, then the vehicle moves forward another 100 degrees.|The vehicle reverses towards the rear-right into the parking area until its heading angle reaches 123 degrees.|
-  |:---:|:---:|
-  |<div align=center><img src="img/parking_2-5.png" /></div>|<div align=center><img src="img/parking_2-6.png" /></div>|
 
-  |The vehicle reverses towards the rear-left into the parking area until its heading angle reaches 177 degrees.|Vehicle Parking Finished|
-  |:---:|:---:|
-  |<div align=center><img src="img/parking_2-7.png" /></div>|<div align=center><img src="img/parking_2-8.png" /></div>|
+<tr>
+<th align="center"  width="50%"> The vehicle follows the outer wall until the area of the magenta wall contour is less than 100, then the vehicle moves forward another 100 degrees.</th>
+<th align="center"  width="50%">The vehicle reverses towards the rear-right into the parking area until its heading angle reaches 123 degrees. </th>
+</tr>
+<tr>
+<td align="center"  width="50%"><img src="img/parking_2-5.png" /></td>
+<td align="center"  width="50%"><img src="img/parking_2-6.png" /> </td>
+</tr>
+
+
+<tr>
+<th align="center"  width="50%">The vehicle reverses towards the rear-left into the parking area until its heading angle reaches 177 degrees. </th>
+<th align="center"  width="50%">Vehicle Parking Finished </th>
+</tr>
+<tr>
+<td align="center"  width="50%"><img src="img/parking_2-7.png"  /> </td>
+<td align="center"  width="50%"><img src="img/parking_2-8.png"  /> </td>
+</tr>
+</table>
+</div>
+  
   
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  

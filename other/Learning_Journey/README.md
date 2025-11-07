@@ -6,7 +6,7 @@
  ### 自動駕駛汽車設計：關鍵升級與迭代
   這款自動駕駛汽車設計建立在從前輩團隊（Shinan-Fire-On-All-Cylinders ）繼承的豐富經驗之上，並融入了我去年參加世界大賽的實踐經驗。
   我們不僅借鑒了上一年冠軍隊伍的成功要素，還實施了關鍵的技術迭代：
-  * **控制器升級：**主控制器已從標準的 Jetson Orin Nano 升級為性能更優越的 Nvidia Jetson Orin Nano。
+  * **控制器升級：**主控制器已從標準的 Jetson Nano 升級為性能更優越的 Nvidia Jetson Orin Nano。
 * **機械大修：**我們對車輛的機械部件進行了重組和優化，特別是轉向系統和底盤。
 * **視覺增強：**影像處理能力得到了顯著提升，效率和準確性更高。
 
@@ -1171,8 +1171,8 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
             <th colspan=2>Design Evolution of the Fifth GenerationPCB (V5.0) - 設計第五代PCB電路板</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Design Circuit.jpg" height=100% /></td>
-            <td><img src="./img/9/Circuit PCB.png" height=100% /></td>
+            <td><img src="./img/9/Design_Circuit.jpg" height=100% /></td>
+            <td><img src="./img/9/Circuit_PCB.png" height=100% /></td>
         </tr>
         <tr>
             <th>Circuit schematic</th>
@@ -1197,14 +1197,14 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
             <th> Stereolithography (SLA) 3D Printer 14K 使用 14K 3D打印機</th>
         </tr>
         <tr>
-            <td align=center><img src="./img/9/steering knuckle 8K.png" width=100% /></td>
-            <td align=center><img src="./img/9/steering knuckle 14K.png" width=100% /></td>
+            <td align=center><img src="./img/9/steering_knuckle_8K.png" width=100% /></td>
+            <td align=center><img src="./img/9/steering_knuckle_14K.png" width=100% /></td>
         </tr>
         <tr>
             <th colspan=2>The Steering Structure Exhibits a Toe-in Phenomenon(This condition is visible as the two front wheels noticeably converge inwards)轉向結構呈現內八(可由兩輪子向內可看出)</th>
         </tr>
         <tr>
-            <td colspan=2 align=center><img src="./img/9/Inner Eight.png" width=100% /></td>
+            <td colspan=2 align=center><img src="./img/9/Inner_Eight.png" width=100% /></td>
         </tr>
     </table>
  </div>
@@ -1258,8 +1258,8 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
             <th>Infrared Sensor bracket</th>
         </tr>
         <tr>
-            <td><img src="./img/9/New Ultrasonic sensor Bracket.jpg" width=400 /></td>
-            <td><img src="./img/9/infrared sensor Bracket.jpg" width=400 /></td>
+            <td><img src="./img/9/New_Ultrasonic_sensor_Bracket.jpg" width=400 /></td>
+            <td><img src="./img/9/infrared_sensor_Bracket.jpg" width=400 /></td>
         </tr>
     </table>
  </div>
@@ -1359,8 +1359,8 @@ The commands for manual setup and using the auto-script are provided below.
             <th>The Revised Vehicle Mid-Layer Wooden Plate - 經修正優化後的車輛中央層木板</th>
         </tr>
         <tr>
-            <td align=center><img src="./img/9/Driver Board 3.jpg" width=500 /></td>
-            <td align=center><img src="./img/9/Medium Board 3.jpg" width=500 /></td>
+            <td align=center><img src="./img/9/Driver_Board_3.jpg" width=500 /></td>
+            <td align=center><img src="./img/9/Medium_Board_3.jpg" width=500 /></td>
         </tr>
     </table>
  </div>
@@ -1372,8 +1372,8 @@ The commands for manual setup and using the auto-script are provided below.
             <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
         </tr>
         <tr>
-            <td align=center><img src="./img/9/Camera Bracket Main Body.png" width=500 /></td>
-            <td align=center><img src="./img/9/Camera Bracket Fixed Plate.png" width=500 /></td>
+            <td align=center><img src="./img/9/Camera_Bracket_Main_Body.png" width=500 /></td>
+            <td align=center><img src="./img/9/Camera_Bracket_Fixed_Plate.png" width=500 /></td>
         </tr>
     </table>
  </div>

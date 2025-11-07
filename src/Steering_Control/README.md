@@ -27,8 +27,8 @@
         * **Trigger Condition:** When the **contour area of the wall on either side** (**`leftArea` (from ROI1) or `rightArea` (from ROI2)**) **exceeds the preset threshold of 1000**, the system determines that the vehicle is too close to the wall.
         * **Dynamic ROI Adjustment:** The system automatically activates a **smaller, high-sensitivity Region of Interest (ROI5)**, with coordinates `[270, 110, 370, 150]`, specifically designed to **enhance the detection of black and magenta contours**.
         * **Outer Wall Contact Reaction:** As soon as **ROI5 detects contact with the outer wall**, the system immediately **increases the steering angle**, causing the vehicle to turn more sharply to **prevent the vehicle body from colliding with the outer wall**.
-    - program code:
-    ```
+   - ### **program code:**
+    ```python
     if turnDir == "none":
       if maxO > 110:
         turnDir = "right"
@@ -53,38 +53,32 @@
           sTime = time.time()
     ```
      <div align=center>
-        <table>
-        <tr>
-        <th>Blue Line Detected in ROI4(ROI4偵測到藍線)</th>
-        <th>Orange Line Detected in ROI4(ROI4偵測到橘線)</th>
-        </tr><tr>
-        <td><img src="./img/Blue_Line_Recognition.png" width=400 height="400"></td>
-        <td><img src="./img/Orange_Line_Recognition.png" width="400" height="395" ></td>
-        </tr>
-        </table>
-        </div>
-     <div align=center>
-        <table>
-        <tr>
-        <th>Performing Avoidance Maneuvers Upon Traffic Signal Detection(偵測到交通號誌後執行規避操作)</th>
-        <th>Performing Turns Without Traffic Signal Detection(無偵測交通號誌即可進行轉彎)</th>
-        </tr><tr>
-        <td><img src="./img/Traffic_Signal_Evaluation_and_Steering_Control.png" width=400 height="400"></td>
-        <td><img src="./img/Unsignalized_Intersection_Steering_Control.png" width="400" height="400"></td>
-        </tr>
-        </table>
-        </div>
-     <div align=center>
-        <table>
-        <tr>
-        <th>Activation of Auxiliary ROI5 Triggered by Inner Wall Detection During Turning Mode(轉彎模式下，內壁偵測觸發輔助 ROI5 開啟)</th>
-        <th>Executing Evasion Maneuver Upon Outer Wall Detection by ROI5(ROI5 偵測到外牆後執行規避動作)</th>
-        </tr><tr>
-        <td><img src="./img/Inner_Side_Obstacle_Avoidance_and_Steering_Control.png" width="400" height="400"></td>
-        <td><img src="./img/ROI_5_assisted_turning_detection.png" width=400 height="400"></td>
-        </tr>
-        </table>
-        </div>   
+      <table>
+      <tr>
+      <th align=center width="50%">Blue Line Detected in ROI4(ROI4偵測到藍線)</th>
+      <th  align=center width="50%">>Orange Line Detected in ROI4(ROI4偵測到橘線)</th>
+      </tr><tr>
+      <td  align=center width="50%">><img src="./img/Blue_Line_Recognition.png" width=400 height="400"></td>
+      <td  align=center width="50%">><img src="./img/Orange_Line_Recognition.png" width="400" height="395" ></td>
+      </tr>
+  
+      <tr>
+      <th  align=center width="50%">>Performing Avoidance Maneuvers Upon Traffic Signal Detection(偵測到交通號誌後執行規避操作)</th>
+      <th  align=center width="50%">>Performing Turns Without Traffic Signal Detection(無偵測交通號誌即可進行轉彎)</th>
+      </tr><tr>
+      <td  align=center width="50%">><img src="./img/Traffic_Signal_Evaluation_and_Steering_Control.png" width=400 height="400"></td>
+      <td  align=center width="50%">><img src="./img/Unsignalized_Intersection_Steering_Control.png" width="400" height="400"></td>
+      </tr>
+
+      <tr>
+      <th  align=center width="50%">>Activation of Auxiliary ROI5 Triggered by Inner Wall Detection During Turning Mode(轉彎模式下，內壁偵測觸發輔助 ROI5 開啟)</th>
+      <th  align=center width="50%">>Executing Evasion Maneuver Upon Outer Wall Detection by ROI5(ROI5 偵測到外牆後執行規避動作)</th>
+      </tr><tr>
+      <td  align=center width="50%">><img src="./img/Inner_Side_Obstacle_Avoidance_and_Steering_Control.png" width="400" height="400"></td>
+      <td align=center width="50%">><img src="./img/ROI_5_assisted_turning_detection.png" width=400 height="400"></td>
+      </tr>
+      </table>
+      </div>   
 
   
 </div> 
@@ -118,7 +112,7 @@
   * As the vehicle moves, the **camera** transmits the **video stream** to the main controller (**Jetson Orin Nano**).The controller then performs **image processing** to determine the **ideal X-coordinate position** of the **target pillar** within the image frame.This visual data (specifically the X-coordinate) assists the controller in **determining the object's spatial position and distance**, enabling **precise navigation and obstacle avoidance**.
   * On the captured image, the system uses the **`boundingRect()` function** to **draw a rectangle** around the target contour.This function returns the **X and Y coordinates of the rectangle's top-left corner**. When applied to the signal pillar's contour, these coordinates are then used to **determine its precise position** within the frame.
   
-- The vehicle completes the precise maneuver to avoid traffic signals (colored pillars) through the following three main steps:
+- **The vehicle completes the precise maneuver to avoid traffic signals (colored pillars) through the following three main steps:**
     
     1.  **Target Pillar Selection and Distance Calculation:**
         * If **two or more pillars** appear on the camera screen, the system calculates the distance from the **center point of the screen's bottom edge** to the **center point of the bottom of each pillar**.

@@ -40,17 +40,17 @@
 - ### ${{\color{red} Software Overview }} $ 
   #### 3. Obstacle Management-障礙管理
     - [3-1 Software Platform Construction(軟體平台建設) **已改動OK](src/System_Platform_Software/README.md)
-    - [3-2 OpenCV Introduction (OpenCV介紹)](src/OpenCV/README.md)
+    - [3-2 OpenCV Introduction (OpenCV介紹)OK](src/OpenCV/README.md)
     - __3-4 Image Recognition Processing and Steering-影像辨識處理和控制__
       - [3-4-1 Image Recognition Processing(影像辨識處理) **已改動 OK](src/Image_Recognition_Processing/README.md)
       - [3-4-2 Parking Lot Departure Steering Control Overview(停車場出發轉向控制) **已改動 OK](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
-      - [3-4-3 Steering Control(轉向控制) **已改動 ](src/Steering_Control/README.md) 
+      - [3-4-3 Steering Control(轉向控制) **已改動 OK](src/Steering_Control/README.md) 
       - [3-4-4 Automatically record the LAB values of the field(場地物件LAB值的自動化儲存記錄) **已改動OK](src/Automatically_record_LAB/README.md)
     - __3-5 Programming - Vehicle’s control program程式設計__
-      - [3-5-1 Open Challenge Code Overview(開放挑戰程式碼概述) **已改動](src/Programming/Open_Challenge/README.md)
-      - [3-5-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) **已改動](src/Programming/Obstacle_Challenge/README.md)
-      - [3-5-3 Vehicle Departure Procedure Guide(車輛出發程序指南) **已改動](src/Vehicle_Departure_Procedure_Guide/README.md)
-      - [3-5-4 Vehicle Parking Procedure Guide(車輛停車程序指南) **已改動](src/Vehicle_Parking_Procedure_Guide/README.md)
+      - [3-5-1 Open Challenge Code Overview(開放挑戰程式碼概述) **已改動OK](src/Programming/Open_Challenge/README.md)
+      - [3-5-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) **已改動OK](src/Programming/Obstacle_Challenge/README.md)
+      - [3-5-3 Vehicle Departure Procedure Guide(車輛出發程序指南) **已改動OK](src/Vehicle_Departure_Procedure_Guide/README.md)
+      - [3-5-4 Vehicle Parking Procedure Guide(車輛停車程序指南) **已改動OK](src/Vehicle_Parking_Procedure_Guide/README.md)
     - __3-6 Remote Connection-遠端連線__
       - [3-6-1 NoMachine Introduction(NoMachine簡介) OK](other/NoMachine/README.md)
 
@@ -61,12 +61,12 @@
   #### 5. Performance Videos - Challenge rounds 表演影片
     - [5-1 Open Challenge rounds(公開挑戰) OK](video/Open_Challenge/video.md)
     - [5-2 Obstacle Challenge rounds (障礙挑戰)OK](video/Obstacle_Challenge/video.md)
-    - [5-3 Self-Driving Car Design Process Video](video/Design_Process_Video/video.md)
+    - [5-3 Self-Driving Car Design Process Video ](video/Design_Process_Video/video.md)
   #### 6. GitHub Utilization-GitHub 使用率
     - [6-1 GitHub Editing Tools Introduction(VScode Edit/GIT) (GitHub 編輯VScode 編輯/GIT)OK](src/GitHub_Edit/README.md)
     - [6-2 GitHub Web Editor Supported Markup Languages(GitHub 網頁編輯支援的標記語言)OK ](src/GitHub_Languages/README.md)  
   #### 7. Engineering Factor -工程因素 
-    - [7-1 Learning Journey(工作日記) **已改動](other/Learning_Journey/README.md)
+    - [7-1 Learning Journey(工作日記) **已改動OK](other/Learning_Journey/README.md)
       - [February (二月)](other/Learning_Journey/README.md#20250228--20250330)
       - [March (三月)](other/Learning_Journey/README.md#20250301--20250307)
       - [April (四月)](other/Learning_Journey/README.md#20250403--20250414)
