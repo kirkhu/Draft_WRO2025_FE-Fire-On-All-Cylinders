@@ -5,18 +5,18 @@
  - ### Vehicle steering control-車輛轉向控制
     ### 中文:
     1. **方向判斷**:
-      * 系統使用 **Jetson Orin Nano 控制板**讀取 **CSI 攝影鏡頭的影像畫面**，並透過設定的**感興趣區域 (ROI4)** 來偵測賽道上的**橘線與藍線**，進而決定車輛應執行**左轉或右轉**。
-      * **右轉決策：** 若偵測到**橘線的輪廓面積 (maxO)** **超過預設閾值 (> 110)**，系統則判斷需要執行**右轉 ("right")**。
-      * **左轉決策：** 若偵測到**藍線的輪廓面積 (maxB)** **超過預設閾值 (> 110)**，系統則判斷需要執行**左轉 ("left")**。
+        * 系統使用 **Jetson Orin Nano 控制板**讀取 **CSI 攝影鏡頭的影像畫面**，並透過設定的**感興趣區域 (ROI4)** 來偵測賽道上的**橘線與藍線**，進而決定車輛應執行**左轉或右轉**。
+        * **右轉決策：** 若偵測到**橘線的輪廓面積 (maxO)** **超過預設閾值 (> 110)**，系統則判斷需要執行**右轉 ("right")**。
+        * **左轉決策：** 若偵測到**藍線的輪廓面積 (maxB)** **超過預設閾值 (> 110)**，系統則判斷需要執行**左轉 ("left")**。
     2. **彎道進入訊號**:
        - 一旦確認了轉向方向，且偵測到對應的標線（例如，方向為右轉時，maxO > 100），則會設置轉向訊號旗標 (tSignal = True)，同時設置 rTurn 或 lTurn 旗標。
     3. **轉彎輔助偵測**:
        - 當如果任何一側牆壁輪廓面積 (leftArea 或 rightArea)面積超過1000時，會自動設定一個較小的ROI5區域([270, 110, 370, 150])用於強化黑色和洋紅色輪廓的偵測，當ROI5接觸到外牆會將轉向角度變大進行轉彎防止撞上外牆。
     ### 英文:
     1. **Direction Determination**:
-      * The system uses the **Jetson Orin Nano controller** to read the image stream from the **CSI camera**. It then utilizes the designated **Region of Interest (ROI4)** to detect the **orange and blue lines** on the track, thereby determining whether the vehicle should execute a **left turn or a right turn**.
-      * **Right Turn Decision:** If the **contour area of the detected orange line (maxO)** **exceeds the preset threshold (> 110)**, the system decides that a **right turn ("right")** is required.
-      * **Left Turn Decision:** If the **contour area of the detected blue line (maxB)** **exceeds the preset threshold (> 110)**, the system decides that a **left turn ("left")** is required.
+        * The system uses the **Jetson Orin Nano controller** to read the image stream from the **CSI camera**. It then utilizes the designated **Region of Interest (ROI4)** to detect the **orange and blue lines** on the track, thereby determining whether the vehicle should execute a **left turn or a right turn**.
+        * **Right Turn Decision:** If the **contour area of the detected orange line (maxO)** **exceeds the preset threshold (> 110)**, the system decides that a **right turn ("right")** is required.
+        * **Left Turn Decision:** If the **contour area of the detected blue line (maxB)** **exceeds the preset threshold (> 110)**, the system decides that a **left turn ("left")** is required.
     - When the vehicle detects a blue or orange line on the ground, the system triggers a steering action. Highlighted value detection of the sidewall ensures the vehicle maintains a safe distance to avoid collisions, while the blue and orange line detection identifies the vehicle’s turning direction, allowing it to navigate curves or corners safely and precisely.
     - As the vehicle moves, the system uses the camera to detect highlighted values and the blue and orange lines on the ground. When approaching a turn, the system assesses the y-axis position of the blue and orange lines and uses these values to determine the proximity of the turn. The closer the distance, the larger the y-axis value. The system selects the color with the largest y-axis value as the basis for steering direction, ensuring accurate turning.
     - After determining the turning direction, the system further evaluates the highlighted values on the left and right sides of the camera view. The turn action only initiates when the highlighted value reaches or exceeds 4500. This setup effectively prevents premature turning, reducing the risk of the vehicle hitting the sidewall due to early steering, and ensures accuracy and safety in turning.
