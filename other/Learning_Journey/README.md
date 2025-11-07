@@ -1171,8 +1171,8 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
             <th colspan=2>Design Evolution of the Fifth GenerationPCB (V5.0) - 設計第五代PCB電路板</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Design Circuit.jpg" height=100% /></td>
-            <td><img src="./img/9/Circuit PCB.png" height=100% /></td>
+            <td><img src="./img/9/Design_Circuit.jpg" height=100% /></td>
+            <td><img src="./img/9/Circuit_PCB.png" height=100% /></td>
         </tr>
         <tr>
             <th>Circuit schematic</th>
@@ -1359,8 +1359,8 @@ The commands for manual setup and using the auto-script are provided below.
             <th>The Revised Vehicle Mid-Layer Wooden Plate - 經修正優化後的車輛中央層木板</th>
         </tr>
         <tr>
-            <td align=center><img src="./img/9/Driver Board 3.jpg" width=500 /></td>
-            <td align=center><img src="./img/9/Medium Board 3.jpg" width=500 /></td>
+            <td align=center><img src="./img/9/Driver_Board_3.jpg" width=500 /></td>
+            <td align=center><img src="./img/9/Medium_Board_3.jpg" width=500 /></td>
         </tr>
     </table>
  </div>
@@ -1372,8 +1372,8 @@ The commands for manual setup and using the auto-script are provided below.
             <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
         </tr>
         <tr>
-            <td align=center><img src="./img/9/Camera Bracket Main Body.png" width=500 /></td>
-            <td align=center><img src="./img/9/Camera Bracket Fixed Plate.png" width=500 /></td>
+            <td align=center><img src="./img/9/Camera_Bracket_Main_Body.png" width=500 /></td>
+            <td align=center><img src="./img/9/Camera_Bracket_Fixed_Plate.png" width=500 /></td>
         </tr>
     </table>
  </div>
