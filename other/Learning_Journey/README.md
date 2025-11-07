@@ -1638,7 +1638,7 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
   - However, since the main controller has been upgraded to the **Jetson Orin Nano**, and we **have not yet implemented UART communication on this specific controller**, this presents a **new technical challenge** for the team.
 
 #### **2. Engineering Document Progress**
-**Continuing to modify engineering documentation on the GitHub project repository**.
+  - **Continuing to modify engineering documentation on the GitHub project repository**.
 
 
  # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>
