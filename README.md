@@ -67,15 +67,15 @@
     - [6-2 GitHub Web Editor Supported Markup Languages(GitHub 網頁編輯支援的標記語言)OK ](src/GitHub_Languages/README.md)  
   #### 7. Engineering Factor -工程因素 
     - [7-1 Learning Journey(工作日記) **已改動](other/Learning_Journey/README.md)
-      - [February (二月)](other/work_diary/README.md#20250228--20250330)
-      - [March (三月)](other/work_diary/README.md#20250301--20250307)
-      - [April (四月)](other/work_diary/README.md#20250403--20250414)
-      - [May (五月)](other/work_diary/README.md#20250501--20250507)
-      - [June (六月)](other/work_diary/README.md#20250604--20250608)
-      - [July (七月)](other/work_diary/README.md#20250702--20250721)
-      - [August (八月)](other/work_diary/README.md#20250818--20250824)
-      - [September (九月)](other/work_diary/README.md#20250901--20250906)
-      - [October (十月)](other/work_diary/README.md#20250928--20251006)
+      - [February (二月)](other/Learning_Journey/README.md#20250228--20250330)
+      - [March (三月)](other/Learning_Journey/README.md#20250301--20250307)
+      - [April (四月)](other/Learning_Journey/README.md#20250403--20250414)
+      - [May (五月)](other/Learning_Journey/README.md#20250501--20250507)
+      - [June (六月)](other/Learning_Journey/README.md#20250604--20250608)
+      - [July (七月)](other/Learning_Journey/README.md#20250702--20250721)
+      - [August (八月)](other/Learning_Journey/README.md#20250818--20250824)
+      - [September (九月)](other/Learning_Journey/README.md#20250901--20250906)
+      - [October (十月)](other/Learning_Journey/README.md#20250928--20251006)
 
 - ### 自動駕駛汽車設計：關鍵升級與迭代
   這款自動駕駛汽車設計建立在從前輩團隊（Shinan-Fire-On-All-Cylinders ）繼承的豐富經驗之上，並融入了我去年參加世界大賽的實踐經驗。
