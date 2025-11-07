@@ -89,22 +89,22 @@
   
 </div> 
 
-- ### Vehicle block avoidance control-車輛避障控制
+- ### Vehicle Obstacle Avoidance Control - 車輛避障控制
 
   ### 中文:
-   - 根據任務需求，當車輛偵測到紅色交通號誌遮擋時，系統觸發向右繞行機動；當遇到綠色障礙物時，它會觸發向左繞行機動。 
-   - 當車輛移動時，攝影機將視訊傳送到控制器（Jetson Orin Nano），然後控制器進行影像處理以目標柱子在畫面中的理想 X 座標位置。這些數據可協助控制器確定物體的位置和距離，從而實現精確導航和避障。
-   - 在拍攝的影像上繪製一個矩形，boundingRect()並傳回該矩形左上角的 x 和 y 座標。將其應用於訊號柱的輪廓時，即可用於確定其位置。
-
+   * 根據任務需求，當車輛偵測到**紅色交通號誌**或**紅色障礙物**時，系統將觸發**向右繞行機動 (Right Evasion Maneuver)**。相反，當偵測到**綠色障礙物**時，系統會觸發**向左繞行機動 (Left Evasion Maneuver)**。 
+   * 當車輛移動時，**攝影機**會將**視訊流**傳輸到主控制器（**Jetson Orin Nano**）。控制器隨後進行**影像處理**，以確定**目標柱子**在畫面中的**理想 X 座標位置**。這些視覺數據（特別是 X 座標）能夠協助控制器**確定物體在空間中的位置和距離**，從而實現**精確的導航和避障**。
+   * 在拍攝的影像上，系統利用 **`boundingRect()` 函式**在目標輪廓周圍**繪製一個矩形**。該函式會傳回矩形**左上角的 X 和 Y 座標**。將其應用於訊號柱的輪廓時，這些座標即可用於**確定該柱子在畫面中的精確位置**。
+   
   - 車輛透過以下步驟完成避開交通號誌的操作：
     1. 如果螢幕上出現兩根或多根柱子，我們會計算螢幕底部中心點到柱子底部中心點的距離。我們使用距離最近的柱子來計算伺服角度。
-    2. 根據柱子的 x 座標與目標 x 座標的差值進行 PD 控制計算。綠色立柱的目標 x 座標設定在較右側，因為車輛需由左側通過，紅色立柱則相反，目標位置偏向左側。
+    2. 根據柱子的 x 座標與目標 x 座標的差值進行 PD 控制計算。綠色立柱的目標 x 座標設定 430，紅色立柱的目標 x 座標設定 110。
     3. 在偵測到柱子的同時，若左側或右側牆壁的面積過大，我們會取消當前柱子的選擇，改由牆壁面積決定轉向角度。這樣可以讓車子朝中間轉動，避免撞上牆壁。
     
    ### 英文:
-  - According to task requirements, when the vehicle detects a red traffic signal block, the system triggers a rightward bypass maneuver; when it encounters a green block, it triggers a leftward bypass maneuver.
-  - As the vehicle moves, the camera transmits video to the controller (Jetson Orin Nano), which then performs image processing to obtain the X and Y coordinates and the area size of objects in the frame. This data helps the controller determine the position and distance of objects for accurate navigation and obstacle avoidance.
-  - Quadratic Bézier curves in red and green are drawn on the captured image to guide the vehicle toward the traffic signal and accurately position the block along the curve.
+  * According to the mission requirements, when the vehicle detects a **Red Traffic Sign/Obstacle**, the system triggers a **Right Evasion Maneuver**.Conversely, when a **Green Obstacle** is encountered, the system triggers a **Left Evasion Maneuver**.
+  * As the vehicle moves, the **camera** transmits the **video stream** to the main controller (**Jetson Orin Nano**).The controller then performs **image processing** to determine the **ideal X-coordinate position** of the **target pillar** within the image frame.This visual data (specifically the X-coordinate) assists the controller in **determining the object's spatial position and distance**, enabling **precise navigation and obstacle avoidance**.
+  * On the captured image, the system uses the **`boundingRect()` function** to **draw a rectangle** around the target contour.This function returns the **X and Y coordinates of the rectangle's top-left corner**. When applied to the signal pillar's contour, these coordinates are then used to **determine its precise position** within the frame.
   
 - The vehicle completes the traffic signal block avoidance through the following steps:
     
