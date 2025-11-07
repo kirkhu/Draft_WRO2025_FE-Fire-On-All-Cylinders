@@ -13,7 +13,7 @@
     3. **轉彎輔助偵測**:
        - 當如果任何一側牆壁輪廓面積 (leftArea 或 rightArea)面積超過1000時，會自動設定一個較小的ROI5區域([270, 110, 370, 150])用於強化黑色和洋紅色輪廓的偵測，當ROI5接觸到外牆會將轉向角度變大進行轉彎防止撞上外牆。
     ### 英文:
-    1. 
+    1. **Direction Determination**:
       - * The system uses the **Jetson Orin Nano controller** to read the image stream from the **CSI camera**. It then utilizes the designated **Region of Interest (ROI4)** to detect the **orange and blue lines** on the track, thereby determining whether the vehicle should execute a **left turn or a right turn**.
       - * **Right Turn Decision:** If the **contour area of the detected orange line (maxO)** **exceeds the preset threshold (> 110)**, the system decides that a **right turn ("right")** is required.
       - * **Left Turn Decision:** If the **contour area of the detected blue line (maxB)** **exceeds the preset threshold (> 110)**, the system decides that a **left turn ("left")** is required.
