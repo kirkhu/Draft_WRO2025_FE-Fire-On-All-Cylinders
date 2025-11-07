@@ -1171,8 +1171,8 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
             <th colspan=2>Design Evolution of the Fifth GenerationPCB (V5.0) - 設計第五代PCB電路板</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Design Circuit.jpg" height=100% /></td>
-            <td><img src="./img/9/Circuit PCB.png" height=100% /></td>
+            <td><img src="./img/9/Design_Circuit.jpg" height=100% /></td>
+            <td><img src="./img/9/Circuit_PCB.png" height=100% /></td>
         </tr>
         <tr>
             <th>Circuit schematic</th>
