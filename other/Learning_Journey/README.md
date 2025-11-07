@@ -1588,7 +1588,7 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
             <th>Final Version Parking Procedure Flow Diagram - 最終版停車程序流程示意圖</th>
         </tr>
         <tr>
-            <td width=1000 align=center><img src="./img/10/Parking_process_3.png" width=700 /></td>
+            <td width=1000 align=center><img src="./img/10/Parking_Process_3.png" width=700 /></td>
         </tr>
     </table>
  </div>
