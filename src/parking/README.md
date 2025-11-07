@@ -263,7 +263,5 @@
   |:---:|:---:|:---:|
   |<div align=center><img src="img/parking_2-5.png" /></div>|<div align=center><img src="img/parking_2-6.png" /></div>|<div align=center><img src="img/parking_2-7.png" /></div>|<div align=center><img src="img/parking_2-8.png" /></div>|
 
-- ### Parking test video-停車測試影片
-![Parking @ Fire On All Cylinders](./img/parking.jpg)( "Open Challange clockwise @ Fire On All Cylinders")
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  
