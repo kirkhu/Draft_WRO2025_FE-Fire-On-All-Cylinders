@@ -173,20 +173,47 @@ Based on the characteristics of each control board, we distributed the complex o
     - ##### Raspberry Pi Pico W Controller Program Flowchart-樹莓派 Pico W 控制器的程式流程圖
         ![FE-obstacle_challenge_Pico](./img/FE-obstacle_challenge_Pico.jpg)
 
-        `set_servo_angle():`<br>
-          - 計算並轉換±180度的角度值到伺服馬達所需的PWM佔空比範圍（0到65535），並將其輸出到前輪伺服馬達。
+    - #### 1. `set_servo_angle()`：伺服馬達角度設定 (Pico W 職責)
+      * **功能：** 負責將輸入的**角度值（範圍通常為 $\pm 180$ 度）**，計算並**轉換**成伺服馬達所需的 **PWM 佔空比範圍（0 到 65535）**。
+      * **輸出：** 將計算出的 PWM 訊號精確地輸出到**前輪伺服馬達**，實現精準轉向。
 
-        `control_motor():`<br>
-          - 取-100到100範圍內一個數的絕對值，轉換為PWM佔空比。同時，根據該值的符號設定兩個引腳的高低狀態，以控制馬達的正反轉或停止。
+    - #### 2. `control_motor()`：直流馬達速度與方向控制 (Pico W 職責)
+      * **功能：** 接收一個介於 **-100 到 100 之間**的數值作為輸入，用於同時控制速度和方向。
+      * **PWM 轉換：** 取該數值的**絕對值**，將其轉換為**直流馬達的 PWM 佔空比**（代表轉速）。
+      * **方向控制：** 根據輸入數值的**正負符號**，設定驅動引腳的高低電平狀態，以實現馬達的**正轉、反轉或停止**。
 
-        `run_encoder_Auto():`<br>
-          - 在此函數中run_encoder()，伺服馬達角度被設定為固定值，以車輛操作期間保持車輛位置和方向的穩定控制。
+    - #### 3. `run_encoder_Auto()`：編碼器輔助的自動運行 (Pico W 輔助)
+      * **功能：** 在此函數中，系統通常呼叫 **`run_encoder()`** 執行基於編碼器計數的精確移動。
+      * **控制穩定性：** 在此操作期間，**伺服馬達的角度會被設定為一個固定值**，以確保車輛在移動過程中，**位置和方向的穩定控制**。
 
-        `pump_uart():`<br>
-          - Jetson Orin Nano 控制器透過 UART 協定將更新後的模式、舵機角度和直流馬達速度數值傳送到佇列，確保流程持續運行，以保持資料即時更新。
+    - #### 4. `pump_uart()`：UART 控制數據傳輸 (Jetson 職責)
+      * **功能：** 此函式運行於 **Jetson Orin Nano 控制器**上，透過 **UART 協定**，將最新的控制參數，包括**更新後的模式 (mode)**、**伺服馬達角度** 和**直流馬達速度**數值，**傳送到輸出佇列**。
+      * **目的：** 確保控制流程持續運行，並維持資料在 Jetson 與 Pico W 之間的**即時更新**與同步。
 
-        `extract_magenta_from_json():`<br>
-          - Jetson Orin Nano 控制器透過 UART 協定將更新後的洋紅牆面積、X座標和Y座標數值傳送到佇列，確保流程持續運行，以保持資料即時更新。
+    - #### 5. `extract_magenta_from_json()`：洋紅色數據傳輸 (Jetson 職責)
+      * **功能：** 此函式運行於 **Jetson Orin Nano 控制器**上，透過 **UART 協定**，將視覺系統擷取到的**洋紅色牆壁面積**、**X 座標**和**Y 座標**數值，**傳送到輸出佇列**。
+      * **目的：** 確保流程持續運行，為 Pico W 執行複雜的**泊車入庫**或**視覺輔助**任務提供即時的數據輸入。
+
+    - #### 1. `set_servo_angle()`: Servo Motor Angle Setting (Pico W Responsibility)
+      * **Function:** Responsible for calculating and **converting** the input **angle value (typically within the $\pm 180^\circ$ range)** into the required **PWM duty cycle range (0 to 65535)** for the servo motor.
+      * **Output:** Outputs the calculated PWM signal precisely to the **front servo motor** for accurate steering.
+
+    - #### 2. `control_motor()`: DC Motor Speed and Direction Control (Pico W Responsibility)
+      * **Function:** Accepts a numerical value ranging from **-100 to 100** as input, controlling both speed and direction simultaneously.
+      * **PWM Conversion:** Takes the **absolute value** of the number and converts it into the **PWM duty cycle for the DC motor** (representing the rotational speed).
+      * **Direction Control:** Based on the **sign (positive/negative)** of the input value, it sets the high/low state of the driver pins to achieve **forward rotation, reverse rotation, or motor stop**.
+
+    - #### 3. `run_encoder_Auto()`: Encoder-Assisted Automatic Running (Pico W Support)
+      * **Function:** Within this function, the system typically calls **`run_encoder()`** to execute precise movement based on encoder counts.
+      * **Control Stability:** During this operation, the **servo motor angle is fixed to a set value** to ensure **stable control over the vehicle's position and direction**.
+
+    - #### 4. `pump_uart()`: UART Control Data Transmission (Jetson Responsibility)
+      * **Function:** This function executes on the **Jetson Orin Nano controller**. It utilizes the **UART protocol** to transmit the latest control parameters, including the **updated mode**, **servo angle**, and **DC motor speed** values, to an **output queue**.
+      * **Purpose:** Ensures continuous control flow, maintaining **real-time data updates** and synchronization between the Jetson and the Pico W.
+
+    - #### 5. `extract_magenta_from_json()`: Magenta Data Transmission (Jetson Responsibility)
+      * **Function:** This function executes on the **Jetson Orin Nano controller**. It uses the **UART protocol** to transmit the visually acquired values for the **magenta wall area**, **X-coordinate**, and **Y-coordinate** to an **output queue**.
+      * **Purpose:** Ensures continuous flow, providing real-time data input for the Pico W to execute complex **parking bay entry** or **visual assistance** tasks.
 
        </ol>
 # <div align="center">![HOME](../../../other/img/home.png)[Return Home](../../../)</div>  
