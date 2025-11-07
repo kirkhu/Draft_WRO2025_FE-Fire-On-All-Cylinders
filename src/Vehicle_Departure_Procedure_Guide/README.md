@@ -143,9 +143,9 @@
 </tr>
 
 <tr>
-<th align="center" width="50%">Arrive at the designated location(到達預定位子)</th>
+<th align="center" colspan = 2>Arrive at the designated location(到達預定位子)</th>
 </tr><tr>
-<td align="center" width="50%"><img src="./img/Start_in_green_counterclockwise-5.png"  /></td>
+<td align="center" colspan = 2><img src="./img/Start_in_green_counterclockwise-5.png"  /></td>
 <tr>
 </table>
 </div>
@@ -202,10 +202,7 @@
 <td align="center" width="50%"><img src="./img/Clockwise Green Departure Process-1.png"  /></td>
 <td align="center" width="50%"><img src="./img/Clockwise Green Departure Process-2.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
 <th align="center" width="50%">Preparing to turn left(準備向左轉)</th>
 <th align="center" width="50%">Ready to move forward(準備向前)</th>
@@ -213,10 +210,7 @@
 <td align="center" width="50%"><img src="./img/Clockwise Green Departure Process-3.png"  /></td>
 <td align="center" width="50%"><img src="./img/Clockwise Green Departure Process-4.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
 <th align="center" colspan=2>Arrive at the designated location(到達預定位子)</th>
 </tr><tr>
