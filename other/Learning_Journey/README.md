@@ -1258,8 +1258,8 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
             <th>Infrared Sensor bracket</th>
         </tr>
         <tr>
-            <td><img src="./img/9/New Ultrasonic sensor Bracket.jpg" width=400 /></td>
-            <td><img src="./img/9/infrared sensor Bracket.jpg" width=400 /></td>
+            <td><img src="./img/9/New_Ultrasonic_sensor_Bracket.jpg" width=400 /></td>
+            <td><img src="./img/9/infrared_sensor_Bracket.jpg" width=400 /></td>
         </tr>
     </table>
  </div>
