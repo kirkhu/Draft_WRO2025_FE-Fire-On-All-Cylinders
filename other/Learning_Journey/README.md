@@ -1,6 +1,6 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-# <div align="center">Work Diary-工作日記</div>
+# <div align="center">Project Development and Technical Learning Journey-專案開發與技術學習歷程</div>
 以下是本次自動駕駛汽車模型設計與任務解決的開發記錄，涵蓋了機械設計與製造、電路設計與實現、電子裝置選型、程式設計與測試以及整體的解題過程。
 
  ### 自動駕駛汽車設計：關鍵升級與迭代
@@ -147,14 +147,26 @@ Photos of the system installation, driver downloads, and remote desktop function
 
 **Content:** 
 
+### **第二代電路設計與初次 PCB 實戰經驗** 
+#### **設計動機與製程轉換**
+為了**避免使用電木板焊接時可能導致的控制器短路損毀**，並追求**更整潔、更易於配置**的電路板佈局，我們決定採用 **EasyEDA 軟體繪製印刷電路板（PCB）**。隨後，我們透過**化學蝕刻（洗印）製程**完成了**第二代電路板**的製作。
 
-第二代電路設計與學習
+#### **設計失誤與實戰學習**
+由於這是團隊**首次**進行 PCB 設計，我們初期**忽略了設計軟體（EasyEDA）內建的標準元件排版範例**。我們轉而依賴**手動測量排針間距**作為設計依據。然而，由於**經驗尚淺**，在第二代電路板製作完成後，我們發現**間距設定過小**，最終導致電子元件**無法順利插裝**。
 
-為了避免使用電木板焊接時可能導致的控制器短路損毀，並追求更整潔、更易於配置的電路板佈局，我們決定採用 EasyEDA 軟體繪製印刷電路板（PCB），並透過化學蝕刻（洗印）製程完成了第二代電路板的製作。
+#### **經驗總結與後續行動**
+儘管遭遇了這次失誤，它卻提供了**寶貴的實戰經驗**。這促使我們立即啟動**設計修正與優化流程**，並隨即將修正後的設計送廠製作了**第三代版本**。
 
-由於這是團隊首次進行 PCB 設計，我們初期忽略了設計軟體（EasyEDA）內建的標準元件排版範例。我們轉而依賴手動測量排針間距作為設計依據。然而，由於經驗尚淺，在首代電路板製作完成後，我們才發現間距設定過小，最終導致電子元件無法順利插裝。
+### **Second Generation Circuit Design and Initial PCB Practical Experience** 
 
-儘管遭遇了這次失誤，它卻提供了寶貴的實戰經驗。這促使我們立即啟動設計修正與優化流程，並隨即將修正後的設計送廠製作了第三代版本。
+#### **Design Motivation and Process Transition**
+To **prevent potential short-circuit damage to the controllers caused by soldering on pegboards** and to achieve a **cleaner, more configurable** board layout, we decided to use **EasyEDA software to draw the Printed Circuit Board (PCB)**. Subsequently, we produced the **Second Generation circuit board** using the **chemical etching process**.
+
+#### **Design Error and Practical Learning**
+As this was the team's **first time** designing a PCB, we initially **overlooked the standard component layout templates built into the design software (EasyEDA)**. Instead, we relied on **manual measurement of the pin header pitch** as the design basis. However, due to our **limited experience**, after the second-generation board was fabricated, we discovered that the **pitch setting was too small**, ultimately preventing the electronic components from being properly inserted.
+
+#### **Experience Summary and Subsequent Action**
+Despite this setback, this failure provided **invaluable hands-on experience**. It prompted us to immediately launch the **design correction and optimization process**, and the revised design was subsequently sent to the factory for the **Third Generation Version**.
 
 <div align="center">
     <table>
@@ -304,16 +316,25 @@ This week, team member **HU,SIAN-YI** successfully completed the **operating sys
 
 **Content:**  
 
----
+### **PCB 佈局失誤修正與 UART 傳輸優化** 
 
-第三代 PCB 佈局失誤修正與 UART 傳輸優化
-1. 第三代 PCB（V3.0）佈局失誤與修正
-在 第二代版本 的開發過程中，我們根據第一代的回饋，利用設計軟體內建的標準範例圖重新校準了排針間距，成功改善了原始設計的錯誤。
+#### **1. PCB 佈局失誤與版本修正 (V3.0/V4.0)**
+* **間距修正：** 在**第二代版本**的開發過程中，我們根據前一代的回饋，利用設計軟體內建的**標準範例圖**重新校準了排針間距，成功改善了原始設計的錯誤。
+* **極性顛倒：** 然而，由於**作業上的疏忽**，我們在進行 PCB 佈局時**誤將背面視圖當作正面設計**，導致電路板輸出後發生了**極性顛倒**的重大問題。
+* **錯誤修正：** 所幸，此錯誤在組裝與測試階段便被立即發現。我們隨即在**後續版本**中修正了佈局方向，並**全面複查了各層的對齊規範**，以確保設計檔案與最終的實體成品能夠**完全一致**。
 
-然而，由於作業上的疏忽，我們在進行 PCB 佈局時誤將背面視圖當作正面設計，導致電路板輸出後發生了極性顛倒的重大問題。所幸，此錯誤在組裝與測試階段便被立即發現。我們隨即在第三代版本中修正了佈局方向，並全面複查了各層的對齊規範，以確保設計檔案與最終的實體成品能夠完全一致。
+#### **2. UART 傳輸問題與持續優化**
+在測試 **UART 數據傳輸**時，我們發現會出現**掉資料（Data Loss / Dropping）的情況**。為確保控制指令的傳輸可靠性，我們正在**持續撰寫程式碼**，專注於修正這個錯誤問題，以**提升通訊的穩定度**。
 
-2. UART 傳輸問題與持續優化
-在測試 UART 數據傳輸時，我們發現會有掉資料（Data Loss / Dropping）的情況。為確保控制指令的傳輸可靠性，我們正在持續撰寫程式碼，專注於修正這個錯誤問題，以提升通訊的穩定度。
+### ** PCB Layout Error Correction and UART Transmission Optimization** 
+
+#### **1. PCB Layout Error and Version Correction (V3.0/V4.0)**
+* **Pitch Correction:** During the development of the **Second Generation Version**, based on feedback from the prior generation, we used the design software's built-in **standard example diagrams** to recalibrate the pin header pitch, successfully correcting the original design error.
+* **Polarity Reversal:** However, due to an **operational oversight**, when implementing the PCB layout, we **mistakenly treated the back view as the front design**, which resulted in a major issue of **reversed polarity** upon board fabrication.
+* **Error Fix:** Fortunately, this error was discovered immediately during the assembly and testing phase. We promptly corrected the layout orientation in the **subsequent version** and **comprehensively reviewed the alignment specifications of all layers** to ensure the design file and the final physical product were **completely consistent**.
+
+#### **2. UART Transmission Issue and Ongoing Optimization**
+While testing **UART data transmission**, we discovered **instances of data loss (dropping data)**. To ensure the reliability of control command transmission, we are **continuously developing and debugging the code**, focusing on correcting this error to **enhance communication stability**.
 
 <div align="center" >
     <table>
@@ -730,9 +751,19 @@ if combined_control_signal < -180:
 **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
 **Content:** 
-主電路板第四代版本功能測試成果
 
-在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，主電路板的第四代版本（V4.0）已成功通過功能測試。實際運行測試的結果顯示，排針接點與電路佈局均無異常，且系統可穩定運作。
+### **主電路板第四代版本功能測試成果** 
+在成功修正前兩代設計版本（V2.0 和 V3.0）的諸多問題後，**主電路板的第四代版本（V4.0）已成功通過功能測試**。實際運行測試的結果顯示，**排針接點與電路佈局均無異常**，且**系統可穩定運作**。
+
+值得注意的是，V4.0 版本因其穩定的性能，**成為全國賽期間主要採用的電路版本**。
+
+
+### **Main Circuit Board Fourth Generation Functional Test Results** 
+
+Following the successful correction of design issues found in the previous two versions (V2.0 and V3.0), the **Main Circuit Board's Fourth Generation Version (V4.0) has successfully passed functional testing**. The results from actual operational tests indicate that there are **no anomalies in the pin header connections or the circuit layout**, and the **system operates stably**.
+
+Notably, due to its stable performance, the V4.0 version **became the primary circuit board used during the National Competition**.
+
 
 <div align="center" >
     <table >
@@ -752,7 +783,7 @@ if combined_control_signal < -180:
 
 **Content:** 
 
-### **底盤摩擦力問題修正與轉向流暢度優化** 🛠️
+### **底盤摩擦力問題修正與轉向流暢度優化** 
 
 在進行避障程式測試時，我們注意到自駕車在**過彎時會出現些許卡頓**。經檢查後發現問題源自**底盤結構**：由於**轉向節與底盤直接接觸**，產生了**過大的摩擦力**，導致傳動結構**卡滯**。
 
@@ -763,7 +794,7 @@ if combined_control_signal < -180:
 經過實際測試，採用軸承的**新底盤結構有效改善了轉向的流暢度**，使自駕車在過彎時**更加平順**。
 
 
-### **英文翻譯：Chassis Friction Correction and Steering Smoothness Optimization** 
+### **Chassis Friction Correction and Steering Smoothness Optimization** 
 
 While testing the obstacle avoidance program, we observed that the autonomous car experienced **slight stuttering during cornering**. Inspection revealed the problem originated from the **chassis structure**: as the **steering knuckle was in direct contact with the chassis**, the resulting **excessive friction** caused the drivetrain to **jam**.
 
@@ -798,15 +829,15 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 
   <div align=center>
     <table>
-       <tr>
-          <th>3D view</th>
-          <th>circuit schematic</th>
-          <th>PCB layout drawing</th>
+    <tr>
+    <th>3D view</th>
+    <th>Circuit schematic</th>
+    <th>PCB layout drawing</th>
        </tr>
        <tr>
-          <td align=center ><img src="../../models/Circuit_Design/img/Old_3D_View.png" height=250 /></td>
-          <td align=center ><img src="../../models/Circuit_Design/img/Old_Schematic.png" height=250 /></td>
-          <td align=center ><img src="../../models/Circuit_Design/img/Old_PCB_Layouts.png" height=250 /></td>
+    <td align=center ><img src="../../models/Circuit_Design/img/Old_3D_View.png" height=250 /></td>
+    <td align=center ><img src="../../models/Circuit_Design/img/Old_Schematic.png" height=250 /></td>
+    <td align=center ><img src="../../models/Circuit_Design/img/Old_PCB_Layouts.png" height=250 /></td>
        </tr>
     </table>
   </div>
@@ -833,7 +864,7 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 #### **最終成就與展望**
 就算比賽過程**坎坷不順**，但我們最終成功地以**第一名的排名**脫穎而出，獲得了**代表台灣參加 WRO 未來工程師世界賽**的資格。我們將**充分吸收這次全國賽的實戰經驗與教訓**，以**更好的狀態**去參加世界賽，並以**獲取優異的成績榮耀回國**為目標。
 
-### **英National Competition Journey, Challenges, and Qualification**
+### **National Competition Journey, Challenges, and Qualification**
 
 Our National Competition took place on **August 23rd**. Despite a challenging process, we successfully qualified.
 
@@ -1111,7 +1142,6 @@ sudo apt-get -y install sdkmanager
 
 **Content:**
 
-
 ### **V5.0 PCB 設計動機與 3D 列印精度修正** 
 
 #### **1. 第五代 PCB 設計需求與動機**
@@ -1160,7 +1190,7 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
             <td align=center width="25%" ><img src="../../models/Circuit_Design/img/circuit_board_Front_5.png" /></td>
             <td align=center width="25%"><img src="../../models/Circuit_Design/img/circuit_board_back_5.png"  /></td>
         <tr>
-        <th  colspan = 2>SLA 3D Printer 8K 14K 比較</th>
+        <th  colspan = 2>Comparison of Physical Print Results Between SLA 3D Printers at 8K and 14K Resolutions - SLA 3D 列印機 8K 與 14K 解析度之實際列印成果比較</th>
         </tr>
         <tr>
             <th> Stereolithography (SLA) 3D Printer 8K - 使用 8K 3D打印機</th>
@@ -1184,22 +1214,38 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
 
  **Content:**
 
- - 由於未來工程世界賽規則更新中提到 __"自駕車再進行停車時車身僅部分可以離開出發區，若是車身完全離開出發區將會時間終止以當下情況計分"__ ，原先我們自駕車的超音波感測器是安裝在車身的中尾部，很容易因為沒有偵測到停車場方塊而整個車身離開出發區，因此我們設計了新的木板及支架讓超音波可以安裝在自駕車的前方。
+### **停車定位感測器優化與 BNO055 供電修正** 
 
- - 本週我們決定將紅外線感測器安裝在自駕車的前後用於偵測邊牆及停車場方塊，於是我們設計了新的木板和紅外線L型支架用於安裝紅外線感測器。
+#### **1. 停車定位感測器硬體調整**
+* **超音波感測器位置修正：** 原先我們自駕車的超音波感測器安裝在**車身的中尾部兩側**，很容易因為**沒有偵測到停車場方塊**而導致**整個車身離開出發區**。因此，我們設計了**新的木板及支架**，讓超音波感測器可以安裝在自駕車的**前方兩側**。
+* **新增紅外線感測器：** 鑑於僅使用超音波感測器仍**無法實現精準的停車定位**，我們決定**再增加紅外線感測器**，安裝在自駕車的**前、後方**，用於**偵測邊牆及停車場牆面**。為此，我們**重新設計了新的車輛底板和紅外線 L 型支架**。
 
- - 我們在本週測試第五代電路板時發現了一個會導致陀螺儀不被Jetson Orin Nano偵測到的問題，由於我們在主控制器從Jetson Nano改為Jetson Orin Nano時將排線的VCC、GND...等Pin腳取消只剩下陀螺儀的SDA和SCL腳位，結果因為GND沒有接地的關係導致連接時沒有產生迴路而沒有辦法被Jetson Orin Nano偵測到，因此我們改出了第六代電路板將排線的GND腳位重新接上以解決GND沒有接地的問題。
+#### **2. BNO055 陀螺儀感測器異常的電子修正**
+在取得新版印刷電路板（V5.0）後，測試中發現 **BNO055 陀螺儀感測器**的角度讀取會偶發性地出現**數值為 0 的異常現象**。
+* **問題根源：** 此問題源於感測器的電源正負極由 **Raspberry Pi Pico W** 供應，而訊號線卻連接至 **Jetson Orin Nano 主控制器**。這種**電源與信號源不在同一電路迴路（即電位基準不統一）**的配置，導致感測器產生**誤動作**。
+* **修正方案：** 我們隨即修正設計方案，確保 **BNO055 陀螺儀感測器的電源和訊號源皆由 Jetson Orin Nano 主控制器統一提供**，從而**建立了穩定的電位基準**。
+
+### **Parking Positioning Sensor Optimization and BNO055 Power Correction**
+
+#### **1. Hardware Adjustment for Parking Positioning Sensors**
+* **Ultrasonic Sensor Repositioning:** Initially, our autonomous car's ultrasonic sensors were mounted on the **mid-rear sides of the vehicle body**, making it easy for the **entire vehicle body to leave the starting zone** without detecting the parking block. We therefore designed **new wooden plates and brackets** to mount the ultrasonic sensors on the **front sides of the autonomous car**.
+* **Infrared Sensor Integration:** Since relying solely on ultrasonic sensors **could not achieve precise positioning for parking**, we decided to **add infrared sensors**, installing them on the **front and rear** of the car to **detect side walls and parking lot walls**. Consequently, we **redesigned the new vehicle chassis plate and L-shaped infrared brackets**.
+
+#### **2. Electronic Correction of BNO055 Gyroscope Sensor Anomaly**
+Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where the **BNO055 gyroscope sensor** would return an angle reading of **zero**.
+* **Root Cause:** This anomaly occurred because the sensor's VCC/GND was supplied by the **Raspberry Pi Pico W**, while its signal lines were connected to the **Jetson Orin Nano main controller**. This configuration, where the **power and signal sources were on different circuits (i.e., lacking a common ground reference)**, caused the sensor to **malfunction**.
+* **Correction:** We revised the design to ensure that **both the power and signal sources for the BNO055 gyroscope sensor are uniformly supplied by the Jetson Orin Nano controller**, thereby **establishing a stable electrical potential reference**.
 
  <div align=center>
     <table>
         <tr>
-            <th>新版超音波支架</th>
-            <th>新版中木板</th>
-            <th>新版上木板</th>
+            <th>Central Wooden Layer with Added Mounting Holes for the Ultrasonic Sensor Bracket - 增設超音波感測器支架鎖孔的中央層木板</th>
+            <th>Additionally, the Central Wooden Layer After Modification to Include Infrared Sensor Bracket Mounting Holes - 修正並增設紅外線感測器支架鎖孔的中央層木板</th>
+            <th>Synchronizing and Optimizing the Top Wooden Layer Based on the Revised Specifications of the Central Plate - 根據中央層木板的修正規格，同步調整並優化頂層木板</th>
         </tr>
         <tr>
-            <td><img src="./img/9/New Ultrasonic sensor Bracket.jpg" width=300 /></td>
             <td><img src="./img/9/Medium Board.jpg" width=300 /></td>
+            <td><img src="./img/9/New Medium Board.jpg" width=400 /></td>
             <td><img src="./img/9/Upper Board.jpg" width=300 /></td>
         </tr>
     </table>
@@ -1208,11 +1254,11 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
  <div align=center>
     <table>
         <tr>
-            <th>新版中木板</th>
-            <th>紅外線感測器L型支架</th>
+            <th>Ultrasonic Sensor stent</th>
+            <th>Infrared Sensor bracket</th>
         </tr>
         <tr>
-            <td><img src="./img/9/New Medium Board.jpg" width=400 /></td>
+            <td><img src="./img/9/New Ultrasonic sensor Bracket.jpg" width=400 /></td>
             <td><img src="./img/9/infrared sensor Bracket.jpg" width=400 /></td>
         </tr>
     </table>
@@ -1221,23 +1267,41 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
  <div align=center>
     <table width=100%>
         <tr>
-            <th>實際安裝照片</th>
+            <th colspan=2>Photo of the Actual Installation Location of the Ultrasonic Sensor - 超音波感測器（Ultrasonic Sensor）的實際安裝位置照片</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Untrasonic_Car.jpg" width=100% alt="Untrasonic Car" /></td>
+            <td colspan=2><img src="./img/9/Untrasonic_Car.jpg" width=100% alt="Untrasonic Car" /></td>
+        </tr>
+        <tr>
+            <th colspan=2>Photo of the Final Actual Installation Location of the Infrared Sensor - 紅外線感測器的實際安裝位置照片</th>
+        </tr>
+        <tr align=center>
+            <td width=50% ><img src="./img/9/Infared_Car_Front.jpg" /></td>
+            <td width=50% ><img src="./img/9/Infard_Car_Back.jpg" /></td>
         </tr>
     </table>
  </div>
 
  <div align=center>
     <table>
+         <tr>
+        <th colspan = 2 >Final Version(PCB)</th>
+        </tr>
         <tr>
-            <th>第六代 PCB 電路板(原理圖)</th>
-            <th>第六代 PCB 電路板(PBC分布圖)</th>
+            <th>Circuit Schematic</th>
+            <th>PBC Layout Drawing</th>
         </tr>
         <tr>
             <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 6.png" height=300 /></td>
             <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/PCB_Version 6.png" height=300 /></td>
+        </tr>
+        <tr>
+            <th>Overhead view of the main circuit board(電路板頂視圖)</th>
+            <th>Bottom View of the Main Circuit Board(電路板底視圖)</th>
+        </tr>
+        <tr align=center>
+            <td><img src="../../models/Circuit_Design/img/Circuit_6_Top.png" /></td>
+            <td><img src="../../models/Circuit_Design/img/Circuit_6_Bottom.png" /></td>
         </tr>
     </table>
  </div>
@@ -1247,21 +1311,52 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
 
  **Content:**
 
- - 我們再進行出發程序撰寫時發現自駕車會有出發時容易觸碰停車場方塊的情況，因此我們先嘗試修改整體機器人的軸距，將底板上的空位刪除以縮短軸距。經過測試之後問題有減緩但是容許誤差還是太小，因此我們修改的轉向結構中拉桿的極限方塊，將方塊縮小讓轉向結構有更多空間可以轉動。與此同時我們在測試中發現一個問題，如果自駕車出現誤判導致撞牆、方塊時都是紅外線感測器先波及到，因此我們在設計上將前方的紅外線固定區塊縮短並且在底板上延伸出19mm的區塊讓紅外線不會因為誤判而導致撞擊損壞。
+### **全國賽後機型優化與系統穩定性提升** 
 
- - 本週我們再進行程式測試時，遇到陀螺儀數值讀取一直為0的狀態，經過相關技術文件查詢和實際電路測試後發現，BNO055的電路未形成正確的迴路。我們的電路是BNO055的VIN腳位由Raspberry Pi Pico W提供、GND和PCB上的原件共地，這樣的電路並未形成正確迴路。因此我們會再新一代電路板上將BNO055的電路使用排線腳位獨立連接到Jetson Orin Nano上的GPIO腳位上。
+#### **1. 機構與感測器保護優化**
+* **縮短軸距與轉向修正：** 在撰寫出發程序時，我們發現自駕車容易觸碰停車場方塊。為此，我們首先**嘗試修改整體機器人的軸距**，通過**刪除底板上的空位來縮短軸距**。問題雖有減緩，但容許誤差仍小。因此，我們進一步修改了轉向結構中**拉桿的極限方塊**，將方塊**縮小**以賦予轉向結構**更多轉動空間**。
+* **紅外線感測器保護：** 在測試中發現，自駕車出現誤判導致**撞牆或撞方塊時，紅外線感測器會先受到波及**。因此，我們在設計上**將前方的紅外線固定區塊縮短**，並在**底板上延伸出 19 mm 的區塊**，以防止紅外線感測器因撞擊而損壞。
 
- - 由於我們的自駕車已經採用WebSocket進行數據傳輸，因此網路天線對我們的自駕車來說就非常重要，但是目前使用的網路接收器是使用TPLink的AC1300，其長度就有約18CM左右，所以我們在網路上找到了另外一種網路接收器，ASUS的AC1200，其大小只有2CM*1.5CM，因此我們將網路接收器更換為ASUS的AC1200。
+#### **2. 通訊硬體更換與優化**
+* **網路接收器更換：** 由於自駕車採用 **WebSocket 進行數據傳輸**，網路天線至關重要。但原使用的 **TP-Link AC1300 接收器長度約 18 CM 左右**，體積過大。我們在網路上找到體積只有 $2 \text{CM} \times 1.5 \text{CM}$ 的 **ASUS AC1200 接收器**，並將其替換。
 
- - 由於我們的鏡頭支架是使用樂高零件進行組裝，這樣我們的鏡頭支架會有意外被拆開的情況，因此我們使用Onshape繪畫鏡頭支架模組，總共分為兩個元件：鏡頭固定板、鏡頭支架主體。我們為了之後如果需要調整鏡頭可視角度的需求，在鏡頭支架模組上繪畫可調整角度的滑軌。
+#### **3. 鏡頭支架客製化設計**
+* **設計需求：** 原先使用的鏡頭支架是**樂高零件組裝**而成，容易意外被拆開。
+* **客製化實作：** 我們使用 **Onshape 繪製了鏡頭支架模組**，該模組分為**鏡頭固定板**與**鏡頭支架主體**兩個元件。
+* **功能優化：** 為了預留未來調整鏡頭可視角度的需求，我們在鏡頭支架模組上繪製了**可調整角度的滑軌**。
 
- - 我們再進行測試時發現，我們當初未進行Jetson Orin Nano網路設置為AP模式，一直都是使用手機作為網路傳輸媒介，後來我們透過網路查找到Jetson Orin Nano要如何切換到AP模式的指令，成功啟動AP之後也設置了讓AP自行啟動的行為。下面是手動設置及使用自動腳本的指令。
+#### **4. Jetson Orin Nano 網路 AP 模式設定**
+* **問題發現：** 在測試中，我們發現最初**未將 Jetson Orin Nano 網路設置為 AP（Access Point）模式**，一直都是使用手機作為網路傳輸媒介。
+* **AP 模式設置：** 透過網路查找，我們成功啟動了 **Jetson Orin Nano 的 AP 模式**，並設置了讓 AP 自行啟動的行為。
+
+下方是手動設置及使用自動腳本的指令。
+
+
+### **Post-National Competition Model Optimization and System Stability Enhancement** 
+
+#### **1. Mechanism and Sensor Protection Optimization**
+* **Shortening Wheelbase and Steering Correction:** While coding the exit procedure, we noticed the car was prone to colliding with parking blocks. We initially attempted to **modify the robot's overall wheelbase** by **removing empty space on the base plate to shorten the wheel distance**. Although the issue was mitigated, the tolerance remained too small. Thus, we further modified the **limit block of the steering linkage**, **reducing its size** to give the steering mechanism **more rotation space**.
+* **Infrared Sensor Protection:** During testing, we found that if the autonomous car malfunctioned and **collided with a wall or block, the infrared sensors were usually the first to be damaged**. To protect them, we **shortened the front infrared mounting block** and **extended the base plate by 19 mm**, preventing the infrared sensors from sustaining impact damage due to erroneous judgment.
+
+#### **2. Communication Hardware Replacement and Optimization**
+* **Network Receiver Swap:** Since the autonomous car uses **WebSocket for data transmission**, the network antenna is critical. However, the original **TP-Link AC1300 receiver was about 18 CM long**, making it bulky. We found an alternative, the **ASUS AC1200 receiver**, which is only $2 \text{CM} \times 1.5 \text{CM}$ in size, and **replaced the original receiver with the ASUS AC1200**.
+
+#### **3. Customized Camera Bracket Design**
+* **Design Requirement:** The original camera bracket was **assembled using LEGO parts**, making it prone to accidental disassembly.
+* **Custom Implementation:** We used **Onshape to design a custom camera bracket module**, consisting of two components: the **lens mounting plate** and the **main bracket body**.
+* **Functional Enhancement:** To allow for future adjustments to the camera's viewing angle, we designed **angle-adjustable sliding rails** into the bracket module.
+
+#### **4. Jetson Orin Nano Network AP Mode Setup**
+* **Issue Discovered:** During testing, we realized the **Jetson Orin Nano's network had not been set to AP (Access Point) mode**; we were instead using a mobile phone as the network transmission medium.
+* **AP Mode Setup:** By searching online, we successfully found the commands to enable the **Jetson Orin Nano's AP mode** and configured it for **automatic startup**.
+
+The commands for manual setup and using the auto-script are provided below.
 
  <div align=center>
     <table>
         <tr>
-            <th>第三代底盤</th>
-            <th>第三代中板</th>
+            <th>The Optimized and Revised Vehicle Bottom Wooden Layer - 經優化修正後的車輛底層木板</th>
+            <th>The Revised Vehicle Mid-Layer Wooden Plate - 經修正優化後的車輛中央層木板</th>
         </tr>
         <tr>
             <td align=center><img src="./img/9/Driver Board 3.jpg" width=500 /></td>
@@ -1273,8 +1368,8 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
  <div align=center>
     <table>
         <tr>
-            <th>鏡頭支架主體</th>
-            <th>鏡頭固定板</th>
+            <th>Lens Mount with Integrated Light Shielding Functionality 鏡頭支架（Lens Mount）：整合遮光罩功能設計</th>
+            <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
         </tr>
         <tr>
             <td align=center><img src="./img/9/Camera Bracket Main Body.png" width=500 /></td>
@@ -1286,8 +1381,8 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
  <div align=center>
     <table>
         <tr>
-            <th>TPLink AC1300 接收器</th>
-            <th>ASUS AC1200 接收器</th>
+            <th>TP-Link AC1300 Wi-Fi Wireless Adapter</th>
+            <th>ASUS AC1200  Wi-F  Wireless Adapter</th>
         </tr>
         <tr>
             <td align=center ><img src="./img/10/TPLink AC1300.png" width=150 /></td>
@@ -1296,24 +1391,21 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
     </table>
  </div>
 
- - ## 設置AP - 手動下指令
+ - #### Setting Up Access Point (AP) Mode: Manual Command Operation - 設置AP - 手動下指令
 
     ```bash
-    sudo nmcli dev wifi hotspot ifname wlan0 ssid "snjh_jetson" password "1234567890" # 創建AP設置
+    sudo nmcli dev wifi hotspot ifname wlan0 ssid "snjh_jetson" password "1234567890" 
 
-    # 設置AP模式自啟動
     sudo nmcli connection modify Hotspot connection.autoconnect yes
     sudo systemctl enable NetworkManager.service
     sudo systemctl status NetworkManager
 
     ```
 
- - ## 設置AP - 使用自動腳本
+ - #### Setting Up Access Point (AP) Mode: Using Automated Script Execution[Set_AP.sh](../../src/System_Platform_Software/code/Set_AP.sh)
 
     ```bash
-    curl -fsSL -u "if0_39931049:microhack188" -o "Set_AP.sh" "ftp://ftpupload.net/htdocs/UserData/WRO2025-Orin/Set_Orin_AP_AutoStart.sh" # 獲取配置腳本
-
-    sudo bash ./Set_AP.sh # 執行腳本進行配置及啟用動作
+    sudo bash ./Set_AP.sh 
     ```
 
  ## 2025/10/07 ~ 2025/10/13
@@ -1321,11 +1413,62 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
 
  **Content:**
 
- - 本周我們再進行LAB數值調試時，遇到了數值調整時正常但程式運行時卻無法準確辨識到物件的問題，經過測試發現問題在於環境光線的干擾和數值抓得太緊繃導致。解決問題的方法是：1.在鏡頭支架上方新增遮光罩、2.在調整LAB時一個物件的數值調整完畢後拉一些容許誤差。
+### **系統穩定性、啟動機制與硬體優化** 
 
- - 我們在測試的過程中因為Web Sockets在成功連線之前會將成功前的所有動作堵住，並在連線成功後一次性執行，這樣會造成我們程式啟動時會有機器再向前行走但是舵機沒有運作、底盤沒有任何反應等...。所以我們決定將程序的啟動控制由Jetson Orin Nano來控制，因此我們須將程式啟動按鈕的電路更改，再更改過程中我們遇到程式按鈕按下狀態沒有更新，經過網路資料查詢發現我們需要使用上拉電阻的方式進行電路連接，所以我們使用EasyEDA另外繪畫了一塊電路板將程式啟動按鈕的電路獨立。
+#### **1. 影像辨識穩定性修正**
+* **問題根源：** 我們在進行 **LAB 數值調試**時發現，數值在調整階段正常，但在程式實際運行時卻**無法準確辨識到物件**。經測試確認，問題在於**環境光線的干擾**和**數值抓得太緊繃**。
+* **解決方案：** 我們採取了兩項修正措施：
+    1.  在**鏡頭支架上方新增遮光罩**。
+    2.  在調整 LAB 數值時，對單一物件的數值調整完畢後，**拉大一些容許誤差範圍**。
 
- - 由於我們需要新增遮光板因此我們在鏡頭支架上面新增樂高插銷孔洞用於安裝樂高的5x11科技面板零件，後來又因為設計了第二塊按鈕Led獨立電路，因此我們在鏡頭支架上方設計螺絲孔位用於安裝第二塊按鈕Led獨立電路板。
+#### **2. WebSockets 阻塞問題與啟動電路獨立**
+* **通訊阻塞問題：** 在測試過程中，我們發現 **WebSockets 在成功連線之前會將連線前的所有動作堵住**，並在連線成功後才一次性執行。這導致程式啟動時會出現**機器向前行走但舵機沒有運作、底盤沒有任何反應**等異常情況。
+* **啟動控制轉移：** 為了解決此問題，我們決定將**程序的啟動控制由 Jetson Orin Nano 來負責**。
+* **電路修正：** 因此，我們必須更改程式啟動按鈕的電路。在更改過程中，我們遇到**程式按鈕按下狀態沒有更新**的問題。透過網路資料查詢，我們發現需要使用**上拉電阻（Pull-up Resistor）** 的方式進行電路連接。
+* **獨立電路板設計：** 最終，我們使用 **EasyEDA 另外繪製了一塊獨立電路板**，專門用於**程式啟動按鈕的電路**。
+
+#### **3. 鏡頭支架結構優化**
+* **新增遮光板：** 由於需要新增遮光板，我們在鏡頭支架上面**新增樂高插銷孔洞**，用於安裝**樂高的 $5 \times 11$ 科技面板零件**。
+* **新增螺絲孔位：** 後來因為設計了**第二塊按鈕 LED 獨立電路板**，我們在鏡頭支架上方設計了**螺絲孔位**，用於安裝這塊獨立電路板。
+
+---
+
+### **獨立開關控制電路板（第二塊電路板）功能總結**
+
+此獨立電路板的設計目的為：
+* **啟動按鈕整合：** 將啟動按鈕電路**獨立連接至 Jetson Orin Nano 的 GPIO 接口**，確保主控制器能依規程偵測發車指令。
+* **除錯與狀態顯示：** 為了優化除錯流程，在電路板上**新增了 RGB 燈珠**。
+* **功能目的：** 該燈珠用於**即時顯示車輛偵測到的最近物件顏色**，以便於快速診斷與狀態監控。
+* **定位：** 這塊電路板專門用於自駕車的**啟動按鈕控制與狀態顯示**。
+
+### **System Stability, Startup Mechanism, and Hardware Optimization** 
+
+#### **1. Image Recognition Stability Correction**
+* **Root Cause:** While conducting **LAB value tuning**, we found that although the values were normal during the adjustment phase, the program **failed to accurately identify objects** during actual operation. Testing confirmed the issue stemmed from **environmental light interference** and **overly strict value tolerances**.
+* **Solution:** We implemented two corrective measures:
+    1.  **Adding a light shield (hood) above the lens mount**.
+    2.  **Allowing a larger margin of error** after tuning the LAB values for a specific object.
+
+#### **2. WebSockets Blocking Issue and Isolated Startup Circuit**
+* **Communication Blockage:** During testing, we found that **WebSockets would block all previous actions until a connection was successfully established**, executing them simultaneously afterward. This caused anomalies upon program startup, such as the **robot moving forward while the servo motor was inactive, or the chassis being unresponsive**.
+* **Startup Control Transfer:** To resolve this, we decided to assign **program startup control to the Jetson Orin Nano**.
+* **Circuit Correction:** We needed to modify the program start button circuit. During this change, we encountered a problem where the **button's pressed state was not updating**. Consulting online resources revealed the necessity of connecting the circuit using a **pull-up resistor**.
+* **Isolated PCB Design:** Consequently, we used **EasyEDA to custom-design a separate circuit board** dedicated solely to the **program startup button circuit**.
+
+#### **3. Lens Mount Structure Optimization**
+* **Adding Light Shield:** Since a light shield was required, we **added LEGO pinholes** to the lens mount for mounting a **LEGO $5 \times 11$ Technic panel**.
+* **Adding Screw Holes:** Later, because we designed the **second independent button/LED circuit board**, we designed **screw holes** above the lens mount for installing this secondary board.
+
+---
+
+### **Independent Switch Control Board (Secondary PCB) Summary**
+
+The purpose of this independent board is:
+* **Start Button Integration:** The start button circuit is **independently connected to the Jetson Orin Nano's GPIO interface**, ensuring the main controller detects the start command as per regulations.
+* **Debugging and Status Display:** An **RGB LED was added** to the board to optimize the debugging process.
+* **Function:** The LED is used to **display the color of the nearest object detected by the vehicle in real-time**, facilitating quick diagnostics and status monitoring.
+* **Role:** **This board is dedicated to the autonomous car's start button control and status indication**.
+
  <div align=center>
  <table>
     <tr>
@@ -1356,15 +1499,22 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
 <div align=center>
     <table>
         <tr>
-            <th colspan=2>新增遮光板</th>
+            <th colspan=2>Lens Mount with Integrated Light Shielding Functionality</th>
         </tr>
         <tr>	
-            <th>Lens Mount with Integrated Light Shielding Functionality 鏡頭支架（Lens Mount）：整合遮光罩功能設計</th>
+            <th>Lens Mount鏡頭支架</th>
             <th>Lens Module Fine-Tuning Mechanism 鏡頭模組微調機構</th>
         </tr>
         <tr>
             <td align=center width=500><img src="./img/10/Lens holder body Onshape.png" width=450 /></td>
             <td align=center width=500><img src="./img/10/Lens holder body imager.png" width=450 /></td>
+        </tr>
+        <tr>	
+            <th>Lens Mount Physical Side View - 鏡頭支架側視圖</th>
+            <th>Lens Mount Physical Front View - 鏡頭支架實體正面視圖</th>
+        </tr>        
+        <td align=center width=500><img src="./img/10/Visor_Side.jpg" width=450 /></td>
+        <td align=center width=500><img src="./img/10/Visor_Front.jpg" width=450 /></td>
         </tr>
     </table>
 </div>
@@ -1375,7 +1525,17 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
 
  **Content:**
 
- - 本周我們使用安裝在機器前後的紅外線感測器進行停車流程。下方為紅外線感測器的類比訊號讀取程序。
+### **紅外線感測器輔助停車與訊號讀取** 
+
+本週，我們實施了**利用安裝在機器人前後方的紅外線感測器進行停車流程**。
+
+下方展示了**紅外線感測器的類比訊號讀取程序**。
+
+### **Infrared Sensor-Assisted Parking and Signal Reading** 
+
+This week, we implemented the **parking procedure using the infrared sensors installed on the front and rear of the robot**.
+
+The **analog signal reading procedure for the infrared sensors** is shown below.
 
     ```python
     class TCRT5000:
@@ -1408,14 +1568,24 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
 
  **Content:**
 
- - 本周我們完成了最終的程式架構，經過先前的更動我們的停車流程也做了些微的更動。下面為最終版的停車流程順序示意圖。
+### **最終程式架構完成與影片拍攝** 
 
- - 在完成程式架構和流程後我們也開始進行介紹影片的拍攝。
+* **最終架構與流程：** 本週，我們已**完成了最終的程式架構**。根據先前的硬體和邏輯更動，我們的**停車流程也進行了些微的調整與優化**。下方展示了**最終版的停車流程順序示意圖**。
+* **影片製作：** 在完成程式架構和流程的定案後，我們也**開始進行介紹影片的拍攝工作**。
+
+
+### **Final Program Architecture Completion and Video Production** 
+
+* **Final Architecture and Flow:** This week, we have **completed the final program architecture**. Following previous hardware and logic modifications, our **parking procedure flow has also undergone slight adjustments and optimization**. The diagram below illustrates the **sequential flow of the final version of the parking procedure**.
+* **Video Production:** After finalizing the program architecture and procedures, we also **commenced the filming of the introduction video**.
+    * **[5-1 Open Challenge rounds](video/Open_Challenge/video.md)**
+    * **[5-2 Obstacle Challenge rounds](video/Obstacle_Challenge/video.md)**
+
 
  <div align=center>
     <table>
         <tr>
-            <th>最終停車程序示意圖</th>
+            <th>Final Version Parking Procedure Flow Diagram - 最終版停車程序流程示意圖</th>
         </tr>
         <tr>
             <td width=1000 align=center><img src="./img/10/Parking_process.png" width=700 /></td>
@@ -1423,18 +1593,53 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
     </table>
  </div>
 
-# <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>
+
 
  ## 2025/10/27 ~ 2025/11/01
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
  **Content:**
- 整理資料，並上傳GIHUB
+ 
+**全體成員已依據先前分配的工作職責，正挑燈夜戰全力衝刺，持續將已修改的工程文件資料上傳至 GitHub 專案儲存庫**。
+
+
+
+**All team members, working diligently overnight in accordance with their previously allocated responsibilities, are urgently continuing to upload the modified engineering documentation to the GitHub project repository**.
+
 
  ## 2025/10/27 ~ 2025/11/01
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
  **Content:**
- 經詢問世界賽裁判，上下位控制器不得使用穩定傳輸之無線傳輸websocket通訊協定，那只能改回原本使用的UART通訊協定的。
+
+
+### **通訊協議調整與工程文件持續更新** 
+
+#### **1. 通訊協議調整決策與新挑戰**
+前幾天經向**世界賽裁判**確認，上下位控制器（**Jetson Orin Nano** 與 **Raspberry Pi Pico W**）之間**不得使用 WebSocket 等穩定傳輸的無線通訊協議**。
+
+鑑於此項規則限制，我們決定**捨棄原先研究的 WebSocket 方案**，並**改回使用先前已驗證的 UART（通用非同步收發傳輸器）通訊協議** 進行數據傳輸。
+
+然而，由於主控制器已升級為 **Jetson Orin Nano**，而我們**尚未在其上進行過 UART 通訊的實作**，這對團隊來說是一個**新的技術挑戰**。
+
+#### **2. 工程文件進度**
+**持續在 GitHub 專案儲存庫上修改工程文件資料**。
+
+
+
+### **Communication Protocol Adjustment and Ongoing Engineering Document Updates**
+
+#### **1. Communication Protocol Adjustment Decision and New Challenge**
+Following confirmation with the **World Final judges** a few days ago, the communication between the main and auxiliary controllers (**Jetson Orin Nano** and **Raspberry Pi Pico W**) **is prohibited from using stable wireless communication protocols such as WebSocket**.
+
+Given this rule restriction, we decided to **abandon the previously investigated WebSocket solution** and **revert to the established UART (Universal Asynchronous Receiver-Transmitter) communication protocol** for data transmission.
+
+However, since the main controller has been upgraded to the **Jetson Orin Nano**, and we **have not yet implemented UART communication on this specific controller**, this presents a **new technical challenge** for the team.
+
+#### **2. Engineering Document Progress**
+**Continuing to modify engineering documentation on the GitHub project repository**.
+
+
+ # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>
 
 

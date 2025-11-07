@@ -49,8 +49,8 @@
     - __3-5 Programming - Vehicle’s control program程式設計__
       - [3-5-1 Open Challenge Code Overview(開放挑戰程式碼概述) ](src/Programming/Open_Challenge/README.md)
       - [3-5-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) ](src/Programming/Obstacle_Challenge/README.md)
-      - [3-5-3 Departure Guide(出發指南) **已改動](src/DepartureGuide/README.md)
-      - [3-5-4 Parking Instruction(停車指南) ](src/parking/README.md)
+      - [3-5-3 Vehicle Departure Procedure Guide(車輛出發程序指南) **已改動](src/DepartureGuide/README.md)
+      - [3-5-4 Vehicle Parking Procedure Guide(車輛停車程序指南) ](src/parking/README.md)
     - __3-6 Remote Connection-遠端連線__
       - [3-6-1 NoMachine Introduction(NoMachine簡介) OK](other/NoMachine/README.md)
 
@@ -66,7 +66,7 @@
     - [6-1 GitHub Editing Tools Introduction(VScode Edit/GIT) (GitHub 編輯VScode 編輯/GIT)OK](src/GitHub_Edit/README.md)
     - [6-2 GitHub Web Editor Supported Markup Languages(GitHub 網頁編輯支援的標記語言)OK ](src/GitHub_Languages/README.md)  
   #### 7. Engineering Factor -工程因素 
-    - [7-1 Work Diary(工作日記) **已改動](other/work_diary/README.md)
+    - [7-1 Learning Journey(工作日記) **已改動](other/Learning_Journey/README.md)
       - [February (二月)](other/work_diary/README.md#20250228--20250330)
       - [March (三月)](other/work_diary/README.md#20250301--20250307)
       - [April (四月)](other/work_diary/README.md#20250403--20250414)

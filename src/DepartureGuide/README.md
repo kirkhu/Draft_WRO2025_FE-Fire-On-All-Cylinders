@@ -1,6 +1,6 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-## <div align="center">Description of the Parking Lot Exit Method - 停車區出發方法說明</div>
+## <div align="center">Operational Procedure Guide for Vehicle Departure from the Parking Zone - 車輛從停車區出發的操作程序指南</div>
   **Parking Lot Exit Overview - 停車區出發概述。**
 - ### Parking Lot Exit program-出發計劃
     ### 中文:
