@@ -609,7 +609,7 @@ This week, our focus is dedicated to finalizing the **parking procedure programm
             <th>2025 National Competition: Parallel Reverse Parking Procedure Diagram - 2025 年全國賽：平行倒車入庫程序示意圖</th>
         </tr>
         <tr>
-            <td><img src="./img/4/5.png" width=600 /></td>
+            <td><img src="./img/4/Parking_Process_1.png" width=600 /></td>
         </tr>
     </table>
  </div>
