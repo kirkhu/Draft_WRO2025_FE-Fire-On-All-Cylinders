@@ -66,7 +66,7 @@
     - [6-1 GitHub Editing Tools Introduction(VScode Edit/GIT) (GitHub 編輯VScode 編輯/GIT)OK](src/GitHub_Edit/README.md)
     - [6-2 GitHub Web Editor Supported Markup Languages(GitHub 網頁編輯支援的標記語言)OK ](src/GitHub_Languages/README.md)  
   #### 7. Engineering Factor -工程因素 
-    - [7-1 Work Diary(工作日記) **已改動](other/work_diary/README.md)
+    - [7-1 Learning Journey(工作日記) **已改動](other/Learning_Journey/README.md)
       - [February (二月)](other/work_diary/README.md#20250228--20250330)
       - [March (三月)](other/work_diary/README.md#20250301--20250307)
       - [April (四月)](other/work_diary/README.md#20250403--20250414)
