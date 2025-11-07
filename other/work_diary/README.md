@@ -864,7 +864,7 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 #### **最終成就與展望**
 就算比賽過程**坎坷不順**，但我們最終成功地以**第一名的排名**脫穎而出，獲得了**代表台灣參加 WRO 未來工程師世界賽**的資格。我們將**充分吸收這次全國賽的實戰經驗與教訓**，以**更好的狀態**去參加世界賽，並以**獲取優異的成績榮耀回國**為目標。
 
-### **英National Competition Journey, Challenges, and Qualification**
+### **National Competition Journey, Challenges, and Qualification**
 
 Our National Competition took place on **August 23rd**. Despite a challenging process, we successfully qualified.
 
@@ -1190,7 +1190,7 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
             <td align=center width="25%" ><img src="../../models/Circuit_Design/img/circuit_board_Front_5.png" /></td>
             <td align=center width="25%"><img src="../../models/Circuit_Design/img/circuit_board_back_5.png"  /></td>
         <tr>
-        <th  colspan = 2>SLA 3D Printer 8K 14K 比較</th>
+        <th  colspan = 2>Comparison of Physical Print Results Between SLA 3D Printers at 8K and 14K Resolutions - SLA 3D 列印機 8K 與 14K 解析度之實際列印成果比較</th>
         </tr>
         <tr>
             <th> Stereolithography (SLA) 3D Printer 8K - 使用 8K 3D打印機</th>
@@ -1572,13 +1572,14 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
 
 * **最終架構與流程：** 本週，我們已**完成了最終的程式架構**。根據先前的硬體和邏輯更動，我們的**停車流程也進行了些微的調整與優化**。下方展示了**最終版的停車流程順序示意圖**。
 * **影片製作：** 在完成程式架構和流程的定案後，我們也**開始進行介紹影片的拍攝工作**。
-* **[5-1 Open Challenge rounds](video/Open_Challenge/video.md)**
-* **[5-2 Obstacle Challenge rounds](video/Obstacle_Challenge/video.md)**
+
 
 ### **Final Program Architecture Completion and Video Production** 
 
 * **Final Architecture and Flow:** This week, we have **completed the final program architecture**. Following previous hardware and logic modifications, our **parking procedure flow has also undergone slight adjustments and optimization**. The diagram below illustrates the **sequential flow of the final version of the parking procedure**.
 * **Video Production:** After finalizing the program architecture and procedures, we also **commenced the filming of the introduction video**.
+* **[5-1 Open Challenge rounds](video/Open_Challenge/video.md)**
+* **[5-2 Obstacle Challenge rounds](video/Obstacle_Challenge/video.md)**
 
 
  <div align=center>
@@ -1626,7 +1627,7 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
 
 
 
-### **英文翻譯：Communication Protocol Adjustment and Ongoing Engineering Document Updates**
+### **Communication Protocol Adjustment and Ongoing Engineering Document Updates**
 
 #### **1. Communication Protocol Adjustment Decision and New Challenge**
 Following confirmation with the **World Final judges** a few days ago, the communication between the main and auxiliary controllers (**Jetson Orin Nano** and **Raspberry Pi Pico W**) **is prohibited from using stable wireless communication protocols such as WebSocket**.
