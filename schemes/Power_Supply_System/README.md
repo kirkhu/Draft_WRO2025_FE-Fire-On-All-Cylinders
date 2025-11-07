@@ -5,7 +5,7 @@
   <div align="center"><img src="./img/Power_supply_system.png" ></div>
 
 - ###  Physical Connection Diagram of Power Supply System-電源系統實體連接示意圖
-  <div align="center"><img src="./img/Power_supply_system of Summary diagram.png" ></div>
+  <div align="center"><img src="./img/Power_supply_system_of_Summary_diagram.png" ></div>
 
 - ### Power Supply System Operation Instructions-電源系統操作說明
 ### 中文:
