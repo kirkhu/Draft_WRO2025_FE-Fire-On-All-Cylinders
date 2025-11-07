@@ -1,22 +1,38 @@
 <div align=center> <img src="../../../other/img/logo.png" width = 300 alt=" logo"> </div>
 
 ## <div align="center">Obstacle_Challenge Code Overview</div> 
-根據各控制板的特點，我們對賽車所需的複雜操作進行了分配：
 
-Based on the characteristics of each control board, we distributed the complex operations required for the race vehicle:
+### **任務賽問題分解與控制器職責分配** ⚙️
 
-   ### 中文:
-   1. 這次，Jetson Orin Nano除了具備影像辨識和方向偵測功能外，還新增了障礙物辨識功能。憑藉其強大的運算能力，Jetson Orin Nano能夠進行即時影像分析與處理，精準偵測車輛行駛方向，同時快速辨識並避開路徑上的障礙物，進而提升自動駕駛的穩定性與安全性。
-   2. 此外，這次樹莓派 Pico W 不僅要控制直流馬達轉速和車輛轉向，還需要使用紅外線偵測車輛與牆壁的距離。憑藉其高效的 GPIO 控制能力，樹莓派 Pico W 可以進行精確的距離測量和硬體管理，確保車輛安全停放在停車場內，並保持適當的安全距離。
-   ### 英文:
-   <ol>
-   <li>
-    This time, in addition to its capabilities in image recognition and direction detection, the Jetson Orin Nano has been enhanced with an obstacle recognition function. Leveraging its powerful computational capabilities, the Jetson Orin Nano can perform real-time image analysis and processing, precisely detect the vehicle's driving direction, and simultaneously quickly identify and avoid obstacles in its path, thereby improving the stability and safety of autonomous driving.
-   </li>
-   <li>
-    Furthermore, the Raspberry Pi Pico W is not only required to control the DC motor speed and vehicle steering this time, but also needs to use infrared sensors to detect the distance between the vehicle and the walls. With its efficient GPIO control capability, the Raspberry Pi Pico W can perform precise distance measurement and hardware management, ensuring the vehicle safely parks within the designated parking lot and maintains an appropriate safety distance.
-   </li>
-   </ol>
+根據 **Jetson Orin Nano** 與 **Raspberry Pi Pico W** 等控制器的技術特性，我們針對任務挑戰賽（Obstacle Challenge rounds）所面臨的問題進行了**功能分解及職責分配**。
+
+#### **1. Jetson Orin Nano（主控單元）的職責**
+這次，**Jetson Orin Nano** 除了具備**影像辨識**和**方向偵測**功能外，還**新增了障礙物辨識功能**。憑藉其強大的運算能力，Jetson Orin Nano 能夠：
+* 進行**即時影像分析與處理**。
+* **精準偵測車輛行駛方向**。
+* **快速辨識並避開路徑上的障礙物**，進而提升自動駕駛的**穩定性與安全性**。
+
+#### **2. Raspberry Pi Pico W（輔助單元）的職責**
+此外，這次 **Raspberry Pi Pico W** 不僅要控制**直流馬達轉速**和**車輛轉向**，還新增了**使用紅外線感測器偵測車輛與牆壁距離**的功能。憑藉其**高效的 GPIO 控制能力**，樹莓派 Pico W 可以：
+* 進行**精確的距離測量**和**硬體管理**。
+* **確保車輛安全停放在停車場內**，並**保持適當的安全距離**。
+
+
+### **Obstacle Challenge Problem Decomposition and Controller Responsibility Allocation** 
+
+Based on the technical characteristics of controllers like the **Jetson Orin Nano** and the **Raspberry Pi Pico W**, we decomposed the problems faced in the Obstacle Challenge rounds and **allocated functional responsibilities**.
+
+#### **1. Responsibilities of the Jetson Orin Nano (Main Control Unit)**
+This time, the **Jetson Orin Nano** not only includes **image recognition** and **direction detection** capabilities but has also **added obstacle recognition functionality**. Leveraging its powerful computing capability, the Jetson Orin Nano can:
+* Perform **real-time image analysis and processing**.
+* **Precisely detect the vehicle's direction of travel**.
+* **Quickly identify and avoid obstacles on the path**, thereby enhancing the **stability and safety** of autonomous driving.
+
+#### **2. Responsibilities of the Raspberry Pi Pico W (Auxiliary Unit)**
+Furthermore, this time the **Raspberry Pi Pico W** is not only tasked with controlling the **DC motor speed** and **vehicle steering** but also requires the use of **infrared sensors to detect the distance between the vehicle and the walls**. Leveraging its **efficient GPIO control capability**, the Raspberry Pi Pico W can:
+* Perform **precise distance measurement** and **hardware management**.
+* **Ensure the vehicle is safely parked within the parking lot** and **maintains an appropriate safe distance**.
+
 
  - ### Jetson Orin Nano library-Jetson Orin Nano 庫
     ### 中文:
