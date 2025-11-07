@@ -1027,8 +1027,8 @@ A comparison diagram of the two procedures is shown below.
             <th>2025 WRO World Final: Diagram of the Parallel Reverse Parking Procedure - 2025 年世界賽：平行倒車入庫程序示意圖</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Forward Parking process.png" width=400 /></td>
-            <td><img src="./img/9/New Parking process.png" width=400 /></td>
+            <td><img src="./img/9/Parking_Process_1.png" width=400 /></td>
+            <td><img src="./img/9/Parking_Process_2.png" width=400 /></td>
         </tr>
     </table>
  </div>
@@ -1588,7 +1588,7 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
             <th>Final Version Parking Procedure Flow Diagram - 最終版停車程序流程示意圖</th>
         </tr>
         <tr>
-            <td width=1000 align=center><img src="./img/10/Parking_process.png" width=700 /></td>
+            <td width=1000 align=center><img src="./img/10/Parking_process_3.png" width=700 /></td>
         </tr>
     </table>
  </div>
