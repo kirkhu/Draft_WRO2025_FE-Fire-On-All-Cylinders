@@ -1197,8 +1197,8 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
             <th> Stereolithography (SLA) 3D Printer 14K 使用 14K 3D打印機</th>
         </tr>
         <tr>
-            <td align=center><img src="./img/9/steering knuckle 8K.png" width=100% /></td>
-            <td align=center><img src="./img/9/steering knuckle 14K.png" width=100% /></td>
+            <td align=center><img src="./img/9/steering_knuckle_8K.png" width=100% /></td>
+            <td align=center><img src="./img/9/steering_knuckle_14K.png" width=100% /></td>
         </tr>
         <tr>
             <th colspan=2>The Steering Structure Exhibits a Toe-in Phenomenon(This condition is visible as the two front wheels noticeably converge inwards)轉向結構呈現內八(可由兩輪子向內可看出)</th>
