@@ -113,33 +113,24 @@
     3.  **安全避牆優先級機制：**
       * **優先級判斷：** 在偵測到柱子的同時，系統會**持續監測左側或右側牆壁的輪廓面積**。
       * **安全接管：** 若任一側牆壁的面積**過大**（達到危險閾值），系統會**取消當前柱子的選擇**，將控制優先級**切換至牆壁避障**。轉向角度將改由牆壁面積的偏差量決定，使車輛**朝向車道中心轉動**，以**避免撞上牆壁**，確保安全。
-
-The vehicle completes the precise maneuver to avoid traffic signals (colored pillars) through the following three main steps:
-
-1.  **Target Pillar Selection and Distance Calculation:**
-    * If **two or more pillars** appear on the camera screen, the system calculates the distance from the **center point of the screen's bottom edge** to the **center point of the bottom of each pillar**.
-    * The system selects the **pillar closest to the vehicle** as the current avoidance target, using its data to calculate the required servo motor steering angle.
-
-2.  **PD Control-Based Steering Decision:**
-    * Steering control employs a **PD Control Algorithm**. The system calculates the angle based on the difference (error) between the **pillar's X-coordinate** and its **predetermined target X-coordinate**.
-    * **Target X-coordinate Settings:**
-        * The target X-coordinate for the **Green Pillar** is set to **430**.
-        * The target X-coordinate for the **Red Pillar** is set to **110**.
-
-3.  **Safety Wall Avoidance Priority Mechanism:**
-    * **Priority Check:** Simultaneously while detecting pillars, the system **continuously monitors the contour area of the left or right side walls**.
-    * **Safety Override:** If the area of either side wall is **excessively large** (reaching a critical threshold), the system **cancels the current pillar selection** and **switches the control priority to wall avoidance**. The steering angle is then determined by the wall area deviation, causing the vehicle to **steer towards the center of the lane** to **prevent collision with the walls**, thereby ensuring safety.
-    
    ### 英文:
   * According to the mission requirements, when the vehicle detects a **Red Traffic Sign/Obstacle**, the system triggers a **Right Evasion Maneuver**.Conversely, when a **Green Obstacle** is encountered, the system triggers a **Left Evasion Maneuver**.
   * As the vehicle moves, the **camera** transmits the **video stream** to the main controller (**Jetson Orin Nano**).The controller then performs **image processing** to determine the **ideal X-coordinate position** of the **target pillar** within the image frame.This visual data (specifically the X-coordinate) assists the controller in **determining the object's spatial position and distance**, enabling **precise navigation and obstacle avoidance**.
   * On the captured image, the system uses the **`boundingRect()` function** to **draw a rectangle** around the target contour.This function returns the **X and Y coordinates of the rectangle's top-left corner**. When applied to the signal pillar's contour, these coordinates are then used to **determine its precise position** within the frame.
   
-- The vehicle completes the traffic signal block avoidance through the following steps:
+- The vehicle completes the precise maneuver to avoid traffic signals (colored pillars) through the following three main steps:
     
-    1. The system detects traffic signal blocks through the camera and uses image recognition to analyze the y-coordinate, area, and color of the blocks, thereby determining the position of the block closest to the vehicle.
-    2. Next, the system obtains the X-coordinate of the nearest block and compares it with the corresponding X-coordinate on the Bézier curve to calculate the X-axis deviation. The deviation is then multiplied by a preset avoidance coefficient to determine the final error value.
-    3. Finally, based on the calculated error value, the servo motor's turning direction is adjusted to steer the vehicle appropriately, effectively avoiding the block and ensuring the safety and stability of its driving path.
+    1.  **Target Pillar Selection and Distance Calculation:**
+      * If **two or more pillars** appear on the camera screen, the system calculates the distance from the **center point of the screen's bottom edge** to the **center point of the bottom of each pillar**.
+      * The system selects the **pillar closest to the vehicle** as the current avoidance target, using its data to calculate the required servo motor steering angle.
+    2.  **PD Control-Based Steering Decision:**
+      * Steering control employs a **PD Control Algorithm**. The system calculates the angle based on the difference (error) between the **pillar's X-coordinate** and its **predetermined target X-coordinate**.
+      * **Target X-coordinate Settings:**
+        * The target X-coordinate for the **Green Pillar** is set to **430**.
+        * The target X-coordinate for the **Red Pillar** is set to **110**.
+    3.  **Safety Wall Avoidance Priority Mechanism:**
+      * **Priority Check:** Simultaneously while detecting pillars, the system **continuously monitors the contour area of the left or right side walls**.
+      * **Safety Override:** If the area of either side wall is **excessively large** (reaching a critical threshold), the system **cancels the current pillar selection** and **switches the control priority to wall avoidance**. The steering angle is then determined by the wall area deviation, causing the vehicle to **steer towards the center of the lane** to **prevent collision with the walls**, thereby ensuring safety.
     
 <div align=center>
 
