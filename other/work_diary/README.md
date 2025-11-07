@@ -794,7 +794,7 @@ Notably, due to its stable performance, the V4.0 version **became the primary ci
 經過實際測試，採用軸承的**新底盤結構有效改善了轉向的流暢度**，使自駕車在過彎時**更加平順**。
 
 
-### **英文翻譯：Chassis Friction Correction and Steering Smoothness Optimization** 
+### **Chassis Friction Correction and Steering Smoothness Optimization** 
 
 While testing the obstacle avoidance program, we observed that the autonomous car experienced **slight stuttering during cornering**. Inspection revealed the problem originated from the **chassis structure**: as the **steering knuckle was in direct contact with the chassis**, the resulting **excessive friction** caused the drivetrain to **jam**.
 
