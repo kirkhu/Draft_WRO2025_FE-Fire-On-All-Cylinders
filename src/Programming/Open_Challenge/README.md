@@ -116,7 +116,7 @@ from functions_jetson import *
           `set_servo_angle():`<br>
           - 計算並轉換±180度的角度值到伺服馬達所需的PWM佔空比範圍（0到65535），並將其輸出到前輪伺服馬達。
                     
-          `ontrol_motor():`<br>
+          `control_motor():`<br>
           - 取-100到100範圍內一個數的絕對值，轉換為PWM佔空比。同時，根據該值的符號設定兩個引腳的高低狀態，以控制馬達的正反轉或停止。
 
           `pump_uart():`<br>
