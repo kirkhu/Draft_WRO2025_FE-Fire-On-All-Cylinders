@@ -1,6 +1,6 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-## <div align="center">Description of the Parking Method - 停車方法說明</div>
+## <div align="center">Vehicle Parking Procedure Guide - 車輛停車程序指南</div>
   **Code Logic Description: Parking Task After Three Laps - 程式碼邏輯說明：三圈後停車任務。**
 - ### Parking program-停車計劃
     ### 中文:
