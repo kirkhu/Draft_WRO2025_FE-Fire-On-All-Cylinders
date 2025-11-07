@@ -103,16 +103,16 @@
 
   - 車輛透過以下三個主要步驟，完成避開交通號誌（色柱）的精確操作：
     1.  **目標柱子選擇與距離計算：**
-      * 如果攝影機畫面中出現**兩根或多根柱子**，系統會計算**螢幕底部中心點**到**每根柱子底部中心點**的距離。
-      * 系統將選定**距離車輛最近的柱子**作為當前避障的目標，並以此柱子的數據來計算伺服馬達所需的轉向角度。
+        * 如果攝影機畫面中出現**兩根或多根柱子**，系統會計算**螢幕底部中心點**到**每根柱子底部中心點**的距離。
+        * 系統將選定**距離車輛最近的柱子**作為當前避障的目標，並以此柱子的數據來計算伺服馬達所需的轉向角度。
     2.  **基於 PD 控制的轉向決策：**
-      * 轉向控制採用 **PD 控制演算法**。系統根據**柱子的 X 座標**與**預設目標 X 座標**之間的差值（即誤差 `error`）進行計算。
-      * **目標 X 座標設定：**
-        * **綠色立柱**的目標 X 座標設定為 **430**。
-        * **紅色立柱**的目標 X 座標設定為 **110**。
+        * 轉向控制採用 **PD 控制演算法**。系統根據**柱子的 X 座標**與**預設目標 X 座標**之間的差值（即誤差 `error`）進行計算。
+        * **目標 X 座標設定：**
+          * **綠色立柱**的目標 X 座標設定為 **430**。
+          * **紅色立柱**的目標 X 座標設定為 **110**。
     3.  **安全避牆優先級機制：**
-      * **優先級判斷：** 在偵測到柱子的同時，系統會**持續監測左側或右側牆壁的輪廓面積**。
-      * **安全接管：** 若任一側牆壁的面積**過大**（達到危險閾值），系統會**取消當前柱子的選擇**，將控制優先級**切換至牆壁避障**。轉向角度將改由牆壁面積的偏差量決定，使車輛**朝向車道中心轉動**，以**避免撞上牆壁**，確保安全。
+        * **優先級判斷：** 在偵測到柱子的同時，系統會**持續監測左側或右側牆壁的輪廓面積**。
+        * **安全接管：** 若任一側牆壁的面積**過大**（達到危險閾值），系統會**取消當前柱子的選擇**，將控制優先級**切換至牆壁避障**。轉向角度將改由牆壁面積的偏差量決定，使車輛**朝向車道中心轉動**，以**避免撞上牆壁**，確保安全。
    ### 英文:
   * According to the mission requirements, when the vehicle detects a **Red Traffic Sign/Obstacle**, the system triggers a **Right Evasion Maneuver**.Conversely, when a **Green Obstacle** is encountered, the system triggers a **Left Evasion Maneuver**.
   * As the vehicle moves, the **camera** transmits the **video stream** to the main controller (**Jetson Orin Nano**).The controller then performs **image processing** to determine the **ideal X-coordinate position** of the **target pillar** within the image frame.This visual data (specifically the X-coordinate) assists the controller in **determining the object's spatial position and distance**, enabling **precise navigation and obstacle avoidance**.
