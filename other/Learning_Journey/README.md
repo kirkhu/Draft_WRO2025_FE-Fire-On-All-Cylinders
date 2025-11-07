@@ -1204,7 +1204,7 @@ This week, we discovered that the assembled **steering knuckles** exhibited a **
             <th colspan=2>The Steering Structure Exhibits a Toe-in Phenomenon(This condition is visible as the two front wheels noticeably converge inwards)轉向結構呈現內八(可由兩輪子向內可看出)</th>
         </tr>
         <tr>
-            <td colspan=2 align=center><img src="./img/9/Inner Eight.png" width=100% /></td>
+            <td colspan=2 align=center><img src="./img/9/Inner_Eight.png" width=100% /></td>
         </tr>
     </table>
  </div>
