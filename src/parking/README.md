@@ -224,7 +224,7 @@
     while mode == 10:
         motor_brake() 
     ```
-## <div align="center">Counter-clockwise parking procedure-逆時針停車流程</div>
+## <div align="center">Counter-Clockwise Vehicle Parking Procedure - 逆時針方向車輛停車流程</div>
 <div align=center>
 
   |向前行走|向右正轉|
