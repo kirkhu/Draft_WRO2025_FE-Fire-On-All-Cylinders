@@ -1014,8 +1014,8 @@ A comparison diagram of the two procedures is shown below.
             <th>Photo of Teammate Coding the Forward Parking Program - 隊友正在撰寫順向停車程式碼的照片</th></th>
         </tr>
         <tr>
-            <td><img src="./img/9/steering structure 4.jpg" width=400/></td>
-            <td><img src="./img/9/Write a Code.jpg" width=400/></td>
+            <td><img src="./img/9/steering_structure_4.jpg" width=400/></td>
+            <td><img src="./img/9/Write_a_Code.jpg" width=400/></td>
         </tr>
     </table>
  </div>
@@ -1026,7 +1026,7 @@ A comparison diagram of the two procedures is shown below.
             <th>2025 National Competition: Parallel Reverse Parking Procedure Diagram - 2025 年全國賽：平行倒車入庫程序示意圖</th>
             <th>2025 WRO World Final: Diagram of the Parallel Reverse Parking Procedure - 2025 年世界賽：平行倒車入庫程序示意圖</th>
         </tr>
-        <tr>
+        <tr align=center>
             <td><img src="./img/9/Parking_Process_1.png" width=400 /></td>
             <td><img src="./img/9/Parking_Process_2.png" width=400 /></td>
         </tr>
@@ -1040,16 +1040,16 @@ A comparison diagram of the two procedures is shown below.
             <th>Assembly of the Steering Mechanism - 轉向機構的組裝作業</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Structure processing steps 1.jpg" width=400 /></td>
-            <td><img src="./img/9/Structure processing steps 2.jpg" width=400 /></td>
+            <td><img src="./img/9/Structure_processing_steps_1.jpg" width=400 /></td>
+            <td><img src="./img/9/Structure_processing_steps_2.jpg" width=400 /></td>
         </tr>
         <tr>
             <th>Ultraviolet (UV) Post-Curing of 3D Printed Parts - 對 3D 列印零件進行紫外線（UV）後固化處理</th>
             <th>Applying Silicone Oil to the Ball Joints - 對球形接頭塗抹矽油</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Structure processing steps 3.jpg" width=400 /></td>
-            <td><img src="./img/9/Structure processing steps 4.jpg" width=400 /></td>
+            <td><img src="./img/9/Structure_processing_steps_3.jpg" width=400 /></td>
+            <td><img src="./img/9/Structure_processing_steps_4.jpg" width=400 /></td>
         </tr>
     </table>
  </div>
