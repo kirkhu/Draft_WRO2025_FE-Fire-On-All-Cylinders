@@ -66,8 +66,8 @@
      <div align=center>
         <table>
         <tr>
-        <th>Turning with traffic signals(有交通號誌轉彎)</th>
-        <th>Turning without traffic signals(沒有交通號誌轉彎)</th>
+        <th>Performing Avoidance Maneuvers Upon Traffic Signal Detection(偵測到交通號誌後執行規避操作)</th>
+        <th>Performing Turns Without Traffic Signal Detection(無偵測交通號誌即可進行轉彎)</th>
         </tr><tr>
         <td><img src="./img/Traffic Signal Evaluation and Steering Control.png" width=400 height="400"></td>
         <td><img src="./img/Unsignalized Intersection Steering Control.png" width="400" height="400"></td>
@@ -77,9 +77,8 @@
      <div align=center>
         <table>
         <tr>
-        <th>ROI5 assists in corner detection 
-        before turning(轉彎前ROI5輔助轉彎偵測)</th>
-        <th>ROI 5 assisted turning detection(ROI5輔助轉彎偵測)</th>
+        <th>Activation of Auxiliary ROI5 Triggered by Inner Wall Detection During Turning Mode(轉彎模式下，內壁偵測觸發輔助 ROI5 開啟)</th>
+        <th>Executing Evasion Maneuver Upon Outer Wall Detection by ROI5(ROI5 偵測到外牆後執行規避動作)</th>
         </tr><tr>
         <td><img src="./img/Inner Side Obstacle Avoidance and Steering Control.png" width="400" height="400"></td>
         <td><img src="./img/ROI 5 assisted turning detection.png" width=400 height="400"></td>
