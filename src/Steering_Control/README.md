@@ -121,16 +121,16 @@
 - The vehicle completes the precise maneuver to avoid traffic signals (colored pillars) through the following three main steps:
     
     1.  **Target Pillar Selection and Distance Calculation:**
-      * If **two or more pillars** appear on the camera screen, the system calculates the distance from the **center point of the screen's bottom edge** to the **center point of the bottom of each pillar**.
-      * The system selects the **pillar closest to the vehicle** as the current avoidance target, using its data to calculate the required servo motor steering angle.
+        * If **two or more pillars** appear on the camera screen, the system calculates the distance from the **center point of the screen's bottom edge** to the **center point of the bottom of each pillar**.
+        * The system selects the **pillar closest to the vehicle** as the current avoidance target, using its data to calculate the required servo motor steering angle.
     2.  **PD Control-Based Steering Decision:**
-      * Steering control employs a **PD Control Algorithm**. The system calculates the angle based on the difference (error) between the **pillar's X-coordinate** and its **predetermined target X-coordinate**.
-      * **Target X-coordinate Settings:**
-        * The target X-coordinate for the **Green Pillar** is set to **430**.
-        * The target X-coordinate for the **Red Pillar** is set to **110**.
+        * Steering control employs a **PD Control Algorithm**. The system calculates the angle based on the difference (error) between the **pillar's X-coordinate** and its **predetermined target X-coordinate**.
+        * **Target X-coordinate Settings:**
+          * The target X-coordinate for the **Green Pillar** is set to **430**.
+          * The target X-coordinate for the **Red Pillar** is set to **110**.
     3.  **Safety Wall Avoidance Priority Mechanism:**
-      * **Priority Check:** Simultaneously while detecting pillars, the system **continuously monitors the contour area of the left or right side walls**.
-      * **Safety Override:** If the area of either side wall is **excessively large** (reaching a critical threshold), the system **cancels the current pillar selection** and **switches the control priority to wall avoidance**. The steering angle is then determined by the wall area deviation, causing the vehicle to **steer towards the center of the lane** to **prevent collision with the walls**, thereby ensuring safety.
+        * **Priority Check:** Simultaneously while detecting pillars, the system **continuously monitors the contour area of the left or right side walls**.
+        * **Safety Override:** If the area of either side wall is **excessively large** (reaching a critical threshold), the system **cancels the current pillar selection** and **switches the control priority to wall avoidance**. The steering angle is then determined by the wall area deviation, causing the vehicle to **steer towards the center of the lane** to **prevent collision with the walls**, thereby ensuring safety.
     
 <div align=center>
 
