@@ -609,7 +609,7 @@ This week, our focus is dedicated to finalizing the **parking procedure programm
             <th>2025 National Competition: Parallel Reverse Parking Procedure Diagram - 2025 年全國賽：平行倒車入庫程序示意圖</th>
         </tr>
         <tr>
-            <td><img src="./img/4/5.png" width=600 /></td>
+            <td><img src="./img/4/Parking_Process_1.png" width=600 /></td>
         </tr>
     </table>
  </div>
@@ -1027,8 +1027,8 @@ A comparison diagram of the two procedures is shown below.
             <th>2025 WRO World Final: Diagram of the Parallel Reverse Parking Procedure - 2025 年世界賽：平行倒車入庫程序示意圖</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Forward Parking process.png" width=400 /></td>
-            <td><img src="./img/9/New Parking process.png" width=400 /></td>
+            <td><img src="./img/9/Parking_Process_1.png" width=400 /></td>
+            <td><img src="./img/9/Parking_Process_2.png" width=400 /></td>
         </tr>
     </table>
  </div>
@@ -1588,7 +1588,7 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
             <th>Final Version Parking Procedure Flow Diagram - 最終版停車程序流程示意圖</th>
         </tr>
         <tr>
-            <td width=1000 align=center><img src="./img/10/Parking_process.png" width=700 /></td>
+            <td width=1000 align=center><img src="./img/10/Parking_Process_3.png" width=700 /></td>
         </tr>
     </table>
  </div>
@@ -1607,7 +1607,7 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
 **All team members, working diligently overnight in accordance with their previously allocated responsibilities, are urgently continuing to upload the modified engineering documentation to the GitHub project repository**.
 
 
- ## 2025/10/27 ~ 2025/11/01
+ ## 2025/11/02 ~ 2025/11/08
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI
 
  **Content:**
@@ -1630,14 +1630,15 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
 ### **Communication Protocol Adjustment and Ongoing Engineering Document Updates**
 
 #### **1. Communication Protocol Adjustment Decision and New Challenge**
-Following confirmation with the **World Final judges** a few days ago, the communication between the main and auxiliary controllers (**Jetson Orin Nano** and **Raspberry Pi Pico W**) **is prohibited from using stable wireless communication protocols such as WebSocket**.
 
-Given this rule restriction, we decided to **abandon the previously investigated WebSocket solution** and **revert to the established UART (Universal Asynchronous Receiver-Transmitter) communication protocol** for data transmission.
+  - Following confirmation with the **World Final judges** a few days ago, the communication between the main and auxiliary controllers (**Jetson Orin Nano** and **Raspberry Pi Pico W**) **is prohibited from using stable wireless communication protocols such as WebSocket**.
 
-However, since the main controller has been upgraded to the **Jetson Orin Nano**, and we **have not yet implemented UART communication on this specific controller**, this presents a **new technical challenge** for the team.
+  - Given this rule restriction, we decided to **abandon the previously investigated WebSocket solution** and **revert to the established UART (Universal Asynchronous Receiver-Transmitter) communication protocol** for data transmission.
+
+  - However, since the main controller has been upgraded to the **Jetson Orin Nano**, and we **have not yet implemented UART communication on this specific controller**, this presents a **new technical challenge** for the team.
 
 #### **2. Engineering Document Progress**
-**Continuing to modify engineering documentation on the GitHub project repository**.
+  - **Continuing to modify engineering documentation on the GitHub project repository**.
 
 
  # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>
