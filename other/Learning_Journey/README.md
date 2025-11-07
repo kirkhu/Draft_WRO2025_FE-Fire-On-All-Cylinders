@@ -1386,7 +1386,7 @@ The commands for manual setup and using the auto-script are provided below.
         </tr>
         <tr>
             <td align=center ><img src="./img/10/TPLink AC1300.png" width=150 /></td>
-            <td align=center ><img src="./img/10/ASUS AC1200.png" width=150 /></td>
+            <td align=center ><img src="./img/10/ASUS_AC1200.png" width=150 /></td>
         </tr>
     </table>
  </div>
