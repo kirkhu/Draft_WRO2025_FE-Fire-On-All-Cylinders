@@ -240,7 +240,7 @@
   |:---:|:---:|
   |<div align=center><img src="img/parking_1-5.png" /></div>|<div align=center><img src="img/parking_1-6.png" /></div>|
 
-  |Then turn right(然後向右正轉)|Parking ended(停車結束)|
+  |The vehicle reverses towards the rear-right into the parking area until its heading angle reaches 177 degrees.|Vehicle Parking Finished|
   |:---:|:---:|
   |<div align=center><img src="img/parking_1-7.png" /></div>|<div align=center><img src="img/parking_1-8.png" /></div>|
 
