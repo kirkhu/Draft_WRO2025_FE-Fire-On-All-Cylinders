@@ -50,7 +50,7 @@
       - [3-5-1 Open Challenge Code Overview(開放挑戰程式碼概述) **已改動](src/Programming/Open_Challenge/README.md)
       - [3-5-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) **已改動](src/Programming/Obstacle_Challenge/README.md)
       - [3-5-3 Vehicle Departure Procedure Guide(車輛出發程序指南) **已改動](src/Vehicle_Departure_Procedure_Guide/README.md)
-      - [3-5-4 Vehicle Parking Procedure Guide(車輛停車程序指南) **已改動](src/parking/README.md)
+      - [3-5-4 Vehicle Parking Procedure Guide(車輛停車程序指南) **已改動](src/Vehicle_Parking_Procedure_Guide/README.md)
     - __3-6 Remote Connection-遠端連線__
       - [3-6-1 NoMachine Introduction(NoMachine簡介) OK](other/NoMachine/README.md)
 
