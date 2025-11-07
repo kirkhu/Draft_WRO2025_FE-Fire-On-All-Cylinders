@@ -231,7 +231,7 @@
   |:---:|:---:|
   |<div align=center><img src="img/parking_1-1.png" /></div>|<div align=center><img src="img/parking_1-2.png" /></div>|
 
-  |The vehicle drives straight toward the 90-degree azimuth until the infrared sensor detects the outer wall, then brakes.|The vehicle reverses towards the left-rear until its yaw angle exceeds 170 degrees.|
+  |The vehicle drives straight toward the 90-degree azimuth until the infrared sensor detects the outer wall, then brakes.|The vehicle reverses towards the left-rear until its yaw angle exceeds 177 degrees.|
   |:---:|:---:|
   |<div align=center><img src="img/parking_1-3.png" /></div>|<div align=center><img src="img/parking_1-4.png" /></div>|
 
@@ -244,22 +244,22 @@
   |:---:|:---:|
   |<div align=center><img src="img/parking_1-7.png" /></div>|<div align=center><img src="img/parking_1-8.png" /></div>|
 
-## <div align="center">Clockwise parking procedure-順時針停車流程</div>
+## <div align="center">Clockwise Vehicle Parking Procedure - 順時針方向停車輛車流程</div>
 <div align=center>
 
-  |向前行走|向左正轉|
+  |The vehicle proceeds forward through the parking area.|The vehicle turns to the left, with its front facing the outer wall at a 90-degree azimuth.|
   |:---:|:---:|
   |<div align=center><img src="img/parking_2-1.png" /></div>|<div align=center><img src="img/parking_2-2.png" /></div>|
 
-  |向前行走|向右反轉|
+  |The vehicle drives straight toward the 90-degree azimuth until the infrared sensor detects the outer wall, then brakes.|The vehicle reverses towards the right-rear until its yaw angle exceeds 177 degrees.|
   |:---:|:---:|
   |<div align=center><img src="img/parking_2-3.png" /></div>|<div align=center><img src="img/parking_2-4.png" /></div>|
 
-  |向前行走|Start turning right clockwise(開始向右正轉)|
+  |The vehicle follows the outer wall until the area of the magenta wall contour is less than 100, then the vehicle moves forward another 100 degrees.|The vehicle reverses towards the rear-right into the parking area until its heading angle reaches 123 degrees.|
   |:---:|:---:|
   |<div align=center><img src="img/parking_2-5.png" /></div>|<div align=center><img src="img/parking_2-6.png" /></div>|
 
-  |Then reverse to the left(然後向左反轉)|Parking ended(停車結束)|
+  |The vehicle reverses towards the rear-left into the parking area until its heading angle reaches 177 degrees.|Vehicle Parking Finished|
   |:---:|:---:|
   |<div align=center><img src="img/parking_2-7.png" /></div>|<div align=center><img src="img/parking_2-8.png" /></div>|
   
