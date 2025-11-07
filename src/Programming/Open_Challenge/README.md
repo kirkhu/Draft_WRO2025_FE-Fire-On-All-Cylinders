@@ -113,13 +113,13 @@ from functions_jetson import *
         ![flowchart_open](./img/open_challange_Pico.jpg)
         ![flowchart_open](./img/Chinese%20pico%20operation%20flowchart.jpg)
         
-          __set_servo_angle():__<br>
+          `__set_servo_angle():`__<br>
           - 計算並轉換±180度的角度值到伺服馬達所需的PWM佔空比範圍（0到65535），並將其輸出到前輪伺服馬達。
                     
-          __control_motor():__<br>
+          `__control_motor():`__<br>
           - 取-100到100範圍內一個數的絕對值，轉換為PWM佔空比。同時，根據該值的符號設定兩個引腳的高低狀態，以控制馬達的正反轉或停止。
 
-          __pump_uart():__<br>
+          `__pump_uart():`__<br>
           - Jetson Orin Nano 控制器透過 UART 協定將更新後的模式、舵機角度和直流馬達速度數值傳送到佇列，確保流程持續運行，以保持資料即時更新。
 
  
