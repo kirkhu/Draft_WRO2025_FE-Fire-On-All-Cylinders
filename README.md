@@ -10,14 +10,14 @@
 受網路速度影響，部分圖片可能無法正常顯示。如遇此情況，請嘗試重新整理網頁以解決問題。
 
 
-This is the official technical documentation for the WRO Taiwan National Team, **"Fire On All Cylinders."**
+- This is the official technical documentation for the WRO Taiwan National Team, **"Fire On All Cylinders."**
 
-You can find hyperlinks to the technical report content and setup instructions here, provided for quick access by both learners and judges during study or evaluation.
+- You can find hyperlinks to the technical report content and setup instructions here, provided for quick access by both learners and judges during study or evaluation.
 
-This technical document will feature a detailed table of contents structured **according to the official scoring criteria**  (such as the engineering journal evaluation rubrics), with all section titles displayed as **hyperlinks**. This allows judges or learners to easily navigate to the key content of the technical documentation for **rapid and efficient evaluation**.
+- This technical document will feature a detailed table of contents structured **according to the official scoring criteria**  (such as the engineering journal evaluation rubrics), with all section titles displayed as **hyperlinks**. This allows judges or learners to easily navigate to the key content of the technical documentation for **rapid and efficient evaluation**.
 
 **Special Note:**
-Due to network speed fluctuations, some images may not display correctly. Should this occur, please try refreshing the page to resolve the issue.
+- Due to network speed fluctuations, some images may not display correctly. Should this occur, please try refreshing the page to resolve the issue.
 
 #### [For Learners](learners_contents.md)
 
