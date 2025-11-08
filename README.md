@@ -8,7 +8,6 @@
 
 - 本技術文件將**依據官方評分標準**（如工程日誌評估細則）建立詳細目錄，**所有目錄標題將以超連結形式顯示**。這將方便評審或學習者輕鬆導航至技術文件的關鍵內容，從而**快速且有效地進行評估**。
 
----
 
 ### **自動駕駛汽車設計：關鍵升級與迭代** 
 
@@ -30,7 +29,6 @@
 
 - This technical document will feature a detailed table of contents structured **according to the official scoring criteria** (such as the engineering journal evaluation rubrics), with all section titles displayed as **hyperlinks**. This allows judges or learners to easily navigate to the key content of the technical documentation for **rapid and efficient evaluation**.
 
----
 
 ### **Autonomous Car Design: Key Upgrades and Iterations** 
 
