@@ -1,15 +1,21 @@
 <div align="center"><img src="./other/img/logo.png" width="300" alt=" logo"></div> 
 
-### 中文
-- 這是 WRO 台灣隊伍「__Fire On All Cylinders.__」的官方  
-- 您可以在此處找到技術報告內容和設定說明的鏈接，這些鏈接分別面向學習者和評委，方便您在學習或評估期間訪問。
-- 本技術文件將根據評分標準建立目錄，目錄標題將以超連結形式顯示，方便評審或學習者輕鬆導航至技術文件的關鍵內容，從而快速進行評估。
-- **特別提醒：**受網路速度影響，圖片可能無法正常顯示。如遇此情況，請嘗試重新整理網頁以解決問題。
-### 英文
-- This is the official GitHub repository of the WRO Taiwan team "__Fire On All Cylinders.__". All code, files and documents are here.
-- You can find links to the technical report content and setting instructions here, which are for learners and judges respectively, for your convenience during learning or evaluation.
-- This technical document will establish a table of contents according to the scoring criteria, and the table of contents titles will be displayed in the form of hyperlinks, so that judges or learners can easily navigate to the key content of the technical document for quick evaluation.
-- **Special reminder: **Due to the network speed, the image may not be displayed properly. If this happens, please try to refresh the webpage to solve the problem.
+這是 **WRO 台灣代表隊伍「Fire On All Cylinders」** 的官方技術文件。
+您可以在此處找到技術報告內容和設定說明的**超連結**，這些連結分別面向**學習者與評審**，方便您在學習或評估期間快速訪問關鍵資訊。
+本技術文件將**依據官方評分標準**（如工程日誌評估細則）建立詳細目錄，**所有目錄標題將以超連結形式顯示** 。這將方便評審或學習者輕鬆導航至技術文件的關鍵內容，從而**快速且有效地進行評估**。
+
+**特別提醒：**
+受網路速度影響，部分圖片可能無法正常顯示。如遇此情況，請嘗試重新整理網頁以解決問題。
+
+
+This is the official technical documentation for the WRO Taiwan National Team, **"Fire On All Cylinders."**
+
+You can find hyperlinks to the technical report content and setup instructions here, provided for quick access by both learners and judges during study or evaluation.
+
+This technical document will feature a detailed table of contents structured **according to the official scoring criteria**  (such as the engineering journal evaluation rubrics), with all section titles displayed as **hyperlinks**. This allows judges or learners to easily navigate to the key content of the technical documentation for **rapid and efficient evaluation**.
+
+**Special Note:**
+Due to network speed fluctuations, some images may not display correctly. Should this occur, please try refreshing the page to resolve the issue.
     #### [For Learners](learners_contents.md)
 
 ## Rubric for Judging Engineering Documentation-工程文獻評審標準
