@@ -143,9 +143,11 @@
 </tr>
 
 <tr>
-<th align="center" colspan = 2>Arrive at the designated location(到達預定位子)</th>
+<th align="center" width="50%">Arrive at the designated location(到達預定位子)</th>
+<th align="center" width="50%">XXXXXXXXXX</th>
 </tr><tr>
-<td align="center" colspan = 2><img src="./img/Start_in_green_counterclockwise-5.png"  /></td>
+<td align="center" width="50%"><img src="./img/Start_in_green_counterclockwise-5.png"  /></td>
+<td><a href="https://youtu.be/dxmBH97Rha0" ><img src="./img/01_Counter_clockwise_green_departure_process.jpg" /></a></td>
 </tr>
 </table>
 </div>
