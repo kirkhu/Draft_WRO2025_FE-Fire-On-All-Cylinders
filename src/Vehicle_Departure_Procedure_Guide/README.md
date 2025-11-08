@@ -227,10 +227,10 @@
 </tr>
 
 <tr>
-<th align="center" colspan=2>Arrive at the designated location(到達預定位子)</th>
+<th>Arrive at the designated location(到達預定位子)</th>
 <th width=50%>Video Documentation of the Autonomous Vehicle's Actual Run(自動駕駛車輛實際運行的影片記錄)</th>
-</tr><tr>
-<td align="center" colspan=2><img src="./img/Clockwise Green Departure Process-5.png"  /></td>
+</tr><tr align=center>
+<td><img src="./img/Clockwise Green Departure Process-5.png"  /></td>
 <td width=50%><a href="https://youtu.be/RobF20wQFs8"><img src="./img/04_Clockwise_Green_Departure_Process.jpg" /></a></td>
 </tr>
 </table>
@@ -256,10 +256,10 @@
 </tr>
 
 <tr>
-<th align="center" colspan=2>Arrive at the designated location(到達預定位子)</th>
+<th>Arrive at the designated location(到達預定位子)</th>
 <th>Video Documentation of the Autonomous Vehicle's Actual Run(自動駕駛車輛實際運行的影片記錄)</th>
-</tr><tr>
-<td align="center" colspan=2><img src="./img/Clockwise red Departure Process-5.png"  /></td>
+</tr><tr align=center>
+<td><img src="./img/Clockwise red Departure Process-5.png"  /></td>
 <td><a href="https://youtu.be/_NSuhBujNAg"><img src="./img/05_Clockwise_Red_Departure_Process.jpg" /></a></td>
 </tr>
 </table>
@@ -313,10 +313,10 @@
 </tr>
 
 <tr>
-<th align="center" colspan=2>Arrive at the designated location(到達預定位子)</th>
+<th>Arrive at the designated location(到達預定位子)</th>
 <th>Video Documentation of the Autonomous Vehicle's Actual Run(自動駕駛車輛實際運行的影片記錄)</th>
-</tr><tr>
-<td align="center" colspan=2><img src="./img/Clockwise red center departure process-5.png"  /></td>
+</tr><tr align=center>
+<td><img src="./img/Clockwise red center departure process-5.png"  /></td>
 <td><a href="https://youtu.be/4ebtIaPdVeI" ><img src="./img/07_Clockwise_red_center_departure_process.jpg" /></a></td>
 </tr>
 </table>
