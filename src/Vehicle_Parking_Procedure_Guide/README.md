@@ -262,10 +262,10 @@
 <td align="center"  width="50%"><img src="img/parking_1-8.png" /> </td>
 </tr>
 <tr>
-<th >Video Recording of the Vehicle's Actual Run</th>
+<th colspan = 2>Video Documentation of the Autonomous Vehicle's Actual Run</th>
 </tr>
 <tr align=center>
-<td><a href="https://youtu.be/ZJdazgHVCGY" ><img src="./img/Clockwise_Vehicle_Parking_Procedure.jpg" ALT="Clockwise_Vehicle_Parking_Procedure"/></a></td>
+<td align=center colspan = 2><a href="https://youtu.be/ZJdazgHVCGY" ><img src="./img/Clockwise_Vehicle_Parking_Procedure.jpg" ALT="Clockwise_Vehicle_Parking_Procedure"/></a></td>
 </tr>
 
 
@@ -314,10 +314,10 @@
 </tr>
 
 <tr>
-<th>Video Recording of the Vehicle's Actual Run</th>
+<th colspan = 2>Video Documentation of the Autonomous Vehicle's Actual Run</th>
 </tr>
-<tr align=center>
-<td><a href="https://youtu.be/eZsEFtIm0SM" ><img src="./img/Counter_Clockwise_Vehicle_Parking_Procedure.jpg" ALT="Counter_Clockwise_Vehicle_Parking_Procedure"/></a></td>
+<tr>
+<td align=center colspan = 2><a href="https://youtu.be/eZsEFtIm0SM" ><img src="./img/Counter_Clockwise_Vehicle_Parking_Procedure.jpg" ALT="Counter_Clockwise_Vehicle_Parking_Procedure"/></a></td>
 </tr>
 
 
