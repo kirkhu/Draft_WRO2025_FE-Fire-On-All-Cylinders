@@ -74,18 +74,18 @@ The integration of all these upgrades and innovative design elements is aimed at
   #### 3. Obstacle Management-障礙管理
     - [3-1 Software Platform Construction(軟體平台建設) **已改動OK](src/System_Platform_Software/README.md)
     - [3-2 OpenCV Introduction (OpenCV介紹)OK](src/OpenCV/README.md)
-    - __3-4 Image Recognition Processing and Steering-影像辨識處理和控制__
-      - [3-4-1 Image Recognition Processing(影像辨識處理) **已改動 OK](src/Image_Recognition_Processing/README.md)
-      - [3-4-2 Parking Lot Departure Steering Control Overview(停車場出發轉向控制) **已改動 OK](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
-      - [3-4-3 Steering Control(轉向控制) **已改動 OK](src/Steering_Control/README.md) 
-      - [3-4-4 Automatically record the LAB values of the field(場地物件LAB值的自動化儲存記錄) **已改動OK](src/Automatically_record_LAB/README.md)
-    - __3-5 Programming - Vehicle’s control program程式設計__
-      - [3-5-1 Open Challenge Code Overview(開放挑戰程式碼概述) **已改動OK](src/Programming/Open_Challenge/README.md)
-      - [3-5-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) **已改動OK](src/Programming/Obstacle_Challenge/README.md)
-      - [3-5-3 Vehicle Departure Procedure Guide(車輛出發程序指南) **已改動OK](src/Vehicle_Departure_Procedure_Guide/README.md)
-      - [3-5-4 Vehicle Parking Procedure Guide(車輛停車程序指南) **已改動OK](src/Vehicle_Parking_Procedure_Guide/README.md)
-    - __3-6 Remote Connection-遠端連線__
-      - [3-6-1 NoMachine Introduction(NoMachine簡介) OK](other/NoMachine/README.md)
+    - __3-3 Image Recognition Processing and Steering-影像辨識處理和控制__
+      - [3-3-1 Image Recognition Processing(影像辨識處理) **已改動 OK](src/Image_Recognition_Processing/README.md)
+      - [3-3-2 Parking Lot Departure Steering Control Overview(停車場出發轉向控制) **已改動 OK](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
+      - [3-3-3 Steering Control(轉向控制) **已改動 OK](src/Steering_Control/README.md) 
+      - [3-3-4 Automatically record the LAB values of the field(場地物件LAB值的自動化儲存記錄) **已改動OK](src/Automatically_record_LAB/README.md)
+    - __3-4 Programming - Vehicle’s control program程式設計__
+      - [3-4-1 Open Challenge Code Overview(開放挑戰程式碼概述) **已改動OK](src/Programming/Open_Challenge/README.md)
+      - [3-4-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) **已改動OK](src/Programming/Obstacle_Challenge/README.md)
+      - [3-4-3 Vehicle Departure Procedure Guide(車輛出發程序指南) **已改動OK](src/Vehicle_Departure_Procedure_Guide/README.md)
+      - [3-4-4 Vehicle Parking Procedure Guide(車輛停車程序指南) **已改動OK](src/Vehicle_Parking_Procedure_Guide/README.md)
+    - __3-5 Remote Connection-遠端連線__
+      - [3-5-1 NoMachine Introduction(NoMachine簡介) OK](other/NoMachine/README.md)
 
 - ### ${{\color{red} Other}} $
   #### 4. Pictures – Team and Vehicle-圖片 – 車隊和車輛
