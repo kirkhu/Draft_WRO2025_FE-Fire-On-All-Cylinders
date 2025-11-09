@@ -1608,9 +1608,6 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
 
 <div align=center>
     <table>
-        <tr>
-            <th></th>
-        </tr>
         <tr align=center>
             <td><img src="./img/11/all_ware.jpg" /></td>
         </tr>
