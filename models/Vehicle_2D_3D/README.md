@@ -244,8 +244,8 @@
     <div align=center>
     <table>
     <tr>
-    <th>High-strength resin</th>
-    <th>Impact-resistant resin</th>
+    <th>High-Strength Resin</th>
+    <th>Impact-Resistant Resin</th>
     <th>3D Fabrication Complete</th>
     </tr>
     <tr>
@@ -277,8 +277,8 @@
         <table>
           <tr>
             <th>Ball Joint Steering Shaft Holder</th>
-            <th>Motor steering rod</th>
-            <th>Steering rod</th>
+            <th>Motor Steering Rod</th>
+            <th>Steering Rod</th>
           </tr>
           <tr>
             <td align=center><img src="./Vehicle_Chassis_Sizse/img/Steering-shaft-holder_size1.png" width=400 /></td>
@@ -292,12 +292,12 @@
         <table>
           <tr>
             <th>Motor Holder</th>
-            <th>Ultrasonic stent</th>
-            <th>Infrared bracket</th>
+            <th>Ultrasonic Sensor Bracket</th>
+            <th>Infrared Sensor Bracket</th>
           </tr>
           <tr>
             <td><img src="./Vehicle_Chassis_Sizse/img/Motor_Holder_Size.png" width=400 /></td>
-            <td><img src="./Vehicle_Chassis_Sizse/img/Ultrasonic_Stent_Size.jpg" width=400 /></td>
+            <td><img src="./Vehicle_Chassis_Sizse/img/Ultrasonic_Bracket_Size.jpg" width=400 /></td>
             <td><img src="./Vehicle_Chassis_Sizse/img/Infrared_Bracket_Size.jpg" width=400 /></td>
           </tr>
         </table>
@@ -336,9 +336,9 @@
       <div align=center>
         <table>
           <tr>
-            <th>Steering shaft holder</th>
-            <th>Motor steering rod</th>
-            <th>Steering rod</th>
+            <th>Steering Shaft Holder</th>
+            <th>Motor Steering Rod</th>
+            <th>Steering Rod</th>
           </tr>
           <tr>
             <td align=center height=200><img src="./Vehicle_Chassis_CAD_File/img/Steering-shaft-holder.png" width=300 /></td>
@@ -352,12 +352,12 @@
         <table>
           <tr>
             <th>Motor Holder</th>
-            <th>Ultrasonic Sensor stent</th>
-            <th>Infrared Sensor bracket</th>
+            <th>Ultrasonic Sensor Bracket</th>
+            <th>Infrared Sensor Bracket</th>
           </tr>
           <tr>
             <td align=center height=200><img src="./Vehicle_Chassis_CAD_File/img/Motor-Holder1.png" width=300 /></td>
-            <td align=center><img src="./Vehicle_Chassis_CAD_File/img/Ultrasonic stent.png" width=300 /></td>
+            <td align=center><img src="./Vehicle_Chassis_CAD_File/img/Ultrasonic Bracket.png" width=300 /></td>
             <td align=center><img src="./Vehicle_Chassis_CAD_File/img/Infrared bracket.png" width=300 /></td>
           </tr>
         </table>
