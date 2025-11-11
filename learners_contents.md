@@ -7,6 +7,7 @@
     - [Motor & Sensor Intermediate I/O Controller Comparison](./schemes/Motor_Sensor_Controller_Choosing/README.md)
     - [Motor Selection](./schemes/Motor/README.md)
     - [Ultrasonic rangefinder](./schemes/HC-SR04/README.md)
+    - [Infrared SensorK](./schemes/Infrared-Sensor/README.md)
     - [Gyroscope orientation sensor](./schemes/BNO055/README.md)
     - [Camera Selection](./schemes/Camera/README.md)
     
@@ -26,14 +27,14 @@
 - ### Obstacle Management
     - __Image Recognition Processing and Steering__
       - [Image Recognition Processing](./src/Image_Recognition_Processing/README.md) 
-    - [3-4-2Overview_of_Parking_Lot_Departure_Steering_Control](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
       - [Steering Control](./src/Steering_Control/README.md)  
+      - [Parking Lot Departure Steering Control Overview](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md)   
       - [Automatically record the LAB values of the field](src/Automatically_record_LAB/README.md)
     - __Programming__
       - [Open Challenge Code Overview](./src/Programming/Open_Challenge/README.md)
       - [Obstacle Challenge Code Overview](./src/Programming/Obstacle_Challenge/README.md)
-      - [Distinctive Pseudo Code](./src/Distinctive_Pseudo_Code/README.md)
-      - [Parking Instruction](./src/parking/README.md)
+      - [Vehicle Departure Procedure Guide](src/Vehicle_Departure_Procedure_Guide/README.md)
+      - [Vehicle Parking Procedure Guide](src/Vehicle_Parking_Procedure_Guide/README.md)
       - [NoMachine Introduction](./other/NoMachine/README.md)
 - ### Pictures – Team and vehicle
     - [Team Members Introduction](./t-photos/README.md) 
@@ -41,17 +42,20 @@
 - ### Performance videos
     - [Open Challenge](./video/Open_Challenge/video.md)
     - [Obstacle Challenge](./video/Obstacle_Challenge/video.md)
+    - [Self-Driving Car Design Process Video](video/Design_Process_Video/video.md)
 - ### GitHub Utilization
     - [GitHub Edit(VScode Edit/GIT)](./src/GitHub_Edit/README.md)
     - [GitHub Web Editing Languages](./src/GitHub_Languages/README.md)
-- ### Work Dairy
-    - [February](./other/work_diary/README.md#20250228--20250330)
-    - [March](./other/work_diary/README.md#20250301--20250307)
-    - [April](./other/work_diary/README.md#20250403--20250414)
-    - [June](./other/work_diary/README.md#20250603--20250608)
-    - [July](./other/work_diary/README.md#20250702--20250721)
-    - [August](./other/work_diary/README.md#20250818--20250824)
-    - [September](./other/work_diary/README.md#20250901--20250906)
+- ### Learning Journey
+    - [February](./other/Learning_Journey/README.md#20250228--20250330)
+    - [March](./other/Learning_Journey/README.md#20250301--20250307)
+    - [April](./other/Learning_Journey/README.md#20250403--20250414)
+    - [June](./other/Learning_Journey/README.md#20250603--20250608)
+    - [July](./other/Learning_Journey/README.md#20250702--20250721)
+    - [August](./other/Learning_Journey/README.md#20250818--20250824)
+    - [September](./other/Learning_Journey/README.md#20250901--20250906)
+    - [October](other/Learning_Journey/README.md#20250928--20251006)
+    - [November](other/Learning_Journey/README.md#20251027--20251101)
 
-  <div align="center"><img src="./other/img/Gantt-Chart_4.png" width="1300" alt="Gantt Chart" /></div> 
+  <div align="center"><img src="./other/img/Gantt-Chart_5.png" width="1300" alt="Gantt Chart" /></div> 
 
