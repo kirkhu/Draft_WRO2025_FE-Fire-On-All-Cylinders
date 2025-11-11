@@ -13,7 +13,7 @@
 #### 中文:
 - 本系統以 NVIDIA Jetson Orin Nano 作為核心控制器，整合攝影模組擷取即時影像。影像資料經由 OpenCV 函式庫進行高效能處理，用以精準識別賽道上的關鍵元素，包括紅色與綠色障礙柱、黑色邊界牆、洋紅色停車場邊界，以及地面上的藍色與橘色標線。此外，系統透過 I2C 通訊協定，從 BNO055 慣性量測單元 (IMU) 收集方向數據，進而計算出精確的行進方向，以實現動態避開障礙物與邊界、並準確計算賽道圈數的自動化控制目標。
 
-- NVIDIA Jetson Orin Nano 作為上位控制器，在完成影像與感測資料處理後，將產生的最終控制訊號透過 WebSocket 通訊協定進行即時（Low-Latency）傳輸。該訊號被Raspberry Pi Pico W I/O 控制器接收，由其負責執行底層的運算調校與實體運動控制。
+- NVIDIA Jetson Orin Nano 作為上位控制器，在完成影像與感測資料處理後，將產生的最終控制訊號透過 UART 通訊協定進行即時（Low-Latency）傳輸。該訊號被Raspberry Pi Pico W I/O 控制器接收，由其負責執行底層的運算調校與實體運動控制。
 
 - 在自動停車階段，Raspberry Pi Pico W I/O 控制器升級為決策核心。它不僅接收來自 Jetson Orin Nano 主控制器的上位指令，還需同步融合多源感測數據進行即時計算：包括來自兩側 HC-SR04 超聲波測距感測器的距離資訊，以及前後 TCRT5000 紅外線循線感測器的邊界數據，最終依此精確控制車輛的移動路徑。
 
@@ -23,7 +23,7 @@
 
 
 - This system utilizes the NVIDIA Jetson Orin Nano as its core controller, integrating a camera module to capture real-time imagery. The image data is processed efficiently using the **OpenCV library** to precisely identify critical elements on the race track, including **red and green obstacle pylons, the black boundary wall, the magenta parking boundary, and the blue and orange ground lines**. Furthermore, the system collects orientation data via the **I2C communication protocol** from a BNO055 Inertial Measurement Unit (IMU). This directional data is then used to calculate the precise heading, enabling the automated control objective of dynamically avoiding obstacles and boundaries, as well as accurately counting the number of laps completed.
-- The NVIDIA Jetson Orin Nano, acting as the primary controller, generates final control signals after processing visual and sensor data. These signals are transmitted in real-time via the **WebSocket communication protocol** to the Raspberry Pi Pico W I/O Controller, which is tasked with executing the subsequent low-level computation and physical actuation control.
+- The NVIDIA Jetson Orin Nano, acting as the primary controller, generates final control signals after processing visual and sensor data. These signals are transmitted in real-time via the **UART communication protocol** to the Raspberry Pi Pico W I/O Controller, which is tasked with executing the subsequent low-level computation and physical actuation control.
 - During the automated parking sequence, the Raspberry Pi Pico W I/O Controller functions as a crucial decision-making node. It not only receives high-level commands from the Jetson Orin Nano Master Controller but also simultaneously fuses data from various sensors for real-time calculation. This input includes distance measurements from dual HC-SR04 ultrasonic rangefinders located on both sides, as well as line-detection data from front and rear TCRT5000 infrared line sensors, all used to precisely govern the vehicle's maneuvering path.
 - Serving as the I/O controller, the Raspberry Pi Pico W receives the vehicle motion control values transmitted from the Jetson Orin Nano master controller. The Pico W then performs further internal computation and signal conditioning before sending the resulting commands to the **front wheel servo motor (MG90S)**, thereby precisely controlling the steering angle to successfully complete the obstacle avoidance task.
 - Concurrently, the Raspberry Pi Pico W, acting as the I/O controller, processes the vehicle movement control values received from the Jetson Orin Nano master controller. It then transmits this data to the **L293D Motor Driver** using **Pulse Width Modulation (PWM)** signals, which is necessary to control both the direction (forward/reverse) and the speed of the DC motor.
