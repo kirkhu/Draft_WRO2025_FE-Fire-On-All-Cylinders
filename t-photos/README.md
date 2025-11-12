@@ -22,9 +22,9 @@
 
 - ### Funny Photo
 
-- 這張照片是在我們拍團體照時，捕捉到隊友**從司令台「非自願」下來**的瞬間。雖然這是一個小意外，但我們覺得這個畫面實在太有趣了，決定將它作為我們專案日誌中**輕鬆搞笑的一刻**！
-
-- We took this photo during our team shoot, and it captured the exact moment a teammate **'accidentally' fell off the stage**. It was a total accident, but we found the shot hilarious and decided to include it as our **funny moment** in the project journal!
+ - 這張照片是在我們拍團體照時，捕捉到隊友**從司令台「非自願」下來**的瞬間。雖然這是一個小意外，但我們覺得這個畫面實在太有趣了，決定將它作為我們專案日誌中**輕鬆搞笑的一刻**！
+ 
+ - We took this photo during our team shoot, and it captured the exact moment a teammate **'accidentally' fell off the stage**. It was a total accident, but we found the shot hilarious and decided to include it as our **funny moment** in the project journal!
 
 <div align="center"><img src="./img/funny_photo.jpg" width = "50%"  alt="Funny Photo" /> </div>  
 
