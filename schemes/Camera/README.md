@@ -140,9 +140,10 @@
           cv2.imshow('Undistorted Image', dst)
           cv2.waitKey(0)
           cv2.destroyAllWindows()
-      ```
+    ```
     
-      Experimental results indicate that setting the resolution to __640x480__ optimizes system performance. This configuration effectively reduces the computational load on the Jetson Nano while significantly enhancing the efficiency of image capture and recognition.  
+    Experimental results indicate that setting the resolution to __640x480__ optimizes system performance. This configuration effectively reduces the computational load on the Jetson Nano while significantly enhancing the efficiency of image capture and recognition.  
+    
      - ### Comparison image of before and after correction-校正前後影像比較圖
     
     <div align="center">
