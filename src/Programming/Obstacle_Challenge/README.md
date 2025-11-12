@@ -125,7 +125,7 @@ Furthermore, this time the **Raspberry Pi Pico W** is not only tasked with contr
 
    - #### Introduction to Running Programs on the Jetson Orin Nano Controller: - Jetson Orin Nano 控制器程式運作簡介：
 
-      - ##### [jetson_Orin_Nano_final.py](./jetson_orin_nano_final.py)
+      - ##### [jetson_Orin_Nano_final.py](./jetson_Orin_Nano_final.py)
       ### 中文:
         - 自駕車系統的啟動流程採**主從協作機制**：Jetson Orin Nano 啟動後，**樹莓派 Pico W** 即進入**硬體待命狀態**。當使用者按下**實體啟動開關**後，Jetson Orin Nano 接收到啟動訊號，並發送**高電平訊號**以啟動其核心程式 **`jetson_Orin_Nano_final.py`**。此主程式全面負責**綜觀調度**整個自動駕駛任務的執行流程。其核心功能涵蓋**避開牆壁（循牆導航）**、**精確的方向控制（轉向決策）**、**動態的障礙物躲避**以及**圈數計數**。程式運行後，便透過 **UART 介面**持續將計算出的**舵機（轉向）**和**直流馬達（驅動）**數據傳送給樹莓派 Pico W 執行，從而**保障行駛的穩定性與任務的完整性**，確保車輛按預定計畫完成所有競賽任務。
 
