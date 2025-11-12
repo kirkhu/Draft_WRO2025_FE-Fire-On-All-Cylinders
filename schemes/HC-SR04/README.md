@@ -1,8 +1,8 @@
 <div align="center"><img src="../../other/img/logo.png" width="300" alt=" logo"></div>
 
-## <div align="center">Ultrasonic rangefinder Introduction-超聲波測距儀簡介</div> 
+## <div align="center">Ultrasonic Rangefinder Introduction-超聲波測距儀簡介</div> 
 
-- ### __Instruction to HC-SR04 ultrasonic distance sensor-HC-SR04 超聲波距離感測器說明__
+- ### __Instruction to HC-SR04 Ultrasonic distance sensor-HC-SR04 超聲波距離感測器說明__
     ### 中文:
     * **關於 HC-SR04 超聲波距離感測器的功能性描述**
     HC-SR04 超聲波距離感測器 是一種高成本效益且易於整合的距離測量解決方案。其原理是透過發射超聲波脈衝，並精確測量聲波來回的飛行時間（Time-of-Flight, TOF）來判斷與物體之間的距離。該感測器的有效量測範圍為 2公分到400公分，並可達到 3毫米 的高精度。這使得它能夠提供高度準確且可靠的距離數據，非常適用於避障、自主導航以及車輛周遭的物體偵測等多種應用情境。

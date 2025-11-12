@@ -21,10 +21,10 @@
 
          - Download [NVIDIA SDK Manager 2.3.0](https://developer.nvidia.com/sdk-manager)
 
-          <div align=center><img src="./img/NVIDIA SDK Manager Download Page.png" width="80%"></div>
+          <div align=center><img src="./img/NVIDIA_SDK_Manager_Download_Page.png" width="80%"></div>
 
          - Double-click the installation package to install, and upon completion and successful login, launching the application will display the following screen雙擊安裝包開始安裝，安裝完成後，登入並開啟（應用程式），即可看到以下畫面 
-          <div align=center><img src="./img/Start SDK Manager Page.png" width="80%"></div>
+          <div align=center><img src="./img/Start_SDK_Manager_Page.png" width="80%"></div>
 
    
       - #### JetPack Software Version Installation, Upgrade, and Downgrade Guide
@@ -37,9 +37,9 @@
       <div align=center>
       <table>
       <tr>
-      <th>Connect Host - Connect the Jetson Orin Nano controller to the Ubuntu host machine via a USB cable. - 連線主機-將 Jetson Orin Nano 控制器透過 USB 線連接到 Ubuntu 主機。.</th>
-      <th>Confirm Connection - Verify that the Jetson Orin Nano is successfully connected and recognized by the SDK Manager. - 確認連線-確認 Jetson Orin Nano 是否成功連線並被 SDK Manager 識別。.</th>
-      <th>Select Dev Kit - Select the target Developer Kit in the interface. - 選擇套件-在介面中選擇目標開發者套件（Developer Kit）。</th>
+      <th>1.Connect Host - Connect the Jetson Orin Nano controller to the Ubuntu host machine via a USB cable. - 連線主機-將 Jetson Orin Nano 控制器透過 USB 線連接到 Ubuntu 主機。.</th>
+      <th>2.Confirm Connection - Verify that the Jetson Orin Nano is successfully connected and recognized by the SDK Manager. - 確認連線-確認 Jetson Orin Nano 是否成功連線並被 SDK Manager 識別。.</th>
+      <th>3.Select Dev Kit - Select the target Developer Kit in the interface. - 選擇套件-在介面中選擇目標開發者套件（Developer Kit）。</th>
       </tr>
       <tr>
       <td><img src="./img/11.jpg" width=400 /></td>
@@ -47,9 +47,9 @@
       <td><img src="./img/13.png" width=400 /></td>
       </tr>
       <tr>
-      <th>Choose Version - Select the desired JetPack version from the menu for installation or downgrade. -  選擇版本 - 在選單中選中所需的 JetPack 版本進行安裝或降級。</th>
-      <th>Check Options - Check the required software components on the left side (such as OS, SDKs), and click "Next". - 勾選選項-勾選左側所需的軟體組件選項（如作業系統、SDKs），然後點擊**「下一步」（Next）**。</th>
-      <th>Enter Password - Enter the administrator password as prompted. - 輸入密碼-依照提示輸入管理者密碼。</th>
+      <th>4.Choose Version - Select the desired JetPack version from the menu for installation or downgrade. -  選擇版本 - 在選單中選中所需的 JetPack 版本進行安裝或降級。</th>
+      <th>5.Check Options - Check the required software components on the left side (such as OS, SDKs), and click "Next". - 勾選選項-勾選左側所需的軟體組件選項（如作業系統、SDKs），然後點擊**「下一步」（Next）**。</th>
+      <th>6.Enter Password - Enter the administrator password as prompted. - 輸入密碼-依照提示輸入管理者密碼。</th>
       </tr>
       <tr>
       <td><img src="./img/14.png" width=400 /></td>
@@ -57,9 +57,9 @@
       <td><img src="./img/16.png" width=400></td>
       </tr>
       <tr>
-      <th>Fill Info - Fill in the relevant information for the target board. - 填寫資訊-填入目標主機板的相關資訊。</th>
-      <th>Finish Install - After installation is complete, click "Finish" to exit. - 完成安裝-安裝完畢後，點擊 "Finish" 結束操作。</th>
-      <th>System Interface - The Jetson Orin Nano system interface after installation is complete (Result presentation). - 系統介面-安裝完畢後的 Jetson Orin Nano 系統介面（此為結果呈現）。</th>
+      <th>7.Fill Info - Fill in the relevant information for the target board. - 填寫資訊-填入目標主機板的相關資訊。</th>
+      <th>8.Finish Install - After installation is complete, click "Finish" to exit. - 完成安裝-安裝完畢後，點擊 "Finish" 結束操作。</th>
+      <th>9.System Interface - The Jetson Orin Nano system interface after installation is complete (Result presentation). - 系統介面-安裝完畢後的 Jetson Orin Nano 系統介面（此為結果呈現）。</th>
       </tr>
       <tr>
       <td><img src="./img/17.png" width=400 /></td>
