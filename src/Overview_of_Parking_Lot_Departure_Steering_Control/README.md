@@ -10,13 +10,13 @@
   1. **ROI 面積讀取與牆面偵測**:
     - 我們使用 $pOverlap(img_{lab}, ROI_1)$ 和 $pOverlap(img_{lab}, ROI_2)$ 兩個函數，從 $LAB$ 色彩空間影像 $img_{lab}$ 中偵測出位於左右兩側 $ROI$ 區域內的黑色區域。$pOverlap()$ 函數會進一步判斷這些黑色區域是否與品紅色標記發生重疊。此步驟的主要目的在於辨識畫面左右兩側可能出現的牆面或立柱位置，從而為後續的輪廓擷取、面積分析以及路徑判斷提供堅實的基礎依據。
   2. **ROI 輪廓的最大面積擷取**:
-    - 在左右兩側的 $ROI$ 區域中，我們使用 $max\_contour(contours_{left}, ROI_1)[0]$ 和 $max\_contour(contours_{right}, ROI_2)[0]$ 兩個函數。透過 $max\_contour()$ 函式，系統能夠分別從左右兩側偵測到的輪廓中，篩選出面積最大的黑牆輪廓區域，並取得其對應的面積值與中心點資訊。
+    - 在左右兩側的 $ROI$ 區域中，我們使用 $max_contour(contours_{left}, ROI_1)[0]$ 和 $max_contour(contours_{right}, ROI_2)[0]$ 兩個函數。透過 $max_contour()$ 函式，系統能夠分別從左右兩側偵測到的輪廓中，篩選出面積最大的黑牆輪廓區域，並取得其對應的面積值與中心點資訊。
 
   1. **ROI Area Reading and Wall Detection**:
     - We utilize the functions `pOverlap(img_{lab}, ROI_1)` and `pOverlap(img_{lab}, ROI_2)` to detect black regions within the left and right `ROI` areas, using the `LAB` color space image `img_{lab}`. The `pOverlap()` function further determines whether these black regions overlap with the magenta markings. The primary goal of this step is to identify the positions of walls or pillars that may appear on the left and right sides of the image, thereby providing a solid basis for subsequent contour extraction, area analysis, and path determination. 
 
   2. **ROI Maximum Contour Area Extraction**:
-    - In the left and right `ROI` areas, we utilize the two functions `max\_contour(contours_{left}, ROI_1)[0]` and `max\_contour(contours_{right}, ROI_2)[0]`. Through the `max\_contour()` function, the system can filter out the contour area of the largest black wall from the contours detected on both sides, and retrieve its corresponding area value and center point information. 
+    - In the left and right `ROI` areas, we utilize the two functions `max_contour(contours_{left}, ROI_1)[0]` and `max_contour(contours_{right}, ROI_2)[0]`. Through the `max_contour()` function, the system can filter out the contour area of the largest black wall from the contours detected on both sides, and retrieve its corresponding area value and center point information. 
 
 <div align=center>
 
@@ -86,14 +86,14 @@ write(str(start_turn))
     - Clockwise direction : If the Driving direction is clockwise direction , the Vehicle will drive on the exterior walls of the lane when a green pillar is detected; it will drive on the inner wall of the lane when a red pillar  is detected. If no pillar is detected, the default is to drive on the exterior walls  of the lane.
 
   1. **顏色輪廓偵測**:
-    - 我們使用 find\_contours(img_{lab}, r_{Red}, ROI_3) 和 find\_contours(img_{lab}, r_{Green}, ROI_3) 這兩行代碼。透過 find\_contours() 函式，系統能夠在指定的感興趣區域 ROI_3 內，從 LAB 色彩空間影像 img_{lab} 中，分別偵測出紅色區域（r_{Red}）與綠色區域（r_{Green}）的所有輪廓（contours）。每一次偵測的結果都是一組包含多個封閉區域的輪廓列表。
+    - 我們使用 find_contours(img_{lab}, r_{Red}, ROI_3) 和 find_contours(img_{lab}, r_{Green}, ROI_3) 這兩行代碼。透過 find_contours() 函式，系統能夠在指定的感興趣區域 ROI_3 內，從 LAB 色彩空間影像 img_{lab} 中，分別偵測出紅色區域（r_{Red}）與綠色區域（r_{Green}）的所有輪廓（contours）。每一次偵測的結果都是一組包含多個封閉區域的輪廓列表。
   2. **偵測最近的交通號誌**:
-    - 接著，我們調用 find\_best\_pillar(contours_{red}, redTarget, "red", img_{lab}) 和 find\_best\_pillar(contours_{green}, greenTarget, "green", img_{lab}) 這兩行函式。find\_best\_pillar() 函式會根據每個輪廓的大小、位置以及與目標點（redTarget / greenTarget）的遠近等條件進行綜合評估。最終回傳的 best_{red} 和 best_{green} 分別是各自顏色中評分最高、最接近可通過路線的立柱。如果畫面中沒有找到符合條件的立柱，則函式可能會回傳 None 值。
+    - 接著，我們調用 find_best_pillar(contours_{red}, redTarget, "red", img_{lab}) 和 find_best_pillar(contours_{green}, greenTarget, "green", img_{lab}) 這兩行函式。find_best_pillar() 函式會根據每個輪廓的大小、位置以及與目標點（redTarget / greenTarget）的遠近等條件進行綜合評估。最終回傳的 best_{red} 和 best_{green} 分別是各自顏色中評分最高、最接近可通過路線的立柱。如果畫面中沒有找到符合條件的立柱，則函式可能會回傳 None 值。
 
-  1. **Color Contour Detection**:
-    - We use the two lines of code: `find\_contours(img_{lab}, r_{Red}, ROI_3)` and `find\_contours(img_{lab}, r_{Green}, ROI_3)`. Through the `find\_contours()` function, the system can detect all contours of the red region (`r_{Red}`) and the green region (`r_{Green}`) from the `LAB` color space image `img_{lab}` within the specified Region of Interest `ROI_3`. The result of each detection is a list of contours containing multiple closed areas.
-  2. **Detecting the Nearest Traffic Sign**:
-    - Subsequently, we call the functions `find\_best\_pillar(contours_{red}, redTarget, "red", img_{lab})` and `find\_best\_pillar(contours_{green}, greenTarget, "green", img_{lab})`. The `find\_best\_pillar()` function comprehensively evaluates each contour based on criteria such as size, position, and proximity to the target point (`redTarget` / `greenTarget`). The returned `best_{red}` and `best_{green}` are the pillars of their respective colors with the highest score and are closest to the passable route. If no suitable pillar is found, the function may return `None`.
+      1. **Color Contour Detection**:
+        - We use the two lines of code: `find_contours(img_{lab}, r_{Red}, ROI_3)` and `find_contours(img_{lab}, r_{Green}, ROI_3)`. Through the `find_contours()` function, the system can detect all contours of the red region (`r_{Red}`) and the green region (`r_{Green}`) from the `LAB` color space image `img_{lab}` within the specified Region of Interest `ROI_3`. The result of each detection is a list of contours containing multiple closed areas.
+      2. **Detecting the Nearest Traffic Sign**:
+        - Subsequently, we call the functions `find_best_pillar(contours_{red}, redTarget, "red", img_{lab})` and `find_best_pillar(contours_{green}, greenTarget, "green", img_{lab})`. The `find_best_pillar()` function comprehensively evaluates each contour based on criteria such as size, position, and proximity to the target point (`redTarget` / `greenTarget`). The returned `best_{red}` and `best_{green}` are the pillars of their respective colors with the highest score and are closest to the passable route. If no suitable pillar is found, the function may return `None`.
   
   ### 英文: 
     <div align=center>
