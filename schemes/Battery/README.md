@@ -7,7 +7,8 @@
  -In alignment with this year's system upgrade, we have officially replaced the main controller with the NVIDIA Jetson Orin Nano platform. Given the module's input voltage requirement of 9V to 20V DC, the core of this technical evaluation is to **compare the specific impact of 3S Lithium Polymer (LiPo) batteries versus 18650 Lithium-ion battery packs** on the overall vehicle performance (such as endurance, instantaneous power output, and stability), in order to select the power solution that is most suitable for this year's competition specifications.
 
 
-### Comparison between 3S Li-Polymer and 18650 - Li-ion batteries-3S 鋰聚合物電池與 18650 鋰離子電池比較
+### Comparison between 3S Li-Polymer and 18650 Li-ion batteries 
+ - Li-ion batteries-3S 鋰聚合物電池與 18650 鋰離子電池比較
 ### 中文:
   - 以下是相同電壓(12V)配置的3S鋰聚合物電池和18650鋰離子電池的優缺點比較。
 ### 英文:  
@@ -17,7 +18,7 @@
       <tr>
       <th>Item(項目)</th>
       <th>3S Li-Polymer Battery(3S 鋰聚合物電池)</th>
-      <th>18650 Battery(18650 電池)</th>
+      <th>18650 Battery Li-ion batteries(18650 電池)</th>
       </tr>
     </thead>
     <tbody>
@@ -89,12 +90,17 @@
   ### 中文:
 
   - 依據上表數據，3S鋰聚合物電池（LiPo） 憑藉其高C值放電能力、高能量密度與極輕的重量，成為滿足高瞬時電流需求的理想選擇，特別適用於高性能競賽車輛。因此，我們最終決定採用 3S LiPo 電池作為本次自駕車的電源，主要目的在於在確保足夠動力的前提下，實現車體質量最小化，以維持最佳的運動表現和反應速度。
-  - 我們使用 3S Li-Po 電池的經驗顯示，其安全性是一大考量。不當的充電操作曾導致電池起火，錯誤的存放也造成電池損壞，這些事件突顯了嚴格遵守電池操作規範的重要性。
+  - **3S 鋰電池使用與安全**
+   
+    我們在使用 **3S 鋰聚合物電池（Li-Po）** 的經驗中發現，其**操作安全性**是一個必須嚴肅面對的問題。**不正確的充電方式**可能導致電池**起火燃燒**，而**不適當的儲存**則會造成電池**永久性損壞**。這些意外事件深刻地強調了**嚴格遵守電池操作規範**對於確保專案安全與設備壽命的重要性。
+
   
   ### 英文:
    - According to the data in the table above, the **3S Lithium Polymer (LiPo) battery** is the ideal choice for meeting high instantaneous current demands, especially for high-performance racing vehicles, due to its **high C-rate discharge capability, high energy density, and extremely low weight**. Therefore, we have ultimately decided to adopt the 3S LiPo battery as the power source for this autonomous vehicle competition. The primary objective is to **minimize the vehicle's mass while ensuring sufficient power delivery, thereby maintaining optimal dynamic performance and response speed**.
 
-   - Our experience with 3S Li-Po batteries has shown that their safety is a significant concern. Improper charging practices have led to battery fires, and incorrect storage has resulted in battery damage. These incidents underscore the importance of following strict guidelines for handling these batteries.
+  - **3S Li-Po Battery Usage and Safety** 
+  
+    Our experience with **3S Lithium Polymer (Li-Po) batteries** has demonstrated that **operational safety** is an issue that must be addressed seriously. **Improper charging methods** can lead to battery **ignition or fire**, while **inappropriate storage** can cause **permanent battery damage**. These incidents critically underscore the importance of **strictly adhering to battery handling protocols** to ensure both project safety and equipment longevity.
   <div align=center>
   <table>
   <tr>
