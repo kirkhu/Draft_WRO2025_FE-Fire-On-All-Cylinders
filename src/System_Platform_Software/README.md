@@ -21,10 +21,10 @@
 
          - Download [NVIDIA SDK Manager 2.3.0](https://developer.nvidia.com/sdk-manager)
 
-          <div align=center><img src="./img/NVIDIA SDK Manager Download Page.png" width="80%"></div>
+          <div align=center><img src="./img/NVIDIA_SDK_Manager_Download Page.png" width="80%"></div>
 
          - Double-click the installation package to install, and upon completion and successful login, launching the application will display the following screen雙擊安裝包開始安裝，安裝完成後，登入並開啟（應用程式），即可看到以下畫面 
-          <div align=center><img src="./img/Start SDK Manager Page.png" width="80%"></div>
+          <div align=center><img src="./img/Start_SDK_Manager_Page.png" width="80%"></div>
 
    
       - #### JetPack Software Version Installation, Upgrade, and Downgrade Guide
