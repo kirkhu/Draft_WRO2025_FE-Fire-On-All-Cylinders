@@ -10,13 +10,13 @@
   1. **ROI 面積讀取與牆面偵測**:
     - 我們使用 $pOverlap(img_{lab}, ROI_1)$ 和 $pOverlap(img_{lab}, ROI_2)$ 兩個函數，從 $LAB$ 色彩空間影像 $img_{lab}$ 中偵測出位於左右兩側 $ROI$ 區域內的黑色區域。$pOverlap()$ 函數會進一步判斷這些黑色區域是否與品紅色標記發生重疊。此步驟的主要目的在於辨識畫面左右兩側可能出現的牆面或立柱位置，從而為後續的輪廓擷取、面積分析以及路徑判斷提供堅實的基礎依據。
   2. **ROI 輪廓的最大面積擷取**:
-    - 在左右兩側的 $ROI$ 區域中，我們使用 $max\_contour(contours_{left}, ROI_1)[0]$ 和 $max\_contour(contours_{right}, ROI_2)[0]$ 兩個函數。透過 $max\_contour()$ 函式，系統能夠分別從左右兩側偵測到的輪廓中，篩選出面積最大的黑牆輪廓區域，並取得其對應的面積值與中心點資訊。
+    - 在左右兩側的 $ROI$ 區域中，我們使用 $max_contour(contours_{left}, ROI_1)[0]$ 和 $max_contour(contours_{right}, ROI_2)[0]$ 兩個函數。透過 $max_contour()$ 函式，系統能夠分別從左右兩側偵測到的輪廓中，篩選出面積最大的黑牆輪廓區域，並取得其對應的面積值與中心點資訊。
 
   1. **ROI Area Reading and Wall Detection**:
     - We utilize the functions `pOverlap(img_{lab}, ROI_1)` and `pOverlap(img_{lab}, ROI_2)` to detect black regions within the left and right `ROI` areas, using the `LAB` color space image `img_{lab}`. The `pOverlap()` function further determines whether these black regions overlap with the magenta markings. The primary goal of this step is to identify the positions of walls or pillars that may appear on the left and right sides of the image, thereby providing a solid basis for subsequent contour extraction, area analysis, and path determination. 
 
   2. **ROI Maximum Contour Area Extraction**:
-    - In the left and right `ROI` areas, we utilize the two functions `max\_contour(contours_{left}, ROI_1)[0]` and `max\_contour(contours_{right}, ROI_2)[0]`. Through the `max\_contour()` function, the system can filter out the contour area of the largest black wall from the contours detected on both sides, and retrieve its corresponding area value and center point information. 
+    - In the left and right `ROI` areas, we utilize the two functions `max_contour(contours_{left}, ROI_1)[0]` and `max_contour(contours_{right}, ROI_2)[0]`. Through the `max_contour()` function, the system can filter out the contour area of the largest black wall from the contours detected on both sides, and retrieve its corresponding area value and center point information. 
 
 <div align=center>
 
