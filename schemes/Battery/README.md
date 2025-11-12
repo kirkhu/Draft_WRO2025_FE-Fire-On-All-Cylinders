@@ -100,7 +100,7 @@
 
   - **3S Li-Po Battery Usage and Safety** 
   
-  Our experience with **3S Lithium Polymer (Li-Po) batteries** has demonstrated that **operational safety** is an issue that must be addressed seriously. **Improper charging methods** can lead to battery **ignition or fire**, while **inappropriate storage** can cause **permanent battery damage**. These incidents critically underscore the importance of **strictly adhering to battery handling protocols** to ensure both project safety and equipment longevity.
+    Our experience with **3S Lithium Polymer (Li-Po) batteries** has demonstrated that **operational safety** is an issue that must be addressed seriously. **Improper charging methods** can lead to battery **ignition or fire**, while **inappropriate storage** can cause **permanent battery damage**. These incidents critically underscore the importance of **strictly adhering to battery handling protocols** to ensure both project safety and equipment longevity.
   <div align=center>
   <table>
   <tr>
