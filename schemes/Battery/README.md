@@ -7,7 +7,8 @@
  -In alignment with this year's system upgrade, we have officially replaced the main controller with the NVIDIA Jetson Orin Nano platform. Given the module's input voltage requirement of 9V to 20V DC, the core of this technical evaluation is to **compare the specific impact of 3S Lithium Polymer (LiPo) batteries versus 18650 Lithium-ion battery packs** on the overall vehicle performance (such as endurance, instantaneous power output, and stability), in order to select the power solution that is most suitable for this year's competition specifications.
 
 
-### Comparison between 3S Li-Polymer and 18650 - Li-ion batteries-3S 鋰聚合物電池與 18650 鋰離子電池比較
+### Comparison between 3S Li-Polymer and 18650 Li-ion batteries 
+ - Li-ion batteries-3S 鋰聚合物電池與 18650 鋰離子電池比較
 ### 中文:
   - 以下是相同電壓(12V)配置的3S鋰聚合物電池和18650鋰離子電池的優缺點比較。
 ### 英文:  
@@ -17,7 +18,7 @@
       <tr>
       <th>Item(項目)</th>
       <th>3S Li-Polymer Battery(3S 鋰聚合物電池)</th>
-      <th>18650 Battery(18650 電池)</th>
+      <th>18650 Battery Li-ion batteries(18650 電池)</th>
       </tr>
     </thead>
     <tbody>
