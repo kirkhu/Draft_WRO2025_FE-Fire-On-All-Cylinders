@@ -46,40 +46,49 @@ Furthermore, this time the **Raspberry Pi Pico W** is not only tasked with contr
     - The **`display_roi()` function** is designed to **visualize** multiple **Regions of Interest (ROIs)** on an image. It accepts the **source image (`img`)**, a **list containing the coordinates of multiple ROIs (`ROIs`)**, and the **drawing color (`color`)** for the boundary boxes as input parameters.Its mechanism involves **drawing four line segments** to form the **rectangular boundary** for each ROI. Upon completion, the function **returns** the processed image marked with the boundary boxes.
       ```
       def display_roi(img, ROIs, color):
-      for ROI in ROIs:
-          img = cv2.line(img, (ROI[0], ROI[1]), (ROI[2], ROI[1]), color, 4)
-          img = cv2.line(img, (ROI[0], ROI[1]), (ROI[0], ROI[3]), color, 4)
-          img = cv2.line(img, (ROI[2], ROI[3]), (ROI[2], ROI[1]), color, 4)
+          # Draw Region of Interest (ROI) bounding boxes on the image
+          for ROI in ROIs:
+              # Iterate through all ROIs
+              # ROI format: [x1, y1, x2, y2]
+              img = cv2.line(img, (ROI[0], ROI[1]), (ROI[2], ROI[1]), color, 4) # Top line
+              img = cv2.line(img, (ROI[0], ROI[1]), (ROI[0], ROI[3]), color, 4) # Left line
+              img = cv2.line(img, (ROI[2], ROI[3]), (ROI[2], ROI[1]), color, 4) # Right line
+              img = cv2.line(img, (ROI[2], ROI[3]), (ROI[0], ROI[3]), color, 4) # Bottom line
+          return img # Return the image with drawings
       ```
     - **`find_contours()` 函式**旨在**從影像中偵測特定色彩範圍的物體輪廓**。此函式首先**擷取**影像中的**感興趣區域 (ROI)**。接著，它利用 **LAB 顏色空間**與預設的 **`lab_range` 參數**進行**顏色閾值分割**，將該區域轉換為**二值遮罩 (mask)**。為**優化輪廓的精確度**，程式會對遮罩執行**形態學操作**，即**腐蝕 (erode)** 與**膨脹 (dilate)** 處理。最終，函式會從處理完成的遮罩中**提取外部輪廓**並將其**返回**。
     - The **`find_contours()` function** is used to **detect object contours** within a specific color range in an image.It first **extracts** the **Region of Interest (ROI)** portion of the image. It then performs **color thresholding** using the **LAB color space** and the predefined **`lab_range` parameters** to convert this area into a **binary mask**. To **enhance contour accuracy**, the function performs **morphological operations**—specifically **erosion** and **dilation**—on the mask. Finally, the function **extracts the external contours** from the processed mask and **returns** them.
       ```
       def find_contours(img_lab, lab_range, ROI):
-          x1, y1, x2, y2 = ROI
-          seg = img_lab[y1:y2, x1:x2]
-          lo = np.array(lab_range[0]); hi = np.array(lab_range[1])
-          mask = cv2.inRange(seg, lo, hi)
-          k = np.ones((5,5), np.uint8)
-          mask = cv2.erode(mask, k, iterations=1)
-          mask = cv2.dilate(mask, k, iterations=1)
-          contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
-          return contours
+          # Find contours in ROI using LAB color range
+          x1, y1, x2, y2 = ROI # Unpack ROI coordinates
+          seg = img_lab[y1:y2, x1:x2] # Crop the image to the ROI area
+          lo = np.array(lab_range[0]); hi = np.array(lab_range[1]) # Get color low and high thresholds
+          mask = cv2.inRange(seg, lo, hi) # Create color mask
+          k = np.ones((5,5), np.uint8) # 5x5 rectangular kernel
+          mask = cv2.erode(mask, k, iterations=1) # Erode operation
+          mask = cv2.dilate(mask, k, iterations=1) # Dilate operation
+          contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2] # Find external contours
+          return contours # Return found contours
       ```
     - `max_contour()` 函式旨在從輸入的輪廓列表 (contours) 中，識別並選取面積最大的有效目標輪廓。此函式首先**篩選**掉所有**面積小於 150 的雜訊輪廓**。對於符合標準的輪廓，它會計算其**面積**以及相對於**原始影像的中心底部座標 (`maxX`, `maxY`)**。最終，函式會**返回**最大面積的數值、其對應的校正座標，以及該**輪廓物件本身**，作為車輛進行**循跡導航或目標識別**的關鍵依據。
     - The **`max_contour()` function** is used to **identify and select the largest valid target contour** from an input **list of contours (`contours`)**.The function first **filters out** all **noise contours** with an **area less than 150**. For the qualified contours, it calculates their **area** and the **center-bottom coordinates (`maxX`, `maxY`)** relative to the original image. Finally, the function **returns** the value of the largest area, its corresponding corrected coordinates, and the **contour object itself**, serving as the key basis for the vehicle's **line following or target recognition**.
       ```
       def max_contour(contours, ROI):
-          maxArea = 0; maxY = 0; maxX = 0; mCnt = 0
+          # Find the largest contour by area and its center point
+          maxArea = 0; maxY = 0; maxX = 0; mCnt = 0 # Initialize max area, center coordinates, and max contour
           for cnt in contours:
-              area = cv2.contourArea(cnt)
-              if area > 150:
-                  approx = cv2.approxPolyDP(cnt, 0.01*cv2.arcLength(cnt, True), True)
-                  x,y,w,h = cv2.boundingRect(approx)
-                  x += ROI[0] + w//2
-                  y += ROI[1] + h
+              area = cv2.contourArea(cnt) # Calculate contour area
+              if area > 100: # Only consider contours with area greater than 100
+                  approx = cv2.approxPolyDP(cnt, 0.01*cv2.arcLength(cnt, True), True) # Polygon approximation
+                  x,y,w,h = cv2.boundingRect(approx) # Get bounding box
+                  x += ROI[0] + w//2 # Calculate center point X (relative to original image)
+                  y += ROI[1] + h # Calculate bottom center point Y (relative to original image)
                   if area > maxArea:
-                      maxArea = area; maxY = y; maxX = x; mCnt = cnt
-          return [maxArea, maxX, maxY, mCnt]
+                      # If current contour area is larger
+                      maxArea = area; maxY = y; maxX = x; mCnt = cnt # Update maximum values
+          return [maxArea, maxX, maxY, mCnt] # Return max area, center X, center Y, and max contour
+
       ```
     - **`pOverlap()` 函式**用於在影像的**特定感興趣區域 (ROI)** 中，**偵測包含黑色和洋紅色組合的複合輪廓**，主要應用於牆壁或特殊標記的識別。此函式根據布林參數 `add` 的值，來決定如何處理這兩種顏色的區域：
       1.  **若 `add=True`：** 函式會將**黑色區域與洋紅色區域進行邏輯合併 (Union)**，以尋找融合後的複合輪廓。
@@ -91,23 +100,23 @@ Furthermore, this time the **Raspberry Pi Pico W** is not only tasked with contr
     - In either scenario, the function performs **morphological operations (implied erosion and dilation)** on the resulting mask to **optimize the contour shape**. Finally, it **extracts and returns the external contours**.
       ```
       def pOverlap(img_lab, ROI, add=False):
-          x1, y1, x2, y2 = ROI
-          seg = img_lab[y1:y2, x1:x2]
-          from masks import rBlack, rMagenta
-          loB, hiB = np.array(rBlack[0]),   np.array(rBlack[1])
-          loM, hiM = np.array(rMagenta[0]), np.array(rMagenta[1])
-          mB = cv2.inRange(seg, loB, hiB)
-          mM = cv2.inRange(seg, loM, hiM)
+          # Process contours for black and magenta overlapping regions
+          x1, y1, x2, y2 = ROI # Unpack ROI coordinates
+          seg = img_lab[y1:y2, x1:x2] # Crop the image to the ROI area
+          from masks import rBlack, rMagenta # Re-import color ranges to ensure availability
+          loB, hiB = np.array(rBlack[0]),   np.array(rBlack[1]) # Black range
+          loM, hiM = np.array(rMagenta[0]), np.array(rMagenta[1]) # Magenta range
+          mB = cv2.inRange(seg, loB, hiB) # Black mask
+          mM = cv2.inRange(seg, loM, hiM) # Magenta mask
           if add:
-              mask = cv2.add(mB, mM)
+              mask = cv2.add(mB, mM) # If add is True, add them (Union)
           else:
-              mask = cv2.bitwise_and(mB, cv2.bitwise_not(mM))
-          k_open  = np.ones((3,3), np.uint8)
-          k_close = np.ones((7,7), np.uint8)
-          mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN,  k_open,  iterations=1)
-          mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, k_close, iterations=1)
-          contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
-          return contours
+              mask = cv2.bitwise_and(mB, cv2.bitwise_not(mM)) # Else, Black AND (NOT Magenta) (Difference)
+          k_open  = np.ones((3,3), np.uint8) # Kernel for opening
+          k_close = np.ones((7,7), np.uint8) # Kernel for closing
+          mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN,  k_open,  iterations=1) # Perform Opening
+          mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, k_close, iterations=1) # Perform Closing
+          contours = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2] # Return found contours
       ```
 
 
@@ -116,11 +125,31 @@ Furthermore, this time the **Raspberry Pi Pico W** is not only tasked with contr
    - #### Obstacle Challenge Code Jetson Orin Nano Library - 障礙挑戰程式碼程式 Jetson Orin Nano 函式庫
     
       ```
-      import os, sys                                                          
-      sys.path.append(os.path.abspath(os.path.dirname(__file__)))                      
-      import cv2, time, math, sys, numpy as np                                         
-      from masks import rMagenta, rRed, rGreen, rBlue, rOrange, rBlack                 
-      from functions_jetson import * 
+      # Import the time module for delays.
+      import time
+      # Import standard system, math, and concurrency libraries.
+      import os, sys, math, json, threading, asyncio
+      # Import the OpenCV library for computer vision.
+      import cv2
+      # Import NumPy for numerical operations.
+      import numpy as np
+      # Import the serial library for UART communication.
+      import serial 
+      # Import SMBus for I2C communication (used for BNO055).
+      from smbus2 import SMBus
+      # Import Jetson.GPIO for hardware pin control.
+      import Jetson.GPIO as GPIO
+      # Import custom functions from function.py (aliased as fj, though fj is not used).
+      import function as fj
+
+      # -------------------- Path and Utilities --------------------
+      # Add the current script's directory to the system path.
+      sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+      # Import color range masks from the 'masks.py' file.
+      from masks import rMagenta, rRed, rGreen, rBlue, rOrange, rBlack
+      # Import all functions from 'function.py' (e.g., find_contours, max_contour).
+      from function import *
+
       ```  
 
    - #### Introduction to Running Programs on the Jetson Orin Nano Controller: - Jetson Orin Nano 控制器程式運作簡介：
@@ -156,9 +185,11 @@ Furthermore, this time the **Raspberry Pi Pico W** is not only tasked with contr
    - ####  Raspberry Pi Pico W Function Library for the Obstacle Challenge Program - 障礙挑戰程式碼程式 Raspberry Pi Pico W函式庫
     
       ```
-      from machine import Pin, PWM, UART,I2C,time_pulse_us
-      import time
-      import struct
+      from machine import Pin, PWM # Import Pin and PWM classes from machine module
+      import time # Import time module
+      import uos # Import uos module
+      import ujson as json # Import ujson module as json
+      from machine import UART # Import UART class from machine module
       ```  
      
    - #### Introduction to running programs on the Raspberry Pi Pico W controller:-樹莓派 Pico W 控制器程式運作簡介：
