@@ -34,12 +34,12 @@
 
 - ### Onshape 3D Model Structure Sketch -Onshape 模型草圖
   - #### 3D Modeling Software Onshape Introduction -3D 建模軟體  Onshape 介紹
-    * 我們選擇使用 **Onshape** [cite: 981, 982] 來設計 **自駕車** [cite: 1] 的 **3D 模型結構** ，這是一款免費且易於操作的網頁版 CAD 軟體。
-    * 在 **Onshape** 完成模型建立後，我們能夠輸出所需的 **2D 尺寸圖** 。這些圖檔可直接用於 **激光切割機** [cite: 593]（Laser Cutting Machine）進行切割，或轉換為適當格式後送至 **3D 打印機** （3D Printer）進行零件製造。
+    * 我們選擇使用 **Onshape** 來設計 **自駕車**  的 **3D 模型結構** ，這是一款免費且易於操作的網頁版 CAD 軟體。
+    * 在 **Onshape** 完成模型建立後，我們能夠輸出所需的 **2D 尺寸圖** 。這些圖檔可直接用於 **激光切割機**（Laser Cutting Machine）進行切割，或轉換為適當格式後送至 **3D 打印機** （3D Printer）進行零件製造。
     * 本次競賽中所需的所有 **3D/2D 車輛模型** ，均透過 **Onshape** 平台設計完成。
 
-    * We chose **Onshape** [cite: 981, 982] to design the **3D model structure**  of our **Self-Driving Car**[cite: 1]. It is a free and user-friendly web-based CAD software.
-    * After completing the model creation in **Onshape**, we can output the necessary **2D dimension drawings**. These files can then be sent directly to a **Laser Cutting Machine** [cite: 593] for cutting, or converted and sent to a **3D Printer** for part fabrication.
+    * We chose **Onshape** to design the **3D model structure**  of our **Self-Driving Car*. It is a free and user-friendly web-based CAD software.
+    * After completing the model creation in **Onshape**, we can output the necessary **2D dimension drawings**. These files can then be sent directly to a **Laser Cutting Machine**  for cutting, or converted and sent to a **3D Printer** for part fabrication.
     * All **3D/2D vehicle models**  required for this competition were designed entirely using the **Onshape** platform.
 
     - Software Website：[Onshape](https://www.onshape.com/en/) 
@@ -244,8 +244,8 @@
     <div align=center>
     <table>
     <tr>
-    <th>High-strength resin</th>
-    <th>Impact-resistant resin</th>
+    <th>High-Strength Resin</th>
+    <th>Impact-Resistant Resin</th>
     <th>3D Fabrication Complete</th>
     </tr>
     <tr>
@@ -276,9 +276,9 @@
       <div align=center>
         <table>
           <tr>
-            <th>Steering shaft holder</th>
-            <th>Motor steering rod</th>
-            <th>Steering rod</th>
+            <th>Ball Joint Steering Shaft Holder</th>
+            <th>Motor Steering Rod</th>
+            <th>Steering Rod</th>
           </tr>
           <tr>
             <td align=center><img src="./Vehicle_Chassis_Sizse/img/Steering-shaft-holder_size1.png" width=400 /></td>
@@ -292,12 +292,12 @@
         <table>
           <tr>
             <th>Motor Holder</th>
-            <th>Ultrasonic stent</th>
-            <th>Infrared bracket</th>
+            <th>Ultrasonic Sensor Bracket</th>
+            <th>Infrared Sensor Bracket</th>
           </tr>
           <tr>
             <td><img src="./Vehicle_Chassis_Sizse/img/Motor_Holder_Size.png" width=400 /></td>
-            <td><img src="./Vehicle_Chassis_Sizse/img/Ultrasonic_Stent_Size.jpg" width=400 /></td>
+            <td><img src="./Vehicle_Chassis_Sizse/img/Ultrasonic_Bracket_Size.jpg" width=400 /></td>
             <td><img src="./Vehicle_Chassis_Sizse/img/Infrared_Bracket_Size.jpg" width=400 /></td>
           </tr>
         </table>
@@ -336,9 +336,9 @@
       <div align=center>
         <table>
           <tr>
-            <th>Steering shaft holder</th>
-            <th>Motor steering rod</th>
-            <th>Steering rod</th>
+            <th>Steering Shaft Holder</th>
+            <th>Motor Steering Rod</th>
+            <th>Steering Rod</th>
           </tr>
           <tr>
             <td align=center height=200><img src="./Vehicle_Chassis_CAD_File/img/Steering-shaft-holder.png" width=300 /></td>
@@ -352,12 +352,12 @@
         <table>
           <tr>
             <th>Motor Holder</th>
-            <th>Ultrasonic Sensor stent</th>
-            <th>Infrared Sensor bracket</th>
+            <th>Ultrasonic Sensor Bracket</th>
+            <th>Infrared Sensor Bracket</th>
           </tr>
           <tr>
             <td align=center height=200><img src="./Vehicle_Chassis_CAD_File/img/Motor-Holder1.png" width=300 /></td>
-            <td align=center><img src="./Vehicle_Chassis_CAD_File/img/Ultrasonic stent.png" width=300 /></td>
+            <td align=center><img src="./Vehicle_Chassis_CAD_File/img/Ultrasonic Bracket.png" width=300 /></td>
             <td align=center><img src="./Vehicle_Chassis_CAD_File/img/Infrared bracket.png" width=300 /></td>
           </tr>
         </table>

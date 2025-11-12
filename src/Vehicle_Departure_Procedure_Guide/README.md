@@ -30,7 +30,7 @@
     - * **Upon detecting a Red Pillar:** The vehicle executes a **90-degree turn to the right** for a lane change, **driving forward to the inner side of the Red Pillar**. Subsequently, the vehicle **turns 90 degrees to the left** and **drives forward to a predetermined position** (completing the inner lane change).
     - * **When no pillars are detected:** The system defaults the vehicle to **drive on the outer side of the lane**.
 - **Code running on the Raspberry Pi Pico W controller.-在 Raspberry Pi Pico W 控制器上執行的程式碼。**
-    ```
+    ```python
     if turn in (1, 2):
         if turn == 1:
             print("right")
@@ -127,32 +127,28 @@
 <div align=center>
 <table>
 <tr>
-<th>Preparing to turn left(準備左轉)</th>
-<th>Start_reversing(準備向前)</th>
+<th align="center" width="50%">Preparing to turn left(準備左轉)</th>
+<th align="center" width="50%">Start_reversing(準備向前)</th>
 </tr><tr>
-<td align=center><img src="./img/Start_in_green_counterclockwise-1.png" width=400 /></td>
-<td align=center><img src="./img/Start_in_green_counterclockwise-2.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Start_in_green_counterclockwise-1.png"  /></td>
+<td align="center" width="50%"><img src="./img/Start_in_green_counterclockwise-2.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
-<th>reparing to turn right(準備右轉)</th>
-<th>Preparing to retreat(準備後退)</th>
+<th align="center" width="50%">reparing to turn right(準備右轉)</th>
+<th align="center" width="50%">Preparing to retreat(準備後退)</th>
 </tr><tr>
-<td align=center><img src="./img/Start_in_green_counterclockwise-3.png" width=400 /></td>
-<td align=center><img src="./img/Start_in_green_counterclockwise-4.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Start_in_green_counterclockwise-3.png"  /></td>
+<td align="center" width="50%"><img src="./img/Start_in_green_counterclockwise-4.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
-<th>Arrive at the designated location(到達預定位子)</th>
+<th align="center" width="50%">Arrive at the designated location(到達預定位子)</th>
+<th align="center" width="50%">Video Documentation of the Autonomous Vehicle's Actual Run(自動駕駛車輛實際運行的影片記錄)</th>
 </tr><tr>
-<td align=center><img src="./img/Start_in_green_counterclockwise-5.png" width=400 /></td>
-<tr>
+<td align="center" width="50%"><img src="./img/Start_in_green_counterclockwise-5.png"  /></td>
+<td><a href="https://youtu.be/dxmBH97Rha0" ><img src="./img/01_Counter_clockwise_green_departure_process.jpg" /></a></td>
+</tr>
 </table>
 </div>
 
@@ -160,22 +156,26 @@
 <div align=center>
 <table>
 <tr>
-<th>Preparing to turn left(準備左轉)</th>
-<th>Start_reversing(準備向前)</th>
+<th align="center" width="50%">Preparing to turn left(準備左轉)</th>
+<th align="center" width="50%">Start_reversing(準備向前)</th>
 </tr><tr>
-<td align=center><img src="./img/Start_in_red_counterclockwise-1.png" width=400 /></td>
-<td align=center><img src="./img/Start_in_red_counterclockwise-2.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Start_in_red_counterclockwise-1.png"  /></td>
+<td align="center" width="50%"><img src="./img/Start_in_red_counterclockwise-2.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
-<th>Prepare to back up and turn left(準備後退向左轉)</th>
-<th>Arrive at the designated location(到達預定位子)</th>
+<th align="center" width="50%">Prepare to back up and turn left(準備後退向左轉)</th>
+<th align="center" width="50%">Arrive at the designated location(到達預定位子)</th>
 </tr><tr>
-<td align=center><img src="./img/Start_in_red_counterclockwise-3.png" width=400 /></td>
-<td align=center><img src="./img/Start_in_green_counterclockwise-4.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Start_in_red_counterclockwise-3.png"  /></td>
+<td align="center" width="50%"><img src="./img/Start_in_green_counterclockwise-4.png"  /></td>
+</tr>
+
+<tr>
+<th colspan=2>Video Documentation of the Autonomous Vehicle's Actual Run(自動駕駛車輛實際運行的影片記錄)</th>
+</tr>
+<tr align=center>
+<td colspan=2><a href="https://youtu.be/3sPefphX0xI" ><img src="./img/02_Counter_clockwise_red_departure_process.jpg" /></a></td>
 </tr>
 </table>
 </div>
@@ -184,22 +184,25 @@
 <div align=center>
 <table>
 <tr>
-<th>Preparing to turn left(準備左轉)</th>
-<th>Start_reversing(準備向前)</th>
+<th align="center" width="50%">Preparing to turn left(準備左轉)</th>
+<th align="center" width="50%">Start_reversing(準備向前)</th>
 </tr><tr>
-<td align=center><img src="./img/Start_in_no_counterclockwise-1.png" width=400 /></td>
-<td align=center><img src="./img/Start_in_no_counterclockwise-2.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Start_in_no_counterclockwise-1.png"  /></td>
+<td align="center" width="50%"><img src="./img/Start_in_no_counterclockwise-2.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
-<th>Prepare to back up and turn left(準備後退向左轉)</th>
-<th>Arrive at the designated location(到達預定位子)</th>
+<th align="center" width="50%">Prepare to back up and turn left(準備後退向左轉)</th>
+<th align="center" width="50%">Arrive at the designated location(到達預定位子)</th>
 </tr><tr>
-<td align=center><img src="./img/Start_in_no_counterclockwise-3.png" width=400 /></td>
-<td align=center><img src="./img/Start_in_no_counterclockwise-4.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Start_in_no_counterclockwise-3.png"  /></td>
+<td align="center" width="50%"><img src="./img/Start_in_no_counterclockwise-4.png"  /></td>
+</tr>
+
+<tr>
+<th colspan=2>Video Documentation of the Autonomous Vehicle's Actual Run(自動駕駛車輛實際運行的影片記錄)</th>
+</tr><tr align=center>
+<td colspan=2><a href="https://youtu.be/kS-VRQUwHtw" ><img src="./img/03_Counter_clockwis_no_color_starting_process.jpg" /></a></td>
 </tr>
 </table>
 </div>
@@ -208,31 +211,27 @@
 <div align=center>
 <table>
 <tr>
-<th>Preparing to turn right(準備右轉)</th>
-<th>Ready to move forward(準備向前)</th>
+<th align="center" width="50%">Preparing to turn right(準備右轉)</th>
+<th align="center" width="50%">Ready to move forward(準備向前)</th>
 </tr><tr>
-<td align=center><img src="./img/Clockwise Green Departure Process-1.png" width=400 /></td>
-<td align=center><img src="./img/Clockwise Green Departure Process-2.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Clockwise Green Departure Process-1.png"  /></td>
+<td align="center" width="50%"><img src="./img/Clockwise Green Departure Process-2.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
-<th>Preparing to turn left(準備向左轉)</th>
-<th>Ready to move forward(準備向前)</th>
+<th align="center" width="50%">Preparing to turn left(準備向左轉)</th>
+<th align="center" width="50%">Ready to move forward(準備向前)</th>
 </tr><tr>
-<td align=center><img src="./img/Clockwise Green Departure Process-3.png" width=400 /></td>
-<td align=center><img src="./img/Clockwise Green Departure Process-4.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Clockwise Green Departure Process-3.png"  /></td>
+<td align="center" width="50%"><img src="./img/Clockwise Green Departure Process-4.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
 <th>Arrive at the designated location(到達預定位子)</th>
-</tr><tr>
-<td align=center><img src="./img/Clockwise Green Departure Process-5.png" width=400 /></td>
+<th width=50%>Video Documentation of the Autonomous Vehicle's Actual Run(自動駕駛車輛實際運行的影片記錄)</th>
+</tr><tr align=center>
+<td><img src="./img/Clockwise Green Departure Process-5.png"  /></td>
+<td width=50%><a href="https://youtu.be/RobF20wQFs8"><img src="./img/04_Clockwise_Green_Departure_Process.jpg" /></a></td>
 </tr>
 </table>
 </div>
@@ -241,31 +240,27 @@
 <div align=center>
 <table>
 <tr>
-<th>Preparing to turn right(準備右轉)</th>
-<th>Ready to move forward(準備向前)</th>
+<th align="center" width="50%">Preparing to turn right(準備右轉)</th>
+<th align="center" width="50%">Ready to move forward(準備向前)</th>
 </tr><tr>
-<td align=center><img src="./img/Clockwise red Departure Process-1.png" width=400 /></td>
-<td align=center><img src="./img/Clockwise red Departure Process-2.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Clockwise red Departure Process-1.png"  /></td>
+<td align="center" width="50%"><img src="./img/Clockwise red Departure Process-2.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
-<th>Preparing to turn left(準備向左轉)</th>
-<th>Ready to move forward(準備向前)</th>
+<th align="center" width="50%">Preparing to turn left(準備向左轉)</th>
+<th align="center" width="50%">Ready to move forward(準備向前)</th>
 </tr><tr>
-<td align=center><img src="./img/Clockwise red Departure Process-3.png" width=400 /></td>
-<td align=center><img src="./img/Clockwise red Departure Process-4.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Clockwise red Departure Process-3.png"  /></td>
+<td align="center" width="50%"><img src="./img/Clockwise red Departure Process-4.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
 <th>Arrive at the designated location(到達預定位子)</th>
-</tr><tr>
-<td align=center><img src="./img/Clockwise red Departure Process-5.png" width=400 /></td>
+<th>Video Documentation of the Autonomous Vehicle's Actual Run(自動駕駛車輛實際運行的影片記錄)</th>
+</tr><tr align=center>
+<td><img src="./img/Clockwise red Departure Process-5.png"  /></td>
+<td><a href="https://youtu.be/_NSuhBujNAg"><img src="./img/05_Clockwise_Red_Departure_Process.jpg" /></a></td>
 </tr>
 </table>
 </div>
@@ -274,22 +269,26 @@
 <div align=center>
 <table>
 <tr>
-<th>Preparing to turn right(準備右轉)</th>
-<th>Preparing to turn left(準備向左轉)</th>
+<th align="center" width="50%">Preparing to turn right(準備右轉)</th>
+<th align="center" width="50%">Preparing to turn left(準備向左轉)</th>
 </tr><tr>
-<td align=center><img src="./img/Clockwise green center departure process-1.png" width=400 /></td>
-<td align=center><img src="./img/Clockwise green center departure process-2.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Clockwise green center departure process-1.png"  /></td>
+<td align="center" width="50%"><img src="./img/Clockwise green center departure process-2.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
-<th>Ready to move forward(準備向前)</th>
-<th>Arrive at the designated location(到達預定位子)</th>
+<th align="center" width="50%">Ready to move forward(準備向前)</th>
+<th align="center" width="50%">Arrive at the designated location(到達預定位子)</th>
 </tr><tr>
-<td align=center><img src="./img/Clockwise green center departure process-3.png" width=400 /></td>
-<td align=center><img src="./img/Clockwise green center departure process-4.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Clockwise green center departure process-3.png"  /></td>
+<td align="center" width="50%"><img src="./img/Clockwise green center departure process-4.png"  /></td>
+</tr>
+
+<tr>
+<th colspan=2>Video Documentation of the Autonomous Vehicle's Actual Run(自動駕駛車輛實際運行的影片記錄)</th>
+</tr>
+<tr align=center>
+<td colspan=2><a href="https://youtu.be/J43t55lzJF8" ><img src="./img/06_Clockwise_green_center_departure_process.jpg" /></a></td>
 </tr>
 </table>
 </div>
@@ -298,33 +297,30 @@
 <div align=center>
 <table>
 <tr>
-<th>Preparing to turn right(準備右轉)</th>
-<th>Ready to move forward(準備向前)</th>
+<th align="center" width="50%">Preparing to turn right(準備右轉)</th>
+<th align="center" width="50%">Ready to move forward(準備向前)</th>
 </tr><tr>
-<td align=center><img src="./img/Clockwise red center departure process-1.png" width=400 /></td>
-<td align=center><img src="./img/Clockwise red center departure process-2.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Clockwise red center departure process-1.png"  /></td>
+<td align="center" width="50%"><img src="./img/Clockwise red center departure process-2.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
-<th>Preparing to turn left(準備向左轉)</th>
-<th>Ready to move forward(準備向前)</th>
+<th align="center" width="50%">Preparing to turn left(準備向左轉)</th>
+<th align="center" width="50%">Ready to move forward(準備向前)</th>
 </tr><tr>
-<td align=center><img src="./img/Clockwise red center departure process-3.png" width=400 /></td>
-<td align=center><img src="./img/Clockwise red center departure process-4.png" width=400 /></td>
+<td align="center" width="50%"><img src="./img/Clockwise red center departure process-3.png"  /></td>
+<td align="center" width="50%"><img src="./img/Clockwise red center departure process-4.png"  /></td>
 </tr>
-</table>
-</div>
-<div align=center>
-<table>
+
 <tr>
 <th>Arrive at the designated location(到達預定位子)</th>
-</tr><tr>
-<td align=center><img src="./img/Clockwise red center departure process-5.png" width=400 /></td>
+<th>Video Documentation of the Autonomous Vehicle's Actual Run(自動駕駛車輛實際運行的影片記錄)</th>
+</tr><tr align=center>
+<td><img src="./img/Clockwise red center departure process-5.png"  /></td>
+<td><a href="https://youtu.be/4ebtIaPdVeI" ><img src="./img/07_Clockwise_red_center_departure_process.jpg" /></a></td>
 </tr>
 </table>
 </div>
+
 
 # <div align="center">![HOME](../../other/img/home.png)[Return Home](../../)</div>  

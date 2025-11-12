@@ -1244,9 +1244,9 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
             <th>Synchronizing and Optimizing the Top Wooden Layer Based on the Revised Specifications of the Central Plate - 根據中央層木板的修正規格，同步調整並優化頂層木板</th>
         </tr>
         <tr>
-            <td><img src="./img/9/Medium Board.jpg" width=300 /></td>
-            <td><img src="./img/9/New Medium Board.jpg" width=400 /></td>
-            <td><img src="./img/9/Upper Board.jpg" width=300 /></td>
+            <td><img src="./img/9/Medium_Board.jpg" width=300 /></td>
+            <td><img src="./img/9/New_Medium_Board.jpg" width=400 /></td>
+            <td><img src="./img/9/Upper_Board.jpg" width=300 /></td>
         </tr>
     </table>
  </div>
@@ -1292,8 +1292,8 @@ Upon receiving the new PCB (V5.0), testing revealed an intermittent issue where 
             <th>PBC Layout Drawing</th>
         </tr>
         <tr>
-            <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version 6.png" height=300 /></td>
-            <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/PCB_Version 6.png" height=300 /></td>
+            <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/Schematic_Version_6.png" height=300 /></td>
+            <td align=center ><img src="../../models/Circuit_Design/img/Schematic&PCB/PCB_Version_6.png" height=300 /></td>
         </tr>
         <tr>
             <th>Overhead view of the main circuit board(電路板頂視圖)</th>
@@ -1606,6 +1606,18 @@ The **analog signal reading procedure for the infrared sensors** is shown below.
 
 **All team members, working diligently overnight in accordance with their previously allocated responsibilities, are urgently continuing to upload the modified engineering documentation to the GitHub project repository**.
 
+<div align=center>
+    <table>
+        <tr align=center>
+            <td colspan=3><img src="./img/11/all_ware.jpg" /></td>
+        </tr>
+        <tr align=center>
+            <td><img src="./img/11/event_photos_1.jpg" /></td>
+            <td><img src="./img/11/event_photos_2.jpg" /></td>
+            <td><img src="./img/11/event_photos_3.jpg" /></td>
+        </tr>
+    </table>
+</div>
 
  ## 2025/11/02 ~ 2025/11/08
  **Member:** HU,SIAN-YI, LIN ZHAN-RONG, ZHANG YI-WEI

@@ -1,16 +1,49 @@
 <div align="center"><img src="./other/img/logo.png" width="300" alt=" logo"></div> 
 
-### 中文
-- 這是 WRO 台灣隊伍「__Fire On All Cylinders.__」的官方  
-- 您可以在此處找到技術報告內容和設定說明的鏈接，這些鏈接分別面向學習者和評委，方便您在學習或評估期間訪問。
-- 本技術文件將根據評分標準建立目錄，目錄標題將以超連結形式顯示，方便評審或學習者輕鬆導航至技術文件的關鍵內容，從而快速進行評估。
-- **特別提醒：**受網路速度影響，圖片可能無法正常顯示。如遇此情況，請嘗試重新整理網頁以解決問題。
-### 英文
-- This is the official GitHub repository of the WRO Taiwan team "__Fire On All Cylinders.__". All code, files and documents are here.
-- You can find links to the technical report content and setting instructions here, which are for learners and judges respectively, for your convenience during learning or evaluation.
-- This technical document will establish a table of contents according to the scoring criteria, and the table of contents titles will be displayed in the form of hyperlinks, so that judges or learners can easily navigate to the key content of the technical document for quick evaluation.
-- **Special reminder: **Due to the network speed, the image may not be displayed properly. If this happens, please try to refresh the webpage to solve the problem.
-    #### [For Learners](learners_contents.md)
+### **官方技術文件導言與設計總覽** 
+
+- 這是 **WRO 台灣代表隊伍「Fire On All Cylinders」** 的官方技術文件。
+
+- 您可以在此處找到技術報告內容和設定說明的**超連結**，這些連結分別面向**學習者與評審**，方便您在學習或評估期間快速訪問關鍵資訊。
+
+- 本技術文件將**依據官方評分標準**（如工程日誌評估細則）建立詳細目錄，**所有目錄標題將以超連結形式顯示**。這將方便評審或學習者輕鬆導航至技術文件的關鍵內容，從而**快速且有效地進行評估**。
+
+
+### **自動駕駛汽車設計：關鍵升級與迭代** 
+
+這款自動駕駛汽車設計建立在從**前輩團隊（Shinan-Fire-On-All-Cylinders）** 繼承的豐富經驗之上，並融入了我們去年參加**世界大賽的實踐經驗**。我們不僅**借鑒了上一年冠軍隊伍的成功要素**，還實施了關鍵的技術迭代：
+
+* **控制器升級：** 主控制器已從標準的 **Jetson Nano** 升級為性能更優越的 **Nvidia Jetson Orin Nano**。
+* **機械大修：** 我們對車輛的機械部件進行了重組和優化，特別是**轉向系統**和**底盤**。
+* **視覺增強：** 影像處理能力得到了顯著提升，實現了更高的**效率和準確性**。
+
+所有這些升級和創新設計元素的整合，其目的就是要**全面提升車輛的整體性能和競爭力**。
+
+
+### **Official Technical Document Introduction and Design Overview** 
+
+
+- This is the official technical documentation for the WRO Taiwan National Team, **"Fire On All Cylinders."**
+
+- You can find hyperlinks to the technical report content and setup instructions here, provided for quick access by both learners and judges during study or evaluation.
+
+- This technical document will feature a detailed table of contents structured **according to the official scoring criteria** (such as the engineering journal evaluation rubrics), with all section titles displayed as **hyperlinks**. This allows judges or learners to easily navigate to the key content of the technical documentation for **rapid and efficient evaluation**.
+
+
+### **Autonomous Car Design: Key Upgrades and Iterations** 
+
+This autonomous vehicle design is built upon the wealth of experience inherited from our **predecessor team ("Shinan-Fire-On-All-Cylinders")** and integrates the practical experience gained from our participation in the **World Final last year**. Not only have we **drawn lessons from the successful elements of last year's champion team**, but we have also implemented critical technical iterations:
+
+* **Controller Upgrade:** The main controller has been upgraded from the standard **Jetson Nano** to the superior performance of the **Nvidia Jetson Orin Nano**.
+* **Mechanical Overhaul:** We have reorganized and optimized the vehicle's mechanical components, focusing specifically on the **steering system** and the **chassis**.
+* **Visual Enhancement:** Image processing capabilities have been significantly improved, achieving higher **efficiency and accuracy**.
+
+The integration of all these upgrades and innovative design elements is aimed at **comprehensively enhancing the vehicle's overall performance and competitiveness**.
+
+**Special Note:**
+- Due to network speed fluctuations, some images may not display correctly. Should this occur, please try refreshing the page to resolve the issue.
+
+#### [For Learners](learners_contents.md)
 
 ## Rubric for Judging Engineering Documentation-工程文獻評審標準
 
@@ -41,18 +74,18 @@
   #### 3. Obstacle Management-障礙管理
     - [3-1 Software Platform Construction(軟體平台建設) **已改動OK](src/System_Platform_Software/README.md)
     - [3-2 OpenCV Introduction (OpenCV介紹)OK](src/OpenCV/README.md)
-    - __3-4 Image Recognition Processing and Steering-影像辨識處理和控制__
-      - [3-4-1 Image Recognition Processing(影像辨識處理) **已改動 OK](src/Image_Recognition_Processing/README.md)
-      - [3-4-2 Parking Lot Departure Steering Control Overview(停車場出發轉向控制) **已改動 OK](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
-      - [3-4-3 Steering Control(轉向控制) **已改動 OK](src/Steering_Control/README.md) 
-      - [3-4-4 Automatically record the LAB values of the field(場地物件LAB值的自動化儲存記錄) **已改動OK](src/Automatically_record_LAB/README.md)
-    - __3-5 Programming - Vehicle’s control program程式設計__
-      - [3-5-1 Open Challenge Code Overview(開放挑戰程式碼概述) **已改動OK](src/Programming/Open_Challenge/README.md)
-      - [3-5-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) **已改動OK](src/Programming/Obstacle_Challenge/README.md)
-      - [3-5-3 Vehicle Departure Procedure Guide(車輛出發程序指南) **已改動OK](src/Vehicle_Departure_Procedure_Guide/README.md)
-      - [3-5-4 Vehicle Parking Procedure Guide(車輛停車程序指南) **已改動OK](src/Vehicle_Parking_Procedure_Guide/README.md)
-    - __3-6 Remote Connection-遠端連線__
-      - [3-6-1 NoMachine Introduction(NoMachine簡介) OK](other/NoMachine/README.md)
+    - __3-3 Image Recognition Processing and Steering-影像辨識處理和控制__
+      - [3-3-1 Image Recognition Processing(影像辨識處理) **已改動 OK](src/Image_Recognition_Processing/README.md)
+      - [3-3-2 Parking Lot Departure Steering Control Overview(停車場出發轉向控制) **已改動 OK](src/Overview_of_Parking_Lot_Departure_Steering_Control/README.md) 
+      - [3-3-3 Steering Control(轉向控制) **已改動 OK](src/Steering_Control/README.md) 
+      - [3-3-4 Automatically record the LAB values of the field(場地物件LAB值的自動化儲存記錄) **已改動OK](src/Automatically_record_LAB/README.md)
+    - __3-4 Programming - Vehicle’s control program程式設計__
+      - [3-4-1 Open Challenge Code Overview(開放挑戰程式碼概述) **已改動OK](src/Programming/Open_Challenge/README.md)
+      - [3-4-2 Obstacle Challenge Code Overview(障礙挑戰代碼概述) **已改動OK](src/Programming/Obstacle_Challenge/README.md)
+      - [3-4-3 Vehicle Departure Procedure Guide(車輛出發程序指南) **已改動OK](src/Vehicle_Departure_Procedure_Guide/README.md)
+      - [3-4-4 Vehicle Parking Procedure Guide(車輛停車程序指南) **已改動OK](src/Vehicle_Parking_Procedure_Guide/README.md)
+    - __3-5 Remote Connection-遠端連線__
+      - [3-5-1 NoMachine Introduction(NoMachine簡介) OK](other/NoMachine/README.md)
 
 - ### ${{\color{red} Other}} $
   #### 4. Pictures – Team and Vehicle-圖片 – 車隊和車輛
@@ -78,23 +111,4 @@
       - [October (十月)](other/Learning_Journey/README.md#20250928--20251006)
       - [November (十一月)](other/Learning_Journey/README.md#20251027--20251101)
 
-- ### 自動駕駛汽車設計：關鍵升級與迭代
-  這款自動駕駛汽車設計建立在從前輩團隊（Shinan-Fire-On-All-Cylinders ）繼承的豐富經驗之上，並融入了我去年參加世界大賽的實踐經驗。
-  我們不僅借鑒了上一年冠軍隊伍的成功要素，還實施了關鍵的技術迭代：
-  * **控制器升級：**主控制器已從標準的 Jetson Orin Nano 升級為性能更優越的 Nvidia Jetson Orin Nano。
-* **機械大修：**我們對車輛的機械部件進行了重組和優化，特別是轉向系統和底盤。
-* **視覺增強：**影像處理能力得到了顯著提升，效率和準確性更高。
-
-  所有這些升級和創新設計元素的整合，其目的就是要全面提升車輛的整體性能和競爭力。
-
-- ### Autonomous Vehicle Design: Key Upgrades and Iterations
-  This autonomous vehicle design **builds upon** the rich experience inherited from the senior team (**Shinan-Fire-On-All-Cylinders**) and integrates my practical insights from last year's World Competition.
-
-  We didn't just reference the successful elements of the previous year's winning teams; we implemented **key technological iterations**:
-
-  * **Controller Upgrade:** The main controller has been upgraded from the standard Jetson Orin Nano to the **superior-performing Nvidia Jetson Orin Nano**.
-  * **Mechanical Overhaul:** We have **restructured and optimized** the vehicle's mechanical components, specifically the steering and chassis.
-  * **Vision Enhancement:** Image processing has been **significantly enhanced** for greater efficiency and accuracy.
-
-  The integration of all these upgrades and innovative design elements is squarely aimed at **comprehensively strengthening** the vehicle's overall performance and competitiveness.
   <div align="center"><img src="./other/img/Gantt-Chart_5.png" width="1600" alt="Gantt Chart" /></div> 
