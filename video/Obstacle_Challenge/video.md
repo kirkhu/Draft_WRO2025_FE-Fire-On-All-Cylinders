@@ -17,7 +17,7 @@
 
 
 
-     <td  align="center" width="50%" ><a href="https://youtu.be/XRuhmoaAwWk"><img src="./img/03Left_clockwise@Obstacle_Challenge.jpg" alt="101Below_clockwise"  ></a> </td>  
+     <td  align="center" width="50%" ><a href="https://youtu.be/XRuhmoaAwWk"><img src="./img/01.jpg" alt="101Below_clockwise"  ></a> </td>  
     <td  align="center" width="50%" ><a href="https://youtu.be/aFe098mwWvI"><img src="./img/03Left_clockwise@Obstacle_Challenge.jpg" alt="03Left_clockwise"  ></a> </td>      
     </tr>
     <tr>
