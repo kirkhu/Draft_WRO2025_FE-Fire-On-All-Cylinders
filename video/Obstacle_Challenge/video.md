@@ -11,15 +11,15 @@
     <th align="center" width="50%">The parking lot is on the left side.</th>
     </tr>
     <tr >
-    <td  align="center" width="50%"><a href="https://youtu.be/XRuhmoaAwWk"><img src="./img/01Below_clockwise@Obstacle_Challenge.jpg" alt="101Below_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
-    <td  align="center" width="50%" ><a href="https://youtu.be/aFe098mwWvI"><img src="./img/03Left_clockwise@Obstacle_Challenge.jpg" alt="03Left_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>      
+    <td  align="center" width="50%"><a href="https://youtu.be/XRuhmoaAwWk"><img src="./img/01Below_clockwise@Obstacle_Challenge.jpg" alt="101Below_clockwise"  ></a> </td>
+    <td  align="center" width="50%" ><a href="https://youtu.be/aFe098mwWvI"><img src="./img/03Left_clockwise@Obstacle_Challenge.jpg" alt="03Left_clockwise"  ></a> </td>      
     </tr>
     <tr>
     <th align="center" width="50%">The parking lot is located above.</th>
     <th align="center" width="50%">The parking lot is on the right side.</th> 
     </tr>
     <tr>
-    <td  align="center" width="50%" ><a href="https://youtu.be/csCRfZYZlrQ"><img src="./img/05Above_clockwise@Obstacle_Challenge.jpg" alt="05Above_clockwise@Obstacle_Challenge_Fire On All Cylinders"  ></a> </td>
+    <td  align="center" width="50%" ><a href="https://youtu.be/csCRfZYZlrQ"><img src="./img/05Above_clockwise@Obstacle_Challenge.jpg" alt="05Above_clockwise"  ></a> </td>
     <td  align="center" width="50%" ><a href="https://youtu.be/UbKV_qW2KB4"><img src="./img/07Right_clockwise@Obstacle_Challenge.jpg" alt="07Right_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>  
     </tr>
     </table>  
