@@ -11,7 +11,7 @@
     <th align="center" width="50%">The parking lot is on the left side.</th>
     </tr>
     <tr >
-    <td  align="center" width="50%"><a href="https://youtu.be/XRuhmoaAwWk"><img src="./img/01Below_clockwise@Obstacle_Challenge.jpg" alt="01Below_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
+    <td  align="center" width="50%"><a href="https://youtu.be/XRuhmoaAwWk"><img src="./img/01Below_clockwise@Obstacle_Challenge.jpg" alt="101Below_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>
     <td  align="center" width="50%" ><a href="https://youtu.be/aFe098mwWvI"><img src="./img/03Left_clockwise@Obstacle_Challenge.jpg" alt="03Left_clockwise@Obstacle_Challenge_Fire-On-All-Cylinders"  ></a> </td>      
     </tr>
     <tr>
