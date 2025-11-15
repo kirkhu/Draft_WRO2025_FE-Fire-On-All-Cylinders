@@ -841,10 +841,18 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 **Content:** 
 
 * 下方展示了**目前已修正並最終定版的電路板**的 **3D 檢視圖**、**原理圖**，以及 **PCB 分布圖**。
-* 本週將**持續進行任務挑戰賽（Obstacle Challenge rounds）的程式與功能測試**。
+* **障礙挑戰賽程式與功能測試**
+
+    我們將持續**深入執行障礙挑戰賽（Obstacle Challenge rounds）**的**程式編寫（program）**與**功能測試（functional testing）**，以確保車輛在複雜環境下（例如：紅柱、綠柱、平行停車）的表現達到最佳化 。
+* **持續紀錄與整理工程文件至 GitHub 儲存庫**
+
+    作為工程設計與開發流程的一部分，團隊必須將工程進度、車輛設計細節及最終原始碼等文件，**持續**記錄並上傳至 **GitHub 公共儲存庫（GitHub public repository）** 。
 
 * Below are the **3D View**, **Schematic Diagram**, and **PCB Layout** of the **currently corrected and finalized circuit board**.
-* We are **continuing to conduct program and functional testing for the Obstacle Challenge rounds** this week.
+* **Program and Functional Testing for the Obstacle Challenge**
+    we will **continue to focus on executing the program and functional testing** for the **Obstacle Challenge rounds** to ensure optimal vehicle performance in complex environments (e.g., red pillars, green pillars , and parallel parking).
+* **Continuous Documentation and Organization of Engineering Files on GitHub Repository**
+    As part of the engineering design and development process, teams must **continuously** document and upload information such as engineering progress, final vehicle design, and final vehicle source code to a **GitHub public repository**.
 
   <div align=center>
     <table>
