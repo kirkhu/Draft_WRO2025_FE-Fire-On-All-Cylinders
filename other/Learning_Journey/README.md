@@ -36,11 +36,19 @@
 
 考量到每年賽事主題與規則的變動，並**吸收了去年世界冠軍隊伍在影像辨識技術上的卓越成果**，我們團隊經深入研討後，決定針對今年的參賽模型實施**關鍵的輕量化設計**。
 
-透過整體結構的精簡化，我們達成了多重效益：
-* **優化了機器進出停車區的流暢性**；
-* **顯著提升了場地移動的靈活性**；
-* 使其能**更精準地規避障礙物**；
-* 從而**全面穩固了車輛的運行表現**。
+透過**簡化整體結構的設計**，我們**期望能達成**以下關鍵優勢與性能條件：
+
+* 我們**預期**能優化機器人**進出停車區域的流暢性**。
+* **顯著提升**其在場上的**機動性和敏捷性**。
+* **使**其能夠更**精確地避開障礙物**。
+* 從而**全面穩定車輛的運作性能**。
+
+By **simplifying the overall vehicle structure**, we **aim to achieve** the following key advantages and performance conditions:
+* We **expect** to optimize the robot's **smoothness when entering and exiting the parking area**.
+* **Significantly enhance** its **maneuverability and agility** on the field.
+* **Enable** it to **avoid obstacles more precisely**.
+* Thereby **comprehensively stabilize the vehicle's operational performance**.
+
 <div align="center">
 <table width="100%">
 <tr>
