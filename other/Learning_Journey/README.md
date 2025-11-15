@@ -891,6 +891,18 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 #### **最終成就與展望**
 就算比賽過程**坎坷不順**，但我們最終成功地以**第一名的排名**脫穎而出，獲得了**代表台灣參加 WRO 未來工程師世界賽**的資格。我們將**充分吸收這次全國賽的實戰經驗與教訓**，以**更好的狀態**去參加世界賽，並以**獲取優異的成績榮耀回國**為目標。
 
+### **工程文件國際化與持續更新策略**
+
+- 文件國際化與 GitHub 紀錄更新
+
+    為**符合競賽晉級國際賽階段（advancing to the international competition）**的規定，我們必須**嚴格遵守**競賽規則中關於工程文件的要求，即：所有技術文件需**以英文撰寫**。
+
+    因此，我們將採取以下行動：
+
+    1.  **文件翻譯：** 將 GitHub 網站上**現有的**中文工程文件**全面翻譯**為**英文（English）**版本。
+    2.  **持續更新與同步：** 在後續的開發過程中，**所有新增和修訂**的工程文件資料都將**直接以英文記錄**，並**持續同步更新**至 **GitHub 儲存庫**，確保文件資訊的**即時性**與**一致性**。
+
+
 ### **National Competition Journey, Challenges, and Qualification**
 
 Our National Competition took place on **August 23rd**. Despite a challenging process, we successfully qualified.
@@ -907,6 +919,18 @@ Our National Competition took place on **August 23rd**. Despite a challenging pr
 
 #### **Final Achievement and Outlook**
 Despite a **difficult and challenging competition process**, we successfully secured the **first-place ranking**, earning the qualification to **represent Taiwan in the WRO Future Engineers World Final**. We plan to **fully absorb the practical experience and lessons learned from this National Competition** and aim to participate in the World Final **in better condition**, striving to achieve **outstanding results and bring honor back home**.
+
+
+### **Engineering Documentation Internationalization and Continuous Update Strategy**
+
+-  Documentation Internationalization and Continuous GitHub Updates
+
+    To **comply with the regulations** for **advancing to the international competition**, we must **strictly adhere** to the documentation requirements stipulated by the competition rules, which mandates that all technical documentation be provided **in English**.
+
+    Therefore, we will implement the following actions:
+
+    1.  **Documentation Translation:** The **existing** Chinese engineering documentation on the GitHub repository will be **fully translated** into an **English** version.
+    2.  **Continuous Update and Synchronization:** Going forward, **all new and revised** engineering documentation will be **recorded directly in English** and **continuously synchronized and updated** to the **GitHub repository** to ensure the **timeliness** and **consistency** of the information.
 
  <div align=center>
     <table>
