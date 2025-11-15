@@ -56,9 +56,9 @@ By **simplifying the overall vehicle structure**, we **aim to achieve** the foll
 <th>Funny photo </th>
 </tr>
 <tr>
-<td><img src="../../t-photos/img/team_photo.jpg"  width="300" alt="team_photo">
+<td  width="50%"><img src="../../t-photos/img/team_photo.jpg"  alt="team_photo">
 </td>
-<td><img src="../../t-photos/img/funny_photo.jpg"  width="300" alt="team_photo">
+<td width="50%"><img src="../../t-photos/img/funny_photo.jpg"  alt="team_photo">
 </td>
 </tr>
 </table>
@@ -81,7 +81,7 @@ By simplifying the overall structure, we achieved multiple benefits:
 <table>
 <tr align="center">
 <th>2024 World Championship Vehicle Model</th>
-<th>2025 National Competition Vehicle Model</th>
+<th>Tentative Vehicle Model for the 2025 National Competition -2025 年全國賽預計採用之機型版本 </th>
 <th>Team Research and Data Review Process Documentation - 團隊研究與資料查閱過程記錄</th>
 </tr>
 <tr align="center">
