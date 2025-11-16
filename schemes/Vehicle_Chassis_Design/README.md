@@ -104,7 +104,7 @@ Our chassis design underwent a total of four iterations:
     <th colspan=2>First Generation Steering Structure (V1.0) - 第一代轉向結構 (V1.0)</th>
   </tr>
   <tr>
-  <td width=40%><img src="./img/steering_1.jpg" /></td>
+  <td width=40%><img src="./img/steering_1.png" /></td>
   <td width=60%>
   此版轉向結構設計過於寬大，且轉向桿由鐵絲拉製而成，導致形狀不易固定，影響了精確性。
 
