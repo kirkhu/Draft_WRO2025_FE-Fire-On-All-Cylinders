@@ -36,11 +36,19 @@
 
 考量到每年賽事主題與規則的變動，並**吸收了去年世界冠軍隊伍在影像辨識技術上的卓越成果**，我們團隊經深入研討後，決定針對今年的參賽模型實施**關鍵的輕量化設計**。
 
-透過整體結構的精簡化，我們達成了多重效益：
-* **優化了機器進出停車區的流暢性**；
-* **顯著提升了場地移動的靈活性**；
-* 使其能**更精準地規避障礙物**；
-* 從而**全面穩固了車輛的運行表現**。
+透過**簡化整體結構的設計**，我們**期望能達成**以下關鍵優勢與性能條件：
+
+* 我們**預期**能優化機器人**進出停車區域的流暢性**。
+* **顯著提升**其在場上的**機動性和敏捷性**。
+* **使**其能夠更**精確地避開障礙物**。
+* 從而**全面穩定車輛的運作性能**。
+
+By **simplifying the overall vehicle structure**, we **aim to achieve** the following key advantages and performance conditions:
+* We **expect** to optimize the robot's **smoothness when entering and exiting the parking area**.
+* **Significantly enhance** its **maneuverability and agility** on the field.
+* **Enable** it to **avoid obstacles more precisely**.
+* Thereby **comprehensively stabilize the vehicle's operational performance**.
+
 <div align="center">
 <table width="100%">
 <tr>
@@ -48,9 +56,9 @@
 <th>Funny photo </th>
 </tr>
 <tr>
-<td><img src="../../t-photos/img/team_photo.jpg"  width="300" alt="team_photo">
+<td  width="50%"><img src="../../t-photos/img/team_photo.jpg"  alt="team_photo">
 </td>
-<td><img src="../../t-photos/img/funny_photo.jpg"  width="300" alt="team_photo">
+<td width="50%"><img src="../../t-photos/img/funny_photo.jpg"  alt="team_photo">
 </td>
 </tr>
 </table>
@@ -73,7 +81,7 @@ By simplifying the overall structure, we achieved multiple benefits:
 <table>
 <tr align="center">
 <th>2024 World Championship Vehicle Model</th>
-<th>2025 National Competition Vehicle Model</th>
+<th>Tentative Vehicle Model for the 2025 National Competition -2025 年全國賽預計採用之機型版本 </th>
 <th>Team Research and Data Review Process Documentation - 團隊研究與資料查閱過程記錄</th>
 </tr>
 <tr align="center">
@@ -359,34 +367,45 @@ While testing **UART data transmission**, we discovered **instances of data loss
 
 **Content:**
 
-### **資格挑戰賽程式應用與任務挑戰賽避障策略優化**
+### **公開挑戰賽策略與任務挑戰賽策略優化**
 
-#### **1. 資格挑戰賽（Open Challenge）程式應用**
-由於**資格挑戰賽（Open Challenge rounds）** 的競賽規則與往年保持一致，我們決定直接**採用去年的成熟程式進行初步的性能測試**。
+### 1. 公開挑戰賽策略
 
-#### **2. 任務挑戰賽（Obstacle Challenge rounds）避障程式修改與優化**
-鑑於今年的競賽規則在**任務挑戰賽（Obstacle Challenge rounds）** 中**新增了從停車區出發**以及**平行停入停車區**兩項關鍵任務，我們必須針對去年的自駕車**避障程式進行修改與深度優化**。
+考量到**公開挑戰賽（Open Challenge rounds）**的規則與往年**保持一致**，我們決定沿用去年設計的解決方案，並以此進行初步的車輛性能測試 。
 
-#### **3. 避障策略與邏輯**
-我們採用的避障策略與邏輯如下：
-* **路徑參考：** 在影像畫面中**繪製兩條具有特定斜率的路徑線**，作為車輛行進時的**參考方向**。
-* **目標物體中心計算：** 透過 `function.py` 檔案中的 `detect_color_final` 副程式，系統會**計算畫面中目標物體的中心座標**。
-* **轉彎角度計算：** 自駕車隨後**根據目標物體中心座標與路徑線之間的座標差**，計算出**所需的轉彎角度**，進而完成**精準的避障動作**。
-- 自駕車在執行任務時的實際運作畫面
+### 2. 任務挑戰賽環節程序修改與優化
 
-### **Open Challenge Program Application and Obstacle Challenge Strategy Optimization** 
+有鑑於今年的規則在**障礙挑戰賽（Obstacle Challenge rounds）**中新增了從**停車場（the position of the parking lot）**出發，並執行**平行停車（parking）**進入指定區域的任務，我們必須修改並**深入優化**去年的**自駕車（Self-Driving-Cars）**避障程式 。
 
-#### **1. Open Challenge Program Application**
-Since the competition rules for the **Open Challenge rounds** remain consistent with previous years, we decided to **utilize last year's established program for initial performance testing**.
+### 3. 避障策略與邏輯實作
 
-#### **2. Obstacle Challenge Rounds Program Modification and Optimization**
-Given that this year's competition rules **added the task of starting from the parking lot** and **parallel parking into the parking zone** within the **Obstacle Challenge rounds**, we were required to **modify and deeply optimize** last year's autonomous car **obstacle avoidance program**.
+我們實作的避障策略和邏輯如下：
 
-#### **3. Obstacle Avoidance Strategy and Logic**
+* **路徑參考建立：** 在影像螢幕上繪製**兩條（two）**具有特定坡度的**路徑線（path lines）**，用作車輛行駛的參考方向。
+* **目標中心座標計算：** 系統透過檔案 `detect_color_final.py` 中的子程式，計算螢幕上**目標物件（target object）**的**中心座標（center coordinates）**。
+* **轉向角度計算與執行：** **自駕車（Vehicle）**隨後根據**物體中心座標（object center coordinates）**與**路徑線（path lines）**之間的座標差，計算所需的**轉彎角度（turning angle）**，從而執行**精確（precise）**的避障操作 。
+
+
+### **Open Challenge Strategy and Optimization of Obstacle Challenge Strategy**
+
+### 1. Open Challenge Strategy
+
+Given that the rules for the **Open Challenge rounds** remain **consistent** with previous years, we have decided to implement the solution developed last year and use it for preliminary vehicle performance testing.
+
+### 2. Program Modification and Optimization for the Obstacle Challenge
+
+Considering that this year's rules for the **Obstacle Challenge rounds** include the new task of starting from the **parking lot** and executing **parallel parking** into the designated area, we were required to modify and **thoroughly optimize** our previous year's **Self-Driving Car** obstacle avoidance program.
+
+### 3. Implemented Obstacle Avoidance Strategy and Logic
+
 Our implemented obstacle avoidance strategy and logic are as follows:
-* **Path Reference:** **Two path lines with specific slopes are drawn** on the image screen, serving as the vehicle's **reference direction** for travel.
-* **Target Center Calculation:** Through the `detect_color_final` subroutine located in the `function.py` file, the system **calculates the center coordinates of the target object** on the screen.
-* **Turning Angle Calculation:** The autonomous car subsequently **calculates the required turning angle based on the coordinate difference between the object's center coordinates and the path lines**, thereby executing **precise obstacle avoidance maneuvers**.
+
+* **Establishment of Path Reference:** We draw **two path lines** with a specific slope on the video screen to serve as the reference direction for the vehicle's travel.
+* **Calculation of Target Center Coordinates:** The system utilizes a subroutine within the file `detect_color_final.py` to calculate the **center coordinates** of the **target object** on the screen.
+* **Calculation and Execution of Steering Angle:** The **Vehicle** subsequently calculates the necessary **turning angle** based on the coordinate difference between the **object center coordinates** and the **path lines**, thus executing **precise** obstacle avoidance maneuvers
+
+Would you like to refine another section of your document, or would you like me to focus on a specific technical term?
+
 
 - The image below displays the autonomous car's actual operational screen during mission execution.
  <div align=center>
@@ -822,10 +841,18 @@ Following testing, the **new chassis structure incorporating bearings effectivel
 **Content:** 
 
 * 下方展示了**目前已修正並最終定版的電路板**的 **3D 檢視圖**、**原理圖**，以及 **PCB 分布圖**。
-* 本週將**持續進行任務挑戰賽（Obstacle Challenge rounds）的程式與功能測試**。
+* **障礙挑戰賽程式與功能測試**
+
+    我們將持續**深入執行障礙挑戰賽（Obstacle Challenge rounds）**的**程式編寫（program）**與**功能測試（functional testing）**，以確保車輛在複雜環境下（例如：紅柱、綠柱、平行停車）的表現達到最佳化 。
+* **持續紀錄與整理工程文件至 GitHub 儲存庫**
+
+    作為工程設計與開發流程的一部分，團隊必須將工程進度、車輛設計細節及最終原始碼等文件，**持續**記錄並上傳至 **GitHub 公共儲存庫（GitHub public repository）** 。
 
 * Below are the **3D View**, **Schematic Diagram**, and **PCB Layout** of the **currently corrected and finalized circuit board**.
-* We are **continuing to conduct program and functional testing for the Obstacle Challenge rounds** this week.
+* **Program and Functional Testing for the Obstacle Challenge**
+    we will **continue to focus on executing the program and functional testing** for the **Obstacle Challenge rounds** to ensure optimal vehicle performance in complex environments (e.g., red pillars, green pillars , and parallel parking).
+* **Continuous Documentation and Organization of Engineering Files on GitHub Repository**
+    As part of the engineering design and development process, teams must **continuously** document and upload information such as engineering progress, final vehicle design, and final vehicle source code to a **GitHub public repository**.
 
   <div align=center>
     <table>
